@@ -859,11 +859,15 @@ try{const c=JSON.parse(sessionStorage.getItem('sp.live')||'null');if(c&&(!window
 // 1) logos/<id>.png committed to the repo (listed in LIVE.logos)  2) the company's own site icon  3) letter badge
 const DOMAINS={RELIANCE:'ril.com',BHARTIARTL:'airtel.in',HDFCBANK:'hdfcbank.com',ICICIBANK:'icicibank.com',TCS:'tcs.com',SBIN:'sbi.co.in',BAJFINANCE:'bajajfinserv.in',LT:'larsentoubro.com',INFY:'infosys.com',KOTAKBANK:'kotak.com',HINDUNILVR:'hul.co.in',ADANIPORTS:'adaniports.com',SUNPHARMA:'sunpharma.com',TITAN:'titancompany.in',AXISBANK:'axisbank.com',HCLTECH:'hcltech.com',MARUTI:'marutisuzuki.com',MM:'mahindra.com',ADANIENT:'adanienterprises.com',ITC:'itcportal.com',ULTRACEMCO:'ultratechcement.com',ETERNAL:'zomato.com',JSWSTEEL:'jsw.in',NTPC:'ntpc.co.in','BAJAJ-AUTO':'bajajauto.com',jio:'jio.com'};
 const LOCAL_LOGOS=new Set((window.LIVE&&window.LIVE.logos)||[]);
-function logoImg(k){const d=DOMAINS[k]||(typeof PROF!=='undefined'&&PROF&&PROF.logo&&PROF.logo[k==='MM'?'M&M':k])||'';if(!LOCAL_LOGOS.has(k)&&!d)return '';
+const LOGO_RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/logos/';let LOGOSET=new Set();
+fetch(LOGO_RAW+'index.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.have){LOGOSET=new Set(j.have);try{softRefresh()}catch{}try{const v=document.querySelector('.view.on');if(v&&v.id==='v-stocks')renderStocks()}catch{}}}).catch(()=>{});
+function logoImg(k){const kk=k==='MM'?'M&M':k,d=DOMAINS[k]||(typeof PROF!=='undefined'&&PROF&&PROF.logo&&PROF.logo[kk])||'';
+  if(LOGOSET.has(kk))return `<img class="lgimg" alt="" loading="lazy" decoding="async" src="${LOGO_RAW}${encodeURIComponent(kk.replace('/','_'))}.png" data-d="${d}" data-l="1" onload="lgOk(this)" onerror="lgFail(this)">`;
+  if(!LOCAL_LOGOS.has(k)&&!d)return '';
   const src=LOCAL_LOGOS.has(k)?`logos/${encodeURIComponent(k)}.png`:`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${d}&size=128`;
   return `<img class="lgimg" alt="" loading="lazy" decoding="async" src="${src}" data-d="${d}" data-l="${LOCAL_LOGOS.has(k)?1:0}" onload="lgOk(this)" onerror="lgFail(this)">`}
 function lgFail(im){if(im.dataset.l==='1'&&im.dataset.d){im.dataset.l='0';im.src=`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${im.dataset.d}&size=128`}else im.remove()}
-function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<32){im.remove();return}im.parentElement&&im.parentElement.classList.add('haslogo')}
+function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<24){im.remove();return}im.parentElement&&im.parentElement.classList.add('haslogo')}
 
 const UPDATED=(window.LIVE&&window.LIVE.label)||'30 Oct 2026, 8:45 AM IST';
 const IPOS_RAW=[
@@ -2034,9 +2038,24 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
 
 // ===================== in-site chart, financials and company profile (hist branch) =====================
 const HIST_RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/hist/';
-let PROF=null;const HC={};let sxRange=365;
+let PROF=null;const HC={};let sxRange=1;
 fetch(HIST_RAW+'profiles.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j){PROF=j;try{softRefresh()}catch{}}}).catch(()=>{});
 function loadHist(k){if(HC[k])return Promise.resolve(HC[k]);return fetch(HIST_RAW+'h/'+encodeURIComponent(k.replace('/','_'))+'.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j)HC[k]=j;return j}).catch(()=>null)}
+function sxIntra(it,mode,k){let pts=it.t.map((m,i)=>[it.t0+m*60,it.c[i]]);const day=t=>new Date((t+19800)*1000).toISOString().slice(0,10);
+  if(mode===1){const last=day(pts.at(-1)[0]);pts=pts.filter(x=>day(x[0])===last)}
+  const q=qOf(k);if(q&&q.price&&LIVED&&LIVED.state==='open'){const now=Math.floor(Date.now()/1000);if(day(now)!==day(pts.at(-1)[0])&&mode===1)pts=[[now-60,q.prev||q.price],[now,q.price]];else pts.push([now,q.price])}
+  if(pts.length<2)return '<p class="note">Not enough intraday data yet.</p>';
+  const W=640,Hh=220,pad=8,vals=pts.map(x=>x[1]),mn=Math.min(...vals),mx=Math.max(...vals),rg=mx-mn||1,X=i=>pad+i/(pts.length-1)*(W-2*pad),Y=v=>pad+(1-(v-mn)/rg)*(Hh-2*pad-18);
+  const base=mode===1&&q&&q.prev?q.prev:pts[0][1],up=pts.at(-1)[1]>=base,col=up?'var(--up)':'var(--dn)',line=pts.map((x,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(x[1]).toFixed(1)}`).join(' ');
+  const lab=t=>new Date(t*1000).toLocaleString('en-IN',mode===1?{hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}:{day:'numeric',month:'short',timeZone:'Asia/Kolkata'});
+  const ch=(pts.at(-1)[1]/base-1)*100;
+  return `<div class="row" style="margin-bottom:6px"><b class="num ${up?'up':'down'}">${ch>=0?'+':''}${ch.toFixed(2)}%</b><span class="muted num" style="font-size:12.5px">${mode===1?new Date(pts.at(-1)[0]*1000).toLocaleDateString('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'})+(LIVED&&LIVED.state==='open'?' · live':' · last session'):'last 5 sessions'} · low ₹${n2(mn)} · high ₹${n2(mx)}</span></div>
+   <div class="sxchart"><svg viewBox="0 0 ${W} ${Hh}" preserveAspectRatio="none" aria-label="Intraday chart"><defs><linearGradient id="sxg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${up?'#00A37A':'#E5484D'}" stop-opacity=".28"/><stop offset="1" stop-color="${up?'#00A37A':'#E5484D'}" stop-opacity="0"/></linearGradient></defs>
+   <path d="${line} L${X(pts.length-1).toFixed(1)} ${Hh-18} L${X(0)} ${Hh-18}Z" fill="url(#sxg)"/><path d="${line}" fill="none" stroke="${col}" stroke-width="2" vector-effect="non-scaling-stroke"/>
+   ${mode===1&&q&&q.prev&&q.prev>=mn&&q.prev<=mx?`<line x1="${pad}" x2="${W-pad}" y1="${Y(q.prev)}" y2="${Y(q.prev)}" stroke="var(--muted)" stroke-dasharray="4 4" opacity=".6"/>`:''}
+   <line id="sxv" x1="0" x2="0" y1="${pad}" y2="${Hh-18}" stroke="var(--muted)" stroke-dasharray="3 3" opacity="0"/>
+   ${[0,.5,1].map(f=>{const i=Math.round(f*(pts.length-1));return `<text x="${X(i)}" y="${Hh-4}" font-size="11" fill="var(--muted)" text-anchor="${f===0?'start':f===1?'end':'middle'}">${lab(pts[i][0])}</text>`}).join('')}</svg><div class="sxtip" id="sxtip"></div></div>`+
+   `<script type="application/json" id="sxpts">${JSON.stringify({p:pts.map(x=>[x[0],x[1]]),intra:1,W,pad})}<\/script>`}
 function sxChart(p,days,k){const d0=p.d0,last=p.d.at(-1),from=last-days;let pts=p.d.map((d,i)=>[d,p.c[i]]).filter(x=>x[0]>=from);
   const q=qOf(k)||(byStock[k==='M&M'?'MM':k]?{price:byStock[k==='M&M'?'MM':k].price}:null);
   if(q&&q.price&&LIVED&&LIVED.state==='open'){const today=Math.floor(Date.now()/864e5)-d0;if(today>pts.at(-1)[0])pts.push([today,q.price]);else pts[pts.length-1]=[pts.at(-1)[0],q.price]}
@@ -2065,12 +2084,12 @@ function sxAbout(a){if(!a)return '';const w=a.website?a.website.replace(/^https?
 function fillExtras(){const box=document.getElementById('sx');if(!box||box.dataset.done)return;const k=box.dataset.k;box.dataset.done=1;
   box.innerHTML='<div class="glass card sec"><p class="note">Loading chart and financials…</p></div>';
   Promise.all([loadHist(k),loadAllQuotes()]).then(([h])=>{if(!document.body.contains(box))return;if(!h){box.innerHTML='<div class="glass card sec"><p class="note">Chart and financials for this stock are added after the next daily update (around 4:30 PM).</p></div>';return}
-    const draw=()=>{box.innerHTML=`<div class="glass card sec"><div class="row" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"><span class="lbl" style="margin:0">Price chart</span><div class="sxr">${[[30,'1M'],[91,'3M'],[182,'6M'],[365,'1Y'],[730,'2Y']].map(([d,l])=>`<button type="button" data-d="${d}" aria-pressed="${sxRange===d}">${l}</button>`).join('')}</div></div>${h.p?sxChart(h.p,sxRange,k):'<p class="note">No price history available.</p>'}</div>
+    const draw=()=>{box.innerHTML=`<div class="glass card sec"><div class="row" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"><span class="lbl" style="margin:0">Price chart</span><div class="sxr">${[...(h.i?[[1,'1D'],[7,'1W']]:[]),[30,'1M'],[91,'3M'],[182,'6M'],[365,'1Y'],[730,'2Y']].map(([d,l])=>`<button type="button" data-d="${d}" aria-pressed="${sxRange===d}">${l}</button>`).join('')}</div></div>${sxRange<=7&&h.i?sxIntra(h.i,sxRange,k):h.p?sxChart(h.p,Math.max(sxRange,30),k):'<p class="note">No price history available.</p>'}</div>
       <div class="grid2 sec">${sxFin(h.f)||'<div class="glass card"><span class="lbl">Results</span><p class="note" style="margin-top:8px">Quarterly results for this company are not available yet. They are filled in over the week.</p></div>'}${sxAbout(h.a)||''}</div>`;
       box.querySelectorAll('.sxr button').forEach(b=>b.onclick=()=>{sxRange=+b.dataset.d;draw()});
       const svg=box.querySelector('.sxchart svg'),tip=box.querySelector('#sxtip'),meta=box.querySelector('#sxpts');if(!svg||!meta)return;const M=JSON.parse(meta.textContent),vl=box.querySelector('#sxv');
       const mv=e=>{const r=svg.getBoundingClientRect(),x=(e.touches?e.touches[0].clientX:e.clientX)-r.left,i=Math.max(0,Math.min(M.p.length-1,Math.round((x/r.width*M.W-M.pad)/(M.W-2*M.pad)*(M.p.length-1))));const pt=M.p[i];
-        tip.style.display='block';tip.innerHTML=`<b>₹${n2(pt[1])}</b> · ${new Date((M.d0+pt[0])*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;const px=(M.pad+i/(M.p.length-1)*(M.W-2*M.pad))/M.W*r.width;tip.style.left=Math.max(0,Math.min(r.width-tip.offsetWidth,px-tip.offsetWidth/2))+'px';vl.setAttribute('x1',M.pad+i/(M.p.length-1)*(M.W-2*M.pad));vl.setAttribute('x2',vl.getAttribute('x1'));vl.setAttribute('opacity',1)};
+        tip.style.display='block';tip.innerHTML=`<b>₹${n2(pt[1])}</b> · ${M.intra?new Date(pt[0]*1000).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}):new Date((M.d0+pt[0])*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;const px=(M.pad+i/(M.p.length-1)*(M.W-2*M.pad))/M.W*r.width;tip.style.left=Math.max(0,Math.min(r.width-tip.offsetWidth,px-tip.offsetWidth/2))+'px';vl.setAttribute('x1',M.pad+i/(M.p.length-1)*(M.W-2*M.pad));vl.setAttribute('x2',vl.getAttribute('x1'));vl.setAttribute('opacity',1)};
       svg.addEventListener('pointermove',mv);svg.addEventListener('touchmove',mv,{passive:true});svg.addEventListener('pointerleave',()=>{tip.style.display='none';vl.setAttribute('opacity',0)})};
     draw()})}
 let sxT;new MutationObserver(()=>{clearTimeout(sxT);sxT=setTimeout(fillExtras,30)}).observe(document.body,{childList:true,subtree:true});

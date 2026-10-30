@@ -7,7 +7,7 @@ on:
     - cron: "50 10 * * 1-5"   # 4:20 PM IST on weekdays
   push:
     branches: [main]
-    paths: [".github/workflows/history.yml", "scripts/history.py"]
+    paths: [".github/workflows/history.yml", "scripts/history.py", "scripts/logos.py"]
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,7 @@ concurrency:
 jobs:
   history:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - name: Previous snapshot
@@ -28,10 +28,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests
+      - run: pip install requests pillow
       - run: python scripts/history.py
       - name: Publish to the hist branch
         run: |
           cd hist && rm -rf .git && git init -q -b hist && git add -A
           git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "History $(TZ=Asia/Kolkata date '+%d %b %Y')"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hist
+      - name: Company logos
+        run: |
+          git clone -q --depth 1 --branch logos "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" logos_out || mkdir -p logos_out
+          python scripts/logos.py || true
+          cd logos_out && rm -rf .git && git init -q -b logos && git add -A
+          git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "Logos $(TZ=Asia/Kolkata date '+%d %b %Y')"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" logos

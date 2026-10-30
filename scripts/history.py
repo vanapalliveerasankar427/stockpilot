@@ -27,7 +27,8 @@ NOW = dt.datetime.now(IST)
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
 S = requests.Session()
 S.headers.update(UA)
-BATCH = int(os.environ.get("FUND_BATCH", "2000"))
+BATCH = int(os.environ.get("FUND_BATCH", "6000"))
+BSEH = {}
 stats = {"chart_ok": 0, "chart_fail": 0, "fund_ok": 0, "fund_fail": 0, "prof_ok": 0}
 
 
@@ -59,6 +60,63 @@ def chart(ysym):
         return None
     d0 = pts[0][0] // 86400
     return {"d0": d0, "d": [t // 86400 - d0 for t, _ in pts], "c": [round(c, 2) for _, c in pts]}
+
+
+def intraday(ysym):
+    j = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{requests.utils.quote(ysym)}", params={"range": "5d", "interval": "15m"}).json()
+    r = j["chart"]["result"][0]
+    ts, cl = r.get("timestamp") or [], r["indicators"]["quote"][0].get("close") or []
+    pts = [(t, c) for t, c in zip(ts, cl) if c]
+    if len(pts) < 5:
+        return None
+    t0 = pts[0][0]
+    return {"t0": t0, "t": [(t - t0) // 60 for t, _ in pts], "c": [round(c, 2) for _, c in pts]}
+
+
+# BSE-only scrips: Yahoo has little history for them, so build it from BSE's own daily price files
+def bse_closes(keys):
+    path = os.path.join(OUT, "bse_closes.json")
+    try:
+        store = json.load(open(path))
+    except Exception:
+        store = {}
+    codes = {k[1:] for k in keys}
+    day = NOW.date()
+    fetched = 0
+    for back in range(0, 380):
+        d = day - dt.timedelta(days=back)
+        if d.weekday() >= 5 or d.isoformat() in store:
+            continue
+        if back == 0 and NOW.hour < 19:
+            continue  # today's file appears in the evening
+        url = f"https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_{d:%Y%m%d}_F_0000.CSV"
+        try:
+            r = S.get(url, timeout=25, headers={"Referer": "https://www.bseindia.com/"})
+            if r.status_code != 200 or "FinInstrmId" not in r.text[:400]:
+                store[d.isoformat()] = {}  # holiday / not published
+                continue
+            lines = [l.split(",") for l in r.text.strip().splitlines()]
+            h = lines[0]
+            ci, cc = h.index("FinInstrmId"), h.index("ClsPric")
+            store[d.isoformat()] = {x[ci]: float(x[cc]) for x in lines[1:] if len(x) > cc and x[ci] in codes and x[cc]}
+            fetched += 1
+        except Exception:
+            continue
+    keep = sorted(store)[-300:]
+    store = {k: store[k] for k in keep}
+    json.dump(store, open(path, "w"), separators=(",", ":"))
+    print("bse files fetched:", fetched, "days stored:", len(store))
+    series = {}
+    for d in sorted(store):
+        di = dt.date.fromisoformat(d).toordinal() - dt.date(1970, 1, 1).toordinal()
+        for code, c in store[d].items():
+            series.setdefault("B" + code, []).append((di, c))
+    out = {}
+    for k, pts in series.items():
+        if len(pts) >= 5:
+            d0 = pts[0][0]
+            out[k] = {"d0": d0, "d": [x - d0 for x, _ in pts], "c": [round(c, 2) for _, c in pts], "src": "BSE"}
+    return out
 
 
 FUND_TYPES = ["quarterlyTotalRevenue", "quarterlyNetIncome", "quarterlyBasicEPS", "annualTotalRevenue", "annualNetIncome", "annualBasicEPS"]
@@ -105,6 +163,8 @@ def main():
         except Exception:
             return {}
 
+    global BSEH
+    BSEH = bse_closes([r[0] for r in uni if r[2] == "BSE"])
     # rolling batch for fundamentals/profile: never-done first, then oldest
     try:  # biggest companies first among those never done
         qq = get(RAW + "data/quotes.json").json()
@@ -131,6 +191,15 @@ def main():
                 stats["chart_fail"] += 1
         except Exception:
             stats["chart_fail"] += 1
+        if "p" not in rec and key in BSEH:
+            rec["p"] = BSEH[key]
+            stats["bse_hist"] = stats.get("bse_hist", 0) + 1
+        try:
+            it = intraday(ysym)
+            if it:
+                rec["i"] = it
+        except Exception:
+            pass
         if key in due:
             try:
                 f = fundamentals(ysym)
