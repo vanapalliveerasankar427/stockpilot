@@ -27,7 +27,7 @@ NOW = dt.datetime.now(IST)
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
 S = requests.Session()
 S.headers.update(UA)
-BATCH = int(os.environ.get("FUND_BATCH", "800"))
+BATCH = int(os.environ.get("FUND_BATCH", "2000"))
 stats = {"chart_ok": 0, "chart_fail": 0, "fund_ok": 0, "fund_fail": 0, "prof_ok": 0}
 
 
@@ -106,7 +106,12 @@ def main():
             return {}
 
     # rolling batch for fundamentals/profile: never-done first, then oldest
-    order = sorted(uni, key=lambda r: fund_day.get(r[0], "0000"))
+    try:  # biggest companies first among those never done
+        qq = get(RAW + "data/quotes.json").json()
+        mcap = {k: (v[9] or 0) for k, v in qq["q"].items()}
+    except Exception:
+        mcap = {}
+    order = sorted(uni, key=lambda r: (fund_day.get(r[0], "0000"), -mcap.get(r[0], 0)))
     due = {r[0] for r in order[:BATCH]}
     try:
         cr = crumb()
