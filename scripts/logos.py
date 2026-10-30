@@ -102,6 +102,24 @@ def logo_for(key, domain):
         return None
 
 
+ALT = {  # extra domains to try for big names whose main site blocks icon fetches
+    "RELIANCE": ["relianceindustries.com", "jio.com", "ril.com"],
+    "HDFCBANK": ["hdfcbank.com", "hdfc.bank.in"],
+    "SBIN": ["sbi.co.in", "onlinesbi.sbi", "sbi.bank.in"],
+    "ITC": ["itcportal.com", "itcstore.in"],
+    "ICICIBANK": ["icicibank.com"], "AXISBANK": ["axisbank.com"], "KOTAKBANK": ["kotak.com"],
+    "BAJFINANCE": ["bajajfinserv.in"], "LT": ["larsentoubro.com"], "BHARTIARTL": ["airtel.in"],
+    "HINDUNILVR": ["hul.co.in"], "MARUTI": ["marutisuzuki.com"], "TATAMOTORS": ["tatamotors.com"],
+    "ONGC": ["ongcindia.com"], "NTPC": ["ntpc.co.in"], "POWERGRID": ["powergrid.in"],
+    "SUNPHARMA": ["sunpharma.com"], "ASIANPAINT": ["asianpaints.com"], "WIPRO": ["wipro.com"],
+    "HCLTECH": ["hcltech.com"], "ADANIENT": ["adanienterprises.com", "adani.com"],
+    "TITAN": ["titancompany.in"], "ULTRACEMCO": ["ultratechcement.com"], "COALINDIA": ["coalindia.in"],
+    "BAJAJFINSV": ["bajajfinserv.in"], "NESTLEIND": ["nestle.in"], "TATASTEEL": ["tatasteel.com"],
+    "JSWSTEEL": ["jsw.in"], "INDUSINDBK": ["indusind.com"], "BANKBARODA": ["bankofbaroda.in"],
+    "PNB": ["pnbindia.in"], "CANBK": ["canarabank.com"], "IRCTC": ["irctc.com"], "LICI": ["licindia.in"],
+}
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     prof = json.load(open(os.path.join(ROOT, "hist", "profiles.json")))
@@ -111,11 +129,17 @@ def main():
     except Exception:
         idx = {"have": [], "tried": {}}
     have, tried = set(idx.get("have", [])), dict(idx.get("tried", {}) if idx.get("v") == 2 else {})
+    for k, alts in ALT.items():
+        if k not in have:
+            domains[k] = "|".join(alts + [domains.get(k, "")]).strip("|")
+            tried.pop(k, None)
     todo = [(k, d) for k, d in domains.items() if k not in have and tried.get(k) != d][:LIMIT]
 
     def work(kd):
         k, d = kd
-        png = logo_for(k, d)
+        png = None
+        for dd in d.split("|"):
+            png = png or (logo_for(k, dd) if dd else None)
         tried[k] = d
         if png:
             with open(os.path.join(OUT, k.replace("/", "_") + ".png"), "wb") as f:
