@@ -31,13 +31,13 @@
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sheet:#12141B;
-  --bg:#06070A; --glass:rgba(255,255,255,.045); --glass2:#111318; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
+  --bg:#0A0A0A; --glass:rgba(255,255,255,.04); --glass2:#121212; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
   --ink:#F4F4F2; --muted:#8E9096; --acc:#5EEAD4; --accink:#04201C; --btn:#F4F4F2; --btnink:#06070A;
   --up:#34D399; --dn:#FB7185; --upbg:rgba(52,211,153,.12); --dnbg:rgba(251,113,133,.12); --info:#8AA4FF; --infobg:rgba(138,164,255,.12); --warn:#FBBF24; --warnbg:rgba(251,191,36,.12);
   --chart:#5EEAD4; --navbg:rgba(14,15,19,.72); --shadow:0 1px 0 rgba(255,255,255,.05) inset;
   --b1:rgba(20,184,166,.42); --b2:rgba(245,158,11,.20); --b3:rgba(236,72,153,.14); --b4:rgba(56,189,248,.10); --overlay:rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{--sheet:#12141B;
-  --bg:#06070A; --glass:rgba(255,255,255,.045); --glass2:#111318; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
+  --bg:#0A0A0A; --glass:rgba(255,255,255,.04); --glass2:#121212; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
   --ink:#F4F4F2; --muted:#8E9096; --acc:#5EEAD4; --accink:#04201C; --btn:#F4F4F2; --btnink:#06070A;
   --up:#34D399; --dn:#FB7185; --upbg:rgba(52,211,153,.12); --dnbg:rgba(251,113,133,.12); --info:#8AA4FF; --infobg:rgba(138,164,255,.12); --warn:#FBBF24; --warnbg:rgba(251,191,36,.12);
   --chart:#5EEAD4; --navbg:rgba(14,15,19,.72); --shadow:0 1px 0 rgba(255,255,255,.05) inset;
@@ -56,7 +56,7 @@ button,input,select{font:inherit;color:inherit}
 h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.025em;margin:0;text-wrap:balance}
 .aurora{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.9}
-.shell{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:18px 24px 60px}
+.shell{position:relative;z-index:1;max-width:none;width:100%;margin:0;padding:18px clamp(16px,2.6vw,44px) 60px}
 @media(max-width:700px){.shell{padding:12px 14px 96px}}
 
 /* nav */
@@ -132,6 +132,7 @@ nav.top{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:
 
 /* markets bento */
 .bento{display:grid;grid-template-columns:1.55fr 1fr 1fr;gap:16px}
+@media(min-width:1600px){.bento{grid-template-columns:1.7fr 1fr 1fr 1fr}.bento .hero{grid-row:span 2}.bento>:last-child{grid-column:span 3}.minis{grid-template-columns:repeat(6,1fr)}.ptitle{max-width:1200px}}
 .bento .hero{grid-row:span 2;padding:22px 24px 18px}
 @media(max-width:1000px){.bento{grid-template-columns:1fr 1fr}.bento .hero{grid-column:1/-1;grid-row:auto}}
 @media(max-width:560px){.bento{grid-template-columns:1fr}}
@@ -574,6 +575,19 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 .inst ol{margin:0;padding-left:20px;font-size:14px;display:grid;gap:6px}
 .inst .ios-share{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--soft);vertical-align:middle}
 @media(min-width:701px){.inst{bottom:24px;right:24px;left:auto;width:380px}}
+.brief{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px;align-items:center;margin-bottom:16px;padding:20px 22px;position:relative;overflow:hidden}
+.brief::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 140% at 0% 0%,color-mix(in srgb,var(--up) 10%,transparent),transparent 55%);pointer-events:none}
+.brief .bh{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.brief .bh .lbl{margin:0}.brief .live{font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--upbg);color:var(--up)}
+.brief .live.off{background:var(--soft);color:var(--muted)}
+.brief ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+.brief li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:15px;line-height:1.45}
+.brief li i{font-style:normal;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:12px;background:var(--soft)}
+.brief b.u{color:var(--up)}.brief b.d{color:var(--dn)}
+.meter{text-align:center;position:relative}
+.meter .v{font:700 34px/1 var(--display);margin-top:-46px}
+.meter .l{font-weight:700;font-size:14px;margin-top:4px}.meter small{display:block;color:var(--muted);font-size:11.5px;margin-top:4px}
+@media(max-width:800px){.brief{grid-template-columns:1fr;padding:16px}.meter{max-width:190px;margin:0 auto}.meter .v{font-size:28px;margin-top:-38px}.brief li{font-size:14px}}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </style>
@@ -604,6 +618,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="mk-eb">Market close · Thursday, 29 Oct 2026 · next session Friday 30 Oct</span></div>
     <h1 class="ptitle" id="mk-title">Markets bounce back. Nifty <em>+1.05%</em> as banks and FMCG lead.</h1></div>
     <div class="tabs" id="jump"><button type="button" aria-pressed="true" data-j="m-top">Overview</button><button type="button" aria-pressed="false" data-j="m-sec">Sectors</button><button type="button" aria-pressed="false" data-j="m-mov">Movers</button><button type="button" aria-pressed="false" data-j="metals">Gold &amp; silver</button><button type="button" aria-pressed="false" data-j="m-news">News</button></div></div>
+  <div class="glass card brief" id="brief"></div>
   <div class="bento" id="m-top">
     <div class="glass hero">
       <div class="row"><span class="lbl">Nifty 50 · last 8 sessions</span><span class="chg u num" id="nchg"></span></div>
@@ -1734,6 +1749,30 @@ function showInstall(kind){if(isStandalone()||instSnoozed()||document.getElement
 addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;setTimeout(()=>showInstall('android'),2500)});
 addEventListener('appinstalled',()=>{const el=document.getElementById('inst');if(el)el.remove();snoozeInst(3650)});
 if(isIOS&&!isStandalone())setTimeout(()=>showInstall('ios'),3000);
+
+// ===================== Today's brief + mood meter (built from the live figures) =====================
+function moodScore(){const N=IDX.NIFTY,b=BREADTH.n?BREADTH.up/BREADTH.n:.5,v=IDX.VIX.pct||0,mid=IDX.MIDCAP.pct||0,sm=IDX.SMALLCAP.pct||0;
+  return Math.max(0,Math.min(100,Math.round(50+N.pct*12+(b-.5)*60+(mid+sm)*3-v*1.2)))}
+function moodLabel(x){return x<25?['Fearful','var(--dn)']:x<42?['Cautious','#F97316']:x<58?['Neutral','var(--warn)']:x<75?['Positive','#22C55E']:['Greedy','var(--up)']}
+function gauge(x){const a=Math.PI*(1-x/100),cx=120,cy=110,r=92,px=cx+r*Math.cos(a),py=cy-r*Math.sin(a);
+  return `<svg viewBox="0 0 240 130" width="100%" style="max-width:240px" aria-hidden="true"><defs><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stop-color="#E5484D"/><stop offset=".3" stop-color="#F97316"/><stop offset=".5" stop-color="#F59E0B"/><stop offset=".72" stop-color="#22C55E"/><stop offset="1" stop-color="#00A37A"/></linearGradient></defs>
+   <path d="M28 110A92 92 0 0 1 212 110" fill="none" stroke="var(--soft)" stroke-width="16" stroke-linecap="round"/><path d="M28 110A92 92 0 0 1 212 110" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="${x} 100" class="draw"/>
+   <circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="9" fill="var(--glass2)" stroke="var(--ink)" stroke-width="3"/></svg>`}
+function renderBrief(){const el=document.getElementById('brief');if(!el)return;const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,f=p=>`<b class="${p>=0?'u':'d'}">${p>=0?'+':''}${p.toFixed(2)}%</b>`;
+  const sec=[...SECTORS].sort((a,b)=>b[1]-a[1]),top=sec[0],bot=sec.at(-1),open=LIVED&&LIVED.state==='open';
+  const ipo=IPOS.filter(i=>i.st==='open'&&i.gmp).sort((a,b)=>gmpPct(b)-gmpPct(a))[0],nOpen=IPOS.filter(i=>i.st==='open').length,M=METALS.ibja,X=(METALS.mcx||{}).silver;
+  const items=[
+    ['📈',`Nifty ${N.pct>=0?'is up':'is down'} ${f(N.pct)} at <b>${fin(N.v)}</b>; Sensex ${f(S.pct)}, Bank Nifty ${f(B.pct)}.`],
+    top&&bot?['🧭',`<b>${esc(top[0])}</b> leads ${f(top[1])} while <b>${esc(bot[0])}</b> lags ${f(bot[1])}. ${BREADTH.up} of ${BREADTH.n} ${esc(BREADTH.label)} are higher.`]:null,
+    ['🔎',`Midcaps ${f(IDX.MIDCAP.pct)} and smallcaps ${f(IDX.SMALLCAP.pct)} ${(IDX.MIDCAP.pct+IDX.SMALLCAP.pct)/2<N.pct?'trail':'beat'} the Nifty. India VIX ${IDX.VIX.pct>=0?'rises':'eases'} to <b>${IDX.VIX.v.toFixed(2)}</b>.`],
+    M?['🪙',`Gold 24K (IBJA) <b>₹${Math.round(M.g999_10||M.g999*10).toLocaleString('en-IN')}</b>/10 g, silver <b>₹${Math.round(M.ag*1000).toLocaleString('en-IN')}</b>/kg${X?`; MCX silver ${f(X.pct)}`:''}.`]:null,
+    ['🚀',`${nOpen} IPO${nOpen===1?'':'s'} open${ipo?`; strongest GMP: <b>${esc(ipo.name.replace(/ Ltd$/,''))}</b> ${f(gmpPct(ipo))}`:''}. <a class="link" href="#ipo-gmp">See signals →</a>`]
+  ].filter(Boolean);
+  const sc=moodScore(),[ml,mc]=moodLabel(sc);
+  el.innerHTML=`<div><div class="bh"><span class="lbl">Today's brief</span><span class="live ${open?'':'off'}">${open?'● LIVE':'MARKET CLOSED'}</span><span class="muted" style="font-size:12.5px">${LIVED?'updated '+esc(LIVED.label):''}</span></div>
+     <ul>${items.map(([i,t])=>`<li><i>${i}</i><span>${t}</span></li>`).join('')}</ul></div>
+   <div class="meter">${gauge(sc)}<div class="v num">${sc}</div><div class="l" style="color:${mc}">${ml}</div><small>StockPilot mood · breadth, Nifty, mid/small caps and VIX</small></div>`}
+const _rm2=renderMarkets;renderMarkets=function(){_rm2();renderBrief()};
 
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
