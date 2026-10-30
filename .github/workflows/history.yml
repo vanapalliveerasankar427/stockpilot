@@ -7,7 +7,7 @@ on:
     - cron: "50 10 * * 1-5"   # 4:20 PM IST on weekdays
   push:
     branches: [main]
-    paths: [".github/workflows/history.yml", "scripts/history.py", "scripts/logos.py"]
+    paths: [".github/workflows/history.yml", "scripts/history.py"]
   workflow_dispatch:
 
 permissions:

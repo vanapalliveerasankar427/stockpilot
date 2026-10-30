@@ -83,25 +83,26 @@ def bse_closes(keys):
     codes = {k[1:] for k in keys}
     day = NOW.date()
     fetched = 0
-    for back in range(0, 380):
-        d = day - dt.timedelta(days=back)
-        if d.weekday() >= 5 or d.isoformat() in store:
-            continue
-        if back == 0 and NOW.hour < 19:
-            continue  # today's file appears in the evening
+    days = [day - dt.timedelta(days=b) for b in range(0, 380)]
+    days = [d for d in days if d.weekday() < 5 and d.isoformat() not in store and not (d == day and NOW.hour < 19)]
+
+    def one(d):
         url = f"https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_{d:%Y%m%d}_F_0000.CSV"
         try:
             r = S.get(url, timeout=25, headers={"Referer": "https://www.bseindia.com/"})
             if r.status_code != 200 or "FinInstrmId" not in r.text[:400]:
-                store[d.isoformat()] = {}  # holiday / not published
-                continue
+                return d, {}
             lines = [l.split(",") for l in r.text.strip().splitlines()]
             h = lines[0]
             ci, cc = h.index("FinInstrmId"), h.index("ClsPric")
-            store[d.isoformat()] = {x[ci]: float(x[cc]) for x in lines[1:] if len(x) > cc and x[ci] in codes and x[cc]}
-            fetched += 1
+            return d, {x[ci]: float(x[cc]) for x in lines[1:] if len(x) > cc and x[ci] in codes and x[cc]}
         except Exception:
-            continue
+            return d, None
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for d, v in ex.map(one, days):
+            if v is not None:
+                store[d.isoformat()] = v
+                fetched += bool(v)
     keep = sorted(store)[-300:]
     store = {k: store[k] for k in keep}
     json.dump(store, open(path, "w"), separators=(",", ":"))
@@ -228,7 +229,7 @@ def main():
             with open(os.path.join(H, key.replace("/", "_") + ".json"), "w") as fh:
                 json.dump(rec, fh, separators=(",", ":"))
 
-    with ThreadPoolExecutor(max_workers=12) as ex:
+    with ThreadPoolExecutor(max_workers=int(os.environ.get("WORKERS", "32"))) as ex:
         list(ex.map(work, uni))
     # small index for logos and sector tags across the site
     idx = {k: {"w": v.get("website", "").split("//")[-1].split("/")[0].removeprefix("www."), "s": v.get("sector", ""), "i": v.get("industry", "")}
