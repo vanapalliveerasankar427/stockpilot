@@ -617,10 +617,10 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 
 <!-- ========== STOCKS ========== -->
 <section class="view" id="v-stocks">
-  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Nifty 50 heavyweights · close 29 Oct 2026</div><h1 class="ptitle">Stocks</h1>
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="st-eb">Nifty 50 heavyweights · close 29 Oct 2026</span></div><h1 class="ptitle">Stocks</h1>
     <p class="psub">The 25 largest Nifty 50 companies by market cap, with real price, valuation and latest-quarter results. Tap any stock for its page, or star it for your watchlist.</p></div></div>
   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
-  <p class="src" style="margin-left:4px">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
+  <p class="src" style="margin-left:4px" id="st-src">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
 </section>
 <section class="view" id="v-stock"><div id="stockpage"></div></section>
 
@@ -678,7 +678,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 <!-- ========== NEWS ========== -->
 <section class="view" id="v-metals"><div id="metalspage"></div></section>
 <section class="view" id="v-news">
-  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Curated from public sources · 28–29 Oct 2026</div><h1 class="ptitle">Market news</h1><p class="psub">The day's key stories on markets, results, IPOs and the economy. Each one links to its original source.</p></div>
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="nw-eb">Curated from public sources · 28–29 Oct 2026</span></div><h1 class="ptitle">Market news</h1><p class="psub">The day's key stories on markets, results, IPOs and the economy. Each one links to its original source.</p></div>
     <div class="tabs" id="ntabs"></div></div>
   <div class="grid2" id="newsgrid"></div>
 </section>
@@ -711,7 +711,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 
 <footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.5 2.5 2.8 10.2c-.8.3-.7 1.5.1 1.7l7.3 1.9 1.9 7.3c.2.8 1.4.9 1.7.1z"/></svg></span>StockPilot</div><p style="margin-bottom:6px">Your co-pilot for Indian stocks and IPOs.</p>
   <p id="srcs"></p>
-  <p>All figures are real and taken from the public sources named on each card. Market data is the 29 Oct 2026 close; it is not live and does not update during trading. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. StockPilot does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
+  <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. StockPilot does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
 </footer>
 </div>
 
@@ -1496,7 +1496,7 @@ function renderStockPage(sym){
       <div><h1 style="font-size:clamp(28px,4vw,42px);font-weight:700">${esc(s.name)}</h1><div class="eyebrow" style="margin-top:4px">${sym==='MM'?'M&amp;M':sym} · NSE · ${esc(s.sector)} · #${rank} by market cap in this list</div></div></div></div>
       <div style="display:flex;gap:8px;align-items:center">${starBtn(sym,s.name)}<a class="ghost" href="https://www.nseindia.com/get-quotes/equity?symbol=${nseSym}" target="_blank" rel="noopener">Live quote on NSE ↗</a></div></div>
     <div class="grid2">
-      <div class="glass card"><span class="lbl">Close · 29 Oct 2026</span><div class="big num">₹${n2(s.price)}</div>${dc?`${chip(dc[0])} <span class="note" style="display:inline">day change · ${esc(dc[1])}</span>`:'<span class="note">Day change not published by our sources for this stock.</span>'}
+      <div class="glass card"><span class="lbl">${priceLbl()}</span><div class="big num">₹${n2(s.price)}</div>${dc?`${chip(dc[0])} <span class="note" style="display:inline">day change · ${esc(dc[1])}</span>`:'<span class="note">Day change not published by our sources for this stock.</span>'}
         <div class="kgrid num" style="margin-top:18px"><div><span>Market cap</span><b>${lcr(s.mcap)}</b></div><div><span>P/E</span><b>${s.pe.toFixed(2)}</b></div><div><span>Dividend yield</span><b>${s.dy.toFixed(2)}%</b></div><div><span>ROCE</span><b>${s.roce.toFixed(2)}%</b></div></div></div>
       <div class="glass card"><span class="lbl">Latest quarter vs same quarter last year</span>
         <div class="qbars num" style="margin-top:16px">
@@ -1507,7 +1507,7 @@ function renderStockPage(sym){
     </div>
     ${peer.length?`<div class="secht"><div><h2>Peers</h2><p>Other ${esc(s.sector.toLowerCase())} companies in this list</p></div></div><div class="glass card">${peer.map(p=>wlRow(p.sym)).join('')}</div>`:''}
     ${news.length?`<div class="secht"><div><h2>In the news</h2></div></div><div class="glass card">${news.map(newsItem).join('')}</div>`:''}
-    <p class="src">Price, valuation and quarterly figures: Screener.in, 29 Oct 2026 close. Not live. Check the NSE quote before trading.</p>`;
+    <p class="src">${LIVED?`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)} (refreshes every minute in market hours). P/E and market cap move with the price; quarterly figures from Screener.in.`:"Price, valuation and quarterly figures: Screener.in, 29 Oct 2026 close."}</p>`;
 }
 
 // ===================== news =====================
@@ -1616,13 +1616,18 @@ renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIF
 const REPO='vanapalliveerasankar427/stockpilot';
 const API='https://api.github.com/repos/'+REPO+'/contents/data/live.json',RAW='https://raw.githubusercontent.com/'+REPO+'/main/data/live.json';
 let apiOk=true;
+function priceLbl(){if(!LIVED)return 'Close · 29 Oct 2026';const t=new Date(LIVED.updated).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'});return LIVED.state==='open'?`● Live · updated ${t}`:`Last price · ${LIVED.label}`}
+function patchLabels(){if(!LIVED)return;const set=(id,h)=>{const e=document.getElementById(id);if(e)e.innerHTML=h};
+  set('st-eb',`Nifty 50 heavyweights · ${esc(priceLbl())}`);
+  set('st-src',`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)}; refreshes about every minute in market hours. P/E, market cap and dividend yield move with the price. Quarterly sales, profit and ROCE: Screener.in.`);
+  if(LIVED.news&&LIVED.news.length)set('nw-eb',`Latest headlines · updated ${esc(LIVED.label)}`)}
 function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus'))return false;
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
   renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();
   if(id==='metals')renderMetalsPage();if(id==='stocks')renderStocks();if(id==='stock'&&curStock)renderStockPage(curStock);if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
   if(id==='ipo-gmp')renderGMP();if(id==='ipo-sub')renderSub();if(id==='ipo-screener')renderScreener();
   const h=(location.hash||'').slice(1);if(h.startsWith('gmp-'))renderGmpPage(h.slice(4));
-  scrollTo(0,y);return true}
+  patchLabels();scrollTo(0,y);return true}
 async function pullLive(){if(document.hidden)return;try{
   let r=apiOk?await fetch(API,{headers:{Accept:'application/vnd.github.raw+json'},cache:'no-store'}):null;
   if(!r||!r.ok){apiOk=!(r&&(r.status===403||r.status===429));r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'})}
@@ -1632,7 +1637,7 @@ async function pullLive(){if(document.hidden)return;try{
 function flashLive(){document.querySelectorAll('#nbig,#sxv,#bnv,.metal b').forEach(e=>{e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick')})}
 function ago(){const el=document.getElementById('liveago');if(!el||!LIVED||!LIVED.updated)return;const s=Math.max(0,Math.round((Date.now()-new Date(LIVED.updated))/1000));
   el.textContent=s<60?s+'s ago':s<3600?Math.round(s/60)+' min ago':LIVED.label}
-setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(ago,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pullLive()});
+patchLabels();setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(ago,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pullLive()});
 
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
