@@ -4,7 +4,7 @@
 
 Financial markets and investment information for Indian and global market followers: stock market prices and trends, IPOs (upcoming, open, GMP, subscription, allotment and listing), daily gold and silver rates, market news and market insights.
 
-**Live site:** https://vanapalliveerasankar427.github.io/stockpilot/
+**Live site:** https://marketvedapro.com/
 
 ## How the data updates
 `.github/workflows/data.yml` runs `scripts/update.py` every 5 minutes during NSE hours (Mon–Fri, 9:10 AM–3:45 PM IST) and every 2 hours otherwise. Open pages read `data/live.json` straight from this repository every 2 minutes, so new figures appear without republishing. It collects:
