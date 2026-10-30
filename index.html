@@ -596,7 +596,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 
   <div class="secht" id="m-sec"><div><h2>Sectors &amp; movers</h2><p id="mk-secp">% change at the 29 Oct close</p></div></div>
   <div class="grid3">
-    <div class="glass card"><div class="row" style="margin-bottom:14px"><h4 style="font-size:16px">Sector moves</h4></div><div class="sect" id="sect"></div><p class="src">Liquide, Kotak Neo, Multibagg (BSE Utilities).</p></div>
+    <div class="glass card"><div class="row" style="margin-bottom:14px"><h4 style="font-size:16px">Sector moves</h4></div><div class="sect" id="sect"></div><p class="src" id="secsrc">Liquide, Kotak Neo, Multibagg (BSE Utilities).</p></div>
     <div class="glass card" id="m-mov"><h4 style="font-size:16px;margin-bottom:6px" id="gainh">Nifty 50 gainers</h4><div id="gain"></div></div>
     <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px" id="loseh">Nifty 50 losers</h4><div id="lose"></div><p class="src" id="lsrc">Upstox, NSE closing data.</p></div>
   </div>
@@ -1602,6 +1602,7 @@ function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id
     set('mk-title',`Nifty ${N.pct>=0?'gains':'slips'} <em>${sg(N.pct)}</em> ${LIVED.state==='open'?'in trade':'at the close'}.`);
     set('mk-secp',`% change · ${LIVED.state==='open'?'live':'last close'} · updated ${esc(when)}`);
     set('nsrc',`NSE data via Yahoo Finance · updated ${esc(when)}. Refreshes automatically.`);
+    if(LIVED.sectors)set('secsrc',`NSE sector indices, live · ${esc(LIVED.label)}`);
     if(LIVED.nse)set('lsrc',`NSE live data · ${esc(LIVED.nse.n50||'')}`);
     if(LIVED.nse)set('msrc',`NSE live data · ${esc(LIVED.nse.mid||LIVED.nse.n50||'')}`);
     set('gainh',BREADTH.label==='Nifty 50 stocks'?'Nifty 50 gainers':'Top gainers · large caps');set('loseh',BREADTH.label==='Nifty 50 stocks'?'Nifty 50 losers':'Top losers · large caps');
