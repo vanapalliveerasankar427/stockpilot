@@ -346,12 +346,16 @@ def ipo(out):
     try:
         html_ = get("https://www.ipomarket.in/subscription").text
         cards = html_.split("<article")[1:]
-        found = 0
+        found, seen = 0, set()
         for card in cards:
+            card = card.split("Last updated")[0]  # stop before any footer text
             t = re.sub(r"\s+", " ", text_of(card))
-            iid = next((k for k, key in IPOS.items() if key.lower() in t.lower()), None)
-            if not iid:
+            title = re.search(r'<a[^>]*href="/ipo/[^"]*"[^>]*>(.*?)</a>', card, re.S)
+            title = text_of(title.group(1)).strip().lower() if title else t[:120].lower()
+            iid = next((k for k, key in IPOS.items() if key.lower() in title), None)
+            if not iid or iid in seen:
                 continue
+            seen.add(iid)
             def cat(label):
                 m = re.search(label + r"(?:\s*\([^)]*\))?[^0-9—]{0,20}?([\d,.]+)\s*[x×]", t, re.I)
                 return num(m.group(1)) if m else None
@@ -362,8 +366,6 @@ def ipo(out):
             nii = cat(r"\bNII\b") if bn is None and sn is None else round(((bn or 0) * 2 + (sn or 0)) / 3, 2)
             data.setdefault(iid, {}).update(sub=tot, sq=q, snii=nii, sr=rt, ssrc="IPOMarket", sat=stamp)
             found += 1
-            if iid == "mksons":
-                log(f"sub card sample: {t[:700]!r}")
         log(f"subscription: {found} IPOs from {len(cards)} cards")
     except Exception as e:
         log(f"subscription failed: {e}")
