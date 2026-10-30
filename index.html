@@ -934,6 +934,13 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 /* Aurora Glass (chosen theme) */
 .iptSeg button[aria-pressed="true"]{background:var(--ink)!important;color:var(--bg,#fff)!important;box-shadow:0 6px 16px -6px rgba(0,0,0,.35)!important}
 .iptSeg button[aria-pressed="true"] .count{color:inherit;opacity:.7}
+
+.aw-pasth{display:flex;align-items:baseline;justify-content:space-between;margin:26px 4px 10px}
+.aw-pasth h3{font:700 20px var(--display,inherit);letter-spacing:-.02em}.aw-pasth span{font-size:12.5px;color:var(--muted);font-weight:600}
+.aw-pq{position:relative;display:flex;align-items:center}
+.aw-pq svg{position:absolute;left:14px;color:var(--muted)}
+.aw-pq input{width:100%;height:46px;border-radius:14px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg,#fff) 75%,transparent);padding:0 14px 0 42px;font:inherit;font-size:15px;color:inherit;outline:none}
+.aw-pq input:focus{border-color:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 15%,transparent)}
 </style>
 </head>
 <body>
@@ -1191,7 +1198,78 @@ const IPOS=IPOS_RAW.map(r=>{const o=P(r.open),c=P(r.close),al=P(r.allot),rf=P(r.
   const st=T0<o?'upcoming':T0<=c?'open':(ls&&T0>=ls)?'listed':'closed';
   const ml=r.minLots||1;
   return {...r,o,c,al,rf,ls,st,ml,minAmt:r.lot?r.lot*r.hi*ml:null,maxLots:r.lot?(r.type==='SME'?ml:Math.max(1,Math.floor(200000/(r.lot*r.hi)))):1,cmp:r.listClose}});
-const byId=Object.fromEntries(IPOS.map(i=>[i.id,i]));
+// recent IPOs whose allotment is over (last ~6 weeks; source: Investkraft allotment list). Registrar is found live from the registrar lists.
+const PAST_RAW=[
+ ["p-core4-engineers", "CORE4 ENGINEERS LIMITED", "SME", "2026-10-23", "2026-10-27", "2026-10-28"],
+ ["p-paras-healthcare", "Paras Healthcare Limited", "Mainboard", "2026-10-21", "2026-10-23", "2026-10-26"],
+ ["p-shellz-india", "Shellz India Limited", "SME", "2026-10-15", "2026-10-19", "2026-10-21"],
+ ["p-zetwerk-manufacturing-businesses", "Zetwerk Manufacturing Businesses Limited", "Mainboard", "2026-10-15", "2026-10-19", "2026-10-21"],
+ ["p-tonbo-imaging-india", "Tonbo Imaging India Limited", "Mainboard", "2026-10-15", "2026-10-19", "2026-10-21"],
+ ["p-sahajanand-medical-technologies", "Sahajanand Medical Technologies Limited", "Mainboard", "2026-10-15", "2026-10-19", "2026-10-21"],
+ ["p-bonfiglioli-transmissions", "Bonfiglioli Transmissions Limited", "Mainboard", "2026-10-15", "2026-10-19", "2026-10-21"],
+ ["p-fusion-cx", "Fusion CX Limited", "Mainboard", "2026-10-14", "2026-10-16", "2026-10-19"],
+ ["p-ravita-engineering-services", "Ravita Engineering Services Limited", "SME", "2026-10-14", "2026-10-16", "2026-10-19"],
+ ["p-vaibhav-vyapaar", "Vaibhav Vyapaar Limited", "SME", "2026-10-13", "2026-10-15", "2026-10-16"],
+ ["p-r-k-fashion-accessories", "R.K. Fashion Accessories Limited", "SME", "2026-10-05", "2026-10-07", "2026-10-08"],
+ ["p-acme-india-industries", "Acme India Industries Limited", "SME", "2026-09-30", "2026-10-06", "2026-10-07"],
+ ["p-tna-solutions", "TNA Solutions Limited", "SME", "2026-09-30", "2026-10-06", "2026-10-07"],
+ ["p-paramount-syntex", "Paramount Syntex Limited", "SME", "2026-09-30", "2026-10-06", "2026-10-07"],
+ ["p-sollfege-smart-electronics", "Sollfege Smart Electronics Limited", "SME", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-vishal-nirmiti", "Vishal Nirmiti Limited", "Mainboard", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-nityas-gems-and-jewellery", "Nityas Gems and Jewellery Limited", "Mainboard", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-sjp-ultrasonics", "SJP Ultrasonics Limited", "SME", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-eventions", "Eventions Limited", "SME", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-dove-soft", "Dove Soft Limited", "SME", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-omara-ventures-india", "Omara Ventures India Limited", "SME", "2026-09-30", "2026-10-05", "2026-10-06"],
+ ["p-shree-tnb-polymers", "Shree TNB Polymers Limited", "SME", "2026-09-28", "2026-10-05", "2026-10-06"],
+ ["p-everestims-technologies", "EverestIMS Technologies Limited", "SME", "2026-09-29", "2026-10-05", "2026-10-06"],
+ ["p-papadmalji-agro-foods", "Papadmalji Agro Foods Limited", "SME", "2026-09-29", "2026-10-01", "2026-10-05"],
+ ["p-black-opal-consultants", "Black Opal Consultants Limited", "SME", "2026-09-29", "2026-10-01", "2026-10-05"],
+ ["p-vans-electroengineerings", "VANS Electroengineerings Limited", "SME", "2026-09-29", "2026-10-01", "2026-10-05"],
+ ["p-green-asia-impex", "Green Asia Impex Limited", "SME", "2026-09-24", "2026-10-01", "2026-10-05"],
+ ["p-acme-universal-safezone-9", "Acme Universal Safezone 9 Limited", "SME", "2026-09-28", "2026-09-30", "2026-10-01"],
+ ["p-srit-india", "SRIT India Limited", "Mainboard", "2026-09-28", "2026-09-30", "2026-10-01"],
+ ["p-shivchem-agro", "Shivchem Agro Limited", "SME", "2026-09-28", "2026-09-30", "2026-10-01"],
+ ["p-shah-investor-s-home", "Shah Investor's Home Limited", "Mainboard", "2026-09-28", "2026-09-30", "2026-10-01"],
+ ["p-pind-hospitality", "Pind Hospitality Limited", "SME", "2026-09-28", "2026-09-30", "2026-10-01"],
+ ["p-dudani-retail", "Dudani Retail Limited", "SME", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-runwal-enterprises", "Runwal Enterprises Limited", "Mainboard", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-german-green-steel-and-power", "German Green Steel and Power Limited", "Mainboard", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-orient-cables-india", "Orient Cables (India) Limited", "Mainboard", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-himalayan-solar", "Himalayan Solar Limited", "SME", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-bench-mark-infotech-services", "Bench Mark Infotech Services Limited", "SME", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-sai-urja-indo-ventures", "Sai Urja Indo Ventures Limited", "SME", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-acevector-snapdeal", "AceVector (Snapdeal)", "Mainboard", "2026-09-25", "2026-09-29", "2026-09-30"],
+ ["p-roopa-screen", "Roopa Screen Limited", "SME", "2026-09-24", "2026-09-28", "2026-09-29"],
+ ["p-peshwa-wheat", "Peshwa Wheat Limited", "SME", "2026-09-24", "2026-09-28", "2026-09-29"],
+ ["p-a-one-steels-india", "A-One Steels India Limited", "Mainboard", "2026-09-24", "2026-09-28", "2026-09-29"],
+ ["p-moneyview", "Moneyview Limited", "Mainboard", "2026-09-24", "2026-09-28", "2026-09-29"],
+ ["p-pooja-logistics", "Pooja Logistics Limited", "SME", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-coreintegra-consulting-services", "Coreintegra Consulting Services Limited", "SME", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-adroit-industries-india", "ADROIT INDUSTRIES (INDIA) LIMITED", "Mainboard", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-elevate-campuses", "Elevate Campuses Limited", "Mainboard", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-swastika-infra", "Swastika Infra Limited", "Mainboard", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-liqvd-digital-india", "Liqvd Digital India Limited", "SME", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-unitec-fibres", "Unitec Fibres Limited", "SME", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-s-k-offset", "S. K. Offset Limited", "SME", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-armee-infotech", "ArMee Infotech Limited", "Mainboard", "2026-09-23", "2026-09-25", "2026-09-28"],
+ ["p-anand-seamless", "Anand Seamless Limited", "SME", "2026-09-22", "2026-09-24", "2026-09-25"],
+ ["p-varmora-granito", "Varmora Granito Limited", "Mainboard", "2026-09-22", "2026-09-24", "2026-09-25"],
+ ["p-himalaya-nutravedics-india", "Himalaya Nutravedics India Limited", "SME", "2026-09-22", "2026-09-24", "2026-09-25"],
+ ["p-vivekanand-cotspin", "Vivekanand Cotspin Limited", "SME", "2026-09-21", "2026-09-23", "2026-09-24"],
+ ["p-fx-multitech", "FX Multitech Limited", "SME", "2026-09-21", "2026-09-23", "2026-09-24"],
+ ["p-robokidz-eduventures", "Robokidz Eduventures Limited", "SME", "2026-09-21", "2026-09-23", "2026-09-24"],
+ ["p-axiom-gas-engineering", "Axiom Gas Engineering Limited", "SME", "2026-09-18", "2026-09-22", "2026-09-23"],
+ ["p-spectraa-technology-solutions", "SpectraA Technology Solutions Limited", "SME", "2026-09-17", "2026-09-21", "2026-09-22"],
+ ["p-kheria-autocomp", "Kheria Autocomp Limited", "SME", "2026-09-17", "2026-09-21", "2026-09-22"],
+ ["p-sonaselection-india", "Sonaselection India Limited", "Mainboard", "2026-09-17", "2026-09-21", "2026-09-22"],
+ ["p-national-stock-exchange-of-india", "National Stock Exchange of India Limited", "Mainboard", "2026-09-17", "2026-09-21", "2026-09-22"],
+ ["p-ss-retail", "SS Retail Limited", "Mainboard", "2026-09-16", "2026-09-18", "2026-09-21"],
+ ["p-jindal-supreme-india", "Jindal Supreme (India) Limited", "Mainboard", "2026-09-16", "2026-09-18", "2026-09-21"],
+ ["p-hero-motors", "Hero Motors Limited", "Mainboard", "2026-09-16", "2026-09-18", "2026-09-21"]];
+const PCOL=['#475569','#334f9e','#9d2a6e','#5a3fc0','#0f766e','#b4561a','#2563eb','#7c3aed','#be123c','#15803d'];
+const PAST=PAST_RAW.map(([id,name,type,o,c,a],k)=>({id,name,type,o:P(o),c:P(c),al:P(a),ls:null,st:'listed',past:true,reg:'',exch:type==='SME'?'SME':'BSE, NSE',lo:0,hi:0,lot:0,ml:1,color:PCOL[k%PCOL.length]})).filter(p=>{const n=t=>String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g,'').replace(/[^a-z0-9]/g,'');return !IPOS.some(i=>n(i.name)===n(p.name))});
+const byId=Object.fromEntries([...IPOS,...PAST].map(i=>[i.id,i]));
 
 function statusPill(i){
   if(i.st==='open'){const d=days(i.c);return `<span class="pill ok">● Open · ${d===0?'closes today':d===1?'closes tomorrow':'closes '+d2(i.c)}</span>`}
@@ -1435,7 +1513,7 @@ function setIPT(t){IPT=t;ipoType=mType=gType=scrType=t;try{localStorage.setItem(
   renderPulse();renderIpos();renderHomeIpo();
   ({'ipo-gmp':renderGMP,'ipo-sub':renderSub,'ipo-screener':renderScreener,'ipo-allot':renderAllot,'ipo-planner':renderPlanner}[id]||(()=>{}))()}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-ipt]');if(b){e.preventDefault();setIPT(b.dataset.ipt)}});
-function subnav(cur){return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>${cur==='learn'?'':`<div class="gfil" style="margin:12px 0 0">${iptSeg()}<span class="note" style="font-size:12.5px">Showing ${IPT==='All'?'all IPOs':IPT+' IPOs only'}</span></div>`}`}
+function subnav(cur){if(cur==='ipo-allot')return `<div class="gfil" style="margin:4px 0 0">${iptSeg()}</div>`;return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>${cur==='learn'?'':`<div class="gfil" style="margin:12px 0 0">${iptSeg()}<span class="note" style="font-size:12.5px">Showing ${IPT==='All'?'all IPOs':IPT+' IPOs only'}</span></div>`}`}
 
 // ===================== GMP board =====================
 let gType='All',gSt='live',gV='all';
@@ -1504,6 +1582,19 @@ function renderScreener(){
 
 // ===================== Allotment desk =====================
 let allotSel=null;
+let pastQ='';
+function pastHTML(){const L=PAST.filter(tOK).filter(p=>!pastQ||p.name.toLowerCase().includes(pastQ.toLowerCase())).sort((a,b)=>b.al-a.al);
+  const nm=i=>esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''));let last='';
+  return `<div class="aw-pasth"><h3>Past allotments</h3><span>Last 6 weeks · ${PAST.filter(tOK).length}</span></div>
+   <div class="aw-pq"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="pastq" type="search" placeholder="Search past IPOs" value="${esc(pastQ)}" autocomplete="off" aria-label="Search past IPOs"></div>
+   <div class="mrows wzl" id="pastl">${L.map((i,k)=>{const mo=i.al.toLocaleDateString('en-IN',{month:'long',year:'numeric'}),hd=mo!==last?(last=mo,`<div class="np-sec" style="padding:12px 4px 4px">${mo}</div>`):'';
+     const st=FAM.st[i.id]||{},al=FAM.members.filter(m=>st[m]==='al').length,any=FAM.members.some(m=>st[m]==='al'||st[m]==='na');
+     return hd+`<a class="wz" href="#allot-${i.id}" style="text-decoration:none;color:inherit;animation-delay:${Math.min(k,12)*25}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}</div>
+      <div class="wz-n"><b>${nm(i)}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span><span>Allotted ${d2(i.al)}</span></div></div>
+      <div class="wz-r">${any?`<b class="up">${al} allotted</b><small>in family</small>`:`<b style="color:var(--up)">Check ›</b><small>Result</small>`}</div></a>`}).join('')||'<p class="aw-msg" style="padding:18px 8px">No past IPOs match.</p>'}</div>`}
+async function findReg(i){if(i.reg||i.regTried||!ALLOT_API)return;i.regTried=1;const want=normName(i.name);
+  for(const [rk,nm] of [['kfin','KFintech'],['mufg','MUFG Intime'],['maashitla','Maashitla Securities']]){try{const cl=(await (await fetch(ALLOT_API+'/companies?reg='+rk)).json()).companies||[];
+    if(cl.some(x=>{const n=normName(x.name);return n&&(n.includes(want)||want.includes(n))})){i.reg=nm;return true}}catch{}}return false}
 function renderAllot(){
   const L=IPOS.filter(i=>i.al&&T0>=i.al&&(i.st==='closed'||i.st==='listed')&&tOK(i)).sort((a,b)=>b.al-a.al);
   const nx=IPOS.filter(i=>i.al&&T0<i.al&&(i.st==='closed'||i.st==='open')&&tOK(i)).sort((a,b)=>a.al-b.al);
@@ -1518,8 +1609,10 @@ function renderAllot(){
      return `<a class="wz" href="#allot-${i.id}" style="text-decoration:none;color:inherit;animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
        <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}</div></div>
        <div class="wz-r">${right}</div></a>`}).join('')||'<p class="aw-msg" style="padding:22px 8px">No IPOs waiting for allotment right now.</p>'}</div>
+   ${pastHTML()}
    ${nx.length?`<p class="aw-note" style="margin-top:16px">Coming up: ${nx.slice(0,4).map(i=>`<b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b> on ${d2(i.al)}`).join(' · ')}. They appear here on allotment day.</p>`:''}
    <p class="aw-note">Tap an IPO to see everyone's result. <a class="link" href="#applications">My applications →</a></p>`;
+  const pq=document.getElementById('pastq');if(pq)pq.oninput=()=>{pastQ=pq.value;const pos=pq.selectionStart;renderAllot();const q2=document.getElementById('pastq');q2.focus();try{q2.setSelectionRange(pos,pos)}catch{}};
 }
 
 
@@ -1881,6 +1974,7 @@ function renderPans(){const el=document.getElementById('panspage'),M=FAM.members
 }
 function renderAllotPage(id){const i=byId[id],el=document.getElementById('allotpage');if(!i){el.innerHTML='<p class="note">IPO not found.</p>';return}
   if(ALLOT_API&&REGKEY(i.reg)&&T0>=i.al&&!allotAuto[id]&&FAM.members.some(m=>PANS[m])){allotAuto[id]=1;setTimeout(()=>autoCheck(id),0)}
+  if(i.past&&!i.reg&&!i.regTried){el.innerHTML=`<div class="aw"><div class="aw-top"><a class="aw-ib" href="#ipo-allot" aria-label="Back">${AWI.back}</a><h1>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</h1></div><div class="aw-list" style="padding:26px 16px;text-align:center"><div class="skel" style="height:14px;width:60%;margin:0 auto 10px"></div><p class="aw-msg">Finding the registrar for this IPO…</p></div></div>`;findReg(i).then(()=>{if(location.hash==='#allot-'+id){delete allotAuto[id];renderAllotPage(id)}});return}
   renderAllotWiz(i,el);return;
   const st=FAM.st[id]||{},M=FAM.members,al=M.filter(m=>st[m]==='al').length,na=M.filter(m=>st[m]==='na').length,p=profitPerApp(i);
   const reg=i.reg&&REGLINK[i.reg]?REGLINK[i.reg]:'https://www.bseindia.com/investors/appli_check.aspx',regName=i.reg&&REGLINK[i.reg]?i.reg:'BSE';
