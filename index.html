@@ -815,6 +815,24 @@ input.good[data-v="pan"]{border-color:color-mix(in srgb,var(--up) 60%,var(--line
 .np-foot button{flex:1;border:0;background:none;color:var(--muted);font-weight:600;font-size:13.5px;padding:8px;border-radius:12px;cursor:pointer}
 .np-foot button:hover{background:color-mix(in srgb,var(--muted) 8%,transparent);color:var(--ink,inherit)}
 .plgrid{grid-template-columns:1fr 1.4fr}@media(max-width:900px){.plgrid{grid-template-columns:1fr!important}}
+
+.ask{position:fixed;inset:0;z-index:90;display:grid;place-items:end center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom));background:rgba(10,12,20,.32);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:askBg .25s both}
+@media(min-width:701px){.ask{place-items:center}}
+@keyframes askBg{from{opacity:0}}
+.ask-c{width:min(420px,100%);border-radius:30px;background:var(--bg,#fff);box-shadow:0 30px 80px -20px rgba(15,20,40,.45);overflow:hidden;animation:askIn .45s cubic-bezier(.2,.9,.3,1.15) both;text-align:center}
+@keyframes askIn{from{opacity:0;transform:translateY(40px) scale(.96)}}
+.ask-top{position:relative;padding:30px 24px 22px;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#3b82f6 0%,#6d4bff 55%,#a23bff 100%)}
+.ask-bell{width:76px;height:76px;margin:0 auto 14px;border-radius:24px;display:grid;place-items:center;background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);animation:ring 2.4s ease-in-out .5s infinite}
+.ask-bell svg{width:38px;height:38px}
+@keyframes ring{0%,100%{transform:rotate(0)}5%{transform:rotate(14deg)}10%{transform:rotate(-12deg)}15%{transform:rotate(8deg)}20%{transform:rotate(-4deg)}25%{transform:rotate(0)}}
+.ask-top h3{font:700 23px/1.15 var(--display,inherit);letter-spacing:-.02em}
+.ask-top p{font-size:14px;opacity:.88;margin-top:6px;line-height:1.45}
+.ask-l{display:grid;gap:10px;padding:18px 22px 6px;text-align:left}
+.ask-l div{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:500}
+.ask-l .np-ic{width:34px;height:34px;border-radius:11px;flex:none}.ask-l .np-ic svg{width:17px;height:17px}
+.ask-b{display:grid;gap:8px;padding:16px 22px 22px}
+.ask-b .btn{height:52px;border-radius:999px;font-size:16px;font-weight:700;justify-content:center}
+.ask-b .later{border:0;background:none;color:var(--muted);font-weight:600;font-size:14.5px;padding:10px;cursor:pointer;border-radius:12px}
 </style>
 </head>
 <body>
@@ -2271,6 +2289,27 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElement
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)notifRun()});
 setTimeout(notifRun,1500);setInterval(notifRun,60000);
 setTimeout(()=>{try{if(NS.on&&'Notification' in window&&Notification.permission==='granted'&&Date.now()-(NS.pt||0)>864e5){NS.pt=Date.now();pushSub(false)}}catch{}},4000);
+// ask to turn on alerts: right after install, or when the installed app is opened
+function askAlerts(force){try{
+  if(!('Notification' in window)||Notification.permission!=='default'||NS.on)return;
+  if(document.getElementById('askA')||document.getElementById('inst'))return;
+  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+  if(!force&&!standalone)return;
+  if(!force&&NS.askAt&&Date.now()-NS.askAt<3*864e5)return; if((NS.askN||0)>=4)return;
+  NS.askAt=Date.now();NS.askN=(NS.askN||0)+1;saveNS();
+  const d=document.createElement('div');d.className='ask';d.id='askA';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-labelledby','askT');
+  d.innerHTML=`<div class="ask-c"><div class="ask-top"><div class="ask-bell">${NI.bell}</div><h3 id="askT">Turn on IPO alerts?</h3><p>We'll tell you the moment something needs your attention, even when the app is closed.</p></div>
+   <div class="ask-l"><div><span class="np-ic open">${NI.open}</span>When an IPO opens for bidding</div><div><span class="np-ic close">${NI.close}</span>Last day to apply and approve UPI</div><div><span class="np-ic allot">${NI.allot}</span>As soon as allotment is out</div><div><span class="np-ic list">${NI.list}</span>On listing day</div></div>
+   <div class="ask-b"><button class="btn shine" type="button" id="askY">Turn on alerts</button><button class="later" type="button" id="askN">Not now</button></div></div>`;
+  document.body.appendChild(d);const close=()=>{d.style.transition='opacity .2s';d.style.opacity='0';setTimeout(()=>d.remove(),200)};
+  d.onclick=e=>{if(e.target===d)close()};document.getElementById('askN').onclick=close;
+  document.getElementById('askY').onclick=async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Turning on…';
+    const r=await Notification.requestPermission();NS.on=r==='granted';
+    if(NS.on){notifItems().forEach(n=>NS.seen[n.id]=Date.now());saveNS();const ok=await pushSub(true);if(!ok)notifPush({id:'hello',t:'Alerts are on',b:'You will get IPO openings, last days, allotments and listings.',u:'#ipos'});toast(ok?'Alerts are on, even when the app is closed':'Alerts are on')}
+    else{saveNS();toast('You can turn alerts on any time from the 🔔 bell')}
+    close();notifRun()};}catch{}}
+addEventListener('appinstalled',()=>setTimeout(()=>askAlerts(true),1200));
+setTimeout(()=>askAlerts(false),2500);
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
