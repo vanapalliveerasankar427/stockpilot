@@ -709,6 +709,15 @@ def outlook(out, uni, q):
         for w in re.findall(r"\b[A-Z][A-Z0-9]{2,}\b", t):
             if w in syms and w not in ("IPO", "NSE", "BSE", "SEBI", "RBI", "GST", "USD", "INR", "FII", "DII", "LIC", "GDP"):
                 hit.add(w)
+        # a symbol that is just the first word of another matched company (NTPC in "NTPC Green Energy") is not a separate hit
+        for k in list(hit):
+            if any(o != k and _clean_name(names.get(o, "")).split()[:1] == [k.lower()] for o in hit):
+                hit.discard(k)
+        # brokerages quoted as the source of a view ("Motilal Oswal says...", "JM Financial downgrades X") are not the subject
+        BROKERS = {"MOTILALOFS", "JMFINANCIL", "IIFL", "ANGELONE", "NUVAMA", "ICICISEC", "GEOJITFSL", "EMKAY", "ANANDRATHI", "SHAREINDIA", "PRUDENT"}
+        if len(hit) > 1:
+            hit -= BROKERS
+        hit = {k for k in hit if not re.search(re.escape(_clean_name(names.get(k, k)).split()[0]) + r"\w* (securities|institutional|research|capital markets|broking)\b", low)} or hit
         if not hit or len(hit) > 2:
             continue  # skip lists like "stocks to watch: A, B, C"
         p = sum(w for r, w in POS if re.search(r, low)); n = sum(w for r, w in NEG if re.search(r, low))
