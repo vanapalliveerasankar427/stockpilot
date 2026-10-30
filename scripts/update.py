@@ -499,8 +499,8 @@ def main():
             step(out)
         except Exception as e:
             log(f"{step.__name__} crashed: {e}")
-    if fast:
-        out["log"] = LOG[-30:]
+    if not fast:
+        out["fulllog"] = LOG[-30:]
     logos_dir = os.path.join(ROOT, "logos")
     out["logos"] = sorted(f[:-4] for f in os.listdir(logos_dir) if f.lower().endswith(".png")) if os.path.isdir(logos_dir) else []
     out["updated"] = NOW.isoformat(timespec="seconds")
