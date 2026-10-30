@@ -166,41 +166,53 @@ def metals(out):
         t = re.sub(r"\s+", " ", t)
         for pur, val in re.findall(r"(999|995|916|750|585) Purity\s*#*\s*([\d,.]+)\s*\(1 Gram\)", t):
             ib["g" + pur] = num(val)
-        g = re.search(r"Gold 999\s+([\d,.]+)\s+([\d,.]+)", t)
-        a = re.search(r"Silver 999\s+([\d,.]+)\s+([\d,.]+)", t)
-        if a:
-            am, pm = num(a.group(1)), num(a.group(2))
-            ib["ag"] = round((pm or am) / 1000, 2)
-            sess = "PM" if pm else "AM"
-        else:
-            sess = ""
-            log("ibja silver: pattern not found")
-        if g:
-            gam, gpm = num(g.group(1)), num(g.group(2))
-            ib["g999_10"] = gpm or gam
-            if not ib.get("g999"):
-                ib["g999"] = round(ib["g999_10"] / 10)
+        def ampm(label):
+            r = re.search(label + r"\s*999\D{0,40}?([\d,]{5,9}(?:\.\d+)?)(?:[^\d]{1,20}([\d,]{1,9}(?:\.\d+)?))?", t)
+            if not r:
+                i = t.find(label)
+                log(f"ibja {label}: no AM/PM match near: {t[max(0, i - 40):i + 160]!r}")
+                return None, None
+            am = num(r.group(1))
+            pm = num(r.group(2)) if r.group(2) and num(r.group(2)) > 1000 else 0
+            return am, pm
+        gam, gpm = ampm("Gold")
+        sam, spm = ampm("Silver")
         rows = re.findall(r"(\d{2})/(\d{2})/(\d{4})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{4,7})\s+(\d{5,7})", t)
-        if rows:
-            hist = {}
-            for d, mo, y, g999, *_rest, ag in rows:
-                lab = dt.date(int(y), int(mo), int(d)).strftime("%-d %b")
-                hist[lab] = [lab, int(g999), int(ag)]
-            order = sorted(hist.values(), key=lambda x: dt.datetime.strptime(x[0] + " 2026", "%d %b %Y"))
-            prev = order[-1]
-            ib["p999"] = round(prev[1] / 10)
-            ib["pag"] = round(prev[2] / 1000, 2)
-            nxt = dt.datetime.strptime(prev[0] + f" {NOW.year}", "%d %b %Y").date() + dt.timedelta(days=1)
-            while nxt.weekday() >= 5:
-                nxt += dt.timedelta(days=1)
-            ib["sess"] = f"{nxt.strftime('%-d %b')} · {sess}" if sess else nxt.strftime("%-d %b")
-            if ib.get("g999") and ib.get("ag"):
-                lab = nxt.strftime("%-d %b")
-                order = [x for x in order if x[0] != lab] + [[lab, round(ib.get("g999_10") or ib["g999"] * 10), round(ib["ag"] * 1000)]]
+        hist = {}
+        for d, mo, y, g999, *_rest, ag in rows:
+            day = dt.date(int(y), int(mo), int(d))
+            hist[day] = [day.strftime("%-d %b"), int(g999), int(ag)]
+        days = sorted(hist)
+        cur_g = gpm or gam
+        cur_s = spm or sam
+        sess = "PM" if (gpm or spm) else ("AM" if (gam or sam) else "")
+        if days:
+            last = hist[days[-1]]
+            # Is the AM/PM table showing the last history day, or a newer session?
+            same = cur_g is None or abs((cur_g or 0) - last[1]) < 1 and abs((cur_s or 0) - last[2]) < 1
+            if same:
+                cur_day = days[-1]
+                prev = hist[days[-2]] if len(days) > 1 else None
+                cur_g, cur_s = cur_g or last[1], cur_s or last[2]
+            else:
+                cur_day = NOW.date() if NOW.weekday() < 5 else days[-1]
+                prev = last
+            if prev:
+                ib["p999"] = round(prev[1] / 10)
+                ib["pag"] = round(prev[2] / 1000, 2)
+            ib["sess"] = cur_day.strftime("%-d %b") + (f" · {sess}" if sess else "")
+            if cur_g and cur_s:
+                hist[cur_day] = [cur_day.strftime("%-d %b"), round(cur_g), round(cur_s)]
             old = {x[0]: x for x in (m.get("hist") or [])}
-            old.update({x[0]: x for x in order})
-            m["hist"] = sorted(old.values(), key=lambda x: dt.datetime.strptime(x[0] + " 2026", "%d %b %Y"))[-30:]
-        if ib.get("g999"):
+            for k in sorted(hist):
+                old[hist[k][0]] = hist[k]
+            m["hist"] = sorted(old.values(), key=lambda x: dt.datetime.strptime(f"{x[0]} {NOW.year}", "%d %b %Y"))[-30:]
+        if cur_g:
+            ib["g999_10"] = cur_g
+            ib.setdefault("g999", round(cur_g / 10))
+        if cur_s:
+            ib["ag"] = round(cur_s / 1000, 2)
+        if ib.get("g999") and ib.get("ag"):
             m["ibja"] = ib
         else:
             log("ibja: no gold figure found")
