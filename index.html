@@ -520,8 +520,9 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
   .metal-grid>*{flex:none!important}
   .tabs{flex-wrap:wrap!important;overflow:visible!important}
   .tabs button,.tabs a{flex:0 1 auto!important}
-  .subnav{display:grid!important;grid-template-columns:repeat(3,1fr);gap:6px}
-  .subnav a.sn{text-align:center;padding:9px 6px;font-size:12.5px}
+  .subnav{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:8px;margin:0 -16px!important;padding:2px 16px 6px!important;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 24px),transparent)}
+  .subnav::-webkit-scrollbar{display:none}
+  .subnav a.sn{flex:none!important;padding:8px 14px;font-size:13px}
   #jump{display:none}
   .tape{margin:10px 0 0}
   /* tables: never wider than the screen */
@@ -561,7 +562,7 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
   .mrow .mpr{margin-top:10px;font-size:12.5px;text-align:center;color:var(--muted)}
   .mrow .mpr b{color:var(--up)}
   #v-ipos .psub,#v-ipos .ipulse,#v-ipos #list,#v-ipos .eyebrow{display:none!important}
-  .subnav a.sn{padding:7px 4px;font-size:12px}
+
   #v-ipos .ptitle{font-size:30px}
   .modal{background:var(--sheet)!important;backdrop-filter:none}
   /* quick sheet + modal */
@@ -712,6 +713,30 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 .pn-bulk textarea{width:100%;min-height:120px;font:inherit;font-size:14px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:transparent;color:inherit;resize:vertical;text-transform:uppercase}
 .pn-acts{display:flex;gap:2px}
 @media(max-width:520px){.pn-form{grid-template-columns:1fr 1fr}.pn-form .btn{grid-column:1/-1}}
+
+/* clean IPO rows (IPOwiz-like) */
+.wz{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);cursor:pointer;animation:fadeUp .35s both}
+.wz:last-child{border-bottom:0}
+.wz .mono{width:46px;height:46px;border-radius:12px;font-size:14px}
+.wz-n{min-width:0}
+.wz-n b{display:block;font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.005em}
+.wz-s{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden}
+.wz-t{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:2px 6px;border-radius:5px;background:color-mix(in srgb,var(--muted) 14%,transparent);color:var(--muted)}
+.wz-t.sme{background:color-mix(in srgb,#7c5cff 14%,transparent);color:#7c5cff}
+.wz-s .op{color:var(--up);font-weight:600}.wz-s .sep{opacity:.5}
+.wz-r{text-align:right}
+.wz-r b{display:block;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
+.wz-r small{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+.wz-r .up{color:var(--up)}.wz-r .down{color:var(--dn)}
+.wz-m{grid-column:2/4;display:flex;gap:6px;flex-wrap:wrap;margin-top:-2px}
+.wz-m span{font-size:12px;padding:4px 8px;border-radius:8px;background:color-mix(in srgb,var(--muted) 9%,transparent);color:var(--muted);font-variant-numeric:tabular-nums}
+.wz-m span b{color:var(--ink,inherit);font-weight:600}
+.wz-v{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px}.wz-v.v-apply{background:color-mix(in srgb,var(--up) 13%,transparent);color:var(--up)}.wz-v.v-consider{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn)}.wz-v.v-avoid{background:color-mix(in srgb,var(--dn) 12%,transparent);color:var(--dn)}
+.wz-m{flex-wrap:nowrap!important;overflow:hidden}.wz-m span{white-space:nowrap}
+.wz-m .v-apply{background:color-mix(in srgb,var(--up) 13%,transparent);color:var(--up);font-weight:600}
+.wz-m .v-consider{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn);font-weight:600}
+.wz-m .v-avoid{background:color-mix(in srgb,var(--dn) 12%,transparent);color:var(--dn);font-weight:600}
+.mrows.wzl{border:1px solid var(--line);border-radius:18px;padding:0 12px;background:color-mix(in srgb,var(--bg,#fff) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);margin-top:10px}
 </style>
 </head>
 <body>
@@ -1479,12 +1504,20 @@ function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)ret
   document.querySelectorAll('#ulTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
   document.querySelectorAll('#seg2 button').forEach(b=>b.onclick=()=>{mType=b.dataset.t;renderMobileIpos()});
   const L=IPOS.filter(i=>i.st===ipoStatus&&(mType==='All'||i.type===mType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:a.c-b.c);
-  el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',p=profitPerApp(i);
-    const m3=listed?`<div><span>${IC.price} Issue</span><b>₹${i.hi.toLocaleString('en-IN')}</b></div><div><span>${IC.gmp} Listed</span><b class="${i.listPrice>=i.hi?'up':'down'}">₹${i.listPrice.toLocaleString('en-IN')} <small>(${sgn((i.listPrice/i.hi-1)*100)}%)</small></b></div><div><span>${IC.gmp} Day-1 close</span><b class="${i.listClose>=i.hi?'up':'down'}">₹${i.listClose.toLocaleString('en-IN')} <small>(${sgn((i.listClose/i.hi-1)*100)}%)</small></b></div>`
-      :`<div><span>${IC.price} Issue price</span><b>${band(i)}</b></div><div><span class="up">${IC.gmp} GMP</span><b class="${i.gmp?(i.gmp.v>=0?'up':'down'):''}">${i.gmp?`₹${i.gmp.v} <small>(${gmpPct(i).toFixed(1)}%)</small>`:'—'}</b></div><div><span>${IC.subs} Subs</span><b>${i.sub?i.sub.total.toFixed(2)+'x':'—'}</b></div>`;
-    return `<div class="mrow" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*45}ms"><div class="t"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><div class="nm">${esc(i.name.replace(/ Ltd$/,''))}</div><div class="st">${rowStatus(i)} · ${i.type==='SME'?'SME':'Mainboard'}</div>${listed?'':`<div style="display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap">${vBadge(i)}${canApply(i)}</div>`}</div>
-      <div class="ic">${starBtn('ipo:'+i.id,i.name)}<button type="button" class="iconbtn2" data-share="${i.id}" aria-label="Copy IPO summary">${IC.copy}</button></div></div>
-      <div class="m3 num">${m3}</div>${p&&!listed?`<div class="mpr">Est. profit per ${i.ml>1?i.ml+'-lot application':'lot'}: <b>${p.v>=0?'+':'−'}${rs0(p.v)}</b></div>`:''}</div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
+  el.classList.add('wzl');
+  el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',v=listed?null:verdict(i),g=i.gmp?gmpPct(i):null,lg=listed?(i.listPrice/i.hi-1)*100:null;
+    const right=listed?`<b class="${lg>=0?'up':'down'}">${sgn(lg)}%</b><small>Listed ₹${i.listPrice.toLocaleString('en-IN')}</small>`
+      :i.gmp?`<b class="${i.gmp.v>0?'up':i.gmp.v<0?'down':''}">₹${i.gmp.v}</b><small>${g>0?'+':''}${g.toFixed(1)}% GMP</small>`:`<b>—</b><small>GMP</small>`;
+    const when=i.st==='open'?`<span class="op">● ${rowStatus(i)}</span>`:`<span>${rowStatus(i)}</span>`;
+    const chips=[listed?`<span>Issue <b>₹${i.hi.toLocaleString('en-IN')}</b></span>`:`<span>Price <b>${band(i)}</b></span>`,
+      !listed&&i.sub?`<span>Subs <b>${i.sub.total.toFixed(2)}x</b></span>`:'',
+      
+      listed&&i.listClose?`<span>Day-1 <b>₹${i.listClose.toLocaleString('en-IN')}</b></span>`:'',
+      !listed&&i.minAmt?`<span>Min <b>${rs0(i.minAmt)}</b></span>`:''].join('');
+    const vb=v?`<span class="wz-v v-${v.k}">${v.k==='apply'?'Apply':v.k==='consider'?'Consider':'Avoid'}</span>`:'';
+    return `<div class="wz" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
+      <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}${vb}</div></div>
+      <div class="wz-r">${right}</div><div class="wz-m">${chips}</div></div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
   el.querySelectorAll('[data-q]').forEach(r=>{r.onclick=e=>{if(e.target.closest('[data-star],[data-share]'))return;openQuick(r.dataset.q)};r.onkeydown=e=>{if(e.key==='Enter')openQuick(r.dataset.q)}});
   el.querySelectorAll('[data-share]').forEach(b=>b.onclick=e=>{e.stopPropagation();shareIpo(byId[b.dataset.share])});
 }
