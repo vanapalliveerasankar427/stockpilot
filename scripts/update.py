@@ -333,10 +333,60 @@ def ipo(out):
     out["ipo"] = data
 
 
+
+# ----------------------------------------------------------------- NSE index constituents (live movers)
+def nse_session():
+    if not getattr(nse_session, "ok", False):
+        S.get("https://www.nseindia.com/", timeout=20)
+        nse_session.ok = True
+
+
+def nse_movers(out):
+    """Nifty 50, Midcap 100 and Smallcap 100 movers straight from NSE."""
+    names = {"NIFTY 50": "n50", "NIFTY MIDCAP 100": "mid", "NIFTY SMALLCAP 100": "small"}
+    for index, key in names.items():
+        try:
+            nse_session()
+            j = get("https://www.nseindia.com/api/equity-stockIndices", params={"index": index},
+                    headers={"Referer": "https://www.nseindia.com/market-data/live-equity-market"}).json()
+            rows = [r for r in j.get("data", []) if r.get("symbol") and r.get("symbol") != index and r.get("priority", 0) == 0]
+            mv = []
+            for r in rows:
+                try:
+                    nm = (r.get("meta") or {}).get("companyName") or r["symbol"]
+                    nm = re.sub(r"\s+(Limited|Ltd\.?)$", "", nm)
+                    mv.append([r["symbol"], nm, round(float(r["pChange"]), 2), float(r["lastPrice"])])
+                except (KeyError, TypeError, ValueError):
+                    pass
+            if len(mv) < 10:
+                log(f"nse {index}: only {len(mv)} rows")
+                continue
+            mv.sort(key=lambda x: -x[2])
+            up = [m for m in mv if m[2] > 0]
+            dn = [m for m in reversed(mv) if m[2] < 0]
+            stamp = (j.get("timestamp") or NOW.strftime("%d-%b-%Y %H:%M"))
+            if key == "n50":
+                out["gainers"] = [m[:3] for m in up[:5]]
+                out["losers"] = [m[:3] for m in dn[:5]]
+                out["breadth"] = {"up": len(up), "n": len(mv), "label": "Nifty 50 stocks"}
+                # NSE last price for the 25 stocks on the Stocks page
+                st = out.setdefault("stocks", {})
+                for m in mv:
+                    k = "MM" if m[0] == "M&M" else m[0]
+                    if k in STOCKS:
+                        st[k] = {"v": m[3], "pct": m[2]}
+            else:
+                out[key + "g"] = [[m[1], m[2]] for m in up[:5]]
+                out[key + "l"] = [[m[1], m[2]] for m in dn[:5]]
+            out.setdefault("nse", {})[key] = stamp
+        except Exception as e:
+            log(f"nse {index} failed: {e}")
+
+
 # ----------------------------------------------------------------- FII / DII (NSE)
 def flows(out):
     try:
-        S.get("https://www.nseindia.com/", timeout=20)
+        nse_session()
         j = get("https://www.nseindia.com/api/fiidiiTradeReact", headers={"Referer": "https://www.nseindia.com/"}).json()
         f = {}
         for row in j:
@@ -390,7 +440,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, mcx) if fast else (markets, metals, ipo, flows, news)):
+    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo, flows, news)):
         try:
             step(out)
         except Exception as e:

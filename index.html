@@ -598,11 +598,11 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
   <div class="grid3">
     <div class="glass card"><div class="row" style="margin-bottom:14px"><h4 style="font-size:16px">Sector moves</h4></div><div class="sect" id="sect"></div><p class="src">Liquide, Kotak Neo, Multibagg (BSE Utilities).</p></div>
     <div class="glass card" id="m-mov"><h4 style="font-size:16px;margin-bottom:6px" id="gainh">Nifty 50 gainers</h4><div id="gain"></div></div>
-    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px" id="loseh">Nifty 50 losers</h4><div id="lose"></div><p class="src">Upstox, NSE closing data.</p></div>
+    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px" id="loseh">Nifty 50 losers</h4><div id="lose"></div><p class="src" id="lsrc">Upstox, NSE closing data.</p></div>
   </div>
   <div class="grid2 sec">
     <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Midcap 100 movers</h4><div class="grid2" style="gap:18px"><div id="midg"></div><div id="midl"></div></div></div>
-    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Smallcap 100 movers</h4><div class="grid2" style="gap:18px"><div id="smg"></div><div id="sml"></div></div><p class="src">Upstox.</p></div>
+    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Smallcap 100 movers</h4><div class="grid2" style="gap:18px"><div id="smg"></div><div id="sml"></div></div><p class="src" id="msrc">Upstox.</p></div>
   </div>
 
   <div class="secht"><div><h2>IPO centre</h2><p>Real IPOs with GMP, subscription and minimum application</p></div></div>
@@ -1575,6 +1575,7 @@ function applyLive(L){if(!L)return;try{
   if(L.sectors&&L.sectors.length)SECTORS.splice(0,SECTORS.length,...L.sectors);
   if(L.gainers&&L.gainers.length)GAIN.splice(0,GAIN.length,...L.gainers);
   if(L.losers&&L.losers.length)LOSE.splice(0,LOSE.length,...L.losers);
+  for(const [k,arr] of [['midg',MIDG],['midl',MIDL],['smallg',SMG],['smalll',SML]])if(L[k]&&L[k].length)arr.splice(0,arr.length,...L[k]);
   if(L.breadth)BREADTH=L.breadth;
   for(const id in (L.ipo||{})){const i=byId[id],q=L.ipo[id];if(!i)continue;
     if(q.gmp!=null&&i.st!=='listed')i.gmp={v:q.gmp,src:q.gsrc,at:q.gat};
@@ -1601,7 +1602,9 @@ function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id
     set('mk-title',`Nifty ${N.pct>=0?'gains':'slips'} <em>${sg(N.pct)}</em> ${LIVED.state==='open'?'in trade':'at the close'}.`);
     set('mk-secp',`% change · ${LIVED.state==='open'?'live':'last close'} · updated ${esc(when)}`);
     set('nsrc',`NSE data via Yahoo Finance · updated ${esc(when)}. Refreshes automatically.`);
-    set('gainh','Top gainers · large caps');set('loseh','Top losers · large caps');
+    if(LIVED.nse)set('lsrc',`NSE live data · ${esc(LIVED.nse.n50||'')}`);
+    if(LIVED.nse)set('msrc',`NSE live data · ${esc(LIVED.nse.mid||LIVED.nse.n50||'')}`);
+    set('gainh',BREADTH.label==='Nifty 50 stocks'?'Nifty 50 gainers':'Top gainers · large caps');set('loseh',BREADTH.label==='Nifty 50 stocks'?'Nifty 50 losers':'Top losers · large caps');
     if(window.FLOWS&&FLOWS.fii!=null){const m=Math.max(Math.abs(FLOWS.fii),Math.abs(FLOWS.dii))||1,f=v=>`${v>=0?'+':'−'}₹${Math.abs(v).toLocaleString('en-IN',{maximumFractionDigits:2})} Cr`;
       set('flows',`<div class="row"><b>FIIs</b><b class="${FLOWS.fii>=0?'up':'down'}">${f(FLOWS.fii)}</b></div><div class="flowbar"><i style="width:${Math.abs(FLOWS.fii)/m*100}%;background:var(--${FLOWS.fii>=0?'up':'dn'})"></i></div><div class="row"><b>DIIs</b><b class="${FLOWS.dii>=0?'up':'down'}">${f(FLOWS.dii)}</b></div><div class="flowbar"><i style="width:${Math.abs(FLOWS.dii)/m*100}%;background:var(--${FLOWS.dii>=0?'up':'dn'})"></i></div>`);
       set('flowsrc',`Provisional NSE data · ${esc(FLOWS.date||'')}.`)}}
