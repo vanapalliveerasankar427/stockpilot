@@ -762,16 +762,58 @@ input.good[data-v="pan"]{border-color:color-mix(in srgb,var(--up) 60%,var(--line
 .ferr{display:block;grid-column:1/-1;color:var(--dn);font-size:12.5px;font-weight:500;margin-top:5px;line-height:1.35;animation:fadeUp .2s both}
 
 .nbell{position:relative}.nbell i{position:absolute;top:4px;right:4px;min-width:17px;height:17px;border-radius:9px;background:var(--dn);color:#fff;font:700 10.5px/17px var(--sans,system-ui);font-style:normal;text-align:center;padding:0 4px;box-shadow:0 0 0 2px var(--bg,#fff)}
-.npanel{position:fixed;z-index:80;top:calc(76px + env(safe-area-inset-top));right:max(12px,calc((100vw - 1500px)/2));width:min(380px,calc(100vw - 24px));max-height:min(70vh,560px);overflow:auto;border-radius:20px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg,#fff) 94%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.18);display:none;animation:fadeUp .2s both}
-.npanel.on{display:block}
-.npanel h3{font-size:17px;padding:16px 16px 6px;display:flex;align-items:center;justify-content:space-between}
-.npanel .nrow{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:12px 16px;border-top:1px solid var(--line);text-decoration:none;color:inherit}
-.npanel .nrow.new{background:color-mix(in srgb,var(--up) 6%,transparent)}
-.npanel .nic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:17px;background:color-mix(in srgb,var(--muted) 12%,transparent)}
-.npanel .nrow b{display:block;font-size:14.5px}.npanel .nrow small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
-.npanel .nset{padding:12px 16px 16px;border-top:1px solid var(--line);display:grid;gap:10px}
-.npanel .nset label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px}
-.npanel .nempty{padding:18px 16px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.nback{position:fixed;inset:0;z-index:79;background:rgba(10,12,20,.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s}
+.nback.on{opacity:1;pointer-events:auto}
+@media(min-width:701px){.nback{background:rgba(10,12,20,.08);backdrop-filter:none;-webkit-backdrop-filter:none}}
+.npanel{position:fixed;z-index:80;top:calc(78px + env(safe-area-inset-top));right:max(14px,calc((100vw - 1500px)/2 + 14px));width:400px;max-height:min(76vh,640px);display:flex;flex-direction:column;border-radius:26px;background:var(--bg,#fff);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 30px 80px -20px rgba(15,20,40,.35),0 8px 24px -8px rgba(15,20,40,.18);opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .22s,transform .28s cubic-bezier(.2,.9,.3,1.2);overflow:hidden}
+.npanel.on{opacity:1;transform:none;pointer-events:auto}
+@media(max-width:700px){.npanel{top:auto;bottom:0;left:0;right:0;width:auto;max-height:86vh;border-radius:28px 28px 0 0;transform:translateY(100%);transform-origin:bottom;padding-bottom:env(safe-area-inset-bottom)}.npanel.on{transform:none}}
+.np-grab{display:none;width:40px;height:5px;border-radius:3px;background:color-mix(in srgb,var(--muted) 35%,transparent);margin:10px auto 0}
+@media(max-width:700px){.np-grab{display:block}}
+.np-h{display:flex;align-items:center;gap:8px;padding:16px 18px 10px}
+.np-h h3{flex:1;font:700 21px/1.1 var(--display,inherit);letter-spacing:-.02em}
+.np-h h3 small{display:inline-block;margin-left:8px;font:600 12px var(--sans,inherit);padding:3px 8px;border-radius:999px;background:var(--ink,#111);color:var(--bg,#fff);vertical-align:3px}
+.np-ib{width:36px;height:36px;border-radius:12px;border:0;background:color-mix(in srgb,var(--muted) 10%,transparent);color:inherit;display:grid;place-items:center;cursor:pointer;transition:background .15s}
+.np-ib:hover{background:color-mix(in srgb,var(--muted) 18%,transparent)}.np-ib svg{width:18px;height:18px}
+.np-body{overflow:auto;padding:0 10px 12px;overscroll-behavior:contain}
+.np-sec{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 10px 6px}
+.np-it{display:grid;grid-template-columns:44px 1fr 10px;gap:12px;align-items:start;padding:12px 10px;border-radius:18px;text-decoration:none;color:inherit;transition:background .15s,transform .15s;animation:fadeUp .3s both}
+.np-it:hover{background:color-mix(in srgb,var(--muted) 7%,transparent)}.np-it:active{transform:scale(.985)}
+.np-ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center}
+.np-ic svg{width:21px;height:21px}
+.np-ic.allot{background:linear-gradient(135deg,#d7f7e8,#b8efd6);color:#0a8f5a}
+.np-ic.open{background:linear-gradient(135deg,#dbe9ff,#c3d8ff);color:#2b5fd9}
+.np-ic.close{background:linear-gradient(135deg,#ffe8cf,#ffd6a8);color:#c7620a}
+.np-ic.list{background:linear-gradient(135deg,#efe1ff,#dfc8ff);color:#7a3fe0}
+.np-ic.watch{background:linear-gradient(135deg,#ffe0e6,#ffc9d3);color:#d23a5a}
+[data-theme="dark"] .np-ic{filter:saturate(.9) brightness(.85)}
+.np-it b{display:block;font-size:14.5px;font-weight:600;line-height:1.3;letter-spacing:-.005em}
+.np-it p{font-size:13px;color:var(--muted);margin:3px 0 0;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.np-it em{display:inline-block;font-style:normal;font-size:11.5px;font-weight:600;color:var(--muted);margin-top:6px}
+.np-dot{width:9px;height:9px;border-radius:50%;background:#2b6cff;margin-top:6px;box-shadow:0 0 0 3px color-mix(in srgb,#2b6cff 18%,transparent)}
+.np-dot.r{visibility:hidden}
+.np-cta{margin:4px 8px 8px;padding:16px;border-radius:20px;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#3b82f6 0%,#6d4bff 55%,#a23bff 100%);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;box-shadow:0 12px 30px -12px rgba(90,60,255,.55)}
+.np-cta b{display:block;font-size:15.5px}.np-cta small{display:block;font-size:12.5px;opacity:.85;margin-top:3px;line-height:1.35}
+.np-cta button{border:0;border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px;background:#fff;color:#4b2bd6;cursor:pointer;white-space:nowrap}
+.np-cta button:disabled{opacity:.7}
+.np-info{margin:4px 8px 8px;padding:13px 14px;border-radius:16px;font-size:13px;line-height:1.45;color:var(--muted);background:color-mix(in srgb,var(--muted) 8%,transparent)}
+.np-on{margin:4px 8px 6px;padding:10px 14px;border-radius:14px;font-size:12.5px;font-weight:600;color:#0a8f5a;background:color-mix(in srgb,#10b981 12%,transparent);display:flex;align-items:center;gap:8px}
+.np-empty{text-align:center;padding:34px 20px 26px;color:var(--muted)}
+.np-empty .np-ic{margin:0 auto 12px;width:56px;height:56px;border-radius:18px;background:color-mix(in srgb,var(--muted) 10%,transparent);color:var(--muted)}
+.np-empty b{display:block;color:var(--ink,inherit);font-size:15.5px;margin-bottom:4px}
+.np-empty p{font-size:13px;line-height:1.45}
+.np-set{padding:2px 8px 10px}
+.np-row{display:flex;align-items:center;gap:12px;padding:12px 10px;border-radius:14px}
+.np-row .np-ic{width:36px;height:36px;border-radius:11px}.np-row .np-ic svg{width:18px;height:18px}
+.np-row span{flex:1;font-size:14.5px;font-weight:500}.np-row span small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:1px}
+.sw{position:relative;width:46px;height:28px;flex:none}.sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.sw i{position:absolute;inset:0;border-radius:999px;background:color-mix(in srgb,var(--muted) 28%,transparent);transition:background .2s}
+.sw i::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .25s cubic-bezier(.2,.9,.3,1.3)}
+.sw input:checked+i{background:#10b981}.sw input:checked+i::after{transform:translateX(18px)}
+.sw input:focus-visible+i{outline:2px solid #2b6cff;outline-offset:2px}
+.np-foot{display:flex;gap:8px;padding:10px 18px 16px;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.np-foot button{flex:1;border:0;background:none;color:var(--muted);font-weight:600;font-size:13.5px;padding:8px;border-radius:12px;cursor:pointer}
+.np-foot button:hover{background:color-mix(in srgb,var(--muted) 8%,transparent);color:var(--ink,inherit)}
 .plgrid{grid-template-columns:1fr 1.4fr}@media(max-width:900px){.plgrid{grid-template-columns:1fr!important}}
 </style>
 </head>
@@ -952,7 +994,7 @@ input.good[data-v="pan"]{border-color:color-mix(in srgb,var(--up) 60%,var(--line
 </footer>
 </div>
 
-<div class="npanel" id="npanel" role="dialog" aria-label="Notifications"></div>
+<div class="nback" id="nback"></div><div class="npanel" id="npanel" role="dialog" aria-modal="true" aria-label="Notifications"></div>
 <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><label for="pq" class="sr">Search</label><input id="pq" placeholder="Search stocks, IPOs, pages…" autocomplete="off"><div class="pres" id="pres"></div></div></div>
 <div class="overlay" id="ov" role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="modal" id="modal"></div></div>
 <div class="toast" id="toast" role="status"></div>
@@ -2176,27 +2218,56 @@ function notifRun(){const L=notifItems(),unread=L.filter(n=>!NS.read[n.id]).leng
   if(NS.on&&'Notification' in window&&Notification.permission==='granted')L.forEach(n=>{if(!NS.seen[n.id]){NS.seen[n.id]=Date.now();if(!NS.push||n.k==='watch')notifPush(n)}});
   const cut=Date.now()-20*864e5;Object.keys(NS.seen).forEach(k=>{if(NS.seen[k]<cut)delete NS.seen[k]});saveNS();
   if(document.getElementById('npanel').classList.contains('on'))notifPanel()}
-function notifPanel(){const el=document.getElementById('npanel'),L=notifItems().sort((a,b)=>(NS.read[a.id]?1:0)-(NS.read[b.id]?1:0));
+const NI={allot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>',
+ open:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+ close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>',
+ list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+ watch:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>',
+ bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>',
+ gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>',
+ x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+ back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>'};
+const NLBL={allot:'Allotment',open:'IPO opening',close:'Last day',list:'Listing',watch:'Watchlist'};
+let npView='list';
+function npOpen(on){const el=document.getElementById('npanel'),bk=document.getElementById('nback');el.classList.toggle('on',on);bk.classList.toggle('on',on);
+  if(on){npView='list';notifPanel();notifItems().forEach(n=>NS.read[n.id]=NS.read[n.id]||2);saveNS();const bn=document.getElementById('bellN');if(bn)bn.hidden=true;if(MQ.matches)document.body.style.overflow='hidden'}
+  else{document.body.style.overflow='';Object.keys(NS.read).forEach(k=>{if(NS.read[k]===2)NS.read[k]=1});saveNS()}}
+function notifPanel(){const el=document.getElementById('npanel'),L=notifItems();
   const can='Notification' in window,perm=can?Notification.permission:'unsupported',ios=/iphone|ipad/i.test(navigator.userAgent),standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-  const T=[['allot','Allotment results'],['open','IPO opening'],['close','Last day to apply'],['list','Listing day'],['watch','Watchlist moves (±4%)']];
-  el.innerHTML=`<h3>Notifications <button class="iconbtn2" type="button" id="nX" aria-label="Close">✕</button></h3>
-   ${L.map(n=>`<a class="nrow ${NS.read[n.id]?'':'new'}" href="${n.u}" data-nid="${n.id}"><div class="nic">${n.ic}</div><div><b>${esc(n.t)}</b><small>${esc(n.b)}</small></div></a>`).join('')||'<div class="nempty">Nothing new right now. You\'ll see IPO openings, last days, allotments and listings here.</div>'}
-   <div class="nset">${!can?(ios&&!standalone?'<p class="note">To get alerts on your iPhone, first add MarketVedaPro to your Home Screen (Share → Add to Home Screen), then open it from there and turn alerts on here.</p>':'<p class="note">This browser does not support phone alerts. You will still see them here.</p>')
-     :perm==='denied'?'<p class="note">Alerts are blocked for this site. Allow notifications for MarketVedaPro in your phone or browser settings.</p>'
-     :`<label><span><b>Phone alerts</b><small class="muted" style="display:block;font-size:12px">${NS.on&&perm==='granted'?(NS.push?'On · arrives even when the app is closed':'On · shown while the app is open or in the background'):'Get an alert as soon as something happens'}</small></span><button class="${NS.on&&perm==='granted'?'ghost':'btn'}" type="button" id="nOn" style="padding:8px 14px">${NS.on&&perm==='granted'?'Turn off':'Turn on'}</button></label>`}
-    ${T.map(([k,l])=>`<label><span>${l}</span><input type="checkbox" data-nt="${k}" ${NS.types[k]!==0?'checked':''}></label>`).join('')}</div>`;
-  document.getElementById('nX').onclick=()=>el.classList.remove('on');
-  el.querySelectorAll('[data-nid]').forEach(a=>a.onclick=()=>{NS.read[a.dataset.nid]=1;saveNS();el.classList.remove('on');setTimeout(notifRun,50)});
-  el.querySelectorAll('[data-nt]').forEach(c=>c.onchange=()=>{NS.types[c.dataset.nt]=c.checked?1:0;saveNS();if(NS.on&&NS.push)pushSub(false);notifRun();notifPanel()});
-  const on=document.getElementById('nOn');if(on)on.onclick=async()=>{if(NS.on&&Notification.permission==='granted'){NS.on=false;saveNS();await pushUnsub();notifPanel();toast('Alerts are off');return}
-    on.disabled=true;on.textContent='Turning on…';const r=await Notification.requestPermission();NS.on=r==='granted';
+  const on=NS.on&&perm==='granted',unread=L.filter(n=>NS.read[n.id]!==1).length;
+  const T=[['allot','Allotment results','When a registrar publishes results'],['open','IPO opening','The day before and the morning it opens'],['close','Last day to apply','Morning of the closing day'],['list','Listing day','Morning of the listing'],['watch','Watchlist moves','Stocks you follow move ±4% or more']];
+  const head=(title,left)=>`<div class="np-grab"></div><div class="np-h">${left||''}<h3>${title}</h3>${npView==='list'?`<button class="np-ib" type="button" id="nSet" aria-label="Alert settings">${NI.gear}</button>`:''}<button class="np-ib" type="button" id="nX" aria-label="Close">${NI.x}</button></div>`;
+  const cta=!can?`<div class="np-info">${ios&&!standalone?'📲 To get alerts on iPhone, add MarketVedaPro to your Home Screen (Share → Add to Home Screen) and open it from there.':'This browser can\'t show phone alerts. New alerts will still appear here.'}</div>`
+    :perm==='denied'?`<div class="np-info">🔕 Alerts are blocked. Allow notifications for MarketVedaPro in your phone's settings, then come back.</div>`
+    :on?`<div class="np-on"><span style="width:8px;height:8px;border-radius:50%;background:#10b981"></span>${NS.push?'Phone alerts on · even when the app is closed':'Phone alerts on'}</div>`
+    :`<div class="np-cta"><div><b>Never miss an IPO</b><small>Get an alert when an IPO opens, on the last day and the moment allotment is out.</small></div><button type="button" id="nOn">Turn on</button></div>`;
+  if(npView==='set'){el.innerHTML=head('Alerts',`<button class="np-ib" type="button" id="nBack" aria-label="Back">${NI.back}</button>`)+`<div class="np-body">${cta}<div class="np-set">${T.map(([k,l,d])=>`<label class="np-row"><div class="np-ic ${k}">${NI[k]}</div><span>${l}<small>${d}</small></span><span class="sw" style="flex:none"><input type="checkbox" data-nt="${k}" ${NS.types[k]!==0?'checked':''} aria-label="${l}"><i></i></span></label>`).join('')}</div></div>${on?`<div class="np-foot"><button type="button" id="nOff">Turn off phone alerts</button></div>`:''}`}
+  else{const items=L.slice().sort((a,b)=>(NS.read[a.id]===1)-(NS.read[b.id]===1)||(b.d||0)-(a.d||0));
+    el.innerHTML=head(`Notifications${unread?`<small>${unread} new</small>`:''}`)+`<div class="np-body">${cta}
+     ${items.length?`<div class="np-sec">Today</div>`+items.map((n,k)=>`<a class="np-it" href="${n.u}" data-nid="${n.id}" style="animation-delay:${k*30}ms"><div class="np-ic ${n.k}">${NI[n.k]||NI.bell}</div><div><b>${esc(n.t)}</b><p>${esc(n.b)}</p><em>${NLBL[n.k]||''}</em></div><span class="np-dot ${NS.read[n.id]===1?'r':''}"></span></a>`).join('')
+       :`<div class="np-empty"><div class="np-ic">${NI.bell}</div><b>You're all caught up</b><p>IPO openings, last days, allotments and listings will show up here.</p></div>`}</div>
+     ${items.length?`<div class="np-foot"><button type="button" id="nRead">Mark all as read</button></div>`:''}`}
+  const q=s=>document.getElementById(s);
+  q('nX').onclick=()=>npOpen(false);
+  const st=q('nSet');if(st)st.onclick=()=>{npView='set';notifPanel()};
+  const bk=q('nBack');if(bk)bk.onclick=()=>{npView='list';notifPanel()};
+  const rd=q('nRead');if(rd)rd.onclick=()=>{L.forEach(n=>NS.read[n.id]=1);saveNS();notifPanel()};
+  el.querySelectorAll('[data-nid]').forEach(a=>a.onclick=()=>{NS.read[a.dataset.nid]=1;saveNS();npOpen(false)});
+  el.querySelectorAll('[data-nt]').forEach(c=>c.onchange=()=>{NS.types[c.dataset.nt]=c.checked?1:0;saveNS();if(NS.on&&NS.push)pushSub(false);notifRun()});
+  const off=q('nOff');if(off)off.onclick=async()=>{NS.on=false;saveNS();await pushUnsub();notifPanel();toast('Phone alerts are off')};
+  const onb=q('nOn');if(onb)onb.onclick=async()=>{onb.disabled=true;onb.textContent='Turning on…';const r=await Notification.requestPermission();NS.on=r==='granted';
     if(NS.on){notifItems().forEach(n=>NS.seen[n.id]=Date.now());saveNS();const ok=await pushSub(true);
       if(!ok)notifPush({id:'hello',t:'Alerts are on',b:'You will get IPO openings, last days, allotments and listings here.',u:'#ipos'});
       toast(ok?'Alerts are on, even when the app is closed':'Alerts are on while the app is open')}else{saveNS();toast('Alerts were not allowed')}
     notifPanel()}}
-document.getElementById('bellBtn').onclick=e=>{e.stopPropagation();const el=document.getElementById('npanel');if(el.classList.toggle('on')){notifPanel();notifItems().forEach(n=>NS.read[n.id]=1);saveNS();const bn=document.getElementById('bellN');if(bn)bn.hidden=true}};
-document.addEventListener('click',e=>{const el=document.getElementById('npanel');if(el.classList.contains('on')&&!e.target.closest('#npanel,#bellBtn'))el.classList.remove('on')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('npanel').classList.remove('on')});
+
+document.getElementById('bellBtn').onclick=e=>{e.stopPropagation();npOpen(!document.getElementById('npanel').classList.contains('on'))};
+document.getElementById('nback').onclick=()=>npOpen(false);
+{let y0=null;const np=document.getElementById('npanel');np.addEventListener('touchstart',e=>{if(e.target.closest('.np-h,.np-grab'))y0=e.touches[0].clientY},{passive:true});
+ np.addEventListener('touchmove',e=>{if(y0==null)return;const d=Math.max(0,e.touches[0].clientY-y0);np.style.transition='none';np.style.transform=`translateY(${d}px)`},{passive:true});
+ np.addEventListener('touchend',e=>{if(y0==null)return;const d=(e.changedTouches[0].clientY-y0);y0=null;np.style.transition='';np.style.transform='';if(d>90)npOpen(false)});}
+document.addEventListener('click',e=>{const el=document.getElementById('npanel');if(el.classList.contains('on')&&!MQ.matches&&!e.target.closest('#npanel,#bellBtn'))npOpen(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('npanel').classList.contains('on'))npOpen(false)});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)notifRun()});
 setTimeout(notifRun,1500);setInterval(notifRun,60000);
 setTimeout(()=>{try{if(NS.on&&'Notification' in window&&Notification.permission==='granted'&&Date.now()-(NS.pt||0)>864e5){NS.pt=Date.now();pushSub(false)}}catch{}},4000);
