@@ -507,6 +507,7 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
   .stat small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
   /* IPO list = app rows */
   #v-ipos .filters,#igrid{display:none}
+  #seg2{display:none!important}
   .ulTabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);margin:0 -12px 14px;padding:0 4px}
   .ulTabs button{border:0;background:none;padding:12px 2px 13px;font-size:14.5px;font-weight:600;color:var(--muted);position:relative;cursor:pointer}
   .ulTabs button[aria-pressed="true"]{color:var(--ink)}
@@ -547,7 +548,7 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 .vrow{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin:2px 0 10px}.vrow .vwhy{flex-basis:100%;margin-top:0}
 .can{font-size:12px;font-weight:600}.can.yes{color:var(--up)}.can.soon{color:var(--info)}.can.no{color:var(--muted)}
 .gfil{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 14px}
-.gfil .seg{display:inline-flex;gap:2px;padding:4px;border-radius:14px;background:var(--soft)}
+.seg .count{font-size:11px;opacity:.6;margin-left:2px}.gfil .seg{display:inline-flex;gap:2px;padding:4px;border-radius:14px;background:var(--soft)}
 .gfil .seg button{border:0;background:none;padding:7px 13px;border-radius:10px;font-weight:600;font-size:13.5px;color:var(--muted);cursor:pointer}
 .gfil .seg button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .vsum{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
@@ -647,7 +648,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
   <div class="ipulse" id="pulse"></div>
   <div class="secht" id="list"><div><h2>IPO watch</h2><p id="listsub"></p></div></div>
   <div class="ulTabs" id="ulTabs" role="group" aria-label="IPO status"></div><div class="seg2" id="seg2" role="group" aria-label="IPO type"></div><div class="mrows" id="mrows"></div>
-  <div class="filters"><div class="tabs" id="stTabs" role="group" aria-label="IPO status"></div><div class="tabs" id="tyTabs" role="group" aria-label="IPO type"></div></div>
+  <div class="filters"><div class="tabs" id="stTabs" role="group" aria-label="IPO status"></div><div class="tabs" id="tyTabs" role="group" aria-label="IPO type" hidden></div></div>
   <div class="igrid" id="igrid"></div>
   <div class="secht"><div><h2>How applying works</h2><p>Every IPO in India is applied for through your broker or bank, using UPI or ASBA.</p></div></div>
   <div class="steps">
@@ -828,8 +829,8 @@ const STRIPE={open:'var(--buy)',upcoming:'var(--info)',closed:'var(--saffron)',l
 // ===================== IPO VIEW =====================
 let ipoStatus='open',ipoType='All';
 function renderPulse(){
-  const c=s=>IPOS.filter(i=>i.st===s);
-  const allotToday=IPOS.filter(i=>i.al&&+i.al===+T0), soonList=IPOS.filter(i=>i.ls&&days(i.ls)>=0&&days(i.ls)<=7);
+  const c=s=>IPOS.filter(i=>i.st===s&&tOK(i));
+  const allotToday=IPOS.filter(i=>i.al&&+i.al===+T0&&tOK(i)), soonList=IPOS.filter(i=>i.ls&&days(i.ls)>=0&&days(i.ls)<=7&&tOK(i));
   const first=a=>a.map(i=>i.name.split(' ')[0].replace(/\.$/,'')).join(', ');
   const tile=(n,label,names,go,hot)=>`<button type="button" class="stat ${hot?'hot':''}" data-go="${go}"><span class="n num">${n}</span><span>${label}</span><small>${names||'None'}</small></button>`;
   document.getElementById('pulse').innerHTML=tile(c('open').length,'Open now',first(c('open')),'open',true)+tile(c('upcoming').length,'Opening soon',first(c('upcoming')),'upcoming')+tile(allotToday.length,'Allotment today',first(allotToday),'closed')+tile(soonList.length,'Listing in the next 7 days',first(soonList),'closed');
@@ -1037,7 +1038,17 @@ function spark(points,w=180,h=48,col){col=col||css('--acc');const v=points.map(p
 
 // ===================== IPO sub-navigation =====================
 const IPOSUB=[['ipos','Overview'],['ipo-gmp','GMP board'],['ipo-sub','Subscription'],['ipo-screener','Screener'],['ipo-allot','Allotment desk'],['ipo-planner','Money planner'],['learn','Learn']];
-function subnav(cur){return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>`}
+let IPT=(()=>{try{return localStorage.getItem('sp.ipt')||'All'}catch{return 'All'}})();
+const tOK=i=>IPT==='All'||i.type===IPT;
+const iptSeg=()=>`<div class="seg iptSeg" role="group" aria-label="IPO type">${['All','Mainboard','SME'].map(k=>`<button type="button" data-ipt="${k}" aria-pressed="${IPT===k}">${k}${k==='All'?'':` <span class="count">${IPOS.filter(i=>i.type===k&&i.st!=='listed').length}</span>`}</button>`).join('')}</div>`;
+function setIPT(t){IPT=t;ipoType=mType=gType=scrType=t;try{localStorage.setItem('sp.ipt',t)}catch{}
+  document.querySelectorAll('.iptSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.ipt===t));
+  const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'';
+  const sn=document.getElementById('sn-'+id);if(sn)sn.innerHTML=subnav(id);
+  renderPulse();renderIpos();renderHomeIpo();
+  ({'ipo-gmp':renderGMP,'ipo-sub':renderSub,'ipo-screener':renderScreener,'ipo-allot':renderAllot,'ipo-planner':renderPlanner}[id]||(()=>{}))()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-ipt]');if(b){e.preventDefault();setIPT(b.dataset.ipt)}});
+function subnav(cur){return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>${cur==='learn'?'':`<div class="gfil" style="margin:12px 0 0">${iptSeg()}<span class="note" style="font-size:12.5px">Showing ${IPT==='All'?'all IPOs':IPT+' IPOs only'}</span></div>`}`}
 
 // ===================== GMP board =====================
 let gType='All',gSt='live',gV='all';
@@ -1048,7 +1059,7 @@ function renderGMP(){
   const H=byId.hdfire;
   const seg=(id,cur,opts)=>`<div class="seg" id="${id}">${opts.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${cur===k}">${l}</button>`).join('')}</div>`;
   document.getElementById('gmpbody').innerHTML=`
-   <div class="gfil">${seg('gfT',gType,[['All','All'],['Mainboard','Mainboard'],['SME','SME']])}${seg('gfS',gSt,[['live','Active'],['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['all','All']])}</div>
+   <div class="gfil">${seg('gfS',gSt,[['live','Active'],['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['all','All']])}</div>
    <div class="vsum">${[['apply','Apply','Strong GMP and demand'],['consider','Consider','Modest listing gain'],['avoid','Avoid','Little or no gain']].map(([k,l,d])=>`<button type="button" data-v="${k}" aria-pressed="${gV===k}"><span class="vd ${k}">${l}</span><b>${cnt(k)}</b><span>${d}</span></button>`).join('')}</div>
    ${gV!=='all'?`<p class="note" style="margin:-4px 0 12px">Showing “${esc({apply:'Apply',consider:'Consider',avoid:'Avoid'}[gV])}” only. <a class="link" href="#ipo-gmp" id="gvAll">Show all</a></p>`:''}
    <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num"><tr><th>IPO</th><th>Status</th><th>Signal</th><th>Issue price</th><th>GMP</th><th>Est. listing</th><th>Est. gain</th><th>Est. profit / application</th><th>Subscribed</th><th>Trend</th></tr>
@@ -1071,10 +1082,10 @@ function renderGMP(){
 
 // ===================== Subscription =====================
 function renderSub(){
-  const L=IPOS.filter(i=>i.sub&&i.st!=='upcoming').sort((a,b)=>b.c-a.c||b.sub.total-a.sub.total);
+  const L=IPOS.filter(i=>i.sub&&i.st!=='upcoming'&&tOK(i)).sort((a,b)=>b.c-a.c||b.sub.total-a.sub.total);
   const bar=(v,m,c)=>`<div class="bar" style="height:6px"><i style="width:${Math.min(100,v/m*100)}%;background:${c}"></i></div>`;
   document.getElementById('subbody').innerHTML=`<div class="igrid">${L.map(i=>{const s=i.sub,m=Math.max(s.QIB||0,s.NII||0,s.Retail||0,s.total,1),ch=allotChance(i);
-    return `<article class="ipo" style="gap:12px"><div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><div class="nm">${esc(i.name)}</div><div class="meta">${statusPill(i)}<span class="pill plain">${i.type==='SME'?'SME':'Mainboard'}</span></div></div></div>
+    return `<article class="ipo" style="gap:12px"><div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><div class="nm">${esc(i.name)}</div><div class="meta">${statusPill(i)}<span class="pill plain">${i.type==='SME'?'SME':'Mainboard'}</span>${i.st!=='listed'?vBadge(i):''}</div></div></div>
       <div class="row"><span class="muted" style="font-size:13px">Total subscription</span><b class="num" style="font:700 26px var(--display)">${s.total.toFixed(2)}×</b></div>
       ${s.QIB!=null?[['Institutions (QIB)',s.QIB,'var(--info)'],['HNIs (NII)',s.NII,'var(--acc)'],['Retail',s.Retail,'var(--up)']].map(([k,v,c])=>`<div><div class="row num" style="font-size:13px"><span>${k}</span><b>${v.toFixed(2)}×</b></div>${bar(v,m,c)}</div>`).join(''):'<p class="note">Category split not published.</p>'}
       ${i.sday?`<div><span class="lbl" style="font-size:11px">Day by day</span><div style="display:flex;gap:8px;align-items:end;height:70px;margin-top:8px">${i.sday.map(([d,v])=>`<div style="flex:1;display:grid;gap:4px;justify-items:center;align-self:end"><b class="num" style="font-size:11.5px">${v}×</b><div style="width:100%;height:${Math.max(4,v/Math.max(...i.sday.map(x=>x[1]))*44)}px;border-radius:8px;background:var(--acc);opacity:.85" class="sday-bar"></div><span class="muted" style="font-size:11px">${d}</span></div>`).join('')}</div><p class="src" style="margin-top:6px">${esc(i.sdsrc)}.</p></div>`:''}
@@ -1086,28 +1097,28 @@ function renderSub(){
 // ===================== Screener =====================
 let scrK='c',scrD=1,scrQ='',scrType='All',scrSt='All';
 function renderScreener(){
-  const cols=[['name','IPO'],['st','Status'],['hi','Price'],['lot','Lot'],['minAmt','Min. application'],['size','Size (Cr)'],['subT','Subscribed'],['gmpP','GMP %'],['est','Est. profit'],['ls','Listing']];
-  const val=(i,k)=>k==='subT'?(i.sub?i.sub.total:-1):k==='gmpP'?(gmpPct(i)??-999):k==='est'?(estProfit(i)??-1):k==='st'?['open','upcoming','closed','listed'].indexOf(i.st):k==='ls'||k==='c'?(i[k]?+i[k]:9e15):(i[k]??-1);
+  const cols=[['name','IPO'],['st','Status'],['sig','Signal'],['hi','Price'],['lot','Lot'],['minAmt','Min. application'],['size','Size (Cr)'],['subT','Subscribed'],['gmpP','GMP %'],['est','Est. profit'],['ls','Listing']];
+  const val=(i,k)=>k==='subT'?(i.sub?i.sub.total:-1):k==='gmpP'?(gmpPct(i)??-999):k==='est'?(estProfit(i)??-1):k==='st'?['open','upcoming','closed','listed'].indexOf(i.st):k==='sig'?['apply','consider','wait','avoid','na'].indexOf(verdict(i).k):k==='ls'||k==='c'?(i[k]?+i[k]:9e15):(i[k]??-1);
   let L=IPOS.filter(i=>(scrType==='All'||i.type===scrType)&&(scrSt==='All'||i.st===scrSt)&&(!scrQ||(i.name+i.sector).toLowerCase().includes(scrQ)));
   L.sort((a,b)=>{const x=scrK==='name'?a.name:val(a,scrK),y=scrK==='name'?b.name:val(b,scrK);return (x>y?1:x<y?-1:0)*scrD});
   document.getElementById('scrbody').innerHTML=`<div class="filters"><label class="sr" for="scrq">Search IPOs</label><input id="scrq" class="scrq" placeholder="Search IPO or sector" value="${esc(scrQ)}">
     <div class="tabs">${['All','open','upcoming','closed','listed'].map(s=>`<button type="button" data-st="${s}" aria-pressed="${scrSt===s}">${s==='All'?'All status':s[0].toUpperCase()+s.slice(1)}</button>`).join('')}</div>
-    <div class="tabs">${['All','Mainboard','SME'].map(s=>`<button type="button" data-ty="${s}" aria-pressed="${scrType===s}">${s}</button>`).join('')}</div></div>
+    </div>
     <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" style="min-width:980px"><tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${scrK===k?(scrD>0?'ascending':'descending'):'none'}">${l}${scrK===k?(scrD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>
     ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${esc(i.sector)}</small></div></div></td>
-      <td>${statusPill(i)}</td><td>${band(i)}</td><td>${i.lot?i.lot.toLocaleString('en-IN'):'TBA'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${i.size.toLocaleString('en-IN')}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${i.gmp&&i.st!=='listed'?chip(gmpPct(i)):i.listPrice?`<span class="muted" style="font-size:12px">listed ${sgn((i.listPrice/i.hi-1)*100)}%</span>`:'—'}</td><td>${estProfit(i)!=null&&i.st!=='listed'?'+'+rs0(estProfit(i)):'—'}</td><td>${d2(i.ls)}</td><td>${starBtn('ipo:'+i.id,i.name)}</td></tr>`).join('')||`<tr><td colspan="11" class="muted" style="text-align:center">No IPOs match.</td></tr>`}</table></div></div>
+      <td>${statusPill(i)}<div style="margin-top:4px">${canApply(i)}</div></td><td>${vBadge(i)}</td><td>${band(i)}</td><td>${i.lot?i.lot.toLocaleString('en-IN'):'TBA'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${i.size.toLocaleString('en-IN')}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${i.gmp&&i.st!=='listed'?chip(gmpPct(i)):i.listPrice?`<span class="muted" style="font-size:12px">listed ${sgn((i.listPrice/i.hi-1)*100)}%</span>`:'—'}</td><td>${estProfit(i)!=null&&i.st!=='listed'?'+'+rs0(estProfit(i)):'—'}</td><td>${d2(i.ls)}</td><td>${starBtn('ipo:'+i.id,i.name)}</td></tr>`).join('')||`<tr><td colspan="12" class="muted" style="text-align:center">No IPOs match.</td></tr>`}</table></div></div>
     <p class="src">${L.length} of ${IPOS.length} IPOs. Tap a row for details. Est. profit uses GMP × minimum application and is unofficial.</p>`;
   const q=document.getElementById('scrq');q.oninput=()=>{scrQ=q.value.toLowerCase();const pos=q.selectionStart;renderScreener();const n=document.getElementById('scrq');n.focus();n.setSelectionRange(pos,pos)};
   document.querySelectorAll('#scrbody [data-st]').forEach(b=>b.onclick=()=>{scrSt=b.dataset.st;renderScreener()});
   document.querySelectorAll('#scrbody [data-ty]').forEach(b=>b.onclick=()=>{scrType=b.dataset.ty;renderScreener()});
-  document.querySelectorAll('#scrbody th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;scrD=scrK===k?-scrD:(['name','c','ls','hi','lot','minAmt','st'].includes(k)?1:-1);scrK=k;renderScreener()});
+  document.querySelectorAll('#scrbody th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;scrD=scrK===k?-scrD:(['name','c','ls','hi','lot','minAmt','st','sig'].includes(k)?1:-1);scrK=k;renderScreener()});
   document.querySelectorAll('#scrbody tr[data-open]').forEach(r=>r.onclick=e=>{if(!e.target.closest('[data-star]'))openIpo(r.dataset.open)});
 }
 
 // ===================== Allotment desk =====================
 let allotSel=null;
 function renderAllot(){
-  const L=IPOS.filter(i=>i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1)).sort((a,b)=>(a.al||0)-(b.al||0));
+  const L=IPOS.filter(i=>(i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1))&&tOK(i)).sort((a,b)=>(a.al||0)-(b.al||0));
   if(!allotSel||!L.find(i=>i.id===allotSel))allotSel=(L.find(i=>i.al&&+i.al===+T0)||L[0]||{}).id;
   const i=byId[allotSel],mine=apps.filter(a=>a.ipo===allotSel);
   const st=!i?'':(!i.al?'Allotment date TBA':T0<i.al?`Allotment expected on ${d2(i.al)} (in ${days(i.al)} day${days(i.al)===1?'':'s'})`:+T0===+i.al?'Allotment is being finalised today. Results usually appear by evening.':'Allotment is done. Check your status now.');
@@ -1130,7 +1141,7 @@ const CATS={rmin:'Retail · 1 lot',rmax:'Retail · max (under ₹2 lakh)',shni:'
 function appAmt(i,cat){if(!i.lot)return 0;const one=i.lot*i.hi;if(i.type==='SME')return one*i.ml*(cat==='bhni'?Math.max(1,Math.ceil(1000000/(one*i.ml))):1);
   if(cat==='rmin')return one;if(cat==='rmax')return one*Math.max(1,Math.floor(199999/one));if(cat==='shni')return one*Math.ceil(200001/one);return one*Math.ceil(1000000/one)}
 function renderPlanner(){
-  const cand=IPOS.filter(i=>(i.st==='open'||i.st==='upcoming')&&i.lot&&i.rf);
+  const cand=IPOS.filter(i=>(i.st==='open'||i.st==='upcoming')&&i.lot&&i.rf&&tOK(i));
   if(!plan.sel)plan.sel=cand.filter(i=>i.type==='Mainboard').map(i=>i.id);
   const S=cand.filter(i=>plan.sel.includes(i.id));
   const start=i=>plan.mode==='last'?i.c:(i.o>T0?i.o:T0);
@@ -1146,7 +1157,7 @@ function renderPlanner(){
     <div><span class="lbl">Applicants (PANs)</span><div class="stepper"><button type="button" data-p="-1" aria-label="Fewer applicants">−</button><b class="num">${plan.pans}</b><button type="button" data-p="1" aria-label="More applicants">+</button></div><p class="note">Each PAN can apply once per IPO, e.g. you, spouse, parents.</p></div>
     <label class="field" for="pcat">Category<select id="pcat">${Object.entries(CATS).map(([k,l])=>`<option value="${k}" ${plan.cat===k?'selected':''}>${l}</option>`).join('')}</select></label>
     <div><span class="lbl">When will you apply?</span><div class="tabs" style="margin-top:8px"><button type="button" data-m="last" aria-pressed="${plan.mode==='last'}">On the last day</button><button type="button" data-m="first" aria-pressed="${plan.mode==='first'}">As soon as it opens</button></div><p class="note" style="margin-top:6px">Applying on the last day lets refunds from earlier IPOs come back first.</p></div>
-    <div><span class="lbl">IPOs you plan to apply for</span><div style="display:grid;gap:4px;margin-top:8px">${cand.map(i=>`<label class="check prow" for="pl-${i.id}"><input type="checkbox" id="pl-${i.id}" data-sel="${i.id}" ${plan.sel.includes(i.id)?'checked':''}><span style="flex:1"><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?'SME':'Mainboard'} · closes ${d2(i.c)} · refund ${d2(i.rf)}</small></span><span class="num muted" style="font-size:13px">${rs0(appAmt(i,plan.cat))}</span></label>`).join('')}</div></div>
+    <div><span class="lbl">IPOs you plan to apply for</span><div style="display:grid;gap:4px;margin-top:8px">${cand.map(i=>`<label class="check prow" for="pl-${i.id}"><input type="checkbox" id="pl-${i.id}" data-sel="${i.id}" ${plan.sel.includes(i.id)?'checked':''}><span style="flex:1"><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?'SME':'Mainboard'} · closes ${d2(i.c)} · refund ${d2(i.rf)}</small><span style="display:inline-block;margin-top:4px">${vBadge(i)}</span></span><span class="num muted" style="font-size:13px">${rs0(appAmt(i,plan.cat))}</span></label>`).join('')}</div></div>
    </div>
    <div class="glass card">${S.length?`<div class="kgrid num" style="grid-template-columns:repeat(3,1fr)"><div><span>Cash you need</span><b class="up">${rs0(peak)}</b></div><div><span>If paid all at once</span><b>${rs0(total)}</b></div><div><span>You save</span><b>${rs0(total-peak)}</b></div></div>
      <p class="note" style="margin:10px 0 16px">Most money is blocked on <b>${peakDay?d2(peakDay):'—'}</b>. With ${plan.pans} applicant${plan.pans>1?'s':''}, ${S.length} IPO${S.length>1?'s':''}, ${CATS[plan.cat].toLowerCase()}.</p>
@@ -1177,11 +1188,11 @@ function renderLearn(){document.getElementById('learnbody').innerHTML=`<div clas
 // ===================== Home IPO table =====================
 let homeIpoTab='open';
 function renderHomeIpo(){
-  const sets={open:IPOS.filter(i=>i.st==='open'),closed:IPOS.filter(i=>i.st==='closed'),listed:IPOS.filter(i=>i.st==='listed')};
+  const sets={open:IPOS.filter(i=>i.st==='open'&&tOK(i)),closed:IPOS.filter(i=>i.st==='closed'&&tOK(i)),listed:IPOS.filter(i=>i.st==='listed'&&tOK(i))};
   const L=(sets[homeIpoTab]||[]).sort((a,b)=>a.c-b.c);
-  document.getElementById('homeipo').innerHTML=`<div class="row" style="margin-bottom:10px;flex-wrap:wrap"><div class="tabs">${[['open','Open now'],['closed','Awaiting listing'],['listed','Just listed']].map(([k,l])=>`<button type="button" data-h="${k}" aria-pressed="${homeIpoTab===k}">${l}<span class="count">${sets[k].length}</span></button>`).join('')}</div><a class="link" href="#ipo-screener">Open screener →</a></div>
+  document.getElementById('homeipo').innerHTML=`<div class="row" style="margin-bottom:10px;flex-wrap:wrap"><div class="tabs">${[['open','Open now'],['closed','Awaiting listing'],['listed','Just listed']].map(([k,l])=>`<button type="button" data-h="${k}" aria-pressed="${homeIpoTab===k}">${l}<span class="count">${sets[k].length}</span></button>`).join('')}</div>${iptSeg()}<a class="link" href="#ipo-screener">Open screener →</a></div>
    <div class="tw"><table class="stbl num" style="min-width:760px"><tr><th>IPO</th><th>Price</th><th>${homeIpoTab==='listed'?'Listing gain':'GMP'}</th><th>Min. application</th><th>${homeIpoTab==='listed'?'Profit / lot':'Est. profit'}</th><th>Subscribed</th><th>${homeIpoTab==='open'?'Closes':homeIpoTab==='closed'?'Allotment':'Listed'}</th><th></th></tr>
-   ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${cr(i.size)}</small></div></div></td>
+   ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${cr(i.size)}</small>${homeIpoTab==='open'?`<div style="margin-top:4px">${vBadge(i)}</div>`:''}</div></div></td>
     <td>${band(i)}</td><td>${homeIpoTab==='listed'?chip((i.listPrice/i.hi-1)*100):i.gmp?`₹${i.gmp.v} ${chip(gmpPct(i))}`:'—'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${(()=>{const p=profitPerApp(i);return p?`<b class="${p.v>=0?'up':'down'}">${p.v>=0?'+':'−'}${rs0(p.v)}</b>`:'—'})()}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${homeIpoTab==='open'?statusPill(i):homeIpoTab==='closed'?d2(i.al):d2(i.ls)}</td><td>${homeIpoTab==='open'?`<button class="btn" type="button" data-apply="${i.id}" style="padding:7px 14px;font-size:13px">Apply</button>`:homeIpoTab==='closed'?`<a class="ghost" href="${allotLink(i)}" target="_blank" rel="noopener" style="padding:7px 12px;font-size:13px">Allotment ↗</a>`:''}</td></tr>`).join('')}</table></div>`;
   document.querySelectorAll('#homeipo [data-h]').forEach(b=>b.onclick=()=>{homeIpoTab=b.dataset.h;renderHomeIpo()});
   document.querySelectorAll('#homeipo tr[data-open]').forEach(r=>r.onclick=e=>{if(e.target.closest('a'))return;const a=e.target.closest('[data-apply]');openIpo(r.dataset.open,a?'apply':undefined)});
@@ -1684,6 +1695,7 @@ function ago(){const el=document.getElementById('liveago');if(!el||!LIVED||!LIVE
   el.textContent=s<60?s+'s ago':s<3600?Math.round(s/60)+' min ago':LIVED.label}
 patchLabels();setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(ago,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pullLive()});
 
+ipoType=mType=gType=scrType=IPT;
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
 document.getElementById('srcs').textContent=SOURCES.replace('Sources:','Data sources:')+' Market data: NSE and BSE via Upstox, Angel One, HDFC Sky, Kotak Neo, Liquide, Multibagg, Investing.com, Screener.in, Business Recorder.';
