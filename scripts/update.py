@@ -117,7 +117,7 @@ def quotes(symbols):
 
 def markets(out):
     syms = list(INDICES.values()) + [s for _, s in SECTORS] + list(STOCKS.values()) + \
-        [k + ".NS" for k in EXTRA_LARGE] + ["INR=X", "BZ=F", "GC=F"]
+        [k + ".NS" for k in EXTRA_LARGE] + ["INR=X", "BZ=F", "GC=F", "^DJI", "^GSPC", "^IXIC", "^N225", "^HSI", "^FTSE", "^TNX"]
     Q = quotes(syms)
     global quote
     _q = quote
@@ -157,6 +157,16 @@ def markets(out):
             out["nifty8"] = closes[-8:]
     except Exception as e:
         log(f"nifty history failed: {e}")
+    glob = []
+    for name, sym in (("Dow Jones", "^DJI"), ("S&P 500", "^GSPC"), ("Nasdaq", "^IXIC"), ("Nikkei 225", "^N225"),
+                      ("Hang Seng", "^HSI"), ("FTSE 100", "^FTSE"), ("US 10Y yield", "^TNX")):
+        try:
+            q = quote(sym)
+            glob.append([name, q["v"], q["pct"], q.get("t")])
+        except Exception as e:
+            log(f"global {name} failed: {e}")
+    if glob:
+        out["global"] = glob
     for key, sym in (("usdinr", "INR=X"), ("brent", "BZ=F"), ("goldSpot", "GC=F")):
         try:
             out[key] = quote(sym)
@@ -535,7 +545,7 @@ def all_quotes(uni):
         log(f"yahoo crumb failed: {e}")
     fields = ("regularMarketPrice,regularMarketChangePercent,regularMarketPreviousClose,regularMarketOpen,regularMarketDayHigh,"
               "regularMarketDayLow,fiftyTwoWeekHigh,fiftyTwoWeekLow,regularMarketVolume,marketCap,trailingPE,epsTrailingTwelveMonths,"
-              "priceToBook,trailingAnnualDividendYield,regularMarketTime")
+              "priceToBook,trailingAnnualDividendYield,regularMarketTime,averageDailyVolume3Month,averageDailyVolume10Day")
 
     def batch(chunk):
         r = S.get("https://query1.finance.yahoo.com/v7/finance/quote", timeout=30,
@@ -566,7 +576,7 @@ def all_quotes(uni):
                               q.get("regularMarketVolume"), round(mc / 1e7, 1) if isinstance(mc, (int, float)) else None,
                               g("trailingPE"), g("epsTrailingTwelveMonths"), g("priceToBook"),
                               round(q["trailingAnnualDividendYield"] * 100, 2) if isinstance(q.get("trailingAnnualDividendYield"), (int, float)) else None,
-                              q.get("regularMarketTime")]
+                              q.get("regularMarketTime"), q.get("averageDailyVolume3Month"), q.get("averageDailyVolume10Day")]
     if len(out) < len(ysyms) * 0.5:
         # fallback: one chart request per NSE symbol (price, change, day range, 52-week range)
         log(f"batch quotes gave {len(out)}; using per-symbol fallback for NSE")
@@ -600,7 +610,7 @@ def everything(out):
     q = all_quotes(uni)
     if q:
         json.dump({"updated": NOW.isoformat(timespec="seconds"), "label": NOW.strftime("%-d %b %Y, %-I:%M %p IST"),
-                   "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t"], "q": q},
+                   "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t", "av3m", "av10"], "q": q},
                   open(os.path.join(OUT_EXTRA, "quotes.json"), "w"), separators=(",", ":"))
     out["universe"] = {"stocks": len(uni.get("s", [])), "quotes": len(q), "at": NOW.strftime("%-d %b, %-I:%M %p")}
 
