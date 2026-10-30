@@ -443,7 +443,7 @@ def universe():
     """All listed equities: NSE main board + NSE SME + BSE-only. Refreshed once a day."""
     try:
         old = get(RAW_DATA + "universe.json").json()
-        if old.get("day") == NOW.strftime("%Y-%m-%d") and len(old.get("s", [])) > 1000 and (old.get("bse") or old.get("tries", 0) >= 3):
+        if old.get("day") == NOW.strftime("%Y-%m-%d") and len(old.get("s", [])) > 1000 and (old.get("bse") or old.get("tries", 0) >= 3) and old.get("v") == 2:
             return old
     except Exception:
         old = {}
@@ -497,7 +497,13 @@ def universe():
                     if si is not None and r[si].strip() not in ("A", "B", "T", "X", "XT", "M", "MT", "Z", "ZP", "MS", "P", "R", "W"):
                         continue
                     nm = re.sub(r"\s+(Limited|Ltd\.?)$", "", r[ni].strip(), flags=re.I)
-                    rows.append(["B" + r[ci].strip(), nm, "BSE", r[ci].strip() + ".BO", r[ti].strip()])
+                    eod = None
+                    try:
+                        g = lambda col: float(r[head.index(col)]) if col in head and r[head.index(col)].strip() else None
+                        eod = [g("ClsPric"), g("PrvsClsgPric"), g("OpnPric"), g("HghPric"), g("LwPric"), g("TtlTradgVol"), d.strftime("%-d %b")]
+                    except (ValueError, IndexError):
+                        pass
+                    rows.append(["B" + r[ci].strip(), nm, "BSE", r[ci].strip() + ".BO", r[ti].strip(), eod])
                 log(f"bse bhavcopy {d}: {len(rows) - n0} BSE-only scrips")
                 break
             except Exception as e2:
@@ -507,7 +513,7 @@ def universe():
         return old or {"s": rows}
     nb = sum(1 for r in rows if r[2] == "BSE")
     tries = (old.get("tries", 0) + 1) if old.get("day") == NOW.strftime("%Y-%m-%d") and not nb else 0
-    return {"day": NOW.strftime("%Y-%m-%d"), "s": rows, "bse": nb, "tries": tries}
+    return {"day": NOW.strftime("%Y-%m-%d"), "s": rows, "bse": nb, "tries": tries, "v": 2}
 
 
 def yahoo_crumb():
@@ -578,6 +584,12 @@ def all_quotes(uni):
             for sym, row in ex.map(one, nse):
                 if row:
                     out[key_of[sym]] = row
+    # BSE-only scrips that Yahoo doesn't price: use BSE's official close from its daily price file
+    for r in uni.get("s", []):
+        if r[0] in out or len(r) < 6 or not r[5] or r[5][0] is None:
+            continue
+        c, pv, o, h, l, v, day = r[5]
+        out[r[0]] = [c, round((c / pv - 1) * 100, 2) if pv else None, pv, o, h, l, None, None, v, None, None, None, None, None, "BSE close " + day]
     return out
 
 
