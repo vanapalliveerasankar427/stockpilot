@@ -71,8 +71,8 @@ async function check(reg, cid, pan) {
     if (r.status === 404 || r.status === 204) return { found: false };
     if (!r.ok) throw new Error("KFintech " + r.status);
     const t = await r.text(); if (!t.trim()) return { found: false };
-    const d = JSON.parse(t); let rows = d && d.data !== undefined ? d.data : d; rows = Array.isArray(rows) ? rows : rows ? [rows] : [];
-    if (!rows.length) return { found: false };
+    const d = JSON.parse(t); let rows = d && d.data !== undefined ? d.data : d; rows = (Array.isArray(rows) ? rows : rows ? [rows] : []).filter(x => x && typeof x === "object" && ("App_Shares" in x || "All_Shares" in x));
+    if (!rows.length || rows.every(x => !int(x.App_Shares))) return { found: false };
     return { found: true, applied: rows.reduce((a, x) => a + int(x.App_Shares), 0), allotted: rows.reduce((a, x) => a + int(x.All_Shares), 0), category: String(rows[0].category || "") };
   }
   if (reg === "maashitla") {
