@@ -31,7 +31,13 @@ def fetch(url, timeout=12):
     return r
 
 
-def to_png(data, min_px=48):
+def to_png(data, min_px=32):
+    if data[:200].lstrip().startswith((b"<svg", b"<?xml")) or b"<svg" in data[:400]:
+        try:
+            import cairosvg
+            data = cairosvg.svg2png(bytestring=data, output_width=192, output_height=192)
+        except Exception:
+            return None
     im = Image.open(io.BytesIO(data))
     if getattr(im, "n_frames", 1) > 1 or im.format == "ICO":  # pick the largest frame / icon size
         try:
@@ -61,27 +67,37 @@ def candidates(site):
     for tag in re.findall(r"<link\b[^>]*>", page, re.I):
         rel = (re.search(r'rel=["\']([^"\']+)', tag, re.I) or [None, ""])[1].lower()
         href = (re.search(r'href=["\']([^"\']+)', tag, re.I) or [None, ""])[1]
-        if not href or "icon" not in rel or href.lower().endswith(".svg"):
+        if not href or "icon" not in rel or "mask-icon" in rel:
             continue
         size = re.search(r'sizes=["\'](\d+)x', tag, re.I)
-        score = (1000 if "apple" in rel else 0) + (int(size.group(1)) if size else 32)
+        score = (1000 if "apple" in rel else 0) + (int(size.group(1)) if size else (150 if href.lower().endswith(".svg") else 32))
         out.append((score, urljoin(base, href)))
     out.sort(reverse=True)
     return [u for _, u in out] + [urljoin(base, "/apple-touch-icon.png"), urljoin(base, "/favicon.ico")]
 
 
 def logo_for(key, domain):
-    site = "https://" + domain
-    for u in candidates(site)[:5]:
+    # 1) public icon services (fast, work even when the company site blocks bots)
+    for u in (f"https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://{domain}&size=128",
+              f"https://www.google.com/s2/favicons?domain={domain}&sz=128"):
         try:
-            png = to_png(fetch(u).content)
+            png = to_png(fetch(u).content, min_px=48)
             if png:
                 return png
         except Exception:
-            continue
+            pass
+    # 2) the company's own site
+    for site in ("https://" + domain, "https://www." + domain):
+        for u in candidates(site)[:6]:
+            try:
+                png = to_png(fetch(u).content)
+                if png:
+                    return png
+            except Exception:
+                continue
+    # 3) DuckDuckGo's icon cache
     try:
-        r = fetch(f"https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url={site}&size=128")
-        return to_png(r.content)
+        return to_png(fetch(f"https://icons.duckduckgo.com/ip3/{domain}.ico").content)
     except Exception:
         return None
 
@@ -94,7 +110,7 @@ def main():
         idx = json.load(open(os.path.join(OUT, "index.json")))
     except Exception:
         idx = {"have": [], "tried": {}}
-    have, tried = set(idx.get("have", [])), dict(idx.get("tried", {}))
+    have, tried = set(idx.get("have", [])), dict(idx.get("tried", {}) if idx.get("v") == 2 else {})
     todo = [(k, d) for k, d in domains.items() if k not in have and tried.get(k) != d][:LIMIT]
 
     def work(kd):
@@ -111,7 +127,7 @@ def main():
 
     with ThreadPoolExecutor(max_workers=48) as ex:
         list(ex.map(work, todo))
-    json.dump({"have": sorted(have), "tried": tried}, open(os.path.join(OUT, "index.json"), "w"), separators=(",", ":"))
+    json.dump({"v": 2, "have": sorted(have), "tried": tried}, open(os.path.join(OUT, "index.json"), "w"), separators=(",", ":"))
     print(json.dumps(stats), "total logos:", len(have))
 
 
