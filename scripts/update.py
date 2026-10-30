@@ -613,6 +613,154 @@ def everything(out):
                    "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t", "av3m", "av10"], "q": q},
                   open(os.path.join(OUT_EXTRA, "quotes.json"), "w"), separators=(",", ":"))
     out["universe"] = {"stocks": len(uni.get("s", [])), "quotes": len(q), "at": NOW.strftime("%-d %b, %-I:%M %p")}
+    if q:
+        try:
+            outlook(out, uni, q)
+        except Exception as e:
+            log(f"outlook crashed: {e}")
+
+
+# ----------------------------------------------------------------- today's outlook (likely up / likely down)
+POS = [(r"\b(surges?|soars?|jumps?|rall(y|ies)|zooms?|skyrockets?|spurts?|climbs?|gains?|rises?|up \d+(\.\d+)?%|hits? (record|52[- ]week) high|upper circuit)\b", 2),
+       (r"\b(order|contract|deal|project)s? (win|worth|from|of)\b|\b(wins?|bags?|secures?|bagged|won|receives?) (an? )?(order|contract|deal|project|approval|nod)", 3),
+       (r"\b(profit|net income|pat|revenue|ebitda|earnings)\b[^.]{0,30}\b(rises?|jumps?|surges?|grows?|up|soars?|doubles?|beats?|higher)\b", 3),
+       (r"\b(beats? (estimates|expectations)|strong (results|quarter|numbers|q[1-4]))\b", 2),
+       (r"\b(upgrades?|upgraded|raises? target|target (price )?(raised|hiked)|buy (rating|call)|initiates? (coverage )?with (a )?buy|overweight|outperform)\b", 2),
+       (r"\b(usfda|fda|dcgi|sebi|rbi|cci) (nod|approval|approves)|gets? (usfda|fda|regulatory) (nod|approval)\b", 2),
+       (r"\b(bonus|buyback|special dividend|stock split|record date)\b", 1),
+       (r"\b(acquires?|acquisition|stake (buy|hike)|raises? stake|partnership|joint venture|ties? up|launch(es)?|expansion|capex|new plant)\b", 1)]
+NEG = [(r"\b(falls?|slumps?|plunges?|crash(es)?|tumbles?|tanks?|sinks?|slides?|drops?|declines?|dips?|down \d+(\.\d+)?%|hits? 52[- ]week low|lower circuit|sell-?off)\b", 2),
+       (r"\b(profit|net income|pat|revenue|ebitda|earnings|margin)s?\b[^.]{0,30}\b(falls?|drops?|declines?|slumps?|plunges?|down|lower|misses?|shrinks?|contracts?)\b|\b(net )?loss widens|\bposts? (a )?(net )?loss\b", 3),
+       (r"\b(misses? (estimates|expectations)|weak (results|quarter|numbers|q[1-4]|guidance))\b", 2),
+       (r"\b(downgrades?|downgraded|cuts? target|target (price )?(cut|lowered|slashed)|sell (rating|call)|underweight|underperform|reduce rating)\b", 2),
+       (r"\b(probe|raid|penalty|fined?|fraud|scam|show[- ]cause|sebi order|ban(ned)?|default(s|ed)?|insolvency|resigns?|resignation|pledge|downgrade by (icra|crisil|care)|fire at|strike at|recall)\b", 3),
+       (r"\b(block deal|promoter (sells?|offloads?)|stake sale|ofs\b|dilution)\b", 1)]
+OUTLOOK_Q = ["shares surge India", "shares jump NSE", "stock rallies after", "shares fall India", "shares slump NSE", "Q2 results net profit shares",
+             "bags order shares", "wins contract shares", "stocks to watch today", "brokerage target price shares", "upper circuit stock", "SEBI order company shares"]
+
+
+def _clean_name(n):
+    n = re.sub(r"\b(limited|ltd|ltd\.|the|co|company|corporation|corp)\b\.?", " ", n.lower().replace("&", "and"))
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", n)).strip()
+
+
+def outlook(out, uni, q):
+    try:
+        prof = get("https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/hist/profiles.json").json().get("sec", {})
+    except Exception:
+        prof = {}
+    names = {r[0]: r[1] for r in uni.get("s", [])}
+    pool = {k: v for k, v in q.items() if v and v[0] and v[0] >= 20 and ((v[9] or 0) >= 500 or (v[9] is None and (v[0] or 0) * (v[8] or 0) >= 2e7))}
+    # name aliases for matching headlines
+    alias = {}
+    for k in sorted(pool, key=lambda k: -(pool[k][9] or 0)):  # bigger companies claim shared short names first
+        n = _clean_name(names.get(k, k))
+        if len(n) >= 6:
+            alias.setdefault(n, k)
+            n2 = n.replace("pharmaceuticals", "pharma").replace("pharmaceutical", "pharma").replace(" industries", "").replace(" india", "")
+            if len(n2) >= 6:
+                alias.setdefault(n2, k)
+            w = n.split()
+            if len(w) >= 3 and len(" ".join(w[:2])) >= 9:
+                alias.setdefault(" ".join(w[:2]), k)
+    # drop ambiguous two-word aliases that several companies share
+    cnt = {}
+    for k in pool:
+        w = _clean_name(names.get(k, k)).split()
+        if len(w) >= 2:
+            cnt[" ".join(w[:2])] = cnt.get(" ".join(w[:2]), 0) + 1
+    for a in [a for a in alias if cnt.get(a, 1) > 1 and alias[a] and _clean_name(names.get(alias[a], "")) != a]:
+        alias.pop(a, None)
+    pats = sorted(alias, key=len, reverse=True)
+    rx = re.compile(r"\b(" + "|".join(re.escape(a) for a in pats) + r")\b") if pats else None
+    syms = {k for k in pool if len(k) >= 3 and k.isalpha()}
+
+    heads, seen = [], set()
+    def feed(qs):
+        try:
+            x = get("https://news.google.com/rss/search", params={"q": qs + " when:1d", "hl": "en-IN", "gl": "IN", "ceid": "IN:en"}).content
+            res = []
+            for it in ET.fromstring(x).iter("item"):
+                t = it.findtext("title") or ""; src = it.findtext("source") or ""
+                if src and t.endswith(" - " + src):
+                    t = t[: -len(src) - 3]
+                res.append((t, src, it.findtext("link") or ""))
+            return res
+        except Exception as e:
+            log(f"outlook news '{qs}' failed: {e}")
+            return []
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        for res in ex.map(feed, OUTLOOK_Q):
+            for t, src, link in res:
+                key = re.sub(r"\W", "", t.lower())[:80]
+                if key not in seen:
+                    seen.add(key); heads.append((t, src, link))
+
+    score, why = {}, {}
+    def add(k, s, kind, txt, url=None, src=None):
+        score[k] = score.get(k, 0) + s
+        why.setdefault(k, []).append({"k": kind, "t": txt, "s": s, **({"u": url} if url else {}), **({"src": src} if src else {})})
+    for t, src, link in heads:
+        low = t.lower().replace("&", "and")
+        hit = set()
+        if rx:
+            for m in rx.finditer(re.sub(r"[^a-z0-9 ]", " ", low)):
+                hit.add(alias[m.group(1)])
+        for w in re.findall(r"\b[A-Z][A-Z0-9]{2,}\b", t):
+            if w in syms and w not in ("IPO", "NSE", "BSE", "SEBI", "RBI", "GST", "USD", "INR", "FII", "DII", "LIC", "GDP"):
+                hit.add(w)
+        if not hit or len(hit) > 2:
+            continue  # skip lists like "stocks to watch: A, B, C"
+        p = sum(w for r, w in POS if re.search(r, low)); n = sum(w for r, w in NEG if re.search(r, low))
+        s = max(-4, min(4, p - n))
+        if s == 0:
+            continue
+        for k in hit:
+            if sum(1 for x in why.get(k, []) if x["k"] == "news") < 3:
+                add(k, s * 2, "news", t, link, src)
+    # price action in the latest session
+    for k, v in pool.items():
+        price, pct, prev, op, hi, lo, h52, l52, vol = v[:9]
+        av = (v[16] if len(v) > 16 else None) or (v[15] if len(v) > 15 else None)
+        vr = vol / av if vol and av else None
+        pos = (price - lo) / (hi - lo) if hi and lo and hi > lo else None
+        if pct is None:
+            continue
+        if pct >= 2 and (vr or 0) >= 1.5 and (pos or 0) >= 0.7:
+            add(k, 1.5 + min(1.5, (vr - 1.5) / 2), "price", f"Closed strong: {pct:+.1f}% on {vr:.1f}× usual volume, near the day's high")
+        elif pct <= -2 and (vr or 0) >= 1.5 and pos is not None and pos <= 0.3:
+            add(k, -1.5 - min(1.5, (vr - 1.5) / 2), "price", f"Closed weak: {pct:+.1f}% on {vr:.1f}× usual volume, near the day's low")
+        if h52 and price >= h52 * 0.995 and pct > 0.5:
+            add(k, 1, "price", "Trading at a 52-week high")
+        elif l52 and price <= l52 * 1.005 and pct < -0.5:
+            add(k, -1, "price", "Trading at a 52-week low")
+    # global cues for sectors
+    G = {n: p for n, v, p, *_ in out.get("global", [])}
+    nas = G.get("Nasdaq"); cues = []
+    if nas is not None and abs(nas) >= 1:
+        cues.append(f"US tech (Nasdaq) {'rose' if nas > 0 else 'fell'} {abs(nas):.1f}% in the last session")
+        for k in score:
+            sec = (prof.get(k) or [""])[0]
+            if sec == "Technology":
+                add(k, 1 if nas > 0 else -1, "global", f"Nasdaq {nas:+.1f}% overnight; IT stocks often follow")
+    br = out.get("brent") or {}
+    if isinstance(br, dict) and br.get("pct") is not None and abs(br["pct"]) >= 2:
+        cues.append(f"Brent crude {'up' if br['pct'] > 0 else 'down'} {abs(br['pct']):.1f}%")
+    for n in ("Dow Jones", "S&P 500", "Nikkei 225", "Hang Seng"):
+        if G.get(n) is not None and abs(G[n]) >= 0.8:
+            cues.append(f"{n} {G[n]:+.1f}%")
+
+    def item(k):
+        v = pool[k]; s = round(score[k], 1); r = sorted(why[k], key=lambda x: -abs(x["s"]))[:4]
+        has_news = any(x["k"] == "news" for x in r)
+        conf = "High" if abs(s) >= 6 and has_news else "Medium" if abs(s) >= 3.5 else "Low"
+        return {"k": k, "n": names.get(k, k), "s": s, "conf": conf, "p": v[0], "pct": v[1], "mc": v[9], "sec": (prof.get(k) or [""])[0], "why": r}
+    news_k = {k for k in why if any(x["k"] == "news" for x in why[k])}
+    ranked = sorted((k for k in score if k in pool), key=lambda k: -(score[k] + (1.5 if k in news_k else 0) * (1 if score[k] > 0 else -1)))
+    up = [item(k) for k in ranked if score[k] >= 2.5][:25]
+    dn = [item(k) for k in reversed(ranked) if score[k] <= -2.5][:25]
+    out["outlook"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "headlines": len(heads), "screened": len(pool), "cues": cues, "up": up, "down": dn}
+    log(f"outlook: {len(heads)} headlines, {len(up)} up, {len(dn)} down")
 
 
 # ----------------------------------------------------------------- FII / DII (NSE)

@@ -941,6 +941,40 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .aw-pq svg{position:absolute;left:14px;color:var(--muted)}
 .aw-pq input{width:100%;height:46px;border-radius:14px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg,#fff) 75%,transparent);padding:0 14px 0 42px;font:inherit;font-size:15px;color:inherit;outline:none}
 .aw-pq input:focus{border-color:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 15%,transparent)}
+
+/* Today's outlook */
+.ol{margin:0 0 22px;padding:18px;border-radius:26px;background:color-mix(in srgb,var(--bg,#fff) 78%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 50px -30px rgba(30,20,80,.35);position:relative;overflow:hidden}
+.ol::before{content:"";position:absolute;inset:-40% -20% auto auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,#10b981 22%,transparent),transparent 70%);pointer-events:none}
+.ol-h h2{font:800 clamp(24px,5vw,32px)/1.1 var(--display,inherit);letter-spacing:-.03em;margin:6px 0 6px}
+.ol-h p{font-size:14px;color:var(--muted);line-height:1.5;max-width:720px}
+.ol-cues{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 2px}.ol-cues span{font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;background:color-mix(in srgb,var(--muted) 10%,transparent)}
+.ol-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 12px;padding:5px;border-radius:18px;background:color-mix(in srgb,var(--muted) 10%,transparent)}
+.ol-tabs button{white-space:nowrap;border:0;background:none;border-radius:14px;padding:12px 6px;font:700 14.5px var(--sans,inherit);color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:all .3s cubic-bezier(.2,.9,.3,1.2)}
+.ol-tabs button b{font-size:12px;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--muted) 16%,transparent)}
+.ol-tabs button[data-ol="up"][aria-selected="true"]{background:linear-gradient(135deg,#34d399,#059669);color:#fff;box-shadow:0 10px 24px -10px rgba(5,150,105,.7)}
+.ol-tabs button[data-ol="down"][aria-selected="true"]{background:linear-gradient(135deg,#fb7185,#e11d48);color:#fff;box-shadow:0 10px 24px -10px rgba(225,29,72,.7)}
+.ol-tabs button[aria-selected="true"] b{background:rgba(255,255,255,.25);color:#fff}
+.ol-list{display:grid;gap:10px}
+@media(min-width:900px){.ol-list{grid-template-columns:1fr 1fr}}
+.ol-row{border-radius:20px;padding:14px;background:var(--bg,#fff);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);border-left:4px solid #10b981;animation:fadeUp .45s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s,box-shadow .25s}
+.ol-row.ol-down{border-left-color:#e11d48}
+@media(hover:hover){.ol-row:hover{transform:translateY(-2px);box-shadow:0 16px 36px -22px rgba(20,20,60,.4)}}
+.ol-top{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;text-decoration:none;color:inherit}
+.ol-top .lg{width:42px;height:42px;border-radius:12px;font-size:13px;display:grid;place-items:center;font-weight:700;position:relative;overflow:hidden}
+.ol-nm{min-width:0}.ol-nm b{display:block;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ol-nm small{display:block;font-size:12px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ol-px{text-align:right}.ol-px b{display:block;font-size:15px}
+.ol-why{display:grid;gap:7px;margin:12px 0 10px;padding:10px 12px;border-radius:14px;background:color-mix(in srgb,var(--muted) 7%,transparent)}
+.ol-why div{display:grid;grid-template-columns:20px 1fr;gap:6px;font-size:13px;line-height:1.4}
+.ol-why a{color:inherit;text-decoration:none;font-weight:500}.ol-why a:hover{text-decoration:underline}
+.ol-why em{display:block;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:1px}.ol-why p{margin:0;color:var(--muted)}
+.ol-f{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ol-conf{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;color:var(--muted)}
+.ol-conf i{width:5px;height:12px;border-radius:2px;background:color-mix(in srgb,var(--muted) 25%,transparent)}.ol-conf i:nth-child(2){height:15px}.ol-conf i:nth-child(3){height:18px;margin-right:5px}
+.ol-row.ol-up .ol-conf.high i,.ol-row.ol-up .ol-conf.medium i:nth-child(-n+2),.ol-row.ol-up .ol-conf.low i:first-child{background:#10b981}
+.ol-row.ol-down .ol-conf.high i,.ol-row.ol-down .ol-conf.medium i:nth-child(-n+2),.ol-row.ol-down .ol-conf.low i:first-child{background:#e11d48}
+.ol-arrow{font-size:12.5px;font-weight:800;letter-spacing:.02em}.ol-row.ol-up .ol-arrow{color:#059669}.ol-row.ol-down .ol-arrow{color:#e11d48}
+.ol-more{width:100%;margin-top:12px}
+.ol-note{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -2601,16 +2635,37 @@ let enhT;new MutationObserver(()=>{clearTimeout(enhT);enhT=setTimeout(()=>enhanc
 
 // ===================== Today: morning setup + screens on real prices for every NSE stock =====================
 let tdF={sme:false,minCap:500};
+// ===================== Today's outlook: likely up / likely down =====================
+let olTab='up',olAll=false;
+function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
+  const L=(olTab==='up'?O.up:O.down)||[],show=olAll?L:L.slice(0,8);
+  const ic={news:'📰',price:'📊',global:'🌍'};
+  const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
+  const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=q&&q.pct!=null?q.pct:x.pct,pr=q&&q.price!=null?q.price:x.p;
+    return `<div class="ol-row ol-${olTab}" style="animation-delay:${k*40}ms"><a class="ol-top" href="#stock-${esc(x.k)}"><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
+      <div class="ol-nm"><b>${esc(x.n)}</b><small>${esc(x.k)}${x.sec?' · '+esc(x.sec):''}</small></div><div class="ol-px"><b class="num">₹${fin(pr)}</b>${chip(pct)}</div></a>
+      <div class="ol-why">${x.why.map(w=>`<div><span>${ic[w.k]||'•'}</span>${w.u?`<a href="${esc(w.u)}" target="_blank" rel="noopener">${esc(w.t)}</a>${w.src?`<em>${esc(w.src)}</em>`:''}`:`<p>${esc(w.t)}</p>`}</div>`).join('')}</div>
+      <div class="ol-f">${conf(x.conf)}<span class="ol-arrow">${olTab==='up'?'▲ Likely up':'▼ Likely down'}</span></div></div>`};
+  return `<section class="ol"><div class="ol-h"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(O.at)}</div><h2>Today's outlook</h2>
+     <p>Stocks with positive or negative signals today, from ${O.headlines} news headlines, quarterly results, global cues and the last session's price and volume.</p></div></div>
+    ${O.cues&&O.cues.length?`<div class="ol-cues">${O.cues.map(c=>`<span>🌍 ${esc(c)}</span>`).join('')}</div>`:''}
+    <div class="ol-tabs" role="tablist"><button type="button" role="tab" data-ol="up" aria-selected="${olTab==='up'}"><span>📈</span>Likely up <b>${(O.up||[]).length}</b></button><button type="button" role="tab" data-ol="down" aria-selected="${olTab==='down'}"><span>📉</span>Likely down <b>${(O.down||[]).length}</b></button></div>
+    <div class="ol-list">${show.map(row).join('')||'<p class="aw-msg" style="padding:20px">No strong signals right now. Check back after the next update.</p>'}</div>
+    ${L.length>8?`<button class="ghost ol-more" type="button" id="olMore">${olAll?'Show fewer':`Show all ${L.length}`}</button>`:''}
+    <p class="ol-note">⚠️ These are signals from news and price data, not predictions or buy/sell advice. Prices can move either way; do your own research before you trade.</p></section>`}
+function wireOutlook(){document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
+  const m=document.getElementById('olMore');if(m)m.onclick=()=>{olAll=!olAll;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()}}
 function renderToday(){const el=document.getElementById('todaypage');if(!el)return;
   const open=LIVED&&LIVED.state==='open',G=(LIVED&&LIVED.global)||[],N=IDX.NIFTY;
   const now=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4),hr=now.getHours()+now.getMinutes()/60,pre=now.getDay()%6&&hr<9.25;
   const basis=open?'live prices':'the last session ('+(LIVED?esc(LIVED.label):'')+')';
   const head=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>${pre?'Good morning · market opens at 9:15 AM':open?'<b class="livedot">● Live</b> · market open':'Market closed'}</div><h1 class="ptitle">Today's market watch</h1>
-    <p class="psub">Global cues, then stocks worth watching, found by simple rules on ${basis} for every NSE stock. These are screens, not predictions or buy/sell advice.</p></div></div>`+allotAlertHTML();
+    <p class="psub">Which stocks look set to rise or fall today, then global cues and screens on ${basis} for every NSE stock.</p></div></div>`+allotAlertHTML();
   const glob=`<div class="gl num">${G.map(([n,v,p])=>`<div><span>${esc(n)}</span><b>${n.includes('yield')?v.toFixed(2)+'%':v.toLocaleString('en-US',{maximumFractionDigits:2})}</b>${chip(p)}</div>`).join('')}
     <div><span>Nifty 50 ${open?'now':'last close'}</span><b>${fin(N.v)}</b>${chip(N.pct)}</div><div><span>India VIX</span><b>${IDX.VIX.v.toFixed(2)}</b>${chip(IDX.VIX.pct)}</div>
     ${window.FLOWS&&FLOWS.fii!=null?`<div><span>FII net (${esc(String(FLOWS.date||'').slice(0,6))})</span><b class="${FLOWS.fii>=0?'up':'down'}">${FLOWS.fii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.fii)).toLocaleString('en-IN')} Cr</b></div><div><span>DII net</span><b class="${FLOWS.dii>=0?'up':'down'}">${FLOWS.dii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.dii)).toLocaleString('en-IN')} Cr</b></div>`:''}</div>`;
-  el.innerHTML=head+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card"><p class="note">Loading prices for every NSE stock…</p></div></div>`;
+  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card"><p class="note">Loading prices for every NSE stock…</p></div></div>`;
+  wireOutlook();
   Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{const b=document.getElementById('tdbody');if(!b||!ALLQ||!UNI)return;
     const L=[];for(const u of UNI){if(u.x==='BSE'||(u.x==='NSE SME'&&!tdF.sme))continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;
       if(q.price<20||(q.mcapCr!=null&&q.mcapCr<tdF.minCap)||(q.mcapCr==null&&tdF.minCap>0&&q.price*(q.vol||0)<2e7))continue;const av=q.av10||q.av3m;q.vr=av&&q.vol?q.vol/av:null;
