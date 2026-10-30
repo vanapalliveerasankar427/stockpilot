@@ -1,0 +1,33 @@
+name: Company logos
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/logos.yml", "scripts/logos.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: logos
+  cancel-in-progress: true
+
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: git clone -q --depth 1 --branch hist "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hist
+      - run: git clone -q --depth 1 --branch logos "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" logos_out || mkdir -p logos_out
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pillow
+      - run: python scripts/logos.py
+      - name: Publish to the logos branch
+        run: |
+          cd logos_out && rm -rf .git && git init -q -b logos && git add -A
+          git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "Logos $(TZ=Asia/Kolkata date '+%d %b %Y %H:%M')"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" logos

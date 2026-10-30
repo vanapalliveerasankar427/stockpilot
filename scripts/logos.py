@@ -109,7 +109,7 @@ def main():
         else:
             stats["fail"] += 1
 
-    with ThreadPoolExecutor(max_workers=24) as ex:
+    with ThreadPoolExecutor(max_workers=48) as ex:
         list(ex.map(work, todo))
     json.dump({"have": sorted(have), "tried": tried}, open(os.path.join(OUT, "index.json"), "w"), separators=(",", ":"))
     print(json.dumps(stats), "total logos:", len(have))
