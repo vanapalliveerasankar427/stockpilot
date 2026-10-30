@@ -478,6 +478,30 @@ def universe():
                 rows.append(["B" + code, name, "BSE", code + ".BO", (r.get("scrip_id") or r.get("Scrip_id") or "").strip()])
     except Exception as e:
         log(f"bse list failed: {e}")
+        # fallback: BSE's daily price file (bhavcopy) lists every traded scrip with code, ISIN and name
+        for back in range(1, 8):
+            d = NOW.date() - dt.timedelta(days=back)
+            if d.weekday() >= 5:
+                continue
+            url = f"https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_{d:%Y%m%d}_F_0000.CSV"
+            try:
+                txt = get(url, headers={"Referer": "https://www.bseindia.com/"}).text
+                lines = [l.split(",") for l in txt.strip().splitlines()]
+                head = [h.strip() for h in lines[0]]
+                ci, ii, ni, ti = head.index("FinInstrmId"), head.index("ISIN"), head.index("FinInstrmNm"), head.index("TckrSymb")
+                si = head.index("SctySrs") if "SctySrs" in head else None
+                n0 = len(rows)
+                for r in lines[1:]:
+                    if len(r) <= max(ci, ii, ni, ti) or r[ii].strip() in isins:
+                        continue
+                    if si is not None and r[si].strip() not in ("A", "B", "T", "X", "XT", "M", "MT", "Z", "ZP", "MS", "P", "R", "W"):
+                        continue
+                    nm = re.sub(r"\s+(Limited|Ltd\.?)$", "", r[ni].strip(), flags=re.I)
+                    rows.append(["B" + r[ci].strip(), nm, "BSE", r[ci].strip() + ".BO", r[ti].strip()])
+                log(f"bse bhavcopy {d}: {len(rows) - n0} BSE-only scrips")
+                break
+            except Exception as e2:
+                log(f"bse bhavcopy {d} failed: {e2}")
     if len(rows) < 1000:
         log(f"universe: only {len(rows)} stocks, keeping previous list")
         return old or {"s": rows}
