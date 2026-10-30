@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StockPilot</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#F6F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="StockPilot">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="description" content="Live Indian markets, IPO GMP, subscription, allotment and gold & silver rates.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -556,6 +566,14 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 .vsum button[aria-pressed="true"]{outline:2px solid var(--ink)}
 .vsum b{display:block;font:700 26px var(--display)}.vsum span{font-size:12.5px;color:var(--muted)}
 @media(max-width:700px){.gfil .seg button{padding:7px 10px;font-size:13px}.vsum b{font-size:22px}}
+.inst{position:fixed;left:12px;right:12px;bottom:90px;z-index:70;max-width:440px;margin:0 auto;background:var(--sheet);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -16px rgba(0,0,0,.45);padding:16px;display:grid;gap:12px;animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+.inst .t{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center}
+.inst img{width:52px;height:52px;border-radius:14px}
+.inst h4{font-size:16px;margin:0}.inst p{font-size:13px;color:var(--muted);margin:2px 0 0}
+.inst .x{border:0;background:var(--soft);width:32px;height:32px;border-radius:50%;cursor:pointer;color:var(--ink);font-size:18px}
+.inst ol{margin:0;padding-left:20px;font-size:14px;display:grid;gap:6px}
+.inst .ios-share{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--soft);vertical-align:middle}
+@media(min-width:701px){.inst{bottom:24px;right:24px;left:auto;width:380px}}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </style>
@@ -1631,7 +1649,8 @@ function applyLive(L){if(!L)return;try{
   if(L.breadth)BREADTH=L.breadth;
   for(const id in (L.ipo||{})){const i=byId[id],q=L.ipo[id];if(!i)continue;
     if(q.gmp!=null&&i.st!=='listed')i.gmp={v:q.gmp,src:q.gsrc,at:q.gat};
-    if(q.sub!=null)i.sub={...(i.sub||{}),total:q.sub,src:q.ssrc,at:q.sat};
+    if(q.sub!=null){const o=i.sub||{};i.sub={...o,total:q.sub,src:q.ssrc,at:q.sat};if(q.sq!=null||q.snii!=null||q.sr!=null){i.sub.QIB=q.sq??null;i.sub.NII=q.snii??null;i.sub.Retail=q.sr??null;if(i.sub.QIB==null&&i.sub.NII==null&&i.sub.Retail==null){delete i.sub.QIB;delete i.sub.NII;delete i.sub.Retail}}}
+    if(q.ghist&&q.ghist.length&&i.st!=='listed'){const days=new Set(q.ghist.map(x=>x[0]));i.gtrend=[...(i.gtrend||[]).filter(x=>!days.has(String(x[0]).split(' ').slice(0,2).join(' '))),...q.ghist];i.gsrc=(i.gsrc?i.gsrc+'; ':'')+'IPOMarket (daily)'}
     if(q.cur!=null)i.cur=q.cur}
   if(L.news&&L.news.length>3)NEWS.splice(0,NEWS.length,...L.news);
   if(L.flows){window.FLOWS=L.flows}
@@ -1696,6 +1715,26 @@ function ago(){const el=document.getElementById('liveago');if(!el||!LIVED||!LIVE
 patchLabels();setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(ago,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pullLive()});
 
 ipoType=mType=gType=scrType=IPT;
+// ===================== install as an app (PWA) =====================
+if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+let deferredInstall=null;
+const instSnoozed=()=>{try{return +localStorage.getItem('sp.inst.snooze')>Date.now()}catch{return false}};
+const snoozeInst=d=>{try{localStorage.setItem('sp.inst.snooze',Date.now()+d*864e5)}catch{}};
+function showInstall(kind){if(isStandalone()||instSnoozed()||document.getElementById('inst'))return;
+  const el=document.createElement('div');el.className='inst';el.id='inst';el.setAttribute('role','dialog');el.setAttribute('aria-label','Install StockPilot');
+  el.innerHTML=`<div class="t"><img src="icons/icon-192.png" alt=""><div><h4>Install the StockPilot app</h4><p>Opens full screen from your home screen, with live prices.</p></div><button class="x" type="button" aria-label="Not now" id="instx">×</button></div>
+   ${kind==='ios'?`<ol><li>Tap the <b>Share</b> button <span class="ios-share"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span> at the bottom of Safari.</li><li>Scroll and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li></ol>`
+   :`<button class="btn shine" type="button" id="instgo" style="width:100%">Install app</button>`}`;
+  document.body.appendChild(el);
+  document.getElementById('instx').onclick=()=>{snoozeInst(7);el.remove()};
+  const go=document.getElementById('instgo');if(go)go.onclick=async()=>{if(!deferredInstall)return;deferredInstall.prompt();const r=await deferredInstall.userChoice.catch(()=>({}));deferredInstall=null;if(r.outcome!=='accepted')snoozeInst(3);el.remove()};
+}
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;setTimeout(()=>showInstall('android'),2500)});
+addEventListener('appinstalled',()=>{const el=document.getElementById('inst');if(el)el.remove();snoozeInst(3650)});
+if(isIOS&&!isStandalone())setTimeout(()=>showInstall('ios'),3000);
+
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
 document.getElementById('srcs').textContent=SOURCES.replace('Sources:','Data sources:')+' Market data: NSE and BSE via Upstox, Angel One, HDFC Sky, Kotak Neo, Liquide, Multibagg, Investing.com, Screener.in, Business Recorder.';

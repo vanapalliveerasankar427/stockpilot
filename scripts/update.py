@@ -70,6 +70,9 @@ def quote(sym):
     return out
 
 
+# Official closes for the day before this updater started keeping its own record
+EOD_SEED = {"2026-10-29": {"NIFTY": 22936.75, "SENSEX": 74151.04, "BANKNIFTY": 54909.65, "MIDCAP": 57841.65,
+                           "SMALLCAP": 18811.35, "VIX": 15.11}}
 INDICES = {"NIFTY": "^NSEI", "SENSEX": "^BSESN", "BANKNIFTY": "^NSEBANK",
            "MIDCAP": "NIFTY_MIDCAP_100.NS", "SMALLCAP": "^CNXSC", "VIX": "^INDIAVIX"}
 SECTORS = [("Bank", "^NSEBANK"), ("IT", "^CNXIT"), ("FMCG", "^CNXFMCG"), ("Auto", "^CNXAUTO"),
@@ -123,6 +126,22 @@ def markets(out):
     for k, sym in INDICES.items():
         if sym in Q:
             idx[k] = Q[sym]
+    # Previous close: Yahoo's is sometimes a day stale for indices, so keep our own record of each day's close.
+    eod = out.setdefault("eod", {})
+    for d, vals in EOD_SEED.items():
+        eod.setdefault(d, vals)
+    today = NOW.strftime("%Y-%m-%d")
+    prev_days = sorted(d for d in eod if d < today)
+    if prev_days:
+        last = eod[prev_days[-1]]
+        for k, q in idx.items():
+            if k in last and last[k]:
+                p = last[k]
+                q.update(prev=p, ch=round(q["v"] - p, 2), pct=round((q["v"] / p - 1) * 100, 2))
+    if NOW.weekday() < 5 and NOW.time() >= dt.time(15, 35) and idx:
+        eod[today] = {k: q["v"] for k, q in idx.items()}
+    for d in sorted(eod)[:-10]:
+        eod.pop(d)
     if idx:
         out["idx"] = {**out.get("idx", {}), **idx}
         if "NIFTY" in idx and idx["NIFTY"].get("t"):
@@ -296,9 +315,14 @@ def table_rows(page):
 def find_row(rows, key):
     k = key.lower()
     for cells in rows:
-        if cells and k in cells[0].lower():
+        if any(k in c.lower() for c in cells[:3]):
             return cells
     return None
+
+
+def xval(c):
+    m = re.match(r"\s*([\d,.]+)\s*[x×]", c or "", re.I)
+    return num(m.group(1)) if m else None
 
 
 def ipo(out):
@@ -321,15 +345,39 @@ def ipo(out):
         log(f"gmp failed: {e}")
     try:
         rows = list(table_rows(get("https://www.ipomarket.in/subscription").text))
+        head = next((r for r in rows if any(c.strip().lower() == "total" for c in r)), None)
+        idx = {c.strip().lower(): n for n, c in enumerate(head)} if head else {}
+        col = lambda *names: next((idx[n] for n in names if n in idx), None)
+        cq, cb, cs, cr_, ct = col("qib"), col("bnii (>₹10 l)", "bnii", "bnii (>10l)"), col("snii (<₹10 l)", "snii", "snii (<10l)"), col("retail", "rii"), col("total")
+        if cb is None or cs is None:  # header text varies: find the NII columns by prefix
+            for name, n in idx.items():
+                if name.startswith("bnii"): cb = n
+                if name.startswith("snii"): cs = n
+                if name.startswith("nii") and cb is None: cb = n
         for iid, key in IPOS.items():
             c = find_row(rows, key)
-            if not c:
+            if not c or c is head:
                 continue
-            xs = [x for x in c if re.fullmatch(r"[\d,.]+\s*[x×]", x, re.I)]
-            if xs:
-                data.setdefault(iid, {}).update(sub=num(re.sub(r"[x×]", "", xs[-1], flags=re.I)), ssrc="IPOMarket", sat=stamp)
+            g = lambda n: xval(c[n]) if n is not None and n < len(c) else None
+            tot = g(ct) if ct is not None else None
+            if tot is None:
+                xs = [xval(x) for x in c if xval(x) is not None]
+                tot = xs[-1] if xs else None
+            if tot is None:
+                continue
+            q, bn, sn, rt = g(cq), g(cb), g(cs), g(cr_)
+            nii = round(((bn or 0) * 2 + (sn or 0)) / 3, 2) if (bn is not None or sn is not None) else None  # bNII is 2/3 of NII
+            data.setdefault(iid, {}).update(sub=tot, sq=q, snii=nii, sr=rt, ssrc="IPOMarket", sat=stamp)
     except Exception as e:
         log(f"subscription failed: {e}")
+    # day-wise GMP history (one reading per day, latest wins)
+    day = NOW.strftime("%-d %b")
+    for iid, q in data.items():
+        if q.get("gmp") is None or not str(q.get("gat", "")).startswith(day):
+            continue
+        h = [x for x in (q.get("ghist") or []) if x[0] != day]
+        h.append([day, q["gmp"]])
+        q["ghist"] = h[-30:]
     out["ipo"] = data
 
 

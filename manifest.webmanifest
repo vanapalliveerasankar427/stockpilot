@@ -1,0 +1,23 @@
+{
+  "name": "StockPilot – Indian stocks & IPOs",
+  "short_name": "StockPilot",
+  "description": "Live Indian markets, IPO GMP, subscription, allotment and gold & silver rates.",
+  "id": "/stockpilot/",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F6F5F2",
+  "theme_color": "#0B0D12",
+  "categories": ["finance", "business"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "IPOs", "url": "./#ipos", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "GMP board", "url": "./#ipo-gmp", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Gold & silver", "url": "./#metals", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
