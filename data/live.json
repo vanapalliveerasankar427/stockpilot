@@ -1,6 +1,6 @@
 {
  "label": "31 Oct 2026, 2:30 AM IST",
- "updated": "2026-10-31T02:30:58+05:30",
+ "updated": "2026-10-31T02:30:54+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -223,14 +223,14 @@
   "t": 1793393431
  },
  "goldSpot": {
-  "v": 3883.7,
+  "v": 3883.1,
   "prev": 4031.4,
-  "ch": -147.7,
-  "pct": -3.66,
+  "ch": -148.3,
+  "pct": -3.68,
   "high": 4038.2,
   "low": 3879.3,
   "open": 4003.8,
-  "t": 1793393451
+  "t": 1793393452
  },
  "sectors": [
   [
@@ -799,7 +799,7 @@
  ],
  "log": [
   "subscription: 12 IPOs from 15 cards",
-  "outlook: 399 headlines, 25 up, 25 down"
+  "outlook: 433 headlines, 25 up, 25 down"
  ],
  "members": {
   "n50": {
@@ -1931,7 +1931,7 @@
  },
  "fulllog": [
   "subscription: 12 IPOs from 15 cards",
-  "outlook: 399 headlines, 25 up, 25 down"
+  "outlook: 433 headlines, 25 up, 25 down"
  ],
  "universe": {
   "stocks": 4683,
@@ -1955,7 +1955,7 @@
    "Nasdaq",
    25437.0,
    -2.86,
-   1793394058
+   1793394054
   ],
   [
    "Nikkei 225",
@@ -1984,7 +1984,7 @@
  ],
  "outlook": {
   "at": "31 Oct, 2:30 AM",
-  "headlines": 399,
+  "headlines": 433,
   "screened": 1766,
   "cues": [
    "US tech (Nasdaq) fell 2.9% in the last session",
@@ -2067,7 +2067,7 @@
     "conf": "High",
     "p": 1164.9,
     "pct": -0.21,
-    "mc": 1576397.7,
+    "mc": null,
     "sec": "Energy",
     "why": [
      {
@@ -2146,32 +2146,6 @@
     ]
    },
    {
-    "k": "NTPCGREEN",
-    "n": "NTPC Green Energy",
-    "s": 16,
-    "conf": "High",
-    "p": 82.44,
-    "pct": -1.78,
-    "mc": 69466.7,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "NTPC Green Energy Q2 Results: Profit jumps 56% YoY to Rs 137 crore, revenue rises 53%",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNOE1PZlE1UUY0SUhfaGxiWDFJMHJFcGtvZUJKWVhKTFFuWDI3WnlNQUhpSkt3ZGlwMUZWZGtPeEk2R1pxSEI0VzNZX3pGSHZ2WEhRQk4wUXFSQ0pnWnNhN2RYYkl1dWlJbWpieWt5ZVBJbWJXNWx0Z2VoQXJteDA3aV9NV05lbDBuLWlUNDRrQW9Gdk5ObERQQXdoMHBkb05aX25ZVzZadjhGWHgzSUJuaFNja1VPSktOd1BMRHBpTDdYRV8xZVJESjZFU3ZqUWhqdzdGaXNyclU2X1lNNEtGdm0zMVZaQnRmT05uNmxUdC13X2dZUTYwbVVCekfSAfYBQVVfeXFMT1lWdUFLN3U3M19DYmJ3a2lia0RMQ1ZMUzlsOGpoMWRpV1kzNi1wdS1JMEhjbnJYTGJlaEtnT1dDM2VCMVQ4LXBiandjakFodXRvVVRNS2ZIcU9SSm9OdzBDRUFDYk9YUGhMS3RJc3FiYWJxWXVKLXdodk9zbFBQaHNxcjNtaE9wZzB5QXhaUXFpMnpNSVNMdHp6dmdOVzZDNzRMSEVMLWpKS3pFNWxINGdEZEFUb2VYQWFUUXhNTmNUQndSRGJHdHB6OGNNRlc0aXN6dVRaelVjLUJoY29RNVUtODVEOXZzVGxVM19kRXp5Y29TaTFR?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "news",
-      "t": "NTPC Green Energy Q2 Results: Net profit rises 56% to ₹137.5 crore, revenue jumps 53%",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjVqckJXWXJBSlA0Nlpka1dudmNDbDRTcTlxLWFzMTRkZUlkWVU2M19neTlnSElJZzJ1My1pd1VUeUp5UmxLYmQ3Ujk2Y2MxWmJoS2tkQVVaVTRKbC1LR1M4eVRzNm4xSDhqMkM2YWpLRDdXOWs5Q2hyN20tXzZkd1dGSHJDUFBZbHlsbVY5VTZoWTZlOVZNRkdLSUN1N2xHSjZHa0hBb0Nvc29tMkRTQW5OdGg0Z01jakU5V1U2aG7SAcABQVVfeXFMUE41anJCV1lyQUpQNDZaZGtXbnZjQ2w0U3E5cS1hczE0ZGVJZFlVNjNfZ3k5Z0hJSWcydTMtaXdVVHlKeVJsS2JkN1I5NmNjMVpiaEtrZEFVWlU0SmwtS0dTOHlUczZuMUg4ajJDNmFqS0Q3VzlrOUNocjdtLV82ZHdXRkhyQ1BQWWx5bG1WOVU2aFk2ZTlWTUZHS0lDdTdsR0o2R2tIQW9Db3NvbTJEU0FuTnRoNGdNY2pFOVdVNmhu?oc=5",
-      "src": "CNBC TV18"
-     }
-    ]
-   },
-   {
     "k": "NTPC",
     "n": "NTPC",
     "s": 16,
@@ -2185,7 +2159,7 @@
       "k": "news",
       "t": "NTPC Green Energy Q2 Results: Profit jumps 56% YoY to Rs 137 crore, revenue rises 53%",
       "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNOE1PZlE1UUY0SUhfaGxiWDFJMHJFcGtvZUJKWVhKTFFuWDI3WnlNQUhpSkt3ZGlwMUZWZGtPeEk2R1pxSEI0VzNZX3pGSHZ2WEhRQk4wUXFSQ0pnWnNhN2RYYkl1dWlJbWpieWt5ZVBJbWJXNWx0Z2VoQXJteDA3aV9NV05lbDBuLWlUNDRrQW9Gdk5ObERQQXdoMHBkb05aX25ZVzZadjhGWHgzSUJuaFNja1VPSktOd1BMRHBpTDdYRV8xZVJESjZFU3ZqUWhqdzdGaXNyclU2X1lNNEtGdm0zMVZaQnRmT05uNmxUdC13X2dZUTYwbVVCekfSAfYBQVVfeXFMT1lWdUFLN3U3M19DYmJ3a2lia0RMQ1ZMUzlsOGpoMWRpV1kzNi1wdS1JMEhjbnJYTGJlaEtnT1dDM2VCMVQ4LXBiandjakFodXRvVVRNS2ZIcU9SSm9OdzBDRUFDYk9YUGhMS3RJc3FiYWJxWXVKLXdodk9zbFBQaHNxcjNtaE9wZzB5QXhaUXFpMnpNSVNMdHp6dmdOVzZDNzRMSEVMLWpKS3pFNWxINGdEZEFUb2VYQWFUUXhNTmNUQndSRGJHdHB6OGNNRlc0aXN6dVRaelVjLUJoY29RNVUtODVEOXZzVGxVM19kRXp5Y29TaTFR?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPWXprNVl6TGd3ZkxPX0E5SlpSTklfZzlEbzMzX3dOYlB2TU82Q0FseFQ4dUZ0am9EMElUUWtTV3NIN0RtOGNjUEY3Rld3TGdTdk9FcTZzOXdSc3ZVNlRDWHFZaVFacm5CdkE5T2pjTmJ2c0xmUlFfMnlIYUdPRVUzVDhJcHdSOURiSnVqWHU3MlBZbmNGOF9ZTXRaZ1hoc1E5dVpkQkdsMUFTOHNVbTB1UkhDR1REWlIxTl9NbEtlQ3N4R2tMYTlwelhVZDdIMUo5eU16MjVUY0RmR01RTnVkNUdlekxlY0JIRUttX2tzWFXSAfYBQVVfeXFMT1lWdUFLN3U3M19DYmJ3a2lia0RMQ1ZMUzlsOGpoMWRpV1kzNi1wdS1JMEhjbnJYTGJlaEtnT1dDM2VCMVQ4LXBiandjakFodXRvVVRNS2ZIcU9SSm9OdzBDRUFDYk9YUGhMS3RJc3FiYWJxWXVKLXdodk9zbFBQaHNxcjNtaE9wZzB5QXhaUXFpMnpNSVNMdHp6dmdOVzZDNzRMSEVMLWpKS3pFNWxINGdEZEFUb2VYQWFUUXhNTmNUQndSRGJHdHB6OGNNRlc0aXN6dVRaelVjLUJoY29RNVUtODVEOXZzVGxVM19kRXp5Y29TaTFR?oc=5",
       "src": "The Economic Times"
      },
      {
@@ -2194,6 +2168,58 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjVqckJXWXJBSlA0Nlpka1dudmNDbDRTcTlxLWFzMTRkZUlkWVU2M19neTlnSElJZzJ1My1pd1VUeUp5UmxLYmQ3Ujk2Y2MxWmJoS2tkQVVaVTRKbC1LR1M4eVRzNm4xSDhqMkM2YWpLRDdXOWs5Q2hyN20tXzZkd1dGSHJDUFBZbHlsbVY5VTZoWTZlOVZNRkdLSUN1N2xHSjZHa0hBb0Nvc29tMkRTQW5OdGg0Z01jakU5V1U2aG7SAcABQVVfeXFMUE41anJCV1lyQUpQNDZaZGtXbnZjQ2w0U3E5cS1hczE0ZGVJZFlVNjNfZ3k5Z0hJSWcydTMtaXdVVHlKeVJsS2JkN1I5NmNjMVpiaEtrZEFVWlU0SmwtS0dTOHlUczZuMUg4ajJDNmFqS0Q3VzlrOUNocjdtLV82ZHdXRkhyQ1BQWWx5bG1WOVU2aFk2ZTlWTUZHS0lDdTdsR0o2R2tIQW9Db3NvbTJEU0FuTnRoNGdNY2pFOVdVNmhu?oc=5",
       "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "NTPCGREEN",
+    "n": "NTPC Green Energy",
+    "s": 16,
+    "conf": "High",
+    "p": 82.44,
+    "pct": -1.78,
+    "mc": 69466.7,
+    "sec": "Utilities",
+    "why": [
+     {
+      "k": "news",
+      "t": "NTPC Green Energy Q2 Results: Profit jumps 56% YoY to Rs 137 crore, revenue rises 53%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPWXprNVl6TGd3ZkxPX0E5SlpSTklfZzlEbzMzX3dOYlB2TU82Q0FseFQ4dUZ0am9EMElUUWtTV3NIN0RtOGNjUEY3Rld3TGdTdk9FcTZzOXdSc3ZVNlRDWHFZaVFacm5CdkE5T2pjTmJ2c0xmUlFfMnlIYUdPRVUzVDhJcHdSOURiSnVqWHU3MlBZbmNGOF9ZTXRaZ1hoc1E5dVpkQkdsMUFTOHNVbTB1UkhDR1REWlIxTl9NbEtlQ3N4R2tMYTlwelhVZDdIMUo5eU16MjVUY0RmR01RTnVkNUdlekxlY0JIRUttX2tzWFXSAfYBQVVfeXFMT1lWdUFLN3U3M19DYmJ3a2lia0RMQ1ZMUzlsOGpoMWRpV1kzNi1wdS1JMEhjbnJYTGJlaEtnT1dDM2VCMVQ4LXBiandjakFodXRvVVRNS2ZIcU9SSm9OdzBDRUFDYk9YUGhMS3RJc3FiYWJxWXVKLXdodk9zbFBQaHNxcjNtaE9wZzB5QXhaUXFpMnpNSVNMdHp6dmdOVzZDNzRMSEVMLWpKS3pFNWxINGdEZEFUb2VYQWFUUXhNTmNUQndSRGJHdHB6OGNNRlc0aXN6dVRaelVjLUJoY29RNVUtODVEOXZzVGxVM19kRXp5Y29TaTFR?oc=5",
+      "src": "The Economic Times"
+     },
+     {
+      "k": "news",
+      "t": "NTPC Green Energy Q2 Results: Net profit rises 56% to ₹137.5 crore, revenue jumps 53%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTjVqckJXWXJBSlA0Nlpka1dudmNDbDRTcTlxLWFzMTRkZUlkWVU2M19neTlnSElJZzJ1My1pd1VUeUp5UmxLYmQ3Ujk2Y2MxWmJoS2tkQVVaVTRKbC1LR1M4eVRzNm4xSDhqMkM2YWpLRDdXOWs5Q2hyN20tXzZkd1dGSHJDUFBZbHlsbVY5VTZoWTZlOVZNRkdLSUN1N2xHSjZHa0hBb0Nvc29tMkRTQW5OdGg0Z01jakU5V1U2aG7SAcABQVVfeXFMUE41anJCV1lyQUpQNDZaZGtXbnZjQ2w0U3E5cS1hczE0ZGVJZFlVNjNfZ3k5Z0hJSWcydTMtaXdVVHlKeVJsS2JkN1I5NmNjMVpiaEtrZEFVWlU0SmwtS0dTOHlUczZuMUg4ajJDNmFqS0Q3VzlrOUNocjdtLV82ZHdXRkhyQ1BQWWx5bG1WOVU2aFk2ZTlWTUZHS0lDdTdsR0o2R2tIQW9Db3NvbTJEU0FuTnRoNGdNY2pFOVdVNmhu?oc=5",
+      "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "ASIANPAINT",
+    "n": "Asian Paints",
+    "s": 16,
+    "conf": "High",
+    "p": 2320.0,
+    "pct": 0.78,
+    "mc": 222363.8,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Asian Paints’ consolidated profit jumps 7.5% YoY in Q2",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiswJBVV95cUxPZHU5MzNKTDBYb2hOWjktN2l5MkZSZTlJdzh2UWwtQTNNeW1HamZHckRTd255Z19OamxjZXZzX3JadEpxbktMOGNCT2UxUHNiZVNzQmpEYW0zcVd1eFozZ1JYeFBjRjVweHR6Y0VqbmstRU1tb19QS0xVWUpHUndFTmQybU04NnYxTGdwSWdpZXc2T1kydFBmbWtDbTdJZW5nVmU4VVdzRDdybk9aYTV4MlNmMDVYQ0pYYVZ4ZkpPenlPRGZVeS1BQTh1aHQ4TU1JdEVHOU5RdHQ0VkFoUVpsQ3FpUnFHb1Y0MGpVOWY2c0hvSmgwVXN2VlFPMFI0ZWVHOHZQVjJ4NGs1OV9hd3dkXzluWFBuZG5pWVRjX1h4RlZtSExINXY1dTd0RERWTUI2QTc00gHPAUFVX3lxTFBVcTNyY2t4N0N5NWFrRHlPV0F5Q19HaXJvOVJPdHhBOTYwb0Jkb2VqcVlfR0NVaDN2UV9VekpMckQxSW82RC1wQWloNXRITi0wOGtlQk84MGdMQ1F0QXZxWU1ycWh1TDJhaUpCeHRFNkN4NElvMk5HR0Y5R3hNY0tWeHZkRDltVGRHMEVPY3dnbE0tWjdUSUctR1BIT3lJWm5UYUMyam9LT3QzSmVyVEx5dFZvWU9UWnhfMWNYdldsOGtjcDMxM2k0SzhsVVRPNA?oc=5",
+      "src": "The Economic Times"
+     },
+     {
+      "k": "news",
+      "t": "Asian Paints Q2 Results: Net profit rises 7 pc YoY to Rs 1,068 crore; firm announces Rs 5.75/share dividend",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNYXRrSjFxRVRRWVJPRjRVYnNfNl9vUDlfZk9KRXZ2d0ZKOGxVUW1DU244ZTBjOV93T0pIaWhISWhIVkMyUG5faV9abHVYcXFVdjRMaDJBMWQzd081bV9rSGdhbjVTTkRhMTVIX1c4VmZUeFp1dnJUUXRJcVZGV3RHSlNTMS11c1JZVzN0cENtOGR4MzloeTlNaFI3ODJlWjZiQ1BUWWpuSC05WTBudmpTNlNzLVRLNkd1RHNIdV96YkhveUlDTkRpUjdYUDZmTHl2VEF6dk85cTZMb2YwWTA3Nl9jT2JRZm9fTUhycEpMV1NRVFVNODFvekFOTndQV2xReFkwU1Etek9ZMlpRTHNIOG9CSdIBlwJBVV95cUxQOEhEckpQUDFwVjZ5UFhUMFhJU25mNE0zSS14cmJMMVhDVldxelVLUzhyeUhoX2d4VlVhSWs5Qmk5d3JZa0ZTYWZCSWMwaXgwQXE3Q191MmFPNzhfMktWQ0Rpb19TS3RidnB0QzUwYTZUVnBtTi1YSjFlTm9lcVRRVVRQVlYtbEdFNFpIcl81N09sZmduOTg2VnpaazNDelNRa1Fjb1lpRDJwS3hyWWhCZGk4cGlaazl2emVtNzNBbW84SXV5emljNXgxN3JXaFZTUmk3SjdnY2IxMGNJWnBxRFY4QkRCV09nTDY4cW5LaU1ub0xRX29KalNSaWRYaW5qVHZna1FRR0RDeEtDQzF1UVdBak94dXM?oc=5",
+      "src": "ET Retail"
      }
     ]
    },
@@ -2488,25 +2514,6 @@
     ]
    },
    {
-    "k": "LODHA",
-    "n": "Lodha Developers",
-    "s": 8,
-    "conf": "High",
-    "p": 1037.0,
-    "pct": -0.84,
-    "mc": 103622.3,
-    "sec": "Real Estate",
-    "why": [
-     {
-      "k": "news",
-      "t": "Lodha Developers H1FY27 net profit soars 63%, expects to beat full-year guidance",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPSGY1N3RMMDNWU2VoYTNZWjRpR3RqcXFrZy05UVZhNWI5RGZXZWhrUXFFN3NuY3VxaDlIOHEzMkxVQWdlN2hNZUZqSktRNmt1RlB4MW9XM0RBZG1tVGdBaXZqOXVZWmhqV0E0b0k2MXF4T0RLU21QTkhtYl9yd3ZkMnNaTHNRYl8xZ09FZkRYaVJGLXFzS3N4V2l2YURpWFpVM2l6ZVdPQW5sR0o0RFFRMW1fWlFncTNUY2Qyc3FVOEtQZklqVnkybjNfalNJRzMtZndsaVVQSmN6dTFBWjVaMVVjalJZVlYwYUlOR2o5Zm5zRnBKZUNYUdIB8gFBVV95cUxQZXd5RG1CemJFeTJVeUFnamY5TzhBaWhrQkcyTWw1cVA5RE9sWTlmWFRsZnBQcWRYZlVQbkZfMHBOOGRRel9yUHJmeHlPbnZhbDlReE9FSTBVZHY4NHhGNWNuRU9oWFExNEhLYm81MWhVekUzaWcxSWJhckVVTjhxdUo3UUVvVTM0RUdDQURKbDFTR1FZVHJKeTg0TlZKSjhHdC03YkFwamFvbUtTbTFLS3hIcHBWa0lGWEZoQ0s0dHNja3V3ak9RS21MSGpUN1dxS0lmUm1zdjJ1R2ZBaXJsYllSNVNZdFFFcEJKZHBvSEJ1dw?oc=5",
-      "src": "The Economic Times"
-     }
-    ]
-   },
-   {
     "k": "AETHER",
     "n": "Aether Industries",
     "s": 8,
@@ -2583,6 +2590,25 @@
     ]
    },
    {
+    "k": "WELSPUNLIV",
+    "n": "Welspun Living",
+    "s": 8,
+    "conf": "High",
+    "p": 219.08,
+    "pct": 3.26,
+    "mc": 20625.2,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Welspun Living Reports Massive Q2 Profit Surge To ₹169 Crore, Revenue Up 16.9% On Strong Home Textile",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQTWRGTWs2Y1NydDdZYkVTZ3VPdC0zeU1SZGY1TnJVRWdJSzVwakYxYTRwMjFKcUJIQ2dubWg1LXV1N3c3UElfSlJLWC1FaXZCaUFmU2xJajRwMFRuc2Nma2VEWkt4TGpTUWJYckFJUFRuRHRIUEtkTlVsWFlRRnVsVXUtN1E3eVVyaDJ2X09yY3NOd1dacmJvZ3Y1U2NFXzdObWdKRFJUZ2tiMWpkQTFtUHRDX2ZvWDE2UkxPeFg2cEFGWUcwLVdvaU5JZXp0bkZORGszTGc5N01EZUFkZVBNVDJ0S3PSAeQBQVVfeXFMUE1kRk1rNmNTcnQ3WWJFU2d1T3QtM3lNUmRmNU5yVUVnSUs1cGpGMWE0cDIxSnFCSENnbm1oNS11dTd3N1BJX0pSS1gtRWl2QmlBZlNsSWo0cDBUbnNjZmtlRFpLeExqU1FiWHJBSVBUbkR0SFBLZE5VbFhZUUZ1bFV1LTdRN3lVcmgydl9PcmNzTndXWnJib2d2NVNjRV83Tm1nSkRSVGdrYjFqZEExbVB0Q19mb1gxNlJMT3hYNnBBRllHMC1Xb2lOSWV6dG5GTkRrM0xnOTdNRGVBZGVQTVQydEtz?oc=5",
+      "src": "Free Press Journal"
+     }
+    ]
+   },
+   {
     "k": "DELHIVERY",
     "n": "Delhivery",
     "s": 6.2,
@@ -2603,30 +2629,6 @@
       "k": "price",
       "t": "Closed weak: -2.8% on 2.2× usual volume, near the day's low",
       "s": -1.849088186813833
-     }
-    ]
-   },
-   {
-    "k": "STLNETWORK",
-    "n": "STL Networks",
-    "s": 6.1,
-    "conf": "High",
-    "p": 37.22,
-    "pct": 3.76,
-    "mc": 1817.3,
-    "sec": "Communication Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "STL Networks Ltd Locks at Upper Circuit With 5% Gain — Buyers Queue, Sellers Absent",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSUpvNWZ4QkZsQWZCX0RGazVTQUlFSW1NZm1SR2JCMnBxbHdsZmJkNWY1eDhfUlR4OHlnNXE4UDhabmQ1VjV5QUVBam1mamdyX0ZoQmg2NEhYN3hLZGw3LUotQ2dFZ3JNSjg0YWVNdGNRN3ZMc2lKSmVjanhkWG9jeGdYUGxuandaY19pLVJHVUNiaFUyYkQwV3QwcXctZ1g0aTlvVEE2T1ZkemNMN3EwOFpWbFd0cDhIcnlGOFBB?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.8% on 2.6× usual volume, near the day's high",
-      "s": 2.053467822063574
      }
     ]
    }
@@ -2747,6 +2749,35 @@
     ]
    },
    {
+    "k": "INTELLECT",
+    "n": "Intellect Design Arena",
+    "s": -8.0,
+    "conf": "High",
+    "p": 504.55,
+    "pct": -16.31,
+    "mc": 7095.8,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Intellect Design Arena Q2: Shares plunge 17% on margin contraction, subdued profit growth",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNRXNubDdjT1BNb0lLMDlFbGY5NGFzektXbm9WX2JkQ3AxX3RaQ1dJeWlCcGFIZ2Z0Y0JZYjFZNEcxbjlqNDQ2Rks2NHp5SkMtRXlyVHFhY3NweDB4OGd4T1lvR2p1ajlZRU1NWE1yOTdtWGlLNzlzQS0tOHVCS1JsWTJFWDVaZDkxa1d2TjBCY2RXenVHYVJ6YVN6dEJDclhndkhValpWT0tyU2w1eF9LY2k3UC1CTWsxSGs1WS01Ykd2aTdsY2FIX2VpY21INDFHVGVMZENNLUpSb2t6SmZHR3NB0gHnAUFVX3lxTE9kNWFtZ2d1N01SQjhvay1QTV83Ul93TUlBUHNfbEdOX0FtOG9UVEFmWDczMDNHbDFFQXVpZXI2amRKYkh6OWlKQ3RTZHdzNDlHVDIwbTBLNzJUejZnWmJBS2FQdkZPN2UtRW5kcDFVaTdYME5BWjhWMEE0XzdjX3FlMEp1QktMWWVwNUNSd01aWGNpamplQ2JGQzR3ZUdWckRQeUhvTzd4ZDdhck1CUWp2VHNBdy1kVmVDeEJFVlhwajA4RnFfM0VVdVRnSDFGNjU0WU9oQzRLcmV2YnBpZElGc0Z2QWhKRQ?oc=5",
+      "src": "CNBC TV18"
+     },
+     {
+      "k": "price",
+      "t": "Closed weak: -16.3% on 10.3× usual volume, near the day's low",
+      "s": -3.0
+     },
+     {
+      "k": "global",
+      "t": "Nasdaq -2.9% overnight; IT stocks often follow",
+      "s": -1
+     }
+    ]
+   },
+   {
     "k": "JMFINANCIL",
     "n": "JM Financial",
     "s": -8,
@@ -2798,7 +2829,7 @@
       "k": "news",
       "t": "Go Fashion Q2 results: Profit drops 59% to ₹9 crore, shares fall over 6%",
       "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOXJtX2JlUlJlNFFFV0NkazBnb0djRXpMWTdfdjVjNjFxVDdNTkxvQnN6aW1MLWYtVkw1VXktWVVjSmpxYXUtU0k5Z0tmTHN6VWNWNW03SkU2S2pnOVFscUhFT1ltZTdrblJWcEhfZjBmc3ZneDg1eWtSWl9UTG1mQ3lkakstLVVXTmNYLTNZWThtOW96TFhlalB0TF9pcktOV1pqUG1rY1FIN29rUXQzUXBQQdIBswFBVV95cUxOOXJtX2JlUlJlNFFFV0NkazBnb0djRXpMWTdfdjVjNjFxVDdNTkxvQnN6aW1MLWYtVkw1VXktWVVjSmpxYXUtU0k5Z0tmTHN6VWNWNW03SkU2S2pnOVFscUhFT1ltZTdrblJWcEhfZjBmc3ZneDg1eWtSWl9UTG1mQ3lkakstLVVXTmNYLTNZWThtOW96TFhlalB0TF9pcktOV1pqUG1rY1FIN29rUXQzUXBQQQ?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNUWtBUmp2T3prRGJjc0ZibDdkRUM5dEFWNGNXQ0pFc0RVSGl3UFNnZV9BYVJiRWRsbHJ5TWhQTFB2MlRJN1Y3dFNzQjd2SWJWSDdoRFM1LXlzZjNkdVF4bUc4a3E4aFpyczhyNWJJMUdfeC1nb0d0WnZEeHpZX3ZEYU4tS0w1QlNydVVwaVVFb3drczNPRWxOVk9FT25fMGhPTG1FNGhrUkNZaXktQnfSAbMBQVVfeXFMTjlybV9iZVJSZTRRRVdDZGswZ29HY0V6TFk3X3Y1YzYxcVQ3TU5Mb0JzemltTC1mLVZMNVV5LVlVY0pqcWF1LVNJOWdLZkxzelVjVjVtN0pFNktqZzlRbHFIRU9ZbWU3a25SVnBIX2YwZnN2Z3g4NXlrUlpfVExtZkN5ZGpLLS1VV05jWC0zWVk4bTlvekxYZWpQdExfaXJLTldaalBta2NRSDdva1F0M1FwUEE?oc=5",
       "src": "CNBC TV18"
      }
     ]
@@ -3013,6 +3044,54 @@
     ]
    },
    {
+    "k": "RADHIKAJWE",
+    "n": "Radhika Jeweltech",
+    "s": -5.5,
+    "conf": "Medium",
+    "p": 58.17,
+    "pct": -4.44,
+    "mc": 687.1,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Below All Moving Averages and Now at Lower Circuit: Radhika Jeweltech Ltd Loses 3.6% in a Single Session",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQb0dBTWVoNjZ3TmNWSXNoeklzaDQyLXlEUHJVQ1hEb21LQzNKek1YWGRET3QtdGJFdUVmVURmZzJ6ckNRR2VkTUZ6ZzgxclRKNWU1a0RocEV6eXBmUnVOWXJHLUNIeXFpOEVLVkhfYzBub0I5VXlHWDNjQ3hOOWtmNXRtWDRVWFZfaWFQNDRKdzFfdlRUM0MyTEZtaUxHTjBVVWVsc2Zpa2JfN0cxUkE3b29HdGlqa1FCR3BXOFZXTkdUQmxo?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "price",
+      "t": "Closed weak: -4.4% on 1.5× usual volume, near the day's low",
+      "s": -1.515050978734036
+     }
+    ]
+   },
+   {
+    "k": "SASKEN",
+    "n": "Sasken Technologies",
+    "s": -5,
+    "conf": "Medium",
+    "p": 1715.7,
+    "pct": -9.99,
+    "mc": 2606.4,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Below All Moving Averages and Now at Lower Circuit: Sasken Technologies Ltd Loses 8.9% in a Single Session",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUGJ5SmptY0VONVpzMkNwRWxNMHBLUllyMHlwX3ZLOUdvalI5V2o3OFZsdU15MlZ3V2V6MFdJaXlpZ0pTek9VemZXSnhpbEc4TkdyNzRHbEc0V2FoRUdXYWo5WUc1dUpUMmZuYnl0OWRHd3ItdzNTTUVMT1NmclBhZVlUc3ZNNlJzcEs4andibmlpVzh0YkYwell1U2pjUklKc0FTazZMb3lhTGItdVpKLWRsOGRVeHZqc2d2NXZrODNERzFCc3ZN?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "global",
+      "t": "Nasdaq -2.9% overnight; IT stocks often follow",
+      "s": -1
+     }
+    ]
+   },
+   {
     "k": "STLTECH",
     "n": "Sterlite Technologies",
     "s": -5,
@@ -3086,7 +3165,7 @@
     "conf": "Medium",
     "p": 1627.9,
     "pct": -2.7,
-    "mc": 33468.5,
+    "mc": 33468.4,
     "sec": "Industrials",
     "why": [
      {
@@ -3118,28 +3197,6 @@
     ]
    },
    {
-    "k": "INTELLECT",
-    "n": "Intellect Design Arena",
-    "s": -4.0,
-    "conf": "Medium",
-    "p": 504.55,
-    "pct": -16.31,
-    "mc": 7095.8,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -16.3% on 10.3× usual volume, near the day's low",
-      "s": -3.0
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.9% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
     "k": "CAMS",
     "n": "Computer Age Management Services",
     "s": -4.0,
@@ -3153,50 +3210,6 @@
       "k": "price",
       "t": "Closed weak: -6.2% on 7.8× usual volume, near the day's low",
       "s": -3.0
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.9% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "PINELABS",
-    "n": "Pine Labs",
-    "s": -3.1,
-    "conf": "Low",
-    "p": 153.25,
-    "pct": -6.67,
-    "mc": 17696.5,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -6.7% on 2.7× usual volume, near the day's low",
-      "s": -2.0797739602163032
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.9% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "FSL",
-    "n": "Firstsource Solutions",
-    "s": -3.1,
-    "conf": "Low",
-    "p": 292.9,
-    "pct": -4.42,
-    "mc": 20265.3,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -4.4% on 2.6× usual volume, near the day's low",
-      "s": -2.0530539291952676
      },
      {
       "k": "global",
