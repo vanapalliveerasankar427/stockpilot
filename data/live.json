@@ -1,13 +1,13 @@
 {
- "label": "30 Oct 2026, 10:38 PM IST",
- "updated": "2026-10-30T22:38:05+05:30",
+ "label": "31 Oct 2026, 12:40 AM IST",
+ "updated": "2026-10-31T00:40:44+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "30 Oct 2026, 10:38 PM",
+  "date": "31 Oct 2026, 12:40 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -62,8 +62,8 @@
    ],
    [
     "29 Oct",
-    142255,
-    190478
+    140054,
+    181344
    ],
    [
     "30 Oct",
@@ -79,22 +79,22 @@
    "g585": 8193.0,
    "p999": 14226,
    "pag": 190.48,
-   "sess": "30 Oct · PM",
+   "sess": "29 Oct · PM",
    "g999_10": 140054.0,
    "ag": 181.34
   },
   "mcx": {
    "gold": {
-    "v": 138538.0,
-    "ch": -4058.0,
-    "pct": -2.85,
-    "t": "30 Oct, 10:38 PM"
+    "v": 138419.0,
+    "ch": -66.0,
+    "pct": -0.05,
+    "t": "31 Oct, 12:40 AM"
    },
    "silver": {
-    "v": 179420.0,
-    "ch": -10033.0,
-    "pct": -5.3,
-    "t": "30 Oct, 10:38 PM"
+    "v": 178900.0,
+    "ch": -232.0,
+    "pct": -0.13,
+    "t": "31 Oct, 12:40 AM"
    }
   },
   "retail": {
@@ -109,9 +109,9 @@
  "idx": {
   "NIFTY": {
    "v": 23053.1,
-   "prev": 22936.75,
-   "ch": 116.35,
-   "pct": 0.51,
+   "prev": 23053.1,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 23118.1,
    "low": 22905.1,
    "open": 22964.5,
@@ -119,9 +119,9 @@
   },
   "SENSEX": {
    "v": 74459.53,
-   "prev": 74151.04,
-   "ch": 308.49,
-   "pct": 0.42,
+   "prev": 74459.53,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 74742.59,
    "low": 74082.03,
    "open": 74202.18,
@@ -129,9 +129,9 @@
   },
   "BANKNIFTY": {
    "v": 54686.95,
-   "prev": 54909.65,
-   "ch": -222.7,
-   "pct": -0.41,
+   "prev": 54686.95,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 55068.5,
    "low": 54580.75,
    "open": 54895.65,
@@ -139,9 +139,9 @@
   },
   "MIDCAP": {
    "v": 57301.25,
-   "prev": 57841.65,
-   "ch": -540.4,
-   "pct": -0.93,
+   "prev": 57301.25,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 57808.5,
    "low": 57193.95,
    "open": 57792.75,
@@ -149,9 +149,9 @@
   },
   "SMALLCAP": {
    "v": 18463.6,
-   "prev": 18811.35,
-   "ch": -347.75,
-   "pct": -1.85,
+   "prev": 18463.6,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 18782.65,
    "low": 18441.35,
    "open": 18778.25,
@@ -159,9 +159,9 @@
   },
   "VIX": {
    "v": 15.3,
-   "prev": 15.11,
-   "ch": 0.19,
-   "pct": 1.26,
+   "prev": 15.3,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 15.7,
    "low": 14.47,
    "open": 15.12,
@@ -169,6 +169,10 @@
   }
  },
  "nifty8": [
+  [
+   "19 Oct",
+   22888.95
+  ],
   [
    "21 Oct",
    22811.35
@@ -196,10 +200,6 @@
   [
    "29 Oct",
    22936.75
-  ],
-  [
-   "30 Oct",
-   23053.1
   ]
  ],
  "usdinr": {
@@ -213,24 +213,24 @@
   "t": 1793376421
  },
  "brent": {
-  "v": 113.96,
+  "v": 113.3,
   "prev": 110.8,
-  "ch": 3.16,
-  "pct": 2.85,
-  "high": 114.07,
+  "ch": 2.5,
+  "pct": 2.26,
+  "high": 114.29,
   "low": 111.05,
   "open": 112.11,
-  "t": 1793379255
+  "t": 1793386580
  },
  "goldSpot": {
-  "v": 3903.4,
+  "v": 3890.0,
   "prev": 4031.4,
-  "ch": -128.0,
-  "pct": -3.18,
+  "ch": -141.4,
+  "pct": -3.51,
   "high": 4038.2,
-  "low": 3901.3,
+  "low": 3885.9,
   "open": 4003.8,
-  "t": 1793379095
+  "t": 1793386581
  },
  "sectors": [
   [
@@ -435,10 +435,14 @@
   "mksons": {
    "gmp": 6.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     6.0
+    ],
+    [
+     "31 Oct",
      6.0
     ]
    ],
@@ -447,15 +451,19 @@
    "snii": 8.53,
    "sr": 1.75,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "bombaycoated": {
    "gmp": 7.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     7.0
+    ],
+    [
+     "31 Oct",
      7.0
     ]
    ],
@@ -464,7 +472,7 @@
    "snii": 1.02,
    "sr": 1.82,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "jio": {
    "gmp": 1119.0,
@@ -480,10 +488,14 @@
   "carver": {
    "gmp": 5.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     5.0
+    ],
+    [
+     "31 Oct",
      5.0
     ]
    ],
@@ -492,15 +504,19 @@
    "snii": null,
    "sr": 19.06,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "ajwa": {
    "gmp": 2.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     2.0
+    ],
+    [
+     "31 Oct",
      2.0
     ]
    ],
@@ -509,15 +525,19 @@
    "snii": null,
    "sr": 1.93,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "antala": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     0.0
+    ],
+    [
+     "31 Oct",
      0.0
     ]
    ],
@@ -526,15 +546,19 @@
    "snii": null,
    "sr": 0.1,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "maxwell": {
    "gmp": 70.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     70.0
+    ],
+    [
+     "31 Oct",
      70.0
     ]
    ],
@@ -543,15 +567,19 @@
    "snii": null,
    "sr": 7.23,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "johnsoncab": {
    "gmp": 10.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     10.0
+    ],
+    [
+     "31 Oct",
      10.0
     ]
    ],
@@ -560,15 +588,19 @@
    "snii": null,
    "sr": 1.3,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "vectras": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     0.0
+    ],
+    [
+     "31 Oct",
      0.0
     ]
    ],
@@ -577,26 +609,34 @@
    "snii": null,
    "sr": 1.03,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "hgs": {
-   "gmp": 34.0,
+   "gmp": 30.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
      34.0
+    ],
+    [
+     "31 Oct",
+     30.0
     ]
    ]
   },
   "vedant": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 10:38 PM",
+   "gat": "31 Oct, 12:40 AM",
    "ghist": [
     [
      "30 Oct",
+     0.0
+    ],
+    [
+     "31 Oct",
      0.0
     ]
    ]
@@ -607,7 +647,7 @@
    "snii": null,
    "sr": 0.66,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "sfc": {
    "sub": 4.26,
@@ -615,7 +655,7 @@
    "snii": 8.12,
    "sr": 1.72,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "bls": {
    "sub": 240.84,
@@ -623,7 +663,7 @@
    "snii": null,
    "sr": 127.67,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   },
   "eaaa": {
    "sub": 4.06,
@@ -631,7 +671,7 @@
    "snii": 3.8,
    "sr": 0.73,
    "ssrc": "IPOMarket",
-   "sat": "30 Oct, 10:38 PM"
+   "sat": "31 Oct, 12:40 AM"
   }
  },
  "flows": {
@@ -642,7 +682,7 @@
   "dii_sell": 17461.06,
   "fii_buy": 20564.02,
   "fii_sell": 16965.48,
-  "fetched": "30 Oct, 10:38 PM",
+  "fetched": "31 Oct, 12:40 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -662,8 +702,15 @@
    "tag": "IPO",
    "t": "Bombay Coated and Special Steels IPO Subscription Status",
    "s": "IPO Watch",
-   "d": "30 Oct, 8:15 PM",
+   "d": "30 Oct, 11:20 PM",
    "u": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1JdWU0VmJPeGp3aWFHamgzRk55ZmkxOWJYb0ZjSTEtbW8yNFVGZlJSSG81TmVJOUFWZnVIN3FPcXJCQmFRUHJ2RmpuSHZubDFWV0pRV2dsTzJQMFFSbGFVZnRvZHZtOUw3S3pUaDFHVHYzSnpLM001QUNyekljQQ?oc=5"
+  },
+  {
+   "tag": "Economy",
+   "t": "India's forex reserves fall $1.27 billion as lower gold value outweighs rise in dollar assets",
+   "s": "CNBC TV18",
+   "d": "30 Oct, 10:37 PM",
+   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbndMSkhCT3FsX1NCNHY4YVlmSkFLblpYMTU5MGpMNU12dnIyWkd0eUJjWFNUYXp5ckJnRnJhVkI0T0Vlc2cwZ0VfOGJTeTR0dnpNSU5saTV1aXloQ0JXX2dEUjZUZEJEb1lfYWhocnRNVHNjd2wwZGNsQ2laWG9NRTN5RUpPd1RlUzNKY1poenNYYnp1dnlLbG14a043SGZwMWlMMmVlamZacHptV0lsRWFJQdIBuAFBVV95cUxNLVZ6Smd2clUzclZINURJWjNUWDhMRFFjRy13cFJWZGhmSTBrQnpIZHdFX1l0UG56Y1NFdlVlOUROTEw1QWpPVnVQVEt5QXlaSnlWdnZURGRzVjZkckhSRTFnZWdnSkRHMUN5dXRhRVp0QXBUSS1ua1RrZl84UGF5bndlaE9adWh2alVob01VcE95ZkRZM1dsTFdHNVlZWmJyb2J3d1VPRHM5Wl9rU2hoOU9BTlZWLXVM?oc=5"
   },
   {
    "tag": "IPO",
@@ -681,24 +728,17 @@
   },
   {
    "tag": "Results",
-   "t": "Aether Industries (NSE:AETHER): What Do Aether Industries’ September-Quarter Results Show?",
+   "t": "CAMS NSE:CAMS Q2 FY27 Unaudited Results: Key Numbers",
    "s": "Kalkine India",
-   "d": "30 Oct, 6:04 PM",
-   "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNb3lGcXBYMGhGTkhHcVNBUFRETjZsYWl5eDRicWZEU0hTLVo1bHB1UDFFNHRPa3NsaGM1MzlmU0ptWnUtNzJwTWVCTDB2RXU3cWVvblI1UjZhVkZEb3pxVXJnUVlvamRDaTRUcVh5S05ubGhydDhkU1hNR2hOLVZldzhfbktjM0VJU3V4TTBKaS1ycUtvX2pQem4ycUNuN1NmUHU5cTlwLTctT3RQR0ZmZlVaSTNKcW9veHUyQVh2Nmx1dlFPRWc?oc=5"
+   "d": "30 Oct, 5:39 PM",
+   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNYUhjeHUzQjZNZ1lNSkxkN3NIZ043bjlBdHlKQURpSlNMLU13VWRLUHNkS0NNTFZ1TlNVbzN5OEZnZVZXYWMzbk9PbllpRjJVeEFxTEl3M2hHWm9PRXd0VTBWMElzdzQ5VFp2c2tVVlVhRGhSTW1TYkczTmtQaDNxUXhIbkdRb1ZNVFZUeDNzczEwc1ZHT3daN3NuWnpaQVZTTEhrV18yOWFyWTdMS2J2NGhFRDhqUQ?oc=5"
   },
   {
-   "tag": "Markets",
-   "t": "Sensex, Nifty Rise; IT & Pharma Lift Markets as Midcaps Slide",
-   "s": "HDFC Sky",
-   "d": "30 Oct, 4:23 PM",
-   "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOajFHdFZlZGo5cUk0dWJ3V1E4c2dCUFlBVFVMZV8wYklSQzVtUEJKRDZVSFhIdHRIUDUyZGlHc1ZWVC12bGwzMTFtSEpqdWdpYmowZmRqQ2ttVWVuaDRVOTh4b05lUVBQR2JYeUNjWDRjcjRMWExJSEFhV2lKRFRoUUVmaWFtSDBYdjBldjI2NWdYUlBHZXpUX1FRVXpwaXZucGpuQWlRLWxrdkJoWmRRblNR?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "India's fiscal deficit for April-September at Rs 7.14 lakh crore, widens to 42.1% of FY27 aim",
-   "s": "The Economic Times",
-   "d": "30 Oct, 4:09 PM",
-   "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOczhlckthcnVfN0JiN1BHdWJiNUhQYUoweEtzRzh6Qk5obXNuRHhJNHVOM0ZYcms0YUdaNVZxeDN6RkZka3V1cE1BU0t5WF9fcmVwMFY4RFA1TW1OV3oxMFhLbU1Hdk5lQmFDNlRuazVkbXhTVDRWZ0EwSXJCanBsSGVZUXNwUlRmdGlPN3prckNPM1Nsb0tuN0FmWlpMeEJZV0s4S3k3amloRWFSUUFydXZibFZBTG4zU3R6VWMyREdjaDR5MG9DSmVwWjRlcnls0gHWAUFVX3lxTE9hRkNtdThBT1p1eE8xY0VoWHFOVm05RVdleG1fYVY4VjlfNXd6NWZkUVgzYkMwWl93UE9CRGpzZkY3SmRsTEQtTVZCOHJCandOZllYSUx3Vy1xZm5xOXJRVGNEeXpDWnRGaUZsbFd3WEFZMUtTZ004eXI5ZE8wVElvLUVuVU10X1d0UHBkdTdVWnRCM0Q1X2ZuSkZLWDV6NnBRYmU1X1A4YmZ5TjJ5a1NNc2Rlc0tfeHk4cDd1Z3NlWlNPMnhwODBiMUxseXBmNVRJRDRPT2c?oc=5"
+   "tag": "Results",
+   "t": "EPACK Durable Limited (NSE:EPACK) Confirms Q2 FY27 Financial Results Publication in Newspapers",
+   "s": "Kalkine Media",
+   "d": "30 Oct, 5:20 PM",
+   "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPd3Z3Rk55Y01RMEtXbEc4djhibXd1b0YyTVVJSVNCS0xCeFZZc0Jic2NWbWNBWDg3MHVuMFV5U2FPZHdPZ082T0x6OHNBZGk3NDNiLW5Bd0pLU2JGVUFkTXl1R0NWOWlPYWV4WFMxZ1N4YWdBOEcyWFRVOUR6MmdzaEVFRW9tSHlFbVFKLU43cU1ObWl0ZzUzTUhkVGlMeFB0WTNEMXV5ZmtjcE1vQy1iMjdmUHdJcU1IcWNEdTZVdjVSQ3ItMmFmNm9BRWUzQmNvZVRtNw?oc=5"
   },
   {
    "tag": "Economy",
@@ -722,18 +762,18 @@
    "u": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQZTFyMk9sdFl3QmJnUDd2OGhhdDNIZ3FwcDQwclFmNE1Ba3ZsakV0RzN0RHlKUkRYZnJST19SVDlqZmp5UGV0OGdOYzlLTkNNMTFqaEhNZGQ5cmctT2JzTEtZNzk4N1lfb2lyc2NuVU1ETHNWU0ZBZWpxX29hVWxxNUp4VE5pNndCVFVDeWtmZWNPQkh4U2xFeFp6NEd0am1jV2FBSWZIb215bUxTVnc2LTdhQ0lmM21KSHUtQjVSVlVpajhPdkZYdHQwTEgyc01tMFdxLXZBZkUwSUdGdXNkUjl4NGVMeHNWNzVROXhhSDUxT1BJSXo1enlzR3VVNXpyeWRaeTc4YmLSAZACQVVfeXFMTUltcFpOMzllTWlGSzAweENGY0Nob0tmTk96eV9wOVB1cGlDeTRuN1hRRFI4RS1KTVoyUW5xdWxpU24ySVIzWk9JV2F6bks2bVJ4TlZidVFqQk1LU3pOYlNEV2Qyc1JVSGlhVDhyb19xQlpQbWFmUmdXakhsUDZtSUEzSXlnQVA1SEhXV1BzZURDVnJablhfSk1FUzVCSmEwQmpZczltQVRON3otMzV4MnUzVGxsTlNJMGt3ZU5fWlhrcU53YzdHTE92UGx0QjdBTkdfOUVobGVib3VCcDR2MGZ4Ulk4R1haZkJZdEQxalExRDZqT01DMjlQbEE4RVJ4b0Z0UGh1c05kX1A3bnNOWFQ?oc=5"
   },
   {
-   "tag": "Results",
-   "t": "Ather Energy Share Price Today, Ather Energy Stock Price Live NSE/BSE Updates",
-   "s": "The Economic Times",
-   "d": "30 Oct, 2:58 PM",
-   "u": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMmpPVXcxeVFIRHF1aHV6dFRLVnhXV3djOWRQN2tuMmxVTnhDeVNJSnFoV2ZscmFoaEtaWXhCT0tabGNHdVhlOV8zcG45eTJrYS04ek9hSlNlMEZPYlpyeS1pbXNqbjlVVklKeEFrX1R6OUEzXzhRdjNneFZzbEFFMjc4MmZ4T3dSMnc?oc=5"
-  },
-  {
    "tag": "IPO",
    "t": "BLS Polymers Allotment Status Check Online: Steps, GMP, Listing Expectations and Key Details",
    "s": "India Infoline",
    "d": "30 Oct, 11:18 AM",
    "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPYkZuQ0VpLS1Ea29SclozYWxhQzRjYWU0Q284TktLOFFleE4xdEJoMHlOcEMybFNVN2xsZFlKR2NzQWdwSnQzWkhCUjI2clBrREZTOWdiQ3B6aWhkMmpwRXM3Q3pOYmFMTUVUb19Tc3I3a1VJRGxTRGRaN1lGYndRQWhTa010RXQ2cjE4djdNVVl1UTA1XzF5b3hFWUhZM0JrVGp6WWc1SVNueFpGd2ZIbU9yd3JVZXJ2N2Q5elRkTElVV1luR2tr?oc=5"
+  },
+  {
+   "tag": "Markets",
+   "t": "Sensex, Nifty Open Volatile; India VIX Rises, Crude Above $116",
+   "s": "HDFC Sky",
+   "d": "30 Oct, 10:43 AM",
+   "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQY2daQnV3TThDSXViZGppTlJha2tMZVU4ZEV6Smw5ai13RUxwa3ZoODdGYTYwLS16eW1UdlY3SHVyQjVSLVAxUlVXNmhiTVNSdTFHVXNNYk94VXY2a1Q4V2c0cjluWDNBbkxwZDVfLXdxUTk3aV9xM0hnVElQcERGaDAwaVBRU2JZam8wTVM5WlhsSXJGMXBkWWlIdUZXWEZITzlJRk9LM1pEOE8yYVdETHp4WjRzWklrV0dvak5Pc0ZiaFdlMVE?oc=5"
   },
   {
    "tag": "IPO",
@@ -758,11 +798,13 @@
   }
  ],
  "log": [
-  "subscription: 12 IPOs from 15 cards"
+  "subscription: 12 IPOs from 15 cards",
+  "bse list failed: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/ListofScripData/w?Group=&Scripcode=&industry=&segment=Equity&status=Active",
+  "bse bhavcopy 2026-10-30: 2062 BSE-only scrips"
  ],
  "members": {
   "n50": {
-   "day": "2026-10-30",
+   "day": "2026-10-31",
    "list": [
     [
      "ADANIENT",
@@ -967,7 +1009,7 @@
    ]
   },
   "mid": {
-   "day": "2026-10-30",
+   "day": "2026-10-31",
    "list": [
     [
      "360ONE",
@@ -1372,7 +1414,7 @@
    ]
   },
   "small": {
-   "day": "2026-10-30",
+   "day": "2026-10-31",
    "list": [
     [
      "AARTIIND",
@@ -1778,9 +1820,9 @@
   }
  },
  "nse": {
-  "n50": "30 Oct, 10:38 PM",
-  "mid": "30 Oct, 10:38 PM",
-  "small": "30 Oct, 10:38 PM"
+  "n50": "31 Oct, 12:40 AM",
+  "mid": "31 Oct, 12:40 AM",
+  "small": "31 Oct, 12:40 AM"
  },
  "midg": [
   [
@@ -1889,31 +1931,33 @@
   }
  },
  "fulllog": [
-  "subscription: 12 IPOs from 15 cards"
+  "subscription: 12 IPOs from 15 cards",
+  "bse list failed: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/ListofScripData/w?Group=&Scripcode=&industry=&segment=Equity&status=Active",
+  "bse bhavcopy 2026-10-30: 2062 BSE-only scrips"
  ],
  "universe": {
-  "stocks": 4698,
-  "quotes": 4697,
-  "at": "30 Oct, 10:38 PM"
+  "stocks": 4683,
+  "quotes": 4682,
+  "at": "31 Oct, 12:40 AM"
  },
  "global": [
   [
    "Dow Jones",
-   51877.07,
-   -0.89,
-   1793379943
+   51677.58,
+   -1.27,
+   1793387342
   ],
   [
    "S&P 500",
-   7582.01,
-   -1.79,
-   1793379866
+   7551.5,
+   -2.19,
+   1793387280
   ],
   [
    "Nasdaq",
-   25424.62,
-   -2.9,
-   1793379948
+   25301.24,
+   -3.37,
+   1793387392
   ],
   [
    "Nikkei 225",
@@ -1935,9 +1979,9 @@
   ],
   [
    "US 10Y yield",
-   4.95,
-   -0.8,
-   1793378214
+   4.93,
+   -1.24,
+   1793383964
   ]
  ]
 }
