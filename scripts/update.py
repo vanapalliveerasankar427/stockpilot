@@ -169,8 +169,6 @@ def metals(out):
         def ampm(label):
             r = re.search(label + r"\s*999\D{0,40}?([\d,]{5,9}(?:\.\d+)?)(?:[^\d]{1,20}([\d,]{1,9}(?:\.\d+)?))?", t)
             if not r:
-                i = t.find(label)
-                log(f"ibja {label}: no AM/PM match near: {t[max(0, i - 40):i + 160]!r}")
                 return None, None
             am = num(r.group(1))
             pm = num(r.group(2)) if r.group(2) and num(r.group(2)) > 1000 else 0
@@ -185,6 +183,10 @@ def metals(out):
         days = sorted(hist)
         cur_g = gpm or gam
         cur_s = spm or sam
+        if cur_g is None and ib.get("g999") and days:
+            # AM/PM table is drawn by script on that site; use the per-gram 999 card instead
+            if abs(ib["g999"] * 10 - hist[days[-1]][1]) > 15:
+                cur_g = ib["g999"] * 10
         sess = "PM" if (gpm or spm) else ("AM" if (gam or sam) else "")
         if days:
             last = hist[days[-1]]
