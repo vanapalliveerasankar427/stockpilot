@@ -7,8 +7,8 @@ name: Update data
 on:
   schedule:
     - cron: "40 3 * * 1-5"      # 9:10 AM IST: start the market-hours loop
-    - cron: "10 6 * * 1-5"      # 11:40 AM IST: backup start if the first was delayed
-    - cron: "0 */2 * * *"       # every 2 hours: one update (metals, GMP, news)
+    - cron: "10 6 * * 1-5"      # 11:40 AM IST: restart the loop (covers a delayed or failed morning start)
+    - cron: "0 0-2,11-23/2 * * *" # every 2 hours outside market hours: one update (metals, GMP, news)
   push:
     branches: [main]
     paths: [".github/workflows/data.yml", "scripts/**"]
@@ -19,7 +19,7 @@ permissions:
 
 concurrency:
   group: data
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
