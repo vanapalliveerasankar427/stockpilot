@@ -856,19 +856,65 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
   nav.top .iconbtn:active,nav.top .searchbtn:active{background:var(--soft)}
   .nbell i{top:3px;right:3px}
   .tape{margin:8px -2px 0}.tape .track{font-size:12.5px;gap:26px}
-  /* floating dock */
-  .links{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));padding:6px;gap:2px;border-radius:999px;justify-content:space-between;
-    background:color-mix(in srgb,#0d0e14 88%,transparent);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);
-    box-shadow:0 18px 40px -12px rgba(10,10,30,.45),0 2px 6px rgba(0,0,0,.12)}
-  [data-theme="dark"] .links{background:color-mix(in srgb,#20222b 90%,transparent);border-color:rgba(255,255,255,.1)}
-  .links a{flex:0 1 auto;flex-direction:row;gap:7px;height:46px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.62);font-size:13px;font-weight:600;justify-content:center;transition:background .3s cubic-bezier(.2,.9,.3,1),color .2s,padding .3s}
-  .links a .lt{display:none}
-  .links a svg{width:21px;height:21px}
-  .links a[aria-current="page"]{flex:0 0 auto;background:#fff;color:#0b0b0f;padding:0 16px 0 14px;box-shadow:0 4px 14px -4px rgba(0,0,0,.35)}
-  .links a[aria-current="page"] .lt{display:inline;animation:fadeUp .3s both}
-  .links a .badge{position:absolute;margin:-22px 0 0 18px}
+  /* bottom bar: glass, labels, colour per tab */
+  .links{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));padding:6px 4px;gap:0;border-radius:24px;justify-content:space-around;
+    background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 60%,transparent);
+    backdrop-filter:blur(24px) saturate(1.8);-webkit-backdrop-filter:blur(24px) saturate(1.8);box-shadow:0 14px 36px -14px rgba(20,20,60,.35),0 1px 0 rgba(255,255,255,.7) inset}
+  .links::before{content:"";position:absolute;left:12%;right:12%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--tc,#10b981) 60%,transparent),transparent);opacity:.8}
+  .links a{--tc:#10b981;position:relative;flex:1;flex-direction:column;gap:3px;height:auto;padding:6px 2px 5px;border-radius:16px;color:var(--muted);font-size:10.5px;font-weight:600;letter-spacing:-.01em;transition:color .25s}
+  .links a .lt{display:block;transition:transform .3s cubic-bezier(.2,.9,.3,1.4)}
+  .links a svg{width:22px;height:22px;padding:5px;box-sizing:content-box;border-radius:12px;transition:transform .35s cubic-bezier(.2,.9,.3,1.5),background .3s,color .3s,box-shadow .3s}
+  .links a:active svg{transform:scale(.85)}
+  .links a[data-v="today"]{--tc:#f59e0b}.links a[data-v="markets"]{--tc:#3b82f6}.links a[data-v="stocks"]{--tc:#6366f1}.links a[data-v="ipos"]{--tc:#10b981}
+  .links a[data-v="ipo-allot"]{--tc:#14b8a6}.links a[data-v="metals"]{--tc:#eab308}.links a[data-v="watchlist"]{--tc:#ec4899}
+  .links a[aria-current="page"]{background:none;color:var(--tc);box-shadow:none;padding:6px 2px 5px}
+  .links a[aria-current="page"] svg{color:#fff;stroke:#fff;background:linear-gradient(140deg,color-mix(in srgb,var(--tc) 80%,#fff),var(--tc) 55%,color-mix(in srgb,var(--tc) 75%,#000));box-shadow:0 6px 16px -4px color-mix(in srgb,var(--tc) 70%,transparent),0 0 0 4px color-mix(in srgb,var(--tc) 14%,transparent);animation:tabPop .5s cubic-bezier(.2,.9,.3,1.5)}
+  .links a[aria-current="page"] .lt{transform:translateY(-1px)}
+  .links a[aria-current="page"]::after{content:"";position:absolute;top:-7px;left:50%;width:18px;height:3px;margin-left:-9px;border-radius:0 0 3px 3px;background:var(--tc);box-shadow:0 2px 10px var(--tc);animation:tabBar .4s both}
+  .links a .badge{position:absolute;top:2px;left:calc(50% + 6px);margin:0}
 }
-@media(max-width:380px){.links a{padding:0 10px}.links a[aria-current="page"]{padding:0 13px 0 11px}}
+@media(max-width:700px){[data-theme="dark"] .links{box-shadow:0 14px 36px -14px rgba(0,0,0,.6)}}
+@keyframes tabPop{0%{transform:scale(.6) translateY(4px)}60%{transform:scale(1.12) translateY(-2px)}100%{transform:none}}
+@keyframes tabBar{from{transform:scaleX(0);opacity:0}}
+
+/* ===== motion ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes viewIn{from{opacity:0;transform:translateY(14px) scale(.992);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes popIn{0%{opacity:0;transform:scale(.92)}70%{transform:scale(1.02)}100%{opacity:1;transform:none}}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes floaty{50%{transform:translateY(-4px)}}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+@keyframes flashUp{0%{background:color-mix(in srgb,var(--up) 28%,transparent)}100%{background:transparent}}
+@keyframes flashDn{0%{background:color-mix(in srgb,var(--dn) 28%,transparent)}100%{background:transparent}}
+.view.on{animation:viewIn .5s cubic-bezier(.2,.8,.2,1) both}
+.rv{opacity:0;transform:translateY(22px)}
+.rv.in{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rd,0ms)}
+.wz,.aw-row,.np-it,.famrow,.wl,.mrow{animation:fadeUp .45s cubic-bezier(.2,.8,.2,1) both}
+.wz:nth-child(2),.aw-row:nth-child(2),.wl:nth-child(2){animation-delay:.04s}.wz:nth-child(3),.aw-row:nth-child(3),.wl:nth-child(3){animation-delay:.08s}
+.wz:nth-child(4),.aw-row:nth-child(4),.wl:nth-child(4){animation-delay:.12s}.wz:nth-child(5),.aw-row:nth-child(5),.wl:nth-child(5){animation-delay:.16s}
+.wz:nth-child(n+6),.aw-row:nth-child(n+6),.wl:nth-child(n+6){animation-delay:.2s}
+.btn,.ghost,.cta,.sn,.seg button,.iptSeg button,.ulTabs button,.aw-rf,.aw-ib,.np-ib,.iconbtn{transition:transform .18s cubic-bezier(.2,.9,.3,1.4),background .2s,color .2s,box-shadow .2s,border-color .2s}
+.btn:active,.ghost:active,.cta:active,.sn:active,.seg button:active,.iptSeg button:active,.ulTabs button:active,.aw-ib:active,.np-ib:active{transform:scale(.95)}
+.btn,.cta{position:relative;overflow:hidden}
+.rip{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:rgba(255,255,255,.45);pointer-events:none;animation:ripple .6s ease-out forwards}
+.ghost .rip,.sn .rip{background:color-mix(in srgb,var(--ink) 15%,transparent)}
+.iptSeg button[aria-pressed="true"],.seg button[aria-pressed="true"]{animation:popIn .35s both}
+.ulTabs button[aria-pressed="true"]::after{animation:tabBar .35s both}
+.wz:active,.aw-row:active,.wl:active{transform:scale(.985);transition:transform .15s}
+@media(hover:hover){
+  .glass.card,.wz,.ipo,.stat,.tile,.aw-pans,.al-alert{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  .glass.card:hover,.ipo:hover,.stat:hover,.tile:hover,.aw-pans:hover,.al-alert:hover{transform:translateY(-3px);box-shadow:0 22px 50px -24px rgba(20,20,60,.35)}
+  .wz:hover{background:color-mix(in srgb,var(--muted) 5%,transparent)}
+  .wz:hover .mono,.wl:hover .lg{transform:scale(1.06) rotate(-2deg)}
+}
+.wz .mono,.wl .lg,.aw-av{transition:transform .35s cubic-bezier(.2,.9,.3,1.4)}
+.al-dot{animation:alp 1.6s infinite}
+.mark{animation:floaty 4s ease-in-out infinite}
+.flup{animation:flashUp 1.2s ease-out}.fldn{animation:flashDn 1.2s ease-out}
+.skel{background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 10%,transparent) 25%,color-mix(in srgb,var(--muted) 20%,transparent) 37%,color-mix(in srgb,var(--muted) 10%,transparent) 63%);background-size:200% 100%;animation:shimmer 1.3s linear infinite;border-radius:10px}
+.aw-st,.wz-r b{transition:color .3s}
+.aw-st.al{animation:popIn .45s both}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.view.on,.wz,.aw-row,.mark,.np-it{animation:none!important}}
 </style>
 </head>
 <body>
@@ -2347,6 +2393,18 @@ function askAlerts(force){try{
 addEventListener('appinstalled',()=>setTimeout(()=>askAlerts(true),1200));
 setTimeout(()=>askAlerts(false),2500);
 addEventListener('scroll',()=>{const n=document.querySelector('nav.top');if(n)n.classList.toggle('scrolled',scrollY>8)},{passive:true});
+// ===== motion helpers: scroll reveal, button ripple, live price flash =====
+(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.06}):null;
+  const SEL='.view.on .glass.card,.view.on .secht,.view.on .stat,.view.on .tile,.view.on .ipo,.view.on .step,.view.on .grid3>*,.view.on .minis>*';
+  const scan=()=>{if(!io)return;let k=0;document.querySelectorAll(SEL).forEach(el=>{if(el.dataset.rv)return;el.dataset.rv=1;const r=el.getBoundingClientRect();if(r.top<innerHeight*0.9){return}el.classList.add('rv');el.style.setProperty('--rd',(k++%4)*70+'ms');io.observe(el)})};
+  new MutationObserver(()=>{clearTimeout(scan.t);scan.t=setTimeout(scan,60)}).observe(document.body,{childList:true,subtree:true});
+  addEventListener('hashchange',()=>setTimeout(scan,80));setTimeout(scan,400);
+  document.addEventListener('pointerdown',e=>{const b=e.target.closest('.btn,.cta,.ghost,.sn');if(!b||b.disabled)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rip';s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';b.appendChild(s);setTimeout(()=>s.remove(),650)},{passive:true});
+  // flash a price when its value changes after a live refresh
+  const last=new WeakMap();new MutationObserver(ms=>ms.forEach(m=>{const el=m.target.nodeType===3?m.target.parentElement:m.target;if(!el||!el.closest||!el.closest('.num'))return;const t=el.textContent,p=last.get(el);last.set(el,t);
+    if(p&&p!==t){const a=parseFloat(p.replace(/[^\d.-]/g,'')),b=parseFloat(t.replace(/[^\d.-]/g,''));if(isFinite(a)&&isFinite(b)&&a!==b){el.classList.remove('flup','fldn');void el.offsetWidth;el.classList.add(b>a?'flup':'fldn')}}})).observe(document.body,{characterData:true,subtree:true});
+})();
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
