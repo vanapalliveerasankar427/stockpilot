@@ -737,6 +737,11 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 .wz-m .v-consider{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn);font-weight:600}
 .wz-m .v-avoid{background:color-mix(in srgb,var(--dn) 12%,transparent);color:var(--dn);font-weight:600}
 .mrows.wzl{border:1px solid var(--line);border-radius:18px;padding:0 12px;background:color-mix(in srgb,var(--bg,#fff) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);margin-top:10px}
+
+.aw-pans{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:18px;text-decoration:none;color:inherit;background:color-mix(in srgb,var(--bg,#fff) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.aw-pans b{display:block;font-size:16px}.aw-pans small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.aw-pans .aw-av svg{width:20px;height:20px}.aw-go{color:var(--up);font-weight:600;font-size:14px;white-space:nowrap}
+#v-ipo-allot .wz{grid-template-columns:46px 1fr auto}
 </style>
 </head>
 <body>
@@ -749,10 +754,10 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
     <a href="#markets" data-v="markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span class="lt">Markets</span></a>
     <a href="#stocks" data-v="stocks"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg><span class="lt">Stocks</span></a>
     <a href="#ipos" data-v="ipos"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span class="lt">IPOs</span></a>
+    <a href="#ipo-allot" data-v="ipo-allot"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span class="lt">Allotment</span> <span class="badge" id="appbadge" hidden></span></a>
     <a href="#metals" data-v="metals"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h7l-1.5-5h-4zM14 18h7l-1.5-5h-4zM8.5 11h7L14 6h-4z"/></svg><span class="lt">Gold</span></a>
     <a href="#watchlist" data-v="watchlist"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span class="lt">Watchlist</span></a>
     <a href="#news" data-v="news"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h6M7 13h10M7 16h7"/></svg><span class="lt">News</span></a>
-    <a href="#ipo-allot" data-v="ipo-allot"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span class="lt">Allotment</span> <span class="badge" id="appbadge" hidden></span></a>
     <a href="#tools" data-v="tools"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 12h1M14 12h1M9 16h1M14 16h1"/></svg><span class="lt">Tools</span></a>
   </div>
   <button class="searchbtn" type="button" id="openSearch" aria-label="Search stocks and IPOs"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search stocks, IPOs</span><kbd>⌘K</kbd></button>
@@ -854,7 +859,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
   <div id="sn-ipo-screener"></div><div style="height:16px"></div><div id="scrbody"></div>
 </section>
 <section class="view" id="v-ipo-allot">
-  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Allotment desk</h1><p class="psub">Find out if you got shares. Save your family's PANs once, then check everyone for any IPO in one tap.</p></div><a class="btn shine" href="#pans" style="align-self:center;white-space:nowrap">+ Add PAN</a></div>
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Allotment</h1><p class="psub">Tap an IPO to check everyone in your family.</p></div></div>
   <div id="sn-ipo-allot"></div><div style="height:16px"></div><div id="allotbody"></div>
 </section>
 <section class="view" id="v-ipo-planner">
@@ -1306,23 +1311,21 @@ function renderScreener(){
 // ===================== Allotment desk =====================
 let allotSel=null;
 function renderAllot(){
-  const L=IPOS.filter(i=>(i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1))&&tOK(i)).sort((a,b)=>(a.al||0)-(b.al||0));
-  if(!allotSel||!L.find(i=>i.id===allotSel))allotSel=(L.find(i=>i.al&&+i.al===+T0)||L[0]||{}).id;
-  const i=byId[allotSel],mine=apps.filter(a=>a.ipo===allotSel);
-  const st=!i?'':(!i.al?'Allotment date TBA':T0<i.al?`Allotment expected on ${d2(i.al)} (in ${days(i.al)} day${days(i.al)===1?'':'s'})`:+T0===+i.al?'Allotment is being finalised today. Results usually appear by evening.':'Allotment is done. Check your status now.');
-  document.getElementById('allotbody').innerHTML=`<div class="grid2">
-   <div class="glass card"><span class="lbl">1 · Pick the IPO</span><div class="alist">${L.map(x=>`<button type="button" class="pr ${x.id===allotSel?'sel':''}" data-a="${x.id}"><div class="lg" style="background:${x.color};color:#fff">${initials(x.name)}${logoImg(x.id)}</div><div><b>${esc(x.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">Allotment ${d2(x.al)} · ${esc(x.reg||'registrar in RHP')}</small></div>${statusPill(x)}</button>`).join('')}</div></div>
-   <div class="glass card">${i?`<span class="lbl">2 · Check your status</span><h3 style="font-size:22px;margin:6px 0 4px">${esc(i.name)}</h3><p class="note" style="font-size:14px">${st}</p>
-     <div style="display:grid;gap:8px;margin-top:16px">
-      <a class="btn shine" href="#allot-${i.id}">Check allotment for my family →</a>
-      ${i.reg&&REGLINK[i.reg]?`<a class="ghost" href="${REGLINK[i.reg]}" target="_blank" rel="noopener">Check on ${esc(i.reg)} (registrar) ↗</a>`:''}
-      <a class="${i.reg&&REGLINK[i.reg]?'ghost':'btn'}" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">Check on BSE ↗</a>
-      <a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">Check on NSE ↗</a></div>
-     <p class="note" style="margin-top:12px">On the site, pick <b>${esc(i.name)}</b>, then enter your PAN or application number. MarketVedaPro never asks for or stores your PAN.</p>
-     <a class="link" href="#applications" style="display:block;margin-top:14px;font-size:13px">My applications →</a><div style="margin-top:18px"><span class="lbl">3 · Record the result</span>${mine.length?mine.map(a=>`<div class="row" style="padding:10px 0;border-bottom:1px solid var(--line)"><div><b>${esc(a.applicant)}</b><small class="muted" style="display:block;font-size:12.5px">${esc(a.via)} · ${a.lots} lot${a.lots>1?'s':''}</small></div><div class="tabs">${[['allotted','Allotted'],['not','Not allotted']].map(([k,l])=>`<button type="button" data-res="${a.id}" data-v="${k}" aria-pressed="${a.result===k}">${l}</button>`).join('')}</div></div>`).join(''):`<p class="note" style="margin-top:8px">You haven't logged an application for this IPO. <a class="link" href="#ipos">Log one from the IPO card</a> to track it here.</p>`}</div>`:'<p class="note">No IPOs waiting for allotment right now.</p>'}</div></div>`;
-  document.querySelectorAll('#allotbody [data-a]').forEach(b=>b.onclick=()=>{allotSel=b.dataset.a;renderAllot()});
-  document.querySelectorAll('#allotbody [data-res]').forEach(b=>b.onclick=async()=>{const a=apps.find(x=>x.id===b.dataset.res);const v=a.result===b.dataset.v?'pending':b.dataset.v;await patchApp(a.id,{result:v,shares:v==='allotted'?byId[a.ipo].lot*byId[a.ipo].ml:0,mandate:v!=='pending'?'accepted':a.mandate});renderAllot()});
+  const L=IPOS.filter(i=>(i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1))&&tOK(i)).sort((a,b)=>{const ra=T0>=a.al?0:1,rb=T0>=b.al?0:1;return ra-rb||(ra?(a.al-b.al):(b.al-a.al))});
+  const np=FAM.members.filter(m=>PANS[m]).length;
+  const res=i=>{const st=FAM.st[i.id]||{},al=FAM.members.filter(m=>st[m]==='al').length,na=FAM.members.filter(m=>st[m]==='na').length;return {al,na,any:al+na>0}};
+  const auto=i=>ALLOT_API&&REGKEY(i.reg);
+  document.getElementById('allotbody').innerHTML=`
+   <a class="aw-pans" href="#pans"><div class="aw-av" style="width:42px;height:42px">${AWI.edit}</div><div><b>My PANs</b><small>${np?`${np} ${np===1?'person':'people'} saved · checked together for every IPO`:'Add your family once, check everyone in one tap'}</small></div><span class="aw-go">${np?'Edit':'+ Add'} ›</span></a>
+   <div class="mrows wzl">${L.map((i,k)=>{const r=res(i),ready=T0>=i.al,today=+T0===+i.al;
+     const when=today?'<span class="op">● Allotment today</span>':ready?'<span class="op">● Allotment out</span>':`<span>Allotment ${d2(i.al)}</span>`;
+     const right=r.any?`<b class="up">${r.al} allotted</b><small>${r.na} not allotted</small>`:ready?`<b style="color:var(--up)">Check ›</b><small>${auto(i)?'One tap':'On '+esc(i.reg||'registrar')}</small>`:`<b style="color:var(--muted);font-size:14px">${days(i.al)}d left</b><small>${esc(i.reg||'')}</small>`;
+     return `<a class="wz" href="#allot-${i.id}" style="text-decoration:none;color:inherit;animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
+       <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}</div></div>
+       <div class="wz-r">${right}</div></a>`}).join('')||'<p class="aw-msg" style="padding:22px 8px">No IPOs waiting for allotment right now.</p>'}</div>
+   <p class="aw-note">Tap an IPO to see everyone's result. <a class="link" href="#applications">My applications →</a></p>`;
 }
+
 
 // ===================== Money planner =====================
 let plan={pans:1,cat:'rmin',sel:null,mode:'last'};
