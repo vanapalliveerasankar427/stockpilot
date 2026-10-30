@@ -12,6 +12,11 @@ const KFIN_PAGE = "https://ipostatus.kfintech.com/";
 const KFIN_API = "https://0uz601ms56.execute-api.ap-south-1.amazonaws.com/prod/api/query";
 const MAASH_LIST = "https://api.maashitla.com/api/company-directory";
 const MAASH_API = "https://pnjbvxj6md.execute-api.ap-south-1.amazonaws.com/prod/check/";
+const BIG_PAGE = "https://ipo.bigshareonline.com/IPO_Status.html";
+const BIG_API = "https://ipo.bigshareonline.com/Data.aspx/FetchIpodetails";
+const PURVA_PAGE = "https://www.purvashare.com/investor-service/ipo-query";
+const SKY_PAGE = "https://www.skylinerta.com/ipo.php";
+const SKY_FORM = "https://www.skylinerta.com/display_application.php";
 const PAN_RE = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
 
 function cors(req) {
@@ -31,6 +36,29 @@ async function aesB64(text) { // MUFG page encrypts its token with AES-128-CBC, 
   const key = await crypto.subtle.importKey("raw", k, { name: "AES-CBC" }, false, ["encrypt"]);
   const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-CBC", iv: k }, key, new TextEncoder().encode(text)));
   let s = ""; ct.forEach(b => s += String.fromCharCode(b)); return btoa(s);
+}
+
+
+// ---------- HTML helpers (Bigshare, Purva and Skyline list companies in a <select>) ----------
+const ent = s => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;|&#039;/g, "'").replace(/&nbsp;/g, " ");
+const htext = s => ent(String(s).replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+function options(page, id) {
+  const m = page.match(new RegExp(`<select[^>]*\\b(?:id|name)="${id}"[^>]*>([\\s\\S]*?)</select>`, "i"));
+  if (!m) throw new Error("company list not found");
+  return [...m[1].matchAll(/<option[^>]*value="([^"]*)"[^>]*>([\s\S]*?)<\/option>/gi)].map(o => ({ id: o[1].trim(), name: htext(o[2]) })).filter(o => o.id && o.id !== "0");
+}
+// tiny cookie jar for form sites that need a session
+function jar() { const c = {}; return {
+  take(r) { (r.headers.getSetCookie ? r.headers.getSetCookie() : [r.headers.get("set-cookie") || ""]).forEach(s => { const m = s.match(/^([^=;\s]+)=([^;]*)/); if (m) c[m[1]] = m[2]; }); return r; },
+  get hdr() { return Object.entries(c).map(([k, v]) => k + "=" + v).join("; "); } }; }
+function summarize(records, reg) {
+  const find = (rec, wants, avoid = []) => { for (const w of wants) for (const [k0, v] of Object.entries(rec)) { const k = k0.toLowerCase(); if (new RegExp(w).test(k) && !avoid.some(a => new RegExp(a).test(k))) return v; } return null; };
+  const q = "(share|qty|quantity)";
+  const allotted = r => find(r, [`allot.*${q}|${q}.*allot`, "allot"], ["date", "basis", "status"]);
+  const applied = r => find(r, [`appl.*${q}|${q}.*appl|^applied`, "appl|bid"], ["allot", "name", "appl\\w*\\.?\\s*(no|num)", "\\bid\\b"]);
+  const hits = records.filter(r => allotted(r) != null);
+  if (!hits.length) throw new Error(reg + ": couldn't read the result");
+  return { found: true, applied: hits.reduce((a, r) => a + int(applied(r)), 0), allotted: hits.reduce((a, r) => a + int(allotted(r)), 0), category: String(find(hits[0], ["categ"]) || "").trim() };
 }
 
 // ---------- company lists (an IPO appears once its allotment is out) ----------
@@ -53,6 +81,9 @@ async function companies(reg) {
     const d = await (await fetch(MAASH_LIST, { headers: { Origin: "https://maashitla.com", "User-Agent": UA } })).json();
     return (d.companies || []).map(c => ({ id: c.company_slug, name: String(c.company_name).trim() }));
   }
+  if (reg === "bigshare") return options(await (await fetch(BIG_PAGE, { headers: { "User-Agent": UA } })).text(), "ddlCompany");
+  if (reg === "purva") return options(await (await fetch(PURVA_PAGE, { headers: { "User-Agent": UA } })).text(), "company_id");
+  if (reg === "skyline") return options(await (await fetch(SKY_PAGE, { headers: { "User-Agent": UA } })).text(), "company");
   throw new Error("unsupported registrar");
 }
 
@@ -81,6 +112,42 @@ async function check(reg, cid, pan) {
     const d = await (await fetch(MAASH_API + encodeURIComponent(cid) + "?pan=" + pan, { headers: { Origin: "https://maashitla.com", "User-Agent": UA } })).json();
     if (d.name == null) return { found: false };
     return { found: true, applied: int(d.shares_applied), allotted: int(d.shares_allotted), category: "" };
+  }
+  if (reg === "bigshare") {
+    const body = JSON.stringify({ Applicationno: "", Company: cid, SelectionType: "PN", PanNo: pan, txtcsdl: "", txtDPID: "", txtClId: "", ddlType: "0", lang: "en" });
+    const d = (await (await fetch(BIG_API, { method: "POST", body, headers: { "Content-Type": "application/json; charset=utf-8", Referer: BIG_PAGE, Origin: "https://ipo.bigshareonline.com", "User-Agent": UA } })).json()).d || {};
+    if (d.Status === "NOTFOUND") return { found: false };
+    if (d.Status && d.Status !== "OK") throw new Error("Bigshare: " + (d.Message || d.Status));
+    const rows = d.Records || [d];
+    const applied = rows.reduce((a, r) => a + int(r.APPLIED), 0);
+    if (!applied && !rows.some(r => r.ALLOTED != null)) return { found: false };
+    return { found: true, applied, allotted: rows.reduce((a, r) => a + int(r.ALLOTED), 0), category: "" };
+  }
+  if (reg === "purva") {
+    const j = jar(), first = await (await fetch(PURVA_PAGE, { headers: { "User-Agent": UA } }).then(r => j.take(r))).text();
+    const tok = first.match(/name="csrfmiddlewaretoken" value="([^"]+)"/); if (!tok) throw new Error("Purva: form token missing");
+    const form = new URLSearchParams({ csrfmiddlewaretoken: tok[1], company_id: cid, applicationNumber: "", panNumber: pan });
+    const page = await (await fetch(PURVA_PAGE, { method: "POST", body: form, headers: { "Content-Type": "application/x-www-form-urlencoded", Referer: PURVA_PAGE, Cookie: j.hdr, "User-Agent": UA } })).text();
+    if (/no record found/i.test(page)) return { found: false };
+    const t = page.match(/<table[^>]*results-table[\s\S]*?<\/table>/); if (!t) throw new Error("Purva: couldn't read the result");
+    const heads = [...t[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map(m => htext(m[1])); const recs = [], pairs = {};
+    for (const tr of t[0].matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)) {
+      const ths = [...tr[1].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map(m => htext(m[1])), tds = [...tr[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map(m => htext(m[1]));
+      if (ths.length === 1 && tds.length === 1) pairs[ths[0]] = tds[0]; else if (tds.length) recs.push(Object.fromEntries(heads.map((h, k) => [h, tds[k]])));
+    }
+    return summarize(recs.length ? recs : [pairs], "Purva");
+  }
+  if (reg === "skyline") {
+    const j = jar();
+    const fp = await (await fetch(SKY_FORM, { method: "POST", body: new URLSearchParams({ company: cid }), headers: { "Content-Type": "application/x-www-form-urlencoded", Referer: SKY_PAGE, "User-Agent": UA } }).then(r => j.take(r))).text();
+    const tok = fp.match(/name="csrf_token"[^>]*value="([^"]+)"/); if (!tok) throw new Error("Skyline: form token missing");
+    const form = new URLSearchParams({ client_id: "", application_no: "", pan, csrf_token: tok[1], company: cid, action: "search" });
+    const page = await (await fetch(SKY_FORM, { method: "POST", body: form, headers: { "Content-Type": "application/x-www-form-urlencoded", Referer: SKY_FORM, Cookie: j.hdr, "User-Agent": UA } })).text();
+    if (/no record found/i.test(page)) return { found: false };
+    const blk = page.match(/class="[^"]*resultsec[\s\S]*?(?=<form|<footer)/); if (!blk) throw new Error("Skyline: couldn't read the result");
+    const pairs = {};
+    for (const li of blk[0].matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)) { const parts = li[1].split(/<[^>]+>/).map(htext).filter(Boolean); if (parts.length >= 2) pairs[parts[0].replace(/:$/, "")] = parts.slice(1).join(" "); }
+    return summarize([pairs], "Skyline");
   }
   throw new Error("unsupported registrar");
 }

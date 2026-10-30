@@ -1593,7 +1593,7 @@ function pastHTML(){const L=PAST.filter(tOK).filter(p=>!pastQ||p.name.toLowerCas
       <div class="wz-n"><b>${nm(i)}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span><span>Allotted ${d2(i.al)}</span></div></div>
       <div class="wz-r">${any?`<b class="up">${al} allotted</b><small>in family</small>`:`<b style="color:var(--up)">Check ›</b><small>Result</small>`}</div></a>`}).join('')||'<p class="aw-msg" style="padding:18px 8px">No past IPOs match.</p>'}</div>`}
 async function findReg(i){if(i.reg||i.regTried||!ALLOT_API)return;i.regTried=1;const want=normName(i.name);
-  for(const [rk,nm] of [['kfin','KFintech'],['mufg','MUFG Intime'],['maashitla','Maashitla Securities']]){try{const cl=(await (await fetch(ALLOT_API+'/companies?reg='+rk)).json()).companies||[];
+  for(const [rk,nm] of [['kfin','KFintech'],['mufg','MUFG Intime'],['bigshare','Bigshare Services'],['maashitla','Maashitla Securities'],['skyline','Skyline Financial'],['purva','Purva Sharegistry']]){try{const cl=(await (await fetch(ALLOT_API+'/companies?reg='+rk)).json()).companies||[];
     if(cl.some(x=>{const n=normName(x.name);return n&&(n.includes(want)||want.includes(n))})){i.reg=nm;return true}}catch{}}return false}
 function renderAllot(){
   const L=IPOS.filter(i=>i.al&&T0>=i.al&&(i.st==='closed'||i.st==='listed')&&tOK(i)).sort((a,b)=>b.al-a.al);
@@ -1866,7 +1866,7 @@ function famLabel(i,s,m){if(s==='al'){const n=m&&FAM.sh&&FAM.sh[i.id]&&FAM.sh[i.
 // ---- in-site allotment check through the MarketVedaPro relay (Cloudflare Worker, see worker/allotment.js) ----
 const allotAuto={};
 const ALLOT_API='https://stockpilot.vanapalli-veerasankar-927.workers.dev';  // set to the Worker's address, e.g. https://mvp-allot.<you>.workers.dev
-const REGKEY=r=>/mufg|link\s*intime/i.test(r||'')?'mufg':/kfin/i.test(r||'')?'kfin':/maashitla/i.test(r||'')?'maashitla':null;
+const REGKEY=r=>/mufg|link\s*intime/i.test(r||'')?'mufg':/kfin/i.test(r||'')?'kfin':/maashitla/i.test(r||'')?'maashitla':/bigshare/i.test(r||'')?'bigshare':/purva/i.test(r||'')?'purva':/skyline/i.test(r||'')?'skyline':null;
 const normName=t=>String(t||'').toLowerCase().replace(/\b(limited|ltd|ipo|india|private|pvt|the|and|sme)\b/g,'').replace(/[^a-z0-9]/g,'');
 let allotBusy=false,allotMsg='';
 let allotOne=null,panShow=false,awEdit=false,awAdd=false;const allotErr={};

@@ -112,7 +112,7 @@ const norm = t => String(t || "").toLowerCase().replace(/\b(limited|ltd|ipo|indi
 export async function cron(env, companiesOf) {
   if (!env.PUSH) return;
   const regCache = {};
-  const companies = async reg => { const k = /mufg|link\s*intime/i.test(reg) ? "mufg" : /kfin/i.test(reg) ? "kfin" : /maashitla/i.test(reg) ? "maashitla" : null; if (!k) return null; return regCache[k] || (regCache[k] = await companiesOf(k)); };
+  const companies = async reg => { const k = /mufg|link\s*intime/i.test(reg) ? "mufg" : /kfin/i.test(reg) ? "kfin" : /maashitla/i.test(reg) ? "maashitla" : /bigshare/i.test(reg) ? "bigshare" : /purva/i.test(reg) ? "purva" : /skyline/i.test(reg) ? "skyline" : null; if (!k) return null; return regCache[k] || (regCache[k] = await companiesOf(k)); };
   let budget = PER_RUN;
   for (const ev of await events(env, companies)) {
     if (budget <= 0) break;
