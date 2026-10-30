@@ -866,8 +866,8 @@ function logoImg(k){const kk=k==='MM'?'M&M':k,d=DOMAINS[k]||(typeof PROF!=='unde
   if(!LOCAL_LOGOS.has(k)&&!d)return '';
   const src=LOCAL_LOGOS.has(k)?`logos/${encodeURIComponent(k)}.png`:`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${d}&size=128`;
   return `<img class="lgimg" alt="" loading="lazy" decoding="async" src="${src}" data-d="${d}" data-l="${LOCAL_LOGOS.has(k)?1:0}" onload="lgOk(this)" onerror="lgFail(this)">`}
-function lgFail(im){if(im.dataset.l==='1'&&im.dataset.d){im.dataset.l='0';im.src=`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${im.dataset.d}&size=128`}else im.remove()}
-function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<24){im.remove();return}im.parentElement&&im.parentElement.classList.add('haslogo')}
+function lgFail(im){const d=im.dataset.d;if(im.dataset.l==='1'&&d){im.dataset.l='0';im.src=`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${d}&size=128`}else if(im.dataset.l==='0'&&d){im.dataset.l='2';im.src=`https://icons.duckduckgo.com/ip3/${d}.ico`}else im.remove()}
+function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<(im.dataset.l==='2'?16:24)){lgFail(im);return}im.parentElement&&im.parentElement.classList.add('haslogo')}
 
 const UPDATED=(window.LIVE&&window.LIVE.label)||'30 Oct 2026, 8:45 AM IST';
 const IPOS_RAW=[
