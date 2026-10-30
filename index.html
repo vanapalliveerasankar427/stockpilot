@@ -975,6 +975,42 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .ol-arrow{font-size:12.5px;font-weight:800;letter-spacing:.02em}.ol-row.ol-up .ol-arrow{color:#059669}.ol-row.ol-down .ol-arrow{color:#e11d48}
 .ol-more{width:100%;margin-top:12px}
 .ol-note{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.5}
+
+/* logo: neutral shimmer while the real logo loads, initials only if it fails */
+.mono:has(> .lgimg:not([data-ok])),.lg:has(> .lgimg:not([data-ok])),.slogo:has(> .lgimg:not([data-ok])){color:transparent!important;background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 10%,#fff) 25%,color-mix(in srgb,var(--muted) 20%,#fff) 37%,color-mix(in srgb,var(--muted) 10%,#fff) 63%)!important;background-size:200% 100%!important;animation:shimmer 1.2s linear infinite}
+.mono:has(> .lgimg[data-ok]),.lg:has(> .lgimg[data-ok]),.slogo:has(> .lgimg[data-ok]){color:transparent!important;background:#fff!important}
+/* loaders */
+.ldr-wrap{display:grid;place-items:center;gap:12px;padding:34px 16px;color:var(--muted);font-size:13.5px;font-weight:600;text-align:center}
+.ldr{width:34px;height:34px;border-radius:50%;border:3px solid color-mix(in srgb,var(--muted) 18%,transparent);border-top-color:#10b981;border-right-color:#6366f1;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sk-row{display:grid;grid-template-columns:44px 1fr 70px;gap:12px;align-items:center;padding:13px 4px;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.sk-row:last-child{border:0}.sk-row i{display:block;height:12px;border-radius:7px}.sk-row .a{width:44px;height:44px;border-radius:12px}
+.sk-row div{display:grid;gap:8px}.sk-row .b{width:70%}.sk-row .c{width:45%;height:10px}.sk-row .d{height:16px}
+.sk-row i,.sk-blk{background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 10%,transparent) 25%,color-mix(in srgb,var(--muted) 22%,transparent) 37%,color-mix(in srgb,var(--muted) 10%,transparent) 63%);background-size:200% 100%;animation:shimmer 1.2s linear infinite}
+.sk-blk{border-radius:16px}
+
+/* Terms */
+.tm-gate{position:fixed;inset:0;z-index:95;display:grid;place-items:end center;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:rgba(10,12,22,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:askBg .3s both}
+@media(min-width:701px){.tm-gate{place-items:center}}
+.tm-box{width:min(520px,100%);max-height:calc(100vh - 24px - env(safe-area-inset-top));display:flex;flex-direction:column;border-radius:30px;background:var(--bg,#fff);box-shadow:0 30px 80px -20px rgba(10,15,40,.5);overflow:hidden;animation:askIn .45s cubic-bezier(.2,.9,.3,1.15) both}
+.tm-head{padding:24px 22px 16px;text-align:center;background:radial-gradient(120% 120% at 0% 0%,#d1fae5 0%,#e0e7ff 55%,#fce7f3 100%)}
+[data-theme="dark"] .tm-head{background:radial-gradient(120% 120% at 0% 0%,#064e3b 0%,#1e1b4b 55%,#500724 100%)}
+.tm-ic{width:58px;height:58px;margin:0 auto 10px;border-radius:18px;display:grid;place-items:center;color:#fff;background:linear-gradient(140deg,#34d399,#059669);box-shadow:0 10px 24px -8px rgba(5,150,105,.6)}
+.tm-head h3{font:800 23px/1.15 var(--display,inherit);letter-spacing:-.02em}.tm-head p{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.45}
+.tm-scroll{overflow:auto;padding:8px 20px;flex:1;overscroll-behavior:contain;mask-image:linear-gradient(180deg,transparent,#000 12px,#000 calc(100% - 18px),transparent)}
+.tm-s{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}.tm-s:last-child{border:0}
+.tm-s>span{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:800;background:color-mix(in srgb,#10b981 14%,transparent);color:#059669}
+.tm-s h4{font-size:14.5px;margin-bottom:3px}.tm-s p{font-size:13px;color:var(--muted);line-height:1.5}
+.tm-foot{padding:14px 20px 20px;display:grid;gap:12px;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.tm-chk{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;font-size:13.5px;line-height:1.45;cursor:pointer;position:relative}
+.tm-chk input{position:absolute;opacity:0;width:26px;height:26px;margin:0;cursor:pointer}
+.tm-chk i{width:24px;height:24px;border-radius:8px;border:2px solid color-mix(in srgb,var(--muted) 45%,transparent);display:grid;place-items:center;transition:all .2s cubic-bezier(.2,.9,.3,1.4)}
+.tm-chk input:checked+i{background:linear-gradient(140deg,#34d399,#059669);border-color:#059669;transform:scale(1.05)}
+.tm-chk input:checked+i::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.tm-chk input:focus-visible+i{outline:2px solid #2b6cff;outline-offset:2px}
+.tm-foot .btn{height:52px;border-radius:999px;font-size:16px;font-weight:700;justify-content:center}
+.tm-foot .btn:disabled{opacity:.45;filter:grayscale(.4);cursor:not-allowed}
+.tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 </style>
 </head>
 <body>
@@ -1107,6 +1143,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 <section class="view" id="v-gmp"><div id="gmppage"></div></section>
 <section class="view" id="v-allot"><div id="allotpage"></div></section>
 <section class="view" id="v-pans"><div id="panspage"></div></section>
+<section class="view" id="v-terms"><div id="termspage"></div></section>
 <!-- ========== WATCHLIST ========== -->
 <section class="view" id="v-watchlist">
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Saved to your account when signed in</div><h1 class="ptitle">Watchlist</h1><p class="psub">Stocks and IPOs you're following. Tap the star on any stock or IPO to add it.</p></div></div>
@@ -1149,6 +1186,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 </section>
 
 <footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 3 8-8"/><path d="M15 6h6v6"/></svg></span><span class="wm">MarketVeda<b>Pro</b></span></div><p class="tagline" style="margin-bottom:6px"><b>Know More. Invest Smarter.</b> Stock market, IPOs, gold and silver rates, market news and insights for Indian and global market followers.</p>
+  <p style="margin:6px 0"><a class="link" href="#terms">Terms &amp; disclaimer</a> · <a class="link" href="#pans">My PANs</a></p>
   <p id="srcs"></p>
   <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. MarketVedaPro does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
 </footer>
@@ -1177,7 +1215,7 @@ function logoImg(k){const kk=k==='MM'?'M&M':k,d=DOMAINS[k]||(typeof PROF!=='unde
   const src=LOCAL_LOGOS.has(k)?`logos/${encodeURIComponent(k)}.png`:`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${d}&size=128`;
   return `<img class="lgimg" alt="" loading="lazy" decoding="async" src="${src}" data-d="${d}" data-l="${LOCAL_LOGOS.has(k)?1:0}" onload="lgOk(this)" onerror="lgFail(this)">`}
 function lgFail(im){const d=im.dataset.d;if(im.dataset.l==='1'&&d){im.dataset.l='0';im.src=`https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https://${d}&size=128`}else if(im.dataset.l==='0'&&d){im.dataset.l='2';im.src=`https://icons.duckduckgo.com/ip3/${d}.ico`}else im.remove()}
-function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<(im.dataset.l==='2'?16:24)){lgFail(im);return}im.parentElement&&im.parentElement.classList.add('haslogo')}
+function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<(im.dataset.l==='2'?16:24)){lgFail(im);return}im.dataset.ok=1;im.parentElement&&im.parentElement.classList.add('haslogo')}
 
 const UPDATED=(window.LIVE&&window.LIVE.label)||'30 Oct 2026, 8:45 AM IST';
 const IPOS_RAW=[
@@ -2238,6 +2276,8 @@ function renderNews(){const tags=['All',...new Set(NEWS.map(n=>n.tag))];
 const PAGES=[['GMP board','ipo-gmp'],['Subscription status','ipo-sub'],['IPO screener','ipo-screener'],['Allotment desk','ipo-allot'],['Money planner','ipo-planner'],['Learn: IPO guides','learn'],['Gold & silver rates','markets'],['Markets','markets'],['Stocks','stocks'],['IPOs','ipos'],['Watchlist','watchlist'],['News','news'],['My applications','applications'],['Charges calculator','tools']];
 // ===================== every listed stock (NSE + BSE), published to the repo's "data" branch =====================
 const DATA_RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/data/';
+const LOADER=(t='Loading…')=>`<div class="ldr-wrap" role="status" aria-live="polite"><div class="ldr"></div>${esc(t)}</div>`;
+const SKROWS=(n=5)=>Array.from({length:n},()=>'<div class="sk-row" aria-hidden="true"><i class="a"></i><div><i class="b"></i><i class="c"></i></div><i class="d"></i></div>').join('');
 let UNI=null,UNIMAP=null,ALLQ=null,allqAt=0,uniLoading=null;
 function loadUniverse(){if(UNI)return Promise.resolve(UNI);if(uniLoading)return uniLoading;
   uniLoading=fetch(DATA_RAW+'universe.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){UNI=j.s.map(r=>({k:r[0],n:r[1],x:r[2],bid:r[4]||'',l:(r[0]+' '+r[1]+' '+(r[4]||'')).toLowerCase()}));UNIMAP=Object.fromEntries(UNI.map(u=>[u.k,u]))}return UNI}).catch(()=>null).finally(()=>{uniLoading=null});return uniLoading}
@@ -2250,7 +2290,7 @@ function searchUni(q,lim){if(!UNI||!q)return [];const t=q.toLowerCase().trim(),w
   return res.sort((a,b)=>a[0]-b[0]||a[1].n.length-b[1].n.length).slice(0,lim).map(x=>x[1])}
 const exUrl=u=>u.x==='BSE'?`https://www.bseindia.com/stock-share-price/x/${encodeURIComponent(u.bid||'x')}/${u.k.slice(1)}/`:`https://www.nseindia.com/get-quotes/equity?symbol=${encodeURIComponent(u.k)}`;
 function renderAnyStock(key){const el=document.getElementById('stockpage');curStock=key;
-  if(!UNI||!ALLQ)el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a><h1 class="ptitle" style="font-size:clamp(26px,4vw,42px)">Loading ${esc(key)}…</h1></div></div>`;
+  if(!UNI||!ALLQ)el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a><h1 class="ptitle" style="font-size:clamp(26px,4vw,42px)">${esc(key)}</h1></div></div><div class="glass card"><div class="sk-blk" style="height:34px;width:40%;margin-bottom:14px"></div><div class="sk-blk" style="height:220px;margin-bottom:14px"></div>${SKROWS(3)}</div>`;
   Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(curStock!==key)return;const u=UNIMAP&&UNIMAP[key],q=qOf(key);
     if(!u){el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a><h1 class="ptitle">Stock not found</h1><p class="psub">“${esc(key)}” isn't in the NSE or BSE list. Try searching by company name.</p></div></div>`;return}
     const f=v=>v==null?'—':'₹'+n2(v),pct=q&&q.pct,rng=(q&&q.h52&&q.l52&&q.h52>q.l52)?Math.max(0,Math.min(100,(q.price-q.l52)/(q.h52-q.l52)*100)):null;
@@ -2284,7 +2324,7 @@ function runSearch(q){q=q.trim().toLowerCase();
   if(al.length){h+='<div class="pgroup">All listed stocks · NSE &amp; BSE</div>'+al.map(u=>{pitems.push('#stock-'+u.k);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(u.k)};color:#fff">${esc(u.n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase())}${logoImg(u.k)}</div><div><b>${esc(u.n)}</b><small class="muted" style="display:block;font-size:12px">${esc(u.x)} · ${esc(u.x==='BSE'?(u.bid||u.k.slice(1)):u.k)}</small></div><span class="pill plain" style="font-size:11px">${esc(u.x==='NSE SME'?'SME':u.x)}</span></button>`}).join('')}
   if(ip.length){h+='<div class="pgroup">IPOs</div>'+ip.map(i=>{pitems.push('ipo:'+i.id);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name)}</b><small class="muted" style="display:block;font-size:12px">${i.type} · ${band(i)}</small></div>${statusPill(i)}</button>`}).join('')}
   if(pg.length){h+='<div class="pgroup">Pages</div>'+pg.map(p=>{pitems.push('#'+p[1]);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg">↗</div><div><b>${p[0]}</b></div><span></span></button>`}).join('')}
-  document.getElementById('pres').innerHTML=h||`<p class="note" style="padding:16px">${UNI?`No match for “${esc(q)}” among ${UNI.length.toLocaleString('en-IN')} NSE and BSE stocks, IPOs or pages.`:`Loading the full list of NSE and BSE stocks…`}</p>`;
+  document.getElementById('pres').innerHTML=h||(UNI?`<p class="note" style="padding:16px">No match for “${esc(q)}” among ${UNI.length.toLocaleString('en-IN')} NSE and BSE stocks, IPOs or pages.</p>`:`<div style="padding:4px 14px">${LOADER('Loading every NSE and BSE stock…')}${SKROWS(3)}</div>`);
   psel=0;markSel();document.querySelectorAll('#pres .pr').forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
 function markSel(){document.querySelectorAll('#pres .pr').forEach((b,i)=>b.classList.toggle('sel',i===psel))}
 function pick(i){const t=pitems[i];if(!t)return;closeSearch();if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else location.hash=t.slice(1)}
@@ -2327,12 +2367,12 @@ document.addEventListener('submit',e=>{const f=e.target;let first=null;
   if(first){e.preventDefault();e.stopImmediatePropagation();first.focus();if(navigator.vibrate)navigator.vibrate(30)}},true);
 
 // ===================== routing =====================
-const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans'];
+const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(h.startsWith('pans')){view='pans'}else if(!VIEWS.includes(h))view='markets';
   document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+view));
   const navv=view==='stock'?'stocks':(view==='ipo-allot'||view==='allot'||view==='applications'||view==='pans')?'ipo-allot':(view.startsWith('ipo')||view==='learn'||view==='gmp')?'ipos':view;
-  if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();
+  if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();if(view==='terms')renderTerms();
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
@@ -2438,6 +2478,40 @@ patchLabels();setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(
 
 ipoType=mType=gType=scrType=IPT;
 // ===================== install as an app (PWA) =====================
+// ===================== Terms & disclaimer, accepted once before using the site =====================
+const TERMS_V='2026-10-31',TK='mvp.terms';
+const termsOK=()=>{try{return (JSON.parse(localStorage.getItem(TK)||'{}').v)===TERMS_V}catch{return false}};
+const TERMS_SECTIONS=[
+ ['Information only, not advice','MarketVedaPro shows market data, IPO details, news and signals for information and education. Nothing on this site or app is investment, financial, tax or legal advice, or a recommendation to buy, sell or hold any security, apply or not apply for any IPO, or buy gold or silver.'],
+ ['Not registered with SEBI','MarketVedaPro and its makers are not SEBI-registered investment advisers, research analysts or stock brokers. We do not manage money, place orders or apply for IPOs on your behalf.'],
+ ['"Likely up / likely down", screens and verdicts','The outlook lists, Apply/Consider/Avoid tags and stock screens are produced automatically from public news headlines, prices, volumes and grey-market figures using simple rules. They can be wrong, late or incomplete and are not predictions. Past performance does not guarantee future returns. Prices can move against any signal shown.'],
+ ['Your decisions are your own','You alone decide what to buy, sell or apply for, and you bear all gains and losses. Investments in securities are subject to market risks; read all related documents (RHP, offer documents, scheme information) carefully and consult a SEBI-registered adviser if you need advice.'],
+ ['Data accuracy','Prices, GMP, subscription, gold and silver rates, results and news come from third-party public sources and may be delayed, estimated or incorrect. GMP is unofficial grey-market talk. Always confirm figures on NSE, BSE, the registrar or your broker before acting.'],
+ ['IPO allotment checks and PANs','PANs you save are stored only on your device. When you check allotment, each PAN is sent to that IPO\'s registrar through our relay just for that lookup; the relay does not store or log PANs. Results come from the registrar; confirm on the registrar or exchange website. Save only PANs you are allowed to use, such as your own and your family\'s with their consent.'],
+ ['Alerts','IPO and watchlist alerts are a convenience and may arrive late or not at all. Do not rely on them for deadlines such as UPI mandate approval.'],
+ ['No liability','MarketVedaPro is provided "as is" without warranties. To the extent permitted by law, we are not liable for any loss or damage arising from use of, or reliance on, this site, its data, signals or alerts.'],
+ ['Changes','We may update these terms. If they change, you will be asked to accept them again.']];
+function termsBody(){return TERMS_SECTIONS.map(([h,t],k)=>`<div class="tm-s"><span>${k+1}</span><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}
+function renderTerms(){const el=document.getElementById('termspage');const acc=(()=>{try{return JSON.parse(localStorage.getItem(TK)||'{}')}catch{return {}}})();
+  el.innerHTML=`<div class="tm-page"><div class="eyebrow"><span class="dot"></span>Version ${TERMS_V}</div><h1 class="ptitle">Terms &amp; disclaimer</h1>
+   <p class="psub">Please read these before using MarketVedaPro.</p><div class="tm-card">${termsBody()}</div>
+   ${acc.v===TERMS_V?`<p class="aw-note">✓ You accepted these terms on ${new Date(acc.at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}.</p>`:''}</div>`}
+function termsGate(){if(termsOK()||document.getElementById('tmGate'))return false;
+  const d=document.createElement('div');d.className='tm-gate';d.id='tmGate';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-labelledby','tmT');
+  d.innerHTML=`<div class="tm-box"><div class="tm-head"><div class="tm-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+     <h3 id="tmT">Before you start</h3><p>MarketVedaPro gives information and suggestions only. It does not tell you to buy or sell anything.</p></div>
+    <div class="tm-scroll" tabindex="0">${termsBody()}</div>
+    <div class="tm-foot"><label class="tm-chk"><input type="checkbox" id="tmC"><i></i><span>I have read and agree to the <a href="#terms" id="tmL">Terms &amp; disclaimer</a>. I understand this is not investment advice and my decisions are my own.</span></label>
+     <button class="btn shine" type="button" id="tmGo" disabled>Agree &amp; continue</button></div></div>`;
+  document.body.appendChild(d);document.body.style.overflow='hidden';
+  const c=d.querySelector('#tmC'),g=d.querySelector('#tmGo');c.onchange=()=>{g.disabled=!c.checked};
+  d.querySelector('#tmL').onclick=e=>{e.preventDefault();d.querySelector('.tm-scroll').scrollTo({top:0,behavior:'smooth'})};
+  g.onclick=()=>{if(!c.checked)return;try{localStorage.setItem(TK,JSON.stringify({v:TERMS_V,at:Date.now()}))}catch{}
+    d.style.transition='opacity .25s';d.style.opacity='0';setTimeout(()=>{d.remove();document.body.style.overflow='';
+      if(typeof askAlerts==='function')setTimeout(()=>askAlerts(false),600);
+      if(typeof isIOS!=='undefined'&&isIOS&&typeof isStandalone==='function'&&!isStandalone())setTimeout(()=>showInstall('ios'),1500);
+      else if(typeof deferredInstall!=='undefined'&&deferredInstall)setTimeout(()=>showInstall('android'),1500)},250);toast('Thanks! Welcome to MarketVedaPro')};
+  return true}
 // ===================== notifications =====================
 const NK='mvp.notif.v1';let NS=(()=>{try{return JSON.parse(localStorage.getItem(NK))||{}}catch{return {}}})();
 NS={on:false,seen:{},read:{},types:{allot:1,open:1,close:1,list:1,watch:1},...NS};
@@ -2521,7 +2595,7 @@ setTimeout(notifRun,1500);setInterval(notifRun,60000);
 setTimeout(()=>{try{if(NS.on&&'Notification' in window&&Notification.permission==='granted'&&Date.now()-(NS.pt||0)>864e5){NS.pt=Date.now();pushSub(false)}}catch{}},4000);
 // ask to turn on alerts: right after install, or when the installed app is opened
 function askAlerts(force){try{
-  if(!('Notification' in window)||Notification.permission!=='default'||NS.on)return;
+  if(!termsOK())return;if(!('Notification' in window)||Notification.permission!=='default'||NS.on)return;
   if(document.getElementById('askA')||document.getElementById('inst'))return;
   const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
   if(!force&&!standalone)return;
@@ -2553,13 +2627,15 @@ addEventListener('scroll',()=>{const n=document.querySelector('nav.top');if(n)n.
   const last=new WeakMap();new MutationObserver(ms=>ms.forEach(m=>{const el=m.target.nodeType===3?m.target.parentElement:m.target;if(!el||!el.closest||!el.closest('.num'))return;const t=el.textContent,p=last.get(el);last.set(el,t);
     if(p&&p!==t){const a=parseFloat(p.replace(/[^\d.-]/g,'')),b=parseFloat(t.replace(/[^\d.-]/g,''));if(isFinite(a)&&isFinite(b)&&a!==b){el.classList.remove('flup','fldn');void el.offsetWidth;el.classList.add(b>a?'flup':'fldn')}}})).observe(document.body,{characterData:true,subtree:true});
 })();
+setTimeout(()=>{if(location.hash!=='#terms')termsGate()},700);
+addEventListener('hashchange',()=>{if(!termsOK()&&location.hash!=='#terms'&&!document.getElementById('tmGate'))termsGate()});
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 let deferredInstall=null;
 const instSnoozed=()=>{try{return +localStorage.getItem('sp.inst.snooze')>Date.now()}catch{return false}};
 const snoozeInst=d=>{try{localStorage.setItem('sp.inst.snooze',Date.now()+d*864e5)}catch{}};
-function showInstall(kind){if(isStandalone()||instSnoozed()||document.getElementById('inst'))return;
+function showInstall(kind){if(!termsOK()||isStandalone()||instSnoozed()||document.getElementById('inst'))return;
   const el=document.createElement('div');el.className='inst';el.id='inst';el.setAttribute('role','dialog');el.setAttribute('aria-label','Install MarketVedaPro');
   el.innerHTML=`<div class="t"><img src="icons/icon-192.png" alt=""><div><h4>Install the MarketVedaPro app</h4><p>Know More. Invest Smarter. Live prices, IPOs and gold rates from your home screen.</p></div><button class="x" type="button" aria-label="Not now" id="instx">×</button></div>
    ${kind==='ios'?`<ol><li>Tap the <b>Share</b> button <span class="ios-share"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span> at the bottom of Safari.</li><li>Scroll and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li></ol>`
@@ -2664,7 +2740,7 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
   const glob=`<div class="gl num">${G.map(([n,v,p])=>`<div><span>${esc(n)}</span><b>${n.includes('yield')?v.toFixed(2)+'%':v.toLocaleString('en-US',{maximumFractionDigits:2})}</b>${chip(p)}</div>`).join('')}
     <div><span>Nifty 50 ${open?'now':'last close'}</span><b>${fin(N.v)}</b>${chip(N.pct)}</div><div><span>India VIX</span><b>${IDX.VIX.v.toFixed(2)}</b>${chip(IDX.VIX.pct)}</div>
     ${window.FLOWS&&FLOWS.fii!=null?`<div><span>FII net (${esc(String(FLOWS.date||'').slice(0,6))})</span><b class="${FLOWS.fii>=0?'up':'down'}">${FLOWS.fii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.fii)).toLocaleString('en-IN')} Cr</b></div><div><span>DII net</span><b class="${FLOWS.dii>=0?'up':'down'}">${FLOWS.dii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.dii)).toLocaleString('en-IN')} Cr</b></div>`:''}</div>`;
-  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card"><p class="note">Loading prices for every NSE stock…</p></div></div>`;
+  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card">${LOADER('Loading prices for every NSE stock…')}${SKROWS(4)}</div></div>`;
   wireOutlook();
   Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{const b=document.getElementById('tdbody');if(!b||!ALLQ||!UNI)return;
     const L=[];for(const u of UNI){if(u.x==='BSE'||(u.x==='NSE SME'&&!tdF.sme))continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;
@@ -2741,7 +2817,7 @@ function sxFin(f){if(!f)return '';const Q=f.quarterlyTotalRevenue||[],NQ=f.quart
 function sxAbout(a){if(!a)return '';const w=a.website?a.website.replace(/^https?:\/\//,'').replace(/\/$/,''):'';
   return `<div class="glass card"><span class="lbl">About the company</span><div class="ovr" style="margin-top:6px">${a.sector?`<div><span>Sector</span><b>${esc(a.sector)}</b></div>`:''}${a.industry?`<div><span>Industry</span><b>${esc(a.industry)}</b></div>`:''}${a.fullTimeEmployees?`<div><span>Employees</span><b class="num">${(+a.fullTimeEmployees).toLocaleString('en-IN')}</b></div>`:''}${a.city?`<div><span>Headquarters</span><b>${esc(a.city)}</b></div>`:''}${w?`<div><span>Website</span><b><a class="link" href="https://${esc(w)}" target="_blank" rel="noopener">${esc(w)}</a></b></div>`:''}</div></div>`}
 function fillExtras(){const box=document.getElementById('sx');if(!box||box.dataset.done)return;const k=box.dataset.k;box.dataset.done=1;
-  box.innerHTML='<div class="glass card sec"><p class="note">Loading chart and financials…</p></div>';
+  box.innerHTML='<div class="glass card sec"><div class="sk-blk" style="height:28px;width:55%;margin-bottom:14px"></div><div class="sk-blk" style="height:240px;margin-bottom:12px"></div><div class="sk-blk" style="height:120px"></div></div>';
   Promise.all([loadHist(k),loadAllQuotes()]).then(([h])=>{if(!document.body.contains(box))return;if(!h){box.innerHTML='<div class="glass card sec"><p class="note">Chart and financials for this stock are added after the next daily update (around 4:30 PM).</p></div>';return}
     const draw=()=>{box.innerHTML=`<div class="glass card sec"><div class="row" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"><span class="lbl" style="margin:0">Price chart</span><div class="sxr">${[...(h.i?[[1,'1D'],[7,'1W']]:[]),[30,'1M'],[91,'3M'],[182,'6M'],[365,'1Y'],[730,'2Y']].map(([d,l])=>`<button type="button" data-d="${d}" aria-pressed="${sxRange===d}">${l}</button>`).join('')}</div></div>${sxRange<=7&&h.i?sxIntra(h.i,sxRange,k):h.p?sxChart(h.p,Math.max(sxRange,30),k):'<p class="note">No price history available.</p>'}</div>
       <div class="grid2 sec">${sxFin(h.f)||'<div class="glass card"><span class="lbl">Results</span><p class="note" style="margin-top:8px">Quarterly results for this company are not available yet. They are filled in over the week.</p></div>'}${sxAbout(h.a)||''}</div>`;
