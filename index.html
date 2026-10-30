@@ -1494,7 +1494,7 @@ const FST=[['np','Not applied'],['pe','Applied · waiting'],['al','Allotted'],['
 function famLabel(i,s,m){if(s==='al'){const n=m&&FAM.sh&&FAM.sh[i.id]&&FAM.sh[i.id][m];return `${(n||i.lot*i.ml).toLocaleString('en-IN')} shares allotted`}return (FST.find(x=>x[0]===s)||FST[0])[1]}
 // ---- in-site allotment check through the MarketVedaPro relay (Cloudflare Worker, see worker/allotment.js) ----
 const allotAuto={};
-const ALLOT_API='';  // set to the Worker's address, e.g. https://mvp-allot.<you>.workers.dev
+const ALLOT_API='https://stockpilot.vanapalli-veerasankar-927.workers.dev';  // set to the Worker's address, e.g. https://mvp-allot.<you>.workers.dev
 const REGKEY=r=>/mufg|link\s*intime/i.test(r||'')?'mufg':/kfin/i.test(r||'')?'kfin':/maashitla/i.test(r||'')?'maashitla':null;
 const normName=t=>String(t||'').toLowerCase().replace(/\b(limited|ltd|ipo|india|private|pvt|the|and|sme)\b/g,'').replace(/[^a-z0-9]/g,'');
 let allotBusy=false,allotMsg='';
