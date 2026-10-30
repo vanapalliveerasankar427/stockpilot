@@ -347,7 +347,7 @@ def nse_movers(out):
     for index, key in names.items():
         try:
             nse_session()
-            j = get("https://www.nseindia.com/api/equity-stockIndices", params={"index": index},
+            j = get("https://www.nseindia.com/api/equity-stockIndices?index=" + requests.utils.quote(index),
                     headers={"Referer": "https://www.nseindia.com/market-data/live-equity-market"}).json()
             rows = [r for r in j.get("data", []) if r.get("symbol") and r.get("symbol") != index and r.get("priority", 0) == 0]
             mv = []
