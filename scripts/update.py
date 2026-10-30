@@ -443,7 +443,7 @@ def universe():
     """All listed equities: NSE main board + NSE SME + BSE-only. Refreshed once a day."""
     try:
         old = get(RAW_DATA + "universe.json").json()
-        if old.get("day") == NOW.strftime("%Y-%m-%d") and len(old.get("s", [])) > 1000:
+        if old.get("day") == NOW.strftime("%Y-%m-%d") and len(old.get("s", [])) > 1000 and (old.get("bse") or old.get("tries", 0) >= 3):
             return old
     except Exception:
         old = {}
@@ -505,7 +505,9 @@ def universe():
     if len(rows) < 1000:
         log(f"universe: only {len(rows)} stocks, keeping previous list")
         return old or {"s": rows}
-    return {"day": NOW.strftime("%Y-%m-%d"), "s": rows}
+    nb = sum(1 for r in rows if r[2] == "BSE")
+    tries = (old.get("tries", 0) + 1) if old.get("day") == NOW.strftime("%Y-%m-%d") and not nb else 0
+    return {"day": NOW.strftime("%Y-%m-%d"), "s": rows, "bse": nb, "tries": tries}
 
 
 def yahoo_crumb():
