@@ -742,6 +742,15 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 .aw-pans b{display:block;font-size:16px}.aw-pans small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
 .aw-pans .aw-av svg{width:20px;height:20px}.aw-go{color:var(--up);font-weight:600;font-size:14px;white-space:nowrap}
 #v-ipo-allot .wz{grid-template-columns:46px 1fr auto}
+
+@media(max-width:700px){
+  .gfil{display:grid!important;gap:6px!important}
+  .iptSeg{display:grid!important;grid-template-columns:repeat(3,1fr);width:100%;padding:4px;border-radius:14px}
+  .iptSeg button{justify-content:center;padding:10px 4px!important;font-size:14.5px!important}
+  .iptSeg button[aria-pressed="true"]{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .gfil>.note{display:none}
+  #v-ipos .phead h1,#v-ipos .ptitle{font-size:30px!important;line-height:1.1}
+}
 </style>
 </head>
 <body>
@@ -1031,7 +1040,7 @@ function renderPulse(){
 }
 function renderIpos(){
   const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['allot','Allotment'],['listed','Listed']];
-  document.getElementById('stTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="count">${IPOS.filter(i=>stOf(i)===k).length}</span></button>`).join('');
+  document.getElementById('stTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="count">${IPOS.filter(i=>stOf(i)===k&&tOK(i)).length}</span></button>`).join('');
   document.getElementById('tyTabs').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-k="${k}" aria-pressed="${ipoType===k}">${k}</button>`).join('');
   document.querySelectorAll('#stTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
   document.querySelectorAll('#tyTabs button').forEach(b=>b.onclick=()=>{ipoType=b.dataset.k;renderIpos()});
@@ -1233,7 +1242,7 @@ function spark(points,w=180,h=48,col){col=col||css('--acc');const v=points.map(p
 const IPOSUB=[['ipos','Overview'],['ipo-gmp','GMP board'],['ipo-sub','Subscription'],['ipo-screener','Screener'],['ipo-allot','Allotment desk'],['ipo-planner','Money planner'],['learn','Learn']];
 let IPT=(()=>{try{return localStorage.getItem('sp.ipt')||'All'}catch{return 'All'}})();
 const tOK=i=>IPT==='All'||i.type===IPT;
-const iptSeg=()=>`<div class="seg iptSeg" role="group" aria-label="IPO type">${['All','Mainboard','SME'].map(k=>`<button type="button" data-ipt="${k}" aria-pressed="${IPT===k}">${k}${k==='All'?'':` <span class="count">${IPOS.filter(i=>i.type===k&&i.st!=='listed').length}</span>`}</button>`).join('')}</div>`;
+const iptSeg=()=>`<div class="seg iptSeg" role="group" aria-label="IPO type">${['All','Mainboard','SME'].map(k=>`<button type="button" data-ipt="${k}" aria-pressed="${IPT===k}">${k}<span class="count">${IPOS.filter(i=>(k==='All'||i.type===k)&&i.st!=='listed').length}</span></button>`).join('')}</div>`;
 function setIPT(t){IPT=t;ipoType=mType=gType=scrType=t;try{localStorage.setItem('sp.ipt',t)}catch{}
   document.querySelectorAll('.iptSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.ipt===t));
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'';
@@ -1505,7 +1514,7 @@ function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · l
   try{navigator.clipboard.writeText(t).then(()=>toast('IPO summary copied'),()=>toast('Copy not allowed here'))}catch{toast('Copy not allowed here')}}
 function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)return;
   const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['allot','Allotment'],['listed','Listed']];
-  document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>stOf(i)===k).length}</span></button>`).join('');
+  document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>stOf(i)===k&&tOK(i)).length}</span></button>`).join('');
   document.getElementById('seg2').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-t="${k}" aria-pressed="${mType===k}">${k}</button>`).join('');
   document.querySelectorAll('#ulTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
   document.querySelectorAll('#seg2 button').forEach(b=>b.onclick=()=>{mType=b.dataset.t;renderMobileIpos()});
