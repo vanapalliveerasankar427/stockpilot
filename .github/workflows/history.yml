@@ -1,0 +1,37 @@
+name: Daily history and financials
+
+# After the close: 2-year daily prices for every stock, plus quarterly/annual results and
+# company profile in rolling batches. Published to the "hist" branch (one snapshot, force-pushed).
+on:
+  schedule:
+    - cron: "50 10 * * 1-5"   # 4:20 PM IST on weekdays
+  push:
+    branches: [main]
+    paths: [".github/workflows/history.yml", "scripts/history.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: history
+  cancel-in-progress: true
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Previous snapshot
+        run: git clone -q --depth 1 --branch hist "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hist || mkdir -p hist
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python scripts/history.py
+      - name: Publish to the hist branch
+        run: |
+          cd hist && rm -rf .git && git init -q -b hist && git add -A
+          git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "History $(TZ=Asia/Kolkata date '+%d %b %Y')"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hist
