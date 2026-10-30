@@ -915,6 +915,21 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .aw-st,.wz-r b{transition:color .3s}
 .aw-st.al{animation:popIn .45s both}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.view.on,.wz,.aw-row,.mark,.np-it{animation:none!important}}
+
+.pqw{position:relative;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+.pqw .pqi{position:absolute;left:18px;color:var(--muted);pointer-events:none}
+.pbox .pqw input{border-bottom:0;padding:18px 52px 18px 50px}
+.pbox input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+.pqx{position:absolute;right:12px;width:30px;height:30px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;background:color-mix(in srgb,var(--muted) 22%,transparent);color:var(--ink);animation:popIn .25s both}
+.pqx:active{transform:scale(.88)}
+@media(max-width:700px){
+  nav.top{padding:9px 8px 9px 12px!important;border-radius:24px!important;gap:6px!important}
+  nav.top .logo{font-size:19.5px!important;gap:10px!important}nav.top .mark{width:36px!important;height:36px!important;border-radius:11px!important}
+  nav.top .mark svg{width:21px;height:21px}
+  nav.top .iconbtn,nav.top .searchbtn{width:44px!important;height:44px!important;border-radius:14px!important}
+  nav.top .iconbtn svg,nav.top .searchbtn svg{width:23px!important;height:23px!important}
+  .nbell i{top:5px!important;right:5px!important}
+}
 </style>
 </head>
 <body>
@@ -1095,7 +1110,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 </div>
 
 <div class="nback" id="nback"></div><div class="npanel" id="npanel" role="dialog" aria-modal="true" aria-label="Notifications"></div>
-<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><label for="pq" class="sr">Search</label><input id="pq" placeholder="Search stocks, IPOs, pages…" autocomplete="off"><div class="pres" id="pres"></div></div></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><div class="pqw"><svg class="pqi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="pq" class="sr">Search</label><input id="pq" type="search" enterkeyhint="search" placeholder="Search stocks, IPOs, pages…" autocomplete="off"><button type="button" class="pqx" id="pqx" aria-label="Clear search" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="pres" id="pres"></div></div></div>
 <div class="overlay" id="ov" role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="modal" id="modal"></div></div>
 <div class="toast" id="toast" role="status"></div>
 
@@ -2142,7 +2157,8 @@ function runSearch(q){q=q.trim().toLowerCase();
 function markSel(){document.querySelectorAll('#pres .pr').forEach((b,i)=>b.classList.toggle('sel',i===psel))}
 function pick(i){const t=pitems[i];if(!t)return;closeSearch();if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else location.hash=t.slice(1)}
 document.getElementById('openSearch').onclick=openSearch;
-document.getElementById('pq').oninput=e=>runSearch(e.target.value);
+document.getElementById('pq').oninput=e=>{runSearch(e.target.value);document.getElementById('pqx').hidden=!e.target.value};
+document.getElementById('pqx').onclick=()=>{const q=document.getElementById('pq');q.value='';document.getElementById('pqx').hidden=true;runSearch('');q.focus()};
 document.getElementById('pq').onkeydown=e=>{if(e.key==='ArrowDown'){psel=Math.min(psel+1,pitems.length-1);markSel();e.preventDefault()}else if(e.key==='ArrowUp'){psel=Math.max(psel-1,0);markSel();e.preventDefault()}else if(e.key==='Enter'){pick(psel)}else if(e.key==='Escape')closeSearch()};
 document.getElementById('palette').onclick=e=>{if(e.target.id==='palette')closeSearch()};
 addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch()}else if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openSearch()}});
