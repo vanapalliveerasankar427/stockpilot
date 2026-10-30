@@ -668,6 +668,39 @@ input[type=checkbox]:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(i
 .ftab{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}.ftab th,.ftab td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right}.ftab th:first-child,.ftab td:first-child{text-align:left}.ftab th{font-size:12px;color:var(--muted);font-weight:600}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
+
+/* IPOwiz-style family allotment list */
+.aw{max-width:640px;margin:0 auto}
+.aw-top{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
+.aw-top h1{flex:1;font-size:clamp(20px,4.5vw,28px);font-weight:700;letter-spacing:-.01em;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aw-ib{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card,transparent);color:inherit;display:grid;place-items:center;cursor:pointer;flex:none}
+.aw-ib svg{width:20px;height:20px}
+.aw-sum{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.aw-sum span{font-size:13px;font-weight:600;padding:6px 10px;border-radius:999px;background:color-mix(in srgb,var(--muted) 12%,transparent)}
+.aw-sum .g{color:var(--up);background:color-mix(in srgb,var(--up) 12%,transparent)}.aw-sum .r{color:var(--dn);background:color-mix(in srgb,var(--dn) 12%,transparent)}
+.aw-list{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:color-mix(in srgb,var(--bg,#fff) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.aw-row{display:grid;grid-template-columns:48px 1fr auto 40px;align-items:center;gap:12px;padding:14px 14px;border-bottom:1px solid var(--line)}
+.aw-row:last-child{border-bottom:0}
+.aw-av{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-weight:600;font-size:15px;color:var(--muted);background:color-mix(in srgb,var(--muted) 12%,transparent)}
+.aw-nm{min-width:0}.aw-nm b{display:block;font-size:16.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aw-nm small{display:block;font-size:13px;color:var(--muted);letter-spacing:.12em;margin-top:3px;font-variant-numeric:tabular-nums}
+.aw-st{font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
+.aw-st small{display:block;font-size:12px;font-weight:500;color:var(--muted)}
+.aw-st.al{color:var(--up)}.aw-st.na{color:var(--dn)}.aw-st.np,.aw-st.nc{color:var(--muted)}.aw-st.pe{color:var(--warn)}.aw-st.er{color:var(--warn)}
+.aw-rf{width:40px;height:40px;border-radius:50%;border:0;background:none;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.aw-rf:disabled{opacity:.45;cursor:default}.aw-rf svg{width:22px;height:22px}
+.awsp{animation:awspin .8s linear infinite}.aw-rf.spin svg{animation:awspin .8s linear infinite}@keyframes awspin{to{transform:rotate(360deg)}}
+.aw-del{color:var(--dn)}
+.aw-add{display:flex;align-items:center;gap:10px;width:100%;padding:14px;border:0;background:none;color:var(--accent,var(--up));font-weight:600;font-size:15px;cursor:pointer;border-top:1px solid var(--line)}
+.aw-form{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+.aw-form input{min-width:0}.aw-form .btn,.aw-form .ghost{grid-column:span 1}
+.aw-msg{font-size:13.5px;color:var(--muted);text-align:center;margin:12px 0 0}
+.aw-cta{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));margin-top:16px;z-index:5}
+.aw-cta button{width:100%;height:56px;border-radius:999px;font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px}
+.aw-cta svg{width:22px;height:22px}
+.aw-cta{padding-bottom:4px}@media(max-width:900px){.aw-cta{bottom:calc(98px + env(safe-area-inset-bottom))}.aw{padding-bottom:24px}}
+.aw-note{font-size:12.5px;color:var(--muted);text-align:center;margin:14px 6px 0;line-height:1.5}
+@media(max-width:420px){.aw-row{grid-template-columns:44px 1fr auto 36px;gap:10px;padding:13px 12px}.aw-av{width:44px;height:44px}.aw-nm b{font-size:15.5px}.aw-st{font-size:14px}}
 </style>
 </head>
 <body>
@@ -1498,7 +1531,7 @@ const ALLOT_API='https://stockpilot.vanapalli-veerasankar-927.workers.dev';  // 
 const REGKEY=r=>/mufg|link\s*intime/i.test(r||'')?'mufg':/kfin/i.test(r||'')?'kfin':/maashitla/i.test(r||'')?'maashitla':null;
 const normName=t=>String(t||'').toLowerCase().replace(/\b(limited|ltd|ipo|india|private|pvt|the|and|sme)\b/g,'').replace(/[^a-z0-9]/g,'');
 let allotBusy=false,allotMsg='';
-let allotOne=null;
+let allotOne=null,panShow=false,awEdit=false,awAdd=false;const allotErr={};
 async function autoCheck(id,only){const i=byId[id],rk=REGKEY(i.reg);if(!ALLOT_API||!rk||allotBusy)return;allotBusy=true;allotOne=only||null;allotMsg=only?'Checking '+only+'…':'Contacting '+i.reg+'…';renderAllotPage(id);
   try{const cl=await (await fetch(ALLOT_API+'/companies?reg='+rk)).json();const want=normName(i.name);
     const c=(cl.companies||[]).find(x=>{const n=normName(x.name);return n&&(n.includes(want)||want.includes(n))});
@@ -1506,7 +1539,7 @@ async function autoCheck(id,only){const i=byId[id],rk=REGKEY(i.reg);if(!ALLOT_AP
     const people=FAM.members.filter(m=>PANS[m]&&(!only||m===only));if(!people.length){allotMsg='Add a PAN for at least one person first.';return}
     const r=await (await fetch(ALLOT_API+'/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reg:rk,cid:c.id,pans:people.map(m=>PANS[m])})})).json();
     let ok=0,al=0;FAM.sh=FAM.sh||{};FAM.sh[id]=FAM.sh[id]||{};
-    (r.results||[]).forEach((x,k)=>{const m=people[k];if(x.error)return;ok++;
+    allotErr[id]=allotErr[id]||{};(r.results||[]).forEach((x,k)=>{const m=people[k];if(x.error){allotErr[id][m]=1;return}delete allotErr[id][m];ok++;
       if(!x.found){FAM.st[id]={...(FAM.st[id]||{}),[m]:'np'};FAM.sh[id][m]=null}
       else{const v=x.allotted>0?'al':'na';if(v==='al')al++;FAM.st[id]={...(FAM.st[id]||{}),[m]:v};FAM.sh[id][m]=x.allotted}});
     await saveFam();const bad=(r.results||[]).filter(x=>x.error).length;
@@ -1520,8 +1553,51 @@ const PANRE=/^[A-Z]{5}[0-9]{4}[A-Z]$/;
 const maskPan=p=>p?p.slice(0,2)+'•••'+p.slice(5,7)+'••'+p.slice(-1):'';
 let runIdx=null;
 function copyText(t){try{navigator.clipboard.writeText(t).then(()=>toast('PAN copied. Paste it on the registrar page.'),()=>toast('Copy blocked: PAN is '+t))}catch{toast('PAN: '+t)}}
+const AWI={back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>',
+ eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ eyeoff:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6C3.7 8.4 2 12 2 12s3.5 7 10 7c1.7 0 3.2-.5 4.5-1.2M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>',
+ edit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+ ref:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg>',
+ del:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>',
+ plus:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'};
+function renderAllotWiz(i,el){const id=i.id,M=FAM.members,st=FAM.st[id]||{},er=allotErr[id]||{};
+  const ini=m=>esc((m.trim().split(/\s+/).length>1?m.trim().split(/\s+/).map(w=>w[0]).join(''):m.trim().slice(0,2)).slice(0,2).toUpperCase());
+  const cnt=k=>M.filter(m=>st[m]===k).length;
+  const lab=m=>{const s=st[m],pn=PANS[m];if(!pn)return ['nc','Add PAN',''];if(allotBusy&&(!allotOne||allotOne===m))return ['nc','Checking…',''];if(er[m])return ['er',"Couldn't check",'Tap ↻ to retry'];
+    if(s==='al'){const n=FAM.sh&&FAM.sh[id]&&FAM.sh[id][m];return ['al','Allotted',n?n.toLocaleString('en-IN')+' shares':'']}
+    if(s==='na')return ['na','Non Allotted',''];if(s==='np')return ['np','Not Applied',''];if(s==='pe')return ['pe','Waiting',''];return ['nc','Not checked','']};
+  const ready=T0>=i.al,withPan=M.filter(m=>PANS[m]).length;
+  el.innerHTML=`<div class="aw">
+   <div class="aw-top"><a class="aw-ib" href="#ipo-allot" aria-label="Back">${AWI.back}</a><h1>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</h1>
+    <button class="aw-ib" type="button" id="awEye" aria-label="${panShow?'Hide':'Show'} PAN">${panShow?AWI.eyeoff:AWI.eye}</button>
+    <button class="aw-ib" type="button" id="awEdit" aria-label="Edit list" ${awEdit?'style="color:var(--dn)"':''}>${AWI.edit}</button></div>
+   <div class="aw-sum">${ready?'':`<span>Allotment on ${d2(i.al)}</span>`}<span>${esc(i.reg||'')}</span>${cnt('al')?`<span class="g">${cnt('al')} allotted</span>`:''}${cnt('na')?`<span class="r">${cnt('na')} not allotted</span>`:''}${cnt('np')?`<span>${cnt('np')} not applied</span>`:''}</div>
+   <div class="aw-list">${M.map(m=>{const pn=PANS[m],[c,t,sub]=lab(m),busy=allotBusy&&(!allotOne||allotOne===m)&&pn;
+     return `<div class="aw-row"><div class="aw-av">${ini(m)}</div><div class="aw-nm"><b>${esc(m)}</b><small>${pn?(panShow?esc(pn):maskPan(pn)):'—'}</small></div>
+      <div class="aw-st ${c}">${pn?t:`<a class="link" href="#" data-addpan="${esc(m)}">Add PAN</a>`}${sub?`<small>${esc(sub)}</small>`:''}</div>
+      ${awEdit?`<button type="button" class="aw-rf aw-del" data-del="${esc(m)}" aria-label="Remove ${esc(m)}">${AWI.del}</button>`:`<button type="button" class="aw-rf ${busy?'spin':''}" data-one="${esc(m)}" ${allotBusy||!pn?'disabled':''} aria-label="Check ${esc(m)} again">${AWI.ref}</button>`}</div>`}).join('')||'<p class="aw-msg" style="padding:22px 14px">Add the people in your family who apply for IPOs. Their PANs stay on this phone.</p>'}
+    ${awAdd?`<form class="aw-form" id="famform" autocomplete="off"><label class="sr" for="famin">Name</label><input id="famin" maxlength="30" placeholder="Name" required><label class="sr" for="fampan">PAN</label><input id="fampan" maxlength="10" placeholder="PAN" style="text-transform:uppercase" autocomplete="off" spellcheck="false" required><button class="ghost" type="button" id="awCancel">Cancel</button><button class="btn" type="submit">Save</button></form>`
+      :`<button class="aw-add" type="button" id="awAddBtn">${AWI.plus} Add person</button>`}</div>
+   ${allotMsg?`<p class="aw-msg" role="status">${esc(allotMsg)}</p>`:''}
+   ${withPan?`<div class="aw-cta"><button class="btn shine" type="button" id="autoAll" ${allotBusy?'disabled':''}>${AWI.ref.replace('<svg','<svg class="'+(allotBusy?'awsp':'')+'"')} ${allotBusy?'Checking…':'Refresh All'}</button></div>`:''}
+   <p class="aw-note">🔒 PANs are saved only on this phone. Each check goes straight to ${esc(i.reg||'the registrar')} and nothing is stored. <a class="link" href="${i.reg&&REGLINK[i.reg]?REGLINK[i.reg]:'https://www.bseindia.com/investors/appli_check.aspx'}" target="_blank" rel="noopener">Open ${esc(i.reg||'registrar')} site ↗</a></p></div>`;
+  const q=s=>document.getElementById(s);
+  q('awEye').onclick=()=>{panShow=!panShow;renderAllotWiz(i,el)};
+  q('awEdit').onclick=()=>{awEdit=!awEdit;renderAllotWiz(i,el)};
+  el.querySelectorAll('[data-one]').forEach(b=>b.onclick=()=>autoCheck(id,b.dataset.one));
+  el.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{const m=b.dataset.del;if(!confirmDel(m))return;FAM.members=FAM.members.filter(x=>x!==m);delete PANS[m];savePans();await saveFam();renderAllotWiz(i,el)});
+  el.querySelectorAll('[data-addpan]').forEach(a=>a.onclick=e=>{e.preventDefault();awAdd=true;renderAllotWiz(i,el);q('famin').value=a.dataset.addpan;q('fampan').focus()});
+  const ab=q('awAddBtn');if(ab)ab.onclick=()=>{awAdd=true;renderAllotWiz(i,el);q('famin').focus()};
+  const ac=q('awCancel');if(ac)ac.onclick=()=>{awAdd=false;renderAllotWiz(i,el)};
+  const f=q('famform');if(f)f.onsubmit=async e=>{e.preventDefault();const n=q('famin').value.trim().slice(0,30),pv=q('fampan').value.trim().toUpperCase();
+    if(!n)return;if(!PANRE.test(pv)){toast('PAN should look like ABCDE1234F');q('fampan').focus();return}
+    if(!FAM.members.includes(n))FAM.members=[...FAM.members,n];PANS[n]=pv;savePans();await saveFam();awAdd=false;renderAllotWiz(i,el);if(T0>=i.al)autoCheck(id,n)};
+  const aa=q('autoAll');if(aa)aa.onclick=()=>autoCheck(id);
+}
+function confirmDel(m){const b=document.querySelector(`[data-del="${CSS.escape(m)}"]`);if(b&&b.dataset.sure!=='1'){b.dataset.sure='1';b.style.background='color-mix(in srgb,var(--dn) 15%,transparent)';toast('Tap again to remove '+m);setTimeout(()=>{if(b){b.dataset.sure='';b.style.background=''}},3000);return false}return true}
 function renderAllotPage(id){const i=byId[id],el=document.getElementById('allotpage');if(!i){el.innerHTML='<p class="note">IPO not found.</p>';return}
   if(ALLOT_API&&REGKEY(i.reg)&&T0>=i.al&&!allotAuto[id]&&FAM.members.some(m=>PANS[m])){allotAuto[id]=1;setTimeout(()=>autoCheck(id),0)}
+  if(ALLOT_API&&REGKEY(i.reg)){renderAllotWiz(i,el);return}
   const st=FAM.st[id]||{},M=FAM.members,al=M.filter(m=>st[m]==='al').length,na=M.filter(m=>st[m]==='na').length,p=profitPerApp(i);
   const reg=i.reg&&REGLINK[i.reg]?REGLINK[i.reg]:'https://www.bseindia.com/investors/appli_check.aspx',regName=i.reg&&REGLINK[i.reg]?i.reg:'BSE';
   const ready=T0>=i.al;
