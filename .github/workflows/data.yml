@@ -1,0 +1,48 @@
+name: Update data
+
+# Open pages read data/live.json straight from this repository, so a data update
+# only needs a commit. During market hours one run keeps updating every 5 minutes
+# until the close, so it doesn't depend on GitHub starting a new run each time.
+on:
+  schedule:
+    - cron: "40 3 * * 1-5"      # 9:10 AM IST: start the market-hours loop
+    - cron: "10 6 * * 1-5"      # 11:40 AM IST: backup start if the first was delayed
+    - cron: "0 */2 * * *"       # every 2 hours: one update (metals, GMP, news)
+  push:
+    branches: [main]
+    paths: [".github/workflows/data.yml", "scripts/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Update (loop until 3:45 PM IST on market days)
+        run: |
+          git config user.name "stockpilot-bot"
+          git config user.email "stockpilot-bot@users.noreply.github.com"
+          while true; do
+            python scripts/update.py || true
+            git add data
+            if ! git diff --cached --quiet; then
+              git commit -q -m "Data update $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"
+              git pull -q --rebase -X theirs || true
+              git push -q || true
+            fi
+            NOW=$(TZ=Asia/Kolkata date +%H%M); DOW=$(TZ=Asia/Kolkata date +%u)
+            if [ "$DOW" -ge 6 ] || [ "$NOW" -lt 0900 ] || [ "$NOW" -ge 1545 ]; then break; fi
+            sleep 300
+          done

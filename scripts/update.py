@@ -156,33 +156,84 @@ def markets(out):
         out["breadth"] = {"up": sum(1 for m in movers if m[2] > 0), "n": len(movers), "label": "large-cap stocks"}
 
 
-# ----------------------------------------------------------------- gold & silver (Goodreturns)
+# ----------------------------------------------------------------- gold & silver
+# IBJA = official Indian benchmark (ibjarates.com); MCX futures via bullions.co.in; jeweller retail via Goodreturns
 def metals(out):
     m = dict(out.get("metals") or {})
+    ib = dict(m.get("ibja") or {})
     try:
-        t = text_of(get("https://www.goodreturns.in/gold-rates/mumbai.html").text)
+        t = text_of(get("https://ibjarates.com/").text)
+        t = re.sub(r"\s+", " ", t)
+        for pur, val in re.findall(r"(999|995|916|750|585) Purity\s*#*\s*([\d,.]+)\s*\(1 Gram\)", t):
+            ib["g" + pur] = num(val)
+        g = re.search(r"Gold 999\s+([\d,.]+)\s+([\d,.]+)", t)
+        a = re.search(r"Silver 999\s+([\d,.]+)\s+([\d,.]+)", t)
+        if a:
+            am, pm = num(a.group(1)), num(a.group(2))
+            ib["ag"] = round((pm or am) / 1000, 2)
+            sess = "PM" if pm else "AM"
+        else:
+            sess = ""
+            log("ibja silver: pattern not found")
+        if g:
+            gam, gpm = num(g.group(1)), num(g.group(2))
+            ib["g999_10"] = gpm or gam
+            if not ib.get("g999"):
+                ib["g999"] = round(ib["g999_10"] / 10)
+        rows = re.findall(r"(\d{2})/(\d{2})/(\d{4})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{5,7})\s+(\d{4,7})\s+(\d{5,7})", t)
+        if rows:
+            hist = {}
+            for d, mo, y, g999, *_rest, ag in rows:
+                lab = dt.date(int(y), int(mo), int(d)).strftime("%-d %b")
+                hist[lab] = [lab, int(g999), int(ag)]
+            order = sorted(hist.values(), key=lambda x: dt.datetime.strptime(x[0] + " 2026", "%d %b %Y"))
+            prev = order[-1]
+            ib["p999"] = round(prev[1] / 10)
+            ib["pag"] = round(prev[2] / 1000, 2)
+            nxt = dt.datetime.strptime(prev[0] + f" {NOW.year}", "%d %b %Y").date() + dt.timedelta(days=1)
+            while nxt.weekday() >= 5:
+                nxt += dt.timedelta(days=1)
+            ib["sess"] = f"{nxt.strftime('%-d %b')} · {sess}" if sess else nxt.strftime("%-d %b")
+            if ib.get("g999") and ib.get("ag"):
+                lab = nxt.strftime("%-d %b")
+                order = [x for x in order if x[0] != lab] + [[lab, round(ib.get("g999_10") or ib["g999"] * 10), round(ib["ag"] * 1000)]]
+            old = {x[0]: x for x in (m.get("hist") or [])}
+            old.update({x[0]: x for x in order})
+            m["hist"] = sorted(old.values(), key=lambda x: dt.datetime.strptime(x[0] + " 2026", "%d %b %Y"))[-30:]
+        if ib.get("g999"):
+            m["ibja"] = ib
+        else:
+            log("ibja: no gold figure found")
+    except Exception as e:
+        log(f"ibja failed: {e}")
+    try:
+        t = re.sub(r"\s+", " ", text_of(get("https://bullions.co.in/").text))
+        mcx = dict(m.get("mcx") or {})
+        for key, name in (("gold", "Gold - India MCX"), ("silver", "Silver - India MCX")):
+            r = re.search(re.escape(name) + r"\s*\([^)]*\)\s*([\d,.]+)\s*([-+]?[\d,.]+)\s*([-+]?[\d.]+)\s*%", t)
+            if r:
+                mcx[key] = {"v": num(r.group(1)), "ch": num(r.group(2)), "pct": float(r.group(3)), "t": NOW.strftime("%-d %b, %-I:%M %p")}
+            else:
+                log(f"mcx {key}: pattern not found")
+        if mcx:
+            m["mcx"] = mcx
+    except Exception as e:
+        log(f"mcx failed: {e}")
+    rt = dict(m.get("retail") or {})
+    try:
+        t = text_of(get("https://www.goodreturns.in/gold-rates/").text)
         g = re.search(r"₹\s*([\d,]+)\s*per gram for 24 karat.*?₹\s*([\d,]+)\s*per gram for 22 karat.*?₹\s*([\d,]+)\s*per gram for 18 karat", t, re.S)
         if g:
-            m.update(g24=num(g.group(1)), g22=num(g.group(2)), g18=num(g.group(3)))
-        else:
-            log("gold: pattern not found")
-    except Exception as e:
-        log(f"gold failed: {e}")
-    try:
+            rt.update(g24=num(g.group(1)), g22=num(g.group(2)), g18=num(g.group(3)))
         t = text_of(get("https://www.goodreturns.in/silver-rates/").text)
         a = re.search(r"price of silver in India today is\s*₹\s*([\d,.]+)\s*per gram", t)
         if a:
-            m["ag"] = num(a.group(1))
-        else:
-            log("silver: pattern not found")
+            rt["ag"] = num(a.group(1))
+        rt["src"] = "Goodreturns"
     except Exception as e:
-        log(f"silver failed: {e}")
-    if m.get("ag"):
-        label = NOW.strftime("%-d %b")
-        hist = [h for h in (m.get("agMonth") or []) if h[0] != label]
-        hist.append([label, round(m["ag"] * 1000)])
-        m["agMonth"] = hist[-31:]
-    m.update(date=NOW.strftime("%-d %b %Y, %-I:%M %p"), src="Goodreturns", url="https://www.goodreturns.in/gold-rates/")
+        log(f"retail metals failed: {e}")
+    m["retail"] = rt
+    m["date"] = NOW.strftime("%-d %b %Y, %-I:%M %p")
     out["metals"] = m
 
 

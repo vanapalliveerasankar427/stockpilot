@@ -71,7 +71,8 @@ nav.top{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:
   nav.top{top:8px;padding:6px 6px 6px 12px;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--glass2)}
   .links a[data-v="tools"]{display:none}
   .links{position:fixed;left:10px;right:10px;bottom:10px;margin:0;justify-content:space-around;background:var(--navbg);border:1px solid var(--line);border-radius:22px;padding:6px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow);z-index:40}
-  .links a{flex-direction:column;gap:2px;font-size:11px;padding:6px 8px;border-radius:14px}
+  .links a{flex-direction:column;gap:2px;font-size:10.5px;padding:6px 4px;border-radius:14px;flex:1;min-width:0;align-items:center}
+  .links{padding:5px}
   .links a .lt{display:block}
   .searchbtn{width:40px;padding:0;justify-content:center}.searchbtn span,.searchbtn kbd{display:none}
 }
@@ -330,7 +331,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}
 .metal{padding:14px;border-radius:18px;display:grid;gap:2px}
 .metal span{font-size:12px;font-weight:600}.metal b{font:700 22px var(--display);letter-spacing:-.01em}.metal small{font-size:11.5px;opacity:.75}
 .metal.gold{background:linear-gradient(135deg,rgba(234,179,8,.22),rgba(217,119,6,.10));color:var(--ink)}
-.metal.gold span{color:#A16207}
+.metal small .up,.metal small .down{display:inline}.metal.gold span{color:#A16207}
 :root[data-theme="dark"] .metal.gold span{color:#FACC15}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .metal.gold span{color:#FACC15}}
 .metal.silver{background:linear-gradient(135deg,rgba(148,163,184,.26),rgba(100,116,139,.10))}
@@ -551,6 +552,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
     <a href="#markets" data-v="markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span class="lt">Markets</span></a>
     <a href="#stocks" data-v="stocks"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg><span class="lt">Stocks</span></a>
     <a href="#ipos" data-v="ipos"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span class="lt">IPOs</span></a>
+    <a href="#metals" data-v="metals"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h7l-1.5-5h-4zM14 18h7l-1.5-5h-4zM8.5 11h7L14 6h-4z"/></svg><span class="lt">Gold</span></a>
     <a href="#watchlist" data-v="watchlist"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span class="lt">Watchlist</span></a>
     <a href="#news" data-v="news"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h6M7 13h10M7 16h7"/></svg><span class="lt">News</span></a>
     <a href="#applications" data-v="applications"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span class="lt">Applied</span> <span class="badge" id="appbadge" hidden></span></a>
@@ -673,6 +675,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </section>
 
 <!-- ========== NEWS ========== -->
+<section class="view" id="v-metals"><div id="metalspage"></div></section>
 <section class="view" id="v-news">
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Curated from public sources · 28–29 Oct 2026</div><h1 class="ptitle">Market news</h1><p class="psub">The day's key stories on markets, results, IPOs and the economy. Each one links to its original source.</p></div>
     <div class="tabs" id="ntabs"></div></div>
@@ -716,6 +719,8 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 <div class="toast" id="toast" role="status"></div>
 
 <script src="data/live.js"></script>
+<script>/* newer figures fetched from GitHub since this page was published */
+try{const c=JSON.parse(sessionStorage.getItem('sp.live')||'null');if(c&&(!window.LIVE||c.updated>window.LIVE.updated))window.LIVE=c}catch(e){}</script>
 <script>
 // ===================== REAL IPO DATA =====================
 // Compiled 30 Oct 2026, 1:45 AM IST from public sources. Dates are as announced (tentative ones may shift).
@@ -1142,26 +1147,59 @@ function renderHomeIpo(){
 }
 
 // ===================== Gold & silver (Goodreturns, 30 Oct 2026) =====================
-const METALS={date:'30 Oct 2026',src:'Goodreturns',url:'https://www.goodreturns.in/gold-rates/',g24:14395,g22:13195,g18:10796,ag:214.9,agMonth:[['1 Oct',235000],['10 Oct',240000],['21 Oct',230000],['22 Oct',225000],['23 Oct',220000],['28 Oct',220000],['29 Oct',215000],['30 Oct',214900]],ibja24_29:144595};
-function renderMetals(){
-  const m=METALS,el=document.getElementById('metals');if(!el)return;
-  el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · today's rate</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${m.date} · ${m.src}</span></div>
-   <div class="metal-grid num">
-     <div class="metal gold"><span>Gold 24K · 99.9%</span><b>₹${(m.g24*10).toLocaleString('en-IN')}</b><small>per 10 g · ₹${m.g24.toLocaleString('en-IN')}/g</small></div>
-     <div class="metal gold"><span>Gold 22K · 91.6%</span><b>₹${(m.g22*10).toLocaleString('en-IN')}</b><small>per 10 g · ₹${m.g22.toLocaleString('en-IN')}/g</small></div>
-     <div class="metal gold"><span>Gold 18K · 75%</span><b>₹${(m.g18*10).toLocaleString('en-IN')}</b><small>per 10 g</small></div>
-     <div class="metal silver"><span>Silver · 999</span><b>₹${Math.round(m.ag*1000).toLocaleString('en-IN')}</b><small>per kg · ₹${m.ag.toFixed(2)}/g</small></div>
-   </div>
-   <div class="grid2" style="gap:14px;margin-top:14px">
-    <div><div class="row" style="font-size:13px"><span class="muted">Silver this month (₹/kg)</span><b class="down">−8.6% since 1 Oct</b></div><div style="margin-top:6px">${spark(m.agMonth,300,52,'#9AA4B2')}</div><div class="row muted" style="font-size:11.5px"><span>1 Oct ₹2,35,000 · high ₹2,40,000 on 10 Oct</span><span>30 Oct ₹2,14,900</span></div></div>
-    <div class="gcalc"><span class="muted" style="font-size:13px">Jewellery cost estimator</span>
-      <div class="two" style="margin-top:8px"><label class="field" for="gw">Weight (g)<input id="gw" type="number" min="0.1" step="0.1" value="10"></label><label class="field" for="gk">Purity<select id="gk"><option value="22">22K</option><option value="24">24K</option><option value="18">18K</option></select></label></div>
-      <label class="field" for="gm" style="margin-top:8px">Making charges %<input id="gm" type="number" min="0" max="40" step="0.5" value="12"></label>
-      <div class="row" style="margin-top:10px"><span class="muted" style="font-size:13px">Incl. 3% GST</span><b class="num" id="gout" style="font:700 22px var(--display)"></b></div></div>
-   </div>
-   <p class="src">Indicative retail rates excluding GST and making charges. City rates vary slightly (e.g. Delhi 24K ₹1,44,100/10 g, 5paisa). IBJA 24K reference on 29 Oct: ₹${m.ibja24_29.toLocaleString('en-IN')}/10 g. Not live. <a class="link" href="${m.url}" target="_blank" rel="noopener">Latest rate on Goodreturns ↗</a></p>`;
-  const calcG=()=>{const w=+document.getElementById('gw').value||0,k=document.getElementById('gk').value,mk=+document.getElementById('gm').value||0,rate={24:m.g24,22:m.g22,18:m.g18}[k],base=w*rate,tot=(base+base*mk/100)*1.03;document.getElementById('gout').textContent='₹'+Math.round(tot).toLocaleString('en-IN')};
-  ['gw','gk','gm'].forEach(id=>document.getElementById(id).addEventListener('input',calcG));calcG();
+// ===================== Gold & silver (IBJA benchmark + MCX live + jeweller retail) =====================
+const METALS={date:'30 Oct 2026, 11:15 AM',
+  ibja:{sess:'29 Oct · PM',g999:14226,g999_10:142255,g995:14169,g916:13031,g750:10669,g585:8322,ag:190.48,p999:14230,pag:194.0},
+  mcx:{gold:{v:142351,ch:-245,pct:-0.17,t:'30 Oct, 1:25 AM'},silver:{v:188943,ch:-510,pct:-0.27,t:'30 Oct, 1:25 AM'}},
+  retail:{g24:14395,g22:13195,g18:10796,ag:215,src:'Goodreturns'},
+  hist:[['26 Oct',141290,null],['27 Oct',141082,192037],['28 Oct',142300,194000],['29 Oct',142255,190478]]};
+const mchg=(v,p)=>p?`<span class="${v>=p?'up':'down'}" style="font-size:12.5px;font-weight:600">${v>=p?'▲':'▼'} ${Math.abs((v/p-1)*100).toFixed(2)}%</span>`:'';
+function metalCards(m,full){const I=m.ibja,r=x=>Math.round(x).toLocaleString('en-IN');
+  return `<div class="metal-grid num">
+     <div class="metal gold"><span>Gold 24K · 999</span><b>₹${r(I.g999_10||I.g999*10)}</b><small>per 10 g · ₹${r(I.g999)}/g ${mchg(I.g999,I.p999)}</small></div>
+     <div class="metal gold"><span>Gold 22K · 916</span><b>₹${r(I.g916*10)}</b><small>per 10 g · ₹${r(I.g916)}/g</small></div>
+     <div class="metal gold"><span>Gold 18K · 750</span><b>₹${r(I.g750*10)}</b><small>per 10 g · ₹${r(I.g750)}/g</small></div>
+     <div class="metal silver"><span>Silver · 999</span><b>₹${r(I.ag*1000)}</b><small>per kg · ₹${I.ag.toFixed(2)}/g ${mchg(I.ag,I.pag)}</small></div>
+     ${full?`<div class="metal gold"><span>Gold · 995</span><b>₹${r(I.g995*10)}</b><small>per 10 g · ₹${r(I.g995)}/g</small></div><div class="metal gold"><span>Gold 14K · 585</span><b>₹${r(I.g585*10)}</b><small>per 10 g · ₹${r(I.g585)}/g</small></div>`:''}
+   </div>`}
+function renderMetals(){const m=METALS,el=document.getElementById('metals');if(!el)return;const X=m.mcx||{};
+  el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · IBJA benchmark</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${esc(m.ibja.sess)} · IBJA</span></div>
+   ${metalCards(m,false)}
+   ${X.silver?`<div class="row num" style="margin-top:12px;font-size:13.5px;flex-wrap:wrap;gap:6px"><span class="muted">MCX live</span><span>Gold <b>₹${Math.round(X.gold.v).toLocaleString('en-IN')}</b>/10 g ${chip(X.gold.pct)}</span><span>Silver <b>₹${Math.round(X.silver.v).toLocaleString('en-IN')}</b>/kg ${chip(X.silver.pct)}</span></div>`:''}
+   <a class="ghost" href="#metals" style="margin-top:14px;width:100%">Full gold &amp; silver page, history and calculator →</a>
+   <p class="src">IBJA (India Bullion and Jewellers Association) rates exclude GST and making charges. Updated ${esc(m.date)}.</p>`;
+}
+function renderMetalsPage(){const m=METALS,el=document.getElementById('metalspage');if(!el)return;const X=m.mcx||{},R=m.retail||{},I=m.ibja;
+  const h=(m.hist||[]).filter(x=>x[1]),hs=(m.hist||[]).filter(x=>x[2]);
+  el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(m.date)}</div><h1 class="ptitle">Gold &amp; silver today</h1><p class="psub">Official IBJA benchmark rates, live MCX futures and jeweller retail rates in one place.</p></div></div>
+   <div class="glass card"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">IBJA benchmark · ${esc(I.sess)}</span><h3 style="font-size:19px;margin-top:4px">Official Indian rate</h3></div><a class="link" href="https://ibjarates.com/" target="_blank" rel="noopener" style="font-size:13px">ibjarates.com ↗</a></div>${metalCards(m,true)}
+    <p class="src">Used for Sovereign Gold Bonds and gold loans. Excludes 3% GST and making charges. Change shown against the previous day's rate.</p></div>
+   <div class="grid2 sec">
+    <div class="glass card"><span class="lbl">MCX futures · live market</span><div class="ovr num" style="margin-top:6px">
+      ${X.gold?`<div><span>Gold (per 10 g)</span><b>₹${Math.round(X.gold.v).toLocaleString('en-IN')} ${chip(X.gold.pct)}</b></div>`:''}
+      ${X.silver?`<div><span>Silver (per kg)</span><b>₹${Math.round(X.silver.v).toLocaleString('en-IN')} ${chip(X.silver.pct)}</b></div>`:''}
+      ${X.gold?`<div><span>Gold per gram</span><b>₹${Math.round(X.gold.v/10).toLocaleString('en-IN')}</b></div>`:''}${X.silver?`<div><span>Silver per gram</span><b>₹${(X.silver.v/1000).toFixed(2)}</b></div>`:''}</div>
+      <p class="src">Nearest futures contract via India Bullions${X.silver&&X.silver.t?` · ${esc(X.silver.t)}`:''}. Moves through the trading day.</p></div>
+    <div class="glass card"><span class="lbl">Jeweller retail rate</span><div class="ovr num" style="margin-top:6px">
+      <div><span>Gold 24K (per g)</span><b>₹${Math.round(R.g24||0).toLocaleString('en-IN')}</b></div><div><span>Gold 22K (per g)</span><b>₹${Math.round(R.g22||0).toLocaleString('en-IN')}</b></div><div><span>Gold 18K (per g)</span><b>₹${Math.round(R.g18||0).toLocaleString('en-IN')}</b></div><div><span>Silver (per g)</span><b>₹${(R.ag||0).toFixed(2)}</b></div></div>
+      <p class="src">${esc(R.src||'Goodreturns')} national average. Shops quote above the benchmark because of local premiums. Changes once or twice a day.</p></div></div>
+   <div class="grid2 sec">
+    <div class="glass card"><div class="row"><span class="lbl">Gold 999 · IBJA (₹/10 g)</span>${h.length>1?`<b class="${h.at(-1)[1]>=h[0][1]?'up':'down'}">${sgn((h.at(-1)[1]/h[0][1]-1)*100)}%</b>`:''}</div><div style="margin-top:8px">${h.length>1?spark(h.map(x=>[x[0],x[1]]),300,70,'#D4A017'):'<p class="note">History builds up daily.</p>'}</div><div class="row muted num" style="font-size:11.5px"><span>${h[0]?esc(h[0][0])+' ₹'+h[0][1].toLocaleString('en-IN'):''}</span><span>${h.at(-1)?esc(h.at(-1)[0])+' ₹'+h.at(-1)[1].toLocaleString('en-IN'):''}</span></div></div>
+    <div class="glass card"><div class="row"><span class="lbl">Silver 999 · IBJA (₹/kg)</span>${hs.length>1?`<b class="${hs.at(-1)[2]>=hs[0][2]?'up':'down'}">${sgn((hs.at(-1)[2]/hs[0][2]-1)*100)}%</b>`:''}</div><div style="margin-top:8px">${hs.length>1?spark(hs.map(x=>[x[0],x[2]]),300,70,'#9AA4B2'):'<p class="note">History builds up daily.</p>'}</div><div class="row muted num" style="font-size:11.5px"><span>${hs[0]?esc(hs[0][0])+' ₹'+hs[0][2].toLocaleString('en-IN'):''}</span><span>${hs.at(-1)?esc(hs.at(-1)[0])+' ₹'+hs.at(-1)[2].toLocaleString('en-IN'):''}</span></div></div></div>
+   <div class="grid2 sec">
+    <div class="glass card gcalc"><h3 style="font-size:17px">Jewellery cost estimator</h3>
+      <div class="two" style="margin-top:10px"><label class="field" for="gw">Weight (g)<input id="gw" type="number" min="0.1" step="0.1" value="10"></label><label class="field" for="gk">Metal<select id="gk"><option value="916">Gold 22K</option><option value="999">Gold 24K</option><option value="750">Gold 18K</option><option value="ag">Silver 999</option></select></label></div>
+      <div class="two" style="margin-top:8px"><label class="field" for="gm">Making charges %<input id="gm" type="number" min="0" max="40" step="0.5" value="12"></label><label class="field" for="gr">Rate<select id="gr"><option value="ibja">IBJA benchmark</option><option value="retail">Jeweller retail</option></select></label></div>
+      <div class="ovr num" style="margin-top:10px"><div><span>Metal value</span><b id="gbase"></b></div><div><span>Making charges</span><b id="gmk"></b></div><div><span>GST 3%</span><b id="ggst"></b></div><div><span>Total</span><b id="gout" style="font:700 22px var(--display)"></b></div></div></div>
+    <div class="glass card"><h3 style="font-size:17px;margin-bottom:8px">Why do rates differ?</h3><div class="note" style="display:grid;gap:10px">
+      <p><b>IBJA</b> is the official wholesale benchmark, set twice a day (around 12 PM and 5 PM). Banks and the RBI use it.</p>
+      <p><b>MCX</b> is the futures market price. It moves every second while the market is open.</p>
+      <p><b>Jeweller rates</b> add a local premium, so they are usually a little higher. GST of 3% and making charges come on top when you buy.</p></div></div></div>`;
+  const calcG=()=>{const w=+document.getElementById('gw').value||0,k=document.getElementById('gk').value,mk=+document.getElementById('gm').value||0,src=document.getElementById('gr').value;
+    const rate=src==='retail'?{999:R.g24,916:R.g22,750:R.g18,ag:R.ag}[k]:{999:I.g999,916:I.g916,750:I.g750,ag:I.ag}[k];
+    const base=w*(rate||0),mkv=base*mk/100,gst=(base+mkv)*0.03,f=v=>'₹'+Math.round(v).toLocaleString('en-IN');
+    document.getElementById('gbase').textContent=f(base);document.getElementById('gmk').textContent=f(mkv);document.getElementById('ggst').textContent=f(gst);document.getElementById('gout').textContent=f(base+mkv+gst)};
+  ['gw','gk','gm','gr'].forEach(id=>document.getElementById(id).addEventListener('input',calcG));calcG();
 }
 
 // ===================== StockPilot v4: profit helpers, motion, mobile tables =====================
@@ -1505,7 +1543,7 @@ addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()===
 
 // ===================== IPO star in cards =====================
 // ===================== routing =====================
-const VIEWS=['markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools'];
+const VIEWS=['metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(!VIEWS.includes(h))view='markets';
   document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+view));
@@ -1514,7 +1552,7 @@ function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=n
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
-  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='ipos')renderIpos();if(view==='watchlist')renderWLAll();
+  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals')renderMetalsPage();if(view==='ipos')renderIpos();if(view==='watchlist')renderWLAll();
   scrollTo({top:0});requestAnimationFrame(animateView)}
 addEventListener('hashchange',route);
 
@@ -1531,7 +1569,7 @@ if(LIVED){try{
   if(LIVED.brent)setMini('Brent crude','$'+LIVED.brent.v.toFixed(2),LIVED.brent.pct);
   if(LIVED.goldSpot)setMini('Gold (global spot)','$'+Math.round(LIVED.goldSpot.v).toLocaleString('en-US'),LIVED.goldSpot.pct);
   if(LIVED.nifty8&&LIVED.nifty8.length>2)NIFTY8.splice(0,NIFTY8.length,...LIVED.nifty8);
-  if(LIVED.metals&&LIVED.metals.g24)Object.assign(METALS,LIVED.metals);
+  if(LIVED.metals&&LIVED.metals.ibja&&LIVED.metals.ibja.g999)Object.assign(METALS,LIVED.metals);
   if(LIVED.stocks)STOCKS.forEach(s=>{const q=LIVED.stocks[s.sym];if(q&&q.v){const r=q.v/s.price;s.pe*=r;s.mcap*=r;s.dy/=r;s.price=q.v;DAYCHG[s.sym]=[q.pct,'NSE via Yahoo Finance']}});
   if(LIVED.sectors&&LIVED.sectors.length)SECTORS.splice(0,SECTORS.length,...LIVED.sectors);
   if(LIVED.gainers&&LIVED.gainers.length)GAIN.splice(0,GAIN.length,...LIVED.gainers);
@@ -1568,11 +1606,15 @@ function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id
 }
 const _rm=renderMarkets;renderMarkets=function(){_rm();patchMarketDom()};
 // tape from live values
-renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+(M.g24*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0]])];
+renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+Math.round(M.ibja.g999*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ibja.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0]])];
   const h=items.map(([k,v,p])=>`<span><b>${k}</b>${v}${p!=null?` <span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`).join('');
   document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')};
 // auto-refresh: re-check data/live.js every 3 minutes; reload when the server has newer figures
-setInterval(()=>{const s=document.createElement('script');const cur=LIVED&&LIVED.updated;s.src='data/live.js?t='+Date.now();s.onload=()=>{if(window.LIVE&&window.LIVE.updated&&window.LIVE.updated!==cur&&!document.querySelector('.overlay.on')&&!document.querySelector('input:focus'))location.reload();s.remove()};document.head.appendChild(s)},180000);
+const RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/main/data/live.json';
+async function pullLive(){try{const r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();
+  if(j&&j.updated&&(!LIVED||j.updated>LIVED.updated)){try{sessionStorage.setItem('sp.live',JSON.stringify(j))}catch(e){}
+    if(!document.querySelector('.overlay.on')&&!document.querySelector('input:focus,select:focus'))location.reload()}}catch(e){}}
+setTimeout(pullLive,1500);setInterval(pullLive,120000);
 
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
