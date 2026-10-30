@@ -756,6 +756,10 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 .al-alert b{display:block;font-size:15px}.al-alert small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
 .al-dot{width:10px;height:10px;border-radius:50%;background:var(--up);box-shadow:0 0 0 0 color-mix(in srgb,var(--up) 60%,transparent);animation:alp 1.6s infinite}
 @keyframes alp{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+input.bad,select.bad,textarea.bad{border-color:var(--dn)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--dn) 15%,transparent)!important}
+input.good[data-v="pan"]{border-color:color-mix(in srgb,var(--up) 60%,var(--line))!important}
+.ferr{display:block;grid-column:1/-1;color:var(--dn);font-size:12.5px;font-weight:500;margin-top:5px;line-height:1.35;animation:fadeUp .2s both}
 </style>
 </head>
 <body>
@@ -1101,11 +1105,11 @@ function openIpo(id,mode){
       ${canApply?`<div class="msec" id="applysec"><h4>1 · Apply in your app</h4><div class="brokers">${BROKERS.map(([n,s,u])=>u?`<a class="broker" href="${u}" target="_blank" rel="noopener"><b>${n}</b><span>${s} ↗</span></a>`:`<div class="broker"><b>${n}</b><span>IPO / ASBA in net banking</span></div>`).join('')}</div>
         <p class="note" style="margin-top:10px">Search for <b>${esc(i.name.replace(/ Ltd$/,''))}</b> in your app's IPO section, bid at cut-off, then approve the UPI mandate before ${d2(i.c)}, 4 PM.</p></div>
       <div class="msec"><h4>2 · Log it here to track it</h4>
-        <form class="form" id="af">
-          <label class="field" for="a-who">Applicant<input id="a-who" required maxlength="40" placeholder="e.g. Self, Mom, Rahul" value="Self"></label>
+        <form class="form" id="af" novalidate>
+          <label class="field" for="a-who">Applicant<input id="a-who" required maxlength="40" data-v="name" placeholder="e.g. Self, Mom, Rahul" value="Self"></label>
           <label class="field" for="a-via">Applied through<select id="a-via">${BROKERS.map(b=>`<option>${b[0]}</option>`).join('')}<option>Other</option></select></label>
           <label class="field" for="a-cat">Category<select id="a-cat"><option>${i.type==='SME'?'Individual':'Retail'}</option><option>HNI (NII)</option><option>Employee</option><option>Shareholder</option></select></label>
-          <label class="field" for="a-lots">Lots (${i.type==='SME'?'minimum '+i.ml:'max '+i.maxLots+' for retail'})<input id="a-lots" type="number" min="${i.ml}" max="500" value="${i.ml}" required></label>
+          <label class="field" for="a-lots">Lots (${i.type==='SME'?'minimum '+i.ml:'max '+i.maxLots+' for retail'})<input id="a-lots" type="number" min="${i.ml}" max="${i.type==='SME'?500:(i.maxLots||500)}" step="1" inputmode="numeric" value="${i.ml}" required></label>
           <label class="check" for="a-cut" style="grid-column:1/-1"><input id="a-cut" type="checkbox" checked> Bid at cut-off price (₹${i.hi})</label>
           <div class="sumline num" style="grid-column:1/-1"><span id="a-sum"></span><button class="btn" type="submit">I've applied, track it</button></div>
         </form></div>`
@@ -1646,7 +1650,7 @@ function renderAllotWiz(i,el){const id=i.id,M=FAM.members,st=FAM.st[id]||{},er=a
      return `<div class="aw-row"><div class="aw-av">${ini(m)}</div><div class="aw-nm"><b>${esc(m)}</b><small ${pn&&!auto?`data-cp="${esc(m)}" style="cursor:pointer"`:''}>${pn?(panShow?esc(pn):maskPan(pn)):'—'}${pn&&!auto?' ⧉':''}</small></div>
       <div class="aw-st ${c}">${pn?t:`<a class="link" href="#" data-addpan="${esc(m)}">Add PAN</a>`}${sub?`<small>${esc(sub)}</small>`:''}</div>
       ${awEdit?`<button type="button" class="aw-rf aw-del" data-del="${esc(m)}" aria-label="Remove ${esc(m)}">${AWI.del}</button>`:`${auto?`<button type="button" class="aw-rf ${busy?'spin':''}" data-one="${esc(m)}" ${allotBusy||!pn||!ready?'disabled':''} aria-label="Check ${esc(m)} again">${AWI.ref}</button>`:`<button type="button" class="aw-rf" data-man="${esc(m)}" ${!ready?'disabled':''} aria-label="Set result for ${esc(m)}">${AWI.edit}</button>`}`}</div>`}).join('')||'<p class="aw-msg" style="padding:22px 14px">Add the people in your family who apply for IPOs. Their PANs stay on this phone.</p>'}
-    ${awAdd?`<form class="aw-form" id="famform" autocomplete="off"><label class="sr" for="famin">Name</label><input id="famin" maxlength="30" placeholder="Name" required><label class="sr" for="fampan">PAN</label><input id="fampan" maxlength="10" placeholder="PAN" style="text-transform:uppercase" autocomplete="off" spellcheck="false" required><button class="ghost" type="button" id="awCancel">Cancel</button><button class="btn" type="submit">Save</button></form>`
+    ${awAdd?`<form class="aw-form" id="famform" autocomplete="off" novalidate><label class="sr" for="famin">Name</label><input data-v="name" id="famin" maxlength="30" placeholder="Name" required><label class="sr" for="fampan">PAN</label><input data-v="pan" inputmode="text" autocapitalize="characters" id="fampan" maxlength="10" placeholder="PAN" style="text-transform:uppercase" autocomplete="off" spellcheck="false" required><button class="ghost" type="button" id="awCancel">Cancel</button><button class="btn" type="submit">Save</button></form>`
       :`<a class="aw-add" href="#pans?from=${esc(id)}" style="text-decoration:none">${AWI.plus} Add PAN</a>`}</div>
    ${allotMsg?`<p class="aw-msg" role="status">${esc(allotMsg)}</p>`:''}
    ${!ready?`<p class="aw-msg" style="font-weight:600;color:var(--warn)">Allotment is not out yet. Come back on ${d2(i.al)} to check everyone.</p>`:''}${!auto&&ready?`<div class="aw-cta"><a class="btn shine" href="${regUrl}" target="_blank" rel="noopener" style="width:100%;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:16px">Check on ${esc(i.reg||'registrar')} website ↗</a></div><p class="aw-msg">${esc(i.reg||'This registrar')} needs a captcha, so it can't be checked automatically. Tap a PAN to copy it, check there, then tap ✎ to save the result.</p>`:''}${auto&&withPan&&ready?`<div class="aw-cta"><button class="btn shine" type="button" id="autoAll" ${allotBusy?'disabled':''}>${AWI.ref.replace('<svg','<svg class="'+(allotBusy?'awsp':'')+'"')} ${allotBusy?'Checking…':'Refresh All'}</button></div>`:''}
@@ -1676,7 +1680,7 @@ function renderPans(){const el=document.getElementById('panspage'),M=FAM.members
     <button class="aw-ib" type="button" id="pnEye" aria-label="${panShow?'Hide':'Show'} PAN">${panShow?AWI.eyeoff:AWI.eye}</button></div>
    <p class="note" style="margin:-4px 0 14px">Save everyone in your family once. Every IPO's allotment page checks all of them together.</p>
    <div class="aw-list">
-    <form class="pn-form" id="pnForm" autocomplete="off"><label class="sr" for="pnName">Name</label><input id="pnName" maxlength="30" placeholder="Name" required value="${pnEdit?esc(pnEdit):''}"><label class="sr" for="pnPan">PAN</label><input id="pnPan" maxlength="10" placeholder="PAN, e.g. ABCDE1234F" required style="text-transform:uppercase" autocomplete="off" spellcheck="false" value="${pnEdit&&PANS[pnEdit]?esc(PANS[pnEdit]):''}"><button class="btn" type="submit">${pnEdit?'Update':'+ Add'}</button></form>
+    <form class="pn-form" id="pnForm" autocomplete="off" novalidate><label class="sr" for="pnName">Name</label><input data-v="name" id="pnName" maxlength="30" placeholder="Name" required value="${pnEdit?esc(pnEdit):''}"><label class="sr" for="pnPan">PAN</label><input data-v="pan" inputmode="text" autocapitalize="characters" id="pnPan" maxlength="10" placeholder="PAN, e.g. ABCDE1234F" required style="text-transform:uppercase" autocomplete="off" spellcheck="false" value="${pnEdit&&PANS[pnEdit]?esc(PANS[pnEdit]):''}"><button class="btn" type="submit">${pnEdit?'Update':'+ Add'}</button></form>
     ${M.map(m=>{const pn=PANS[m];return `<div class="aw-row" style="grid-template-columns:48px 1fr auto"><div class="aw-av">${ini(m)}</div><div class="aw-nm"><b>${esc(m)}</b><small>${pn?(panShow?esc(pn):maskPan(pn)):'No PAN yet'}</small></div>
      <div class="pn-acts"><button type="button" class="aw-rf" data-pedit="${esc(m)}" aria-label="Edit ${esc(m)}">${AWI.edit}</button><button type="button" class="aw-rf aw-del" data-del="${esc(m)}" aria-label="Remove ${esc(m)}">${AWI.del}</button></div></div>`}).join('')||'<p class="aw-msg" style="padding:20px 14px">No one added yet. Add a name and PAN above.</p>'}
     ${pnBulk?`<div class="pn-bulk"><label class="lbl" for="pnText">Add many at once — one person per line: name, then PAN</label><textarea id="pnText" placeholder="Sankar ABCDE1234F&#10;Chandu PQRST5678Z" spellcheck="false" autocomplete="off"></textarea><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="ghost" type="button" id="pnBulkX">Cancel</button><button class="btn" type="button" id="pnBulkGo">Add all</button></div></div>`
@@ -1718,7 +1722,7 @@ function renderAllotPage(id){const i=byId[id],el=document.getElementById('allotp
      <div class="fam" style="margin-top:6px">${M.map((m,k)=>{const s2=st[m]||'np',pn=PANS[m];return `<div class="famrow" style="grid-template-columns:42px 1fr auto"><div class="lg" style="background:${colorOf(m)};color:#fff">${esc(m.slice(0,2).toUpperCase())}</div>
        <div><b>${esc(m)}</b><small class="muted num" style="display:block;font-size:12.5px">${pn?'PAN '+maskPan(pn):'<a class="link" href="#" data-addpan="'+esc(m)+'">Add PAN</a>'}</small></div>
        <div style="display:flex;gap:2px;align-items:center"><button type="button" class="famst ${s2}" data-m="${esc(m)}" ${allotBusy?'disabled':''} title="${ALLOT_API&&REGKEY(i.reg)&&pn?'Check again with '+esc(i.reg||''):'Tap to change status'}">${allotBusy&&(!allotOne||allotOne===m)&&pn?'Checking…':famLabel(i,s2,m)} ↻</button>${pn?`<button type="button" class="iconbtn2" data-copy="${esc(m)}" aria-label="Copy PAN of ${esc(m)}" title="Copy PAN">⧉</button>`:''}<button type="button" class="iconbtn2" data-del="${esc(m)}" aria-label="Remove ${esc(m)}" title="Remove">🗑</button></div></div>`}).join('')||'<p class="note" style="padding:12px 0">Add the people in your family who apply for IPOs.</p>'}</div>
-     <form class="famadd" id="famform" style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px" autocomplete="off"><label class="sr" for="famin">Name</label><input id="famin" maxlength="30" placeholder="Name, e.g. Mom" required><label class="sr" for="fampan">PAN</label><input id="fampan" maxlength="10" placeholder="PAN (optional)" style="text-transform:uppercase" autocomplete="off" spellcheck="false"><button class="btn" type="submit">+ Add</button></form>
+     <form class="famadd" id="famform" style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px" autocomplete="off" novalidate><label class="sr" for="famin">Name</label><input data-v="name" id="famin" maxlength="30" placeholder="Name, e.g. Mom" required><label class="sr" for="fampan">PAN</label><input data-v="pan" inputmode="text" autocapitalize="characters" id="fampan" maxlength="10" placeholder="PAN (optional)" style="text-transform:uppercase" autocomplete="off" spellcheck="false"><button class="btn" type="submit">+ Add</button></form>
      <p class="src">🔒 PANs are saved only on this device, in this browser. ${ALLOT_API&&REGKEY(i.reg)?`When you tap “Check allotment”, each PAN is sent to ${esc(regName)} through MarketVedaPro's relay just for that lookup; the relay does not store or log it.`:`They are not sent anywhere; the site only copies a PAN for you to paste on the registrar's page.`} Remove a person to delete their PAN.</p></div></div>
     <div class="glass card"><h3 style="font-size:17px;margin-bottom:6px">${ALLOT_API&&REGKEY(i.reg)?'Checked right here':'Why one tap per person?'}</h3><p class="note">${ALLOT_API&&REGKEY(i.reg)?`MarketVedaPro asks ${esc(regName)} directly for every saved PAN and shows the result here. PANs are sent only to the registrar for this check and are not stored anywhere.`:`${esc(regName)} asks for a captcha on every check, so this IPO can't be checked automatically. The guided check copies each PAN and opens the right page, so it takes a few seconds per person.`}</p>
      <div style="display:grid;gap:8px;margin-top:14px"><a class="btn" href="${reg}" target="_blank" rel="noopener">${esc(regName)} allotment page ↗</a><a class="ghost" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">BSE ↗</a><a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">NSE ↗</a></div>
@@ -1987,6 +1991,36 @@ document.getElementById('palette').onclick=e=>{if(e.target.id==='palette')closeS
 addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch()}else if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openSearch()}});
 
 // ===================== IPO star in cards =====================
+// ===================== validation (every input on the site) =====================
+const VNAME=/^[A-Za-zऀ-ൿ][A-Za-zऀ-ൿ .'’-]*$/;
+function vMsg(el){const v=(el.value||'').trim(),t=el.type,dv=el.dataset.v;
+  if(el.disabled||t==='checkbox'||t==='range'||t==='hidden')return '';
+  if(!v)return el.required?(dv==='pan'?'Enter the PAN':dv==='name'?'Enter a name':'This is required'):'';
+  if(dv==='pan'){if(v.length<10)return `PAN has 10 characters (${v.length} typed). Format: ABCDE1234F`;if(!PANRE.test(v.toUpperCase()))return 'PAN looks like ABCDE1234F: 5 letters, 4 numbers, 1 letter';if('PCHFATBLJG'.indexOf(v[3].toUpperCase())<0)return "This doesn't look like a valid PAN (4th letter is wrong)";return ''}
+  if(dv==='name'){if(v.length<2)return 'Name is too short';if(!VNAME.test(v))return 'Use letters and spaces only';return ''}
+  if(t==='number'){const n=Number(v);if(!isFinite(n))return 'Enter a number';
+    const mn=el.min!==''?Number(el.min):null,mx=el.max!==''?Number(el.max):null,st=el.step;
+    if(mn!=null&&n<mn)return `Minimum is ${mn.toLocaleString('en-IN')}`;if(mx!=null&&n>mx)return `Maximum is ${mx.toLocaleString('en-IN')}`;
+    if(st==='1'&&!Number.isInteger(n))return 'Whole numbers only';if(n>1e9)return 'That number is too large'}
+  if(el.maxLength>0&&v.length>el.maxLength)return `Keep it under ${el.maxLength} characters`;
+  return ''}
+function vShow(el,msg){const box=el.closest('label.field')||el.closest('form')||el.parentElement;if(!box)return;
+  const key=el.id||el.name;let e=box.querySelector(`.ferr[data-for="${CSS.escape(key)}"]`);
+  el.classList.toggle('bad',!!msg);el.setAttribute('aria-invalid',msg?'true':'false');
+  if(el.dataset.v==='pan')el.classList.toggle('good',!msg&&!!el.value.trim());
+  if(!msg){if(e)e.remove();return}
+  if(!e){e=document.createElement('small');e.className='ferr';e.dataset.for=key;e.setAttribute('role','alert');if(el.id)el.setAttribute('aria-describedby','fe-'+el.id),e.id='fe-'+el.id;box.appendChild(e)}
+  e.textContent=msg}
+function vCheck(el,force){const m=vMsg(el);if(force||el.dataset.touched||!m)vShow(el,m);return !m}
+document.addEventListener('input',e=>{const el=e.target;if(!(el instanceof HTMLInputElement||el instanceof HTMLTextAreaElement))return;
+  if(el.dataset.v==='pan'){const p=el.selectionStart,c=el.value.toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,10);if(c!==el.value){el.value=c;try{el.setSelectionRange(p,p)}catch{}}if(c.length===10)el.dataset.touched=1}
+  if(el.dataset.v==='name'){const c=el.value.replace(/\s{2,}/g,' ');if(c!==el.value)el.value=c}
+  vCheck(el)},true);
+document.addEventListener('blur',e=>{const el=e.target;if(!(el instanceof HTMLInputElement))return;if(el.value.trim()||el.required&&el.dataset.touched)el.dataset.touched=1;vCheck(el,!!el.value.trim())},true);
+document.addEventListener('submit',e=>{const f=e.target;let first=null;
+  f.querySelectorAll('input,textarea,select').forEach(el=>{el.dataset.touched=1;if(!vCheck(el,true)&&!first)first=el});
+  if(first){e.preventDefault();e.stopImmediatePropagation();first.focus();if(navigator.vibrate)navigator.vibrate(30)}},true);
+
 // ===================== routing =====================
 const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
