@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StockPilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sheet:#FBFAF7;
+  /* Layout idea: floating glass nav over soft aurora light; bento dashboard; one shell, two themes (Aurora Light / Midnight Aurora) */
+  --bg:#F6F5F2; --glass:rgba(255,255,255,.74); --glass2:rgba(255,255,255,.9); --line:rgba(17,17,20,.08); --soft:rgba(17,17,20,.05);
+  --ink:#0B0B0F; --muted:#6B6B76; --acc:#FF5A36; --accink:#fff; --btn:#0B0B0F; --btnink:#fff;
+  --up:#00A37A; --dn:#E5484D; --upbg:rgba(0,163,122,.11); --dnbg:rgba(229,72,77,.11); --info:#3B5BDB; --infobg:rgba(59,91,219,.10); --warn:#B76E00; --warnbg:rgba(255,166,0,.14);
+  --chart:#00A37A; --navbg:rgba(255,255,255,.78); --shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 48px -22px rgba(20,20,50,.18);
+  --b1:#FFD3BD; --b2:#DCD3FF; --b3:#C9F1E2; --b4:#FFE9AE; --overlay:rgba(20,20,30,.38);
+  --display:"Inter Tight","Inter Display",Inter,ui-sans-serif,system-ui,sans-serif; --body:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  /* aliases used by shared IPO code */
+  --buy:var(--up); --sell:var(--dn); --saffron:var(--acc); --brand:var(--acc); --brand-soft:var(--soft); --surface:var(--glass2);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sheet:#12141B;
+  --bg:#06070A; --glass:rgba(255,255,255,.045); --glass2:#111318; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
+  --ink:#F4F4F2; --muted:#8E9096; --acc:#5EEAD4; --accink:#04201C; --btn:#F4F4F2; --btnink:#06070A;
+  --up:#34D399; --dn:#FB7185; --upbg:rgba(52,211,153,.12); --dnbg:rgba(251,113,133,.12); --info:#8AA4FF; --infobg:rgba(138,164,255,.12); --warn:#FBBF24; --warnbg:rgba(251,191,36,.12);
+  --chart:#5EEAD4; --navbg:rgba(14,15,19,.72); --shadow:0 1px 0 rgba(255,255,255,.05) inset;
+  --b1:rgba(20,184,166,.42); --b2:rgba(245,158,11,.20); --b3:rgba(236,72,153,.14); --b4:rgba(56,189,248,.10); --overlay:rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{--sheet:#12141B;
+  --bg:#06070A; --glass:rgba(255,255,255,.045); --glass2:#111318; --line:rgba(255,255,255,.09); --soft:rgba(255,255,255,.06);
+  --ink:#F4F4F2; --muted:#8E9096; --acc:#5EEAD4; --accink:#04201C; --btn:#F4F4F2; --btnink:#06070A;
+  --up:#34D399; --dn:#FB7185; --upbg:rgba(52,211,153,.12); --dnbg:rgba(251,113,133,.12); --info:#8AA4FF; --infobg:rgba(138,164,255,.12); --warn:#FBBF24; --warnbg:rgba(251,191,36,.12);
+  --chart:#5EEAD4; --navbg:rgba(14,15,19,.72); --shadow:0 1px 0 rgba(255,255,255,.05) inset;
+  --b1:rgba(20,184,166,.42); --b2:rgba(245,158,11,.20); --b3:rgba(236,72,153,.14); --b4:rgba(56,189,248,.10); --overlay:rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;position:relative;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:8px}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;left:-9999px}
+.muted{color:var(--muted)}
+h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.025em;margin:0;text-wrap:balance}
+.aurora{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.9}
+.shell{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:18px 24px 60px}
+@media(max-width:700px){.shell{padding:12px 14px 96px}}
+
+/* nav */
+nav.top{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:12px;padding:8px 10px 8px 16px;border-radius:999px;background:var(--navbg);border:1px solid var(--line);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);box-shadow:var(--shadow)}
+.logo{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none;flex:none}
+.mark{width:30px;height:30px;border-radius:10px;background:conic-gradient(from 200deg,#FF5A36,#FFB547,#00A37A,#5EEAD4,#FF5A36);display:grid;place-items:center}
+.mark i{width:12px;height:12px;border-radius:4px;background:#fff;display:block}
+.links{display:flex;gap:2px;margin-left:14px}
+.links a{padding:8px 14px;border-radius:999px;color:var(--muted);font-weight:500;font-size:14.5px;text-decoration:none;display:flex;gap:6px;align-items:center;white-space:nowrap}
+.links a:hover{color:var(--ink)}
+.links a[aria-current="page"]{background:var(--soft);color:var(--ink);font-weight:600}
+.badge{background:var(--acc);color:var(--accink);font-size:11px;font-weight:700;border-radius:99px;padding:0 6px;line-height:18px}
+.searchbtn{margin-left:auto;width:250px;white-space:nowrap;height:40px;border-radius:999px;background:var(--soft);display:flex;align-items:center;gap:8px;padding:0 8px 0 14px;color:var(--muted);font-size:14px;border:1px solid transparent;cursor:pointer;text-align:left}
+.searchbtn:hover{border-color:var(--line)}
+.searchbtn kbd{margin-left:auto;font:600 11px var(--body);padding:3px 7px;border-radius:7px;border:1px solid var(--line)}
+.iconbtn{width:40px;height:40px;border-radius:50%;background:var(--soft);border:0;display:grid;place-items:center;cursor:pointer;flex:none}
+.cta{height:40px;padding:0 18px;border-radius:999px;background:var(--btn);color:var(--btnink);display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.cta:hover{filter:brightness(1.1)}
+@media(max-width:1240px){.searchbtn{width:170px}.searchbtn kbd{display:none}}@media(max-width:1120px){.links a .lt{display:none}}
+@media(max-width:1420px){.cta.apps{display:none}}
+@media(max-width:700px){
+  nav.top{top:8px;padding:6px 6px 6px 12px;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--glass2)}
+  .links a[data-v="tools"]{display:none}
+  .links{position:fixed;left:10px;right:10px;bottom:10px;margin:0;justify-content:space-around;background:var(--navbg);border:1px solid var(--line);border-radius:22px;padding:6px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow);z-index:40}
+  .links a{flex-direction:column;gap:2px;font-size:11px;padding:6px 8px;border-radius:14px}
+  .links a .lt{display:block}
+  .searchbtn{width:40px;padding:0;justify-content:center}.searchbtn span,.searchbtn kbd{display:none}
+}
+.links svg{flex:none}
+
+/* ticker */
+.tape{overflow:hidden;margin:12px 4px 0;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.tape .track{display:inline-flex;gap:34px;white-space:nowrap;font-size:13px;color:var(--muted);animation:roll 60s linear infinite;padding:4px 0}
+.tape:hover .track{animation-play-state:paused}
+.tape b{color:var(--ink);font-weight:600;margin-right:6px}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* shared blocks */
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:24px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+.card{padding:20px}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.chg{display:inline-flex;align-items:center;font-weight:600;font-size:13px;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.chg.u{color:var(--up);background:var(--upbg)}.chg.d{color:var(--dn);background:var(--dnbg)}.chg.n{color:var(--muted);background:var(--soft)}
+.up{color:var(--up)}.down{color:var(--dn)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-weight:600;border-radius:999px;font-size:12px;padding:3px 10px;white-space:nowrap}
+.ok,.BUY{background:var(--upbg);color:var(--up)}.bad,.SELL{background:var(--dnbg);color:var(--dn)}.warn,.WAIT{background:var(--warnbg);color:var(--warn)}.info{background:var(--infobg);color:var(--info)}.plain{background:var(--soft);color:var(--muted)}
+.btn{border:0;cursor:pointer;border-radius:999px;padding:11px 18px;font-weight:600;background:var(--btn);color:var(--btnink);display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:14.5px}
+.btn:hover{filter:brightness(1.12)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.ghost{border:1px solid var(--line);background:var(--glass2);border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:14.5px;color:var(--ink)}
+.ghost:hover{border-color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--glass2);border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:500;font-size:13.5px;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:var(--btn);color:var(--btnink);border-color:transparent;font-weight:600}
+.tabs .count{opacity:.6;margin-left:5px}
+.view{display:none}.view.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.phead{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:30px 4px 18px}
+.eyebrow{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--soft)}
+.ptitle{font-size:clamp(32px,4.6vw,54px);line-height:1.02;font-weight:700;letter-spacing:-.035em;margin-top:10px;max-width:900px}
+.ptitle em{font-style:normal;color:var(--up)}
+.psub{color:var(--muted);margin:8px 0 0;max-width:62ch}
+.sec{margin-top:16px}
+.secht{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:34px 4px 14px}
+.secht h2{font-size:24px;font-weight:700}
+.secht p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.src{font-size:12px;color:var(--muted);margin-top:12px}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+/* markets bento */
+.bento{display:grid;grid-template-columns:1.55fr 1fr 1fr;gap:16px}
+.bento .hero{grid-row:span 2;padding:22px 24px 18px}
+@media(max-width:1000px){.bento{grid-template-columns:1fr 1fr}.bento .hero{grid-column:1/-1;grid-row:auto}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}}
+.big{font:700 clamp(40px,5vw,58px)/1 var(--display);letter-spacing:-.035em;margin:10px 0 6px}
+.mid{font:700 30px/1.05 var(--display);letter-spacing:-.025em;margin:10px 0 6px}
+.chart svg{display:block;width:100%;height:auto}
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+@media(max-width:560px){.stats4{grid-template-columns:1fr 1fr}}
+.stats4 div{padding:10px 12px;border-radius:14px;background:var(--soft)}
+.stats4 span{display:block;font-size:11.5px;color:var(--muted)}.stats4 b{font-size:15px}
+.rng{margin-top:16px}
+.rng .t{height:6px;border-radius:99px;background:var(--soft);position:relative}
+.rng .t i{position:absolute;top:0;bottom:0;border-radius:99px;background:var(--up)}
+.rng .l{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px}
+.ring{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;flex:none}
+.ring i{width:74px;height:74px;border-radius:50%;background:var(--glass2);display:grid;place-items:center;font:700 22px var(--display);font-style:normal}
+.flowbar{height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.flowbar i{display:block;height:100%;border-radius:99px}
+.grid3{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:16px}
+@media(max-width:1000px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.minis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px}
+@media(max-width:1000px){.minis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.minis{grid-template-columns:1fr 1fr}}
+.minis .glass{padding:12px 14px;border-radius:18px}
+.minis span{display:block;font-size:12px;color:var(--muted)}
+.minis b{font:700 17px var(--display);letter-spacing:-.01em}
+.sect{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sect div{padding:12px;border-radius:16px;font-size:12.5px;font-weight:600}
+.sect b{display:block;font:700 19px var(--display);margin-top:2px}
+.wl{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;width:100%;text-align:left}
+.wl:last-child{border-bottom:0}
+.wl:hover .nm{text-decoration:underline}
+.lg{width:36px;height:36px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-weight:700;font-size:12px}
+.wl small{display:block;color:var(--muted);font-size:12.5px}
+.mv{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.mv:last-child{border-bottom:0}
+.mv .b{grid-column:1/-1;height:5px;border-radius:99px;background:var(--soft);overflow:hidden}
+.mv .b i{display:block;height:100%;border-radius:99px}
+.ntag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+:root[data-theme="light"] .ntag{color:#D9431F}
+.nitem{display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.nitem:last-child{border-bottom:0}
+.nitem p{margin:3px 0 2px;font-weight:600;font-size:14.5px;line-height:1.38}
+.nitem:hover p{text-decoration:underline}
+.nitem small{color:var(--muted);font-size:12px}
+
+/* stocks list + page */
+.stbl{width:100%;border-collapse:collapse;font-size:14px}
+.stbl th{font-size:12px;color:var(--muted);font-weight:500;text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap}
+.stbl td{padding:12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.stbl th:first-child,.stbl td:first-child{text-align:left}
+.stbl tr.r{cursor:pointer}.stbl tr.r:hover td{background:var(--soft)}
+.tw{overflow-x:auto}
+.star{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;color:var(--muted);padding:4px}
+.star[aria-pressed="true"]{color:#F5A524}
+.shead{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.slogo{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font:800 20px var(--display);color:#fff;flex:none}
+.kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:700px){.kgrid{grid-template-columns:1fr 1fr}}
+.kgrid div{padding:14px;border-radius:18px;background:var(--soft)}
+.kgrid span{display:block;font-size:12px;color:var(--muted)}.kgrid b{font:700 20px var(--display);letter-spacing:-.01em}
+.qbars{display:grid;gap:14px}
+.qb .t{height:10px;border-radius:99px;background:var(--soft);overflow:hidden;margin-top:6px}
+.qb .t i{display:block;height:100%;border-radius:99px}
+
+/* search palette */
+.palette{position:fixed;inset:0;z-index:60;background:var(--overlay);display:none;align-items:flex-start;justify-content:center;padding:10vh 14px;backdrop-filter:blur(4px)}
+.palette.on{display:flex}
+.pbox{width:100%;max-width:620px;background:var(--glass2);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);overflow:hidden}
+.pbox input{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:18px 20px;font-size:17px;outline:none}
+.pres{max-height:56vh;overflow:auto;padding:8px}
+.pr{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;cursor:pointer;width:100%;border:0;background:none;text-align:left}
+.pr:hover,.pr.sel{background:var(--soft)}
+.pgroup{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:10px 12px 4px}
+
+/* IPO */
+.ipulse{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:800px){.ipulse{grid-template-columns:1fr 1fr}}
+.stat{padding:16px 18px;border-radius:22px;background:var(--glass);border:1px solid var(--line);cursor:pointer;text-align:left;display:grid;gap:2px;box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+.stat:hover{border-color:var(--muted)}
+.stat .n{font:700 34px/1 var(--display)}
+.stat span{color:var(--muted);font-size:13.5px}
+.stat small{font-size:12.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat.hot{background:var(--btn);color:var(--btnink);border-color:transparent}.stat.hot span{color:inherit;opacity:.7}
+.filters{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+@media(max-width:380px){.igrid{grid-template-columns:1fr}}
+.ipo{padding:18px;display:flex;flex-direction:column;gap:14px;border-radius:24px;background:var(--glass);border:1px solid var(--line);position:relative;box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+.ipo .h{display:flex;gap:12px;align-items:flex-start}
+.mono{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font:800 15px var(--display);flex:none;color:#fff}
+.ipo .nm{font-weight:700;font-size:16px;line-height:1.25}
+.ipo .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kv div{padding:10px;border-radius:14px;background:var(--soft)}
+.kv div span{display:block;font-size:11.5px;color:var(--muted)}.kv div b{font-size:14.5px}
+.subbar{display:grid;gap:6px}
+.subbar .top{display:flex;justify-content:space-between;font-size:13px}
+.bar{height:7px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--acc)}
+.gmp{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;padding:9px 12px;border-radius:14px;background:var(--soft)}
+.ipo .acts{display:flex;gap:8px;margin-top:auto}.ipo .acts>*{flex:1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{padding:18px}
+.step::before{counter-increment:s;content:counter(s);font:700 14px var(--display);width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:var(--btn);color:var(--btnink);margin-bottom:10px}
+.step h3{font-size:17px;margin-bottom:4px}.step p{margin:0;color:var(--muted);font-size:14px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:var(--overlay);z-index:50;display:none;align-items:flex-start;justify-content:center;padding:28px 14px;overflow:auto;backdrop-filter:blur(4px)}
+.overlay.on{display:flex}
+.modal{width:100%;max-width:720px;background:var(--glass2);border-radius:26px;border:1px solid var(--line);box-shadow:0 30px 80px -20px rgba(0,0,0,.4)}
+.mhead{display:flex;gap:14px;align-items:flex-start;padding:22px 22px 0}
+.mhead h3{font-size:22px}
+.x{margin-left:auto;border:0;background:var(--soft);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;flex:none}
+.mbody{padding:16px 22px 24px;display:grid;gap:18px}
+.msec h4{margin:0 0 10px;font:700 12px var(--body);color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+.timeline div{text-align:center;font-size:12px;position:relative;padding-top:20px}
+.timeline div::before{content:"";position:absolute;top:5px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:var(--line);z-index:1}
+.timeline div::after{content:"";position:absolute;top:10px;left:-50%;width:100%;height:2px;background:var(--line)}
+.timeline div:first-child::after{display:none}
+.timeline div.done::before,.timeline div.done::after{background:var(--up)}
+.timeline div.now::before{background:var(--acc);box-shadow:0 0 0 4px var(--soft)}
+.timeline b{display:block;font-size:12.5px}.timeline span{color:var(--muted)}
+@media(max-width:560px){.timeline{grid-template-columns:repeat(3,1fr);row-gap:14px}.timeline div:nth-child(4)::after{display:none}}
+.cats{display:grid;gap:8px}
+.cat{display:grid;grid-template-columns:120px 1fr 64px;gap:10px;align-items:center;font-size:14px}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:560px){.specs{grid-template-columns:1fr 1fr}}
+.spec{background:var(--soft);border-radius:14px;padding:10px 12px}
+.spec span{display:block;color:var(--muted);font-size:12px}.spec b{font-size:15px}
+.brokers{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.broker{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:16px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--soft)}
+.broker:hover{border-color:var(--muted)}
+.broker b{font-size:14.5px}.broker span{font-size:12px;color:var(--muted)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.form{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;font-size:13px;color:var(--muted);font-weight:600}
+.field input,.field select{border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15.5px;color:var(--ink);font-weight:500;width:100%}
+.check{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--ink);font-weight:500}
+.sumline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border-radius:16px;background:var(--soft)}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:var(--btn);color:var(--btnink);padding:11px 18px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+/* tracker */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+@media(max-width:760px){.tiles{grid-template-columns:1fr 1fr}}
+.tile{padding:16px 18px;border-radius:22px;background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow)}
+.tile span{color:var(--muted);font-size:13px}.tile b{display:block;font:700 28px/1.15 var(--display)}
+.apps{display:grid;gap:12px}
+.app{padding:18px;border-radius:24px;background:var(--glass);border:1px solid var(--line);display:grid;gap:12px;box-shadow:var(--shadow)}
+.app .h{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.app .h .nm{font-weight:700}.app .h .sub{color:var(--muted);font-size:13.5px}
+.app .h .right{margin-left:auto}
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.track div{font-size:12.5px;padding-top:10px;border-top:3px solid var(--line);color:var(--muted)}
+.track div.done{border-color:var(--up);color:var(--ink)}
+.track div.cur{border-color:var(--acc);color:var(--ink);font-weight:600}
+.track div.fail{border-color:var(--dn);color:var(--dn);font-weight:600}
+.app .ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.app .ctl select{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:7px 12px;font-size:13.5px}
+.link{border:0;background:none;color:var(--ink);font-weight:600;cursor:pointer;padding:6px 4px;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.link.del{color:var(--muted);text-decoration:none}
+.allot{display:flex;gap:8px;flex-wrap:wrap}
+.store{font-size:12.5px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.store i{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block}
+.store.cloud i{background:var(--up)}
+
+/* tools */
+.calc{display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden;padding:0}
+@media(max-width:820px){.calc{grid-template-columns:1fr}}
+.calc .in{padding:22px;display:grid;gap:14px;align-content:start;border-right:1px solid var(--line)}
+@media(max-width:820px){.calc .in{border-right:0;border-bottom:1px solid var(--line)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc .outp{padding:22px}
+.bigv{font:700 42px/1 var(--display);letter-spacing:-.03em}
+table{width:100%;border-collapse:collapse;font-size:14px}
+.brk td,#listtbl td,#listtbl th{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right}
+.brk td:first-child,#listtbl td:first-child,#listtbl th:first-child{text-align:left}
+#listtbl th{font-size:12px;color:var(--muted);font-weight:500}
+
+.subnav{margin:4px 0 0}
+.subnav a.sn{border:1px solid var(--line);background:var(--glass2);border-radius:999px;padding:8px 14px;font-weight:500;font-size:13.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
+.subnav a.sn[aria-current="page"]{background:var(--btn);color:var(--btnink);border-color:transparent;font-weight:600}
+@media(max-width:700px){.subnav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}}
+.scrq{border:1px solid var(--line);background:var(--glass2);border-radius:999px;padding:9px 16px;min-width:220px;font-size:14px}
+.alist{display:grid;gap:4px;margin-top:10px;max-height:420px;overflow:auto}
+.stepper{display:flex;align-items:center;gap:14px;margin:8px 0 6px}
+.stepper button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass2);font-size:18px;cursor:pointer}
+.stepper b{font:700 26px var(--display);min-width:24px;text-align:center}
+.prow{padding:8px 10px;border-radius:14px;background:var(--soft);align-items:center}
+.gantt{margin-top:10px;display:grid;gap:6px;overflow-x:auto}
+.gh,.gr{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:8px;min-width:420px}
+.gh{grid-template-columns:110px repeat(var(--n),1fr);font-size:10.5px;color:var(--muted);text-align:center;line-height:1.1}
+.gh .today{color:var(--acc);font-weight:700}
+.gn{font-size:12.5px;font-weight:600;display:flex;flex-direction:column}.gn small{color:var(--muted);font-weight:500;font-size:11.5px}
+.gt{position:relative;height:22px;border-radius:8px;background:var(--soft)}
+.gt i{position:absolute;top:3px;bottom:3px;border-radius:6px;opacity:.9}
+.gtot{display:flex;align-items:end;gap:2px;height:42px;padding:3px}
+.gtot em{flex:1;background:var(--acc);border-radius:4px;opacity:.75}
+.guide summary{list-style:none;cursor:pointer}.guide summary::-webkit-details-marker{display:none}
+.metal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media(max-width:800px){.metal-grid{grid-template-columns:1fr 1fr}}
+.metal{padding:14px;border-radius:18px;display:grid;gap:2px}
+.metal span{font-size:12px;font-weight:600}.metal b{font:700 22px var(--display);letter-spacing:-.01em}.metal small{font-size:11.5px;opacity:.75}
+.metal.gold{background:linear-gradient(135deg,rgba(234,179,8,.22),rgba(217,119,6,.10));color:var(--ink)}
+.metal.gold span{color:#A16207}
+:root[data-theme="dark"] .metal.gold span{color:#FACC15}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .metal.gold span{color:#FACC15}}
+.metal.silver{background:linear-gradient(135deg,rgba(148,163,184,.26),rgba(100,116,139,.10))}
+.metal.silver span{color:var(--muted)}
+.gcalc{padding:14px;border-radius:18px;background:var(--soft)}
+
+/* ===================== StockPilot v4: profit, mobile, motion ===================== */
+.mark{background:conic-gradient(from 210deg,#FF5A36,#FFB547,#00A37A,#5EEAD4,#FF5A36);box-shadow:0 6px 18px -6px rgba(255,90,54,.55)}
+.mark svg{display:block}
+.profit{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--up) 16%,transparent),color-mix(in srgb,var(--up) 4%,transparent));border:1px solid color-mix(in srgb,var(--up) 22%,transparent)}
+.profit.neg{background:linear-gradient(135deg,color-mix(in srgb,var(--dn) 16%,transparent),color-mix(in srgb,var(--dn) 4%,transparent));border-color:color-mix(in srgb,var(--dn) 22%,transparent)}
+.profit span{font-size:12px;color:var(--muted);font-weight:600}
+.profit b{font:800 22px/1.1 var(--display);letter-spacing:-.02em;color:var(--up);text-align:right}
+.profit.neg b{color:var(--dn)}
+.profit small{grid-column:1/-1;font-size:11.5px;color:var(--muted)}
+.pcalc{display:grid;gap:12px;padding:16px;border-radius:18px;background:var(--soft)}
+.pcalc .out{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pcalc .out div{padding:10px;border-radius:14px;background:var(--glass2)}
+.pcalc .out span{display:block;font-size:11.5px;color:var(--muted)}.pcalc .out b{font:700 17px var(--display)}
+.range-in{width:100%;accent-color:var(--acc)}
+
+/* ---------- motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,40px) scale(1.08)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-70px,50px) scale(1.12)}}
+@keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-60px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 55%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@keyframes shine{from{background-position:-200% 0}to{background-position:200% 0}}
+@keyframes sheet{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{0%{transform:scale(.94);opacity:0}100%{transform:none;opacity:1}}
+.aurora i:nth-child(1){animation:drift1 22s ease-in-out infinite}
+.aurora i:nth-child(2){animation:drift2 26s ease-in-out infinite}
+.aurora i:nth-child(3){animation:drift3 24s ease-in-out infinite}
+.aurora i:nth-child(4){animation:drift1 30s ease-in-out infinite reverse}
+.dot{animation:pulse 2.4s infinite}
+.view.on .phead{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.view.on .anim{animation:rise .65s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 55ms + 80ms)}
+.view.on .bar i,.view.on .flowbar i,.view.on .rng .t i,.view.on .qb .t i,.view.on .mv .b i,.modal .bar i{transform-origin:left center;animation:grow 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:.25s}
+.view.on .gtot em,.view.on .sday-bar{transform-origin:bottom;animation:growY .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:.3s}
+svg .draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.4s cubic-bezier(.4,0,.2,1) both;animation-delay:.2s}
+svg .fillin{animation:fadein 1.2s ease both;animation-delay:.6s}
+.glass,.ipo,.stat,.tile,.app{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .25s}
+a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(-3px);box-shadow:var(--shadow),0 22px 40px -24px color-mix(in srgb,var(--acc) 45%,transparent)}
+.btn,.ghost,.tabs button,.subnav a.sn,.cta{transition:transform .15s,filter .15s,background .2s,color .2s}
+.btn:active,.ghost:active,.cta:active,.tabs button:active{transform:scale(.97)}
+.btn.shine{background-image:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);background-size:200% 100%;animation:shine 3.2s linear infinite}
+.overlay.on .modal{animation:pop .3s cubic-bezier(.2,.7,.2,1) both}
+.palette.on .pbox{animation:pop .22s cubic-bezier(.2,.7,.2,1) both}
+.toast.on{transition:opacity .25s,transform .35s cubic-bezier(.3,1.4,.5,1)}
+.links a{transition:background .2s,color .2s}
+@media (prefers-reduced-motion:reduce){.aurora i,.dot,.btn.shine{animation:none!important}}
+
+/* ---------- mobile ---------- */
+@media(max-width:700px){
+  body{font-size:14.5px}
+  .shell{padding:10px 12px 104px}
+  .phead{margin:22px 2px 14px}
+  .ptitle{font-size:32px}
+  .psub{font-size:14px}
+  .secht{margin:26px 2px 12px}.secht h2{font-size:20px}
+  .glass{border-radius:22px}
+  .card{padding:16px}
+  /* swipeable bento */
+  .bento{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -12px;padding:2px 12px 10px;scrollbar-width:none}
+  .bento::-webkit-scrollbar{display:none}
+  .bento>*{flex:0 0 84%;scroll-snap-align:center}
+  .bento .hero{flex-basis:92%}
+  .big{font-size:40px}
+  .minis{display:flex;overflow-x:auto;gap:10px;margin:12px -12px 0;padding:0 12px 6px;scrollbar-width:none}
+  .minis>*{flex:0 0 46%}
+  .ipulse{display:flex;overflow-x:auto;gap:10px;margin:0 -12px;padding:2px 12px 8px;scrollbar-width:none}
+  .ipulse>*{flex:0 0 62%}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;max-width:100%}
+  .tabs button,.tabs a{flex:0 0 auto;white-space:nowrap}
+  .phead>.tabs{width:100%}
+  .mhead h3{font-size:18px}.mhead .mono{width:38px;height:38px;font-size:13px}
+  .mhead div>div:has(.pill){gap:4px!important}
+  .mhead .pill:nth-child(2){display:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .filters{flex-direction:column;gap:8px}
+  .scrq{width:100%}
+  .kv{gap:6px}.kv div{padding:9px}
+  /* tables -> cards */
+  .stbl.mcard{min-width:0!important;display:block}
+  .stbl.mcard tbody{display:grid;gap:10px}
+  .stbl.mcard tr:first-child{display:none}
+  .stbl.mcard tr{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;padding:14px;border-radius:18px;background:var(--soft);border:0}
+  .stbl.mcard td{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:0;border:0;text-align:left;white-space:normal;background:none!important}
+  .stbl.mcard td::before{content:attr(data-l);font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+  .stbl.mcard td:first-child{grid-column:1/-1}
+  .stbl.mcard td:first-child::before,.stbl.mcard td.nol::before{display:none}
+  .stbl.mcard td.nol{position:absolute;right:12px;top:12px}
+  .stbl.mcard tr{position:relative}
+  .stbl.mcard td.wide{grid-column:1/-1}
+  .tw{overflow:visible}
+  .glass:has(>.tw>.stbl.mcard){background:transparent;border:0;box-shadow:none;padding:0!important;backdrop-filter:none}
+  /* modal as bottom sheet */
+  .overlay{align-items:flex-end;padding:0}
+  .modal{border-radius:26px 26px 0 0;max-height:92vh;overflow:auto}
+  .overlay.on .modal{animation:sheet .35s cubic-bezier(.2,.7,.2,1) both}
+  .mhead{position:sticky;top:0;background:var(--glass2);z-index:2;padding:16px 18px 10px}
+  .mhead::before{content:"";position:absolute;left:50%;top:6px;width:40px;height:4px;border-radius:9px;background:var(--line);transform:translateX(-50%)}
+  .mbody{padding:10px 18px 28px}
+  .pcalc .out{grid-template-columns:1fr 1fr 1fr}
+  .grid3,.grid2{gap:12px}
+  .metal-grid{display:flex;overflow-x:auto;margin:12px -16px 0;padding:0 16px 4px;scrollbar-width:none}
+  .metal-grid>*{flex:0 0 58%}
+  footer{margin-top:34px}
+}
+
+/* ===================== v5: app-style mobile, zero horizontal scroll ===================== */
+.mrows{display:none}
+.ulTabs{display:none}
+.seg2{display:none}
+.qs-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.qs-grid div{display:grid;grid-template-columns:22px 1fr;gap:2px 10px;padding:14px 4px;border-bottom:1px solid var(--line);align-items:center}
+.qs-grid div:nth-child(odd){border-right:1px solid var(--line);padding-right:12px}
+.qs-grid div:nth-child(even){padding-left:14px}
+.qs-grid svg{grid-row:span 2;color:var(--muted)}
+.qs-grid span{font-size:12px;color:var(--muted)}.qs-grid b{font-size:15.5px}
+.qs-acts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+.qs-acts .btn,.qs-acts .ghost{padding:12px 10px;font-size:14px}
+.ghist{width:100%;border-collapse:collapse;font-size:14px}
+.ghist th{font-size:12px;color:var(--muted);font-weight:500;text-align:right;padding:10px 8px;border-bottom:1px solid var(--line);background:var(--soft)}
+.ghist td{padding:13px 8px;border-bottom:1px solid var(--line);text-align:right}
+.ghist th:first-child,.ghist td:first-child{text-align:left}
+.ovr{display:grid}
+.ovr div{display:flex;justify-content:space-between;padding:14px 2px;border-bottom:1px solid var(--line);font-size:15px}
+.ovr div span{color:var(--muted)}
+.fam{display:grid}
+.famrow{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid var(--line)}
+.famrow .lg{width:42px;height:42px;border-radius:13px}
+.famst{border:0;background:none;font-weight:600;font-size:14px;cursor:pointer;padding:8px 4px;white-space:nowrap}
+.famst.al{color:var(--up)}.famst.na{color:var(--dn)}.famst.np{color:var(--muted)}.famst.pe{color:var(--warn)}
+.famadd{display:flex;gap:8px;margin-top:12px}
+.famadd input{flex:1;min-width:0;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:10px 14px;font-size:14.5px}
+.iconbtn2{border:0;background:none;color:var(--muted);cursor:pointer;padding:6px;display:grid;place-items:center;border-radius:10px}
+.iconbtn2:hover{color:var(--ink);background:var(--soft)}
+
+@media(max-width:700px){
+  html,body{overflow-x:hidden;max-width:100%}
+  .shell{overflow-x:clip}
+  /* stack everything that used to swipe */
+  .bento{display:grid!important;grid-template-columns:1fr!important;margin:0!important;padding:0!important;overflow:visible!important;gap:12px}
+  .bento>*{flex:none!important}
+  .minis{display:grid!important;grid-template-columns:1fr 1fr!important;margin:12px 0 0!important;padding:0!important;overflow:visible!important}
+  .minis>*{flex:none!important}
+  .ipulse{display:grid!important;grid-template-columns:1fr 1fr!important;margin:0!important;padding:0!important;overflow:visible!important}
+  .ipulse>*{flex:none!important}
+  .ipulse .stat{padding:14px}.ipulse .stat .n{font-size:28px}
+  .metal-grid{display:grid!important;grid-template-columns:1fr 1fr!important;margin:12px 0 0!important;padding:0!important;overflow:visible!important}
+  .metal-grid>*{flex:none!important}
+  .tabs{flex-wrap:wrap!important;overflow:visible!important}
+  .tabs button,.tabs a{flex:0 1 auto!important}
+  .subnav{display:grid!important;grid-template-columns:repeat(3,1fr);gap:6px}
+  .subnav a.sn{text-align:center;padding:9px 6px;font-size:12.5px}
+  #jump{display:none}
+  .tape{margin:10px 0 0}
+  /* tables: never wider than the screen */
+  table{max-width:100%}
+  .tw{overflow:visible!important}
+  #listtbl{min-width:0!important}
+  .gh,.gr{min-width:0!important;grid-template-columns:76px 1fr}
+  .gh{grid-template-columns:76px repeat(var(--n),1fr);font-size:9.5px}
+  .gantt{overflow:visible}
+  .gn{font-size:11.5px}
+  .kgrid{grid-template-columns:1fr 1fr!important}
+  .phead{flex-direction:column;align-items:flex-start}
+  .stat small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  /* IPO list = app rows */
+  #v-ipos .filters,#igrid{display:none}
+  .ulTabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);margin:0 -12px 14px;padding:0 4px}
+  .ulTabs button{border:0;background:none;padding:12px 2px 13px;font-size:14.5px;font-weight:600;color:var(--muted);position:relative;cursor:pointer}
+  .ulTabs button[aria-pressed="true"]{color:var(--ink)}
+  .ulTabs button[aria-pressed="true"]::after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;border-radius:3px;background:var(--ink)}
+  .ulTabs button .c{font-size:11px;opacity:.6;margin-left:3px}
+  .seg2{display:inline-flex!important;gap:2px;padding:4px;border-radius:14px;background:var(--soft);margin-bottom:6px}
+  .seg2 button{border:0;background:none;padding:8px 16px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer}
+  .seg2 button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  .mrows{display:block;margin:0 -12px}
+  .mrow{display:block;padding:16px 14px;border-bottom:1px solid var(--line);cursor:pointer;animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+  .mrow:active{background:var(--soft)}
+  .mrow .t{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center}
+  .mrow .t .mono{width:46px;height:46px;border-radius:14px;font-size:15px}
+  .mrow .nm{font-weight:650;font-size:16px;line-height:1.25}
+  .mrow .st{font-size:13px;color:var(--muted);margin-top:2px}
+  .mrow .ic{display:flex;gap:2px}
+  .mrow .m3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;text-align:center}
+  .mrow .m3 span{display:flex;gap:5px;justify-content:center;align-items:center;font-size:12.5px;color:var(--muted)}
+  .mrow .m3 b{display:block;font-size:15.5px;margin-top:3px;font-weight:600}
+  .mrow .m3 small{font-size:12px;font-weight:500}
+  .mrow .mpr{margin-top:10px;font-size:12.5px;text-align:center;color:var(--muted)}
+  .mrow .mpr b{color:var(--up)}
+  #v-ipos .psub,#v-ipos .ipulse,#v-ipos #list,#v-ipos .eyebrow{display:none!important}
+  .subnav a.sn{padding:7px 4px;font-size:12px}
+  #v-ipos .ptitle{font-size:30px}
+  .modal{background:var(--sheet)!important;backdrop-filter:none}
+  /* quick sheet + modal */
+  .qs-acts{grid-template-columns:1fr 1fr}
+  .qs-acts>*:first-child:nth-last-child(odd){grid-column:1/-1}
+}
+
+.mono,.slogo,.lg{position:relative;overflow:hidden}.lgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:12%;opacity:0;transition:opacity .25s}.haslogo .lgimg{opacity:1}
+footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
+footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i style="background:var(--b1);left:-6%;top:-12%;width:560px;height:560px"></i><i style="background:var(--b2);left:58%;top:-16%;width:620px;height:620px"></i><i style="background:var(--b3);left:82%;top:40%;width:520px;height:520px"></i><i style="background:var(--b4);left:12%;top:62%;width:480px;height:480px"></i></div>
+<div class="shell">
+<nav class="top">
+  <a class="logo" href="#markets" aria-label="StockPilot home"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.5 2.5 2.8 10.2c-.8.3-.7 1.5.1 1.7l7.3 1.9 1.9 7.3c.2.8 1.4.9 1.7.1z"/></svg></span>StockPilot</a>
+  <div class="links" role="navigation" aria-label="Sections">
+    <a href="#markets" data-v="markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span class="lt">Markets</span></a>
+    <a href="#stocks" data-v="stocks"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg><span class="lt">Stocks</span></a>
+    <a href="#ipos" data-v="ipos"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span class="lt">IPOs</span></a>
+    <a href="#watchlist" data-v="watchlist"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span class="lt">Watchlist</span></a>
+    <a href="#news" data-v="news"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h6M7 13h10M7 16h7"/></svg><span class="lt">News</span></a>
+    <a href="#applications" data-v="applications"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span class="lt">Applied</span> <span class="badge" id="appbadge" hidden></span></a>
+    <a href="#tools" data-v="tools"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 12h1M14 12h1M9 16h1M14 16h1"/></svg><span class="lt">Tools</span></a>
+  </div>
+  <button class="searchbtn" type="button" id="openSearch" aria-label="Search stocks and IPOs"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search stocks, IPOs</span><kbd>⌘K</kbd></button>
+  <button class="iconbtn" type="button" id="themeBtn" aria-label="Switch light or dark mode"></button>
+  <a class="cta apps" href="#applications">My applications</a>
+</nav>
+<div class="tape" aria-label="Market ticker"><div class="track" id="tape"></div></div>
+
+<!-- ========== MARKETS ========== -->
+<section class="view" id="v-markets">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="mk-eb">Market close · Thursday, 29 Oct 2026 · next session Friday 30 Oct</span></div>
+    <h1 class="ptitle" id="mk-title">Markets bounce back. Nifty <em>+1.05%</em> as banks and FMCG lead.</h1></div>
+    <div class="tabs" id="jump"><button type="button" aria-pressed="true" data-j="m-top">Overview</button><button type="button" aria-pressed="false" data-j="m-sec">Sectors</button><button type="button" aria-pressed="false" data-j="m-mov">Movers</button><button type="button" aria-pressed="false" data-j="metals">Gold &amp; silver</button><button type="button" aria-pressed="false" data-j="m-news">News</button></div></div>
+  <div class="bento" id="m-top">
+    <div class="glass hero">
+      <div class="row"><span class="lbl">Nifty 50 · last 8 sessions</span><span class="chg u num" id="nchg"></span></div>
+      <div class="big num" id="nbig">22,936.75</div>
+      <div class="chart" id="nchart"></div>
+      <div class="stats4 num"><div><span>Open</span><b id="nopen">22,690.65</b></div><div><span>Day high</span><b id="nhigh">22,961.95</b></div><div><span>Prev close</span><b id="nprev">22,698.85</b></div><div><span>Advances</span><b id="nadv">39 / 50</b></div></div>
+      <p class="src" id="nsrc">Daily closes from Investing.com and Anand Rathi; 29 Oct from NSE via Angel One. 20 Oct was a market holiday.</p>
+    </div>
+    <div class="glass card"><div class="row"><span class="lbl">Sensex</span><span class="chg u num" id="sxp">+1.24%</span></div><div class="mid num" id="sxv">74,151.04</div><span class="muted num" style="font-size:13px" id="sxch">+905.01 pts today</span>
+      <div class="rng"><div class="t"><i style="left:0;width:99%"></i></div><div class="l num"><span id="sxprev">Prev 73,246.03</span><span id="sxhigh">High 74,166.16</span></div></div></div>
+    <div class="glass card"><div class="row"><span class="lbl">Bank Nifty</span><span class="chg u num" id="bnp">+1.18%</span></div><div class="mid num" id="bnv">54,909.65</div><span class="muted num" style="font-size:13px" id="bnch">+642.25 pts · Kotak Bank +4.09%</span>
+      <div class="rng"><div class="t"><i style="left:0;width:100%"></i></div><div class="l num"><span id="bnprev">Prev 54,267.40</span><span id="bnclose">Close 54,909.65</span></div></div></div>
+    <div class="glass card" style="display:flex;gap:16px;align-items:center">
+      <div class="ring" id="ring" style="background:conic-gradient(var(--up) 0 78%,var(--dn) 78% 100%)"><i class="num">39</i></div>
+      <div><span class="lbl">Market mood</span><h3 style="font-size:20px;margin:4px 0" id="mood">Bullish breadth</h3><span class="muted" style="font-size:13.5px" id="moodtxt">39 of 50 Nifty stocks rose. India VIX fell 7.02% to 15.11.</span></div></div>
+    <div class="glass card"><span class="lbl">Money flow · cash market</span>
+      <div style="display:grid;gap:10px;margin-top:14px" class="num" id="flows">
+        <div class="row"><b>FIIs</b><b class="down">−₹943.60 Cr</b></div><div class="flowbar"><i style="width:49%;background:var(--dn)"></i></div>
+        <div class="row"><b>DIIs</b><b class="up">+₹1,924.41 Cr</b></div><div class="flowbar"><i style="width:100%;background:var(--up)"></i></div></div>
+      <p class="src" id="flowsrc">Provisional NSE data via Kotak Neo.</p></div>
+  </div>
+  <div class="minis num" id="minis"></div>
+  <div class="glass card sec" id="metals"></div>
+
+  <div class="secht" id="m-sec"><div><h2>Sectors &amp; movers</h2><p id="mk-secp">% change at the 29 Oct close</p></div></div>
+  <div class="grid3">
+    <div class="glass card"><div class="row" style="margin-bottom:14px"><h4 style="font-size:16px">Sector moves</h4></div><div class="sect" id="sect"></div><p class="src">Liquide, Kotak Neo, Multibagg (BSE Utilities).</p></div>
+    <div class="glass card" id="m-mov"><h4 style="font-size:16px;margin-bottom:6px" id="gainh">Nifty 50 gainers</h4><div id="gain"></div></div>
+    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px" id="loseh">Nifty 50 losers</h4><div id="lose"></div><p class="src">Upstox, NSE closing data.</p></div>
+  </div>
+  <div class="grid2 sec">
+    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Midcap 100 movers</h4><div class="grid2" style="gap:18px"><div id="midg"></div><div id="midl"></div></div></div>
+    <div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Smallcap 100 movers</h4><div class="grid2" style="gap:18px"><div id="smg"></div><div id="sml"></div></div><p class="src">Upstox.</p></div>
+  </div>
+
+  <div class="secht"><div><h2>IPO centre</h2><p>Real IPOs with GMP, subscription and minimum application</p></div></div>
+  <div class="glass card" id="homeipo"></div>
+  <div class="secht" id="m-news"><div><h2>Today at a glance</h2><p>Your watchlist, the key headlines and an IPO to look at</p></div></div>
+  <div class="grid3">
+    <div class="glass card"><div class="row" style="margin-bottom:4px"><h4 style="font-size:16px">My watchlist</h4><a class="link" href="#watchlist">Open</a></div><div id="wlmini"></div></div>
+    <div class="glass card"><div class="row" style="margin-bottom:4px"><h4 style="font-size:16px">Market news</h4><a class="link" href="#news">All news</a></div><div id="newsmini"></div></div>
+    <div class="glass card" id="spot"></div>
+  </div>
+</section>
+
+<!-- ========== STOCKS ========== -->
+<section class="view" id="v-stocks">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Nifty 50 heavyweights · close 29 Oct 2026</div><h1 class="ptitle">Stocks</h1>
+    <p class="psub">The 25 largest Nifty 50 companies by market cap, with real price, valuation and latest-quarter results. Tap any stock for its page, or star it for your watchlist.</p></div></div>
+  <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
+  <p class="src" style="margin-left:4px">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
+</section>
+<section class="view" id="v-stock"><div id="stockpage"></div></section>
+
+<!-- ========== IPOS ========== -->
+<section class="view" id="v-ipos">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="asof"></span></div><h1 class="ptitle">Every IPO in one place.</h1>
+    <p class="psub">Open, upcoming and recently listed issues with real price bands, lot sizes, subscription and dates. Apply in your own broker or bank app, then track it here.</p></div></div>
+  <div id="sn-ipos"></div><div style="height:16px"></div>
+  <div class="ipulse" id="pulse"></div>
+  <div class="secht" id="list"><div><h2>IPO watch</h2><p id="listsub"></p></div></div>
+  <div class="ulTabs" id="ulTabs" role="group" aria-label="IPO status"></div><div class="seg2" id="seg2" role="group" aria-label="IPO type"></div><div class="mrows" id="mrows"></div>
+  <div class="filters"><div class="tabs" id="stTabs" role="group" aria-label="IPO status"></div><div class="tabs" id="tyTabs" role="group" aria-label="IPO type"></div></div>
+  <div class="igrid" id="igrid"></div>
+  <div class="secht"><div><h2>How applying works</h2><p>Every IPO in India is applied for through your broker or bank, using UPI or ASBA.</p></div></div>
+  <div class="steps">
+    <div class="glass step"><h3>Pick an IPO</h3><p>Compare price band, lot size, subscription and dates. Retail investors can bid up to ₹2 lakh on mainboard issues.</p></div>
+    <div class="glass step"><h3>Apply in your app</h3><p>Tap Apply, choose your broker or bank and place the bid there. Bidding at cut-off price gives the best chance.</p></div>
+    <div class="glass step"><h3>Approve the UPI mandate</h3><p>Accept the mandate in your UPI app before 4 PM on the closing day. The money is blocked, not debited.</p></div>
+    <div class="glass step"><h3>Track it here</h3><p>Use “I've applied, track it” to follow allotment, refund and listing in Applied.</p></div>
+  </div>
+</section>
+
+<section class="view" id="v-ipo-gmp">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">GMP board</h1><p class="psub">Unofficial grey-market premiums with source, time and trend, plus a check of how GMP compared with real listings.</p></div></div>
+  <div id="sn-ipo-gmp"></div><div style="height:16px"></div><div id="gmpbody"></div>
+</section>
+<section class="view" id="v-ipo-sub">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Subscription</h1><p class="psub">How many times each IPO was bid for, by investor type and by day, with a rough allotment chance.</p></div></div>
+  <div id="sn-ipo-sub"></div><div style="height:16px"></div><div id="subbody"></div>
+</section>
+<section class="view" id="v-ipo-screener">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">IPO screener</h1><p class="psub">Every IPO in one sortable table. Search, filter and sort by GMP, subscription, size or minimum application.</p></div></div>
+  <div id="sn-ipo-screener"></div><div style="height:16px"></div><div id="scrbody"></div>
+</section>
+<section class="view" id="v-ipo-allot">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Allotment desk</h1><p class="psub">Find out if you got shares. Pick the IPO, check on the official site, and record the result for each family member.</p></div></div>
+  <div id="sn-ipo-allot"></div><div style="height:16px"></div><div id="allotbody"></div>
+</section>
+<section class="view" id="v-ipo-planner">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Money planner</h1><p class="psub">Applying to several IPOs? See how much cash you really need, when it gets blocked and when refunds come back to reuse.</p></div></div>
+  <div id="sn-ipo-planner"></div><div style="height:16px"></div><div id="planbody"></div>
+</section>
+<section class="view" id="v-learn">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>IPO tools</div><h1 class="ptitle">Learn</h1><p class="psub">Short, plain-English guides to how IPOs work in India.</p></div></div>
+  <div id="sn-learn"></div><div style="height:16px"></div><div id="learnbody"></div>
+</section>
+<section class="view" id="v-gmp"><div id="gmppage"></div></section>
+<section class="view" id="v-allot"><div id="allotpage"></div></section>
+<!-- ========== WATCHLIST ========== -->
+<section class="view" id="v-watchlist">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Saved to your account when signed in</div><h1 class="ptitle">Watchlist</h1><p class="psub">Stocks and IPOs you're following. Tap the star on any stock or IPO to add it.</p></div></div>
+  <div class="grid2"><div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">Stocks</h4><div id="wlstocks"></div></div><div class="glass card"><h4 style="font-size:16px;margin-bottom:6px">IPOs</h4><div id="wlipos"></div></div></div>
+</section>
+
+<!-- ========== NEWS ========== -->
+<section class="view" id="v-news">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Curated from public sources · 28–29 Oct 2026</div><h1 class="ptitle">Market news</h1><p class="psub">The day's key stories on markets, results, IPOs and the economy. Each one links to its original source.</p></div>
+    <div class="tabs" id="ntabs"></div></div>
+  <div class="grid2" id="newsgrid"></div>
+</section>
+
+<!-- ========== APPLICATIONS ========== -->
+<section class="view" id="v-applications">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Across every broker and family member</div><h1 class="ptitle">My applications</h1></div><span class="store" id="store"><i></i><span>Saved on this device</span></span></div>
+  <div class="tiles" id="tiles"></div>
+  <div class="apps" id="apps"></div>
+  <div class="glass card sec"><h3 style="font-size:17px;margin-bottom:6px">Check allotment status</h3><p class="note" style="margin-bottom:12px">Open the official site, choose the IPO and enter your PAN or application number. Then update the result here.</p>
+    <div class="allot"><a class="ghost" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">BSE ↗</a><a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">NSE ↗</a><a class="ghost" href="https://in.mpms.mufg.com/Initial_Offer/public-issues.html" target="_blank" rel="noopener">MUFG Intime ↗</a><a class="ghost" href="https://ipostatus.kfintech.com/" target="_blank" rel="noopener">KFintech ↗</a></div></div>
+</section>
+
+<!-- ========== TOOLS ========== -->
+<section class="view" id="v-tools">
+  <div class="phead"><div><div class="eyebrow"><span class="dot"></span>Real NSE charge rates</div><h1 class="ptitle">Tools</h1></div>
+    <div class="tabs" id="ctabs" role="group" aria-label="Trade type"><button type="button" data-k="delivery" aria-pressed="true">Delivery</button><button type="button" data-k="intraday" aria-pressed="false">Intraday</button></div></div>
+  <div class="glass calc">
+    <div class="in"><h3 style="font-size:18px">Charges calculator</h3>
+      <div class="two"><label class="field" for="cbuy">Buy price ₹<input id="cbuy" type="number" min="0" step="0.05" value="1119"></label><label class="field" for="csell">Sell price ₹<input id="csell" type="number" min="0" step="0.05" value="1358"></label></div>
+      <label class="field" for="cqty">Quantity<input id="cqty" type="number" min="1" step="1" value="12"></label>
+      <label class="field" for="cbrk">Brokerage per order ₹ (0 for most delivery)<input id="cbrk" type="number" min="0" step="1" value="0"></label>
+      <p class="note">Pre-filled with one lot of Jio Platforms: ₹1,119 issue price, ₹1,358 listing price.</p></div>
+    <div class="outp" id="cout"></div>
+  </div>
+  <div class="secht"><div><h2>Recent IPO listings</h2><p>Listing-day performance against the issue price</p></div></div>
+  <div class="glass" style="padding:8px 16px"><div class="tw"><table class="num" id="listtbl" style="min-width:600px"></table></div></div>
+  <p class="src" id="listsrc"></p>
+</section>
+
+<footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.5 2.5 2.8 10.2c-.8.3-.7 1.5.1 1.7l7.3 1.9 1.9 7.3c.2.8 1.4.9 1.7.1z"/></svg></span>StockPilot</div><p style="margin-bottom:6px">Your co-pilot for Indian stocks and IPOs.</p>
+  <p id="srcs"></p>
+  <p>All figures are real and taken from the public sources named on each card. Market data is the 29 Oct 2026 close; it is not live and does not update during trading. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. StockPilot does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
+</footer>
+</div>
+
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><label for="pq" class="sr">Search</label><input id="pq" placeholder="Search stocks, IPOs, pages…" autocomplete="off"><div class="pres" id="pres"></div></div></div>
+<div class="overlay" id="ov" role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data/live.js"></script>
+<script>
+// ===================== REAL IPO DATA =====================
+// Compiled 30 Oct 2026, 1:45 AM IST from public sources. Dates are as announced (tentative ones may shift).
+// ===================== company logos =====================
+// 1) logos/<id>.png committed to the repo (listed in LIVE.logos)  2) the company's own site icon  3) letter badge
+const DOMAINS={RELIANCE:'ril.com',BHARTIARTL:'airtel.in',HDFCBANK:'hdfcbank.com',ICICIBANK:'icicibank.com',TCS:'tcs.com',SBIN:'sbi.co.in',BAJFINANCE:'bajajfinserv.in',LT:'larsentoubro.com',INFY:'infosys.com',KOTAKBANK:'kotak.com',HINDUNILVR:'hul.co.in',ADANIPORTS:'adaniports.com',SUNPHARMA:'sunpharma.com',TITAN:'titancompany.in',AXISBANK:'axisbank.com',HCLTECH:'hcltech.com',MARUTI:'marutisuzuki.com',MM:'mahindra.com',ADANIENT:'adanienterprises.com',ITC:'itcportal.com',ULTRACEMCO:'ultratechcement.com',ETERNAL:'zomato.com',JSWSTEEL:'jsw.in',NTPC:'ntpc.co.in','BAJAJ-AUTO':'bajajauto.com',jio:'jio.com'};
+const LOCAL_LOGOS=new Set((window.LIVE&&window.LIVE.logos)||[]);
+function logoImg(k){const d=DOMAINS[k]||'';if(!LOCAL_LOGOS.has(k)&&!d)return '';
+  const src=LOCAL_LOGOS.has(k)?`logos/${encodeURIComponent(k)}.png`:`https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+  return `<img class="lgimg" alt="" loading="lazy" decoding="async" src="${src}" data-d="${d}" data-l="${LOCAL_LOGOS.has(k)?1:0}" onload="lgOk(this)" onerror="lgFail(this)">`}
+function lgFail(im){if(im.dataset.l==='1'&&im.dataset.d){im.dataset.l='0';im.src=`https://www.google.com/s2/favicons?domain=${im.dataset.d}&sz=128`}else im.remove()}
+function lgOk(im){if(im.dataset.l!=='1'&&im.naturalWidth<32){im.remove();return}im.parentElement&&im.parentElement.classList.add('haslogo')}
+
+const UPDATED=(window.LIVE&&window.LIVE.label)||'30 Oct 2026, 8:45 AM IST';
+const IPOS_RAW=[
+ // ---- mainboard ----
+ {id:'mksons',name:'M.K.Sons Fine Jewels Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Jewellery retail',open:'2026-10-28',close:'2026-10-30',allot:'2026-11-02',refund:'2026-11-02',list:'2026-11-04',lo:153,hi:162,lot:91,size:275.40,reg:'Bigshare Services',
+  sub:{QIB:0.62,NII:1.32,Retail:0.48,total:1.18,src:'IPOwiz (total, 30 Oct 8:20 AM); categories HDFC Sky',at:'30 Oct, 8:20 AM (categories 29 Oct 5 PM)'},gmp:{v:13,src:'IPOwiz',at:'30 Oct, 8:20 AM'},color:'#b4561a'},
+ {id:'bombaycoated',name:'Bombay Coated & Special Steels Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Steel processing',open:'2026-10-29',close:'2026-11-02',allot:'2026-11-03',refund:'2026-11-04',list:'2026-11-05',lo:78,hi:82,lot:182,size:183.06,reg:'KFintech',
+  sub:{QIB:3.28,NII:0.16,Retail:0.34,total:1.98,src:'IPOwiz (total); categories ScanX day 1',at:'30 Oct, 8:20 AM'},gmp:{v:9,src:'IPOwiz',at:'30 Oct, 8:20 AM'},color:'#475569'},
+ {id:'sfc',name:'SFC Environmental Technologies Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Wastewater treatment',open:'2026-10-27',close:'2026-10-29',allot:'2026-10-30',refund:'2026-11-02',list:'2026-11-03',lo:313,hi:330,lot:45,size:667.53,reg:'MUFG Intime',
+  sub:{QIB:18.81,NII:12.81,Retail:2.71,total:9.47,src:'Chittorgarh',at:'29 Oct, 5:54 PM (final day)'},gmp:{v:7.5,src:'IPO Premium',at:'29 Oct'},color:'#0e6b73'},
+ {id:'bls',name:'BLS Polymers Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Polymer compounds',open:'2026-10-27',close:'2026-10-29',allot:'2026-10-30',refund:'2026-11-02',list:'2026-11-03',lo:142,hi:150,lot:100,size:255.00,reg:'KFintech',
+  sub:{QIB:200.25,NII:559.20,Retail:128.36,total:241.22,src:'IPO Platform',at:'29 Oct, 7:54 PM (final)'},gmp:{v:63,src:'IPOMarket',at:'29 Oct, 6:03 PM'},color:'#2459b8'},
+ {id:'eaaa',name:'EAAA India Alternatives Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Alternative asset management',open:'2026-10-26',close:'2026-10-28',allot:'2026-10-29',refund:'2026-10-30',list:'2026-11-02',lo:1585,hi:1665,lot:9,size:1200.00,reg:'MUFG Intime',
+  sub:{QIB:13.80,NII:4.81,Retail:1.08,total:5.51,src:'HDFC Sky',at:'28 Oct (final)'},gmp:{v:28,src:'IPO Premium',at:'29 Oct'},color:'#7a3fb3'},
+ {id:'jio',name:'Jio Platforms Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Digital & telecom',open:'2026-10-21',close:'2026-10-23',allot:'2026-10-26',refund:'2026-10-27',list:'2026-10-28',lo:1065,hi:1119,lot:12,size:30213.00,reg:'KFintech',
+  sub:{total:22.19,src:'Choice India',at:'23 Oct (final)'},listPrice:1358,listClose:1419,listSrc:'Upstox, Univest (NSE)',color:'#1f4fb0'},
+ {id:'hdfire',name:'HD Fire Protect Ltd',type:'Mainboard',exch:'BSE, NSE',sector:'Fire protection equipment',open:'2026-10-13',close:'2026-10-15',allot:'2026-10-16',refund:'2026-10-19',list:'2026-10-21',lo:258,hi:271,lot:55,size:712.13,reg:'MUFG Intime',
+  sub:{QIB:256.65,NII:203.21,Retail:30.55,total:92.32,src:'Chittorgarh',at:'15 Oct (final)'},listPrice:335,listClose:306.75,listSrc:'Chittorgarh (NSE)',color:'#c4302b'},
+ // ---- SME ----
+ {id:'carver',name:'Carver Roboweld Ltd',type:'SME',exch:'BSE SME',sector:'Welding & automation',open:'2026-10-28',close:'2026-10-30',allot:'2026-11-02',refund:'2026-11-03',list:'2026-11-04',lo:76,hi:80,lot:1600,minLots:2,size:28.29,reg:'',
+  sub:{total:0.59,src:'IPO Ji',at:'29 Oct'},gmp:{v:0,src:'NiftyTrader',at:'29 Oct evening'},color:'#2f8f4e'},
+ {id:'ajwa',name:'Ajwa Projects Ltd',type:'SME',exch:'BSE SME',sector:'Industrial construction',open:'2026-10-28',close:'2026-10-30',allot:'2026-11-02',refund:'2026-11-03',list:'2026-11-04',lo:203,hi:203,lot:600,minLots:2,size:38.05,reg:'',
+  sub:{total:0.88,src:'HDFC Sky (BSE data)',at:'29 Oct, 4:59 PM'},gmp:{v:38,src:'NiftyTrader / IndiaIPO',at:'29 Oct evening'},color:'#d18b11'},
+ {id:'antala',name:'Antala Industries Ltd',type:'SME',exch:'SME',sector:'Packaging',open:'2026-10-29',close:'2026-11-02',allot:'2026-11-03',refund:'2026-11-04',list:'2026-11-05',lo:63,hi:67,lot:2000,minLots:2,size:23.33,reg:'',gmp:{v:0,src:'NiftyTrader',at:'29 Oct evening'},color:'#6b7f2a'},
+ {id:'maxwell',name:'Maxwell Engineering Solutions Ltd',type:'SME',exch:'NSE Emerge',sector:'Precision engineering',open:'2026-10-30',close:'2026-11-03',allot:'2026-11-04',refund:'2026-11-05',list:'2026-11-06',lo:150,hi:158,lot:800,minLots:2,size:57.64,reg:'KFintech',gmp:{v:52,src:'IPOMarket',at:'29 Oct, 6:03 PM'},color:'#334e9c'},
+ {id:'johnsoncab',name:'Johnsoncab Electricals Ltd',type:'SME',exch:'SME',sector:'Cables & electricals',open:'2026-10-30',close:'2026-11-03',allot:'2026-11-04',refund:'2026-11-05',list:'2026-11-06',lo:190,hi:200,lot:600,minLots:2,size:56.02,reg:'',gmp:{v:13,src:'IPOMarket',at:'29 Oct, 6:03 PM'},color:'#9b2c6f'},
+ {id:'vectras',name:'Vectras Enprocon Ltd',type:'SME',exch:'BSE SME',sector:'Oil & gas EPC',open:'2026-10-30',close:'2026-11-03',allot:'2026-11-04',refund:'2026-11-05',list:'2026-11-06',lo:99,hi:105,lot:1200,minLots:2,size:53.05,reg:'MUFG Intime',gmp:{v:0,src:'IPOMarket',at:'29 Oct, 6:03 PM'},color:'#0f766e'},
+ {id:'hgs',name:'HGS (India) Ltd',type:'SME',exch:'SME',sector:'Seismic equipment',open:'2026-10-30',close:'2026-11-03',allot:'2026-11-04',refund:'2026-11-05',list:'2026-11-06',lo:114,hi:120,lot:1200,minLots:2,size:34.56,reg:'',gmp:{v:0,src:'IPOMarket',at:'29 Oct, 6:03 PM'},color:'#5b4bb7'},
+ {id:'wiscon',name:'Wiscon Industries Ltd',type:'SME',exch:'BSE SME',sector:'Consumer appliances',open:'2026-10-27',close:'2026-10-29',allot:'2026-10-30',refund:'2026-11-02',list:'2026-11-03',lo:194,hi:204,lot:600,minLots:2,size:110.00,reg:'',
+  sub:{QIB:2.00,NII:0.35,Retail:0.42,total:0.86,src:'Groww',at:'29 Oct'},color:'#a16207'},
+ {id:'vedant',name:'Vedant Poly Fabs Ltd',type:'SME',exch:'SME',sector:'Textiles',open:'2026-11-02',close:'2026-11-04',allot:'',refund:'',list:'',lo:88,hi:94,lot:null,size:56.68,reg:'',color:'#0369a1'},
+];
+const SOURCES='Sources: Groww, Chittorgarh, HDFC Sky, Zerodha, Upstox, Angel One, Kotak Neo, IPO Platform, IPO Ji, IPO Premium, ScanX, StockGro, Choice India, INDmoney, Multibagg, IPOwiz, Business Today, Zee Business, company announcements.';
+
+// ===================== helpers =====================
+const IST=()=>{const n=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4);n.setHours(0,0,0,0);return n};
+const T0=IST();
+const P=s=>{if(!s)return null;const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const d2=d=>d?d.toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'TBA';
+const days=d=>Math.round((d-T0)/864e5);
+const fmt=v=>Math.abs(v).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+const rs=v=>'₹'+fmt(v), rs0=v=>'₹'+Math.round(Math.abs(v)).toLocaleString('en-IN');
+const sgn=v=>(v>=0?'+':'−')+Math.abs(v).toFixed(2);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cr=v=>'₹'+v.toLocaleString('en-IN',{maximumFractionDigits:2})+' Cr';
+const initials=n=>n.replace(/[&().]/g,' ').split(/\s+/).filter(w=>w&&!/^(ltd|limited|india)$/i.test(w)).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+const REGLINK={'KFintech':'https://ipostatus.kfintech.com/','MUFG Intime':'https://in.mpms.mufg.com/Initial_Offer/public-issues.html'};
+const allotLink=i=>REGLINK[i.reg]||'https://www.bseindia.com/investors/appli_check.aspx';
+const allotName=i=>REGLINK[i.reg]?i.reg:'BSE';
+
+const IPOS=IPOS_RAW.map(r=>{const o=P(r.open),c=P(r.close),al=P(r.allot),rf=P(r.refund),ls=P(r.list);
+  const st=T0<o?'upcoming':T0<=c?'open':(ls&&T0>=ls)?'listed':'closed';
+  const ml=r.minLots||1;
+  return {...r,o,c,al,rf,ls,st,ml,minAmt:r.lot?r.lot*r.hi*ml:null,maxLots:r.lot?(r.type==='SME'?ml:Math.max(1,Math.floor(200000/(r.lot*r.hi)))):1,cmp:r.listClose}});
+const byId=Object.fromEntries(IPOS.map(i=>[i.id,i]));
+
+function statusPill(i){
+  if(i.st==='open'){const d=days(i.c);return `<span class="pill ok">● Open · ${d===0?'closes today':d===1?'closes tomorrow':'closes '+d2(i.c)}</span>`}
+  if(i.st==='upcoming')return `<span class="pill info">Opens ${d2(i.o)}</span>`;
+  if(i.st==='closed'){if(i.al&&+T0===+i.al)return `<span class="pill warn">Allotment today</span>`;if(i.al&&T0<i.al)return `<span class="pill warn">Allotment ${d2(i.al)}</span>`;return `<span class="pill warn">Lists ${d2(i.ls)}</span>`}
+  return `<span class="pill plain">Listed ${d2(i.ls)}</span>`}
+const STRIPE={open:'var(--buy)',upcoming:'var(--info)',closed:'var(--saffron)',listed:'var(--line)'};
+
+// ===================== IPO VIEW =====================
+let ipoStatus='open',ipoType='All';
+function renderPulse(){
+  const c=s=>IPOS.filter(i=>i.st===s);
+  const allotToday=IPOS.filter(i=>i.al&&+i.al===+T0), soonList=IPOS.filter(i=>i.ls&&days(i.ls)>=0&&days(i.ls)<=7);
+  const first=a=>a.map(i=>i.name.split(' ')[0].replace(/\.$/,'')).join(', ');
+  const tile=(n,label,names,go,hot)=>`<button type="button" class="stat ${hot?'hot':''}" data-go="${go}"><span class="n num">${n}</span><span>${label}</span><small>${names||'None'}</small></button>`;
+  document.getElementById('pulse').innerHTML=tile(c('open').length,'Open now',first(c('open')),'open',true)+tile(c('upcoming').length,'Opening soon',first(c('upcoming')),'upcoming')+tile(allotToday.length,'Allotment today',first(allotToday),'closed')+tile(soonList.length,'Listing in the next 7 days',first(soonList),'closed');
+  document.querySelectorAll('#pulse .stat').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.go;renderIpos();document.getElementById('list').scrollIntoView({behavior:'smooth'})});
+}
+function renderIpos(){
+  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['listed','Listed']];
+  document.getElementById('stTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="count">${IPOS.filter(i=>i.st===k).length}</span></button>`).join('');
+  document.getElementById('tyTabs').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-k="${k}" aria-pressed="${ipoType===k}">${k}</button>`).join('');
+  document.querySelectorAll('#stTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
+  document.querySelectorAll('#tyTabs button').forEach(b=>b.onclick=()=>{ipoType=b.dataset.k;renderIpos()});
+  const rows=IPOS.filter(i=>i.st===ipoStatus&&(ipoType==='All'||i.type===ipoType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:(a.c-b.c)||(a.type>b.type?1:-1));
+  document.getElementById('listsub').textContent={open:'Taking applications now. Approve the UPI mandate before the issue closes (UPI cut-off is usually 4 PM on the last day).',upcoming:'Opening in the next few days.',closed:'Bidding is over. Check allotment and get ready for listing day.',listed:'Recently listed, with listing price and listing-day close.'}[ipoStatus];
+  document.getElementById('igrid').innerHTML=rows.map(ipoCard).join('')||`<div class="empty">No ${ipoType==='All'?'':ipoType+' '}IPOs in this list right now.</div>`;
+  document.querySelectorAll('#igrid [data-open]').forEach(b=>b.onclick=()=>openIpo(b.dataset.open,b.dataset.mode));
+  if(MQ.matches)renderMobileIpos();
+}
+const band=i=>i.lo===i.hi?`₹${i.hi.toLocaleString('en-IN')}`:`₹${i.lo.toLocaleString('en-IN')}–${i.hi.toLocaleString('en-IN')}`;
+function ipoCard(i){
+  const mine=apps.filter(a=>a.ipo===i.id).length;let mid,sub='';
+  if(i.st==='listed'){const g=(i.listPrice/i.hi-1)*100,c=(i.listClose/i.hi-1)*100;
+    mid=`<div class="kv num"><div><span>Issue price</span><b>₹${i.hi.toLocaleString('en-IN')}</b></div><div><span>Listed at</span><b class="${g>=0?'up':'down'}">₹${i.listPrice.toLocaleString('en-IN')} (${sgn(g)}%)</b></div><div><span>Day-1 close</span><b class="${c>=0?'up':'down'}">₹${i.listClose.toLocaleString('en-IN')} (${sgn(c)}%)</b></div></div>`}
+  else mid=`<div class="kv num"><div><span>Price ${i.lo===i.hi?'(fixed)':'band'}</span><b>${band(i)}</b></div><div><span>Lot size</span><b>${i.lot?i.lot.toLocaleString('en-IN')+' sh':'TBA'}</b></div><div><span>Min. amount${i.ml>1?` (${i.ml} lots)`:''}</span><b>${i.minAmt?rs0(i.minAmt):'TBA'}</b></div></div>`;
+  if(i.sub&&i.st!=='listed')sub=`<div class="subbar"><div class="top"><span class="muted">Subscribed${i.st==='open'?' so far':''}</span><b class="num">${i.sub.total.toFixed(2)}×</b></div><div class="bar"><i style="width:${Math.min(100,i.sub.total*10)}%"></i></div><span class="note">${esc(i.sub.src)} · ${esc(i.sub.at)}</span></div>`;
+  else if(i.st==='open'||i.st==='upcoming')sub=`<div class="subbar"><div class="top"><span class="muted">${i.st==='open'&&days(i.o)===0?'Opens today':'Bidding'}</span><b>${d2(i.o)} – ${d2(i.c)}</b></div><span class="note">${i.st==='open'?'Subscription figures appear after the first day of bidding.':'Issue size '+cr(i.size)}</span></div>`;
+  const gmp=i.gmp&&i.st!=='listed'?`<div class="gmp"><span class="muted">GMP (unofficial) · ${esc(i.gmp.src)}, ${esc(i.gmp.at)}</span><b class="num ${i.gmp.v>=0?'up':'down'}">₹${i.gmp.v} · ${sgn(i.gmp.v/i.hi*100)}%</b></div>`:'';
+  const acts=i.st==='open'?`<button class="btn shine" type="button" data-open="${i.id}" data-mode="apply">Apply</button><button class="ghost" type="button" data-open="${i.id}">Details</button>`
+    :i.st==='closed'?`<button class="ghost" type="button" data-open="${i.id}">Details</button><a class="ghost" href="${allotLink(i)}" target="_blank" rel="noopener">Allotment ↗</a>`
+    :`<button class="ghost" type="button" data-open="${i.id}">Details</button>`;
+  return `<article class="ipo" style="--stripe:${STRIPE[i.st]}">
+    <div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
+      <div style="min-width:0;flex:1"><div class="nm">${esc(i.name)}</div><div class="meta"><span class="pill plain">${i.type==='SME'?esc(i.exch):'Mainboard'}</span>${statusPill(i)}${mine?`<span class="pill info">You applied${mine>1?' ×'+mine:''}</span>`:''}</div></div>${starBtn('ipo:'+i.id,i.name)}</div>
+    ${mid}${profitStrip(i)}${sub}${i.st==="listed"?"":gmp}<div class="acts">${acts}</div></article>`;
+}
+
+// ===================== IPO MODAL =====================
+const BROKERS=[['Zerodha','Kite app','https://zerodha.com/ipo/'],['Groww','Groww app','https://groww.in/ipo'],['Upstox','Upstox app','https://upstox.com/ipo/'],['Angel One','Angel One app','https://www.angelone.in/upcoming-ipo'],['Kotak Neo','Kotak Neo app','https://www.kotakneo.com/ipo/upcoming-ipo/'],['Dhan','Dhan app','https://dhan.co/'],['Paytm Money','Paytm Money app','https://www.paytmmoney.com/'],['My bank (ASBA)','Net banking','']];
+function openIpo(id,mode){
+  const i=byId[id];if(!i)return;
+  const steps=[['Opens',i.o],['Closes',i.c],['Allotment',i.al],['Refund',i.rf],['Demat credit',i.rf],['Listing',i.ls]];
+  const tl=steps.map(([l,d])=>`<div class="${d&&T0>d?'done':d&&+T0===+d?'now':''}"><b>${l}</b><span>${d2(d)}</span></div>`).join('');
+  const cats=i.sub?(i.sub.QIB!=null?Object.entries({QIB:i.sub.QIB,NII:i.sub.NII,Retail:i.sub.Retail}).map(([k,v])=>`<div class="cat num"><span>${{QIB:'Institutions (QIB)',NII:'HNI (NII)',Retail:'Retail'}[k]}</span><div class="bar"><i style="width:${Math.min(100,v/Math.max(i.sub.QIB,i.sub.NII,i.sub.Retail)*100)}%"></i></div><b style="text-align:right">${v.toFixed(2)}×</b></div>`).join(''):'<p class="note">Category-wise figures not available.</p>')+`<p class="note">Source: ${esc(i.sub.src)}, ${esc(i.sub.at)}. Figures change during bidding; check NSE or BSE for the latest.</p>`:'<p class="note">No subscription figures yet.</p>';
+  const canApply=i.st==='open';
+  document.getElementById('modal').innerHTML=`
+    <div class="mhead"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
+      <div><h3 id="mtitle">${esc(i.name)}</h3><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span class="pill plain">${esc(i.type)} · ${esc(i.exch)}</span><span class="pill plain">${esc(i.sector)}</span>${statusPill(i)}</div></div>
+      <button class="x" type="button" aria-label="Close" id="mx">×</button></div>
+    <div class="mbody">
+      <div class="specs num">
+        <div class="spec"><span>Price ${i.lo===i.hi?'(fixed)':'band'}</span><b>${band(i)}</b></div>
+        <div class="spec"><span>Lot size</span><b>${i.lot?i.lot.toLocaleString('en-IN')+' shares':'TBA'}</b></div>
+        <div class="spec"><span>Issue size</span><b>${cr(i.size)}</b></div>
+        <div class="spec"><span>Registrar</span><b style="font-size:13.5px">${esc(i.reg||'See RHP')}</b></div>
+      </div>
+      ${i.type==='SME'?`<p class="note">SME IPOs: individual investors must apply for at least ${i.ml} lots${i.minAmt?` (${rs0(i.minAmt)})`:''}. SME shares are less liquid and riskier than mainboard shares.</p>`:''}
+      ${profitStrip(i)}${i.gtrend?`<a class="ghost" href="#gmp-${i.id}" onclick="closeIpo()" style="justify-self:start">Day-wise GMP history →</a>`:''}
+      <div class="msec"><h4>Timeline</h4><div class="timeline">${tl}</div></div>
+      <div class="msec"><h4>Subscription${i.sub?` · ${i.sub.total.toFixed(2)}× overall`:''}</h4><div class="cats">${cats}</div></div>
+      ${profitCalc(i)}
+      ${i.st==='listed'?`<div class="sumline num"><span>Listed at <b>₹${i.listPrice.toLocaleString('en-IN')}</b> against the ₹${i.hi.toLocaleString('en-IN')} issue price (<b class="${i.listPrice>=i.hi?'up':'down'}">${sgn((i.listPrice/i.hi-1)*100)}%</b>), closed day 1 at ₹${i.listClose.toLocaleString('en-IN')}. Source: ${esc(i.listSrc)}.</span></div>`:''}
+      ${canApply?`<div class="msec" id="applysec"><h4>1 · Apply in your app</h4><div class="brokers">${BROKERS.map(([n,s,u])=>u?`<a class="broker" href="${u}" target="_blank" rel="noopener"><b>${n}</b><span>${s} ↗</span></a>`:`<div class="broker"><b>${n}</b><span>IPO / ASBA in net banking</span></div>`).join('')}</div>
+        <p class="note" style="margin-top:10px">Search for <b>${esc(i.name.replace(/ Ltd$/,''))}</b> in your app's IPO section, bid at cut-off, then approve the UPI mandate before ${d2(i.c)}, 4 PM.</p></div>
+      <div class="msec"><h4>2 · Log it here to track it</h4>
+        <form class="form" id="af">
+          <label class="field" for="a-who">Applicant<input id="a-who" required maxlength="40" placeholder="e.g. Self, Mom, Rahul" value="Self"></label>
+          <label class="field" for="a-via">Applied through<select id="a-via">${BROKERS.map(b=>`<option>${b[0]}</option>`).join('')}<option>Other</option></select></label>
+          <label class="field" for="a-cat">Category<select id="a-cat"><option>${i.type==='SME'?'Individual':'Retail'}</option><option>HNI (NII)</option><option>Employee</option><option>Shareholder</option></select></label>
+          <label class="field" for="a-lots">Lots (${i.type==='SME'?'minimum '+i.ml:'max '+i.maxLots+' for retail'})<input id="a-lots" type="number" min="${i.ml}" max="500" value="${i.ml}" required></label>
+          <label class="check" for="a-cut" style="grid-column:1/-1"><input id="a-cut" type="checkbox" checked> Bid at cut-off price (₹${i.hi})</label>
+          <div class="sumline num" style="grid-column:1/-1"><span id="a-sum"></span><button class="btn" type="submit">I've applied, track it</button></div>
+        </form></div>`
+      :i.st==='upcoming'?`<div class="sumline"><span>Opens on <b>${d2(i.o)}</b>${i.minAmt?`. Minimum application <b>${rs0(i.minAmt)}</b>`:''}.</span></div>`
+      :i.st==='closed'?`<div class="sumline"><span>Allotment on <b>${d2(i.al)}</b>${i.reg?' via '+esc(i.reg):''}. Listing on <b>${d2(i.ls)}</b>.</span><a class="btn" href="${allotLink(i)}" target="_blank" rel="noopener">Check on ${allotName(i)} ↗</a></div>`:''}
+      <p class="note">Dates marked by the issuer as tentative can change. Read the RHP on the SEBI, NSE or BSE website before applying. Data as of ${UPDATED}.</p>
+    </div>`;
+  const ov=document.getElementById('ov');ov.classList.add('on');document.body.style.overflow='hidden';
+  document.getElementById('mx').onclick=closeIpo;document.getElementById('mx').focus();wireProfitCalc(i);countUp(document.getElementById('modal'));
+  const f=document.getElementById('af');
+  if(f){const upd=()=>{const l=Math.max(i.ml,+document.getElementById('a-lots').value||i.ml);document.getElementById('a-sum').innerHTML=`${l} lot${l>1?'s':''} · ${(l*i.lot).toLocaleString('en-IN')} shares · <b>${rs0(l*i.lot*i.hi)}</b> blocked`};
+    document.getElementById('a-lots').oninput=upd;upd();
+    f.onsubmit=async e=>{e.preventDefault();const l=Math.max(i.ml,Math.floor(+document.getElementById('a-lots').value||i.ml));
+      await addApp({ipo:i.id,applicant:document.getElementById('a-who').value.trim().slice(0,40)||'Self',via:document.getElementById('a-via').value,category:document.getElementById('a-cat').value,lots:l,price:i.hi,cutoff:document.getElementById('a-cut').checked,mandate:'pending',result:'pending',created:Date.now()});
+      closeIpo();toast('Added to My applications');renderIpos()};
+    if(mode==='apply')setTimeout(()=>document.getElementById('applysec').scrollIntoView({behavior:'smooth',block:'start'}),50)}
+}
+function closeIpo(){document.getElementById('ov').classList.remove('on');document.body.style.overflow=''}
+document.getElementById('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeIpo()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeIpo()});
+function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2200)}
+
+
+// ===================== APPLICATIONS STORE =====================
+// Saved to the viewer's private space when available, otherwise on this device.
+let apps=[],cloud=null;
+const LS='niveshlens.apps';
+const readLocal=()=>{try{return JSON.parse(localStorage.getItem(LS)||'[]')}catch{return []}};
+const writeLocal=()=>{try{localStorage.setItem(LS,JSON.stringify(apps))}catch{}};
+apps=readLocal();
+async function addApp(a){a.id='a'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  apps=[a,...apps];
+  if(cloud){try{await cloud.doc(a.id).set(a)}catch(e){toast('Could not save online, kept on this device');cloud=null;setStore()}}
+  if(!cloud)writeLocal();renderApps()}
+async function patchApp(id,patch){const a=apps.find(x=>x.id===id);if(!a)return;Object.assign(a,patch);
+  if(cloud){try{await cloud.doc(id).update(patch)}catch{cloud=null;setStore();writeLocal()}}else writeLocal();renderApps();renderIpos()}
+async function delApp(id){apps=apps.filter(x=>x.id!==id);
+  if(cloud){try{await cloud.doc(id).delete()}catch{}}else writeLocal();renderApps();renderIpos()}
+function setStore(){const s=document.getElementById('store');s.classList.toggle('cloud',!!cloud);s.lastElementChild.textContent=cloud?'Saved to your account, private to you':'Saved on this device'}
+(async()=>{try{
+  if(!window.claude?.use)return;
+  const [db,user]=await Promise.all([claude.use('db'),claude.use('user')]);
+  const uid=db&&user?await user.id():null;if(!uid)return;
+  const col=db.collection('data/users/'+uid);
+  const local=readLocal();
+  const snap=await col.get();
+  {const lw=readWL();if(lw.length&&!snap.docs.some(d=>d.id==='watchlist')){try{await col.doc('watchlist').set({items:lw})}catch{}}}
+  for(const a of local){if(!snap.docs.some(d=>d.id===a.id)){try{await col.doc(a.id).set(a)}catch{return}}}
+  cloud=col;try{localStorage.removeItem(LS)}catch{}
+  setStore();
+  col.onSnapshot(s=>{const fdoc=s.docs.find(d=>d.id==='family');if(fdoc&&fdoc.data()){FAM={members:[],st:{},...fdoc.data()};try{localStorage.setItem(FAMK,JSON.stringify(FAM))}catch{}}const w=s.docs.find(d=>d.id==='watchlist');if(w&&w.data()){WL=[...(w.data().items||[])];try{localStorage.setItem(WLK,JSON.stringify(WL))}catch{};renderWLAll()}apps=s.docs.filter(d=>d.id!=='watchlist'&&d.id!=='family').map(d=>d.data()).filter(Boolean).map(x=>({...x})).sort((a,b)=>(b.created||0)-(a.created||0));renderApps();renderIpos()},()=>{cloud=null;setStore()});
+}catch{}})();
+
+function stageOf(a,i){
+  if(a.result==='not')return {k:'not',idx:2};
+  if(a.result==='allotted')return {k:i.st==='listed'?'listed':'allotted',idx:i.st==='listed'?3:2};
+  if(a.mandate==='accepted')return {k:'mandate',idx:1};
+  return {k:'applied',idx:0}}
+function renderApps(){try{if(document.getElementById('v-ipo-allot').classList.contains('on'))setTimeout(renderAllot,0)}catch{}
+  const list=apps.filter(a=>byId[a.ipo]);
+  const badge=document.getElementById('appbadge');const pend=list.filter(a=>a.result==='pending').length;badge.hidden=!pend;badge.textContent=pend;
+  let blocked=0,allotted=0,pnl=0,decided=0;
+  list.forEach(a=>{const i=byId[a.ipo];const amt=a.lots*i.lot*a.price;if(a.result==='pending')blocked+=amt;if(a.result!=='pending')decided++;
+    if(a.result==='allotted'){allotted++;if(i.st==='listed')pnl+=((a.shares||i.lot)*(i.cmp-a.price))}});
+  document.getElementById('tiles').innerHTML=`
+    <div class="tile"><span>Applications</span><b class="num">${list.length}</b></div>
+    <div class="tile"><span>Money blocked now</span><b class="num">${rs0(blocked)}</b></div>
+    <div class="tile"><span>Allotted</span><b class="num">${allotted}<span style="font-size:16px;color:var(--muted)"> / ${decided}</span></b></div>
+    <div class="tile"><span>Gain on listed shares</span><b class="num ${pnl>=0?'up':'down'}">${pnl?(pnl>=0?'+':'−')+rs0(pnl):'₹0'}</b></div>`;
+  if(!list.length){document.getElementById('apps').innerHTML=`<div class="empty">No applications yet. Open an IPO, tap <b>Apply</b>, and use <b>"I've applied, track it"</b> to add it here.<div style="margin-top:12px"><a class="btn" href="#ipos">Browse open IPOs</a></div></div>`;return}
+  document.getElementById('apps').innerHTML=list.map(a=>{const i=byId[a.ipo],s=stageOf(a,i),amt=a.lots*i.lot*a.price;
+    const labels=['Applied','Mandate approved',a.result==='not'?'Not allotted':a.result==='allotted'?'Allotted':'Allotment '+d2(i.al),i.st==='listed'?'Listed '+d2(i.ls):'Listing '+d2(i.ls)];
+    const trk=labels.map((l,k)=>`<div class="${a.result==='not'&&k===2?'fail':k<s.idx||(k===s.idx&&s.k==='listed')?'done':k===s.idx?'cur':''}">${l}</div>`).join('');
+    const sh=a.shares||i.lot;
+    const expP=a.result==='allotted'&&i.st!=='listed'&&i.gmp?`<span class="pill ok num">Allotted · est. +${rs0(i.gmp.v*(a.shares||i.lot))} at GMP</span>`:'';
+    const res=expP||(a.result==='allotted'&&i.st==='listed'?`<span class="pill ${i.cmp>=a.price?'ok':'bad'} num">${i.cmp>=a.price?'+':'−'}${rs0(Math.abs(sh*(i.cmp-a.price)))} (${sgn((i.cmp/a.price-1)*100)}%)</span>`
+      :a.result==='allotted'?`<span class="pill ok">Allotted ${sh} shares</span>`:a.result==='not'?`<span class="pill bad">Not allotted · money unblocked</span>`:a.mandate==='accepted'?`<span class="pill info">Waiting for allotment</span>`:`<span class="pill warn">Approve UPI mandate</span>`);
+    return `<article class="app">
+      <div class="h"><div class="mono" style="background:${i.color};width:38px;height:38px;font-size:14px">${initials(i.name)}${logoImg(i.id)}</div>
+        <div><div class="nm">${i.name}</div><div class="sub num">${esc(a.applicant)} · ${esc(a.via)} · ${a.category} · ${a.lots} lot${a.lots>1?'s':''} (${a.lots*i.lot} sh) · ${rs0(amt)}</div></div>
+        <div class="right">${res}</div></div>
+      <div class="track">${trk}</div>
+      <div class="ctl">
+        ${a.result==='pending'?`<label class="sr" for="m-${a.id}">UPI mandate</label><select id="m-${a.id}" data-mandate="${a.id}"><option value="pending" ${a.mandate!=='accepted'?'selected':''}>Mandate: not yet approved</option><option value="accepted" ${a.mandate==='accepted'?'selected':''}>Mandate: approved</option></select>`:''}
+        <label class="sr" for="r-${a.id}">Allotment result</label><select id="r-${a.id}" data-result="${a.id}"><option value="pending" ${a.result==='pending'?'selected':''}>Allotment: waiting</option><option value="allotted" ${a.result==='allotted'?'selected':''}>Allotted (1 lot)</option><option value="not" ${a.result==='not'?'selected':''}>Not allotted</option></select>
+        <a class="link" href="${i.reg==='KFintech'?'https://ipostatus.kfintech.com/':i.reg==='MUFG Intime'?'https://in.mpms.mufg.com/Initial_Offer/public-issues.html':'https://www.bseindia.com/investors/appli_check.aspx'}" target="_blank" rel="noopener">Check on ${i.reg==='Bigshare Services'?'BSE':i.reg} ↗</a>
+        <button class="link del" type="button" data-del="${a.id}">Remove</button>
+      </div></article>`}).join('');
+  document.querySelectorAll('[data-mandate]').forEach(s=>s.onchange=()=>patchApp(s.dataset.mandate,{mandate:s.value}));
+  document.querySelectorAll('[data-result]').forEach(s=>s.onchange=()=>{const a=apps.find(x=>x.id===s.dataset.result),i=byId[a.ipo];patchApp(a.id,{result:s.value,shares:s.value==='allotted'?i.lot:0,mandate:s.value!=='pending'?'accepted':a.mandate})});
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(b.dataset.confirm){delApp(b.dataset.del)}else{b.dataset.confirm=1;b.textContent='Tap again to remove';b.style.color='var(--sell)';setTimeout(()=>{if(b.isConnected){delete b.dataset.confirm;b.textContent='Remove';b.style.color=''}},3000)}});
+}
+
+
+
+
+// ===================== MARKET VIEW =====================
+function renderListings(){
+  const L=IPOS.filter(i=>i.listPrice).sort((a,b)=>b.ls-a.ls);
+  document.getElementById('listtbl').innerHTML=`<tr><th style="padding:12px 16px">Company</th><th>Listed</th><th>Issue price</th><th>Listing price</th><th>Listing gain</th><th style="padding-right:16px">Day-1 close</th></tr>`+
+    L.map(i=>{const g=(i.listPrice/i.hi-1)*100,c=(i.listClose/i.hi-1)*100;return `<tr><td style="padding:12px 16px"><b>${esc(i.name)}</b><br><span class="note">Subscribed ${i.sub.total.toFixed(2)}×</span></td><td>${d2(i.ls)}</td><td>₹${i.hi.toLocaleString('en-IN')}</td><td>₹${i.listPrice.toLocaleString('en-IN')}</td><td class="${g>=0?'up':'down'}"><b>${sgn(g)}%</b></td><td class="${c>=0?'up':'down'}" style="padding-right:16px">₹${i.listClose.toLocaleString('en-IN')} (${sgn(c)}%)</td></tr>`}).join('');
+  document.getElementById('listsrc').textContent='NSE prices. Sources: '+[...new Set(L.map(i=>i.listSrc))].join('; ')+'.';
+}
+const RATES={delivery:{stb:0.1,sts:0.1,stamp:0.015,dp:15.93},intraday:{stb:0,sts:0.025,stamp:0.003,dp:0}};
+function charges(buy,sell,kind,brokerPerOrder){const r=RATES[kind],brk=(buy>0?brokerPerOrder:0)+(sell>0?brokerPerOrder:0),stt=buy*r.stb/100+sell*r.sts/100,ex=(buy+sell)*0.00297/100,sebi=(buy+sell)*0.0001/100,stamp=buy*r.stamp/100,gst=(brk+ex+sebi)*0.18,dp=sell>0?r.dp:0;
+  return {brk,stt,ex,sebi,stamp,gst,dp,total:brk+stt+ex+sebi+stamp+gst+dp}}
+let ckind='delivery';
+function calc(){const bp=+document.getElementById('cbuy').value||0,sp=+document.getElementById('csell').value||0,q=Math.max(0,Math.floor(+document.getElementById('cqty').value||0)),br=Math.max(0,+document.getElementById('cbrk').value||0);
+  const c=charges(bp*q,sp*q,ckind,br),gross=(sp-bp)*q,net=gross-c.total,be=q?c.total/q:0,row=(k,v)=>`<tr><td>${k}</td><td>${rs(v)}</td></tr>`;
+  document.getElementById('cout').innerHTML=`<div class="muted" style="font-size:14px;font-weight:600">Net profit after charges</div><div class="big num ${net>=0?'up':'down'}">${net>=0?'+':'−'}${rs(net)}</div>
+    <p class="muted" style="margin:8px 0 0;font-size:14px">Gross ${gross>=0?'+':'−'}${rs(gross)} · Charges ${rs(c.total)} · Break-even move ${rs(be)} a share</p>
+    <table class="brk num">${row('Brokerage',c.brk)}${row('STT',c.stt)}${row('Exchange fee',c.ex)}${row('SEBI fee',c.sebi)}${row('Stamp duty',c.stamp)}${row('GST (18%)',c.gst)}${row('DP charge',c.dp)}<tr><td><b>Total</b></td><td><b>${rs(c.total)}</b></td></tr></table>
+    <p class="note" style="margin-top:10px">DP charge varies by broker (₹13–20 a stock sold); ₹15.93 is a common figure.</p>`}
+['cbuy','csell','cqty','cbrk'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.querySelectorAll('#ctabs button').forEach(b=>b.onclick=()=>{ckind=b.dataset.k;document.querySelectorAll('#ctabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.getElementById('cbrk').value=ckind==='intraday'?20:0;calc()});
+
+
+
+// ===================== EXTRA REAL IPO DATA (trends, day-wise, retail) =====================
+const EXTRA={
+ sfc:{gmp:{v:9.5,src:'IIFL Securities',at:'29 Oct, 11:37 AM'},gtrend:[['21 Oct',31],['27 Oct',17],['28 Oct',10],['29 Oct',9.5]],gsrc:'IIFL Securities',sday:[['Day 1',0.06],['Day 2',0.15],['Day 3',9.47]],sdsrc:'ScanX (days 1–2), Chittorgarh (final)'},
+ bls:{sday:[['Day 1',9.62],['Day 2',35.30],['Day 3',241.22]],sdsrc:'IPO Platform'},
+ eaaa:{sday:[['Day 1',0.12],['Day 2',0.35],['Day 3',5.51]],sdsrc:'HDFC Sky'},
+ mksons:{gtrend:[['24 Oct',7],['25 Oct',7],['26 Oct',8],['27 Oct',10],['28 Oct',15],['29 Oct',12],['30 Oct',12],['30 Oct 8:20',13]],gsrc:'IPOwiz GMP history, 24–30 Oct',sday:[['Day 1',0.65],['Day 2',0.70]],sdsrc:'Groww (day 1), HDFC Sky (day 2)'},
+ johnsoncab:{gtrend:[['28 Oct',9],['28 Oct',10],['29 Oct',10]],gsrc:'Multibagg'},
+ hdfire:{gtrend:[['8 Oct',78],['10 Oct',74],['12 Oct',65],['13 Oct',90],['15 Oct',82],['16 Oct',70],['18 Oct',67],['20 Oct',69]],gsrc:'IPO Central',lastGmp:69},
+};
+Object.entries(EXTRA).forEach(([id,x])=>{if(byId[id])Object.assign(byId[id],x)});
+const retailSub=i=>i.sub&&i.sub.Retail!=null?i.sub.Retail:null;
+function allotChance(i){const r=retailSub(i);if(r==null)return null;return Math.min(100,100/Math.max(r,1))}
+const gmpPct=i=>i.gmp?i.gmp.v/i.hi*100:null;
+const estProfit=i=>i.gmp&&i.lot?i.gmp.v*i.lot*i.ml:null;
+
+function spark(points,w=180,h=48,col){col=col||css('--acc');const v=points.map(p=>p[1]),lo=Math.min(...v),hi=Math.max(...v),X=k=>4+k*(w-8)/(points.length-1||1),Y=x=>4+(1-(x-lo)/((hi-lo)||1))*(h-8);
+  const d=points.map((p,k)=>`${k?'L':'M'}${X(k).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}" role="img" aria-label="Trend ${points.map(p=>p[0]+' '+p[1]).join(', ')}" preserveAspectRatio="none"><path class="draw" pathLength="1" d="${d}" fill="none" stroke="${col}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${X(points.length-1)}" cy="${Y(v.at(-1))}" r="3.5" fill="${col}"/></svg>`}
+
+// ===================== IPO sub-navigation =====================
+const IPOSUB=[['ipos','Overview'],['ipo-gmp','GMP board'],['ipo-sub','Subscription'],['ipo-screener','Screener'],['ipo-allot','Allotment desk'],['ipo-planner','Money planner'],['learn','Learn']];
+function subnav(cur){return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>`}
+
+// ===================== GMP board =====================
+function renderGMP(){
+  const L=IPOS.filter(i=>i.gmp&&i.st!=='listed').sort((a,b)=>gmpPct(b)-gmpPct(a));
+  const H=byId.hdfire;
+  document.getElementById('gmpbody').innerHTML=`
+   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num"><tr><th>IPO</th><th>Status</th><th>Issue price</th><th>GMP</th><th>Est. listing</th><th>Est. gain</th><th>Est. profit / application</th><th>Trend</th></tr>
+   ${L.map(i=>{const p=gmpPct(i);return `<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${esc(i.gmp.src)}, ${esc(i.gmp.at)}</small></div></div></td>
+     <td>${statusPill(i)}</td><td>₹${i.hi.toLocaleString('en-IN')}</td><td><b>₹${i.gmp.v}</b></td><td>₹${(i.hi+i.gmp.v).toLocaleString('en-IN')}</td><td>${chip(p)}</td><td class="${p>=0?'up':'down'}"><b>${estProfit(i)!=null?'+'+rs0(estProfit(i)):'—'}</b>${i.ml>1?`<small class="muted" style="display:block;font-size:11.5px">${i.ml} lots</small>`:''}</td><td style="width:150px">${i.gtrend?spark(i.gtrend,150,36):'<span class="muted" style="font-size:12px">one reading</span>'}</td></tr>`}).join('')}</table></div></div>
+   <div class="grid2 sec">
+    <div class="glass card"><span class="lbl">Reality check</span><h3 style="font-size:20px;margin:6px 0 10px">How accurate was GMP?</h3>
+      <p class="note" style="font-size:14px">HD Fire Protect's last grey-market premium before listing was <b>₹${H.lastGmp}</b> (${(H.lastGmp/H.hi*100).toFixed(1)}%). It actually listed at <b>₹${H.listPrice}</b>, a gain of <b>₹${H.listPrice-H.hi}</b> (${((H.listPrice/H.hi-1)*100).toFixed(1)}%), then closed day 1 at ₹${H.listClose}, just ${((H.listClose/H.hi-1)*100).toFixed(1)}% above issue.</p>
+      <div style="margin-top:14px">${spark(H.gtrend,600,70)}</div><p class="src">GMP: ${H.gsrc}, 8–20 Oct. Listing: Chittorgarh (NSE).</p></div>
+    <div class="glass card"><span class="lbl">Read this first</span><h3 style="font-size:20px;margin:6px 0 10px">What GMP is, and isn't</h3>
+      <ul class="note" style="font-size:14px;padding-left:18px;display:grid;gap:8px;margin:0"><li>GMP is the premium unofficial dealers quote for IPO shares before they list. It is not regulated and not published by any exchange.</li><li>Different websites often show different GMPs for the same IPO at the same time, so we show each figure with its source and time.</li><li>Est. profit is GMP × shares in the minimum application. It assumes you get an allotment and sell at the listing price.</li><li>GMP often falls on listing day. HD Fire's day-1 close was well below its GMP-implied price.</li></ul></div>
+   </div>`;
+  document.querySelectorAll('#gmpbody tr[data-open]').forEach(r=>r.onclick=()=>{location.hash='gmp-'+r.dataset.open});
+}
+
+// ===================== Subscription =====================
+function renderSub(){
+  const L=IPOS.filter(i=>i.sub&&i.st!=='upcoming').sort((a,b)=>b.c-a.c||b.sub.total-a.sub.total);
+  const bar=(v,m,c)=>`<div class="bar" style="height:6px"><i style="width:${Math.min(100,v/m*100)}%;background:${c}"></i></div>`;
+  document.getElementById('subbody').innerHTML=`<div class="igrid">${L.map(i=>{const s=i.sub,m=Math.max(s.QIB||0,s.NII||0,s.Retail||0,s.total,1),ch=allotChance(i);
+    return `<article class="ipo" style="gap:12px"><div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><div class="nm">${esc(i.name)}</div><div class="meta">${statusPill(i)}<span class="pill plain">${i.type==='SME'?'SME':'Mainboard'}</span></div></div></div>
+      <div class="row"><span class="muted" style="font-size:13px">Total subscription</span><b class="num" style="font:700 26px var(--display)">${s.total.toFixed(2)}×</b></div>
+      ${s.QIB!=null?[['Institutions (QIB)',s.QIB,'var(--info)'],['HNIs (NII)',s.NII,'var(--acc)'],['Retail',s.Retail,'var(--up)']].map(([k,v,c])=>`<div><div class="row num" style="font-size:13px"><span>${k}</span><b>${v.toFixed(2)}×</b></div>${bar(v,m,c)}</div>`).join(''):'<p class="note">Category split not published.</p>'}
+      ${i.sday?`<div><span class="lbl" style="font-size:11px">Day by day</span><div style="display:flex;gap:8px;align-items:end;height:70px;margin-top:8px">${i.sday.map(([d,v])=>`<div style="flex:1;display:grid;gap:4px;justify-items:center;align-self:end"><b class="num" style="font-size:11.5px">${v}×</b><div style="width:100%;height:${Math.max(4,v/Math.max(...i.sday.map(x=>x[1]))*44)}px;border-radius:8px;background:var(--acc);opacity:.85" class="sday-bar"></div><span class="muted" style="font-size:11px">${d}</span></div>`).join('')}</div><p class="src" style="margin-top:6px">${esc(i.sdsrc)}.</p></div>`:''}
+      ${ch!=null&&i.type!=='SME'?`<div class="gmp"><span class="muted">Rough retail allotment chance (1 lot)</span><b class="num ${ch>=50?'up':ch>=10?'':'down'}">${ch>=99.5?'~100%':ch<1?'<1%':'~'+ch.toFixed(ch<10?1:0)+'%'}</b></div>`:''}
+      <span class="src" style="margin:0">${esc(s.src)} · ${esc(s.at)}</span></article>`}).join('')}</div>
+    <div class="glass card sec"><h3 style="font-size:18px;margin-bottom:6px">How the allotment chance is estimated</h3><p class="note" style="font-size:14px;max-width:80ch">When the retail portion of a mainboard IPO is oversubscribed, SEBI rules give each valid retail application an equal lottery chance of one lot. If retail is subscribed 30×, roughly 1 in 30 minimum-lot applicants gets shares, so the chance is about 1 ÷ retail subscription. Applying for more lots doesn't improve it, but applying from more family members' PANs does. Treat this as a rough estimate: the real figure depends on how many applications were made, which is published only after allotment.</p></div>`;
+}
+
+// ===================== Screener =====================
+let scrK='c',scrD=1,scrQ='',scrType='All',scrSt='All';
+function renderScreener(){
+  const cols=[['name','IPO'],['st','Status'],['hi','Price'],['lot','Lot'],['minAmt','Min. application'],['size','Size (Cr)'],['subT','Subscribed'],['gmpP','GMP %'],['est','Est. profit'],['ls','Listing']];
+  const val=(i,k)=>k==='subT'?(i.sub?i.sub.total:-1):k==='gmpP'?(gmpPct(i)??-999):k==='est'?(estProfit(i)??-1):k==='st'?['open','upcoming','closed','listed'].indexOf(i.st):k==='ls'||k==='c'?(i[k]?+i[k]:9e15):(i[k]??-1);
+  let L=IPOS.filter(i=>(scrType==='All'||i.type===scrType)&&(scrSt==='All'||i.st===scrSt)&&(!scrQ||(i.name+i.sector).toLowerCase().includes(scrQ)));
+  L.sort((a,b)=>{const x=scrK==='name'?a.name:val(a,scrK),y=scrK==='name'?b.name:val(b,scrK);return (x>y?1:x<y?-1:0)*scrD});
+  document.getElementById('scrbody').innerHTML=`<div class="filters"><label class="sr" for="scrq">Search IPOs</label><input id="scrq" class="scrq" placeholder="Search IPO or sector" value="${esc(scrQ)}">
+    <div class="tabs">${['All','open','upcoming','closed','listed'].map(s=>`<button type="button" data-st="${s}" aria-pressed="${scrSt===s}">${s==='All'?'All status':s[0].toUpperCase()+s.slice(1)}</button>`).join('')}</div>
+    <div class="tabs">${['All','Mainboard','SME'].map(s=>`<button type="button" data-ty="${s}" aria-pressed="${scrType===s}">${s}</button>`).join('')}</div></div>
+    <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" style="min-width:980px"><tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${scrK===k?(scrD>0?'ascending':'descending'):'none'}">${l}${scrK===k?(scrD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>
+    ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${esc(i.sector)}</small></div></div></td>
+      <td>${statusPill(i)}</td><td>${band(i)}</td><td>${i.lot?i.lot.toLocaleString('en-IN'):'TBA'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${i.size.toLocaleString('en-IN')}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${i.gmp&&i.st!=='listed'?chip(gmpPct(i)):i.listPrice?`<span class="muted" style="font-size:12px">listed ${sgn((i.listPrice/i.hi-1)*100)}%</span>`:'—'}</td><td>${estProfit(i)!=null&&i.st!=='listed'?'+'+rs0(estProfit(i)):'—'}</td><td>${d2(i.ls)}</td><td>${starBtn('ipo:'+i.id,i.name)}</td></tr>`).join('')||`<tr><td colspan="11" class="muted" style="text-align:center">No IPOs match.</td></tr>`}</table></div></div>
+    <p class="src">${L.length} of ${IPOS.length} IPOs. Tap a row for details. Est. profit uses GMP × minimum application and is unofficial.</p>`;
+  const q=document.getElementById('scrq');q.oninput=()=>{scrQ=q.value.toLowerCase();const pos=q.selectionStart;renderScreener();const n=document.getElementById('scrq');n.focus();n.setSelectionRange(pos,pos)};
+  document.querySelectorAll('#scrbody [data-st]').forEach(b=>b.onclick=()=>{scrSt=b.dataset.st;renderScreener()});
+  document.querySelectorAll('#scrbody [data-ty]').forEach(b=>b.onclick=()=>{scrType=b.dataset.ty;renderScreener()});
+  document.querySelectorAll('#scrbody th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;scrD=scrK===k?-scrD:(['name','c','ls','hi','lot','minAmt','st'].includes(k)?1:-1);scrK=k;renderScreener()});
+  document.querySelectorAll('#scrbody tr[data-open]').forEach(r=>r.onclick=e=>{if(!e.target.closest('[data-star]'))openIpo(r.dataset.open)});
+}
+
+// ===================== Allotment desk =====================
+let allotSel=null;
+function renderAllot(){
+  const L=IPOS.filter(i=>i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1)).sort((a,b)=>(a.al||0)-(b.al||0));
+  if(!allotSel||!L.find(i=>i.id===allotSel))allotSel=(L.find(i=>i.al&&+i.al===+T0)||L[0]||{}).id;
+  const i=byId[allotSel],mine=apps.filter(a=>a.ipo===allotSel);
+  const st=!i?'':(!i.al?'Allotment date TBA':T0<i.al?`Allotment expected on ${d2(i.al)} (in ${days(i.al)} day${days(i.al)===1?'':'s'})`:+T0===+i.al?'Allotment is being finalised today. Results usually appear by evening.':'Allotment is done. Check your status now.');
+  document.getElementById('allotbody').innerHTML=`<div class="grid2">
+   <div class="glass card"><span class="lbl">1 · Pick the IPO</span><div class="alist">${L.map(x=>`<button type="button" class="pr ${x.id===allotSel?'sel':''}" data-a="${x.id}"><div class="lg" style="background:${x.color};color:#fff">${initials(x.name)}${logoImg(x.id)}</div><div><b>${esc(x.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">Allotment ${d2(x.al)} · ${esc(x.reg||'registrar in RHP')}</small></div>${statusPill(x)}</button>`).join('')}</div></div>
+   <div class="glass card">${i?`<span class="lbl">2 · Check your status</span><h3 style="font-size:22px;margin:6px 0 4px">${esc(i.name)}</h3><p class="note" style="font-size:14px">${st}</p>
+     <div style="display:grid;gap:8px;margin-top:16px">
+      ${i.reg&&REGLINK[i.reg]?`<a class="btn" href="${REGLINK[i.reg]}" target="_blank" rel="noopener">Check on ${esc(i.reg)} (registrar) ↗</a>`:''}
+      <a class="${i.reg&&REGLINK[i.reg]?'ghost':'btn'}" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">Check on BSE ↗</a>
+      <a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">Check on NSE ↗</a></div>
+     <p class="note" style="margin-top:12px">On the site, pick <b>${esc(i.name)}</b>, then enter your PAN or application number. StockPilot never asks for or stores your PAN.</p>
+     <a class="ghost" href="#allot-${i.id}" style="margin-top:14px;width:100%">Family allotment list →</a><div style="margin-top:18px"><span class="lbl">3 · Record the result</span>${mine.length?mine.map(a=>`<div class="row" style="padding:10px 0;border-bottom:1px solid var(--line)"><div><b>${esc(a.applicant)}</b><small class="muted" style="display:block;font-size:12.5px">${esc(a.via)} · ${a.lots} lot${a.lots>1?'s':''}</small></div><div class="tabs">${[['allotted','Allotted'],['not','Not allotted']].map(([k,l])=>`<button type="button" data-res="${a.id}" data-v="${k}" aria-pressed="${a.result===k}">${l}</button>`).join('')}</div></div>`).join(''):`<p class="note" style="margin-top:8px">You haven't logged an application for this IPO. <a class="link" href="#ipos">Log one from the IPO card</a> to track it here.</p>`}</div>`:'<p class="note">No IPOs waiting for allotment right now.</p>'}</div></div>`;
+  document.querySelectorAll('#allotbody [data-a]').forEach(b=>b.onclick=()=>{allotSel=b.dataset.a;renderAllot()});
+  document.querySelectorAll('#allotbody [data-res]').forEach(b=>b.onclick=async()=>{const a=apps.find(x=>x.id===b.dataset.res);const v=a.result===b.dataset.v?'pending':b.dataset.v;await patchApp(a.id,{result:v,shares:v==='allotted'?byId[a.ipo].lot*byId[a.ipo].ml:0,mandate:v!=='pending'?'accepted':a.mandate});renderAllot()});
+}
+
+// ===================== Money planner =====================
+let plan={pans:1,cat:'rmin',sel:null,mode:'last'};
+const CATS={rmin:'Retail · 1 lot',rmax:'Retail · max (under ₹2 lakh)',shni:'Small HNI · from ₹2 lakh',bhni:'Big HNI · from ₹10 lakh'};
+function appAmt(i,cat){if(!i.lot)return 0;const one=i.lot*i.hi;if(i.type==='SME')return one*i.ml*(cat==='bhni'?Math.max(1,Math.ceil(1000000/(one*i.ml))):1);
+  if(cat==='rmin')return one;if(cat==='rmax')return one*Math.max(1,Math.floor(199999/one));if(cat==='shni')return one*Math.ceil(200001/one);return one*Math.ceil(1000000/one)}
+function renderPlanner(){
+  const cand=IPOS.filter(i=>(i.st==='open'||i.st==='upcoming')&&i.lot&&i.rf);
+  if(!plan.sel)plan.sel=cand.filter(i=>i.type==='Mainboard').map(i=>i.id);
+  const S=cand.filter(i=>plan.sel.includes(i.id));
+  const start=i=>plan.mode==='last'?i.c:(i.o>T0?i.o:T0);
+  const amt=i=>appAmt(i,plan.cat)*plan.pans;
+  const dates=[];if(S.length){let d=new Date(T0);const end=new Date(Math.max(...S.map(i=>+i.rf)));while(d<=end){if(d.getDay()%6)dates.push(new Date(d));d.setDate(d.getDate()+1)}}
+  const blockedOn=d=>S.filter(i=>start(i)<=d&&d<i.rf).reduce((s,i)=>s+amt(i),0);
+  const peak=dates.length?Math.max(...dates.map(blockedOn)):0,total=S.reduce((s,i)=>s+amt(i),0);
+  const peakDay=dates.find(d=>blockedOn(d)===peak);
+  const W=dates.length;
+  const reuse=S.map(b=>({b,from:S.filter(a=>a!==b&&a.rf<=b.c&&start(a)<start(b)||a!==b&&a.rf<=b.c&&a.c<b.c)}));
+  document.getElementById('planbody').innerHTML=`<div class="grid2" style="grid-template-columns:1fr 1.4fr">
+   <div class="glass card" style="display:grid;gap:16px;align-content:start">
+    <div><span class="lbl">Applicants (PANs)</span><div class="stepper"><button type="button" data-p="-1" aria-label="Fewer applicants">−</button><b class="num">${plan.pans}</b><button type="button" data-p="1" aria-label="More applicants">+</button></div><p class="note">Each PAN can apply once per IPO, e.g. you, spouse, parents.</p></div>
+    <label class="field" for="pcat">Category<select id="pcat">${Object.entries(CATS).map(([k,l])=>`<option value="${k}" ${plan.cat===k?'selected':''}>${l}</option>`).join('')}</select></label>
+    <div><span class="lbl">When will you apply?</span><div class="tabs" style="margin-top:8px"><button type="button" data-m="last" aria-pressed="${plan.mode==='last'}">On the last day</button><button type="button" data-m="first" aria-pressed="${plan.mode==='first'}">As soon as it opens</button></div><p class="note" style="margin-top:6px">Applying on the last day lets refunds from earlier IPOs come back first.</p></div>
+    <div><span class="lbl">IPOs you plan to apply for</span><div style="display:grid;gap:4px;margin-top:8px">${cand.map(i=>`<label class="check prow" for="pl-${i.id}"><input type="checkbox" id="pl-${i.id}" data-sel="${i.id}" ${plan.sel.includes(i.id)?'checked':''}><span style="flex:1"><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?'SME':'Mainboard'} · closes ${d2(i.c)} · refund ${d2(i.rf)}</small></span><span class="num muted" style="font-size:13px">${rs0(appAmt(i,plan.cat))}</span></label>`).join('')}</div></div>
+   </div>
+   <div class="glass card">${S.length?`<div class="kgrid num" style="grid-template-columns:repeat(3,1fr)"><div><span>Cash you need</span><b class="up">${rs0(peak)}</b></div><div><span>If paid all at once</span><b>${rs0(total)}</b></div><div><span>You save</span><b>${rs0(total-peak)}</b></div></div>
+     <p class="note" style="margin:10px 0 16px">Most money is blocked on <b>${peakDay?d2(peakDay):'—'}</b>. With ${plan.pans} applicant${plan.pans>1?'s':''}, ${S.length} IPO${S.length>1?'s':''}, ${CATS[plan.cat].toLowerCase()}.</p>
+     <span class="lbl">When your money is blocked</span>
+     <div class="gantt num" style="--n:${W}"><div class="gh"><span></span>${dates.map(d=>`<span class="${+d===+T0?'today':''}">${d.getDate()}<br><small>${d.toLocaleDateString('en-IN',{month:'short'})}</small></span>`).join('')}</div>
+      ${S.sort((a,b)=>start(a)-start(b)).map(i=>{const s0=dates.findIndex(d=>+d>=+start(i)),e0=dates.findIndex(d=>+d>=+i.rf);return `<div class="gr"><span class="gn">${esc(i.name.split(' ')[0].replace(/\.$/,''))}<small>${rs0(amt(i))}</small></span><div class="gt"><i style="left:${s0/W*100}%;width:${Math.max(1,(e0<0?W:e0)-s0)/W*100}%;background:${i.color}"></i></div></div>`}).join('')}
+      <div class="gr"><span class="gn"><b>Total</b></span><div class="gt gtot">${dates.map(d=>`<em style="height:${peak?blockedOn(d)/peak*100:0}%" title="${d2(d)}: ${rs0(blockedOn(d))}"></em>`).join('')}</div></div></div>
+     <div style="margin-top:16px;display:grid;gap:6px">${reuse.filter(r=>r.from.length).map(r=>`<p class="note" style="font-size:13.5px">♻ Refund from <b>${r.from.map(a=>esc(a.name.split(' ')[0])).join(', ')}</b> arrives by ${d2(r.from[0].rf)}, before <b>${esc(r.b.name.split(' ')[0])}</b> closes on ${d2(r.b.c)}, so you can reuse it.</p>`).join('')||'<p class="note">These IPOs overlap, so their money is blocked at the same time.</p>'}</div>
+     <p class="src">Assumes no allotment (full refund) and refunds on the announced refund date. If you're allotted, that money is debited instead. Bank holidays can shift dates by a day.</p>`:'<p class="note">Pick at least one IPO to plan.</p>'}</div></div>`;
+  document.querySelectorAll('#planbody [data-p]').forEach(b=>b.onclick=()=>{plan.pans=Math.max(1,Math.min(10,plan.pans+ +b.dataset.p));renderPlanner()});
+  document.getElementById('pcat').onchange=e=>{plan.cat=e.target.value;renderPlanner()};
+  document.querySelectorAll('#planbody [data-m]').forEach(b=>b.onclick=()=>{plan.mode=b.dataset.m;renderPlanner()});
+  document.querySelectorAll('#planbody [data-sel]').forEach(c=>c.onchange=()=>{plan.sel=c.checked?[...plan.sel,c.dataset.sel]:plan.sel.filter(x=>x!==c.dataset.sel);renderPlanner()});
+}
+
+// ===================== Learn =====================
+const GUIDES=[
+ {t:'How IPO allotment works',m:'4 min',b:['In a mainboard IPO, 35% of shares are usually reserved for retail investors (bids up to ₹2 lakh). If retail demand is more than the shares available, allotment is by computerised lottery.','Every valid retail application gets an equal chance of one lot, no matter how many lots it bid for. That is why families apply from several PANs instead of bidding more lots from one.','HNI (NII) allotment works on draws within the small-HNI (₹2–10 lakh) and big-HNI (above ₹10 lakh) pools. QIB shares go proportionately to institutions.']},
+ {t:'GMP explained',m:'3 min',b:['Grey market premium is what unofficial dealers are willing to pay above the issue price before a stock lists. It is not regulated, and no exchange publishes it.','A GMP of ₹30 on a ₹300 issue suggests a 10% listing gain, but it is only a sentiment signal. It changes by the hour and often falls by listing day.','On StockPilot every GMP shows its source and time, and the GMP board compares past GMPs with real listing prices.']},
+ {t:'The T+3 IPO timeline',m:'2 min',b:['SEBI moved IPOs to a T+3 timeline: listing happens three working days after the issue closes (T).','T+1: basis of allotment is finalised. T+2: refunds start and allotted shares reach demat accounts. T+3: shares list on NSE and BSE.','UPI mandates must be approved by 4 PM on closing day for retail bids to count.']},
+ {t:'Mainboard vs SME IPOs',m:'3 min',b:['Mainboard IPOs list on the main NSE and BSE platforms and are usually larger, more liquid companies.','SME IPOs list on NSE Emerge or BSE SME. Individuals must apply for a minimum of 2 lots, which is often ₹2 lakh or more, and the shares trade in large lots with lower liquidity.','SME issues can see big swings in both directions. Read the RHP carefully and size positions accordingly.']},
+ {t:'UPI vs ASBA: two ways to pay',m:'2 min',b:['With UPI, you bid in your broker app and approve a mandate in your UPI app. The amount is blocked in your bank account, up to ₹5 lakh per bid.','With ASBA, you apply from your bank’s net banking IPO section. The bank blocks the money directly, and there is no ₹5 lakh UPI limit.','In both cases money is only debited if you get shares; otherwise the block is released.']},
+ {t:'How to read subscription numbers',m:'3 min',b:['“10×” means investors bid for 10 times the shares on offer in that category.','QIB demand often arrives on the final day, so day-1 numbers can look weak even for popular issues.','For retail investors the key number is retail subscription: the higher it is, the lower your chance of getting an allotment.']},
+];
+function renderLearn(){document.getElementById('learnbody').innerHTML=`<div class="igrid">${GUIDES.map((g,k)=>`<details class="glass card guide" ${k===0?'open':''}><summary><span class="lbl">${g.m} read</span><h3 style="font-size:19px;margin-top:6px">${g.t}</h3></summary><div style="display:grid;gap:10px;margin-top:12px">${g.b.map(p=>`<p class="note" style="font-size:14.5px;color:var(--ink);opacity:.85">${p}</p>`).join('')}</div></details>`).join('')}</div>
+  <div class="glass card sec"><h3 style="font-size:18px;margin-bottom:6px">Our methodology</h3><p class="note" style="font-size:14px;max-width:80ch">IPO details come from issuer announcements and RHP summaries published by brokers and financial news. Subscription figures are snapshots from exchange data as reported by the sources named on each card. GMP is shown only with its source and time. We never invent or estimate a figure we couldn't find; where something is unknown we say TBA. StockPilot does not hold licences to place applications and is not a SEBI-registered adviser.</p></div>`}
+
+// ===================== Home IPO table =====================
+let homeIpoTab='open';
+function renderHomeIpo(){
+  const sets={open:IPOS.filter(i=>i.st==='open'),closed:IPOS.filter(i=>i.st==='closed'),listed:IPOS.filter(i=>i.st==='listed')};
+  const L=(sets[homeIpoTab]||[]).sort((a,b)=>a.c-b.c);
+  document.getElementById('homeipo').innerHTML=`<div class="row" style="margin-bottom:10px;flex-wrap:wrap"><div class="tabs">${[['open','Open now'],['closed','Awaiting listing'],['listed','Just listed']].map(([k,l])=>`<button type="button" data-h="${k}" aria-pressed="${homeIpoTab===k}">${l}<span class="count">${sets[k].length}</span></button>`).join('')}</div><a class="link" href="#ipo-screener">Open screener →</a></div>
+   <div class="tw"><table class="stbl num" style="min-width:760px"><tr><th>IPO</th><th>Price</th><th>${homeIpoTab==='listed'?'Listing gain':'GMP'}</th><th>Min. application</th><th>${homeIpoTab==='listed'?'Profit / lot':'Est. profit'}</th><th>Subscribed</th><th>${homeIpoTab==='open'?'Closes':homeIpoTab==='closed'?'Allotment':'Listed'}</th><th></th></tr>
+   ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${cr(i.size)}</small></div></div></td>
+    <td>${band(i)}</td><td>${homeIpoTab==='listed'?chip((i.listPrice/i.hi-1)*100):i.gmp?`₹${i.gmp.v} ${chip(gmpPct(i))}`:'—'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${(()=>{const p=profitPerApp(i);return p?`<b class="${p.v>=0?'up':'down'}">${p.v>=0?'+':'−'}${rs0(p.v)}</b>`:'—'})()}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${homeIpoTab==='open'?statusPill(i):homeIpoTab==='closed'?d2(i.al):d2(i.ls)}</td><td>${homeIpoTab==='open'?`<button class="btn" type="button" data-apply="${i.id}" style="padding:7px 14px;font-size:13px">Apply</button>`:homeIpoTab==='closed'?`<a class="ghost" href="${allotLink(i)}" target="_blank" rel="noopener" style="padding:7px 12px;font-size:13px">Allotment ↗</a>`:''}</td></tr>`).join('')}</table></div>`;
+  document.querySelectorAll('#homeipo [data-h]').forEach(b=>b.onclick=()=>{homeIpoTab=b.dataset.h;renderHomeIpo()});
+  document.querySelectorAll('#homeipo tr[data-open]').forEach(r=>r.onclick=e=>{if(e.target.closest('a'))return;const a=e.target.closest('[data-apply]');openIpo(r.dataset.open,a?'apply':undefined)});
+}
+
+// ===================== Gold & silver (Goodreturns, 30 Oct 2026) =====================
+const METALS={date:'30 Oct 2026',src:'Goodreturns',url:'https://www.goodreturns.in/gold-rates/',g24:14395,g22:13195,g18:10796,ag:214.9,agMonth:[['1 Oct',235000],['10 Oct',240000],['21 Oct',230000],['22 Oct',225000],['23 Oct',220000],['28 Oct',220000],['29 Oct',215000],['30 Oct',214900]],ibja24_29:144595};
+function renderMetals(){
+  const m=METALS,el=document.getElementById('metals');if(!el)return;
+  el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · today's rate</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${m.date} · ${m.src}</span></div>
+   <div class="metal-grid num">
+     <div class="metal gold"><span>Gold 24K · 99.9%</span><b>₹${(m.g24*10).toLocaleString('en-IN')}</b><small>per 10 g · ₹${m.g24.toLocaleString('en-IN')}/g</small></div>
+     <div class="metal gold"><span>Gold 22K · 91.6%</span><b>₹${(m.g22*10).toLocaleString('en-IN')}</b><small>per 10 g · ₹${m.g22.toLocaleString('en-IN')}/g</small></div>
+     <div class="metal gold"><span>Gold 18K · 75%</span><b>₹${(m.g18*10).toLocaleString('en-IN')}</b><small>per 10 g</small></div>
+     <div class="metal silver"><span>Silver · 999</span><b>₹${Math.round(m.ag*1000).toLocaleString('en-IN')}</b><small>per kg · ₹${m.ag.toFixed(2)}/g</small></div>
+   </div>
+   <div class="grid2" style="gap:14px;margin-top:14px">
+    <div><div class="row" style="font-size:13px"><span class="muted">Silver this month (₹/kg)</span><b class="down">−8.6% since 1 Oct</b></div><div style="margin-top:6px">${spark(m.agMonth,300,52,'#9AA4B2')}</div><div class="row muted" style="font-size:11.5px"><span>1 Oct ₹2,35,000 · high ₹2,40,000 on 10 Oct</span><span>30 Oct ₹2,14,900</span></div></div>
+    <div class="gcalc"><span class="muted" style="font-size:13px">Jewellery cost estimator</span>
+      <div class="two" style="margin-top:8px"><label class="field" for="gw">Weight (g)<input id="gw" type="number" min="0.1" step="0.1" value="10"></label><label class="field" for="gk">Purity<select id="gk"><option value="22">22K</option><option value="24">24K</option><option value="18">18K</option></select></label></div>
+      <label class="field" for="gm" style="margin-top:8px">Making charges %<input id="gm" type="number" min="0" max="40" step="0.5" value="12"></label>
+      <div class="row" style="margin-top:10px"><span class="muted" style="font-size:13px">Incl. 3% GST</span><b class="num" id="gout" style="font:700 22px var(--display)"></b></div></div>
+   </div>
+   <p class="src">Indicative retail rates excluding GST and making charges. City rates vary slightly (e.g. Delhi 24K ₹1,44,100/10 g, 5paisa). IBJA 24K reference on 29 Oct: ₹${m.ibja24_29.toLocaleString('en-IN')}/10 g. Not live. <a class="link" href="${m.url}" target="_blank" rel="noopener">Latest rate on Goodreturns ↗</a></p>`;
+  const calcG=()=>{const w=+document.getElementById('gw').value||0,k=document.getElementById('gk').value,mk=+document.getElementById('gm').value||0,rate={24:m.g24,22:m.g22,18:m.g18}[k],base=w*rate,tot=(base+base*mk/100)*1.03;document.getElementById('gout').textContent='₹'+Math.round(tot).toLocaleString('en-IN')};
+  ['gw','gk','gm'].forEach(id=>document.getElementById(id).addEventListener('input',calcG));calcG();
+}
+
+// ===================== StockPilot v4: profit helpers, motion, mobile tables =====================
+const profitPerApp=i=>{if(!i.lot)return null;if(i.st==='listed'&&i.listPrice)return {v:(i.listPrice-i.hi)*i.lot*i.ml,kind:'listed'};if(i.gmp)return {v:i.gmp.v*i.lot*i.ml,kind:'gmp'};return null};
+function profitStrip(i){const p=profitPerApp(i);if(!p)return '';const neg=p.v<0;
+  const lab=p.kind==='listed'?`Profit per ${i.ml>1?i.ml+'-lot application':'lot'} at listing`:`Est. profit per ${i.ml>1?i.ml+'-lot application':'lot'} if allotted`;
+  const sub=p.kind==='listed'?`Listed at ₹${i.listPrice.toLocaleString('en-IN')} vs ₹${i.hi.toLocaleString('en-IN')} · ${(i.lot*i.ml).toLocaleString('en-IN')} shares`:`At GMP ₹${i.gmp.v} · est. listing ₹${(i.hi+i.gmp.v).toLocaleString('en-IN')} · unofficial`;
+  return `<div class="profit ${neg?'neg':''}"><span>${lab}</span><b class="num cu">${neg?'−':'+'}₹${Math.round(Math.abs(p.v)).toLocaleString('en-IN')}</b><small>${sub}</small></div>`}
+function profitCalc(i){if(!i.lot)return '';const ml=i.ml,def=i.listPrice||(i.gmp?i.hi+i.gmp.v:i.hi);
+  return `<div class="msec"><h4>Profit calculator</h4><div class="pcalc">
+   <div class="two"><label class="field" for="pc-l">Lots<input id="pc-l" type="number" min="${ml}" max="500" value="${ml}"></label><label class="field" for="pc-p">Expected listing price ₹<input id="pc-p" type="number" min="1" step="0.05" value="${def}"></label></div>
+   <input class="range-in" id="pc-r" type="range" min="${Math.round(i.hi*0.7)}" max="${Math.round(i.hi*1.8)}" step="1" value="${Math.round(def)}" aria-label="Drag to change expected listing price">
+   <div class="out num"><div><span>You invest</span><b id="pc-inv"></b></div><div><span>Profit</span><b id="pc-pr"></b></div><div><span>Return</span><b id="pc-ret"></b></div></div>
+   <p class="note" style="font-size:12px">Profit after selling charges (STT, exchange fee, GST, DP) on listing day. ${i.listPrice?'Pre-filled with the actual listing price.':i.gmp?'Pre-filled with issue price + GMP.':'Pre-filled with the issue price.'}</p></div></div>`}
+function wireProfitCalc(i){const L=document.getElementById('pc-l');if(!L)return;const P=document.getElementById('pc-p'),R=document.getElementById('pc-r');
+  const upd=()=>{const lots=Math.max(i.ml,+L.value||i.ml),px=+P.value||i.hi,sh=lots*i.lot,inv=sh*i.hi,sell=sh*px,ch=charges(0,sell,'delivery',0).total,pr=sell-inv-ch;
+    document.getElementById('pc-inv').textContent=rs0(inv);const e=document.getElementById('pc-pr');e.textContent=(pr>=0?'+':'−')+rs0(pr);e.className=pr>=0?'up':'down';
+    const r=document.getElementById('pc-ret');r.textContent=(pr>=0?'+':'−')+Math.abs(pr/inv*100).toFixed(1)+'%';r.className=pr>=0?'up':'down'};
+  L.oninput=upd;P.oninput=()=>{R.value=P.value;upd()};R.oninput=()=>{P.value=R.value;upd()};upd()}
+
+// count-up numbers
+const RM=matchMedia('(prefers-reduced-motion: reduce)');
+function countUp(root){if(RM.matches)return;(root||document).querySelectorAll('.cu').forEach(el=>{if(el.dataset.cuDone===el.textContent)return;const txt=el.textContent,m=txt.match(/-?[\d,]+(\.\d+)?/);if(!m)return;
+  const raw=m[0],dec=(m[1]||'').length?m[1].length-1:0,target=parseFloat(raw.replace(/,/g,''));if(!isFinite(target)||Math.abs(target)<1)return;
+  const pre=txt.slice(0,m.index),post=txt.slice(m.index+raw.length),useComma=raw.includes(','),t0=performance.now(),D=900;
+  const fmt=v=>useComma?v.toLocaleString('en-IN',{minimumFractionDigits:dec,maximumFractionDigits:dec}):v.toFixed(dec);
+  const step=t=>{const k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);el.textContent=pre+fmt(target*e)+post;if(k<1)requestAnimationFrame(step);else{el.textContent=txt;el.dataset.cuDone=txt}};
+  requestAnimationFrame(step)})}
+// stagger + count-up for the visible view
+function animateView(){const v=document.querySelector('.view.on');if(!v)return;let k=0;
+  v.querySelectorAll('.glass,.ipo,.stat,.tile,.app,.ichip').forEach(el=>{if(el.closest('.modal'))return;el.classList.add('anim');el.style.setProperty('--i',Math.min(k++,14))});
+  v.querySelectorAll('.big,.mid,.metal b,.stat .n,.tile b,.kgrid b,.bigv').forEach(el=>el.classList.add('cu'));
+  countUp(v)}
+// mobile: label table cells so CSS can turn rows into cards
+function labelTables(){document.querySelectorAll('table.stbl').forEach(t=>{const hs=[...t.querySelectorAll('tr:first-child th')].map(h=>h.textContent.replace(/[↑↓]/g,'').trim());
+  t.querySelectorAll('tr').forEach((tr,ri)=>{if(!ri)return;[...tr.children].forEach((td,ci)=>{if(!td.dataset.l){td.dataset.l=hs[ci]||'';if(!hs[ci])td.classList.add('nol')}})});t.classList.add('mcard')})}
+let ltT;new MutationObserver(()=>{clearTimeout(ltT);ltT=setTimeout(labelTables,30)}).observe(document.body,{childList:true,subtree:true});
+
+// ===================== v5: app-style mobile IPO list, quick sheet, GMP history, family allotment =====================
+const MQ=matchMedia('(max-width:700px)');
+const IC={
+ price:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>',
+ gmp:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+ subs:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2 .6 3.2 2.2 3.5 5"/></svg>',
+ lot:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>',
+ size:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 21h18M5 21v-9M10 21v-9M14 21v-9M19 21v-9M2 9l10-6 10 6z"/></svg>',
+ cal:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>',
+ calx:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4M10 14l4 4M14 14l-4 4"/></svg>',
+ calok:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4M9 15l2 2 4-4"/></svg>',
+ store:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10M3 6l1.5-3h15L21 6v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/></svg>',
+ copy:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>',
+};
+let mType='All';
+function rowStatus(i){if(i.st==='open'){const d=days(i.c);return d===0?'Closes today':d===1?'Closes tomorrow':`Closes in ${d}d`}if(i.st==='upcoming')return `Opens ${d2(i.o)}`;if(i.st==='closed')return i.al&&+i.al===+T0?'Allotment today':i.al&&T0<i.al?`Allotment ${d2(i.al)}`:`Lists ${d2(i.ls)}`;return `Listed ${d2(i.ls)}`}
+function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · lot ${i.lot||'TBA'}${i.gmp&&i.st!=='listed'?` · GMP ₹${i.gmp.v} (${sgn(gmpPct(i))}%)`:''}${i.sub?` · subscribed ${i.sub.total.toFixed(2)}×`:''}${p?` · ${p.kind==='listed'?'profit':'est. profit'} ${p.v>=0?'+':'−'}${rs0(p.v)} per application`:''} — via StockPilot`;
+  try{navigator.clipboard.writeText(t).then(()=>toast('IPO summary copied'),()=>toast('Copy not allowed here'))}catch{toast('Copy not allowed here')}}
+function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)return;
+  const ST=[['open','Ongoing'],['upcoming','Upcoming'],['closed','Allotted'],['listed','Listed']];
+  document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>i.st===k).length}</span></button>`).join('');
+  document.getElementById('seg2').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-t="${k}" aria-pressed="${mType===k}">${k}</button>`).join('');
+  document.querySelectorAll('#ulTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
+  document.querySelectorAll('#seg2 button').forEach(b=>b.onclick=()=>{mType=b.dataset.t;renderMobileIpos()});
+  const L=IPOS.filter(i=>i.st===ipoStatus&&(mType==='All'||i.type===mType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:a.c-b.c);
+  el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',p=profitPerApp(i);
+    const m3=listed?`<div><span>${IC.price} Issue</span><b>₹${i.hi.toLocaleString('en-IN')}</b></div><div><span>${IC.gmp} Listed</span><b class="${i.listPrice>=i.hi?'up':'down'}">₹${i.listPrice.toLocaleString('en-IN')} <small>(${sgn((i.listPrice/i.hi-1)*100)}%)</small></b></div><div><span>${IC.gmp} Day-1 close</span><b class="${i.listClose>=i.hi?'up':'down'}">₹${i.listClose.toLocaleString('en-IN')} <small>(${sgn((i.listClose/i.hi-1)*100)}%)</small></b></div>`
+      :`<div><span>${IC.price} Issue price</span><b>${band(i)}</b></div><div><span class="up">${IC.gmp} GMP</span><b class="${i.gmp?(i.gmp.v>=0?'up':'down'):''}">${i.gmp?`₹${i.gmp.v} <small>(${gmpPct(i).toFixed(1)}%)</small>`:'—'}</b></div><div><span>${IC.subs} Subs</span><b>${i.sub?i.sub.total.toFixed(2)+'x':'—'}</b></div>`;
+    return `<div class="mrow" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*45}ms"><div class="t"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><div class="nm">${esc(i.name.replace(/ Ltd$/,''))}</div><div class="st">${rowStatus(i)} · ${i.type==='SME'?esc(i.exch):'Mainboard'}</div></div>
+      <div class="ic">${starBtn('ipo:'+i.id,i.name)}<button type="button" class="iconbtn2" data-share="${i.id}" aria-label="Copy IPO summary">${IC.copy}</button></div></div>
+      <div class="m3 num">${m3}</div>${p&&!listed?`<div class="mpr">Est. profit per ${i.ml>1?i.ml+'-lot application':'lot'}: <b>${p.v>=0?'+':'−'}${rs0(p.v)}</b></div>`:''}</div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
+  el.querySelectorAll('[data-q]').forEach(r=>{r.onclick=e=>{if(e.target.closest('[data-star],[data-share]'))return;openQuick(r.dataset.q)};r.onkeydown=e=>{if(e.key==='Enter')openQuick(r.dataset.q)}});
+  el.querySelectorAll('[data-share]').forEach(b=>b.onclick=e=>{e.stopPropagation();shareIpo(byId[b.dataset.share])});
+}
+function openQuick(id){const i=byId[id];if(!i)return;const p=profitPerApp(i);
+  const cell=(ic,l,v)=>`<div>${ic}<span>${l}</span><b class="num">${v}</b></div>`;
+  document.getElementById('modal').innerHTML=`<div class="mhead"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><h3 id="mtitle">${esc(i.name.replace(/ Ltd$/,''))}</h3><div style="margin-top:6px">${statusPill(i)}</div></div>
+     ${i.gtrend?`<a class="ghost" href="#gmp-${i.id}" style="padding:8px 12px;font-size:13px" id="qsg">Day-wise GMP ${IC.gmp}</a>`:''}<button class="x" type="button" aria-label="Close" id="mx">×</button></div>
+   <div class="mbody" style="gap:0"><div class="qs-grid">
+     ${cell(IC.lot,'Lot size',i.lot?i.lot.toLocaleString('en-IN')+(i.ml>1?` × ${i.ml} min`:''):'TBA')}${cell(IC.price,'Price range',band(i))}
+     ${cell(IC.gmp,p?(p.kind==='listed'?'Profit at listing':'Est. profit'):'Est. profit',p?`<span class="${p.v>=0?'up':'down'}" style="font-size:15.5px;color:inherit">${p.v>=0?'+':'−'}${rs0(p.v)}</span>`:'—')}${cell(IC.size,'Issue size',cr(i.size))}
+     ${cell(IC.cal,'Open date',d2(i.o))}${cell(IC.calx,'Close date',d2(i.c))}
+     ${cell(IC.calok,'Allotment',d2(i.al))}${cell(IC.store,'Listing',d2(i.ls))}</div>
+     <div class="qs-acts">${i.st==='open'?`<button class="btn shine" type="button" id="qa-apply">Apply</button>`:''}<button class="ghost" type="button" id="qa-det">Details</button><a class="ghost" href="#ipo-sub" id="qa-sub">Subscription</a>${i.st==='closed'||i.st==='listed'?`<a class="btn" href="#allot-${i.id}" id="qa-al">Allotment</a>`:''}</div></div>`;
+  const ov=document.getElementById('ov');ov.classList.add('on');document.body.style.overflow='hidden';
+  document.getElementById('mx').onclick=closeIpo;
+  const go=h=>{closeIpo();location.hash=h};
+  const g=document.getElementById('qsg');if(g)g.onclick=e=>{e.preventDefault();go('gmp-'+id)};
+  document.getElementById('qa-det').onclick=()=>openIpo(id);
+  const ap=document.getElementById('qa-apply');if(ap)ap.onclick=()=>openIpo(id,'apply');
+  document.getElementById('qa-sub').onclick=e=>{e.preventDefault();go('ipo-sub')};
+  const al=document.getElementById('qa-al');if(al)al.onclick=e=>{e.preventDefault();go('allot-'+id)};
+}
+// open quick sheet instead of full modal from other mobile lists
+document.addEventListener('click',e=>{if(!MQ.matches)return;const r=e.target.closest('#v-markets [data-open],#v-watchlist [data-open]');if(!r||e.target.closest('[data-star],[data-apply],a'))return;e.stopPropagation();e.preventDefault();openQuick(r.dataset.open)},true);
+
+// ---------- per-IPO GMP page ----------
+function renderGmpPage(id){const i=byId[id],el=document.getElementById('gmppage');if(!i){el.innerHTML='<p class="note">IPO not found.</p>';return}
+  const tr=i.gtrend||(i.gmp?[[i.gmp.at,i.gmp.v]]:[]),cur=i.gmp||(tr.length?{v:tr.at(-1)[1],src:i.gsrc,at:tr.at(-1)[0]}:null);
+  const rows=[...tr].map((r,k)=>({d:r[0],v:r[1],ch:k?r[1]-tr[k-1][1]:null,pc:k&&tr[k-1][1]?(r[1]-tr[k-1][1])/tr[k-1][1]*100:null})).reverse();
+  el.innerHTML=`<div class="phead"><div><a class="link" href="#ipos" style="font-size:13px">← IPOs</a><div class="shead" style="margin-top:12px"><div class="slogo" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><h1 style="font-size:clamp(24px,4vw,38px);font-weight:700">${esc(i.name.replace(/ Ltd$/,''))} GMP</h1><div class="eyebrow" style="margin-top:4px">${rowStatus(i)} · ${i.type}</div></div></div></div>
+     <div style="display:flex;gap:6px">${starBtn('ipo:'+i.id,i.name)}<button type="button" class="ghost" data-share="${i.id}">${IC.copy} Copy</button></div></div>
+   <div class="grid2"><div class="glass card"><h3 style="font-size:17px;margin-bottom:4px">Current market overview</h3><div class="ovr num">
+     <div><span>Current GMP</span><b class="${cur&&cur.v>=0?'up':'down'}">${cur?`₹${cur.v} (${(cur.v/i.hi*100).toFixed(1)}%)`:'—'}</b></div>
+     <div><span>Est. profit / ${i.ml>1?i.ml+' lots':'lot'}</span><b class="up">${cur&&i.lot?'+'+rs0(cur.v*i.lot*i.ml):'—'}</b></div>
+     <div><span>Issue price</span><b>₹${i.hi.toLocaleString('en-IN')}</b></div>
+     <div><span>Expected listing</span><b>${cur?'₹'+(i.hi+cur.v).toLocaleString('en-IN'):'—'}</b></div>
+     ${i.listPrice?`<div><span>Actual listing</span><b class="${i.listPrice>=i.hi?'up':'down'}">₹${i.listPrice.toLocaleString('en-IN')} (${sgn((i.listPrice/i.hi-1)*100)}%)</b></div>`:''}</div>
+     <p class="src">${cur?`${esc(cur.src||i.gsrc||'')} · ${esc(cur.at||'')}. `:''}GMP is unofficial.</p></div>
+    <div class="glass card"><h3 style="font-size:17px;margin-bottom:8px">GMP trend</h3>${tr.length>1?spark(tr,600,120):'<p class="note">Only one reading so far.</p>'}</div></div>
+   <div class="glass card sec"><h3 style="font-size:17px;margin-bottom:10px">GMP history</h3><table class="ghist num"><tr><th>Date</th><th>GMP (₹)</th><th>GMP %</th><th>Change</th></tr>
+    ${rows.map(r=>`<tr><td>${esc(r.d)}</td><td class="up">₹${r.v}</td><td>${(r.v/i.hi*100).toFixed(1)}%</td><td class="${r.ch==null||r.ch===0?'':r.ch>0?'up':'down'}">${r.ch==null?'—':`${r.ch>0?'+':''}${r.ch} (${r.pc>0?'+':''}${r.pc.toFixed(1)}%)`}</td></tr>`).join('')}</table>
+    <p class="src">Source: ${esc(i.gsrc||(i.gmp&&i.gmp.src)||'—')}.</p></div>`;
+  el.querySelectorAll('[data-share]').forEach(b=>b.onclick=()=>shareIpo(i));
+}
+
+// ---------- family allotment (names only, never PAN) ----------
+const FAMK='stockpilot.family';
+let FAM=(()=>{try{return JSON.parse(localStorage.getItem(FAMK)||'null')||{members:[],st:{}}}catch{return {members:[],st:{}}}})();
+async function saveFam(){try{localStorage.setItem(FAMK,JSON.stringify(FAM))}catch{};if(cloud){try{await cloud.doc('family').set(FAM)}catch{}}}
+const FST=[['np','Not applied'],['pe','Applied · waiting'],['al','Allotted'],['na','Not allotted']];
+function famLabel(i,s){if(s==='al')return `${(i.lot*i.ml).toLocaleString('en-IN')} shares allotted`;return (FST.find(x=>x[0]===s)||FST[0])[1]}
+function renderAllotPage(id){const i=byId[id],el=document.getElementById('allotpage');if(!i){el.innerHTML='<p class="note">IPO not found.</p>';return}
+  const st=FAM.st[id]||{},al=FAM.members.filter(m=>st[m]==='al').length,p=profitPerApp(i);
+  el.innerHTML=`<div class="phead"><div><a class="link" href="#ipo-allot" style="font-size:13px">← Allotment desk</a><h1 style="font-size:clamp(24px,4vw,38px);font-weight:700;margin-top:10px">${esc(i.name.replace(/ Ltd$/,''))}</h1><div class="eyebrow" style="margin-top:4px">Allotment ${d2(i.al)} · ${esc(i.reg||'registrar in RHP')}</div></div></div>
+   <div class="grid2"><div class="glass card"><div class="row"><h3 style="font-size:17px">Family</h3><span class="muted" style="font-size:13px">${al} of ${FAM.members.length} allotted</span></div>
+     <div class="fam">${FAM.members.map(m=>{const s=st[m]||'np';return `<div class="famrow"><div class="lg" style="background:var(--soft)">${esc(m.slice(0,2).toUpperCase())}</div><div><b>${esc(m)}</b></div><button type="button" class="famst ${s}" data-m="${esc(m)}">${famLabel(i,s)} ↻</button></div>`}).join('')||'<p class="note" style="padding:12px 0">Add the people in your family who apply for IPOs. Names only; we never ask for PAN.</p>'}</div>
+     <div class="famadd"><label class="sr" for="famin">Add member</label><input id="famin" maxlength="30" placeholder="Add a name, e.g. Mom"><button class="btn" type="button" id="famadd">+ Add</button></div>
+     <p class="src">Tap a status to change it: not applied → waiting → allotted → not allotted.</p></div>
+    <div class="glass card"><h3 style="font-size:17px;margin-bottom:6px">Check on the official site</h3><p class="note">Enter each person's PAN there, then come back and tap their status.</p>
+     <div style="display:grid;gap:8px;margin-top:14px">${i.reg&&REGLINK[i.reg]?`<a class="btn" href="${REGLINK[i.reg]}" target="_blank" rel="noopener">${esc(i.reg)} (registrar) ↗</a>`:''}<a class="ghost" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">BSE ↗</a><a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">NSE ↗</a></div>
+     ${al&&p?`<div class="profit" style="margin-top:16px"><span>Family ${p.kind==='listed'?'profit at listing':'est. profit'} (${al} allotted)</span><b class="num">${p.v>=0?'+':'−'}${rs0(p.v*al)}</b><small>${p.kind==='listed'?'At listing price':'At current GMP, unofficial'}</small></div>`:''}</div></div>`;
+  el.querySelectorAll('[data-m]').forEach(b=>b.onclick=async()=>{const m=b.dataset.m,cur=(FAM.st[id]||{})[m]||'np',nx=FST[(FST.findIndex(x=>x[0]===cur)+1)%FST.length][0];FAM.st[id]={...(FAM.st[id]||{}),[m]:nx};await saveFam();renderAllotPage(id)});
+  const add=async()=>{const v=document.getElementById('famin').value.trim().slice(0,30);if(!v||FAM.members.includes(v))return;FAM.members=[...FAM.members,v];await saveFam();renderAllotPage(id);document.getElementById('famin').focus()};
+  document.getElementById('famadd').onclick=add;document.getElementById('famin').onkeydown=e=>{if(e.key==='Enter')add()};
+}
+MQ.addEventListener('change',()=>{renderIpos();route()});
+
+// ===================== MARKET DATA (29 Oct 2026 close) =====================
+const NIFTY8=[['19 Oct',22888.95],['21 Oct',22811.35],['22 Oct',22687.65],['23 Oct',22600.00],['26 Oct',22753.20],['27 Oct',22749.75],['28 Oct',22698.85],['29 Oct',22936.75]];
+const MINIS=[['Midcap 100','57,841.65',0.99],['Smallcap 100','18,811.35',0.95],['India VIX','15.11',-7.02],['USD / INR','₹95.25',null,'30 Oct AM'],['Brent crude','$111.47',null,'30 Oct AM'],['Gold (global spot)','$4,017',null,'per oz · 30 Oct AM']];
+const SECTORS=[['Utilities',3.11],['Realty',2.75],['FMCG',2.34],['PSU Bank',2.20],['Bank',1.18],['Fin. Services',1.17],['IT',0.99],['Cement',-0.08],['Auto',-0.24]];
+const GAIN=[['ADANIPORTS','Adani Ports',6.17],['ADANIENT','Adani Enterprises',5.69],['POWERGRID','Power Grid',4.22],['KOTAKBANK','Kotak Mahindra Bank',4.09],['ETERNAL','Eternal',3.40]];
+const LOSE=[['TRENT','Trent',-1.68],['MARUTI','Maruti Suzuki',-1.11],['SBILIFE','SBI Life Insurance',-1.06],['BAJAJ-AUTO','Bajaj Auto',-0.65],['CIPLA','Cipla',-0.57]];
+const MIDG=[['JSW Energy',5.59],['United Spirits',5.06],['Blue Star',4.69],['NLC India',4.58],['Marico',4.32]],MIDL=[['Hero MotoCorp',-4.09],['GMR Airport',-2.72],['Exide Industries',-2.60],['ICICI AMC',-1.67],['Lenskart',-1.55]];
+const SMG=[['Poonawalla Fincorp',9.86],['Syrma SGS',6.78],['Gallantt Ispat',6.29],['Acutaas Chemicals',6.20],['City Union Bank',5.53]],SML=[['Ola Electric',-4.56],['RR Kabel',-4.55],['Neuland Labs',-3.38],['Syngene',-3.14],['Navin Fluorine',-2.83]];
+
+// Screener.in, 29 Oct 2026 close. q = latest quarter: profit (Cr), profit YoY %, sales (Cr), sales YoY %
+const STOCKS=[
+ ['RELIANCE','Reliance Industries','Energy & retail',1167.40,21.13,1579106.31,0.51,23196.00,2.02,309468.00,27.02,10.26],
+ ['BHARTIARTL','Bharti Airtel','Telecom',1972.10,39.37,1229709.48,1.22,10011.60,40.84,58539.10,18.35,17.56],
+ ['HDFCBANK','HDFC Bank','Private bank',683.30,13.15,1053255.04,1.90,21537.09,5.55,95131.63,9.35,7.02],
+ ['ICICIBANK','ICICI Bank','Private bank',1386.60,16.90,998105.52,0.87,17388.86,22.28,55991.91,16.21,7.18],
+ ['TCS','Tata Consultancy Services','IT services',2478.00,16.42,897291.59,2.58,13934.00,7.41,73188.00,11.23,63.03],
+ ['SBIN','State Bank of India','PSU bank',971.90,10.68,897185.11,1.79,25120.89,13.73,136240.49,8.36,6.13],
+ ['BAJFINANCE','Bajaj Finance','NBFC',938.90,26.73,584554.85,0.58,6366.57,28.53,24546.37,22.79,10.87],
+ ['LT','Larsen & Toubro','Engineering & construction',3837.10,27.91,527439.38,0.99,5949.15,32.50,78749.94,15.84,14.57],
+ ['INFY','Infosys','IT services',1146.50,14.71,465283.19,4.19,7838.00,6.23,49244.00,10.69,39.95],
+ ['KOTAKBANK','Kotak Mahindra Bank','Private bank',459.00,21.53,456607.75,0.14,5645.38,26.34,19855.87,15.45,6.98],
+ ['HINDUNILVR','Hindustan Unilever','FMCG',1858.20,39.05,437275.33,2.21,2796.00,6.53,18226.00,14.49,28.42],
+ ['ADANIPORTS','Adani Ports & SEZ','Ports & logistics',1872.00,31.24,431865.10,0.40,3682.44,17.29,11340.40,23.70,14.12],
+ ['SUNPHARMA','Sun Pharmaceutical','Pharma',1761.00,33.44,422402.72,0.91,2901.23,5.95,15299.88,10.46,20.53],
+ ['TITAN','Titan Company','Jewellery & watches',4434.00,67.42,393453.91,0.34,1777.00,62.88,21356.00,29.25,20.54],
+ ['AXISBANK','Axis Bank','Private bank',1225.00,12.74,381474.65,0.08,7665.94,39.38,38087.48,17.88,6.24],
+ ['HCLTECH','HCL Technologies','IT services',1403.90,20.03,381107.51,3.85,5132.00,21.18,35620.00,11.51,30.40],
+ ['MARUTI','Maruti Suzuki','Automobiles',11426.00,26.77,360138.36,1.23,2466.10,-26.36,53355.50,26.00,18.87],
+ ['MM','Mahindra & Mahindra','Automobiles',2890.00,18.74,359367.31,1.14,5997.56,33.80,58187.57,27.80,15.10],
+ ['ADANIENT','Adani Enterprises','Conglomerate',2607.90,109.68,352648.20,0.05,1220.99,122.00,37215.62,75.14,5.80],
+ ['ITC','ITC','FMCG & tobacco',265.00,16.85,332736.79,5.47,4508.79,-22.00,19114.37,-11.07,38.91],
+ ['ULTRACEMCO','UltraTech Cement','Cement',11175.00,36.86,327769.03,2.15,1501.38,21.66,23295.07,18.81,12.66],
+ ['ETERNAL','Eternal (Zomato)','Food delivery & quick commerce',337.85,660.32,325537.80,0.00,125.00,92.31,24138.00,77.62,2.48],
+ ['JSWSTEEL','JSW Steel','Steel',1255.40,19.59,307547.42,0.57,5359.00,225.26,54486.00,20.67,10.96],
+ ['NTPC','NTPC','Power',310.50,10.90,302725.92,2.90,6896.44,11.82,50740.96,7.81,8.92],
+ ['BAJAJ-AUTO','Bajaj Auto','Two-wheelers',10383.00,21.79,285464.95,1.44,3384.43,61.93,25125.56,59.68,28.24],
+].map(([sym,name,sector,price,pe,mcap,dy,np,npv,sales,salesv,roce])=>({sym,name,sector,price,pe,mcap,dy,np,npv,sales,salesv,roce}));
+// Day change at close, only where a source published it
+const DAYCHG={ADANIPORTS:[6.17,'Upstox'],ADANIENT:[5.69,'Upstox'],KOTAKBANK:[4.09,'Upstox'],ETERNAL:[3.40,'Upstox'],MARUTI:[-1.11,'Upstox'],'BAJAJ-AUTO':[-0.65,'Upstox'],HDFCBANK:[-0.29,'Univest prev close ₹685.30'],ICICIBANK:[0.65,'Univest prev close ₹1,377.60']};
+const NSE_SYM={MM:'M%26M'};
+const byStock=Object.fromEntries(STOCKS.map(s=>[s.sym,s]));
+const COLORS=['#FF5A36','#3B5BDB','#00A37A','#8B5CF6','#E8590C','#0CA678','#D6336C','#1C7ED6','#F59F00','#5F3DC4'];
+const colorOf=s=>COLORS[[...s].reduce((a,c)=>a+c.charCodeAt(0),0)%COLORS.length];
+
+const NEWS=[
+ {tag:'Markets',t:'Sensex soars 905 points, Nifty near 22,940 as Fed holds rates and earnings lift sentiment',s:'HDFC Sky',d:'29 Oct',u:'https://hdfcsky.com/news/market-close-report-today-october-29-2026-sensex-nifty-stage-sharp-rebound-as-earnings-fed-fire-up-gains'},
+ {tag:'Results',t:'Adani Ports jumps 6% after Q2 FY27 profit rises 17% to ₹3,622 crore; Power Grid up 4%',s:'Upstox',d:'29 Oct',u:'https://upstox.com/news/market-news/stocks/top-gainers-and-losers-oct-29-adani-ports-adani-ent-shares-soar-6-power-grid-rises-4-trent-falls-2-check-list/article-202653/'},
+ {tag:'Sectors',t:'FMCG, financials and IT rally while auto shares buck the trend',s:'HDFC Sky',d:'29 Oct',u:'https://hdfcsky.com/news/sectoral-snapshot-today-october-29-2026-fmcg-financials-it-rally-auto-shares-buck-trend'},
+ {tag:'Markets',t:'India VIX drops 7% to 15.11 as equities rebound strongly',s:'HDFC Sky',d:'29 Oct',u:'https://hdfcsky.com/news/india-vix-falls-7-02percent-as-equities-rally-amid-global-uncertainty-october-29-2026'},
+ {tag:'Economy',t:'Rupee ends flat at 95.26 per dollar after hitting a two-week low; RBI and oil in focus',s:'Business Recorder',d:'29 Oct',u:'https://www.brecorder.com/news/40446500/indian-rupee-ends-flat-after-hitting-two-week-low-oil-and-rbi-remain-key'},
+ {tag:'Flows',t:'FIIs sell ₹943.60 crore in cash market; DIIs buy ₹1,924.41 crore',s:'Kotak Neo',d:'29 Oct',u:'https://www.kotakneo.com/share-market-today/fii-dii-data/'},
+ {tag:'IPO',t:'BLS Polymers IPO subscribed 241× on the final day; allotment due 30 Oct',s:'IPO Platform',d:'29 Oct',u:'https://www.ipoplatform.com/ipo/subscription/bls-polymers-ipo/4261'},
+ {tag:'IPO',t:'SFC Environmental Technologies IPO closes 9.47× subscribed, led by QIBs at 18.81×',s:'Chittorgarh',d:'29 Oct',u:'https://www.chittorgarh.com/ipo_subscription/sfc-environmental-technologies-ipo/2070/'},
+ {tag:'IPO',t:'Bombay Coated & Special Steels IPO opens: key things to know before you subscribe',s:'Zee Business',d:'29 Oct',u:'https://www.zeebiz.com/markets/ipo/news-bombay-coated-special-steels-ipo-opens-today-7-key-things-to-know-before-subscribing-404757'},
+ {tag:'IPO',t:'M.K. Sons Fine Jewels IPO subscribed 0.70× by end of day 2',s:'HDFC Sky',d:'29 Oct',u:'https://hdfcsky.com/news/m-k-sons-fine-jewels-ipo-subscription-status-day-2'},
+ {tag:'Listing',t:'Jio Platforms lists at ₹1,358, a 21.36% premium to its ₹1,119 issue price',s:'Univest',d:'28 Oct',u:'https://univest.in/blogs/jio-platforms-listing-today'},
+ {tag:'Listing',t:'HD Fire Protect shares list at 24% premium on NSE',s:'Groww',d:'21 Oct',u:'https://groww.in/blog/hd-fire-protect-shares-list-at-24-percent-premium-on-nse'},
+];
+
+// ===================== helpers (markets) =====================
+const n2=v=>v.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+const crs=v=>'₹'+Math.round(v).toLocaleString('en-IN')+' Cr';
+const lcr=v=>v>=100000?'₹'+(v/100000).toFixed(2)+' L Cr':crs(v);
+const chip=p=>p==null?'<span class="chg n">—</span>':`<span class="chg ${p>=0?'u':'d'} num">${p>=0?'+':''}${p.toFixed(2)}%</span>`;
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function areaChart(points,w=640,h=230){
+  const vals=points.map(p=>p[1]),lo=Math.min(...vals)-60,hi=Math.max(...vals)+60,pad=28,col=css('--chart'),mut=css('--muted'),grid=css('--line');
+  const X=i=>pad+i*(w-2*pad)/(points.length-1),Y=v=>10+(1-(v-lo)/(hi-lo))*(h-36);
+  const d=points.map((p,i)=>`${i?'L':'M'}${X(i).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' ');
+  const g=[22600,22800,23000].map(v=>`<line x1="${pad}" x2="${w-pad}" y1="${Y(v)}" y2="${Y(v)}" stroke="${grid}"/><text x="${w-pad}" y="${Y(v)-5}" text-anchor="end" font-size="11" fill="${mut}">${v.toLocaleString('en-IN')}</text>`).join('');
+  const lb=points.map((p,i)=>`<text x="${X(i)}" y="${h-8}" text-anchor="middle" font-size="11" fill="${mut}">${p[0]}</text>`).join('');
+  const dots=points.map((p,i)=>`<circle cx="${X(i)}" cy="${Y(p[1])}" r="12" fill="transparent"><title>${p[0]}: ${n2(p[1])}</title></circle>`).join('');
+  const lx=X(points.length-1),ly=Y(vals.at(-1));
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Nifty 50 closes from ${points[0][0]} to ${points.at(-1)[0]}"><defs><linearGradient id="ng" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".32"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>${g}
+    <path class="fillin" d="${d} L${lx},${h-26} L${pad},${h-26} Z" fill="url(#ng)"/><path class="draw" pathLength="1" d="${d}" fill="none" stroke="${col}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${lx}" cy="${ly}" r="10" fill="${col}" opacity=".18"/><circle cx="${lx}" cy="${ly}" r="4.5" fill="${col}"/>${lb}${dots}</svg>`}
+const moverList=arr=>{const m=Math.max(...arr.map(a=>Math.abs(a.at(-1))));return arr.map(a=>{const p=a.at(-1),name=a.length===3?a[1]:a[0],sym=a.length===3?a[0]:null,link=sym&&byStock[sym];
+  return `<${link?`a href="#stock-${sym}"`:'div'} class="mv" style="text-decoration:none"><span style="font-weight:600;font-size:14.5px">${esc(name)}</span><span class="num ${p>=0?'up':'down'}" style="font-weight:700">${p>=0?'+':''}${p.toFixed(2)}%</span><span class="b"><i style="width:${Math.abs(p)/m*100}%;background:${p>=0?'var(--up)':'var(--dn)'}"></i></span></${link?'a':'div'}>`}).join('')};
+
+// ===================== theme =====================
+const THEMEK='niveshlens.theme';
+function curTheme(){const a=document.documentElement.getAttribute('data-theme');if(a)return a;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+function paintThemeBtn(){const d=curTheme()==='dark';document.getElementById('themeBtn').innerHTML=d?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';document.getElementById('themeBtn').setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode')}
+try{const t=localStorage.getItem(THEMEK);if(t)document.documentElement.setAttribute('data-theme',t)}catch{}
+document.getElementById('themeBtn').onclick=()=>{const n=curTheme()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem(THEMEK,n)}catch{};paintThemeBtn();repaintCharts()};
+
+// ===================== watchlist store =====================
+const WLK='niveshlens.watchlist';
+const readWL=()=>{try{return JSON.parse(localStorage.getItem(WLK)||'[]')}catch{return []}};
+let WL=readWL();
+const inWL=k=>WL.includes(k);
+async function toggleWL(k){WL=inWL(k)?WL.filter(x=>x!==k):[...WL,k];try{localStorage.setItem(WLK,JSON.stringify(WL))}catch{}
+  if(cloud){try{await cloud.doc('watchlist').set({items:WL})}catch{}}
+  toast(inWL(k)?'Added to watchlist':'Removed from watchlist');renderWLAll()}
+function starBtn(k,label){return `<button type="button" class="star" data-star="${k}" aria-pressed="${inWL(k)}" aria-label="${inWL(k)?'Remove '+label+' from':'Add '+label+' to'} watchlist">${inWL(k)?'★':'☆'}</button>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-star]');if(b){e.preventDefault();e.stopPropagation();toggleWL(b.dataset.star)}},true);
+function wlRow(k){if(k.startsWith('ipo:')){const i=byId[k.slice(4)];if(!i)return '';return `<div class="wl" data-open="${i.id}" role="button" tabindex="0"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b class="nm">${esc(i.name.replace(/ Ltd$/,''))}</b><small>${band(i)} · ${i.st}</small></div><div style="display:flex;gap:6px;align-items:center">${statusPill(i)}${starBtn(k,i.name)}</div></div>`}
+  const s=byStock[k];if(!s)return '';const dc=DAYCHG[k];return `<a class="wl" href="#stock-${k}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${k.replace('-','').slice(0,2)}${logoImg(k)}</div><div><b class="nm">${esc(s.name)}</b><small class="num">₹${n2(s.price)} · ${esc(s.sector)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(dc?dc[0]:null)}${starBtn(k,s.name)}</div></a>`}
+function renderWLAll(){
+  const st=WL.filter(k=>!k.startsWith('ipo:')),ip=WL.filter(k=>k.startsWith('ipo:'));
+  const e1=document.getElementById('wlstocks'),e2=document.getElementById('wlipos'),e3=document.getElementById('wlmini');
+  if(e1)e1.innerHTML=st.map(wlRow).join('')||`<div class="empty">No stocks yet. <a class="link" href="#stocks">Browse stocks</a> and tap ☆.</div>`;
+  if(e2)e2.innerHTML=ip.map(wlRow).join('')||`<div class="empty">No IPOs yet. <a class="link" href="#ipos">Browse IPOs</a> and tap ☆.</div>`;
+  if(e3)e3.innerHTML=WL.length?WL.slice(0,5).map(wlRow).join(''):`<p class="note" style="margin:8px 0 10px">Your watchlist is empty. Here are today's biggest movers:</p>${[...GAIN.slice(0,3),...LOSE.slice(0,2)].filter(g=>byStock[g[0]]).map(g=>wlRow(g[0])).join('')}`;
+  document.querySelectorAll('.wl[data-open]').forEach(r=>{r.onclick=e=>{if(!e.target.closest('[data-star]'))openIpo(r.dataset.open)};r.onkeydown=e=>{if(e.key==='Enter')openIpo(r.dataset.open)}});
+  if(document.getElementById('v-stocks').classList.contains('on'))renderStocks();
+  if(document.getElementById('v-stock').classList.contains('on'))renderStockPage(curStock);
+  if(document.getElementById('v-ipos').classList.contains('on'))renderIpos();
+}
+
+// ===================== markets view =====================
+function renderTape(){const items=[['NIFTY 50','22,936.75',1.05],['SENSEX','74,151.04',1.24],['BANK NIFTY','54,909.65',1.18],['MIDCAP 100','57,841.65',0.99],['SMALLCAP 100','18,811.35',0.95],['INDIA VIX','15.11',-7.02],['GOLD 24K','₹1,43,950/10g',null],['SILVER','₹2,14,900/kg',null],['USD/INR','95.25',null],['BRENT','$111.47',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0]])];
+  const h=items.map(([k,v,p])=>`<span><b>${k}</b>${v}${p!=null?` <span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`).join('');
+  document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')}
+function renderMarkets(){
+  document.getElementById('nchg').textContent='▲ +237.90 · +1.05%';
+  document.getElementById('nchart').innerHTML=areaChart(NIFTY8);
+  document.getElementById('minis').innerHTML=MINIS.map(([k,v,p,t])=>`<div class="glass"><span>${k}</span><div class="row"><b>${v}</b>${p!=null?`<span class="${(k==='India VIX'?-p:p)>=0?'up':'down'}" style="font-weight:700;font-size:13px">${p>=0?'+':''}${p.toFixed(2)}%</span>`:`<span class="muted" style="font-size:12px">${t}</span>`}</div></div>`).join('');
+  document.getElementById('sect').innerHTML=SECTORS.map(([k,p])=>{const a=Math.min(1,Math.abs(p)/3.2);return `<div style="background:color-mix(in srgb,${p>=0?'var(--up)':'var(--dn)'} ${Math.round(8+a*26)}%,transparent)">${k}<b class="num ${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</b></div>`}).join('');
+  document.getElementById('gain').innerHTML=moverList(GAIN);document.getElementById('lose').innerHTML=moverList(LOSE);
+  document.getElementById('midg').innerHTML=moverList(MIDG);document.getElementById('midl').innerHTML=moverList(MIDL);
+  document.getElementById('smg').innerHTML=moverList(SMG);document.getElementById('sml').innerHTML=moverList(SML);
+  document.getElementById('newsmini').innerHTML=NEWS.slice(0,4).map(newsItem).join('');
+  const open=IPOS.filter(i=>i.st==='open'),i=byId.bombaycoated&&byId.bombaycoated.st==='open'?byId.bombaycoated:open[0];
+  document.getElementById('spot').innerHTML=i?`<div class="row" style="margin-bottom:14px"><h4 style="font-size:16px">IPO spotlight</h4>${statusPill(i)}</div>
+    <div style="display:grid;gap:12px"><div style="display:flex;gap:12px;align-items:center"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name)}</b><small class="muted" style="display:block;font-size:12.5px">${i.type} · ${esc(i.sector)} · ${cr(i.size)}</small></div></div>
+    <div class="kv num"><div><span>Price band</span><b>${band(i)}</b></div><div><span>Lot</span><b>${i.lot} sh</b></div><div><span>Min.</span><b>${rs0(i.minAmt)}</b></div></div>
+    ${i.sub?`<div><div class="row" style="font-size:13px;margin-bottom:6px"><span class="muted">Subscribed · ${esc(i.sub.at)}</span><b>${i.sub.total.toFixed(2)}×</b></div><div class="bar"><i style="width:${Math.min(100,i.sub.total*10)}%"></i></div></div>`:''}
+    <div style="display:flex;gap:8px"><button class="btn" type="button" style="flex:1" onclick="openIpo('${i.id}','apply')">Apply via your broker</button><button class="ghost" type="button" onclick="openIpo('${i.id}')">Details</button></div>
+    <a class="link" href="#ipos" style="font-size:13px">+ ${open.length-1} more IPOs open now →</a></div>`:'<p class="note">No IPOs open today.</p>';
+  document.querySelectorAll('#jump button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#jump button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.getElementById(b.dataset.j).scrollIntoView({behavior:'smooth',block:'start'})});
+}
+function repaintCharts(){document.getElementById('nchart').innerHTML=areaChart(NIFTY8)}
+
+// ===================== stocks =====================
+let sortK='mcap',sortD=-1,curStock=null;
+function renderStocks(){
+  const cols=[['name','Company'],['price','Price ₹'],['day','Day'],['mcap','Market cap'],['pe','P/E'],['npv','Profit YoY'],['salesv','Sales YoY'],['roce','ROCE']];
+  const rows=[...STOCKS].sort((a,b)=>{const va=sortK==='day'?(DAYCHG[a.sym]?.[0]??-999):a[sortK],vb=sortK==='day'?(DAYCHG[b.sym]?.[0]??-999):b[sortK];return (va>vb?1:va<vb?-1:0)*sortD});
+  document.getElementById('stbl').innerHTML=`<tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${sortK===k?(sortD>0?'ascending':'descending'):'none'}">${l}${sortK===k?(sortD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>`+
+    rows.map(s=>`<tr class="r" data-s="${s.sym}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div></div></td>
+      <td><b>${n2(s.price)}</b></td><td>${chip(DAYCHG[s.sym]?.[0]??null)}</td><td>${lcr(s.mcap)}</td><td>${s.pe.toFixed(1)}</td><td class="${s.npv>=0?'up':'down'}">${s.npv>=0?'+':''}${s.npv.toFixed(1)}%</td><td class="${s.salesv>=0?'up':'down'}">${s.salesv>=0?'+':''}${s.salesv.toFixed(1)}%</td><td>${s.roce.toFixed(1)}%</td><td>${starBtn(s.sym,s.name)}</td></tr>`).join('');
+  document.querySelectorAll('#stbl th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortD=sortK===k?-sortD:(k==='name'?1:-1);sortK=k;renderStocks()});
+  document.querySelectorAll('#stbl tr.r').forEach(tr=>tr.onclick=e=>{if(!e.target.closest('[data-star]'))location.hash='stock-'+tr.dataset.s});
+}
+function renderStockPage(sym){
+  const s=byStock[sym];curStock=sym;const el=document.getElementById('stockpage');
+  if(!s){el.innerHTML=`<div class="phead"><div><h1 class="ptitle">Stock not found</h1><p class="psub">This preview covers the 25 largest Nifty 50 companies. <a class="link" href="#stocks">See all stocks</a></p></div></div>`;return}
+  const dc=DAYCHG[sym],rank=[...STOCKS].sort((a,b)=>b.mcap-a.mcap).findIndex(x=>x.sym===sym)+1;
+  const peer=STOCKS.filter(x=>x.sector===s.sector&&x.sym!==sym);
+  const mxs=Math.max(Math.abs(s.salesv),Math.abs(s.npv),1);
+  const nseSym=NSE_SYM[sym]||encodeURIComponent(sym);
+  const news=NEWS.filter(n=>n.t.toLowerCase().includes(s.name.split(' ')[0].toLowerCase()));
+  el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a>
+      <div class="shead" style="margin-top:12px"><div class="slogo" style="background:${colorOf(sym)}">${sym.replace('-','').slice(0,2)}${logoImg(sym)}</div>
+      <div><h1 style="font-size:clamp(28px,4vw,42px);font-weight:700">${esc(s.name)}</h1><div class="eyebrow" style="margin-top:4px">${sym==='MM'?'M&amp;M':sym} · NSE · ${esc(s.sector)} · #${rank} by market cap in this list</div></div></div></div>
+      <div style="display:flex;gap:8px;align-items:center">${starBtn(sym,s.name)}<a class="ghost" href="https://www.nseindia.com/get-quotes/equity?symbol=${nseSym}" target="_blank" rel="noopener">Live quote on NSE ↗</a></div></div>
+    <div class="grid2">
+      <div class="glass card"><span class="lbl">Close · 29 Oct 2026</span><div class="big num">₹${n2(s.price)}</div>${dc?`${chip(dc[0])} <span class="note" style="display:inline">day change · ${esc(dc[1])}</span>`:'<span class="note">Day change not published by our sources for this stock.</span>'}
+        <div class="kgrid num" style="margin-top:18px"><div><span>Market cap</span><b>${lcr(s.mcap)}</b></div><div><span>P/E</span><b>${s.pe.toFixed(2)}</b></div><div><span>Dividend yield</span><b>${s.dy.toFixed(2)}%</b></div><div><span>ROCE</span><b>${s.roce.toFixed(2)}%</b></div></div></div>
+      <div class="glass card"><span class="lbl">Latest quarter vs same quarter last year</span>
+        <div class="qbars num" style="margin-top:16px">
+          <div class="qb"><div class="row"><span>Sales</span><b>${crs(s.sales)} <span class="${s.salesv>=0?'up':'down'}">${s.salesv>=0?'+':''}${s.salesv.toFixed(2)}%</span></b></div><div class="t"><i style="width:${Math.abs(s.salesv)/mxs*100}%;background:${s.salesv>=0?'var(--up)':'var(--dn)'}"></i></div></div>
+          <div class="qb"><div class="row"><span>Net profit</span><b>${crs(s.np)} <span class="${s.npv>=0?'up':'down'}">${s.npv>=0?'+':''}${s.npv.toFixed(2)}%</span></b></div><div class="t"><i style="width:${Math.abs(s.npv)/mxs*100}%;background:${s.npv>=0?'var(--up)':'var(--dn)'}"></i></div></div>
+        </div>
+        <p class="note" style="margin-top:16px">${s.npv>=15?'Profit grew strongly from a year ago.':s.npv>=0?'Profit grew modestly from a year ago.':'Profit fell from a year ago.'} ${s.pe>40?'The P/E is high, so the market is pricing in strong future growth.':s.pe<15?'The P/E is low compared with most large caps.':'The P/E is in a typical range for large caps.'}</p></div>
+    </div>
+    ${peer.length?`<div class="secht"><div><h2>Peers</h2><p>Other ${esc(s.sector.toLowerCase())} companies in this list</p></div></div><div class="glass card">${peer.map(p=>wlRow(p.sym)).join('')}</div>`:''}
+    ${news.length?`<div class="secht"><div><h2>In the news</h2></div></div><div class="glass card">${news.map(newsItem).join('')}</div>`:''}
+    <p class="src">Price, valuation and quarterly figures: Screener.in, 29 Oct 2026 close. Not live. Check the NSE quote before trading.</p>`;
+}
+
+// ===================== news =====================
+const newsItem=n=>`<a class="nitem" href="${n.u}" target="_blank" rel="noopener"><span class="ntag">${n.tag}</span><p>${esc(n.t)}</p><small>${esc(n.s)} · ${n.d} ↗</small></a>`;
+let ntag='All';
+function renderNews(){const tags=['All',...new Set(NEWS.map(n=>n.tag))];
+  document.getElementById('ntabs').innerHTML=tags.map(t=>`<button type="button" aria-pressed="${ntag===t}" data-t="${t}">${t}</button>`).join('');
+  document.querySelectorAll('#ntabs button').forEach(b=>b.onclick=()=>{ntag=b.dataset.t;renderNews()});
+  const L=NEWS.filter(n=>ntag==='All'||n.tag===ntag),h=Math.ceil(L.length/2);
+  document.getElementById('newsgrid').innerHTML=`<div class="glass card">${L.slice(0,h).map(newsItem).join('')}</div><div class="glass card">${L.slice(h).map(newsItem).join('')||'<p class="note">No more stories.</p>'}</div>`}
+
+// ===================== search palette =====================
+const PAGES=[['GMP board','ipo-gmp'],['Subscription status','ipo-sub'],['IPO screener','ipo-screener'],['Allotment desk','ipo-allot'],['Money planner','ipo-planner'],['Learn: IPO guides','learn'],['Gold & silver rates','markets'],['Markets','markets'],['Stocks','stocks'],['IPOs','ipos'],['Watchlist','watchlist'],['News','news'],['My applications','applications'],['Charges calculator','tools']];
+let psel=0,pitems=[];
+function openSearch(){document.getElementById('palette').classList.add('on');const q=document.getElementById('pq');q.value='';runSearch('');setTimeout(()=>q.focus(),10)}
+function closeSearch(){document.getElementById('palette').classList.remove('on')}
+function runSearch(q){q=q.trim().toLowerCase();
+  const st=STOCKS.filter(s=>!q||s.name.toLowerCase().includes(q)||s.sym.toLowerCase().includes(q)||s.sector.toLowerCase().includes(q)).slice(0,q?8:5);
+  const ip=IPOS.filter(i=>!q||i.name.toLowerCase().includes(q)||i.sector.toLowerCase().includes(q)).slice(0,q?6:4);
+  const pg=PAGES.filter(p=>!q||p[0].toLowerCase().includes(q));
+  pitems=[];let h='';
+  if(st.length){h+='<div class="pgroup">Stocks</div>'+st.map(s=>{pitems.push('#stock-'+s.sym);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div><span class="num muted">₹${n2(s.price)}</span></button>`}).join('')}
+  if(ip.length){h+='<div class="pgroup">IPOs</div>'+ip.map(i=>{pitems.push('ipo:'+i.id);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name)}</b><small class="muted" style="display:block;font-size:12px">${i.type} · ${band(i)}</small></div>${statusPill(i)}</button>`}).join('')}
+  if(pg.length){h+='<div class="pgroup">Pages</div>'+pg.map(p=>{pitems.push('#'+p[1]);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg">↗</div><div><b>${p[0]}</b></div><span></span></button>`}).join('')}
+  document.getElementById('pres').innerHTML=h||`<p class="note" style="padding:16px">No match for “${esc(q)}”. This preview covers the top 25 Nifty 50 stocks and current IPOs.</p>`;
+  psel=0;markSel();document.querySelectorAll('#pres .pr').forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
+function markSel(){document.querySelectorAll('#pres .pr').forEach((b,i)=>b.classList.toggle('sel',i===psel))}
+function pick(i){const t=pitems[i];if(!t)return;closeSearch();if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else location.hash=t.slice(1)}
+document.getElementById('openSearch').onclick=openSearch;
+document.getElementById('pq').oninput=e=>runSearch(e.target.value);
+document.getElementById('pq').onkeydown=e=>{if(e.key==='ArrowDown'){psel=Math.min(psel+1,pitems.length-1);markSel();e.preventDefault()}else if(e.key==='ArrowUp'){psel=Math.max(psel-1,0);markSel();e.preventDefault()}else if(e.key==='Enter'){pick(psel)}else if(e.key==='Escape')closeSearch()};
+document.getElementById('palette').onclick=e=>{if(e.target.id==='palette')closeSearch()};
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch()}else if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openSearch()}});
+
+// ===================== IPO star in cards =====================
+// ===================== routing =====================
+const VIEWS=['markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools'];
+function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
+  let sub=null;if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(!VIEWS.includes(h))view='markets';
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+view));
+  const navv=view==='stock'?'stocks':(view.startsWith('ipo')||view==='learn'||view==='gmp'||view==='allot')?'ipos':view;
+  if(view==='gmp')renderGmpPage(sub);if(view==='allot')renderAllotPage(sub);
+  const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
+  if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
+  document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='ipos')renderIpos();if(view==='watchlist')renderWLAll();
+  scrollTo({top:0});requestAnimationFrame(animateView)}
+addEventListener('hashchange',route);
+
+// ===================== LIVE layer (hosted build: data/live.js, refreshed by GitHub Actions) =====================
+const LIVED=window.LIVE||null;
+const IDX={NIFTY:{v:22936.75,ch:237.90,pct:1.05,open:22690.65,high:22961.95,low:null,prev:22698.85},SENSEX:{v:74151.04,ch:905.01,pct:1.24,high:74166.16,prev:73246.03},BANKNIFTY:{v:54909.65,ch:642.25,pct:1.18,prev:54267.40},MIDCAP:{v:57841.65,pct:0.99},SMALLCAP:{v:18811.35,pct:0.95},VIX:{v:15.11,pct:-7.02}};
+const fin=v=>v==null?'—':v.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+let BREADTH={up:39,n:50,label:'Nifty stocks'};
+if(LIVED){try{
+  for(const k in (LIVED.idx||{}))if(LIVED.idx[k]&&LIVED.idx[k].v)IDX[k]=LIVED.idx[k];
+  const setMini=(k,v,p)=>{const m=MINIS.find(a=>a[0]===k);if(m){m[1]=v;m[2]=p}};
+  setMini('Midcap 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct);setMini('Smallcap 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct);setMini('India VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct);
+  if(LIVED.usdinr)setMini('USD / INR','₹'+LIVED.usdinr.v.toFixed(2),LIVED.usdinr.pct);
+  if(LIVED.brent)setMini('Brent crude','$'+LIVED.brent.v.toFixed(2),LIVED.brent.pct);
+  if(LIVED.goldSpot)setMini('Gold (global spot)','$'+Math.round(LIVED.goldSpot.v).toLocaleString('en-US'),LIVED.goldSpot.pct);
+  if(LIVED.nifty8&&LIVED.nifty8.length>2)NIFTY8.splice(0,NIFTY8.length,...LIVED.nifty8);
+  if(LIVED.metals&&LIVED.metals.g24)Object.assign(METALS,LIVED.metals);
+  if(LIVED.stocks)STOCKS.forEach(s=>{const q=LIVED.stocks[s.sym];if(q&&q.v){const r=q.v/s.price;s.pe*=r;s.mcap*=r;s.dy/=r;s.price=q.v;DAYCHG[s.sym]=[q.pct,'NSE via Yahoo Finance']}});
+  if(LIVED.sectors&&LIVED.sectors.length)SECTORS.splice(0,SECTORS.length,...LIVED.sectors);
+  if(LIVED.gainers&&LIVED.gainers.length)GAIN.splice(0,GAIN.length,...LIVED.gainers);
+  if(LIVED.losers&&LIVED.losers.length)LOSE.splice(0,LOSE.length,...LIVED.losers);
+  if(LIVED.breadth)BREADTH=LIVED.breadth;
+  for(const id in (LIVED.ipo||{})){const i=byId[id],q=LIVED.ipo[id];if(!i)continue;
+    if(q.gmp!=null&&i.st!=='listed')i.gmp={v:q.gmp,src:q.gsrc,at:q.gat};
+    if(q.sub!=null)i.sub={...(i.sub||{}),total:q.sub,src:q.ssrc,at:q.sat};
+    if(q.cur!=null)i.cur=q.cur}
+  if(LIVED.news&&LIVED.news.length>3)NEWS.splice(0,NEWS.length,...LIVED.news);
+  if(LIVED.flows){window.FLOWS=LIVED.flows}
+}catch(e){console.warn('live data',e)}}
+function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id,h)=>{const e=document.getElementById(id);if(e)e.innerHTML=h};
+  const sg=p=>(p>=0?'+':'')+p.toFixed(2)+'%',cl=p=>p>=0?'u':'d';
+  set('nbig',fin(N.v));set('nchg',`${N.pct>=0?'▲ +':'▼ −'}${fin(Math.abs(N.ch))} · ${sg(N.pct)}`);
+  set('nopen',fin(N.open));set('nhigh',fin(N.high));set('nprev',fin(N.prev));set('nadv',`${BREADTH.up} / ${BREADTH.n}`);
+  set('sxv',fin(S.v));set('sxch',`${S.ch>=0?'+':'−'}${fin(Math.abs(S.ch))} pts today`);set('sxprev','Prev '+fin(S.prev));set('sxhigh','High '+fin(S.high));
+  const sp=document.getElementById('sxp');if(sp){sp.className='chg num '+cl(S.pct);sp.textContent=sg(S.pct)}
+  set('bnv',fin(B.v));set('bnch',`${B.ch>=0?'+':'−'}${fin(Math.abs(B.ch))} pts`);set('bnprev','Prev '+fin(B.prev));set('bnclose',(LIVED&&LIVED.state==='open'?'Now ':'Close ')+fin(B.v));
+  const bp=document.getElementById('bnp');if(bp){bp.className='chg num '+cl(B.pct);bp.textContent=sg(B.pct)}
+  const nc=document.getElementById('nchg');if(nc)nc.className='chg num '+cl(N.pct);
+  const pc=Math.round(BREADTH.up/BREADTH.n*100),rg=document.getElementById('ring');if(rg){rg.style.background=`conic-gradient(var(--up) 0 ${pc}%,var(--dn) ${pc}% 100%)`;rg.innerHTML=`<i class="num">${BREADTH.up}</i>`}
+  set('mood',pc>=60?'Bullish breadth':pc<=40?'Bearish breadth':'Mixed breadth');
+  set('moodtxt',`${BREADTH.up} of ${BREADTH.n} ${BREADTH.label} rose. India VIX ${IDX.VIX.pct>=0?'rose':'fell'} ${Math.abs(IDX.VIX.pct).toFixed(2)}% to ${IDX.VIX.v.toFixed(2)}.`);
+  if(LIVED){const when=LIVED.label||'';
+    set('mk-eb',`${LIVED.state==='open'?'<b style="color:var(--up)">● Live</b> · market open':'Market closed'} · updated ${esc(when)}`);
+    set('mk-title',`Nifty ${N.pct>=0?'gains':'slips'} <em>${sg(N.pct)}</em> ${LIVED.state==='open'?'in trade':'at the close'}.`);
+    set('mk-secp',`% change · ${LIVED.state==='open'?'live':'last close'} · updated ${esc(when)}`);
+    set('nsrc',`NSE data via Yahoo Finance · updated ${esc(when)}. Refreshes automatically.`);
+    set('gainh','Top gainers · large caps');set('loseh','Top losers · large caps');
+    if(window.FLOWS&&FLOWS.fii!=null){const m=Math.max(Math.abs(FLOWS.fii),Math.abs(FLOWS.dii))||1,f=v=>`${v>=0?'+':'−'}₹${Math.abs(v).toLocaleString('en-IN',{maximumFractionDigits:2})} Cr`;
+      set('flows',`<div class="row"><b>FIIs</b><b class="${FLOWS.fii>=0?'up':'down'}">${f(FLOWS.fii)}</b></div><div class="flowbar"><i style="width:${Math.abs(FLOWS.fii)/m*100}%;background:var(--${FLOWS.fii>=0?'up':'dn'})"></i></div><div class="row"><b>DIIs</b><b class="${FLOWS.dii>=0?'up':'down'}">${f(FLOWS.dii)}</b></div><div class="flowbar"><i style="width:${Math.abs(FLOWS.dii)/m*100}%;background:var(--${FLOWS.dii>=0?'up':'dn'})"></i></div>`);
+      set('flowsrc',`Provisional NSE data · ${esc(FLOWS.date||'')}.`)}}
+}
+const _rm=renderMarkets;renderMarkets=function(){_rm();patchMarketDom()};
+// tape from live values
+renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+(M.g24*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0]])];
+  const h=items.map(([k,v,p])=>`<span><b>${k}</b>${v}${p!=null?` <span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`).join('');
+  document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')};
+// auto-refresh: re-check data/live.js every 3 minutes; reload when the server has newer figures
+setInterval(()=>{const s=document.createElement('script');const cur=LIVED&&LIVED.updated;s.src='data/live.js?t='+Date.now();s.onload=()=>{if(window.LIVE&&window.LIVE.updated&&window.LIVE.updated!==cur&&!document.querySelector('.overlay.on')&&!document.querySelector('input:focus'))location.reload();s.remove()};document.head.appendChild(s)},180000);
+
+// ===================== init =====================
+document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
+document.getElementById('srcs').textContent=SOURCES.replace('Sources:','Data sources:')+' Market data: NSE and BSE via Upstox, Angel One, HDFC Sky, Kotak Neo, Liquide, Multibagg, Investing.com, Screener.in, Business Recorder.';
+paintThemeBtn();renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();renderApps();setStore();renderListings();calc();renderWLAll();route();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{paintThemeBtn();repaintCharts()});
+
+</script>
+</body>
+</html>
