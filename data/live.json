@@ -1,6 +1,6 @@
 {
  "label": "30 Oct 2026, 3:42 PM IST",
- "updated": "2026-10-30T15:42:06+05:30",
+ "updated": "2026-10-30T15:42:31+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -118,14 +118,14 @@
    "t": 1793354471
   },
   "SENSEX": {
-   "v": 74507.34,
+   "v": 74522.2,
    "prev": 74151.04,
-   "ch": 356.3,
-   "pct": 0.48,
+   "ch": 371.16,
+   "pct": 0.5,
    "high": 74742.59,
    "low": 74082.03,
    "open": 74202.18,
-   "t": 1793354225
+   "t": 1793354251
   },
   "BANKNIFTY": {
    "v": 54686.95,
@@ -165,7 +165,7 @@
    "high": 15.7,
    "low": 14.47,
    "open": 15.12,
-   "t": 1793355125
+   "t": 1793355150
   }
  },
  "nifty8": [
@@ -213,24 +213,24 @@
   "t": 1793354619
  },
  "brent": {
-  "v": 113.29,
+  "v": 113.18,
   "prev": 110.8,
-  "ch": 2.49,
-  "pct": 2.25,
+  "ch": 2.38,
+  "pct": 2.15,
   "high": 114.07,
   "low": 111.05,
   "open": 112.11,
-  "t": 1793354466
+  "t": 1793354529
  },
  "goldSpot": {
-  "v": 4000.0,
+  "v": 3999.8,
   "prev": 4031.4,
-  "ch": -31.4,
+  "ch": -31.6,
   "pct": -0.78,
   "high": 4038.2,
   "low": 3974.7,
   "open": 4003.8,
-  "t": 1793354509
+  "t": 1793354549
  },
  "sectors": [
   [
@@ -435,24 +435,36 @@
   "mksons": {
    "gmp": 7.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      7.0
     ]
-   ]
+   ],
+   "sub": 4.68,
+   "sq": 5.06,
+   "snii": null,
+   "sr": 2.68,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "bombaycoated": {
    "gmp": 9.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      9.0
     ]
-   ]
+   ],
+   "sub": 1.0,
+   "sq": 0.0,
+   "snii": 0.84,
+   "sr": 1.65,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "jio": {
    "gmp": 1119.0,
@@ -468,73 +480,109 @@
   "carver": {
    "gmp": 3.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      3.0
     ]
-   ]
+   ],
+   "sub": 17.31,
+   "sq": 20.26,
+   "snii": null,
+   "sr": 12.36,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "ajwa": {
    "gmp": 2.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      2.0
     ]
-   ]
+   ],
+   "sub": 1.1,
+   "sq": null,
+   "snii": null,
+   "sr": 1.9,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "antala": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      0.0
     ]
-   ]
+   ],
+   "sub": 0.82,
+   "sq": 66.72,
+   "snii": null,
+   "sr": 0.09,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "maxwell": {
    "gmp": 70.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      70.0
     ]
-   ]
+   ],
+   "sub": 3.31,
+   "sq": null,
+   "snii": null,
+   "sr": 5.95,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "johnsoncab": {
    "gmp": 10.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      10.0
     ]
-   ]
+   ],
+   "sub": 0.8,
+   "sq": null,
+   "snii": null,
+   "sr": 1.0,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "vectras": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      0.0
     ]
-   ]
+   ],
+   "sub": 0.97,
+   "sq": 1.42,
+   "snii": null,
+   "sr": 0.83,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   },
   "hgs": {
    "gmp": 19.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
@@ -545,13 +593,45 @@
   "vedant": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "30 Oct, 3:39 PM",
+   "gat": "30 Oct, 3:42 PM",
    "ghist": [
     [
      "30 Oct",
      0.0
     ]
    ]
+  },
+  "wiscon": {
+   "sub": 1.15,
+   "sq": 2.24,
+   "snii": null,
+   "sr": 0.66,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
+  },
+  "sfc": {
+   "sub": 4.26,
+   "sq": 5.8,
+   "snii": 8.12,
+   "sr": 1.72,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
+  },
+  "bls": {
+   "sub": 240.84,
+   "sq": 200.25,
+   "snii": null,
+   "sr": 127.67,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
+  },
+  "eaaa": {
+   "sub": 4.06,
+   "sq": 10.08,
+   "snii": 3.8,
+   "sr": 0.73,
+   "ssrc": "IPOMarket",
+   "sat": "30 Oct, 3:42 PM"
   }
  },
  "flows": {
@@ -573,13 +653,6 @@
    "s": "IPO Watch",
    "d": "30 Oct, 12:47 PM",
    "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA0aUJnMExxbW1EMGNreGNRRmhfYTljRzhYZFh5TTc1bldtMHBNRWNfVDktdG1hYkNBeWl3U3pUUFl2VDRVUk5TVy1MSjh6djhJMkk2YWJYWXlicE10anVRa2U4b2JsRG1P?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "Ather Energy Share Price Today, Ather Energy Stock Price Live NSE/BSE Updates",
-   "s": "The Economic Times",
-   "d": "30 Oct, 11:43 AM",
-   "u": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMmpPVXcxeVFIRHF1aHV6dFRLVnhXV3djOWRQN2tuMmxVTnhDeVNJSnFoV2ZscmFoaEtaWXhCT0tabGNHdVhlOV8zcG45eTJrYS04ek9hSlNlMEZPYlpyeS1pbXNqbjlVVklKeEFrX1R6OUEzXzhRdjNneFZzbEFFMjc4MmZ4T3dSMnc?oc=5"
   },
   {
    "tag": "IPO",
@@ -639,17 +712,17 @@
   },
   {
    "tag": "Results",
+   "t": "MedPlus Health Services Limited (NSE:MEDPLUS) First-Quarter Results: Here's What Analysts Are Forecasting For This Year",
+   "s": "Simply Wall St",
+   "d": "30 Oct, 8:08 AM",
+   "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQYjFqUXZ2eGRpQTVtellsbXBnMnR6aGd5RFBfdGRTZHAzOFBXdUhGbHh5bVh1NndUeFFLT2Z6bFBYM2NKME93OEJoZXpzZlBQak92dnJVckhiREt6NFV1V1A5M0dNenphOWtKcVZ2UHJhTkdITXl0eU8xSGcxMjU5SS16QlJPcGpmYjl4ZnNmVm9UaGMzb2Mwak1pdkdtbzlBOFFjTVl2RF9tS0cwUFB5bGxJd0k1SlR4dE5JZFh1UktFdWpVcWUxRGRhc21CTlMzRFowMWV1WGRyc3VJSENPaHNDWFpTR3htSlNHcDFJQ2jSAfYBQVVfeXFMTTdYQVRhbUdvWnFxdVJWVWlpQ1ZWRmdUUXJ3UThWUWVJb2UwWUl2THdnQWJ4WWdrOEJnMm81TUhQU2paMlR2WHduRFRQd2FXYnJxVWlXdGR5LU5NeWtpZWdsTzdtUmhVbkU0RXVkeEQ4N3c5bUkwNk8xMW0tMkduRVBfQ0JPLTA0alRxVC0zOWhLbUdTajdWa3FIeDlTal8wdEUzdnNqTE9tQkF1aDdJajc4a0hIRkQyRzZPeUgySWdGNUg4UmFrS0VUblo4V3B1bGpWWVNLdTR3bUtQSDdfeGs5TC03SEM1MnUyUDEyS0NESURQczNB?oc=5"
+  },
+  {
+   "tag": "Results",
    "t": "Gravita India Limited (NSE:GRAVITA) Second-Quarter Results Just Came Out: Here's What Analysts Are Forecasting For This Year",
    "s": "Simply Wall St",
    "d": "30 Oct, 7:22 AM",
-   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOV0JzWmpGN2VvbnduaEllbkhMME9ZaFA5X2dxbDhiLVJfM2dmd0dCU2E0amZFYUl0T28zRWQzcmdXRlgtd3NEeGJ0cS05QlRyaE9HSVRFS1JscmVJRmhDem9pWDN5d1JtNkNiOXhSWEJINXJIdDZINW5LVkZQR2NTcEhJYzMxZ0ZoQjB2UWtQTkh0UXNjNHhjU3l0eWpIUXEzV1pnVnkzOTlpQVUyYnR0c1BIczBjYTNTMUI1Z0hQZzh6RXNROWVSUTJHWG1Na2pJMW5TNWhkNzB5S1di0gHcAUFVX3lxTE5XQnNaakY3ZW9ud25oSWVuSEwwT1loUDlfZ3FsOGItUl8zZ2Z3R0JTYTRqZkVhSXRPbzNFZDNyZ1dGWC13c0R4YnRxLTlCVHJoT0dJVEVLUmxyZUlGaEN6b2lYM3l3Um02Q2I5eFJYQkg1ckh0Nkg1bktWRlBHY1NwSEljMzFnRmhCMHZRa1BOSHRRc2M0eGNTeXR5akhRcTNXWmdWeTM5OWlBVTJidHRzUEhzMGNhM1MxQjVnSFBnOHpFc1E5ZVJRMkdYbU1rakkxblM1aGQ3MHlLV2I?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "IMF urges India to allow rupee flexibility to absorb energy shocks",
-   "s": "BusinessLine",
-   "d": "30 Oct, 6:22 AM",
-   "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNX1hGblRMcmRDZmlzTVZMeXNRUk1uQ1F1cUkxYjVCSWJ6NUQ4aWRvZTF0UlBPQndVV0w1TUgwUzQ2ckpscnlHejRKN1hpNFBjbjdCNk5ZYzVhcmJ1aFlrNEM3Y29lMzdMYWtiVjZ6ZkdnT3hjYlo4dEpFbktZXzlVZjdZczdRajY1U1h5dFJQVnBkZU1OWl9kczVERkUwc0pQa1N5VVFtcUZEeVRDR3NxRDFFd0Jnb3FBdEswUm9iZkpfMkxTT2s1cWwxamx3NWNFVHN5eTRDc0hNd2JtaHNB0gHfAUFVX3lxTE1fWEZuVExyZENmaXNNVkx5c1FSTW5DUXVxSTFiNUJJYno1RDhpZG9lMXRSUE9Cd1VXTDVNSDBTNDZySmxyeUd6NEo3WGk0UGNuN0I2TlljNWFyYnVoWWs0Qzdjb2UzN0xha2JWNnpmR2dPeGNiWjh0SkVuS1lfOVVmN1lzN1FqNjVTWHl0UlBWcGRlTU5aX2RzNURGRTBzSlBrU3lVUW1xRkR5VENHc3FEMUV3QmdvcUF0SzBSb2JmSl8yTFNPazVxbDFqbHc1Y0VUc3l5NENzSE13Ym1oc0E?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOR09FdlZCOVV5Zkl3RUxxMjRlZVhNRzFyaXV0R3NDOWUyTGRkSnAxU0lvTDJfa2RnejhXZVJHeVJtdW5Fc3pPOUZTeFhESGxiUWxoLWZJRURpYnZmcE9ZVmk1RzF1T1ZwRm1DcEc1ZVFpMVhPNTJ1c2hrY280WUhoLU9EQk5faldXcmlyNDdiaXE2ZEUwc2FwNGo2M0lIaU1LUG0wbExaR3NfcHJCN0ZKemVycl8yNWswbXk5V2I4NkJ1aWY0cmFTdHBqRzRfeEg2M3lxbHlSa9IB3AFBVV95cUxOV0JzWmpGN2VvbnduaEllbkhMME9ZaFA5X2dxbDhiLVJfM2dmd0dCU2E0amZFYUl0T28zRWQzcmdXRlgtd3NEeGJ0cS05QlRyaE9HSVRFS1JscmVJRmhDem9pWDN5d1JtNkNiOXhSWEJINXJIdDZINW5LVkZQR2NTcEhJYzMxZ0ZoQjB2UWtQTkh0UXNjNHhjU3l0eWpIUXEzV1pnVnkzOTlpQVUyYnR0c1BIczBjYTNTMUI1Z0hQZzh6RXNROWVSUTJHWG1Na2pJMW5TNWhkNzB5S1di?oc=5"
   },
   {
    "tag": "Economy",
@@ -657,9 +730,20 @@
    "s": "Business Standard",
    "d": "30 Oct, 6:15 AM",
    "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNR2NQd1VuMHU3RThvSEUyd3BGV2hWZ0dvUm00dktfakFoX2tLWDVBMUc2akc3RDU4Rk9STDBiWWJBVEFad2dBTk1kQXVZVi05MkI3eEh1MW9MYVFnYkN1MnRuM21kTkstT1NveXNrNXNtYm9lZWJZY0pRMkMwcmw1TU9yZnJKQm1mMVNCV0g3STZsMjlCcndvb3M4dGtqRUo0Mlk0bE94REVRY3p3QW5Ta1paZ0huZzJ4YWVjVTB2cVhpRmpKTHpOaWNyWFJmSnVZalF4SnprN0N3ai1YR3p2OGszQnczUjFKcjl2VtIB8gFBVV95cUxPUGpqZjI0SlpEc0lsanE5VjNiXzZGZXNFdXB0dWdHckV1QlpEdmVsVE9Ic0toeXIzcnROSWhlLVFVU2syVDQ3d3FoVmZ2WkczaDhZYnVfNy1hYnppa3gwMzJsQ2Q5MkpmenJrNVBNUi1SRXhpX3dsLTF5TnlFeHc0TVoyTnc4SXdoOGZEcDRNZmh3R2M3NzdGakdwUmwwb0JGMU51SlY0ckpJWV9VRUxyRjdVbzIxUUItUmRTcEY1TkpoWHRDbWZWZHJWVzNRYWxJN3lOZmZaNWVleGhSLVpXRUgzZFlpa1pfdzVPUjVqOU9BQQ?oc=5"
+  },
+  {
+   "tag": "Economy",
+   "t": "IMF: Rupee Should Be India's First Defense Against Energy Shocks",
+   "s": "Rediff MoneyWiz",
+   "d": "29 Oct, 11:15 PM",
+   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcFlXSXZhbm5QQWRwUlJNYXVMM01NcE1haUlOT25fNWNUTS1EOHRHd2xLT0R2cFJXbU5fdnQyWGRoZVBEcW4yT3JDb0ZhbzBTd3ZiQzF2eEc2TFBnOS1FZXRvMnd4cHNiaWtqc2gtRzI2cDBfQ0JLVW5tQ3RnMnR5dkJYZm9TTUNRWDdTWmdoRGJDVXducUlrMW9TVkJrWFNGMlNXeDIwUjltUnJnWElzOTFpUTlfd9IBuwFBVV95cUxOdGc5NFU2QVJpUW1qdEpCQkZQOGdLV09EWEJERW51djFUX2dreE5kU3JVcFZXMEdacWlUUnVGaWFJVmdUSE90MkpKeXdsbUxRWU05VUhmS0tEa29EalYzak5GZnlXRFhLOTNsZjhfSDNpenVNVWJMRU5oTm1MZVU2bUlvQ3ljQ3Y2cDFVRzFYdDMxRDk0T0dGOXF2UE5Temo3RjVOLWprbHVjWWpKcXVHenV2b0ZOenhTTkE4?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "sub card sample: ' class=\"rounded-xl border border-border bg-surface-1 p-5 shadow-sm\"> MAINBOARD M.K.Sons Fine Jewels OPEN ₹153–₹162 • Lot 91 • Closes 30 Oct 2026 Time to close Closed Apply Partner link Day 1 Day 2 Day 3 QIB 0.70x bNII (> \\\\u20B910 L) 9.06x sNII (< \\\\u20B910 L) 6.85x Retail 1.60x Total 2.78x Last updated: 30 Oct 2026 15:39 IST '",
+  "sub card sample: ' class=\"rounded-xl border border-border bg-surface-1 p-5 shadow-sm\"> SME Core4 Engineers CLOSED ₹88–₹93 • Lot 1200 • Closes 27 Oct 2026 Time to close Closed Apply Partner link Day 1 Day 3 Day 4 Day 5 QIB 5.06x bNII (> \\\\u20B910 L) — sNII (< \\\\u20B910 L) — Retail 2.68x Total 4.68x Last updated: 27 Oct 2026 17:00 IST Make sense of the numbers Allotment Checker IPO Data Snapshot HNI Funding Cost View live GMP → See open IPOs → SME subscription → Weekly IPO digest in your inbox Every Monday: open IPOs, GMP, upcoming listings and gold rates. One email a week. Unsubscribe in one click. Or get instant alerts on Telegram → Or on WhatsApp → Subscribe India\\'s most comprehensive IPO tracking platform. Re'",
+  "subscription: 13 IPOs from 15 cards"
+ ],
  "members": {
   "n50": {
    "day": "2026-10-30",
@@ -1781,7 +1865,7 @@
   },
   "2026-10-30": {
    "NIFTY": 23053.1,
-   "SENSEX": 74507.34,
+   "SENSEX": 74522.2,
    "BANKNIFTY": 54686.95,
    "MIDCAP": 57301.25,
    "SMALLCAP": 18463.6,
@@ -1789,6 +1873,8 @@
   }
  },
  "fulllog": [
-  "sub page: 181120 chars, 0 rows, around name: 'tems-center justify-between gap-2 text-xs text-secondary\"><div></div><span>Last updated:<!-- --> <!-- -->30 Oct 2026 15:30<!-- --> IST</span></div></article><article class=\"rounded-xl border border-border bg-surface-1 p-5 shadow-sm\"><header class=\"mb-4 flex flex-wrap items-start justify-between gap-3\"><div><div class=\"flex flex-wrap items-center gap-2\"><span class=\"inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase border border-info/30 bg-info-tint text-info\">MAINBOARD</span><a class=\"text-lg font-bold text-primary hover:text-info\" href=\"/ipo/mksons-fine-jewels-ipo\">M.K.Sons Fine Jewels</a><span class=\"inline-flex rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-gain-tint text-gain border border-gain/30\">OPEN</span></div><p class=\"mt-1 text-xs text-secondary\">₹153–₹162<!-- --> • Lot <!-- -->91<!-- -->• Closes <!-- -->30 Oct 2026</p></div><div class=\"flex items-center gap-3\"><div class=\"rounded-lg bg-warn-tint px-3 py-2 text-right\"><p class=\"text-[10px] font-semibold uppercase text-warn\">Time to close</p><p class=\"text-sm font-bold tabular-nums text-warn\">Closed</p></div><div class=\"flex flex-col items-center gap-1\"><a href=\"/api/affiliate/zerodha?ipo=mksons-fine-jewels-ipo&amp;page=subscription\" class=\"rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-brand-fg hover:brightness-95\" aria-label=\"Apply for M.K.Sons Fine Jewels IPO\" target=\"_blank\" rel=\"nofollow sponsored noopener noreferrer\">Apply</a><span title=\"W'"
+  "sub card sample: ' class=\"rounded-xl border border-border bg-surface-1 p-5 shadow-sm\"> MAINBOARD M.K.Sons Fine Jewels OPEN ₹153–₹162 • Lot 91 • Closes 30 Oct 2026 Time to close Closed Apply Partner link Day 1 Day 2 Day 3 QIB 0.70x bNII (> \\\\u20B910 L) 9.06x sNII (< \\\\u20B910 L) 6.85x Retail 1.60x Total 2.78x Last updated: 30 Oct 2026 15:39 IST '",
+  "sub card sample: ' class=\"rounded-xl border border-border bg-surface-1 p-5 shadow-sm\"> SME Core4 Engineers CLOSED ₹88–₹93 • Lot 1200 • Closes 27 Oct 2026 Time to close Closed Apply Partner link Day 1 Day 3 Day 4 Day 5 QIB 5.06x bNII (> \\\\u20B910 L) — sNII (< \\\\u20B910 L) — Retail 2.68x Total 4.68x Last updated: 27 Oct 2026 17:00 IST Make sense of the numbers Allotment Checker IPO Data Snapshot HNI Funding Cost View live GMP → See open IPOs → SME subscription → Weekly IPO digest in your inbox Every Monday: open IPOs, GMP, upcoming listings and gold rates. One email a week. Unsubscribe in one click. Or get instant alerts on Telegram → Or on WhatsApp → Subscribe India\\'s most comprehensive IPO tracking platform. Re'",
+  "subscription: 13 IPOs from 15 cards"
  ]
 }
