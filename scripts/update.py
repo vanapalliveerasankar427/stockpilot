@@ -344,7 +344,10 @@ def ipo(out):
     except Exception as e:
         log(f"gmp failed: {e}")
     try:
-        rows = list(table_rows(get("https://www.ipomarket.in/subscription").text))
+        html_ = get("https://www.ipomarket.in/subscription").text
+        rows = list(table_rows(html_))
+        i_ = html_.find("Sons")
+        log(f"sub page: {len(html_)} chars, {len(rows)} rows, around name: {re.sub(r'\\s+', ' ', html_[max(0, i_ - 600):i_ + 900])!r}")
         head = next((r for r in rows if any(c.strip().lower() == "total" for c in r)), None)
         idx = {c.strip().lower(): n for n, c in enumerate(head)} if head else {}
         col = lambda *names: next((idx[n] for n in names if n in idx), None)
