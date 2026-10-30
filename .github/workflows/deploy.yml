@@ -29,6 +29,17 @@ jobs:
           python-version: "3.12"
       - run: pip install requests
       - run: python scripts/update.py
+      - name: Publish all-stock quotes to the data branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          publish_extra() {
+            if [ -f out/quotes.json ]; then
+              (cd out && rm -rf .git && git init -q -b data && git add -A && git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "All-stock quotes $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')" && git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data) || true
+              rm -f out/quotes.json
+            fi
+          }
+          publish_extra
       - name: Save data
         run: |
           git config user.name "marketvedapro-bot"

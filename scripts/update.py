@@ -433,6 +433,140 @@ def nse_session():
     S.get("https://www.nseindia.com/", timeout=20)
 
 
+
+# ----------------------------------------------------------------- every listed stock (NSE + BSE)
+OUT_EXTRA = os.path.join(ROOT, "out")  # published to the separate "data" branch, not committed to main
+RAW_DATA = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/data/"
+
+
+def universe():
+    """All listed equities: NSE main board + NSE SME + BSE-only. Refreshed once a day."""
+    try:
+        old = get(RAW_DATA + "universe.json").json()
+        if old.get("day") == NOW.strftime("%Y-%m-%d") and len(old.get("s", [])) > 1000:
+            return old
+    except Exception:
+        old = {}
+    rows, isins = [], set()
+    for fname, ex in (("EQUITY_L.csv", "NSE"), ("SME_EQUITY_L.csv", "NSE SME")):
+        try:
+            txt = get("https://nsearchives.nseindia.com/content/equities/" + fname).text
+            lines = [l.split(",") for l in txt.strip().splitlines()]
+            head = [h.strip().upper() for h in lines[0]]
+            si, ni = head.index("SYMBOL"), head.index("NAME OF COMPANY")
+            ii = next((n for n, h in enumerate(head) if "ISIN" in h), None)
+            for r in lines[1:]:
+                if len(r) <= max(si, ni):
+                    continue
+                sym, name = r[si].strip(), re.sub(r"\s+(Limited|Ltd\.?)$", "", r[ni].strip().strip('"'), flags=re.I)
+                rows.append([sym, name, ex, sym + ".NS"])
+                if ii is not None and ii < len(r):
+                    isins.add(r[ii].strip())
+        except Exception as e:
+            log(f"nse list {fname} failed: {e}")
+    try:
+        S.get("https://www.bseindia.com/", timeout=20)
+        j = get("https://api.bseindia.com/BseIndiaAPI/api/ListofScripData/w?Group=&Scripcode=&industry=&segment=Equity&status=Active",
+                headers={"Referer": "https://www.bseindia.com/", "Origin": "https://www.bseindia.com"}).json()
+        for r in j if isinstance(j, list) else j.get("Table", []):
+            isin = (r.get("ISIN_NUMBER") or "").strip()
+            if isin and isin in isins:
+                continue
+            code = str(r.get("SCRIP_CD") or "").strip()
+            name = re.sub(r"\s+(Limited|Ltd\.?)$", "", (r.get("Scrip_Name") or r.get("Issuer_Name") or "").strip(), flags=re.I)
+            if code and name:
+                rows.append(["B" + code, name, "BSE", code + ".BO", (r.get("scrip_id") or r.get("Scrip_id") or "").strip()])
+    except Exception as e:
+        log(f"bse list failed: {e}")
+    if len(rows) < 1000:
+        log(f"universe: only {len(rows)} stocks, keeping previous list")
+        return old or {"s": rows}
+    return {"day": NOW.strftime("%Y-%m-%d"), "s": rows}
+
+
+def yahoo_crumb():
+    S.get("https://fc.yahoo.com", timeout=20, allow_redirects=True)
+    c = S.get("https://query1.finance.yahoo.com/v1/test/getcrumb", timeout=20).text.strip()
+    if not c or "<" in c or len(c) > 40:
+        raise RuntimeError("no crumb")
+    return c
+
+
+def all_quotes(uni):
+    """Live quote for every listed stock, 100 symbols per request."""
+    ysyms = [r[3] for r in uni.get("s", [])]
+    key_of = {r[3]: r[0] for r in uni.get("s", [])}
+    out, crumb = {}, None
+    try:
+        crumb = yahoo_crumb()
+    except Exception as e:
+        log(f"yahoo crumb failed: {e}")
+    fields = ("regularMarketPrice,regularMarketChangePercent,regularMarketPreviousClose,regularMarketOpen,regularMarketDayHigh,"
+              "regularMarketDayLow,fiftyTwoWeekHigh,fiftyTwoWeekLow,regularMarketVolume,marketCap,trailingPE,epsTrailingTwelveMonths,"
+              "priceToBook,trailingAnnualDividendYield,regularMarketTime")
+
+    def batch(chunk):
+        r = S.get("https://query1.finance.yahoo.com/v7/finance/quote", timeout=30,
+                  params={"symbols": ",".join(chunk), "crumb": crumb, "fields": fields})
+        r.raise_for_status()
+        return r.json().get("quoteResponse", {}).get("result", [])
+
+    def safe_batch(c):
+        try:
+            return batch(c)
+        except Exception as e:
+            log(f"quote batch failed: {e}")
+            return []
+
+    if crumb:
+        chunks = [ysyms[i:i + 100] for i in range(0, len(ysyms), 100)]
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            for res in ex.map(lambda c: safe_batch(c), chunks):
+                for q in res or []:
+                    k = key_of.get(q.get("symbol"))
+                    p = q.get("regularMarketPrice")
+                    if not k or p is None:
+                        continue
+                    g = lambda f, nd=2: round(q[f], nd) if isinstance(q.get(f), (int, float)) else None
+                    mc = q.get("marketCap")
+                    out[k] = [g("regularMarketPrice"), g("regularMarketChangePercent"), g("regularMarketPreviousClose"), g("regularMarketOpen"),
+                              g("regularMarketDayHigh"), g("regularMarketDayLow"), g("fiftyTwoWeekHigh"), g("fiftyTwoWeekLow"),
+                              q.get("regularMarketVolume"), round(mc / 1e7, 1) if isinstance(mc, (int, float)) else None,
+                              g("trailingPE"), g("epsTrailingTwelveMonths"), g("priceToBook"),
+                              round(q["trailingAnnualDividendYield"] * 100, 2) if isinstance(q.get("trailingAnnualDividendYield"), (int, float)) else None,
+                              q.get("regularMarketTime")]
+    if len(out) < len(ysyms) * 0.5:
+        # fallback: one chart request per NSE symbol (price, change, day range, 52-week range)
+        log(f"batch quotes gave {len(out)}; using per-symbol fallback for NSE")
+        nse = [s for s in ysyms if s.endswith(".NS") and key_of[s] not in out]
+
+        def one(sym):
+            try:
+                m = yahoo(sym, "1d", "1d")["meta"]
+                v, pv = m["regularMarketPrice"], m.get("chartPreviousClose") or m.get("previousClose")
+                return sym, [round(v, 2), round((v / pv - 1) * 100, 2) if pv else None, pv, None, m.get("regularMarketDayHigh"), m.get("regularMarketDayLow"),
+                             m.get("fiftyTwoWeekHigh"), m.get("fiftyTwoWeekLow"), m.get("regularMarketVolume"), None, None, None, None, None, m.get("regularMarketTime")]
+            except Exception:
+                return sym, None
+        with ThreadPoolExecutor(max_workers=24) as ex:
+            for sym, row in ex.map(one, nse):
+                if row:
+                    out[key_of[sym]] = row
+    return out
+
+
+def everything(out):
+    os.makedirs(OUT_EXTRA, exist_ok=True)
+    uni = universe()
+    json.dump(uni, open(os.path.join(OUT_EXTRA, "universe.json"), "w"), ensure_ascii=False, separators=(",", ":"))
+    q = all_quotes(uni)
+    if q:
+        json.dump({"updated": NOW.isoformat(timespec="seconds"), "label": NOW.strftime("%-d %b %Y, %-I:%M %p IST"),
+                   "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t"], "q": q},
+                  open(os.path.join(OUT_EXTRA, "quotes.json"), "w"), separators=(",", ":"))
+    out["universe"] = {"stocks": len(uni.get("s", [])), "quotes": len(q), "at": NOW.strftime("%-d %b, %-I:%M %p")}
+
+
 # ----------------------------------------------------------------- FII / DII (NSE)
 def flows(out):
     try:
@@ -506,7 +640,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo, flows, news)):
+    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo, flows, news, everything)):
         try:
             step(out)
         except Exception as e:

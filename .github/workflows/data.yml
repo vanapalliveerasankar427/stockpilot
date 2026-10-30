@@ -33,13 +33,22 @@ jobs:
           python-version: "3.12"
       - run: pip install requests
       - name: Update (prices ~every minute, full every 5th pass, until 3:45 PM IST)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "marketvedapro-bot"
           git config user.email "marketvedapro-bot@users.noreply.github.com"
+          publish_extra() {
+              if [ -f out/quotes.json ]; then
+                (cd out && rm -rf .git && git init -q -b data && git add -A && git -c user.name=marketvedapro-bot -c user.email=marketvedapro-bot@users.noreply.github.com commit -q -m "All-stock quotes $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')" && git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data) || true
+                rm -f out/quotes.json
+              fi
+            }
           i=0
           while true; do
             if [ $((i % 5)) -eq 0 ]; then python scripts/update.py || true; else python scripts/update.py --fast || true; fi
             i=$((i+1))
+            publish_extra
             git add data
             if ! git diff --cached --quiet; then
               git commit -q -m "Data update $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"

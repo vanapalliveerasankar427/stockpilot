@@ -609,14 +609,14 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 @media(max-width:800px){.brief{grid-template-columns:1fr;padding:16px}.meter{max-width:190px;margin:0 auto}.meter .v{font-size:28px;margin-top:-38px}.brief li{font-size:14px}}
 .fhist{display:flex;gap:8px;align-items:flex-end;height:58px;margin:2px 0 16px;padding-top:6px}.fhist div{display:flex;gap:2px;align-items:flex-end;flex:1;position:relative;height:44px}.fhist span{flex:1;border-radius:3px 3px 0 0;min-height:2px}.fhist small{position:absolute;bottom:-14px;left:0;right:0;text-align:center;font-size:10px;color:var(--muted)}
 /* ---------- custom form controls (replace browser defaults) ---------- */
-.sel{position:relative;display:block;width:100%}
-.sel>select{position:absolute;inset:0;opacity:0;pointer-events:none;width:100%;height:100%}
+.csel{position:relative;display:block;width:100%}
+.csel>select{position:absolute;inset:0;opacity:0;pointer-events:none;width:100%;height:100%}
 .sel-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:10px 12px;font:500 15.5px var(--body);color:var(--ink);cursor:pointer;text-align:left;transition:border-color .15s,box-shadow .15s,background .15s}
 .sel-btn:hover{border-color:color-mix(in srgb,var(--ink) 22%,transparent)}
 .sel-btn[aria-expanded="true"],.sel-btn:focus-visible{outline:none;border-color:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 22%,transparent);background:var(--glass2)}
 .sel-btn svg{flex:none;color:var(--muted);transition:transform .2s}.sel-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
 .sel-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sel.pillsel .sel-btn{border-radius:999px;padding:7px 12px;font-size:13.5px}
+.csel.pillsel .sel-btn{border-radius:999px;padding:7px 12px;font-size:13.5px}
 .mhead{background:var(--sheet)}
 .sel-pop{position:fixed;z-index:90;min-width:180px;max-height:320px;overflow:auto;background:var(--sheet);border:1px solid var(--line);border-radius:14px;box-shadow:0 22px 50px -14px rgba(0,0,0,.4);padding:6px;animation:pop .16s ease-out both}
 .sel-pop [role=option]{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:14.5px;color:var(--ink)}
@@ -642,6 +642,7 @@ input[type=checkbox]{-webkit-appearance:none;appearance:none;width:20px;height:2
 input[type=checkbox]::after{content:"";width:10px;height:6px;border:2.5px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) scale(0);margin-top:-2px;transition:transform .15s}
 input[type=checkbox]:checked{background:var(--up);border-color:var(--up)}input[type=checkbox]:checked::after{transform:rotate(-45deg) scale(1)}
 input[type=checkbox]:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 25%,transparent)}
+.allsearch{display:flex;align-items:center;gap:10px;width:100%;margin:0 0 16px;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:var(--glass2);color:var(--muted);font-size:15px;cursor:pointer;text-align:left;box-shadow:var(--shadow)}.allsearch:hover{border-color:var(--up);color:var(--ink)}.allsearch span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </style>
@@ -721,7 +722,8 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 <!-- ========== STOCKS ========== -->
 <section class="view" id="v-stocks">
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="st-eb">Nifty 50 heavyweights · close 29 Oct 2026</span></div><h1 class="ptitle">Stocks</h1>
-    <p class="psub">The 25 largest Nifty 50 companies by market cap, with real price, valuation and latest-quarter results. Tap any stock for its page, or star it for your watchlist.</p></div></div>
+    <p class="psub">Search any company listed on NSE or BSE for its live price and key figures. Below: the 25 largest Nifty 50 companies with valuation and latest-quarter results.</p></div></div>
+  <button type="button" class="allsearch" onclick="openSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search all NSE &amp; BSE stocks, e.g. “GACM Technologies” or “TATAPOWER”</span></button>
   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
   <p class="src" style="margin-left:4px" id="st-src">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
 </section>
@@ -1574,7 +1576,9 @@ async function toggleWL(k){WL=inWL(k)?WL.filter(x=>x!==k):[...WL,k];try{localSto
 function starBtn(k,label){return `<button type="button" class="star" data-star="${k}" aria-pressed="${inWL(k)}" aria-label="${inWL(k)?'Remove '+label+' from':'Add '+label+' to'} watchlist">${inWL(k)?'★':'☆'}</button>`}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-star]');if(b){e.preventDefault();e.stopPropagation();toggleWL(b.dataset.star)}},true);
 function wlRow(k){if(k.startsWith('ipo:')){const i=byId[k.slice(4)];if(!i)return '';return `<div class="wl" data-open="${i.id}" role="button" tabindex="0"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b class="nm">${esc(i.name.replace(/ Ltd$/,''))}</b><small>${band(i)} · ${i.st}</small></div><div style="display:flex;gap:6px;align-items:center">${statusPill(i)}${starBtn(k,i.name)}</div></div>`}
-  const s=byStock[k];if(!s)return '';const dc=DAYCHG[k];return `<a class="wl" href="#stock-${k}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${k.replace('-','').slice(0,2)}${logoImg(k)}</div><div><b class="nm">${esc(s.name)}</b><small class="num">₹${n2(s.price)} · ${esc(s.sector)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(dc?dc[0]:null)}${starBtn(k,s.name)}</div></a>`}
+  const s=byStock[k];if(!s){const u=UNIMAP&&UNIMAP[k],q=qOf(k);if(!u){loadUniverse().then(()=>{loadAllQuotes().then(()=>{if(document.getElementById('v-watchlist').classList.contains('on'))renderWLAll()})});return `<a class="wl" href="#stock-${esc(k)}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(k.slice(0,2))}</div><div><b class="nm">${esc(k)}</b><small>Loading…</small></div><div>${starBtn(k,k)}</div></a>`}
+    return `<a class="wl" href="#stock-${esc(k)}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}</div><div><b class="nm">${esc(u.n)}</b><small class="num">${q?'₹'+n2(q.price)+' · ':''}${esc(u.x)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(q?q.pct:null)}${starBtn(k,u.n)}</div></a>`}
+  const dc=DAYCHG[k];return `<a class="wl" href="#stock-${k}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${k.replace('-','').slice(0,2)}${logoImg(k)}</div><div><b class="nm">${esc(s.name)}</b><small class="num">₹${n2(s.price)} · ${esc(s.sector)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(dc?dc[0]:null)}${starBtn(k,s.name)}</div></a>`}
 function renderWLAll(){
   const st=WL.filter(k=>!k.startsWith('ipo:')),ip=WL.filter(k=>k.startsWith('ipo:'));
   const e1=document.getElementById('wlstocks'),e2=document.getElementById('wlipos'),e3=document.getElementById('wlmini');
@@ -1624,7 +1628,7 @@ function renderStocks(){
 }
 function renderStockPage(sym){
   const s=byStock[sym];curStock=sym;const el=document.getElementById('stockpage');
-  if(!s){el.innerHTML=`<div class="phead"><div><h1 class="ptitle">Stock not found</h1><p class="psub">This preview covers the 25 largest Nifty 50 companies. <a class="link" href="#stocks">See all stocks</a></p></div></div>`;return}
+  if(!s){if(sym==='M&M'){location.hash='stock-MM';return}renderAnyStock(sym);return}
   const dc=DAYCHG[sym],rank=[...STOCKS].sort((a,b)=>b.mcap-a.mcap).findIndex(x=>x.sym===sym)+1;
   const peer=STOCKS.filter(x=>x.sector===s.sector&&x.sym!==sym);
   const mxs=Math.max(Math.abs(s.salesv),Math.abs(s.npv),1);
@@ -1660,18 +1664,54 @@ function renderNews(){const tags=['All',...new Set(NEWS.map(n=>n.tag))];
 
 // ===================== search palette =====================
 const PAGES=[['GMP board','ipo-gmp'],['Subscription status','ipo-sub'],['IPO screener','ipo-screener'],['Allotment desk','ipo-allot'],['Money planner','ipo-planner'],['Learn: IPO guides','learn'],['Gold & silver rates','markets'],['Markets','markets'],['Stocks','stocks'],['IPOs','ipos'],['Watchlist','watchlist'],['News','news'],['My applications','applications'],['Charges calculator','tools']];
+// ===================== every listed stock (NSE + BSE), published to the repo's "data" branch =====================
+const DATA_RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/data/';
+let UNI=null,UNIMAP=null,ALLQ=null,allqAt=0,uniLoading=null;
+function loadUniverse(){if(UNI)return Promise.resolve(UNI);if(uniLoading)return uniLoading;
+  uniLoading=fetch(DATA_RAW+'universe.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){UNI=j.s.map(r=>({k:r[0],n:r[1],x:r[2],bid:r[4]||'',l:(r[0]+' '+r[1]+' '+(r[4]||'')).toLowerCase()}));UNIMAP=Object.fromEntries(UNI.map(u=>[u.k,u]))}return UNI}).catch(()=>null).finally(()=>{uniLoading=null});return uniLoading}
+function loadAllQuotes(force){if(ALLQ&&!force&&Date.now()-allqAt<60000)return Promise.resolve(ALLQ);
+  return fetch(DATA_RAW+'quotes.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.q){ALLQ=j;allqAt=Date.now()}return ALLQ}).catch(()=>ALLQ)}
+const qOf=k=>{const r=ALLQ&&ALLQ.q[k];if(!r)return null;const o={};ALLQ.cols.forEach((c,i)=>o[c]=r[i]);return o};
+function searchUni(q,lim){if(!UNI||!q)return [];const t=q.toLowerCase().trim(),words=t.split(/\s+/);const res=[];
+  for(const u of UNI){if(!words.every(w=>u.l.includes(w)))continue;const sym=u.k.toLowerCase(),nm=u.n.toLowerCase();
+    const sc=(sym===t?0:sym.startsWith(t)?1:nm.startsWith(t)?2:nm.includes(' '+t)?3:4)+(u.x==='NSE'?0:.5);res.push([sc,u]);if(res.length>4000)break}
+  return res.sort((a,b)=>a[0]-b[0]||a[1].n.length-b[1].n.length).slice(0,lim).map(x=>x[1])}
+const exUrl=u=>u.x==='BSE'?`https://www.bseindia.com/stock-share-price/x/${encodeURIComponent(u.bid||'x')}/${u.k.slice(1)}/`:`https://www.nseindia.com/get-quotes/equity?symbol=${encodeURIComponent(u.k)}`;
+function renderAnyStock(key){const el=document.getElementById('stockpage');curStock=key;
+  if(!UNI||!ALLQ)el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a><h1 class="ptitle" style="font-size:clamp(26px,4vw,42px)">Loading ${esc(key)}…</h1></div></div>`;
+  Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(curStock!==key)return;const u=UNIMAP&&UNIMAP[key],q=qOf(key);
+    if(!u){el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a><h1 class="ptitle">Stock not found</h1><p class="psub">“${esc(key)}” isn't in the NSE or BSE list. Try searching by company name.</p></div></div>`;return}
+    const f=v=>v==null?'—':'₹'+n2(v),pct=q&&q.pct,rng=(q&&q.h52&&q.l52&&q.h52>q.l52)?Math.max(0,Math.min(100,(q.price-q.l52)/(q.h52-q.l52)*100)):null;
+    const dr=(q&&q.high&&q.low&&q.high>q.low)?Math.max(0,Math.min(100,(q.price-q.low)/(q.high-q.low)*100)):null,t=q&&q.t?new Date(q.t*1000).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}):'';
+    const code=u.x==='BSE'?`BSE ${esc(u.k.slice(1))}${u.bid?' · '+esc(u.bid):''}`:`${esc(u.x)}: ${esc(u.k)}`,sname=u.x==='BSE'?(u.bid||u.n):u.k;
+    el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a>
+      <div class="shead" style="margin-top:12px"><div class="slogo" style="background:${colorOf(key)}">${esc(u.n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||key.slice(0,2))}</div><div><h1 style="font-size:clamp(24px,4vw,40px);font-weight:700;letter-spacing:-.02em">${esc(u.n)}</h1><div class="eyebrow" style="margin-top:4px">${code}</div></div></div></div>
+      <div style="display:flex;gap:6px;align-items:center">${starBtn(key,u.n)}<a class="ghost" href="${exUrl(u)}" target="_blank" rel="noopener">${u.x==='BSE'?'BSE':'NSE'} quote ↗</a></div></div>
+     ${q?`<div class="grid2"><div class="glass card"><span class="lbl">${LIVED&&LIVED.state==='open'?'● Live price':'Last price'}${t?' · '+esc(t):''}</span><div class="big num" style="margin:6px 0">${f(q.price)}</div>${chip(pct)} <span class="note" style="display:inline">${q.prev?`prev close ${f(q.prev)}`:''}</span>
+        <div class="kv num" style="margin-top:16px"><div><span>Open</span><b>${f(q.open)}</b></div><div><span>Day high</span><b>${f(q.high)}</b></div><div><span>Day low</span><b>${f(q.low)}</b></div></div>
+        ${dr!=null?`<div class="rng" style="margin-top:14px"><div class="t"><i style="left:0;width:${dr}%"></i></div><div class="l num"><span>Low ${f(q.low)}</span><span>Today's range</span><span>High ${f(q.high)}</span></div></div>`:''}
+        ${rng!=null?`<div class="rng" style="margin-top:14px"><div class="t"><i style="left:0;width:${rng}%"></i></div><div class="l num"><span>52W low ${f(q.l52)}</span><span>52-week range</span><span>52W high ${f(q.h52)}</span></div></div>`:''}</div>
+      <div class="glass card"><span class="lbl">Key figures</span><div class="ovr num" style="margin-top:6px">
+        <div><span>Market cap</span><b>${q.mcapCr?lcr(q.mcapCr):'—'}</b></div><div><span>P/E (TTM)</span><b>${q.pe!=null?q.pe.toFixed(2):'—'}</b></div><div><span>EPS (TTM)</span><b>${q.eps!=null?(q.eps<0?'−₹':'₹')+Math.abs(q.eps).toFixed(2):'—'}</b></div>
+        <div><span>Price / book</span><b>${q.pb!=null?q.pb.toFixed(2):'—'}</b></div><div><span>Dividend yield</span><b>${q.dy!=null?q.dy.toFixed(2)+'%':'—'}</b></div><div><span>Volume today</span><b>${q.vol!=null?(+q.vol).toLocaleString('en-IN'):'—'}</b></div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><a class="ghost" href="https://www.screener.in/company/${encodeURIComponent(sname)}/" target="_blank" rel="noopener">Financials on Screener ↗</a><a class="ghost" href="https://www.tradingview.com/symbols/${u.x==='BSE'?'BSE':'NSE'}-${encodeURIComponent(sname)}/" target="_blank" rel="noopener">Chart ↗</a></div></div></div>
+      <p class="src">Price and figures: ${esc(u.x==='BSE'?'BSE':'NSE')} via Yahoo Finance, updated ${esc(ALLQ.label)} (every ~5 minutes in market hours). Not investment advice.</p>`
+     :`<div class="glass card"><p class="note">No live price available for this stock right now (it may be suspended or very thinly traded). <a class="link" href="${exUrl(u)}" target="_blank" rel="noopener">Check the exchange quote ↗</a></p></div>`}`});}
+
 let psel=0,pitems=[];
-function openSearch(){document.getElementById('palette').classList.add('on');const q=document.getElementById('pq');q.value='';runSearch('');setTimeout(()=>q.focus(),10)}
+function openSearch(){loadUniverse().then(()=>{const q=document.getElementById('pq');if(q&&q.value)runSearch(q.value)});document.getElementById('palette').classList.add('on');const q=document.getElementById('pq');q.value='';runSearch('');setTimeout(()=>q.focus(),10)}
 function closeSearch(){document.getElementById('palette').classList.remove('on')}
 function runSearch(q){q=q.trim().toLowerCase();
   const st=STOCKS.filter(s=>!q||s.name.toLowerCase().includes(q)||s.sym.toLowerCase().includes(q)||s.sector.toLowerCase().includes(q)).slice(0,q?8:5);
   const ip=IPOS.filter(i=>!q||i.name.toLowerCase().includes(q)||i.sector.toLowerCase().includes(q)).slice(0,q?6:4);
   const pg=PAGES.filter(p=>!q||p[0].toLowerCase().includes(q));
+  const core=new Set(st.map(s=>s.sym==='MM'?'M&M':s.sym)),al=searchUni(q,12).filter(u=>!core.has(u.k));
   pitems=[];let h='';
   if(st.length){h+='<div class="pgroup">Stocks</div>'+st.map(s=>{pitems.push('#stock-'+s.sym);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div><span class="num muted">₹${n2(s.price)}</span></button>`}).join('')}
+  if(al.length){h+='<div class="pgroup">All listed stocks · NSE &amp; BSE</div>'+al.map(u=>{pitems.push('#stock-'+u.k);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(u.k)};color:#fff">${esc(u.n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase())}</div><div><b>${esc(u.n)}</b><small class="muted" style="display:block;font-size:12px">${esc(u.x)} · ${esc(u.x==='BSE'?(u.bid||u.k.slice(1)):u.k)}</small></div><span class="pill plain" style="font-size:11px">${esc(u.x==='NSE SME'?'SME':u.x)}</span></button>`}).join('')}
   if(ip.length){h+='<div class="pgroup">IPOs</div>'+ip.map(i=>{pitems.push('ipo:'+i.id);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name)}</b><small class="muted" style="display:block;font-size:12px">${i.type} · ${band(i)}</small></div>${statusPill(i)}</button>`}).join('')}
   if(pg.length){h+='<div class="pgroup">Pages</div>'+pg.map(p=>{pitems.push('#'+p[1]);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg">↗</div><div><b>${p[0]}</b></div><span></span></button>`}).join('')}
-  document.getElementById('pres').innerHTML=h||`<p class="note" style="padding:16px">No match for “${esc(q)}”. This preview covers the top 25 Nifty 50 stocks and current IPOs.</p>`;
+  document.getElementById('pres').innerHTML=h||`<p class="note" style="padding:16px">${UNI?`No match for “${esc(q)}” among ${UNI.length.toLocaleString('en-IN')} NSE and BSE stocks, IPOs or pages.`:`Loading the full list of NSE and BSE stocks…`}</p>`;
   psel=0;markSel();document.querySelectorAll('#pres .pr').forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
 function markSel(){document.querySelectorAll('#pres .pr').forEach((b,i)=>b.classList.toggle('sel',i===psel))}
 function pick(i){const t=pitems[i];if(!t)return;closeSearch();if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else location.hash=t.slice(1)}
@@ -1777,7 +1817,7 @@ function patchLabels(){if(!LIVED)return;const set=(id,h)=>{const e=document.getE
 function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus')||(typeof openSel!=='undefined'&&openSel))return false;
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
   renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();
-  if(id==='metals')renderMetalsPage();if(id==='stocks')renderStocks();if(id==='stock'&&curStock)renderStockPage(curStock);if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
+  if(id==='metals')renderMetalsPage();if(id==='stocks')renderStocks();if(id==='stock'&&curStock){if(byStock[curStock])renderStockPage(curStock);else loadAllQuotes(true).then(()=>renderAnyStock(curStock))}if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
   if(id==='ipo-gmp')renderGMP();if(id==='ipo-sub')renderSub();if(id==='ipo-screener')renderScreener();
   const h=(location.hash||'').slice(1);if(h.startsWith('gmp-'))renderGmpPage(h.slice(4));
   patchLabels();scrollTo(0,y);return true}
@@ -1843,7 +1883,7 @@ let openSel=null;
 function closeSel(){if(!openSel)return;openSel.pop.remove();openSel.btn.setAttribute('aria-expanded','false');openSel=null}
 function fire(el){el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}))}
 function enhanceSelect(sel){if(sel.dataset.enh)return;sel.dataset.enh=1;
-  const wrap=document.createElement('div');wrap.className='sel'+(sel.closest('.ctl')?' pillsel':'');sel.parentNode.insertBefore(wrap,sel);wrap.appendChild(sel);
+  const wrap=document.createElement('div');wrap.className='csel'+(sel.closest('.ctl')?' pillsel':'');sel.parentNode.insertBefore(wrap,sel);wrap.appendChild(sel);
   const btn=document.createElement('button');btn.type='button';btn.className='sel-btn';btn.setAttribute('aria-haspopup','listbox');btn.setAttribute('aria-expanded','false');
   const lab=sel.id&&document.querySelector(`label[for="${sel.id}"]`);if(lab){btn.setAttribute('aria-label',(lab.childNodes[0]&&lab.childNodes[0].textContent.trim())||lab.textContent.trim())}
   wrap.appendChild(btn);sel.tabIndex=-1;sel.setAttribute('aria-hidden','true');
