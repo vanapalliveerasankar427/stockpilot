@@ -345,32 +345,26 @@ def ipo(out):
         log(f"gmp failed: {e}")
     try:
         html_ = get("https://www.ipomarket.in/subscription").text
-        rows = list(table_rows(html_))
-        i_ = html_.find("Sons")
-        log(f"sub page: {len(html_)} chars, {len(rows)} rows, around name: {re.sub(r'\\s+', ' ', html_[max(0, i_ - 600):i_ + 900])!r}")
-        head = next((r for r in rows if any(c.strip().lower() == "total" for c in r)), None)
-        idx = {c.strip().lower(): n for n, c in enumerate(head)} if head else {}
-        col = lambda *names: next((idx[n] for n in names if n in idx), None)
-        cq, cb, cs, cr_, ct = col("qib"), col("bnii (>₹10 l)", "bnii", "bnii (>10l)"), col("snii (<₹10 l)", "snii", "snii (<10l)"), col("retail", "rii"), col("total")
-        if cb is None or cs is None:  # header text varies: find the NII columns by prefix
-            for name, n in idx.items():
-                if name.startswith("bnii"): cb = n
-                if name.startswith("snii"): cs = n
-                if name.startswith("nii") and cb is None: cb = n
-        for iid, key in IPOS.items():
-            c = find_row(rows, key)
-            if not c or c is head:
+        cards = html_.split("<article")[1:]
+        found = 0
+        for card in cards:
+            t = re.sub(r"\s+", " ", text_of(card))
+            iid = next((k for k, key in IPOS.items() if key.lower() in t.lower()), None)
+            if not iid:
                 continue
-            g = lambda n: xval(c[n]) if n is not None and n < len(c) else None
-            tot = g(ct) if ct is not None else None
-            if tot is None:
-                xs = [xval(x) for x in c if xval(x) is not None]
-                tot = xs[-1] if xs else None
+            def cat(label):
+                m = re.search(label + r"(?:\s*\([^)]*\))?[^0-9—]{0,20}?([\d,.]+)\s*[x×]", t, re.I)
+                return num(m.group(1)) if m else None
+            tot = cat(r"\bTotal\b") or cat(r"\bOverall\b")
             if tot is None:
                 continue
-            q, bn, sn, rt = g(cq), g(cb), g(cs), g(cr_)
-            nii = round(((bn or 0) * 2 + (sn or 0)) / 3, 2) if (bn is not None or sn is not None) else None  # bNII is 2/3 of NII
+            q, bn, sn, rt = cat(r"\bQIB\b"), cat(r"\bbNII\b"), cat(r"\bsNII\b"), cat(r"\b(?:Retail|RII)\b")
+            nii = cat(r"\bNII\b") if bn is None and sn is None else round(((bn or 0) * 2 + (sn or 0)) / 3, 2)
             data.setdefault(iid, {}).update(sub=tot, sq=q, snii=nii, sr=rt, ssrc="IPOMarket", sat=stamp)
+            found += 1
+            if iid == "mksons":
+                log(f"sub card sample: {t[:700]!r}")
+        log(f"subscription: {found} IPOs from {len(cards)} cards")
     except Exception as e:
         log(f"subscription failed: {e}")
     # day-wise GMP history (one reading per day, latest wins)
