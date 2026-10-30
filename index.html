@@ -539,11 +539,11 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
   /* IPO list = app rows */
   #v-ipos .filters,#igrid{display:none}
   #seg2{display:none!important}
-  .ulTabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);margin:0 -12px 14px;padding:0 4px}
-  .ulTabs button{border:0;background:none;padding:12px 2px 13px;font-size:14.5px;font-weight:600;color:var(--muted);position:relative;cursor:pointer}
+  .ulTabs{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;border-bottom:1px solid var(--line);margin:0 -12px 14px;padding:0 4px}
+  .ulTabs button{border:0;background:none;padding:12px 4px 13px;font-size:13.5px;white-space:nowrap;font-weight:600;color:var(--muted);position:relative;cursor:pointer}
   .ulTabs button[aria-pressed="true"]{color:var(--ink)}
   .ulTabs button[aria-pressed="true"]::after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;border-radius:3px;background:var(--ink)}
-  .ulTabs button .c{font-size:11px;opacity:.6;margin-left:3px}
+  .ulTabs button .c{font-size:11px;opacity:.6;margin-left:2px}
   .seg2{display:inline-flex!important;gap:2px;padding:4px;border-radius:14px;background:var(--soft);margin-bottom:6px}
   .seg2 button{border:0;background:none;padding:8px 16px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer}
   .seg2 button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
@@ -1030,13 +1030,13 @@ function renderPulse(){
   document.querySelectorAll('#pulse .stat').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.go;renderIpos();document.getElementById('list').scrollIntoView({behavior:'smooth'})});
 }
 function renderIpos(){
-  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['listed','Listed']];
-  document.getElementById('stTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="count">${IPOS.filter(i=>i.st===k).length}</span></button>`).join('');
+  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['allot','Allotment'],['listed','Listed']];
+  document.getElementById('stTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="count">${IPOS.filter(i=>stOf(i)===k).length}</span></button>`).join('');
   document.getElementById('tyTabs').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-k="${k}" aria-pressed="${ipoType===k}">${k}</button>`).join('');
   document.querySelectorAll('#stTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
   document.querySelectorAll('#tyTabs button').forEach(b=>b.onclick=()=>{ipoType=b.dataset.k;renderIpos()});
-  const rows=IPOS.filter(i=>i.st===ipoStatus&&(ipoType==='All'||i.type===ipoType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:(a.c-b.c)||(a.type>b.type?1:-1));
-  document.getElementById('listsub').textContent={open:'Taking applications now. Approve the UPI mandate before the issue closes (UPI cut-off is usually 4 PM on the last day).',upcoming:'Opening in the next few days.',closed:'Bidding is over. Check allotment and get ready for listing day.',listed:'Recently listed, with listing price and listing-day close.'}[ipoStatus];
+  const rows=IPOS.filter(i=>stOf(i)===ipoStatus&&(ipoType==='All'||i.type===ipoType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:ipoStatus==='allot'?(b.al-a.al):(a.c-b.c)||(a.type>b.type?1:-1));
+  document.getElementById('listsub').textContent={open:'Taking applications now. Approve the UPI mandate before the issue closes (UPI cut-off is usually 4 PM on the last day).',upcoming:'Opening in the next few days.',closed:'Bidding is over. Allotment is not out yet; it moves to the Allotment tab on allotment day.',allot:'Allotment is out. Tap an IPO to check your family.',listed:'Recently listed, with listing price and listing-day close.'}[ipoStatus];
   document.getElementById('igrid').innerHTML=rows.map(ipoCard).join('')||`<div class="empty">No ${ipoType==='All'?'':ipoType+' '}IPOs in this list right now.</div>`;
   document.querySelectorAll('#igrid [data-open]').forEach(b=>b.onclick=()=>openIpo(b.dataset.open,b.dataset.mode));
   if(MQ.matches)renderMobileIpos();
@@ -1311,7 +1311,8 @@ function renderScreener(){
 // ===================== Allotment desk =====================
 let allotSel=null;
 function renderAllot(){
-  const L=IPOS.filter(i=>(i.st==='closed'||i.st==='listed'||(i.st==='open'&&days(i.c)<=1))&&tOK(i)).sort((a,b)=>{const ra=T0>=a.al?0:1,rb=T0>=b.al?0:1;return ra-rb||(ra?(a.al-b.al):(b.al-a.al))});
+  const L=IPOS.filter(i=>i.al&&T0>=i.al&&(i.st==='closed'||i.st==='listed')&&tOK(i)).sort((a,b)=>b.al-a.al);
+  const nx=IPOS.filter(i=>i.al&&T0<i.al&&(i.st==='closed'||i.st==='open')&&tOK(i)).sort((a,b)=>a.al-b.al);
   const np=FAM.members.filter(m=>PANS[m]).length;
   const res=i=>{const st=FAM.st[i.id]||{},al=FAM.members.filter(m=>st[m]==='al').length,na=FAM.members.filter(m=>st[m]==='na').length;return {al,na,any:al+na>0}};
   const auto=i=>ALLOT_API&&REGKEY(i.reg);
@@ -1323,6 +1324,7 @@ function renderAllot(){
      return `<a class="wz" href="#allot-${i.id}" style="text-decoration:none;color:inherit;animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
        <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}</div></div>
        <div class="wz-r">${right}</div></a>`}).join('')||'<p class="aw-msg" style="padding:22px 8px">No IPOs waiting for allotment right now.</p>'}</div>
+   ${nx.length?`<p class="aw-note" style="margin-top:16px">Coming up: ${nx.slice(0,4).map(i=>`<b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b> on ${d2(i.al)}`).join(' · ')}. They appear here on allotment day.</p>`:''}
    <p class="aw-note">Tap an IPO to see everyone's result. <a class="link" href="#applications">My applications →</a></p>`;
 }
 
@@ -1497,21 +1499,22 @@ const IC={
  copy:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>',
 };
 let mType='All';
+const stOf=i=>i.st==='closed'&&i.al&&T0>=i.al?'allot':i.st;
 function rowStatus(i){if(i.st==='open'){const d=days(i.c);return d===0?'Closes today':d===1?'Closes tomorrow':`Closes in ${d}d`}if(i.st==='upcoming')return `Opens ${d2(i.o)}`;if(i.st==='closed')return i.al&&+i.al===+T0?'Allotment today':i.al&&T0<i.al?`Allotment ${d2(i.al)}`:`Lists ${d2(i.ls)}`;return `Listed ${d2(i.ls)}`}
 function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · lot ${i.lot||'TBA'}${i.gmp&&i.st!=='listed'?` · GMP ₹${i.gmp.v} (${sgn(gmpPct(i))}%)`:''}${i.sub?` · subscribed ${i.sub.total.toFixed(2)}×`:''}${p?` · ${p.kind==='listed'?'profit':'est. profit'} ${p.v>=0?'+':'−'}${rs0(p.v)} per application`:''} — via MarketVedaPro`;
   try{navigator.clipboard.writeText(t).then(()=>toast('IPO summary copied'),()=>toast('Copy not allowed here'))}catch{toast('Copy not allowed here')}}
 function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)return;
-  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['listed','Listed']];
-  document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>i.st===k).length}</span></button>`).join('');
+  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['allot','Allotment'],['listed','Listed']];
+  document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>stOf(i)===k).length}</span></button>`).join('');
   document.getElementById('seg2').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-t="${k}" aria-pressed="${mType===k}">${k}</button>`).join('');
   document.querySelectorAll('#ulTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
   document.querySelectorAll('#seg2 button').forEach(b=>b.onclick=()=>{mType=b.dataset.t;renderMobileIpos()});
-  const L=IPOS.filter(i=>i.st===ipoStatus&&(mType==='All'||i.type===mType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:a.c-b.c);
+  const L=IPOS.filter(i=>stOf(i)===ipoStatus&&(mType==='All'||i.type===mType)).sort((a,b)=>ipoStatus==='listed'?b.ls-a.ls:ipoStatus==='allot'?(b.al-a.al):a.c-b.c);
   el.classList.add('wzl');
-  el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',v=listed?null:verdict(i),g=i.gmp?gmpPct(i):null,lg=listed?(i.listPrice/i.hi-1)*100:null;
+  el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',v=(i.st==='open'||i.st==='upcoming')?verdict(i):null,g=i.gmp?gmpPct(i):null,lg=listed?(i.listPrice/i.hi-1)*100:null;
     const right=listed?`<b class="${lg>=0?'up':'down'}">${sgn(lg)}%</b><small>Listed ₹${i.listPrice.toLocaleString('en-IN')}</small>`
       :i.gmp?`<b class="${i.gmp.v>0?'up':i.gmp.v<0?'down':''}">₹${i.gmp.v}</b><small>${g>0?'+':''}${g.toFixed(1)}% GMP</small>`:`<b>—</b><small>GMP</small>`;
-    const when=i.st==='open'?`<span class="op">● ${rowStatus(i)}</span>`:`<span>${rowStatus(i)}</span>`;
+    const when=i.st==='open'?`<span class="op">● ${rowStatus(i)}</span>`:stOf(i)==='allot'?`<span class="op">● Allotment out · Check ›</span>`:`<span>${rowStatus(i)}</span>`;
     const chips=[listed?`<span>Issue <b>₹${i.hi.toLocaleString('en-IN')}</b></span>`:`<span>Price <b>${band(i)}</b></span>`,
       !listed&&i.sub?`<span>Subs <b>${i.sub.total.toFixed(2)}x</b></span>`:'',
       
@@ -1521,7 +1524,7 @@ function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)ret
     return `<div class="wz" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
       <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}${vb}</div></div>
       <div class="wz-r">${right}</div><div class="wz-m">${chips}</div></div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
-  el.querySelectorAll('[data-q]').forEach(r=>{r.onclick=e=>{if(e.target.closest('[data-star],[data-share]'))return;openQuick(r.dataset.q)};r.onkeydown=e=>{if(e.key==='Enter')openQuick(r.dataset.q)}});
+  el.querySelectorAll('[data-q]').forEach(r=>{r.onclick=e=>{if(e.target.closest('[data-star],[data-share]'))return;if(stOf(byId[r.dataset.q])==='allot'){location.hash='allot-'+r.dataset.q;return}openQuick(r.dataset.q)};r.onkeydown=e=>{if(e.key==='Enter')openQuick(r.dataset.q)}});
   el.querySelectorAll('[data-share]').forEach(b=>b.onclick=e=>{e.stopPropagation();shareIpo(byId[b.dataset.share])});
 }
 function openQuick(id){const i=byId[id];if(!i)return;const p=profitPerApp(i);
@@ -1580,7 +1583,7 @@ const REGKEY=r=>/mufg|link\s*intime/i.test(r||'')?'mufg':/kfin/i.test(r||'')?'kf
 const normName=t=>String(t||'').toLowerCase().replace(/\b(limited|ltd|ipo|india|private|pvt|the|and|sme)\b/g,'').replace(/[^a-z0-9]/g,'');
 let allotBusy=false,allotMsg='';
 let allotOne=null,panShow=false,awEdit=false,awAdd=false;const allotErr={};
-async function autoCheck(id,only){const i=byId[id],rk=REGKEY(i.reg);if(!ALLOT_API||!rk||allotBusy)return;allotBusy=true;allotOne=only||null;allotMsg=only?'Checking '+only+'…':'Contacting '+i.reg+'…';renderAllotPage(id);
+async function autoCheck(id,only){const i=byId[id],rk=REGKEY(i.reg);if(!ALLOT_API||!rk||allotBusy)return;if(!i.al||T0<i.al){allotMsg=`Allotment for ${i.name.replace(/ (Ltd|Limited)\.?$/i,'')} comes out on ${d2(i.al)}. Check again that day.`;renderAllotPage(id);return}allotBusy=true;allotOne=only||null;allotMsg=only?'Checking '+only+'…':'Contacting '+i.reg+'…';renderAllotPage(id);
   try{const cl=await (await fetch(ALLOT_API+'/companies?reg='+rk)).json();const want=normName(i.name);
     const c=(cl.companies||[]).find(x=>{const n=normName(x.name);return n&&(n.includes(want)||want.includes(n))});
     if(!c){allotMsg=`${i.reg} hasn't published ${i.name.replace(/ Ltd$/,'')} allotment yet. Try again later.`;return}
@@ -1611,10 +1614,10 @@ const AWI={back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
 function renderAllotWiz(i,el){const id=i.id,M=FAM.members,st=FAM.st[id]||{},er=allotErr[id]||{};
   const ini=m=>esc((m.trim().split(/\s+/).length>1?m.trim().split(/\s+/).map(w=>w[0]).join(''):m.trim().slice(0,2)).slice(0,2).toUpperCase());
   const cnt=k=>M.filter(m=>st[m]===k).length;
-  const lab=m=>{const s=st[m],pn=PANS[m];if(!pn)return ['nc','Add PAN',''];if(allotBusy&&(!allotOne||allotOne===m))return ['nc','Checking…',''];if(er[m])return ['er',"Couldn't check",'Tap ↻ to retry'];
+  const lab=m=>{const s=st[m],pn=PANS[m];if(!pn)return ['nc','Add PAN',''];if(!ready)return ['pe','Waiting','Out '+d2(i.al)];if(allotBusy&&(!allotOne||allotOne===m))return ['nc','Checking…',''];if(er[m])return ['er',"Couldn't check",'Tap ↻ to retry'];
     if(s==='al'){const n=FAM.sh&&FAM.sh[id]&&FAM.sh[id][m];return ['al','Allotted',n?n.toLocaleString('en-IN')+' shares':'']}
     if(s==='na')return ['na','Non Allotted',''];if(s==='np')return ['np','Not Applied',''];if(s==='pe')return ['pe','Waiting',''];return ['nc','Not checked','']};
-  const ready=T0>=i.al,withPan=M.filter(m=>PANS[m]).length;
+  const ready=!!i.al&&T0>=i.al,withPan=M.filter(m=>PANS[m]).length;
   el.innerHTML=`<div class="aw">
    <div class="aw-top"><a class="aw-ib" href="#ipo-allot" aria-label="Back">${AWI.back}</a><h1>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</h1>
     <button class="aw-ib" type="button" id="awEye" aria-label="${panShow?'Hide':'Show'} PAN">${panShow?AWI.eyeoff:AWI.eye}</button>
@@ -1623,11 +1626,11 @@ function renderAllotWiz(i,el){const id=i.id,M=FAM.members,st=FAM.st[id]||{},er=a
    <div class="aw-list">${M.map(m=>{const pn=PANS[m],[c,t,sub]=lab(m),busy=allotBusy&&(!allotOne||allotOne===m)&&pn;
      return `<div class="aw-row"><div class="aw-av">${ini(m)}</div><div class="aw-nm"><b>${esc(m)}</b><small>${pn?(panShow?esc(pn):maskPan(pn)):'—'}</small></div>
       <div class="aw-st ${c}">${pn?t:`<a class="link" href="#" data-addpan="${esc(m)}">Add PAN</a>`}${sub?`<small>${esc(sub)}</small>`:''}</div>
-      ${awEdit?`<button type="button" class="aw-rf aw-del" data-del="${esc(m)}" aria-label="Remove ${esc(m)}">${AWI.del}</button>`:`<button type="button" class="aw-rf ${busy?'spin':''}" data-one="${esc(m)}" ${allotBusy||!pn?'disabled':''} aria-label="Check ${esc(m)} again">${AWI.ref}</button>`}</div>`}).join('')||'<p class="aw-msg" style="padding:22px 14px">Add the people in your family who apply for IPOs. Their PANs stay on this phone.</p>'}
+      ${awEdit?`<button type="button" class="aw-rf aw-del" data-del="${esc(m)}" aria-label="Remove ${esc(m)}">${AWI.del}</button>`:`<button type="button" class="aw-rf ${busy?'spin':''}" data-one="${esc(m)}" ${allotBusy||!pn||!ready?'disabled':''} aria-label="Check ${esc(m)} again">${AWI.ref}</button>`}</div>`}).join('')||'<p class="aw-msg" style="padding:22px 14px">Add the people in your family who apply for IPOs. Their PANs stay on this phone.</p>'}
     ${awAdd?`<form class="aw-form" id="famform" autocomplete="off"><label class="sr" for="famin">Name</label><input id="famin" maxlength="30" placeholder="Name" required><label class="sr" for="fampan">PAN</label><input id="fampan" maxlength="10" placeholder="PAN" style="text-transform:uppercase" autocomplete="off" spellcheck="false" required><button class="ghost" type="button" id="awCancel">Cancel</button><button class="btn" type="submit">Save</button></form>`
       :`<a class="aw-add" href="#pans?from=${esc(id)}" style="text-decoration:none">${AWI.plus} Add PAN</a>`}</div>
    ${allotMsg?`<p class="aw-msg" role="status">${esc(allotMsg)}</p>`:''}
-   ${withPan?`<div class="aw-cta"><button class="btn shine" type="button" id="autoAll" ${allotBusy?'disabled':''}>${AWI.ref.replace('<svg','<svg class="'+(allotBusy?'awsp':'')+'"')} ${allotBusy?'Checking…':'Refresh All'}</button></div>`:''}
+   ${!ready?`<p class="aw-msg" style="font-weight:600;color:var(--warn)">Allotment is not out yet. Come back on ${d2(i.al)} to check everyone.</p>`:''}${withPan&&ready?`<div class="aw-cta"><button class="btn shine" type="button" id="autoAll" ${allotBusy?'disabled':''}>${AWI.ref.replace('<svg','<svg class="'+(allotBusy?'awsp':'')+'"')} ${allotBusy?'Checking…':'Refresh All'}</button></div>`:''}
    <p class="aw-note">🔒 PANs are saved only on this phone. Each check goes straight to ${esc(i.reg||'the registrar')} and nothing is stored. <a class="link" href="${i.reg&&REGLINK[i.reg]?REGLINK[i.reg]:'https://www.bseindia.com/investors/appli_check.aspx'}" target="_blank" rel="noopener">Open ${esc(i.reg||'registrar')} site ↗</a></p></div>`;
   const q=s=>document.getElementById(s);
   q('awEye').onclick=()=>{panShow=!panShow;renderAllotWiz(i,el)};
