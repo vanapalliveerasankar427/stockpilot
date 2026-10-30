@@ -3,7 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StockPilot</title>
+<title>MarketVedaPro – Live Stock Market, IPO GMP, Gold &amp; Silver Rates | Know More. Invest Smarter.</title>
+<meta name="application-name" content="MarketVedaPro">
+<link rel="canonical" href="https://vanapalliveerasankar427.github.io/stockpilot/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MarketVedaPro">
+<meta property="og:title" content="MarketVedaPro – Know More. Invest Smarter.">
+<meta property="og:description" content="Live Indian stock prices, IPO GMP and subscription, allotment updates, gold and silver rates and market news in one place.">
+<meta property="og:url" content="https://vanapalliveerasankar427.github.io/stockpilot/">
+<meta property="og:image" content="https://vanapalliveerasankar427.github.io/stockpilot/icons/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MarketVedaPro – Know More. Invest Smarter.">
+<meta name="twitter:description" content="Live Indian stock prices, IPO GMP and subscription, allotment updates, gold and silver rates and market news in one place.">
+<meta name="twitter:image" content="https://vanapalliveerasankar427.github.io/stockpilot/icons/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://vanapalliveerasankar427.github.io/stockpilot/#org","name":"MarketVedaPro","url":"https://vanapalliveerasankar427.github.io/stockpilot/","logo":"https://vanapalliveerasankar427.github.io/stockpilot/icons/icon-512.png","slogan":"Know More. Invest Smarter."},{"@type":"WebSite","@id":"https://vanapalliveerasankar427.github.io/stockpilot/#site","name":"MarketVedaPro","url":"https://vanapalliveerasankar427.github.io/stockpilot/","description":"Financial markets and investment information: stock market, IPOs, gold and silver rates, market news and insights.","publisher":{"@id":"https://vanapalliveerasankar427.github.io/stockpilot/#org"},"inLanguage":"en-IN"}]}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#F6F5F2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
@@ -11,9 +26,9 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="StockPilot">
+<meta name="apple-mobile-web-app-title" content="MarketVedaPro">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="description" content="Live Indian markets, IPO GMP, subscription, allotment and gold & silver rates.">
+<meta name="description" content="MarketVedaPro – live Indian stock market prices, IPO GMP, subscription and allotment, daily gold and silver rates, market news and insights. Know More. Invest Smarter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -61,8 +76,10 @@ h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.025em;margin:0;text-wrap
 
 /* nav */
 nav.top{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:12px;padding:8px 10px 8px 16px;border-radius:999px;background:var(--navbg);border:1px solid var(--line);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);box-shadow:var(--shadow)}
-.logo{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none;flex:none}
-.mark{width:30px;height:30px;border-radius:10px;background:conic-gradient(from 200deg,#FF5A36,#FFB547,#00A37A,#5EEAD4,#FF5A36);display:grid;place-items:center}
+.logo{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none;flex:none;color:var(--ink)}
+.wm b{font-weight:800;margin-left:2px;padding:2px 6px;border-radius:7px;font-size:.72em;vertical-align:2px;letter-spacing:0;background:linear-gradient(135deg,#F5B833,#E8590C);color:#fff}
+.tagline b{color:var(--ink)}
+.mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#12B886 0%,#0B7A6B 55%,#0A4D55 100%);display:grid;place-items:center;position:relative;overflow:hidden}.mark::after{content:"";position:absolute;right:-6px;top:-6px;width:16px;height:16px;border-radius:50%;background:#F5B833;opacity:.95}.mark svg{position:relative;z-index:1}
 .mark i{width:12px;height:12px;border-radius:4px;background:#fff;display:block}
 .links{display:flex;gap:2px;margin-left:14px}
 .links a{padding:8px 14px;border-radius:999px;color:var(--muted);font-weight:500;font-size:14.5px;text-decoration:none;display:flex;gap:6px;align-items:center;white-space:nowrap}
@@ -76,7 +93,9 @@ nav.top{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:
 .cta{height:40px;padding:0 18px;border-radius:999px;background:var(--btn);color:var(--btnink);display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
 .cta:hover{filter:brightness(1.1)}
 @media(max-width:1240px){.searchbtn{width:170px}.searchbtn kbd{display:none}}@media(max-width:1120px){.links a .lt{display:none}}
-@media(max-width:1420px){.cta.apps{display:none}}
+@media(max-width:1600px){.cta.apps{display:none}}
+@media(max-width:1500px) and (min-width:701px){.searchbtn{width:44px;padding:0;justify-content:center}.searchbtn span,.searchbtn kbd{display:none}}
+nav.top .links{min-width:0}
 @media(max-width:700px){
   nav.top{top:8px;padding:6px 6px 6px 12px;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--glass2)}
   .links a[data-v="tools"]{display:none}
@@ -349,8 +368,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}
 .metal.silver span{color:var(--muted)}
 .gcalc{padding:14px;border-radius:18px;background:var(--soft)}
 
-/* ===================== StockPilot v4: profit, mobile, motion ===================== */
-.mark{background:conic-gradient(from 210deg,#FF5A36,#FFB547,#00A37A,#5EEAD4,#FF5A36);box-shadow:0 6px 18px -6px rgba(255,90,54,.55)}
+/* ===================== MarketVedaPro v4: profit, mobile, motion ===================== */
+.mark{box-shadow:0 6px 18px -6px rgba(18,184,134,.55)}
 .mark svg{display:block}
 .profit{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--up) 16%,transparent),color-mix(in srgb,var(--up) 4%,transparent));border:1px solid color-mix(in srgb,var(--up) 22%,transparent)}
 .profit.neg{background:linear-gradient(135deg,color-mix(in srgb,var(--dn) 16%,transparent),color-mix(in srgb,var(--dn) 4%,transparent));border-color:color-mix(in srgb,var(--dn) 22%,transparent)}
@@ -596,7 +615,7 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 <div class="aurora" aria-hidden="true"><i style="background:var(--b1);left:-6%;top:-12%;width:560px;height:560px"></i><i style="background:var(--b2);left:58%;top:-16%;width:620px;height:620px"></i><i style="background:var(--b3);left:82%;top:40%;width:520px;height:520px"></i><i style="background:var(--b4);left:12%;top:62%;width:480px;height:480px"></i></div>
 <div class="shell">
 <nav class="top">
-  <a class="logo" href="#markets" aria-label="StockPilot home"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.5 2.5 2.8 10.2c-.8.3-.7 1.5.1 1.7l7.3 1.9 1.9 7.3c.2.8 1.4.9 1.7.1z"/></svg></span>StockPilot</a>
+  <a class="logo" href="#markets" aria-label="MarketVedaPro home"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 3 8-8"/><path d="M15 6h6v6"/></svg></span><span class="wm">MarketVeda<b>Pro</b></span></a>
   <div class="links" role="navigation" aria-label="Sections">
     <a href="#markets" data-v="markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span class="lt">Markets</span></a>
     <a href="#stocks" data-v="stocks"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg><span class="lt">Stocks</span></a>
@@ -758,9 +777,9 @@ footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
   <p class="src" id="listsrc"></p>
 </section>
 
-<footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.5 2.5 2.8 10.2c-.8.3-.7 1.5.1 1.7l7.3 1.9 1.9 7.3c.2.8 1.4.9 1.7.1z"/></svg></span>StockPilot</div><p style="margin-bottom:6px">Your co-pilot for Indian stocks and IPOs.</p>
+<footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 3 8-8"/><path d="M15 6h6v6"/></svg></span><span class="wm">MarketVeda<b>Pro</b></span></div><p class="tagline" style="margin-bottom:6px"><b>Know More. Invest Smarter.</b> Stock market, IPOs, gold and silver rates, market news and insights for Indian and global market followers.</p>
   <p id="srcs"></p>
-  <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. StockPilot does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
+  <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. MarketVedaPro does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
 </footer>
 </div>
 
@@ -1162,7 +1181,7 @@ function renderAllot(){
       ${i.reg&&REGLINK[i.reg]?`<a class="btn" href="${REGLINK[i.reg]}" target="_blank" rel="noopener">Check on ${esc(i.reg)} (registrar) ↗</a>`:''}
       <a class="${i.reg&&REGLINK[i.reg]?'ghost':'btn'}" href="https://www.bseindia.com/investors/appli_check.aspx" target="_blank" rel="noopener">Check on BSE ↗</a>
       <a class="ghost" href="https://www.nseindia.com/invest/check-trades-bids-verify-ipo-bids" target="_blank" rel="noopener">Check on NSE ↗</a></div>
-     <p class="note" style="margin-top:12px">On the site, pick <b>${esc(i.name)}</b>, then enter your PAN or application number. StockPilot never asks for or stores your PAN.</p>
+     <p class="note" style="margin-top:12px">On the site, pick <b>${esc(i.name)}</b>, then enter your PAN or application number. MarketVedaPro never asks for or stores your PAN.</p>
      <a class="ghost" href="#allot-${i.id}" style="margin-top:14px;width:100%">Family allotment list →</a><div style="margin-top:18px"><span class="lbl">3 · Record the result</span>${mine.length?mine.map(a=>`<div class="row" style="padding:10px 0;border-bottom:1px solid var(--line)"><div><b>${esc(a.applicant)}</b><small class="muted" style="display:block;font-size:12.5px">${esc(a.via)} · ${a.lots} lot${a.lots>1?'s':''}</small></div><div class="tabs">${[['allotted','Allotted'],['not','Not allotted']].map(([k,l])=>`<button type="button" data-res="${a.id}" data-v="${k}" aria-pressed="${a.result===k}">${l}</button>`).join('')}</div></div>`).join(''):`<p class="note" style="margin-top:8px">You haven't logged an application for this IPO. <a class="link" href="#ipos">Log one from the IPO card</a> to track it here.</p>`}</div>`:'<p class="note">No IPOs waiting for allotment right now.</p>'}</div></div>`;
   document.querySelectorAll('#allotbody [data-a]').forEach(b=>b.onclick=()=>{allotSel=b.dataset.a;renderAllot()});
   document.querySelectorAll('#allotbody [data-res]').forEach(b=>b.onclick=async()=>{const a=apps.find(x=>x.id===b.dataset.res);const v=a.result===b.dataset.v?'pending':b.dataset.v;await patchApp(a.id,{result:v,shares:v==='allotted'?byId[a.ipo].lot*byId[a.ipo].ml:0,mandate:v!=='pending'?'accepted':a.mandate});renderAllot()});
@@ -1209,14 +1228,14 @@ function renderPlanner(){
 // ===================== Learn =====================
 const GUIDES=[
  {t:'How IPO allotment works',m:'4 min',b:['In a mainboard IPO, 35% of shares are usually reserved for retail investors (bids up to ₹2 lakh). If retail demand is more than the shares available, allotment is by computerised lottery.','Every valid retail application gets an equal chance of one lot, no matter how many lots it bid for. That is why families apply from several PANs instead of bidding more lots from one.','HNI (NII) allotment works on draws within the small-HNI (₹2–10 lakh) and big-HNI (above ₹10 lakh) pools. QIB shares go proportionately to institutions.']},
- {t:'GMP explained',m:'3 min',b:['Grey market premium is what unofficial dealers are willing to pay above the issue price before a stock lists. It is not regulated, and no exchange publishes it.','A GMP of ₹30 on a ₹300 issue suggests a 10% listing gain, but it is only a sentiment signal. It changes by the hour and often falls by listing day.','On StockPilot every GMP shows its source and time, and the GMP board compares past GMPs with real listing prices.']},
+ {t:'GMP explained',m:'3 min',b:['Grey market premium is what unofficial dealers are willing to pay above the issue price before a stock lists. It is not regulated, and no exchange publishes it.','A GMP of ₹30 on a ₹300 issue suggests a 10% listing gain, but it is only a sentiment signal. It changes by the hour and often falls by listing day.','On MarketVedaPro every GMP shows its source and time, and the GMP board compares past GMPs with real listing prices.']},
  {t:'The T+3 IPO timeline',m:'2 min',b:['SEBI moved IPOs to a T+3 timeline: listing happens three working days after the issue closes (T).','T+1: basis of allotment is finalised. T+2: refunds start and allotted shares reach demat accounts. T+3: shares list on NSE and BSE.','UPI mandates must be approved by 4 PM on closing day for retail bids to count.']},
  {t:'Mainboard vs SME IPOs',m:'3 min',b:['Mainboard IPOs list on the main NSE and BSE platforms and are usually larger, more liquid companies.','SME IPOs list on NSE Emerge or BSE SME. Individuals must apply for a minimum of 2 lots, which is often ₹2 lakh or more, and the shares trade in large lots with lower liquidity.','SME issues can see big swings in both directions. Read the RHP carefully and size positions accordingly.']},
  {t:'UPI vs ASBA: two ways to pay',m:'2 min',b:['With UPI, you bid in your broker app and approve a mandate in your UPI app. The amount is blocked in your bank account, up to ₹5 lakh per bid.','With ASBA, you apply from your bank’s net banking IPO section. The bank blocks the money directly, and there is no ₹5 lakh UPI limit.','In both cases money is only debited if you get shares; otherwise the block is released.']},
  {t:'How to read subscription numbers',m:'3 min',b:['“10×” means investors bid for 10 times the shares on offer in that category.','QIB demand often arrives on the final day, so day-1 numbers can look weak even for popular issues.','For retail investors the key number is retail subscription: the higher it is, the lower your chance of getting an allotment.']},
 ];
 function renderLearn(){document.getElementById('learnbody').innerHTML=`<div class="igrid">${GUIDES.map((g,k)=>`<details class="glass card guide" ${k===0?'open':''}><summary><span class="lbl">${g.m} read</span><h3 style="font-size:19px;margin-top:6px">${g.t}</h3></summary><div style="display:grid;gap:10px;margin-top:12px">${g.b.map(p=>`<p class="note" style="font-size:14.5px;color:var(--ink);opacity:.85">${p}</p>`).join('')}</div></details>`).join('')}</div>
-  <div class="glass card sec"><h3 style="font-size:18px;margin-bottom:6px">Our methodology</h3><p class="note" style="font-size:14px;max-width:80ch">IPO details come from issuer announcements and RHP summaries published by brokers and financial news. Subscription figures are snapshots from exchange data as reported by the sources named on each card. GMP is shown only with its source and time. We never invent or estimate a figure we couldn't find; where something is unknown we say TBA. StockPilot does not hold licences to place applications and is not a SEBI-registered adviser.</p></div>`}
+  <div class="glass card sec"><h3 style="font-size:18px;margin-bottom:6px">Our methodology</h3><p class="note" style="font-size:14px;max-width:80ch">IPO details come from issuer announcements and RHP summaries published by brokers and financial news. Subscription figures are snapshots from exchange data as reported by the sources named on each card. GMP is shown only with its source and time. We never invent or estimate a figure we couldn't find; where something is unknown we say TBA. MarketVedaPro does not hold licences to place applications and is not a SEBI-registered adviser.</p></div>`}
 
 // ===================== Home IPO table =====================
 let homeIpoTab='open';
@@ -1287,7 +1306,7 @@ function renderMetalsPage(){const m=METALS,el=document.getElementById('metalspag
   ['gw','gk','gm','gr'].forEach(id=>document.getElementById(id).addEventListener('input',calcG));calcG();
 }
 
-// ===================== StockPilot v4: profit helpers, motion, mobile tables =====================
+// ===================== MarketVedaPro v4: profit helpers, motion, mobile tables =====================
 const profitPerApp=i=>{if(!i.lot)return null;if(i.st==='listed'&&i.listPrice)return {v:(i.listPrice-i.hi)*i.lot*i.ml,kind:'listed'};if(i.gmp)return {v:i.gmp.v*i.lot*i.ml,kind:'gmp'};return null};
 function profitStrip(i){const p=profitPerApp(i);if(!p)return '';const neg=p.v<0;
   const lab=p.kind==='listed'?`Profit per ${i.ml>1?i.ml+'-lot application':'lot'} at listing`:`Est. profit per ${i.ml>1?i.ml+'-lot application':'lot'} if allotted`;
@@ -1339,7 +1358,7 @@ const IC={
 };
 let mType='All';
 function rowStatus(i){if(i.st==='open'){const d=days(i.c);return d===0?'Closes today':d===1?'Closes tomorrow':`Closes in ${d}d`}if(i.st==='upcoming')return `Opens ${d2(i.o)}`;if(i.st==='closed')return i.al&&+i.al===+T0?'Allotment today':i.al&&T0<i.al?`Allotment ${d2(i.al)}`:`Lists ${d2(i.ls)}`;return `Listed ${d2(i.ls)}`}
-function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · lot ${i.lot||'TBA'}${i.gmp&&i.st!=='listed'?` · GMP ₹${i.gmp.v} (${sgn(gmpPct(i))}%)`:''}${i.sub?` · subscribed ${i.sub.total.toFixed(2)}×`:''}${p?` · ${p.kind==='listed'?'profit':'est. profit'} ${p.v>=0?'+':'−'}${rs0(p.v)} per application`:''} — via StockPilot`;
+function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · lot ${i.lot||'TBA'}${i.gmp&&i.st!=='listed'?` · GMP ₹${i.gmp.v} (${sgn(gmpPct(i))}%)`:''}${i.sub?` · subscribed ${i.sub.total.toFixed(2)}×`:''}${p?` · ${p.kind==='listed'?'profit':'est. profit'} ${p.v>=0?'+':'−'}${rs0(p.v)} per application`:''} — via MarketVedaPro`;
   try{navigator.clipboard.writeText(t).then(()=>toast('IPO summary copied'),()=>toast('Copy not allowed here'))}catch{toast('Copy not allowed here')}}
 function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)return;
   const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['listed','Listed']];
@@ -1738,8 +1757,8 @@ let deferredInstall=null;
 const instSnoozed=()=>{try{return +localStorage.getItem('sp.inst.snooze')>Date.now()}catch{return false}};
 const snoozeInst=d=>{try{localStorage.setItem('sp.inst.snooze',Date.now()+d*864e5)}catch{}};
 function showInstall(kind){if(isStandalone()||instSnoozed()||document.getElementById('inst'))return;
-  const el=document.createElement('div');el.className='inst';el.id='inst';el.setAttribute('role','dialog');el.setAttribute('aria-label','Install StockPilot');
-  el.innerHTML=`<div class="t"><img src="icons/icon-192.png" alt=""><div><h4>Install the StockPilot app</h4><p>Opens full screen from your home screen, with live prices.</p></div><button class="x" type="button" aria-label="Not now" id="instx">×</button></div>
+  const el=document.createElement('div');el.className='inst';el.id='inst';el.setAttribute('role','dialog');el.setAttribute('aria-label','Install MarketVedaPro');
+  el.innerHTML=`<div class="t"><img src="icons/icon-192.png" alt=""><div><h4>Install the MarketVedaPro app</h4><p>Know More. Invest Smarter. Live prices, IPOs and gold rates from your home screen.</p></div><button class="x" type="button" aria-label="Not now" id="instx">×</button></div>
    ${kind==='ios'?`<ol><li>Tap the <b>Share</b> button <span class="ios-share"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span> at the bottom of Safari.</li><li>Scroll and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li></ol>`
    :`<button class="btn shine" type="button" id="instgo" style="width:100%">Install app</button>`}`;
   document.body.appendChild(el);
@@ -1771,7 +1790,7 @@ function renderBrief(){const el=document.getElementById('brief');if(!el)return;c
   const sc=moodScore(),[ml,mc]=moodLabel(sc);
   el.innerHTML=`<div><div class="bh"><span class="lbl">Today's brief</span><span class="live ${open?'':'off'}">${open?'● LIVE':'MARKET CLOSED'}</span><span class="muted" style="font-size:12.5px">${LIVED?'updated '+esc(LIVED.label):''}</span></div>
      <ul>${items.map(([i,t])=>`<li><i>${i}</i><span>${t}</span></li>`).join('')}</ul></div>
-   <div class="meter">${gauge(sc)}<div class="v num">${sc}</div><div class="l" style="color:${mc}">${ml}</div><small>StockPilot mood · breadth, Nifty, mid/small caps and VIX</small></div>`}
+   <div class="meter">${gauge(sc)}<div class="v num">${sc}</div><div class="l" style="color:${mc}">${ml}</div><small>MarketVedaPro mood · breadth, Nifty, mid/small caps and VIX</small></div>`}
 const _rm2=renderMarkets;renderMarkets=function(){_rm2();renderBrief()};
 
 // ===================== init =====================

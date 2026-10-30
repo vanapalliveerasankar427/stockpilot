@@ -1,6 +1,8 @@
-# StockPilot
+# MarketVedaPro
 
-Indian stocks and IPOs: market overview, gold and silver, IPO GMP, subscription, allotment and application tracking.
+**Know More. Invest Smarter.**
+
+Financial markets and investment information for Indian and global market followers: stock market prices and trends, IPOs (upcoming, open, GMP, subscription, allotment and listing), daily gold and silver rates, market news and market insights.
 
 **Live site:** https://vanapalliveerasankar427.github.io/stockpilot/
 

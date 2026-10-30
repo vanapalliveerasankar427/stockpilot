@@ -33,8 +33,8 @@ jobs:
       - run: pip install requests
       - name: Update (prices ~every minute, full every 5th pass, until 3:45 PM IST)
         run: |
-          git config user.name "stockpilot-bot"
-          git config user.email "stockpilot-bot@users.noreply.github.com"
+          git config user.name "marketvedapro-bot"
+          git config user.email "marketvedapro-bot@users.noreply.github.com"
           i=0
           while true; do
             if [ $((i % 5)) -eq 0 ]; then python scripts/update.py || true; else python scripts/update.py --fast || true; fi

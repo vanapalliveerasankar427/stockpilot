@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""StockPilot data updater.
+"""MarketVedaPro data updater.
 
 Runs on GitHub Actions on a schedule. Collects fresh market figures from public
 sources and writes data/live.json and data/live.js, which index.html loads.
