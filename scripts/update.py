@@ -218,7 +218,9 @@ def ipo(out):
             if not c:
                 continue
             band = next((n for n, x in enumerate(c) if "–" in x or " - " in x), None)
-            after = c[band + 1:] if band is not None else c[1:]
+            if band is None:
+                continue
+            after = c[band + 1:]
             g = next((x for x in after if re.fullmatch(r"₹\s*-?[\d,.]+", x)), None)
             if g is not None:
                 data.setdefault(iid, {}).update(gmp=num(g), gsrc="IPOMarket", gat=stamp)
