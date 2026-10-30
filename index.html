@@ -2162,11 +2162,18 @@ function notifItems(){const out=[],T=+T0,day=864e5;
     if(i.ls&&+i.ls===T)out.push({k:'list',id:'ls-'+i.id,ic:'🔔',t:`${nnm(i)} lists today`,b:i.listPrice?`Listed at ₹${i.listPrice.toLocaleString('en-IN')} (${sgn((i.listPrice/i.hi-1)*100)}%)`:`Issue price ₹${i.hi.toLocaleString('en-IN')}${g}`,u:'#ipos',d:i.ls})});
   try{WL.filter(k=>!k.startsWith('ipo:')).forEach(s=>{const b=byStock[s],qq=b?null:qOf(s),q=b?{p:DAYCHG[s]?DAYCHG[s][0]:null,v:b.price}:qq?{p:qq.pct,v:qq.price}:null;if(q&&q.p!=null&&isFinite(q.p)&&Math.abs(q.p)>=4)out.push({k:'watch',id:`w-${s}-${T}-${q.p>0?'u':'d'}`,ic:q.p>0?'📈':'📉',t:`${s} ${q.p>0?'up':'down'} ${Math.abs(q.p).toFixed(1)}% today`,b:`On your watchlist · ₹${q.v.toLocaleString('en-IN')}`,u:'#stock-'+encodeURIComponent(s),d:T})})}catch{}
   return out.filter(n=>NS.types[n.k]!==0)}
+const u8key=s=>{s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return Uint8Array.from(atob(s),c=>c.charCodeAt(0))};
+async function pushSub(hello){try{if(!ALLOT_API||!('PushManager' in window))return false;const reg=await navigator.serviceWorker.ready;
+  let s=await reg.pushManager.getSubscription();
+  if(!s){const {key}=await (await fetch(ALLOT_API+'/push/key')).json();s=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:u8key(key)})}
+  const r=await fetch(ALLOT_API+'/push/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sub:s.toJSON(),types:NS.types,hello:hello?1:0})});
+  NS.push=r.ok;saveNS();return r.ok}catch(e){NS.push=false;saveNS();return false}}
+async function pushUnsub(){try{const reg=await navigator.serviceWorker.ready,s=await reg.pushManager.getSubscription();if(s){fetch(ALLOT_API+'/push/unsubscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sub:s.toJSON()})}).catch(()=>{});await s.unsubscribe()}}catch{}NS.push=false;saveNS()}
 async function notifPush(n){try{const reg=navigator.serviceWorker&&await navigator.serviceWorker.getRegistration();const o={body:n.b,icon:'icons/icon-192.png',badge:'icons/favicon-64.png',tag:n.id,data:{url:location.origin+location.pathname+n.u}};
   if(reg&&reg.showNotification)await reg.showNotification(n.t,o);else if('Notification' in window)new Notification(n.t,o)}catch{}}
 function notifRun(){const L=notifItems(),unread=L.filter(n=>!NS.read[n.id]).length,bn=document.getElementById('bellN');
   if(bn){bn.hidden=!unread;bn.textContent=unread>9?'9+':unread}
-  if(NS.on&&'Notification' in window&&Notification.permission==='granted')L.forEach(n=>{if(!NS.seen[n.id]){NS.seen[n.id]=Date.now();notifPush(n)}});
+  if(NS.on&&'Notification' in window&&Notification.permission==='granted')L.forEach(n=>{if(!NS.seen[n.id]){NS.seen[n.id]=Date.now();if(!NS.push||n.k==='watch')notifPush(n)}});
   const cut=Date.now()-20*864e5;Object.keys(NS.seen).forEach(k=>{if(NS.seen[k]<cut)delete NS.seen[k]});saveNS();
   if(document.getElementById('npanel').classList.contains('on'))notifPanel()}
 function notifPanel(){const el=document.getElementById('npanel'),L=notifItems().sort((a,b)=>(NS.read[a.id]?1:0)-(NS.read[b.id]?1:0));
@@ -2176,20 +2183,23 @@ function notifPanel(){const el=document.getElementById('npanel'),L=notifItems().
    ${L.map(n=>`<a class="nrow ${NS.read[n.id]?'':'new'}" href="${n.u}" data-nid="${n.id}"><div class="nic">${n.ic}</div><div><b>${esc(n.t)}</b><small>${esc(n.b)}</small></div></a>`).join('')||'<div class="nempty">Nothing new right now. You\'ll see IPO openings, last days, allotments and listings here.</div>'}
    <div class="nset">${!can?(ios&&!standalone?'<p class="note">To get alerts on your iPhone, first add MarketVedaPro to your Home Screen (Share → Add to Home Screen), then open it from there and turn alerts on here.</p>':'<p class="note">This browser does not support phone alerts. You will still see them here.</p>')
      :perm==='denied'?'<p class="note">Alerts are blocked for this site. Allow notifications for MarketVedaPro in your phone or browser settings.</p>'
-     :`<label><span><b>Phone alerts</b><small class="muted" style="display:block;font-size:12px">${NS.on&&perm==='granted'?'On · shown while the app is open or in the background':'Get an alert as soon as something happens'}</small></span><button class="${NS.on&&perm==='granted'?'ghost':'btn'}" type="button" id="nOn" style="padding:8px 14px">${NS.on&&perm==='granted'?'Turn off':'Turn on'}</button></label>`}
+     :`<label><span><b>Phone alerts</b><small class="muted" style="display:block;font-size:12px">${NS.on&&perm==='granted'?(NS.push?'On · arrives even when the app is closed':'On · shown while the app is open or in the background'):'Get an alert as soon as something happens'}</small></span><button class="${NS.on&&perm==='granted'?'ghost':'btn'}" type="button" id="nOn" style="padding:8px 14px">${NS.on&&perm==='granted'?'Turn off':'Turn on'}</button></label>`}
     ${T.map(([k,l])=>`<label><span>${l}</span><input type="checkbox" data-nt="${k}" ${NS.types[k]!==0?'checked':''}></label>`).join('')}</div>`;
   document.getElementById('nX').onclick=()=>el.classList.remove('on');
   el.querySelectorAll('[data-nid]').forEach(a=>a.onclick=()=>{NS.read[a.dataset.nid]=1;saveNS();el.classList.remove('on');setTimeout(notifRun,50)});
-  el.querySelectorAll('[data-nt]').forEach(c=>c.onchange=()=>{NS.types[c.dataset.nt]=c.checked?1:0;saveNS();notifRun();notifPanel()});
-  const on=document.getElementById('nOn');if(on)on.onclick=async()=>{if(NS.on&&Notification.permission==='granted'){NS.on=false;saveNS();notifPanel();return}
-    const r=await Notification.requestPermission();NS.on=r==='granted';
-    if(NS.on){notifItems().forEach(n=>NS.seen[n.id]=Date.now());saveNS();notifPush({id:'hello',t:'Alerts are on',b:'You will get IPO openings, last days, allotments and listings here.',u:'#ipos'});toast('Phone alerts are on')}else{saveNS();toast('Alerts were not allowed')}
+  el.querySelectorAll('[data-nt]').forEach(c=>c.onchange=()=>{NS.types[c.dataset.nt]=c.checked?1:0;saveNS();if(NS.on&&NS.push)pushSub(false);notifRun();notifPanel()});
+  const on=document.getElementById('nOn');if(on)on.onclick=async()=>{if(NS.on&&Notification.permission==='granted'){NS.on=false;saveNS();await pushUnsub();notifPanel();toast('Alerts are off');return}
+    on.disabled=true;on.textContent='Turning on…';const r=await Notification.requestPermission();NS.on=r==='granted';
+    if(NS.on){notifItems().forEach(n=>NS.seen[n.id]=Date.now());saveNS();const ok=await pushSub(true);
+      if(!ok)notifPush({id:'hello',t:'Alerts are on',b:'You will get IPO openings, last days, allotments and listings here.',u:'#ipos'});
+      toast(ok?'Alerts are on, even when the app is closed':'Alerts are on while the app is open')}else{saveNS();toast('Alerts were not allowed')}
     notifPanel()}}
 document.getElementById('bellBtn').onclick=e=>{e.stopPropagation();const el=document.getElementById('npanel');if(el.classList.toggle('on')){notifPanel();notifItems().forEach(n=>NS.read[n.id]=1);saveNS();const bn=document.getElementById('bellN');if(bn)bn.hidden=true}};
 document.addEventListener('click',e=>{const el=document.getElementById('npanel');if(el.classList.contains('on')&&!e.target.closest('#npanel,#bellBtn'))el.classList.remove('on')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('npanel').classList.remove('on')});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)notifRun()});
 setTimeout(notifRun,1500);setInterval(notifRun,60000);
+setTimeout(()=>{try{if(NS.on&&'Notification' in window&&Notification.permission==='granted'&&Date.now()-(NS.pt||0)>864e5){NS.pt=Date.now();pushSub(false)}}catch{}},4000);
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);

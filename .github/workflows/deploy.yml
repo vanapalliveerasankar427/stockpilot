@@ -47,6 +47,8 @@ jobs:
           git add data
           git diff --cached --quiet || git commit -m "Data update $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"
           git push || (git pull --rebase && git push) || true
+      - name: IPO calendar for push alerts
+        run: node scripts/ipocal.js index.html ipo-calendar.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,5 +1,5 @@
 // MarketVedaPro service worker: app works offline with the last figures; live data is always fetched fresh.
-const CACHE = 'marketvedapro-v3';
+const CACHE = 'marketvedapro-v4';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
@@ -23,4 +23,10 @@ self.addEventListener('notificationclick', e => {
     for (const w of ws) { if ('focus' in w) { w.navigate(url).catch(() => {}); return w.focus(); } }
     return clients.openWindow(url);
   }));
+});
+
+// alerts sent by the MarketVedaPro server (IPO opens, last day, allotment, listing)
+self.addEventListener('push', e => {
+  let d = {}; try { d = e.data ? e.data.json() : {}; } catch { d = { t: 'MarketVedaPro', b: e.data ? e.data.text() : '' }; }
+  e.waitUntil(self.registration.showNotification(d.t || 'MarketVedaPro', { body: d.b || '', icon: 'icons/icon-192.png', badge: 'icons/favicon-64.png', tag: d.tag || undefined, data: { url: d.u || './' } }));
 });

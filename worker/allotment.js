@@ -3,6 +3,8 @@
 // It does not store or log PANs. Registrars that require a captcha are not queried.
 // Registrar request formats follow the MIT-licensed IPO-Allotment-Status-Bot (github.com/AbGisHere/IPO-Allotment-Status-Bot).
 
+import { api as pushApi, cron as pushCron } from "./push.js";
+
 const ALLOWED = ["https://marketvedapro.com", "https://www.marketvedapro.com", "https://vanapalliveerasankar427.github.io"];
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const MUFG = "https://in.mpms.mufg.com/Initial_Offer/";
@@ -84,10 +86,12 @@ async function check(reg, cid, pan) {
 }
 
 export default {
-  async fetch(req) {
+  async scheduled(event, env, ctx) { ctx.waitUntil(pushCron(env, companies)); },
+  async fetch(req, env) {
     if (req.method === "OPTIONS") return new Response(null, { headers: cors(req) });
     const url = new URL(req.url);
     try {
+      if (url.pathname.startsWith("/push/")) return await pushApi(req, env, url.pathname, (b, s) => json(req, b, s));
       if (url.pathname === "/companies") return json(req, { companies: await companies(url.searchParams.get("reg")) });
       if (url.pathname === "/check" && req.method === "POST") {
         const { reg, cid, pans } = await req.json();
