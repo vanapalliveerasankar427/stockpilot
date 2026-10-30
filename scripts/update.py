@@ -108,7 +108,7 @@ def quotes(symbols):
         except Exception as e:
             log(f"quote {sym} failed: {e}")
             return sym, None
-    with ThreadPoolExecutor(max_workers=12) as ex:
+    with ThreadPoolExecutor(max_workers=16) as ex:
         return {s: q for s, q in ex.map(one, symbols) if q}
 
 
@@ -335,52 +335,55 @@ def ipo(out):
 
 
 # ----------------------------------------------------------------- NSE index constituents (live movers)
-def nse_session():
-    if not getattr(nse_session, "ok", False):
-        S.get("https://www.nseindia.com/", timeout=20)
-        nse_session.ok = True
+INDEX_FILES = {"n50": "ind_nifty50list.csv", "mid": "ind_niftymidcap100list.csv", "small": "ind_niftysmallcap100list.csv"}
+
+
+def constituents(out, key):
+    """Official index members from NSE's published CSV (cached, refreshed once a day)."""
+    cache = out.setdefault("members", {})
+    c = cache.get(key)
+    if c and c.get("day") == NOW.strftime("%Y-%m-%d") and len(c.get("list", [])) > 20:
+        return c["list"]
+    for base in ("https://nsearchives.nseindia.com/content/indices/", "https://www.niftyindices.com/IndexConstituent/"):
+        try:
+            txt = get(base + INDEX_FILES[key]).text
+            lines = [l.split(",") for l in txt.strip().splitlines()]
+            head = [h.strip().lower() for h in lines[0]]
+            si, ni = head.index("symbol"), head.index("company name")
+            lst = [[r[si].strip(), re.sub(r"\s+(Limited|Ltd\.?)$", "", r[ni].strip())] for r in lines[1:] if len(r) > max(si, ni)]
+            if len(lst) > 20:
+                cache[key] = {"day": NOW.strftime("%Y-%m-%d"), "list": lst}
+                return lst
+        except Exception as e:
+            log(f"members {key} from {base[:30]} failed: {e}")
+    return (c or {}).get("list", [])
 
 
 def nse_movers(out):
-    """Nifty 50, Midcap 100 and Smallcap 100 movers straight from NSE."""
-    names = {"NIFTY 50": "n50", "NIFTY MIDCAP 100": "mid", "NIFTY SMALLCAP 100": "small"}
-    for index, key in names.items():
-        try:
-            nse_session()
-            j = get("https://www.nseindia.com/api/equity-stockIndices?index=" + requests.utils.quote(index),
-                    headers={"Referer": "https://www.nseindia.com/market-data/live-equity-market"}).json()
-            rows = [r for r in j.get("data", []) if r.get("symbol") and r.get("symbol") != index and r.get("priority", 0) == 0]
-            mv = []
-            for r in rows:
-                try:
-                    nm = (r.get("meta") or {}).get("companyName") or r["symbol"]
-                    nm = re.sub(r"\s+(Limited|Ltd\.?)$", "", nm)
-                    mv.append([r["symbol"], nm, round(float(r["pChange"]), 2), float(r["lastPrice"])])
-                except (KeyError, TypeError, ValueError):
-                    pass
-            if len(mv) < 10:
-                log(f"nse {index}: only {len(mv)} rows")
-                continue
-            mv.sort(key=lambda x: -x[2])
-            up = [m for m in mv if m[2] > 0]
-            dn = [m for m in reversed(mv) if m[2] < 0]
-            stamp = (j.get("timestamp") or NOW.strftime("%d-%b-%Y %H:%M"))
-            if key == "n50":
-                out["gainers"] = [m[:3] for m in up[:5]]
-                out["losers"] = [m[:3] for m in dn[:5]]
-                out["breadth"] = {"up": len(up), "n": len(mv), "label": "Nifty 50 stocks"}
-                # NSE last price for the 25 stocks on the Stocks page
-                st = out.setdefault("stocks", {})
-                for m in mv:
-                    k = "MM" if m[0] == "M&M" else m[0]
-                    if k in STOCKS:
-                        st[k] = {"v": m[3], "pct": m[2]}
-            else:
-                out[key + "g"] = [[m[1], m[2]] for m in up[:5]]
-                out[key + "l"] = [[m[1], m[2]] for m in dn[:5]]
-            out.setdefault("nse", {})[key] = stamp
-        except Exception as e:
-            log(f"nse {index} failed: {e}")
+    """Nifty 50, Midcap 100 and Smallcap 100 movers: NSE member lists + live prices."""
+    lists = {k: constituents(out, k) for k in INDEX_FILES}
+    syms = sorted({s for l in lists.values() for s, _ in l})
+    Q = quotes([s + ".NS" for s in syms])
+    for key, lst in lists.items():
+        mv = [[s, n, Q[s + ".NS"]["pct"], Q[s + ".NS"]["v"]] for s, n in lst if s + ".NS" in Q]
+        if len(mv) < 10:
+            log(f"movers {key}: only {len(mv)} prices")
+            continue
+        mv.sort(key=lambda x: -x[2])
+        up = [m for m in mv if m[2] > 0]
+        dn = [m for m in reversed(mv) if m[2] < 0]
+        if key == "n50":
+            out["gainers"] = [m[:3] for m in up[:5]]
+            out["losers"] = [m[:3] for m in dn[:5]]
+            out["breadth"] = {"up": len(up), "n": len(mv), "label": "Nifty 50 stocks"}
+        else:
+            out[key + "g"] = [[m[1], m[2]] for m in up[:5]]
+            out[key + "l"] = [[m[1], m[2]] for m in dn[:5]]
+        out.setdefault("nse", {})[key] = NOW.strftime("%-d %b, %-I:%M %p")
+
+
+def nse_session():
+    S.get("https://www.nseindia.com/", timeout=20)
 
 
 # ----------------------------------------------------------------- FII / DII (NSE)
