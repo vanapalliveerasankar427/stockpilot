@@ -540,6 +540,21 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 
 .mono,.slogo,.lg{position:relative;overflow:hidden}.lgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:12%;opacity:0;transition:opacity .25s}.haslogo .lgimg{opacity:1}
 .livedot{color:var(--up);animation:pulse 1.6s ease-in-out infinite}@keyframes tickf{0%{background:color-mix(in srgb,var(--up) 22%,transparent)}100%{background:transparent}}.tick{animation:tickf 1.2s ease-out;border-radius:8px}
+.vd{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:999px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.vd.apply{background:color-mix(in srgb,var(--up) 16%,transparent);color:var(--up)}.vd.consider{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.vd.avoid{background:color-mix(in srgb,var(--dn) 15%,transparent);color:var(--dn)}.vd.na,.vd.wait{background:var(--soft);color:var(--muted)}
+.vwhy{display:block;font-size:12px;color:var(--muted);margin-top:4px;white-space:normal}
+.vrow{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin:2px 0 10px}.vrow .vwhy{flex-basis:100%;margin-top:0}
+.can{font-size:12px;font-weight:600}.can.yes{color:var(--up)}.can.soon{color:var(--info)}.can.no{color:var(--muted)}
+.gfil{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 14px}
+.gfil .seg{display:inline-flex;gap:2px;padding:4px;border-radius:14px;background:var(--soft)}
+.gfil .seg button{border:0;background:none;padding:7px 13px;border-radius:10px;font-weight:600;font-size:13.5px;color:var(--muted);cursor:pointer}
+.gfil .seg button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.vsum{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.vsum button{border:1px solid var(--line);background:var(--glass);border-radius:16px;padding:12px;text-align:left;cursor:pointer;color:var(--ink)}
+.vsum button[aria-pressed="true"]{outline:2px solid var(--ink)}
+.vsum b{display:block;font:700 26px var(--display)}.vsum span{font-size:12.5px;color:var(--muted)}
+@media(max-width:700px){.gfil .seg button{padding:7px 10px;font-size:13px}.vsum b{font-size:22px}}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </style>
@@ -795,6 +810,19 @@ function statusPill(i){
   if(i.st==='upcoming')return `<span class="pill info">Opens ${d2(i.o)}</span>`;
   if(i.st==='closed'){if(i.al&&+T0===+i.al)return `<span class="pill warn">Allotment today</span>`;if(i.al&&T0<i.al)return `<span class="pill warn">Allotment ${d2(i.al)}</span>`;return `<span class="pill warn">Lists ${d2(i.ls)}</span>`}
   return `<span class="pill plain">Listed ${d2(i.ls)}</span>`}
+// Listing-gain signal from GMP and demand. A rule of thumb, not investment advice.
+function verdict(i){
+  if(i.st==='listed')return {k:'na',t:'Listed',why:'Already trading on the exchange.'};
+  if(i.st==='closed')return {k:'na',t:'Closed',why:'Bidding is over. You can no longer apply.'};
+  const p=i.gmp?gmpPct(i):null,sb=i.sub?i.sub.total:null,sme=i.type==='SME';
+  if(p==null)return {k:'wait',t:'No signal yet',why:'No grey-market premium reported yet. Check again closer to the close.'};
+  if(p<=2)return {k:'avoid',t:'Avoid',why:p<=0?`GMP is ${p<0?'negative':'zero'}: the grey market expects no listing gain.`:`GMP is only ${p.toFixed(1)}%: very little expected listing gain.`};
+  if(p>=15&&(sb==null||sb>=1.5))return {k:'apply',t:'Apply',why:`Strong GMP (${p.toFixed(1)}%)${sb!=null?` and ${sb.toFixed(2)}× subscribed`:''}.${sme?' SME: higher risk and a larger minimum investment.':''}`};
+  if(p>=8&&(sb==null||sb>=1))return {k:'apply',t:'Apply',why:`Good GMP (${p.toFixed(1)}%)${sb!=null?` and ${sb.toFixed(2)}× subscribed`:''}.${sme?' SME: higher risk and a larger minimum investment.':''}`};
+  return {k:'consider',t:'Consider',why:`Modest GMP (${p.toFixed(1)}%)${sb!=null?`, ${sb.toFixed(2)}× subscribed`:''}. Apply only if you like the business.`};
+}
+const vBadge=(i,full)=>{const v=verdict(i);return `<span class="vd ${v.k}" title="${esc(v.why)}">${v.k==='apply'?'✓ ':v.k==='avoid'?'✕ ':''}${v.t}</span>${full?`<small class="vwhy">${esc(v.why)}</small>`:''}`};
+const canApply=i=>i.st==='open'?'<span class="can yes">Can apply now</span>':i.st==='upcoming'?`<span class="can soon">Apply from ${d2(i.o)}</span>`:'<span class="can no">Not open</span>';
 const STRIPE={open:'var(--buy)',upcoming:'var(--info)',closed:'var(--saffron)',listed:'var(--line)'};
 
 // ===================== IPO VIEW =====================
@@ -834,7 +862,7 @@ function ipoCard(i){
   return `<article class="ipo" style="--stripe:${STRIPE[i.st]}">
     <div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
       <div style="min-width:0;flex:1"><div class="nm">${esc(i.name)}</div><div class="meta"><span class="pill plain">${i.type==='SME'?esc(i.exch):'Mainboard'}</span>${statusPill(i)}${mine?`<span class="pill info">You applied${mine>1?' ×'+mine:''}</span>`:''}</div></div>${starBtn('ipo:'+i.id,i.name)}</div>
-    ${mid}${profitStrip(i)}${sub}${i.st==="listed"?"":gmp}<div class="acts">${acts}</div></article>`;
+    ${i.st!=="listed"?`<div class="vrow">${vBadge(i)}<span style="margin-left:auto">${canApply(i)}</span><small class="vwhy">${esc(verdict(i).why)}</small></div>`:""}${mid}${profitStrip(i)}${sub}${i.st==="listed"?"":gmp}<div class="acts">${acts}</div></article>`;
 }
 
 // ===================== IPO MODAL =====================
@@ -847,7 +875,7 @@ function openIpo(id,mode){
   const canApply=i.st==='open';
   document.getElementById('modal').innerHTML=`
     <div class="mhead"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
-      <div><h3 id="mtitle">${esc(i.name)}</h3><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span class="pill plain">${esc(i.type)} · ${esc(i.exch)}</span><span class="pill plain">${esc(i.sector)}</span>${statusPill(i)}</div></div>
+      <div><h3 id="mtitle">${esc(i.name)}</h3><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px"><span class="pill plain">${esc(i.type)} · ${esc(i.exch)}</span><span class="pill plain">${esc(i.sector)}</span>${statusPill(i)}${i.st!=='listed'?vBadge(i):''}</div>${i.st!=='listed'?`<small class="vwhy">${esc(verdict(i).why)}</small>`:''}</div>
       <button class="x" type="button" aria-label="Close" id="mx">×</button></div>
     <div class="mbody">
       <div class="specs num">
@@ -1012,13 +1040,21 @@ const IPOSUB=[['ipos','Overview'],['ipo-gmp','GMP board'],['ipo-sub','Subscripti
 function subnav(cur){return `<div class="tabs subnav" role="navigation" aria-label="IPO tools">${IPOSUB.map(([k,l])=>`<a href="#${k}" class="sn" aria-current="${k===cur?'page':'false'}">${l}</a>`).join('')}</div>`}
 
 // ===================== GMP board =====================
+let gType='All',gSt='live',gV='all';
 function renderGMP(){
-  const L=IPOS.filter(i=>i.gmp&&i.st!=='listed').sort((a,b)=>gmpPct(b)-gmpPct(a));
+  const base=IPOS.filter(i=>i.st!=='listed'&&(gType==='All'||i.type===gType)&&(gSt==='all'||(gSt==='live'?(i.st==='open'||i.st==='upcoming'):i.st===gSt)));
+  const cnt=k=>base.filter(i=>verdict(i).k===k).length;
+  const L=base.filter(i=>gV==='all'||verdict(i).k===gV).sort((a,b)=>{const o={open:0,upcoming:1,closed:2};return (o[a.st]-o[b.st])||((b.gmp?gmpPct(b):-99)-(a.gmp?gmpPct(a):-99))});
   const H=byId.hdfire;
+  const seg=(id,cur,opts)=>`<div class="seg" id="${id}">${opts.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${cur===k}">${l}</button>`).join('')}</div>`;
   document.getElementById('gmpbody').innerHTML=`
-   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num"><tr><th>IPO</th><th>Status</th><th>Issue price</th><th>GMP</th><th>Est. listing</th><th>Est. gain</th><th>Est. profit / application</th><th>Trend</th></tr>
-   ${L.map(i=>{const p=gmpPct(i);return `<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${esc(i.gmp.src)}, ${esc(i.gmp.at)}</small></div></div></td>
-     <td>${statusPill(i)}</td><td>₹${i.hi.toLocaleString('en-IN')}</td><td><b>₹${i.gmp.v}</b></td><td>₹${(i.hi+i.gmp.v).toLocaleString('en-IN')}</td><td>${chip(p)}</td><td class="${p>=0?'up':'down'}"><b>${estProfit(i)!=null?'+'+rs0(estProfit(i)):'—'}</b>${i.ml>1?`<small class="muted" style="display:block;font-size:11.5px">${i.ml} lots</small>`:''}</td><td style="width:150px">${i.gtrend?spark(i.gtrend,150,36):'<span class="muted" style="font-size:12px">one reading</span>'}</td></tr>`}).join('')}</table></div></div>
+   <div class="gfil">${seg('gfT',gType,[['All','All'],['Mainboard','Mainboard'],['SME','SME']])}${seg('gfS',gSt,[['live','Active'],['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['all','All']])}</div>
+   <div class="vsum">${[['apply','Apply','Strong GMP and demand'],['consider','Consider','Modest listing gain'],['avoid','Avoid','Little or no gain']].map(([k,l,d])=>`<button type="button" data-v="${k}" aria-pressed="${gV===k}"><span class="vd ${k}">${l}</span><b>${cnt(k)}</b><span>${d}</span></button>`).join('')}</div>
+   ${gV!=='all'?`<p class="note" style="margin:-4px 0 12px">Showing “${esc({apply:'Apply',consider:'Consider',avoid:'Avoid'}[gV])}” only. <a class="link" href="#ipo-gmp" id="gvAll">Show all</a></p>`:''}
+   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num"><tr><th>IPO</th><th>Status</th><th>Signal</th><th>Issue price</th><th>GMP</th><th>Est. listing</th><th>Est. gain</th><th>Est. profit / application</th><th>Subscribed</th><th>Trend</th></tr>
+   ${L.map(i=>{const p=i.gmp?gmpPct(i):null;return `<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?'SME · '+esc(i.exch):'Mainboard'}${i.gmp?` · ${esc(i.gmp.src)}, ${esc(i.gmp.at)}`:''}</small></div></div></td>
+     <td>${statusPill(i)}<div style="margin-top:4px">${canApply(i)}</div></td><td style="min-width:150px">${vBadge(i,true)}</td><td>₹${i.hi.toLocaleString('en-IN')}</td><td><b>${i.gmp?'₹'+i.gmp.v:'—'}</b></td><td>${i.gmp?'₹'+(i.hi+i.gmp.v).toLocaleString('en-IN'):'—'}</td><td>${p!=null?chip(p):'—'}</td><td class="${p!=null&&p>=0?'up':'down'}"><b>${estProfit(i)!=null?(estProfit(i)>=0?'+':'−')+rs0(estProfit(i)):'—'}</b>${i.ml>1?`<small class="muted" style="display:block;font-size:11.5px">${i.ml} lots</small>`:''}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td style="width:150px">${i.gtrend?spark(i.gtrend,150,36):'<span class="muted" style="font-size:12px">—</span>'}</td></tr>`}).join('')||`<tr><td colspan="10"><div class="empty">No ${gType==='All'?'':gType+' '}IPOs match these filters.</div></td></tr>`}</table></div></div>
+   <p class="src">Active = open now or opening soon. Signal is a simple rule on grey-market premium and subscription: Apply = GMP 8% or more with healthy demand; Consider = GMP 2–8%; Avoid = GMP 2% or less. It estimates listing-day gain only, is not investment advice, and GMP can change quickly.</p>
    <div class="grid2 sec">
     <div class="glass card"><span class="lbl">Reality check</span><h3 style="font-size:20px;margin:6px 0 10px">How accurate was GMP?</h3>
       <p class="note" style="font-size:14px">HD Fire Protect's last grey-market premium before listing was <b>₹${H.lastGmp}</b> (${(H.lastGmp/H.hi*100).toFixed(1)}%). It actually listed at <b>₹${H.listPrice}</b>, a gain of <b>₹${H.listPrice-H.hi}</b> (${((H.listPrice/H.hi-1)*100).toFixed(1)}%), then closed day 1 at ₹${H.listClose}, just ${((H.listClose/H.hi-1)*100).toFixed(1)}% above issue.</p>
@@ -1027,6 +1063,10 @@ function renderGMP(){
       <ul class="note" style="font-size:14px;padding-left:18px;display:grid;gap:8px;margin:0"><li>GMP is the premium unofficial dealers quote for IPO shares before they list. It is not regulated and not published by any exchange.</li><li>Different websites often show different GMPs for the same IPO at the same time, so we show each figure with its source and time.</li><li>Est. profit is GMP × shares in the minimum application. It assumes you get an allotment and sell at the listing price.</li><li>GMP often falls on listing day. HD Fire's day-1 close was well below its GMP-implied price.</li></ul></div>
    </div>`;
   document.querySelectorAll('#gmpbody tr[data-open]').forEach(r=>r.onclick=()=>{location.hash='gmp-'+r.dataset.open});
+  document.querySelectorAll('#gfT button').forEach(b=>b.onclick=()=>{gType=b.dataset.k;renderGMP()});
+  document.querySelectorAll('#gfS button').forEach(b=>b.onclick=()=>{gSt=b.dataset.k;renderGMP()});
+  document.querySelectorAll('.vsum button').forEach(b=>b.onclick=()=>{gV=gV===b.dataset.v?'all':b.dataset.v;renderGMP()});
+  const ga=document.getElementById('gvAll');if(ga)ga.onclick=e=>{e.preventDefault();gV='all';renderGMP()};
 }
 
 // ===================== Subscription =====================
@@ -1258,7 +1298,7 @@ function rowStatus(i){if(i.st==='open'){const d=days(i.c);return d===0?'Closes t
 function shareIpo(i){const p=profitPerApp(i),t=`${i.name} IPO · ${band(i)} · lot ${i.lot||'TBA'}${i.gmp&&i.st!=='listed'?` · GMP ₹${i.gmp.v} (${sgn(gmpPct(i))}%)`:''}${i.sub?` · subscribed ${i.sub.total.toFixed(2)}×`:''}${p?` · ${p.kind==='listed'?'profit':'est. profit'} ${p.v>=0?'+':'−'}${rs0(p.v)} per application`:''} — via StockPilot`;
   try{navigator.clipboard.writeText(t).then(()=>toast('IPO summary copied'),()=>toast('Copy not allowed here'))}catch{toast('Copy not allowed here')}}
 function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)return;
-  const ST=[['open','Ongoing'],['upcoming','Upcoming'],['closed','Allotted'],['listed','Listed']];
+  const ST=[['open','Open'],['upcoming','Upcoming'],['closed','Closed'],['listed','Listed']];
   document.getElementById('ulTabs').innerHTML=ST.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${ipoStatus===k}">${l}<span class="c">${IPOS.filter(i=>i.st===k).length}</span></button>`).join('');
   document.getElementById('seg2').innerHTML=['All','Mainboard','SME'].map(k=>`<button type="button" data-t="${k}" aria-pressed="${mType===k}">${k}</button>`).join('');
   document.querySelectorAll('#ulTabs button').forEach(b=>b.onclick=()=>{ipoStatus=b.dataset.k;renderIpos()});
@@ -1267,7 +1307,7 @@ function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)ret
   el.innerHTML=L.map((i,k)=>{const listed=i.st==='listed',p=profitPerApp(i);
     const m3=listed?`<div><span>${IC.price} Issue</span><b>₹${i.hi.toLocaleString('en-IN')}</b></div><div><span>${IC.gmp} Listed</span><b class="${i.listPrice>=i.hi?'up':'down'}">₹${i.listPrice.toLocaleString('en-IN')} <small>(${sgn((i.listPrice/i.hi-1)*100)}%)</small></b></div><div><span>${IC.gmp} Day-1 close</span><b class="${i.listClose>=i.hi?'up':'down'}">₹${i.listClose.toLocaleString('en-IN')} <small>(${sgn((i.listClose/i.hi-1)*100)}%)</small></b></div>`
       :`<div><span>${IC.price} Issue price</span><b>${band(i)}</b></div><div><span class="up">${IC.gmp} GMP</span><b class="${i.gmp?(i.gmp.v>=0?'up':'down'):''}">${i.gmp?`₹${i.gmp.v} <small>(${gmpPct(i).toFixed(1)}%)</small>`:'—'}</b></div><div><span>${IC.subs} Subs</span><b>${i.sub?i.sub.total.toFixed(2)+'x':'—'}</b></div>`;
-    return `<div class="mrow" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*45}ms"><div class="t"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><div class="nm">${esc(i.name.replace(/ Ltd$/,''))}</div><div class="st">${rowStatus(i)} · ${i.type==='SME'?esc(i.exch):'Mainboard'}</div></div>
+    return `<div class="mrow" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*45}ms"><div class="t"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><div class="nm">${esc(i.name.replace(/ Ltd$/,''))}</div><div class="st">${rowStatus(i)} · ${i.type==='SME'?'SME':'Mainboard'}</div>${listed?'':`<div style="display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap">${vBadge(i)}${canApply(i)}</div>`}</div>
       <div class="ic">${starBtn('ipo:'+i.id,i.name)}<button type="button" class="iconbtn2" data-share="${i.id}" aria-label="Copy IPO summary">${IC.copy}</button></div></div>
       <div class="m3 num">${m3}</div>${p&&!listed?`<div class="mpr">Est. profit per ${i.ml>1?i.ml+'-lot application':'lot'}: <b>${p.v>=0?'+':'−'}${rs0(p.v)}</b></div>`:''}</div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
   el.querySelectorAll('[data-q]').forEach(r=>{r.onclick=e=>{if(e.target.closest('[data-star],[data-share]'))return;openQuick(r.dataset.q)};r.onkeydown=e=>{if(e.key==='Enter')openQuick(r.dataset.q)}});
@@ -1275,7 +1315,7 @@ function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)ret
 }
 function openQuick(id){const i=byId[id];if(!i)return;const p=profitPerApp(i);
   const cell=(ic,l,v)=>`<div>${ic}<span>${l}</span><b class="num">${v}</b></div>`;
-  document.getElementById('modal').innerHTML=`<div class="mhead"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><h3 id="mtitle">${esc(i.name.replace(/ Ltd$/,''))}</h3><div style="margin-top:6px">${statusPill(i)}</div></div>
+  document.getElementById('modal').innerHTML=`<div class="mhead"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><h3 id="mtitle">${esc(i.name.replace(/ Ltd$/,''))}</h3><div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">${statusPill(i)}${i.st!=='listed'?vBadge(i):''}</div>${i.st!=='listed'?`<small class="vwhy">${esc(verdict(i).why)}</small>`:''}</div>
      ${i.gtrend?`<a class="ghost" href="#gmp-${i.id}" style="padding:8px 12px;font-size:13px" id="qsg">Day-wise GMP ${IC.gmp}</a>`:''}<button class="x" type="button" aria-label="Close" id="mx">×</button></div>
    <div class="mbody" style="gap:0"><div class="qs-grid">
      ${cell(IC.lot,'Lot size',i.lot?i.lot.toLocaleString('en-IN')+(i.ml>1?` × ${i.ml} min`:''):'TBA')}${cell(IC.price,'Price range',band(i))}
@@ -1301,6 +1341,7 @@ function renderGmpPage(id){const i=byId[id],el=document.getElementById('gmppage'
   const rows=[...tr].map((r,k)=>({d:r[0],v:r[1],ch:k?r[1]-tr[k-1][1]:null,pc:k&&tr[k-1][1]?(r[1]-tr[k-1][1])/tr[k-1][1]*100:null})).reverse();
   el.innerHTML=`<div class="phead"><div><a class="link" href="#ipos" style="font-size:13px">← IPOs</a><div class="shead" style="margin-top:12px"><div class="slogo" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div><h1 style="font-size:clamp(24px,4vw,38px);font-weight:700">${esc(i.name.replace(/ Ltd$/,''))} GMP</h1><div class="eyebrow" style="margin-top:4px">${rowStatus(i)} · ${i.type}</div></div></div></div>
      <div style="display:flex;gap:6px">${starBtn('ipo:'+i.id,i.name)}<button type="button" class="ghost" data-share="${i.id}">${IC.copy} Copy</button></div></div>
+   <div class="glass card" style="margin-bottom:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><span class="lbl">Signal</span>${vBadge(i)}<span class="note" style="flex:1;min-width:200px">${esc(verdict(i).why)}</span>${canApply(i)}</div>
    <div class="grid2"><div class="glass card"><h3 style="font-size:17px;margin-bottom:4px">Current market overview</h3><div class="ovr num">
      <div><span>Current GMP</span><b class="${cur&&cur.v>=0?'up':'down'}">${cur?`₹${cur.v} (${(cur.v/i.hi*100).toFixed(1)}%)`:'—'}</b></div>
      <div><span>Est. profit / ${i.ml>1?i.ml+' lots':'lot'}</span><b class="up">${cur&&i.lot?'+'+rs0(cur.v*i.lot*i.ml):'—'}</b></div>
