@@ -772,6 +772,7 @@ input.good[data-v="pan"]{border-color:color-mix(in srgb,var(--up) 60%,var(--line
 .npanel .nset{padding:12px 16px 16px;border-top:1px solid var(--line);display:grid;gap:10px}
 .npanel .nset label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px}
 .npanel .nempty{padding:18px 16px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.plgrid{grid-template-columns:1fr 1.4fr}@media(max-width:900px){.plgrid{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -1378,7 +1379,7 @@ function renderPlanner(){
   const peakDay=dates.find(d=>blockedOn(d)===peak);
   const W=dates.length;
   const reuse=S.map(b=>({b,from:S.filter(a=>a!==b&&a.rf<=b.c&&start(a)<start(b)||a!==b&&a.rf<=b.c&&a.c<b.c)}));
-  document.getElementById('planbody').innerHTML=`<div class="grid2" style="grid-template-columns:1fr 1.4fr">
+  document.getElementById('planbody').innerHTML=`<div class="grid2 plgrid">
    <div class="glass card" style="display:grid;gap:16px;align-content:start">
     <div><span class="lbl">Applicants (PANs)</span><div class="stepper"><button type="button" data-p="-1" aria-label="Fewer applicants">−</button><b class="num">${plan.pans}</b><button type="button" data-p="1" aria-label="More applicants">+</button></div><p class="note">Each PAN can apply once per IPO, e.g. you, spouse, parents.</p></div>
     <label class="field" for="pcat">Category<select id="pcat">${Object.entries(CATS).map(([k,l])=>`<option value="${k}" ${plan.cat===k?'selected':''}>${l}</option>`).join('')}</select></label>
