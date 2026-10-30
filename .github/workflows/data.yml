@@ -1,7 +1,8 @@
 name: Update data
 
 # Open pages read data/live.json straight from this repository, so a data update
-# only needs a commit. During market hours one run keeps updating every 5 minutes
+# only needs a commit. During market hours one run keeps updating prices about every minute
+# (full update incl. IBJA, GMP and news every ~5 minutes)
 # until the close, so it doesn't depend on GitHub starting a new run each time.
 on:
   schedule:
@@ -30,12 +31,14 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests
-      - name: Update (loop until 3:45 PM IST on market days)
+      - name: Update (prices ~every minute, full every 5th pass, until 3:45 PM IST)
         run: |
           git config user.name "stockpilot-bot"
           git config user.email "stockpilot-bot@users.noreply.github.com"
+          i=0
           while true; do
-            python scripts/update.py || true
+            if [ $((i % 5)) -eq 0 ]; then python scripts/update.py || true; else python scripts/update.py --fast || true; fi
+            i=$((i+1))
             git add data
             if ! git diff --cached --quiet; then
               git commit -q -m "Data update $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"
@@ -44,5 +47,5 @@ jobs:
             fi
             NOW=$(TZ=Asia/Kolkata date +%H%M); DOW=$(TZ=Asia/Kolkata date +%u)
             if [ "$DOW" -ge 6 ] || [ "$NOW" -lt 0900 ] || [ "$NOW" -ge 1545 ]; then break; fi
-            sleep 300
+            sleep 40
           done

@@ -539,6 +539,7 @@ a.ipo:hover,.ipo:hover,.stat:hover,.ichip:hover,.app:hover{transform:translateY(
 }
 
 .mono,.slogo,.lg{position:relative;overflow:hidden}.lgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:12%;opacity:0;transition:opacity .25s}.haslogo .lgimg{opacity:1}
+.livedot{color:var(--up);animation:pulse 1.6s ease-in-out infinite}@keyframes tickf{0%{background:color-mix(in srgb,var(--up) 22%,transparent)}100%{background:transparent}}.tick{animation:tickf 1.2s ease-out;border-radius:8px}
 footer{margin-top:50px;padding:24px 4px 0;border-top:1px solid var(--line);display:grid;gap:8px}
 footer p{color:var(--muted);font-size:12.5px;max-width:96ch;margin:0}
 </style>
@@ -1557,31 +1558,32 @@ function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=n
 addEventListener('hashchange',route);
 
 // ===================== LIVE layer (hosted build: data/live.js, refreshed by GitHub Actions) =====================
-const LIVED=window.LIVE||null;
+let LIVED=window.LIVE||null;
 const IDX={NIFTY:{v:22936.75,ch:237.90,pct:1.05,open:22690.65,high:22961.95,low:null,prev:22698.85},SENSEX:{v:74151.04,ch:905.01,pct:1.24,high:74166.16,prev:73246.03},BANKNIFTY:{v:54909.65,ch:642.25,pct:1.18,prev:54267.40},MIDCAP:{v:57841.65,pct:0.99},SMALLCAP:{v:18811.35,pct:0.95},VIX:{v:15.11,pct:-7.02}};
 const fin=v=>v==null?'—':v.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
 let BREADTH={up:39,n:50,label:'Nifty stocks'};
-if(LIVED){try{
-  for(const k in (LIVED.idx||{}))if(LIVED.idx[k]&&LIVED.idx[k].v)IDX[k]=LIVED.idx[k];
+function applyLive(L){if(!L)return;try{
+  for(const k in (L.idx||{}))if(L.idx[k]&&L.idx[k].v)IDX[k]=L.idx[k];
   const setMini=(k,v,p)=>{const m=MINIS.find(a=>a[0]===k);if(m){m[1]=v;m[2]=p}};
   setMini('Midcap 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct);setMini('Smallcap 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct);setMini('India VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct);
-  if(LIVED.usdinr)setMini('USD / INR','₹'+LIVED.usdinr.v.toFixed(2),LIVED.usdinr.pct);
-  if(LIVED.brent)setMini('Brent crude','$'+LIVED.brent.v.toFixed(2),LIVED.brent.pct);
-  if(LIVED.goldSpot)setMini('Gold (global spot)','$'+Math.round(LIVED.goldSpot.v).toLocaleString('en-US'),LIVED.goldSpot.pct);
-  if(LIVED.nifty8&&LIVED.nifty8.length>2)NIFTY8.splice(0,NIFTY8.length,...LIVED.nifty8);
-  if(LIVED.metals&&LIVED.metals.ibja&&LIVED.metals.ibja.g999)Object.assign(METALS,LIVED.metals);
-  if(LIVED.stocks)STOCKS.forEach(s=>{const q=LIVED.stocks[s.sym];if(q&&q.v){const r=q.v/s.price;s.pe*=r;s.mcap*=r;s.dy/=r;s.price=q.v;DAYCHG[s.sym]=[q.pct,'NSE via Yahoo Finance']}});
-  if(LIVED.sectors&&LIVED.sectors.length)SECTORS.splice(0,SECTORS.length,...LIVED.sectors);
-  if(LIVED.gainers&&LIVED.gainers.length)GAIN.splice(0,GAIN.length,...LIVED.gainers);
-  if(LIVED.losers&&LIVED.losers.length)LOSE.splice(0,LOSE.length,...LIVED.losers);
-  if(LIVED.breadth)BREADTH=LIVED.breadth;
-  for(const id in (LIVED.ipo||{})){const i=byId[id],q=LIVED.ipo[id];if(!i)continue;
+  if(L.usdinr)setMini('USD / INR','₹'+L.usdinr.v.toFixed(2),L.usdinr.pct);
+  if(L.brent)setMini('Brent crude','$'+L.brent.v.toFixed(2),L.brent.pct);
+  if(L.goldSpot)setMini('Gold (global spot)','$'+Math.round(L.goldSpot.v).toLocaleString('en-US'),L.goldSpot.pct);
+  if(L.nifty8&&L.nifty8.length>2)NIFTY8.splice(0,NIFTY8.length,...L.nifty8);
+  if(L.metals&&L.metals.ibja&&L.metals.ibja.g999)Object.assign(METALS,L.metals);
+  if(L.stocks)STOCKS.forEach(s=>{const q=L.stocks[s.sym];if(q&&q.v){const r=q.v/s.price;s.pe*=r;s.mcap*=r;s.dy/=r;s.price=q.v;DAYCHG[s.sym]=[q.pct,'NSE via Yahoo Finance']}});
+  if(L.sectors&&L.sectors.length)SECTORS.splice(0,SECTORS.length,...L.sectors);
+  if(L.gainers&&L.gainers.length)GAIN.splice(0,GAIN.length,...L.gainers);
+  if(L.losers&&L.losers.length)LOSE.splice(0,LOSE.length,...L.losers);
+  if(L.breadth)BREADTH=L.breadth;
+  for(const id in (L.ipo||{})){const i=byId[id],q=L.ipo[id];if(!i)continue;
     if(q.gmp!=null&&i.st!=='listed')i.gmp={v:q.gmp,src:q.gsrc,at:q.gat};
     if(q.sub!=null)i.sub={...(i.sub||{}),total:q.sub,src:q.ssrc,at:q.sat};
     if(q.cur!=null)i.cur=q.cur}
-  if(LIVED.news&&LIVED.news.length>3)NEWS.splice(0,NEWS.length,...LIVED.news);
-  if(LIVED.flows){window.FLOWS=LIVED.flows}
+  if(L.news&&L.news.length>3)NEWS.splice(0,NEWS.length,...L.news);
+  if(L.flows){window.FLOWS=L.flows}
 }catch(e){console.warn('live data',e)}}
+applyLive(LIVED);
 function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id,h)=>{const e=document.getElementById(id);if(e)e.innerHTML=h};
   const sg=p=>(p>=0?'+':'')+p.toFixed(2)+'%',cl=p=>p>=0?'u':'d';
   set('nbig',fin(N.v));set('nchg',`${N.pct>=0?'▲ +':'▼ −'}${fin(Math.abs(N.ch))} · ${sg(N.pct)}`);
@@ -1595,7 +1597,7 @@ function patchMarketDom(){const N=IDX.NIFTY,S=IDX.SENSEX,B=IDX.BANKNIFTY,set=(id
   set('mood',pc>=60?'Bullish breadth':pc<=40?'Bearish breadth':'Mixed breadth');
   set('moodtxt',`${BREADTH.up} of ${BREADTH.n} ${BREADTH.label} rose. India VIX ${IDX.VIX.pct>=0?'rose':'fell'} ${Math.abs(IDX.VIX.pct).toFixed(2)}% to ${IDX.VIX.v.toFixed(2)}.`);
   if(LIVED){const when=LIVED.label||'';
-    set('mk-eb',`${LIVED.state==='open'?'<b style="color:var(--up)">● Live</b> · market open':'Market closed'} · updated ${esc(when)}`);
+    set('mk-eb',`${LIVED.state==='open'?'<b class="livedot">● Live</b> · market open':'Market closed'} · updated <span id="liveago">${esc(when)}</span>`);setTimeout(ago,50);
     set('mk-title',`Nifty ${N.pct>=0?'gains':'slips'} <em>${sg(N.pct)}</em> ${LIVED.state==='open'?'in trade':'at the close'}.`);
     set('mk-secp',`% change · ${LIVED.state==='open'?'live':'last close'} · updated ${esc(when)}`);
     set('nsrc',`NSE data via Yahoo Finance · updated ${esc(when)}. Refreshes automatically.`);
@@ -1610,11 +1612,27 @@ renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIF
   const h=items.map(([k,v,p])=>`<span><b>${k}</b>${v}${p!=null?` <span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`).join('');
   document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')};
 // auto-refresh: re-check data/live.js every 3 minutes; reload when the server has newer figures
-const RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/main/data/live.json';
-async function pullLive(){try{const r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();
-  if(j&&j.updated&&(!LIVED||j.updated>LIVED.updated)){try{sessionStorage.setItem('sp.live',JSON.stringify(j))}catch(e){}
-    if(!document.querySelector('.overlay.on')&&!document.querySelector('input:focus,select:focus'))location.reload()}}catch(e){}}
-setTimeout(pullLive,1500);setInterval(pullLive,120000);
+// ---- near-live refresh: pull the newest figures every 60 s and repaint in place (no reload) ----
+const REPO='vanapalliveerasankar427/stockpilot';
+const API='https://api.github.com/repos/'+REPO+'/contents/data/live.json',RAW='https://raw.githubusercontent.com/'+REPO+'/main/data/live.json';
+let apiOk=true;
+function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus'))return false;
+  const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
+  renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();
+  if(id==='metals')renderMetalsPage();if(id==='stocks')renderStocks();if(id==='stock'&&curStock)renderStockPage(curStock);if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
+  if(id==='ipo-gmp')renderGMP();if(id==='ipo-sub')renderSub();if(id==='ipo-screener')renderScreener();
+  const h=(location.hash||'').slice(1);if(h.startsWith('gmp-'))renderGmpPage(h.slice(4));
+  scrollTo(0,y);return true}
+async function pullLive(){if(document.hidden)return;try{
+  let r=apiOk?await fetch(API,{headers:{Accept:'application/vnd.github.raw+json'},cache:'no-store'}):null;
+  if(!r||!r.ok){apiOk=!(r&&(r.status===403||r.status===429));r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'})}
+  if(!r.ok)return;const j=await r.json();
+  if(j&&j.updated&&(!LIVED||j.updated>LIVED.updated)){LIVED=j;window.LIVE=j;try{sessionStorage.setItem('sp.live',JSON.stringify(j))}catch(e){}
+    applyLive(j);softRefresh();flashLive()}}catch(e){}}
+function flashLive(){document.querySelectorAll('#nbig,#sxv,#bnv,.metal b').forEach(e=>{e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick')})}
+function ago(){const el=document.getElementById('liveago');if(!el||!LIVED||!LIVED.updated)return;const s=Math.max(0,Math.round((Date.now()-new Date(LIVED.updated))/1000));
+  el.textContent=s<60?s+'s ago':s<3600?Math.round(s/60)+' min ago':LIVED.label}
+setTimeout(pullLive,1200);setInterval(pullLive,60000);setInterval(ago,5000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pullLive()});
 
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;

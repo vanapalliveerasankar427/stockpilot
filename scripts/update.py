@@ -12,6 +12,7 @@ import os
 import re
 import sys
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 
 import requests
 
@@ -99,13 +100,29 @@ NAMES = {"RELIANCE": "Reliance Industries", "BHARTIARTL": "Bharti Airtel", "HDFC
          "ETERNAL": "Eternal", "JSWSTEEL": "JSW Steel", "NTPC": "NTPC", "BAJAJ-AUTO": "Bajaj Auto"}
 
 
+def quotes(symbols):
+    """Fetch many Yahoo quotes in parallel. Returns {symbol: quote}."""
+    def one(sym):
+        try:
+            return sym, quote(sym)
+        except Exception as e:
+            log(f"quote {sym} failed: {e}")
+            return sym, None
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        return {s: q for s, q in ex.map(one, symbols) if q}
+
+
 def markets(out):
+    syms = list(INDICES.values()) + [s for _, s in SECTORS] + list(STOCKS.values()) + \
+        [k + ".NS" for k in EXTRA_LARGE] + ["INR=X", "BZ=F", "GC=F"]
+    Q = quotes(syms)
+    global quote
+    _q = quote
+    quote = lambda sym: Q[sym] if sym in Q else _q(sym)
     idx = {}
     for k, sym in INDICES.items():
-        try:
-            idx[k] = quote(sym)
-        except Exception as e:
-            log(f"index {k} failed: {e}")
+        if sym in Q:
+            idx[k] = Q[sym]
     if idx:
         out["idx"] = {**out.get("idx", {}), **idx}
         if "NIFTY" in idx and idx["NIFTY"].get("t"):
@@ -220,19 +237,7 @@ def metals(out):
             log("ibja: no gold figure found")
     except Exception as e:
         log(f"ibja failed: {e}")
-    try:
-        t = re.sub(r"\s+", " ", text_of(get("https://bullions.co.in/").text))
-        mcx = dict(m.get("mcx") or {})
-        for key, name in (("gold", "Gold - India MCX"), ("silver", "Silver - India MCX")):
-            r = re.search(re.escape(name) + r"\s*\([^)]*\)\s*([\d,.]+)\s*([-+]?[\d,.]+)\s*([-+]?[\d.]+)\s*%", t)
-            if r:
-                mcx[key] = {"v": num(r.group(1)), "ch": num(r.group(2)), "pct": float(r.group(3)), "t": NOW.strftime("%-d %b, %-I:%M %p")}
-            else:
-                log(f"mcx {key}: pattern not found")
-        if mcx:
-            m["mcx"] = mcx
-    except Exception as e:
-        log(f"mcx failed: {e}")
+    mcx_rates(m)
     rt = dict(m.get("retail") or {})
     try:
         t = text_of(get("https://www.goodreturns.in/gold-rates/").text)
@@ -249,6 +254,29 @@ def metals(out):
     m["retail"] = rt
     m["date"] = NOW.strftime("%-d %b %Y, %-I:%M %p")
     out["metals"] = m
+
+
+def mcx(out):
+    m = dict(out.get("metals") or {})
+    mcx_rates(m)
+    m["date"] = NOW.strftime("%-d %b %Y, %-I:%M %p")
+    out["metals"] = m
+
+
+def mcx_rates(m):
+    try:
+        t = re.sub(r"\s+", " ", text_of(get("https://bullions.co.in/").text))
+        mcx = dict(m.get("mcx") or {})
+        for key, name in (("gold", "Gold - India MCX"), ("silver", "Silver - India MCX")):
+            r = re.search(re.escape(name) + r"\s*\([^)]*\)\s*([\d,.]+)\s*([-+]?[\d,.]+)\s*([-+]?[\d.]+)\s*%", t)
+            if r:
+                mcx[key] = {"v": num(r.group(1)), "ch": num(r.group(2)), "pct": float(r.group(3)), "t": NOW.strftime("%-d %b, %-I:%M %p")}
+            else:
+                log(f"mcx {key}: pattern not found")
+        if mcx:
+            m["mcx"] = mcx
+    except Exception as e:
+        log(f"mcx failed: {e}")
 
 
 # ----------------------------------------------------------------- IPO GMP & subscription
@@ -361,11 +389,14 @@ def main():
         out = json.load(open(path))
     except Exception:
         out = {}
-    for step in (markets, metals, ipo, flows, news):
+    fast = "--fast" in sys.argv
+    for step in ((markets, mcx) if fast else (markets, metals, ipo, flows, news)):
         try:
             step(out)
         except Exception as e:
             log(f"{step.__name__} crashed: {e}")
+    if fast:
+        out["log"] = LOG[-30:]
     logos_dir = os.path.join(ROOT, "logos")
     out["logos"] = sorted(f[:-4] for f in os.listdir(logos_dir) if f.lower().endswith(".png")) if os.path.isdir(logos_dir) else []
     out["updated"] = NOW.isoformat(timespec="seconds")
