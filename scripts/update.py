@@ -446,8 +446,24 @@ def flows(out):
             elif "DII" in cat:
                 f["dii"] = num(row["netValue"])
             f["date"] = row.get("date", f.get("date"))
+        for row in j:
+            cat = row.get("category", "").upper()
+            key = "fii" if ("FII" in cat or "FPI" in cat) else "dii" if "DII" in cat else None
+            if key:
+                for fld, nm in (("buyValue", "buy"), ("sellValue", "sell")):
+                    try:
+                        f[f"{key}_{nm}"] = num(row[fld])
+                    except (KeyError, ValueError, TypeError):
+                        pass
         if "fii" in f and "dii" in f:
+            f["fetched"] = NOW.strftime("%-d %b, %-I:%M %p")
+            f["src"] = "NSE (provisional)"
+            hist = {h["date"]: h for h in (out.get("flows") or {}).get("hist", [])}
+            hist[f["date"]] = {"date": f["date"], "fii": f["fii"], "dii": f["dii"]}
+            f["hist"] = sorted(hist.values(), key=lambda h: dt.datetime.strptime(h["date"], "%d-%b-%Y"))[-10:]
             out["flows"] = f
+        else:
+            log(f"fii/dii: unexpected response {str(j)[:200]}")
     except Exception as e:
         log(f"fii/dii failed: {e}")
 

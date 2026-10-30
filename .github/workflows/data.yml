@@ -9,6 +9,7 @@ on:
     - cron: "40 3 * * 1-5"      # 9:10 AM IST: start the market-hours loop
     - cron: "10 6 * * 1-5"      # 11:40 AM IST: restart the loop (covers a delayed or failed morning start)
     - cron: "0 0-2,11-23/2 * * *" # every 2 hours outside market hours: one update (metals, GMP, news)
+    - cron: "*/20 11-14 * * 1-5"  # 4:30–8:30 PM IST: catch NSE's FII/DII figures and IBJA evening rates quickly
   push:
     branches: [main]
     paths: [".github/workflows/data.yml", "scripts/**"]
