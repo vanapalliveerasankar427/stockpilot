@@ -414,7 +414,7 @@ CITIES = [("Hyderabad", "hyderabad", 17.385, 78.487), ("Vijayawada", "vijayawada
 def city_metals(out):
     m = out.setdefault("metals", {})
     old = m.get("city") or {}
-    if old.get("at_ts") and NOW.timestamp() - old["at_ts"] < 1800:
+    if old.get("at_ts") and NOW.timestamp() - old["at_ts"] < 1800 and old.get("v") == 2:
         return
 
     def one(c):
@@ -422,14 +422,15 @@ def city_metals(out):
         rec = {"lat": lat, "lon": lon}
         try:
             t = re.sub(r"\s+", " ", text_of(get(f"https://www.goodreturns.in/gold-rates/{slug}.html").text))
-            g = re.search(r"₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 24 (?:karat|carat).*?₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 22 (?:karat|carat)(?:.*?₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 18 (?:karat|carat))?", t, re.S | re.I)
+            # the city's own sentence ("price of gold in Chennai today is ₹... per gram for 24 karat ..."), not the national one
+            g = re.search(re.escape(name) + r"[^₹]{0,80}₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 24 (?:karat|carat)[^₹]{0,40}₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 22 (?:karat|carat)(?:[^₹]{0,40}₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 18 (?:karat|carat))?", t, re.I)
             if g:
                 rec.update(g24=num(g.group(1)), g22=num(g.group(2)), g18=num(g.group(3)) if g.group(3) else None)
         except Exception as e:
             log(f"city gold {slug}: {e}")
         try:
             t = re.sub(r"\s+", " ", text_of(get(f"https://www.goodreturns.in/silver-rates/{slug}.html").text))
-            a = re.search(r"silver in [A-Za-z ]+ today is\s*₹\s*([\d,.]+)\s*per gram", t, re.I) or re.search(r"₹\s*([\d,.]+)\s*per gram", t)
+            a = re.search(r"silver in " + re.escape(name) + r"[^₹]{0,40}₹\s*([\d,.]+)\s*per gram", t, re.I)
             if a:
                 rec["ag"] = num(a.group(1))
         except Exception as e:
@@ -441,10 +442,10 @@ def city_metals(out):
         for name, rec in ex.map(one, CITIES):
             if rec.get("g24") or rec.get("ag"):
                 res[name] = rec
-            elif name in (old.get("rates") or {}):
+            elif old.get("v") == 2 and name in (old.get("rates") or {}):
                 res[name] = old["rates"][name]
     if res:
-        m["city"] = {"rates": res, "at": NOW.strftime("%-d %b, %-I:%M %p"), "at_ts": NOW.timestamp(), "src": "Goodreturns"}
+        m["city"] = {"v": 2, "rates": res, "at": NOW.strftime("%-d %b, %-I:%M %p"), "at_ts": NOW.timestamp(), "src": "Goodreturns"}
         log(f"city metals: {len(res)} cities")
 
 
