@@ -131,7 +131,10 @@ def markets(out):
     for d, vals in EOD_SEED.items():
         eod.setdefault(d, vals)
     today = NOW.strftime("%Y-%m-%d")
-    prev_days = sorted(d for d in eod if d < today)
+    # compare with the close of the day before the quote's own trading day (on weekends that is Thursday, not Friday)
+    ts = next((q.get("t") for q in idx.values() if q.get("t")), None)
+    qday = dt.datetime.fromtimestamp(ts, IST).strftime("%Y-%m-%d") if ts else today
+    prev_days = sorted(d for d in eod if d < min(today, qday))
     if prev_days:
         last = eod[prev_days[-1]]
         for k, q in idx.items():

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{var t=localStorage.getItem("niveshlens.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <title>MarketVedaPro – Live Stock Market, IPO GMP, Gold &amp; Silver Rates | Know More. Invest Smarter.</title>
 <meta name="application-name" content="MarketVedaPro">
 <link rel="canonical" href="https://marketvedapro.com/">
@@ -2633,7 +2634,7 @@ document.getElementById('nback').onclick=()=>npOpen(false);
 {let y0=null;const np=document.getElementById('npanel');np.addEventListener('touchstart',e=>{if(e.target.closest('.np-h,.np-grab'))y0=e.touches[0].clientY},{passive:true});
  np.addEventListener('touchmove',e=>{if(y0==null)return;const d=Math.max(0,e.touches[0].clientY-y0);np.style.transition='none';np.style.transform=`translateY(${d}px)`},{passive:true});
  np.addEventListener('touchend',e=>{if(y0==null)return;const d=(e.changedTouches[0].clientY-y0);y0=null;np.style.transition='';np.style.transform='';if(d>90)npOpen(false)});}
-document.addEventListener('click',e=>{const el=document.getElementById('npanel');if(el.classList.contains('on')&&!MQ.matches&&!e.target.closest('#npanel,#bellBtn'))npOpen(false)});
+document.addEventListener('click',e=>{const el=document.getElementById('npanel');if(!e.target.isConnected||e.composedPath().includes(el))return;if(el.classList.contains('on')&&!MQ.matches&&!e.target.closest('#npanel,#bellBtn'))npOpen(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('npanel').classList.contains('on'))npOpen(false)});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)notifRun()});
 setTimeout(notifRun,1500);setInterval(notifRun,60000);
@@ -2674,6 +2675,12 @@ addEventListener('scroll',()=>{const n=document.querySelector('nav.top');if(n)n.
 })();
 setTimeout(()=>{if(location.hash!=='#terms')termsGate()},700);
 addEventListener('hashchange',()=>{if(!termsOK()&&location.hash!=='#terms'&&!document.getElementById('tmGate'))termsGate()});
+// ===================== Android back button: close the open sheet first =====================
+const SHEETS=[['tmGate',null],['askA',()=>{const e=document.getElementById('askA');if(e)e.remove()}],['npanel',()=>npOpen(false)],['palette',()=>closeSearch()],['ov',()=>closeIpo()]];
+const sheetOpen=()=>SHEETS.find(([id])=>{const e=document.getElementById(id);return e&&(id==='tmGate'||id==='askA'||e.classList.contains('on'))});
+let sheetPushed=false;
+new MutationObserver(()=>{const s=sheetOpen();if(s&&!sheetPushed&&s[0]!=='tmGate'){history.pushState({sheet:1},'',location.href);sheetPushed=true}else if(!s&&sheetPushed){sheetPushed=false;if(history.state&&history.state.sheet)history.back()}}).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class'],childList:true});
+addEventListener('popstate',e=>{const s=sheetOpen();if(s&&sheetPushed){sheetPushed=false;if(s[1])s[1]()}});
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);

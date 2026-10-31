@@ -2,9 +2,9 @@
   "name": "MarketVedaPro – Know More. Invest Smarter.",
   "short_name": "MarketVedaPro",
   "description": "MarketVedaPro: live stock market prices, IPOs and GMP, allotment updates, daily gold and silver rates, market news and insights.",
-  "id": "/stockpilot/",
-  "start_url": "./?source=app",
-  "scope": "./",
+  "id": "/",
+  "start_url": "/?source=app",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#F6F5F2",
@@ -15,25 +15,25 @@
   ],
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/maskable-512.png",
+      "src": "/icons/maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "icons/apple-touch-icon.png",
+      "src": "/icons/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
@@ -41,34 +41,88 @@
   ],
   "shortcuts": [
     {
-      "name": "IPOs",
-      "url": "./#ipos",
+      "name": "Today",
+      "short_name": "Today",
+      "url": "/#today",
       "icons": [
         {
-          "src": "icons/icon-192.png",
+          "src": "/icons/icon-192.png",
           "sizes": "192x192"
         }
       ]
     },
     {
-      "name": "GMP board",
-      "url": "./#ipo-gmp",
+      "name": "IPOs",
+      "short_name": "IPOs",
+      "url": "/#ipos",
       "icons": [
         {
-          "src": "icons/icon-192.png",
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Allotment",
+      "short_name": "Allotment",
+      "url": "/#ipo-allot",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
           "sizes": "192x192"
         }
       ]
     },
     {
       "name": "Gold & silver",
-      "url": "./#metals",
+      "short_name": "Gold & silver",
+      "url": "/#metals",
       "icons": [
         {
-          "src": "icons/icon-192.png",
+          "src": "/icons/icon-192.png",
           "sizes": "192x192"
         }
       ]
+    }
+  ],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "screenshots": [
+    {
+      "src": "/icons/shot-today.png",
+      "sizes": "1080x2400",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Today's outlook"
+    },
+    {
+      "src": "/icons/shot-ipos.png",
+      "sizes": "1080x2400",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "IPOs"
+    },
+    {
+      "src": "/icons/shot-allot.png",
+      "sizes": "1080x2400",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Family allotment"
+    },
+    {
+      "src": "/icons/shot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "MarketVedaPro on desktop"
     }
   ]
 }
