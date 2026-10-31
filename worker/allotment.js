@@ -3,7 +3,7 @@
 // It does not store or log PANs. Registrars that require a captcha are not queried.
 // Registrar request formats follow the MIT-licensed IPO-Allotment-Status-Bot (github.com/AbGisHere/IPO-Allotment-Status-Bot).
 
-import { api as pushApi, cron as pushCron } from "./push.js";
+import { api as pushApi, cron as pushCron, priceCron, digestCron } from "./push.js";
 
 const ALLOWED = ["https://marketvedapro.com", "https://www.marketvedapro.com", "https://vanapalliveerasankar427.github.io"];
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -176,12 +176,7 @@ async function yCrumb() {
   if (!crumb || crumb.length > 40 || /</.test(crumb)) throw new Error("no crumb");
   return (YC = { crumb, cookie: ck, at: Date.now() });
 }
-async function liveQuotes(req, url) {
-  const syms = [...new Set((url.searchParams.get("s") || "").split(",").map(s => s.trim()).filter(s => /^[A-Za-z0-9^._&=-]{1,30}$/.test(s)))].slice(0, 80).sort();
-  if (!syms.length) return json(req, { q: {} });
-  const cache = caches.default, key = new Request("https://mvp.cache/q?" + syms.join(","));
-  const hit = await cache.match(key);
-  if (hit) { const r = new Response(hit.body, hit); Object.entries(cors(req)).forEach(([k, v]) => r.headers.set(k, v)); r.headers.set("Cache-Control", "no-store"); return r; }
+async function fetchQuotes(syms) {
   const out = {};
   try {
     const c = await yCrumb();
@@ -192,6 +187,15 @@ async function liveQuotes(req, url) {
     await Promise.all(syms.slice(0, 20).map(async s => { try { const m = (await (await fetch("https://query1.finance.yahoo.com/v8/finance/chart/" + encodeURIComponent(s) + "?range=1d&interval=1m", { headers: { "User-Agent": UA } })).json()).chart.result[0].meta;
       const pv = m.chartPreviousClose || m.previousClose; out[s] = [m.regularMarketPrice, pv ? (m.regularMarketPrice / pv - 1) * 100 : null, pv, m.regularMarketTime, null]; } catch {} }));
   }
+  return out;
+}
+async function liveQuotes(req, url) {
+  const syms = [...new Set((url.searchParams.get("s") || "").split(",").map(s => s.trim()).filter(s => /^[A-Za-z0-9^._&=-]{1,30}$/.test(s)))].slice(0, 80).sort();
+  if (!syms.length) return json(req, { q: {} });
+  const cache = caches.default, key = new Request("https://mvp.cache/q?" + syms.join(","));
+  const hit = await cache.match(key);
+  if (hit) { const r = new Response(hit.body, hit); Object.entries(cors(req)).forEach(([k, v]) => r.headers.set(k, v)); r.headers.set("Cache-Control", "no-store"); return r; }
+  const out = await fetchQuotes(syms);
   const body = JSON.stringify({ q: out, at: Date.now() });
   await cache.put(key, new Response(body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=1" } }));
   return json(req, JSON.parse(body));
@@ -228,7 +232,10 @@ async function contact(req, env) {
 }
 
 export default {
-  async scheduled(event, env, ctx) { ctx.waitUntil(pushCron(env, companies)); },
+  async scheduled(event, env, ctx) {
+    if (event.cron === "*/30 * * * *") ctx.waitUntil(pushCron(env, companies));
+    else ctx.waitUntil((async () => { try { await digestCron(env, fetchQuotes); } catch (e) {} try { await priceCron(env, fetchQuotes); } catch (e) {} })());
+  },
   async fetch(req, env) {
     if (req.method === "OPTIONS") return new Response(null, { headers: cors(req) });
     const url = new URL(req.url);

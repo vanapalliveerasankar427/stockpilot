@@ -8,6 +8,6 @@ workers_dev = true
 [[kv_namespaces]]
 binding = "PUSH"
 
-# every 30 minutes: send IPO alerts that are due
+# every 30 minutes: IPO alerts. Every 5 minutes on weekdays 8:30 AM-12:25 AM IST: price alerts + 8:45 AM / 3:45 PM digests
 [triggers]
-crons = ["*/30 * * * *"]
+crons = ["*/30 * * * *", "*/5 3-18 * * 1-5"]
