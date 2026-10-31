@@ -220,7 +220,10 @@ async function contact(req, env) {
       Topic: topic, Name: name, Email: email, Page: page || "-", Device: dev || "-", Message: msg })
   });
   const t = await r.text(); let j = {}; try { j = JSON.parse(t); } catch {}
-  if (!r.ok || String(j.success) === "false") return json(req, { error: "Couldn't send right now. Please try again later.", detail: (j.message || t).slice(0, 200) }, 502);
+  if (!r.ok || String(j.success) === "false") {
+    const d = String(j.message || t || r.status).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 160);
+    return json(req, { error: /activat/i.test(d) ? "Form is waiting for activation by the site owner. Please try again later." : "Couldn't send right now (" + d + "). Please try again later.", detail: d }, 502);
+  }
   return json(req, { ok: true });
 }
 
