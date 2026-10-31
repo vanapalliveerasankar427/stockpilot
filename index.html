@@ -1028,6 +1028,23 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .lv-x{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}.lv-x b{color:var(--ink);padding:0 3px;border-radius:5px}
 @media(max-width:420px){.lv-g{grid-template-columns:1fr}}
 .lp{font-style:normal;border-radius:5px;padding:0 2px;margin:0 -2px;transition:background .3s}
+
+/* city rates */
+.ct{margin:0 0 14px;padding:16px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 82%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);box-shadow:0 18px 40px -28px rgba(30,20,80,.35)}
+.ct-ask{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start;background:linear-gradient(135deg,color-mix(in srgb,#fde68a 40%,var(--bg,#fff)),color-mix(in srgb,#dbeafe 40%,var(--bg,#fff)))}
+[data-theme="dark"] .ct-ask{background:linear-gradient(135deg,#2a2208,#121a2b)}
+.ct-ask b{display:block;font-size:16px}.ct-ask p{font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.ct-ic{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;color:#fff;background:linear-gradient(140deg,#f59e0b,#d97706);box-shadow:0 8px 20px -8px rgba(217,119,6,.6)}
+.ct-ic.sm{width:38px;height:38px;border-radius:12px}
+.ct-acts{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}.ct-acts .btn,.ct-acts .ghost,.ct .ghost{display:inline-flex;align-items:center;gap:6px}
+.ct-acts .btn{flex:1;justify-content:center;min-width:180px}
+.ct-h{display:flex;align-items:center;gap:10px}.ct-h h3{font:800 18px/1.2 var(--display,inherit);letter-spacing:-.01em}.ct-ch{margin-left:auto;padding:7px 13px}
+.ct-pick{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;max-height:210px;overflow:auto}
+.ct-chip{border:1px solid var(--line);background:var(--bg,#fff);color:inherit;border-radius:999px;padding:7px 12px;font:600 13px var(--sans,inherit);cursor:pointer}
+.ct-chip.on{background:var(--ink);color:var(--bg,#fff);border-color:var(--ink)}
+.ct-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:12px}
+.ct-g>div{padding:12px;border-radius:16px;background:color-mix(in srgb,var(--muted) 7%,transparent);border-left:4px solid #d4a017}.ct-g>.silver{border-left-color:#9aa4b2}
+.ct-g span{display:block;font-size:12.5px;color:var(--muted);font-weight:600}.ct-g b{display:block;font:800 22px var(--display,inherit);margin-top:2px}.ct-g small{font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -1823,9 +1840,34 @@ async function lvTick(){if(!document.getElementById('lvCard')||document.hidden)r
     const tm=document.getElementById('lvTime');if(tm)tm.textContent=new Date().toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',second:'2-digit'})}
   catch(e){LV.fails++;const st=document.getElementById('lvState');if(st&&LV.fails>3)st.textContent='Live feed unavailable · showing latest MCX rate';const dot=document.getElementById('lvDot');if(dot&&LV.fails>3)dot.classList.add('off')}}
 function lvStart(){if(LV.timer)return;lvTick();LV.timer=setInterval(()=>{if(!document.getElementById('lvCard')){clearInterval(LV.timer);LV.timer=null;return}lvTick()},1000)}
+// ===================== gold & silver rate in the user's city (location or picker) =====================
+const CITYK='mvp.city';let cityPick=false;
+const cityGet=()=>{try{return localStorage.getItem(CITYK)||''}catch{return ''}};
+const citySet=c=>{try{localStorage.setItem(CITYK,c)}catch{}};
+function cityRates(){return (METALS&&METALS.city&&METALS.city.rates)||{}}
+function nearestCity(lat,lon){let best=null,bd=1e9;for(const [n,r] of Object.entries(cityRates())){if(r.lat==null)continue;const d=Math.hypot(lat-r.lat,(lon-r.lon)*Math.cos(lat*Math.PI/180));if(d<bd){bd=d;best=n}}return {city:best,km:Math.round(bd*111)}}
+function locateCity(btn){if(!('geolocation' in navigator)){toast('Location is not available on this device');cityPick=true;renderCityCard();return}
+  if(btn){btn.disabled=true;btn.innerHTML='<span class="ldr" style="width:16px;height:16px;border-width:2px"></span> Finding your city…'}
+  navigator.geolocation.getCurrentPosition(p=>{const {city,km}=nearestCity(p.coords.latitude,p.coords.longitude);if(city){citySet(city);cityPick=false;toast(km>150?`Nearest city with rates: ${city} (${km} km)`:`Showing rates for ${city}`)}renderCityCard()},
+    e=>{toast(e.code===1?'Location permission denied. Pick your city instead.':'Could not get your location. Pick your city instead.');cityPick=true;renderCityCard()},{enableHighAccuracy:false,timeout:12000,maximumAge:6*3600e3})}
+function renderCityCard(){const el=document.getElementById('cityCard');if(!el)return;const R=cityRates(),names=Object.keys(R);if(!names.length){el.innerHTML='';return}
+  const c=cityGet(),r=c&&R[c];const pin='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  const picker=`<div class="ct-pick">${names.map(n=>`<button type="button" class="ct-chip ${n===c?'on':''}" data-city="${esc(n)}">${esc(n)}</button>`).join('')}</div>`;
+  if(!r){el.innerHTML=`<div class="ct ct-ask"><div class="ct-ic">${pin}</div><div><b>Get the exact gold &amp; silver rate in your city</b><p>Allow location and we'll show today's jeweller rate where you are. Your location stays on your phone.</p></div>
+     <div class="ct-acts"><button class="btn shine" type="button" id="ctLoc">${pin} Use my location</button><button class="ghost" type="button" id="ctPick">Choose city</button></div>${cityPick?picker:''}</div>`}
+  else{el.innerHTML=`<div class="ct"><div class="ct-h"><span class="ct-ic sm">${pin}</span><div><span class="lbl" style="margin:0">Your city</span><h3>Gold &amp; silver in ${esc(c)} today</h3></div><button class="ghost ct-ch" type="button" id="ctPick">${cityPick?'Close':'Change'}</button></div>
+     ${cityPick?`<button class="ghost" type="button" id="ctLoc" style="margin:4px 0 8px">${pin} Use my location</button>${picker}`:''}
+     <div class="ct-g num">${r.g24?`<div class="gold"><span>Gold 24K · 1 g</span><b>₹${Math.round(r.g24).toLocaleString('en-IN')}</b><small>10 g: ₹${Math.round(r.g24*10).toLocaleString('en-IN')}</small></div>`:''}
+      ${r.g22?`<div class="gold"><span>Gold 22K · 1 g</span><b>₹${Math.round(r.g22).toLocaleString('en-IN')}</b><small>10 g: ₹${Math.round(r.g22*10).toLocaleString('en-IN')}</small></div>`:''}
+      ${r.g18?`<div class="gold"><span>Gold 18K · 1 g</span><b>₹${Math.round(r.g18).toLocaleString('en-IN')}</b><small>10 g: ₹${Math.round(r.g18*10).toLocaleString('en-IN')}</small></div>`:''}
+      ${r.ag?`<div class="silver"><span>Silver · 1 g</span><b>₹${(+r.ag).toFixed(2)}</b><small>1 kg: ₹${Math.round(r.ag*1000).toLocaleString('en-IN')}</small></div>`:''}</div>
+     <p class="src">Jeweller rate in ${esc(c)} from ${esc(METALS.city.src||'Goodreturns')} · ${esc(METALS.city.at||'')}. Excludes GST (3%) and making charges.</p></div>`}
+  const q=s=>document.getElementById(s);const l=q('ctLoc');if(l)l.onclick=()=>locateCity(l);const pk=q('ctPick');if(pk)pk.onclick=()=>{cityPick=!cityPick;renderCityCard()};
+  el.querySelectorAll('[data-city]').forEach(b=>b.onclick=()=>{citySet(b.dataset.city);cityPick=false;renderCityCard();toast('Showing rates for '+b.dataset.city)})}
 function renderMetalsPage(){const m=METALS,el=document.getElementById('metalspage');if(!el)return;const X=m.mcx||{},R=m.retail||{},I=m.ibja;
   const h=(m.hist||[]).filter(x=>x[1]),hs=(m.hist||[]).filter(x=>x[2]);
   el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(m.date)}</div><h1 class="ptitle">Gold &amp; silver today</h1><p class="psub">Official IBJA benchmark rates, live MCX futures and jeweller retail rates in one place.</p></div></div>
+   <div id="cityCard"></div>
    <div class="lv" id="lvCard"><div class="lv-h"><span class="lv-dot" id="lvDot"></span><b id="lvState">Connecting to live prices…</b><span class="lv-t num" id="lvTime"></span></div>
     <div class="lv-g"><div class="lv-i gold"><span>Gold 24K · per 10 g</span><b class="num" id="lvG">₹${X.gold?Math.round(X.gold.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvGc"></em><canvas id="lvGs" width="300" height="46" aria-hidden="true"></canvas></div>
      <div class="lv-i silver"><span>Silver · per kg</span><b class="num" id="lvS">₹${X.silver?Math.round(X.silver.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvSc"></em><canvas id="lvSs" width="300" height="46" aria-hidden="true"></canvas></div></div>
@@ -2430,7 +2472,7 @@ function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=n
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
-  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist')renderWLAll();
+  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist')renderWLAll();
   scrollTo({top:0});requestAnimationFrame(animateView)}
 addEventListener('hashchange',route);
 
@@ -2516,7 +2558,7 @@ function patchLabels(){if(!LIVED)return;const set=(id,h)=>{const e=document.getE
 function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus')||(typeof openSel!=='undefined'&&openSel))return false;
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
   renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();
-  if(id==='today')loadAllQuotes(true).then(renderToday);if(id==='metals'){renderMetalsPage();setTimeout(lvStart,50)}if(id==='stocks')renderStocks();if(id==='stock'&&curStock){if(byStock[curStock])renderStockPage(curStock);else loadAllQuotes(true).then(()=>renderAnyStock(curStock))}if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
+  if(id==='today')loadAllQuotes(true).then(renderToday);if(id==='metals'){renderMetalsPage();renderCityCard();setTimeout(lvStart,50)}if(id==='stocks')renderStocks();if(id==='stock'&&curStock){if(byStock[curStock])renderStockPage(curStock);else loadAllQuotes(true).then(()=>renderAnyStock(curStock))}if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
   if(id==='ipo-gmp')renderGMP();if(id==='ipo-sub')renderSub();if(id==='ipo-screener')renderScreener();
   const h=(location.hash||'').slice(1);if(h.startsWith('gmp-'))renderGmpPage(h.slice(4));
   patchLabels();scrollTo(0,y);return true}

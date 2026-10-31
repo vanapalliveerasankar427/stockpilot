@@ -400,6 +400,54 @@ def ipo(out):
 
 
 
+# ----------------------------------------------------------------- city-wise gold & silver (jeweller rates), every 30 minutes
+CITIES = [("Hyderabad", "hyderabad", 17.385, 78.487), ("Vijayawada", "vijayawada", 16.506, 80.648), ("Visakhapatnam", "visakhapatnam", 17.687, 83.219),
+          ("Chennai", "chennai", 13.083, 80.271), ("Bangalore", "bangalore", 12.972, 77.595), ("Mumbai", "mumbai", 19.076, 72.878),
+          ("Delhi", "delhi", 28.614, 77.209), ("Kolkata", "kolkata", 22.573, 88.364), ("Pune", "pune", 18.520, 73.857),
+          ("Ahmedabad", "ahmedabad", 23.023, 72.571), ("Jaipur", "jaipur", 26.912, 75.787), ("Lucknow", "lucknow", 26.847, 80.946),
+          ("Kerala", "kerala", 9.931, 76.267), ("Coimbatore", "coimbatore", 11.017, 76.956), ("Madurai", "madurai", 9.925, 78.120),
+          ("Mysore", "mysore", 12.296, 76.639), ("Mangalore", "mangalore", 12.915, 74.856), ("Nagpur", "nagpur", 21.146, 79.088),
+          ("Nashik", "nashik", 19.998, 73.790), ("Surat", "surat", 21.170, 72.831), ("Vadodara", "vadodara", 22.307, 73.181),
+          ("Patna", "patna", 25.594, 85.138), ("Bhubaneswar", "bhubaneswar", 20.296, 85.825), ("Chandigarh", "chandigarh", 30.733, 76.779)]
+
+
+def city_metals(out):
+    m = out.setdefault("metals", {})
+    old = m.get("city") or {}
+    if old.get("at_ts") and NOW.timestamp() - old["at_ts"] < 1800:
+        return
+
+    def one(c):
+        name, slug, lat, lon = c
+        rec = {"lat": lat, "lon": lon}
+        try:
+            t = re.sub(r"\s+", " ", text_of(get(f"https://www.goodreturns.in/gold-rates/{slug}.html").text))
+            g = re.search(r"₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 24 (?:karat|carat).*?₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 22 (?:karat|carat)(?:.*?₹\s*([\d,]+(?:\.\d+)?)\s*per gram for 18 (?:karat|carat))?", t, re.S | re.I)
+            if g:
+                rec.update(g24=num(g.group(1)), g22=num(g.group(2)), g18=num(g.group(3)) if g.group(3) else None)
+        except Exception as e:
+            log(f"city gold {slug}: {e}")
+        try:
+            t = re.sub(r"\s+", " ", text_of(get(f"https://www.goodreturns.in/silver-rates/{slug}.html").text))
+            a = re.search(r"silver in [A-Za-z ]+ today is\s*₹\s*([\d,.]+)\s*per gram", t, re.I) or re.search(r"₹\s*([\d,.]+)\s*per gram", t)
+            if a:
+                rec["ag"] = num(a.group(1))
+        except Exception as e:
+            log(f"city silver {slug}: {e}")
+        return name, rec
+
+    res = {}
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        for name, rec in ex.map(one, CITIES):
+            if rec.get("g24") or rec.get("ag"):
+                res[name] = rec
+            elif name in (old.get("rates") or {}):
+                res[name] = old["rates"][name]
+    if res:
+        m["city"] = {"rates": res, "at": NOW.strftime("%-d %b, %-I:%M %p"), "at_ts": NOW.timestamp(), "src": "Goodreturns"}
+        log(f"city metals: {len(res)} cities")
+
+
 # ----------------------------------------------------------------- IPO calendar: discovers new IPOs automatically
 MON = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
 MONTH_NAMES = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
@@ -908,7 +956,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo_calendar, ipo, flows, news, everything)):
+    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, everything)):
         try:
             step(out)
         except Exception as e:
