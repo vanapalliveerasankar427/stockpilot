@@ -1027,6 +1027,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .lv-i canvas{display:block;width:calc(100% + 28px);height:46px;margin:6px -14px 0}
 .lv-x{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--muted)}.lv-x b{color:var(--ink);padding:0 3px;border-radius:5px}
 @media(max-width:420px){.lv-g{grid-template-columns:1fr}}
+.lp{font-style:normal;border-radius:5px;padding:0 2px;margin:0 -2px;transition:background .3s}
 </style>
 </head>
 <body>
@@ -1061,7 +1062,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
   <div class="bento" id="m-top">
     <div class="glass hero">
       <div class="row"><span class="lbl">Nifty 50 · last 8 sessions</span><span class="chg u num" id="nchg"></span></div>
-      <div class="big num" id="nbig">22,936.75</div>
+      <div class="big num lp" id="nbig" data-lp="NIFTY">22,936.75</div>
       <div class="chart" id="nchart"></div>
       <div class="stats4 num"><div><span>Open</span><b id="nopen">22,690.65</b></div><div><span>Day high</span><b id="nhigh">22,961.95</b></div><div><span>Prev close</span><b id="nprev">22,698.85</b></div><div><span>Advances</span><b id="nadv">39 / 50</b></div></div>
       <p class="src" id="nsrc">Daily closes from Investing.com and Anand Rathi; 29 Oct from NSE via Angel One. 20 Oct was a market holiday.</p>
@@ -1889,7 +1890,7 @@ function countUp(root){if(RM.matches)return;(root||document).querySelectorAll('.
 // stagger + count-up for the visible view
 function animateView(){const v=document.querySelector('.view.on');if(!v)return;let k=0;
   v.querySelectorAll('.glass,.ipo,.stat,.tile,.app,.ichip').forEach(el=>{if(el.closest('.modal'))return;el.classList.add('anim');el.style.setProperty('--i',Math.min(k++,14))});
-  v.querySelectorAll('.big,.mid,.metal b,.stat .n,.tile b,.kgrid b,.bigv').forEach(el=>el.classList.add('cu'));
+  v.querySelectorAll('.big,.mid,.metal b,.stat .n,.tile b,.kgrid b,.bigv').forEach(el=>{if(!el.dataset.lp&&!el.querySelector('[data-lp],[data-lcw]'))el.classList.add('cu')});
   countUp(v)}
 // mobile: label table cells so CSS can turn rows into cards
 function labelTables(){document.querySelectorAll('table.stbl').forEach(t=>{const hs=[...t.querySelectorAll('tr:first-child th')].map(h=>h.textContent.replace(/[↑↓]/g,'').trim());
@@ -2239,8 +2240,8 @@ function starBtn(k,label){return `<button type="button" class="star" data-star="
 document.addEventListener('click',e=>{const b=e.target.closest('[data-star]');if(b){e.preventDefault();e.stopPropagation();toggleWL(b.dataset.star)}},true);
 function wlRow(k){if(k.startsWith('ipo:')){const i=byId[k.slice(4)];if(!i)return '';return `<div class="wl" data-open="${i.id}" role="button" tabindex="0"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b class="nm">${esc(i.name.replace(/ Ltd$/,''))}</b><small>${band(i)} · ${i.st}</small></div><div style="display:flex;gap:6px;align-items:center">${statusPill(i)}${starBtn(k,i.name)}</div></div>`}
   const s=byStock[k];if(!s){const u=UNIMAP&&UNIMAP[k],q=qOf(k);if(!u){loadUniverse().then(()=>{loadAllQuotes().then(()=>{if(document.getElementById('v-watchlist').classList.contains('on'))renderWLAll()})});return `<a class="wl" href="#stock-${esc(k)}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(k.slice(0,2))}</div><div><b class="nm">${esc(k)}</b><small>Loading…</small></div><div>${starBtn(k,k)}</div></a>`}
-    return `<a class="wl" href="#stock-${esc(k)}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}</div><div><b class="nm">${esc(u.n)}</b><small class="num">${q?'₹'+n2(q.price)+' · ':''}${esc(u.x)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(q?q.pct:null)}${starBtn(k,u.n)}</div></a>`}
-  const dc=DAYCHG[k];return `<a class="wl" href="#stock-${k}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${k.replace('-','').slice(0,2)}${logoImg(k)}</div><div><b class="nm">${esc(s.name)}</b><small class="num">₹${n2(s.price)} · ${esc(s.sector)}</small></div><div style="display:flex;gap:4px;align-items:center">${chip(dc?dc[0]:null)}${starBtn(k,s.name)}</div></a>`}
+    return `<a class="wl" href="#stock-${esc(k)}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}</div><div><b class="nm">${esc(u.n)}</b><small class="num">${q?'₹<i class="lp" data-lp="'+esc(k)+'">'+n2(q.price)+'</i> · ':''}${esc(u.x)}</small></div><div style="display:flex;gap:4px;align-items:center"><span data-lcw="${esc(k)}">${chip(q?q.pct:null)}</span>${starBtn(k,u.n)}</div></a>`}
+  const dc=DAYCHG[k];return `<a class="wl" href="#stock-${k}" style="text-decoration:none"><div class="lg" style="background:${colorOf(k)};color:#fff">${k.replace('-','').slice(0,2)}${logoImg(k)}</div><div><b class="nm">${esc(s.name)}</b><small class="num">₹<i class="lp" data-lp="${k==='MM'?'M&M':k}">${n2(s.price)}</i> · ${esc(s.sector)}</small></div><div style="display:flex;gap:4px;align-items:center"><span data-lcw="${k==='MM'?'M&M':k}">${chip(dc?dc[0]:null)}</span>${starBtn(k,s.name)}</div></a>`}
 function renderWLAll(){
   const st=WL.filter(k=>!k.startsWith('ipo:')),ip=WL.filter(k=>k.startsWith('ipo:'));
   const e1=document.getElementById('wlstocks'),e2=document.getElementById('wlipos'),e3=document.getElementById('wlmini');
@@ -2260,7 +2261,7 @@ function renderTape(){const items=[['NIFTY 50','22,936.75',1.05],['SENSEX','74,1
 function renderMarkets(){
   document.getElementById('nchg').textContent='▲ +237.90 · +1.05%';
   document.getElementById('nchart').innerHTML=areaChart(NIFTY8);
-  document.getElementById('minis').innerHTML=MINIS.map(([k,v,p,t])=>`<div class="glass"><span>${k}</span><div class="row"><b>${v}</b>${p!=null?`<span class="${(k==='India VIX'?-p:p)>=0?'up':'down'}" style="font-weight:700;font-size:13px">${p>=0?'+':''}${p.toFixed(2)}%</span>`:`<span class="muted" style="font-size:12px">${t}</span>`}</div></div>`).join('');
+  const MK={'Midcap 100':'MIDCAP','Smallcap 100':'SMALLCAP','India VIX':'VIX'};document.getElementById('minis').innerHTML=MINIS.map(([k,v,p,t])=>`<div class="glass"><span>${k}</span><div class="row"><b${MK[k]?` class="lp" data-lp="${MK[k]}"`:''}>${v}</b>${p!=null?`<span class="${(k==='India VIX'?-p:p)>=0?'up':'down'}"${MK[k]?` data-lc="${MK[k]}"`:''} style="font-weight:700;font-size:13px">${p>=0?'+':''}${p.toFixed(2)}%</span>`:`<span class="muted" style="font-size:12px">${t}</span>`}</div></div>`).join('');
   document.getElementById('sect').innerHTML=SECTORS.map(([k,p])=>{const a=Math.min(1,Math.abs(p)/3.2);return `<div style="background:color-mix(in srgb,${p>=0?'var(--up)':'var(--dn)'} ${Math.round(8+a*26)}%,transparent)">${k}<b class="num ${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</b></div>`}).join('');
   document.getElementById('gain').innerHTML=moverList(GAIN);document.getElementById('lose').innerHTML=moverList(LOSE);
   document.getElementById('midg').innerHTML=moverList(MIDG);document.getElementById('midl').innerHTML=moverList(MIDL);
@@ -2284,7 +2285,7 @@ function renderStocks(){
   const rows=[...STOCKS].sort((a,b)=>{const va=sortK==='day'?(DAYCHG[a.sym]?.[0]??-999):a[sortK],vb=sortK==='day'?(DAYCHG[b.sym]?.[0]??-999):b[sortK];return (va>vb?1:va<vb?-1:0)*sortD});
   document.getElementById('stbl').innerHTML=`<tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${sortK===k?(sortD>0?'ascending':'descending'):'none'}">${l}${sortK===k?(sortD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>`+
     rows.map(s=>`<tr class="r" data-s="${s.sym}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div></div></td>
-      <td><b>${n2(s.price)}</b></td><td>${chip(DAYCHG[s.sym]?.[0]??null)}</td><td>${lcr(s.mcap)}</td><td>${s.pe.toFixed(1)}</td><td class="${s.npv>=0?'up':'down'}">${s.npv>=0?'+':''}${s.npv.toFixed(1)}%</td><td class="${s.salesv>=0?'up':'down'}">${s.salesv>=0?'+':''}${s.salesv.toFixed(1)}%</td><td>${s.roce.toFixed(1)}%</td><td>${starBtn(s.sym,s.name)}</td></tr>`).join('');
+      <td><b class="lp" data-lp="${s.sym==='MM'?'M&M':s.sym}">${n2(s.price)}</b></td><td data-lcw="${s.sym==='MM'?'M&M':s.sym}">${chip(DAYCHG[s.sym]?.[0]??null)}</td><td>${lcr(s.mcap)}</td><td>${s.pe.toFixed(1)}</td><td class="${s.npv>=0?'up':'down'}">${s.npv>=0?'+':''}${s.npv.toFixed(1)}%</td><td class="${s.salesv>=0?'up':'down'}">${s.salesv>=0?'+':''}${s.salesv.toFixed(1)}%</td><td>${s.roce.toFixed(1)}%</td><td>${starBtn(s.sym,s.name)}</td></tr>`).join('');
   document.querySelectorAll('#stbl th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortD=sortK===k?-sortD:(k==='name'?1:-1);sortK=k;renderStocks()});
   document.querySelectorAll('#stbl tr.r').forEach(tr=>tr.onclick=e=>{if(!e.target.closest('[data-star]'))location.hash='stock-'+tr.dataset.s});
 }
@@ -2301,7 +2302,7 @@ function renderStockPage(sym){
       <div><h1 style="font-size:clamp(28px,4vw,42px);font-weight:700">${esc(s.name)}</h1><div class="eyebrow" style="margin-top:4px">${sym==='MM'?'M&amp;M':sym} · NSE · ${esc(s.sector)} · #${rank} by market cap in this list</div></div></div></div>
       <div style="display:flex;gap:8px;align-items:center">${starBtn(sym,s.name)}<a class="ghost" href="https://www.nseindia.com/get-quotes/equity?symbol=${nseSym}" target="_blank" rel="noopener">Live quote on NSE ↗</a></div></div>
     <div class="grid2">
-      <div class="glass card"><span class="lbl">${priceLbl()}</span><div class="big num">₹${n2(s.price)}</div>${dc?`${chip(dc[0])} <span class="note" style="display:inline">day change · ${esc(dc[1])}</span>`:'<span class="note">Day change not published by our sources for this stock.</span>'}
+      <div class="glass card"><span class="lbl">${priceLbl()}</span><div class="big num">₹<i class="lp" data-lp="${s.sym==='MM'?'M&M':s.sym}">${n2(s.price)}</i></div>${dc?`<span data-lcw="${s.sym==='MM'?'M&M':s.sym}">${chip(dc[0])}</span> <span class="note" style="display:inline">day change · ${esc(dc[1])}</span>`:'<span class="note">Day change not published by our sources for this stock.</span>'}
         <div class="kgrid num" style="margin-top:18px"><div><span>Market cap</span><b>${lcr(s.mcap)}</b></div><div><span>P/E</span><b>${s.pe.toFixed(2)}</b></div><div><span>Dividend yield</span><b>${s.dy.toFixed(2)}%</b></div><div><span>ROCE</span><b>${s.roce.toFixed(2)}%</b></div></div></div>
       <div class="glass card"><span class="lbl">Latest quarter vs same quarter last year</span>
         <div class="qbars num" style="margin-top:16px">
@@ -2333,7 +2334,7 @@ const LOADER=(t='Loading…')=>`<div class="ldr-wrap" role="status" aria-live="p
 const SKROWS=(n=5)=>Array.from({length:n},()=>'<div class="sk-row" aria-hidden="true"><i class="a"></i><div><i class="b"></i><i class="c"></i></div><i class="d"></i></div>').join('');
 let UNI=null,UNIMAP=null,ALLQ=null,allqAt=0,uniLoading=null;
 function loadUniverse(){if(UNI)return Promise.resolve(UNI);if(uniLoading)return uniLoading;
-  uniLoading=fetch(DATA_RAW+'universe.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){UNI=j.s.map(r=>({k:r[0],n:r[1],x:r[2],bid:r[4]||'',l:(r[0]+' '+r[1]+' '+(r[4]||'')).toLowerCase()}));UNIMAP=Object.fromEntries(UNI.map(u=>[u.k,u]))}return UNI}).catch(()=>null).finally(()=>{uniLoading=null});return uniLoading}
+  uniLoading=fetch(DATA_RAW+'universe.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){UNI=j.s.map(r=>({k:r[0],n:r[1],x:r[2],y:r[3],bid:r[4]||'',l:(r[0]+' '+r[1]+' '+(r[4]||'')).toLowerCase()}));UNIMAP=Object.fromEntries(UNI.map(u=>[u.k,u]))}return UNI}).catch(()=>null).finally(()=>{uniLoading=null});return uniLoading}
 function loadAllQuotes(force){if(ALLQ&&!force&&Date.now()-allqAt<60000)return Promise.resolve(ALLQ);
   return fetch(DATA_RAW+'quotes.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.q){ALLQ=j;allqAt=Date.now()}return ALLQ}).catch(()=>ALLQ)}
 const qOf=k=>{const r=ALLQ&&ALLQ.q[k];if(!r)return null;const o={};ALLQ.cols.forEach((c,i)=>o[c]=r[i]);return o};
@@ -2352,7 +2353,7 @@ function renderAnyStock(key){const el=document.getElementById('stockpage');curSt
     el.innerHTML=`<div class="phead"><div><a class="link" href="#stocks" style="font-size:13px">← All stocks</a>
       <div class="shead" style="margin-top:12px"><div class="slogo" style="background:${colorOf(key)}">${esc(u.n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||key.slice(0,2))}${logoImg(key)}</div><div><h1 style="font-size:clamp(24px,4vw,40px);font-weight:700;letter-spacing:-.02em">${esc(u.n)}</h1><div class="eyebrow" style="margin-top:4px">${code}</div></div></div></div>
       <div style="display:flex;gap:6px;align-items:center">${starBtn(key,u.n)}<a class="ghost" href="${exUrl(u)}" target="_blank" rel="noopener">${u.x==='BSE'?'BSE':'NSE'} quote ↗</a></div></div>
-     ${q?`<div class="grid2"><div class="glass card"><span class="lbl">${LIVED&&LIVED.state==='open'?'● Live price':'Last price'}${t?' · '+esc(t):''}</span><div class="big num" style="margin:6px 0">${f(q.price)}</div>${chip(pct)} <span class="note" style="display:inline">${q.prev?`prev close ${f(q.prev)}`:''}</span>
+     ${q?`<div class="grid2"><div class="glass card"><span class="lbl">${LIVED&&LIVED.state==='open'?'● Live price':'Last price'}${t?' · '+esc(t):''}</span><div class="big num" style="margin:6px 0">₹<i class="lp" data-lp="${esc(key)}">${n2(q.price)}</i></div><span data-lcw="${esc(key)}">${chip(pct)}</span> <span class="note" style="display:inline">${q.prev?`prev close ${f(q.prev)}`:''}</span>
         <div class="kv num" style="margin-top:16px"><div><span>Open</span><b>${f(q.open)}</b></div><div><span>Day high</span><b>${f(q.high)}</b></div><div><span>Day low</span><b>${f(q.low)}</b></div></div>
         ${dr!=null?`<div class="rng" style="margin-top:14px"><div class="t"><i style="left:0;width:${dr}%"></i></div><div class="l num"><span>Low ${f(q.low)}</span><span>Today's range</span><span>High ${f(q.high)}</span></div></div>`:''}
         ${rng!=null?`<div class="rng" style="margin-top:14px"><div class="t"><i style="left:0;width:${rng}%"></i></div><div class="l num"><span>52W low ${f(q.l52)}</span><span>52-week range</span><span>52W high ${f(q.h52)}</span></div></div>`:''}</div>
@@ -2498,8 +2499,9 @@ function renderFlows(){const F=window.FLOWS;if(!F||F.fii==null)return;const el=d
 
 const _rm=renderMarkets;renderMarkets=function(){_rm();patchMarketDom()};
 // tape from live values
-renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+Math.round(M.ibja.g999*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ibja.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0]])];
-  const h=items.map(([k,v,p])=>`<span><b>${k}</b>${v}${p!=null?` <span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`).join('');
+renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+Math.round(M.ibja.g999*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ibja.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0],s.sym==='MM'?'M&M':s.sym])];
+  const TK={'NIFTY 50':'NIFTY','SENSEX':'SENSEX','BANK NIFTY':'BANKNIFTY','MIDCAP 100':'MIDCAP','SMALLCAP 100':'SMALLCAP','INDIA VIX':'VIX'};
+  const h=items.map(([k,v,p,key])=>{key=key||TK[k];return `<span><b>${k}</b>${key?`<i class="lp" data-lp="${key}">${v}</i>`:v}${p!=null?` <span class="${p>=0?'up':'down'}"${key?` data-lc="${key}"`:''}>${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`}).join('');
   document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')};
 // auto-refresh: re-check data/live.js every 3 minutes; reload when the server has newer figures
 // ---- near-live refresh: pull the newest figures every 60 s and repaint in place (no reload) ----
@@ -2698,6 +2700,33 @@ const sheetOpen=()=>SHEETS.find(([id])=>{const e=document.getElementById(id);ret
 let sheetPushed=false;
 new MutationObserver(()=>{const s=sheetOpen();if(s&&!sheetPushed&&s[0]!=='tmGate'){history.pushState({sheet:1},'',location.href);sheetPushed=true}else if(!s&&sheetPushed){sheetPushed=false;if(history.state&&history.state.sheet)history.back()}}).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class'],childList:true});
 addEventListener('popstate',e=>{const s=sheetOpen();if(s&&sheetPushed){sheetPushed=false;if(s[1])s[1]()}});
+// ===================== LIVE TICK: every price on screen updates every second during market hours =====================
+const LIDX={NIFTY:'^NSEI',SENSEX:'^BSESN',BANKNIFTY:'^NSEBANK',MIDCAP:'NIFTY_MIDCAP_100.NS',SMALLCAP:'^CNXSC',VIX:'^INDIAVIX'};
+const ysymOf=k=>LIDX[k]||(()=>{const u=UNIMAP&&UNIMAP[k];if(u&&u.y)return u.y;if(u&&u.x==='BSE')return null;return k.replace('M&M','M%26M')+'.NS'})();
+const LT={timer:null,busy:false,last:{},fails:0};
+const mktOpen=()=>{const n=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4),h=n.getHours()+n.getMinutes()/60;return n.getDay()>0&&n.getDay()<6&&h>=9.1&&h<15.6};
+function fmtLp(k,v){return LIDX[k]?(k==='VIX'?v.toFixed(2):fin(v)):n2(v)}
+function chipHTML(p){return chip(p)}
+async function liveTick(){if(LT.busy||document.hidden||!ALLOT_API)return;if(!mktOpen()&&!LT.force)return;
+  const els=[...document.querySelectorAll('[data-lp],[data-lc],[data-lcw]')].filter(e=>e.offsetParent!==null||e.closest('#tape'));
+  const keys=[...new Set(els.map(e=>e.dataset.lp||e.dataset.lc||e.dataset.lcw))].slice(0,80);if(!keys.length)return;
+  const map={};keys.forEach(k=>{const y=ysymOf(k);if(y)map[decodeURIComponent(y)]=k});const syms=Object.keys(map);if(!syms.length)return;
+  LT.busy=true;try{const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(syms.join(',')),{cache:'no-store'})).json();LT.fails=0;
+    for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(!k||!r||r[0]==null)continue;const [px,pc]=r;const prev=LT.last[k];LT.last[k]=px;
+      // keep the in-memory stores current so any re-render shows the live value too
+      if(LIDX[k]&&IDX[k]){IDX[k].v=px;if(pc!=null)IDX[k].pct=pc}
+      if(ALLQ&&ALLQ.q[k]){ALLQ.q[k][0]=px;if(pc!=null)ALLQ.q[k][1]=pc}
+      const bs=byStock[k==='M&M'?'MM':k];if(bs){bs.price=px;if(pc!=null&&DAYCHG[bs.sym])DAYCHG[bs.sym][0]=pc}
+      const txt=fmtLp(k,px),dir=prev==null?0:px-prev;
+      document.querySelectorAll(`[data-lp="${CSS.escape(k)}"]`).forEach(e=>{if(e.textContent!==txt){e.textContent=txt;if(dir){e.classList.remove('flup','fldn');void e.offsetWidth;e.classList.add(dir>0?'flup':'fldn')}}});
+      if(pc!=null){const ct=(pc>=0?'+':'')+pc.toFixed(2)+'%';
+        document.querySelectorAll(`[data-lc="${CSS.escape(k)}"]`).forEach(e=>{e.textContent=ct;e.classList.toggle('up',pc>=0);e.classList.toggle('down',pc<0)});
+        document.querySelectorAll(`[data-lcw="${CSS.escape(k)}"]`).forEach(e=>{const h=chipHTML(pc);if(e.innerHTML!==h)e.innerHTML=h})}}
+    const dot=document.querySelector('.livedot');if(dot)dot.textContent='● Live';
+  }catch(e){LT.fails++}finally{LT.busy=false}}
+function liveStart(){if(LT.timer)return;LT.timer=setInterval(liveTick,1000);liveTick()}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)liveTick()});
+setTimeout(liveStart,1500);
 if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
@@ -2790,7 +2819,7 @@ function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
   const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=q&&q.pct!=null?q.pct:x.pct,pr=q&&q.price!=null?q.price:x.p;
     return `<div class="ol-row ol-${olTab}" style="animation-delay:${k*40}ms"><a class="ol-top" href="#stock-${esc(x.k)}"><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
-      <div class="ol-nm"><b>${esc(x.n)}</b><small>${esc(x.k)}${x.sec?' · '+esc(x.sec):''}</small></div><div class="ol-px"><b class="num">₹${fin(pr)}</b>${chip(pct)}</div></a>
+      <div class="ol-nm"><b>${esc(x.n)}</b><small>${esc(x.k)}${x.sec?' · '+esc(x.sec):''}</small></div><div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(x.k)}">${fin(pr)}</i></b><span data-lcw="${esc(x.k)}">${chip(pct)}</span></div></a>
       <div class="ol-why">${x.why.map(w=>`<div><span>${ic[w.k]||'•'}</span>${w.u?`<a href="${esc(w.u)}" target="_blank" rel="noopener">${esc(w.t)}</a>${w.src?`<em>${esc(w.src)}</em>`:''}`:`<p>${esc(w.t)}</p>`}</div>`).join('')}</div>
       <div class="ol-f">${conf(x.conf)}<span class="ol-arrow">${olTab==='up'?'▲ Likely up':'▼ Likely down'}</span></div></div>`};
   return `<section class="ol"><div class="ol-h"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(O.at)}</div><h2>Today's outlook</h2>
@@ -2817,7 +2846,7 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
     const L=[];for(const u of UNI){if(u.x==='BSE'||(u.x==='NSE SME'&&!tdF.sme))continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;
       if(q.price<20||(q.mcapCr!=null&&q.mcapCr<tdF.minCap)||(q.mcapCr==null&&tdF.minCap>0&&q.price*(q.vol||0)<2e7))continue;const av=q.av10||q.av3m;q.vr=av&&q.vol?q.vol/av:null;
       q.pos=(q.high>q.low)?(q.price-q.low)/(q.high-q.low):null;L.push([u,q])}
-    const row=([u,q],why)=>`<a class="srow" href="#stock-${esc(u.k)}" style="grid-template-columns:34px 1fr auto auto"><div class="lg" style="width:34px;height:34px;border-radius:10px;font-size:11px;background:${colorOf(u.k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}${logoImg(u.k)}</div><div><b>${esc(u.n)}</b><small>${esc(u.k)}${q.mcapCr?' · '+lcr(q.mcapCr):''}</small></div><span class="why">${why}</span><div class="px num">₹${n2(q.price)}<small class="${q.pct>=0?'up':'down'}" style="display:block">${q.pct>=0?'+':''}${q.pct.toFixed(2)}%</small></div></a>`;
+    const row=([u,q],why)=>`<a class="srow" href="#stock-${esc(u.k)}" style="grid-template-columns:34px 1fr auto auto"><div class="lg" style="width:34px;height:34px;border-radius:10px;font-size:11px;background:${colorOf(u.k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}${logoImg(u.k)}</div><div><b>${esc(u.n)}</b><small>${esc(u.k)}${q.mcapCr?' · '+lcr(q.mcapCr):''}</small></div><span class="why">${why}</span><div class="px num">₹<i class="lp" data-lp="${esc(u.k)}">${n2(q.price)}</i><small class="${q.pct>=0?'up':'down'}" style="display:block" data-lc="${esc(u.k)}">${q.pct>=0?'+':''}${q.pct.toFixed(2)}%</small></div></a>`;
     const vx=q=>q.vr?q.vr.toFixed(1)+'× vol':'';
     const S=[
      ['🚀','Strong momentum','Up 2% or more on at least 1.5× normal volume, closing near the day\'s high. Often watched for follow-through.',

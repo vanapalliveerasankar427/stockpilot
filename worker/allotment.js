@@ -165,6 +165,38 @@ async function spot(req) {
   return json(req, JSON.parse(body));
 }
 
+
+// ---------- live quotes for the per-second ticker (Yahoo Finance), shared by all users through a 1-second edge cache ----------
+let YC = null; // { crumb, cookie, at }
+async function yCrumb() {
+  if (YC && Date.now() - YC.at < 3600e3) return YC;
+  const r = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
+  const ck = (r.headers.getSetCookie ? r.headers.getSetCookie() : [r.headers.get("set-cookie") || ""]).map(s => s.split(";")[0]).filter(Boolean).join("; ");
+  const crumb = await (await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: ck } })).text();
+  if (!crumb || crumb.length > 40 || /</.test(crumb)) throw new Error("no crumb");
+  return (YC = { crumb, cookie: ck, at: Date.now() });
+}
+async function liveQuotes(req, url) {
+  const syms = [...new Set((url.searchParams.get("s") || "").split(",").map(s => s.trim()).filter(s => /^[A-Za-z0-9^._&=-]{1,30}$/.test(s)))].slice(0, 80).sort();
+  if (!syms.length) return json(req, { q: {} });
+  const cache = caches.default, key = new Request("https://mvp.cache/q?" + syms.join(","));
+  const hit = await cache.match(key);
+  if (hit) { const r = new Response(hit.body, hit); Object.entries(cors(req)).forEach(([k, v]) => r.headers.set(k, v)); r.headers.set("Cache-Control", "no-store"); return r; }
+  const out = {};
+  try {
+    const c = await yCrumb();
+    const d = await (await fetch("https://query1.finance.yahoo.com/v7/finance/quote?fields=regularMarketPrice,regularMarketChangePercent,regularMarketPreviousClose,regularMarketTime,marketState&symbols=" + encodeURIComponent(syms.join(",")) + "&crumb=" + encodeURIComponent(c.crumb), { headers: { "User-Agent": UA, Cookie: c.cookie } })).json();
+    for (const q of (d.quoteResponse && d.quoteResponse.result) || []) out[q.symbol] = [q.regularMarketPrice, q.regularMarketChangePercent, q.regularMarketPreviousClose, q.regularMarketTime, q.marketState];
+  } catch (e) { YC = null; }
+  if (!Object.keys(out).length) { // fallback: one chart request per symbol (first 20)
+    await Promise.all(syms.slice(0, 20).map(async s => { try { const m = (await (await fetch("https://query1.finance.yahoo.com/v8/finance/chart/" + encodeURIComponent(s) + "?range=1d&interval=1m", { headers: { "User-Agent": UA } })).json()).chart.result[0].meta;
+      const pv = m.chartPreviousClose || m.previousClose; out[s] = [m.regularMarketPrice, pv ? (m.regularMarketPrice / pv - 1) * 100 : null, pv, m.regularMarketTime, null]; } catch {} }));
+  }
+  const body = JSON.stringify({ q: out, at: Date.now() });
+  await cache.put(key, new Response(body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=1" } }));
+  return json(req, JSON.parse(body));
+}
+
 export default {
   async scheduled(event, env, ctx) { ctx.waitUntil(pushCron(env, companies)); },
   async fetch(req, env) {
@@ -173,6 +205,7 @@ export default {
     try {
       if (url.pathname.startsWith("/push/")) return await pushApi(req, env, url.pathname, (b, s) => json(req, b, s));
       if (url.pathname === "/spot") return await spot(req);
+      if (url.pathname === "/q") return await liveQuotes(req, url);
       if (url.pathname === "/companies") return json(req, { companies: await companies(url.searchParams.get("reg")) });
       if (url.pathname === "/check" && req.method === "POST") {
         const { reg, cid, pans } = await req.json();
