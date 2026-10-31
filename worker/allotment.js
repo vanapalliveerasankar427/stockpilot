@@ -152,6 +152,19 @@ async function check(reg, cid, pan) {
   throw new Error("unsupported registrar");
 }
 
+
+// ---------- live gold & silver spot (for the per-second ticker), cached at the edge for 2 seconds ----------
+async function spot(req) {
+  const cache = caches.default, key = new Request("https://mvp.cache/spot");
+  const hit = await cache.match(key); if (hit) { const r = new Response(hit.body, hit); Object.entries(cors(req)).forEach(([k, v]) => r.headers.set(k, v)); r.headers.set("Cache-Control", "no-store"); return r; }
+  const g = async s => { const r = await fetch("https://api.gold-api.com/price/" + s, { headers: { "User-Agent": UA } }); const d = await r.json(); return { p: +d.price, t: d.updatedAt || null }; };
+  const fx = async () => { try { const d = await (await fetch("https://query1.finance.yahoo.com/v8/finance/chart/USDINR=X?range=1d&interval=1m", { headers: { "User-Agent": UA } })).json(); return +d.chart.result[0].meta.regularMarketPrice; } catch { return null; } };
+  const [xau, xag, usdinr] = await Promise.all([g("XAU"), g("XAG"), fx()]);
+  const body = JSON.stringify({ xau: xau.p, xag: xag.p, usdinr, t: xau.t, at: Date.now() });
+  await cache.put(key, new Response(body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=2" } }));
+  return json(req, JSON.parse(body));
+}
+
 export default {
   async scheduled(event, env, ctx) { ctx.waitUntil(pushCron(env, companies)); },
   async fetch(req, env) {
@@ -159,6 +172,7 @@ export default {
     const url = new URL(req.url);
     try {
       if (url.pathname.startsWith("/push/")) return await pushApi(req, env, url.pathname, (b, s) => json(req, b, s));
+      if (url.pathname === "/spot") return await spot(req);
       if (url.pathname === "/companies") return json(req, { companies: await companies(url.searchParams.get("reg")) });
       if (url.pathname === "/check" && req.method === "POST") {
         const { reg, cid, pans } = await req.json();
