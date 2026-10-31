@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths-ignore: ["data/**"]
   workflow_dispatch:
+  schedule:
+    - cron: "13 */3 * * *"   # refresh the search pages (prices, GMP, gold) every 3 hours
 
 permissions:
   contents: write
@@ -49,6 +51,8 @@ jobs:
           git push || (git pull --rebase && git push) || true
       - name: IPO calendar for push alerts
         run: node scripts/ipocal.js index.html ipo-calendar.json
+      - name: Search engine pages, sitemap and robots.txt
+        run: node scripts/seo.js .
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
