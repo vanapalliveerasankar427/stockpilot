@@ -429,15 +429,8 @@ def ipo_calendar(out):
         except Exception as e:
             log(f"ipo calendar {m:%b %Y} failed: {e}")
             continue
-        # the page has one table under "Mainboard IPOs (n)" and one under "SME IPOs (n)"
-        parts = []
-        for typ, label in (("Mainboard", "Mainboard IPOs"), ("SME", "SME IPOs")):
-            h = re.search(r">\s*" + label + r"\s*\(\d+\)\s*<", page)
-            if h:
-                t = re.search(r"<table.*?</table>", page[h.end():], re.S | re.I)
-                if t:
-                    parts.append((t.group(0), typ))
-        for part, typ in parts:
+        # IPOMarket marks SME issues in the link itself (".../xyz-sme-ipo"), which is more reliable than headings
+        for part, typ in ((page, None),):
             for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", part, re.S | re.I):
                 link = re.search(r'href="(?:https://www\.ipomarket\.in)?/ipo/([^"]+)"', tr)
                 cells = [text_of(c).strip() for c in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S | re.I)]
@@ -449,11 +442,12 @@ def ipo_calendar(out):
                 if not od or not cd or not pr:
                     continue
                 slug = link.group(1)
+                typ = "SME" if "-sme-" in slug or slug.endswith("-sme") else "Mainboard"
                 key = re.sub(r"-(sme-)?ipo$", "", slug).replace("-", "")[:24]
                 found[key] = {"id": key, "name": name, "type": typ, "open": od.isoformat(), "close": cd.isoformat(),
                               "allot": _next_workday(cd).isoformat(), "refund": _next_workday(cd, 2).isoformat(),
                               "list": (ld or _next_workday(cd, 3)).isoformat(), "lo": pr[0], "hi": pr[-1], "lot": int(num(lot) or 0), "src": slug}
-    if found:
+    if found or months:
         keep = [v for v in found.values() if v["list"] >= (today - dt.timedelta(days=21)).isoformat()]
         out["ipocal"] = sorted(keep, key=lambda v: v["open"])
         log(f"ipo calendar: {len(keep)} IPOs")
