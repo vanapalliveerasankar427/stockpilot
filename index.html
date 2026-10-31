@@ -1800,6 +1800,8 @@ const METALS={date:'30 Oct 2026, 11:15 AM',
   retail:{g24:14395,g22:13195,g18:10796,ag:215,src:'Goodreturns'},
   hist:[['26 Oct',141290,null],['27 Oct',141082,192037],['28 Oct',142300,194000],['29 Oct',142255,190478]]};
 const mchg=(v,p)=>p?`<span class="${v>=p?'up':'down'}" style="font-size:12.5px;font-weight:600">${v>=p?'▲':'▼'} ${Math.abs((v/p-1)*100).toFixed(2)}%</span>`:'';
+// Today's rate shown as the headline everywhere: jeweller retail (what shops quote, updated daily incl. weekends); IBJA is the previous working day's benchmark
+const goldToday=()=>{const R=METALS.retail||{},I=METALS.ibja||{};return {g24:R.g24||I.g999,g22:R.g22||I.g916,g18:R.g18||I.g750,ag:R.ag||I.ag,src:R.g24?(R.src||'Goodreturns'):'IBJA'}};
 function metalCards(m,full){const I=m.ibja,r=x=>Math.round(x).toLocaleString('en-IN');
   return `<div class="metal-grid num">
      <div class="metal gold"><span>Gold 24K · 999</span><b>₹${r(I.g999_10||I.g999*10)}</b><small>per 10 g · ₹${r(I.g999)}/g ${mchg(I.g999,I.p999)}</small></div>
@@ -1809,11 +1811,17 @@ function metalCards(m,full){const I=m.ibja,r=x=>Math.round(x).toLocaleString('en
      ${full?`<div class="metal gold"><span>Gold · 995</span><b>₹${r(I.g995*10)}</b><small>per 10 g · ₹${r(I.g995)}/g</small></div><div class="metal gold"><span>Gold 14K · 585</span><b>₹${r(I.g585*10)}</b><small>per 10 g · ₹${r(I.g585)}/g</small></div>`:''}
    </div>`}
 function renderMetals(){const m=METALS,el=document.getElementById('metals');if(!el)return;const X=m.mcx||{};
-  el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · IBJA benchmark</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${esc(m.ibja.sess)} · IBJA</span></div>
-   ${metalCards(m,false)}
-   ${X.silver?`<div class="row num" style="margin-top:12px;font-size:13.5px;flex-wrap:wrap;gap:6px"><span class="muted">MCX live</span><span>Gold <b>₹${Math.round(X.gold.v).toLocaleString('en-IN')}</b>/10 g ${chip(X.gold.pct)}</span><span>Silver <b>₹${Math.round(X.silver.v).toLocaleString('en-IN')}</b>/kg ${chip(X.silver.pct)}</span></div>`:''}
+  const T=goldToday(),r=x=>Math.round(x).toLocaleString('en-IN'),I=m.ibja||{};
+  el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · today's rate</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${esc(String(m.date||'').split(',')[0])} · ${esc(T.src)}</span></div>
+   <div class="metal-grid num">
+     <div class="metal gold"><span>Gold 24K</span><b>₹${r(T.g24*10)}</b><small>per 10 g · ₹${r(T.g24)}/g</small></div>
+     <div class="metal gold"><span>Gold 22K</span><b>₹${r(T.g22*10)}</b><small>per 10 g · ₹${r(T.g22)}/g</small></div>
+     <div class="metal gold"><span>Gold 18K</span><b>₹${r(T.g18*10)}</b><small>per 10 g · ₹${r(T.g18)}/g</small></div>
+     <div class="metal silver"><span>Silver</span><b>₹${r(T.ag*1000)}</b><small>per kg · ₹${(+T.ag).toFixed(2)}/g</small></div></div>
+   ${I.g999?`<div class="row num" style="margin-top:12px;font-size:13.5px;flex-wrap:wrap;gap:6px"><span class="muted">IBJA ${esc(I.sess||'')}</span><span>Gold 999 <b>₹${r(I.g999_10||I.g999*10)}</b>/10 g</span><span>Silver <b>₹${r(I.ag*1000)}</b>/kg</span></div>`:''}
+   ${X.silver?`<div class="row num" style="margin-top:12px;font-size:13.5px;flex-wrap:wrap;gap:6px"><span class="muted">MCX ${mktOpen()?"live":"last price"}</span><span>Gold <b>₹${Math.round(X.gold.v).toLocaleString('en-IN')}</b>/10 g ${chip(X.gold.pct)}</span><span>Silver <b>₹${Math.round(X.silver.v).toLocaleString('en-IN')}</b>/kg ${chip(X.silver.pct)}</span></div>`:''}
    <a class="ghost" href="#metals" style="margin-top:14px;width:100%">Full gold &amp; silver page, history and calculator →</a>
-   <p class="src">IBJA (India Bullion and Jewellers Association) rates exclude GST and making charges. Updated ${esc(m.date)}.</p>`;
+   <p class="src">Today's rate is the national average jeweller rate from ${esc(T.src)}, excluding GST and making charges. IBJA is the official benchmark for the last working day. Updated ${esc(m.date)}.</p>`;
 }
 // ===================== live gold & silver: ticks every second =====================
 const LV={on:false,base:null,last:null,hist:{g:[],s:[]},direct:true,fails:0,timer:null};
@@ -1866,14 +1874,14 @@ function renderCityCard(){const el=document.getElementById('cityCard');if(!el)re
   el.querySelectorAll('[data-city]').forEach(b=>b.onclick=()=>{citySet(b.dataset.city);cityPick=false;renderCityCard();toast('Showing rates for '+b.dataset.city)})}
 function renderMetalsPage(){const m=METALS,el=document.getElementById('metalspage');if(!el)return;const X=m.mcx||{},R=m.retail||{},I=m.ibja;
   const h=(m.hist||[]).filter(x=>x[1]),hs=(m.hist||[]).filter(x=>x[2]);
-  el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(m.date)}</div><h1 class="ptitle">Gold &amp; silver today</h1><p class="psub">Official IBJA benchmark rates, live MCX futures and jeweller retail rates in one place.</p></div></div>
+  el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(m.date)}</div><h1 class="ptitle">Gold &amp; silver today</h1><p class="psub">Today's jeweller rate for your city, live MCX prices and the official IBJA benchmark.</p></div></div>
    <div id="cityCard"></div>
    <div class="lv" id="lvCard"><div class="lv-h"><span class="lv-dot" id="lvDot"></span><b id="lvState">Connecting to live prices…</b><span class="lv-t num" id="lvTime"></span></div>
-    <div class="lv-g"><div class="lv-i gold"><span>Gold 24K · per 10 g</span><b class="num" id="lvG">₹${X.gold?Math.round(X.gold.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvGc"></em><canvas id="lvGs" width="300" height="46" aria-hidden="true"></canvas></div>
-     <div class="lv-i silver"><span>Silver · per kg</span><b class="num" id="lvS">₹${X.silver?Math.round(X.silver.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvSc"></em><canvas id="lvSs" width="300" height="46" aria-hidden="true"></canvas></div></div>
+    <div class="lv-g"><div class="lv-i gold"><span>MCX gold · per 10 g</span><b class="num" id="lvG">₹${X.gold?Math.round(X.gold.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvGc"></em><canvas id="lvGs" width="300" height="46" aria-hidden="true"></canvas></div>
+     <div class="lv-i silver"><span>MCX silver · per kg</span><b class="num" id="lvS">₹${X.silver?Math.round(X.silver.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvSc"></em><canvas id="lvSs" width="300" height="46" aria-hidden="true"></canvas></div></div>
     <div class="lv-x num"><span>Gold $<b id="lvXau">—</b>/oz</span><span>Silver $<b id="lvXag">—</b>/oz</span><span>USD/INR <b id="lvFx">—</b></span></div>
     <p class="src">Updates every second from the international spot price, applied to the latest MCX rate. Indian rates include duty and taxes; confirm with your jeweller before buying.</p></div>
-   <div class="glass card"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">IBJA benchmark · ${esc(I.sess)}</span><h3 style="font-size:19px;margin-top:4px">Official Indian rate</h3></div><a class="link" href="https://ibjarates.com/" target="_blank" rel="noopener" style="font-size:13px">ibjarates.com ↗</a></div>${metalCards(m,true)}
+   <div class="glass card"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">IBJA benchmark · ${esc(I.sess)}${I.sess&&!String(m.date||'').startsWith(I.sess)?' (last working day)':''}</span><h3 style="font-size:19px;margin-top:4px">Official wholesale rate</h3></div><a class="link" href="https://ibjarates.com/" target="_blank" rel="noopener" style="font-size:13px">ibjarates.com ↗</a></div>${metalCards(m,true)}
     <p class="src">Used for Sovereign Gold Bonds and gold loans. Excludes 3% GST and making charges. Change shown against the previous day's rate.</p></div>
    <div class="grid2 sec">
     <div class="glass card"><span class="lbl">MCX futures · live market</span><div class="ovr num" style="margin-top:6px">
@@ -2541,7 +2549,7 @@ function renderFlows(){const F=window.FLOWS;if(!F||F.fii==null)return;const el=d
 
 const _rm=renderMarkets;renderMarkets=function(){_rm();patchMarketDom()};
 // tape from live values
-renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+Math.round(M.ibja.g999*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(M.ibja.ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0],s.sym==='MM'?'M&M':s.sym])];
+renderTape=function(){const M=METALS,items=[['NIFTY 50',fin(IDX.NIFTY.v),IDX.NIFTY.pct],['SENSEX',fin(IDX.SENSEX.v),IDX.SENSEX.pct],['BANK NIFTY',fin(IDX.BANKNIFTY.v),IDX.BANKNIFTY.pct],['MIDCAP 100',fin(IDX.MIDCAP.v),IDX.MIDCAP.pct],['SMALLCAP 100',fin(IDX.SMALLCAP.v),IDX.SMALLCAP.pct],['INDIA VIX',IDX.VIX.v.toFixed(2),IDX.VIX.pct],['GOLD 24K','₹'+Math.round(goldToday().g24*10).toLocaleString('en-IN')+'/10g',null],['SILVER','₹'+Math.round(goldToday().ag*1000).toLocaleString('en-IN')+'/kg',null],...STOCKS.filter(s=>DAYCHG[s.sym]).map(s=>[s.sym==='MM'?'M&M':s.sym,n2(s.price),DAYCHG[s.sym][0],s.sym==='MM'?'M&M':s.sym])];
   const TK={'NIFTY 50':'NIFTY','SENSEX':'SENSEX','BANK NIFTY':'BANKNIFTY','MIDCAP 100':'MIDCAP','SMALLCAP 100':'SMALLCAP','INDIA VIX':'VIX'};
   const h=items.map(([k,v,p,key])=>{key=key||TK[k];return `<span><b>${k}</b>${key?`<i class="lp" data-lp="${key}">${v}</i>`:v}${p!=null?` <span class="${p>=0?'up':'down'}"${key?` data-lc="${key}"`:''}>${p>=0?'+':''}${p.toFixed(2)}%</span>`:''}</span>`}).join('');
   document.getElementById('tape').innerHTML=h+h.replace(/<span><b>/g,'<span aria-hidden="true"><b>')};
@@ -2803,7 +2811,7 @@ function renderBrief(){const el=document.getElementById('brief');if(!el)return;c
     ['📈',`Nifty ${N.pct>=0?'is up':'is down'} ${f(N.pct)} at <b>${fin(N.v)}</b>; Sensex ${f(S.pct)}, Bank Nifty ${f(B.pct)}.`],
     top&&bot?['🧭',`<b>${esc(top[0])}</b> leads ${f(top[1])} while <b>${esc(bot[0])}</b> lags ${f(bot[1])}. ${BREADTH.up} of ${BREADTH.n} ${esc(BREADTH.label)} are higher.`]:null,
     ['🔎',`Midcaps ${f(IDX.MIDCAP.pct)} and smallcaps ${f(IDX.SMALLCAP.pct)} ${(IDX.MIDCAP.pct+IDX.SMALLCAP.pct)/2<N.pct?'trail':'beat'} the Nifty. India VIX ${IDX.VIX.pct>=0?'rises':'eases'} to <b>${IDX.VIX.v.toFixed(2)}</b>.`],
-    M?['🪙',`Gold 24K (IBJA) <b>₹${Math.round(M.g999_10||M.g999*10).toLocaleString('en-IN')}</b>/10 g, silver <b>₹${Math.round(M.ag*1000).toLocaleString('en-IN')}</b>/kg${X?`; MCX silver ${f(X.pct)}`:''}.`]:null,
+    M?(()=>{const T=goldToday();return ['🪙',`Gold 24K today <b>₹${Math.round(T.g24*10).toLocaleString('en-IN')}</b>/10 g, silver <b>₹${Math.round(T.ag*1000).toLocaleString('en-IN')}</b>/kg${X?`; MCX silver ${f(X.pct)}`:''}.`]})():null,
     ['🚀',`${nOpen} IPO${nOpen===1?'':'s'} open${ipo?`; strongest GMP: <b>${esc(ipo.name.replace(/ Ltd$/,''))}</b> ${f(gmpPct(ipo))}`:''}. <a class="link" href="#ipo-gmp">See signals →</a>`]
   ].filter(Boolean);
   const sc=moodScore(),[ml,mc]=moodLabel(sc);
