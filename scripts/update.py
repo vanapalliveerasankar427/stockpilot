@@ -307,6 +307,19 @@ def mcx_rates(m):
                 log(f"mcx {key}: pattern not found")
         if mcx:
             m["mcx"] = mcx
+        # spot bullion rates in India (same page): "Gold 24 Karat (Rs ₹) 13,883 138,830 ..." and "Silver 999 Fine (Rs ₹) 179 1,794 17,943 179,430"
+        bu = dict(m.get("bullion") or {})
+        g = re.search(r"Gold 24 Karat \(Rs[^)]*\)\s*([\d,.]+)\s*([\d,.]+)", t)
+        s = re.search(r"Silver 999 Fine \(Rs[^)]*\)\s*([\d,.]+)\s*([\d,.]+)\s*([\d,.]+)\s*([\d,.]+)", t)
+        if g:
+            bu.update(g24=num(g.group(1)), g24_10=num(g.group(2)))
+        if s:
+            bu.update(ag_kg=num(s.group(4)), ag=round(num(s.group(4)) / 1000, 2))
+        if g or s:
+            bu["t"] = NOW.strftime("%-d %b, %-I:%M %p")
+            m["bullion"] = bu
+        else:
+            log("bullion rates: pattern not found")
     except Exception as e:
         log(f"mcx failed: {e}")
 

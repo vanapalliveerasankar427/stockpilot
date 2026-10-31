@@ -135,7 +135,7 @@ page("ipo-allotment-status", {
 });
 
 // ---------------------------------------------------------------- gold & silver
-const M = live.metals || {}, I = M.ibja || {}, R = M.retail || {}, X = M.mcx || {};
+const M = live.metals || {}, I = M.ibja || {}, X = M.mcx || {}, B = M.bullion || {}, R = { ...(M.retail || {}), ...(B.ag ? { ag: B.ag } : {}) };
 const gq = [["What is the gold rate today in India?", `On ${LABEL}, 24K gold is about ${inr(R.g24)} per gram and 22K about ${inr(R.g22)} per gram at jewellers (national average). The IBJA benchmark for 999 gold is ${inr(I.g999_10)} per 10 grams.`], ["Why do jewellers charge more than the gold rate?", "Jewellers add a local premium, 3% GST and making charges on top of the benchmark rate."]];
 page("gold-rate-today", {
   title: `Gold Rate Today in India: 24K & 22K Gold Price per Gram (${LABEL}) | MarketVedaPro`,
