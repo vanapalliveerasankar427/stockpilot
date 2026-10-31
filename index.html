@@ -2650,8 +2650,11 @@ function renderContact(){const el=document.getElementById('contactpage');const f
    if(!ok){const x=f.querySelector('.ct-err:not(:empty)');if(x)x.scrollIntoView({block:'center',behavior:'smooth'});return}
    if(!navigator.onLine){E(9).textContent='You are offline. Connect to the internet and try again.';return}
    const go=document.getElementById('ctGo');go.disabled=true;go.innerHTML='<span class="spin"></span> Sending…';
-   try{const r=await fetch(ALLOT_API+'/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:ctTopic,name,email:mail,message:msg,page:from,device:MQ.matches?'Phone':'Desktop',hp:document.getElementById('ctHp').value})});
-    const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Couldn\'t send right now. Please try again later.');
+   try{const lim=(()=>{try{return JSON.parse(localStorage.getItem('mvp.ct')||'[]')}catch{return []}})().filter(t=>Date.now()-t<36e5);if(lim.length>=5)throw new Error('Too many messages. Please try again in an hour.');
+    const to=['vanapalli','veerasankar'].join('.')+'@'+['gmail','com'].join('.');
+    const r=await fetch('https://formsubmit.co/ajax/'+to,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:`MarketVedaPro feedback: ${ctTopic} — ${name}`,_replyto:mail,_template:'table',_captcha:'false',_honey:document.getElementById('ctHp').value,Topic:ctTopic,Name:name,Email:mail,Page:from||'-',Device:MQ.matches?'Phone':'Desktop',Message:msg})});
+    const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)==='false'){if(/activat/i.test(j.message||''))throw new Error('Form is waiting for activation by the site owner. Please try again later.');throw new Error('Couldn\'t send right now. Please try again later.')}
+    lim.push(Date.now());try{localStorage.setItem('mvp.ct',JSON.stringify(lim))}catch{}
     ctSent=true;ctTopic='';renderContact();toast('Message sent ✓')}
    catch(err){E(9).textContent=err.message&&!/fetch/i.test(err.message)?err.message:'Couldn\'t send right now. Please try again later.';go.disabled=false;go.innerHTML=CT_MAIL+' Send message'}}}
 function renderTerms(){const el=document.getElementById('termspage');const acc=(()=>{try{return JSON.parse(localStorage.getItem(TK)||'{}')}catch{return {}}})();
