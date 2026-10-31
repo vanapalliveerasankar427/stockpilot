@@ -197,6 +197,33 @@ async function liveQuotes(req, url) {
   return json(req, JSON.parse(body));
 }
 
+// ---------- contact form → email (via FormSubmit; the address stays server-side) ----------
+const CONTACT_TO = "vanapalli.veerasankar@gmail.com";
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i;
+async function contact(req, env) {
+  const b = await req.json().catch(() => ({}));
+  if (b.hp) return json(req, { ok: true }); // honeypot: bots fill hidden field
+  const s = (v, n) => String(v || "").replace(/[\u0000-\u0008\u000b-\u001f]/g, "").trim().slice(0, n);
+  const topic = s(b.topic, 40), name = s(b.name, 40), email = s(b.email, 120), msg = s(b.message, 1000), page = s(b.page, 40), dev = s(b.device, 20);
+  if (!topic || name.length < 2 || !EMAIL_RE.test(email) || msg.length < 10) return json(req, { error: "Please fill all fields correctly" }, 400);
+  if (/\b[A-Z]{5}[0-9]{4}[A-Z]\b/i.test(msg)) return json(req, { error: "Please remove the PAN number" }, 400);
+  const ip = req.headers.get("CF-Connecting-IP") || "x";
+  if (env.PUSH) { // max 5 messages per IP per hour
+    const k = "rl:c:" + ip, n = +(await env.PUSH.get(k) || 0);
+    if (n >= 5) return json(req, { error: "Too many messages. Please try again in an hour." }, 429);
+    await env.PUSH.put(k, String(n + 1), { expirationTtl: 3600 });
+  }
+  const r = await fetch("https://formsubmit.co/ajax/" + CONTACT_TO, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json", "Origin": "https://marketvedapro.com", "Referer": "https://marketvedapro.com/" },
+    body: JSON.stringify({ _subject: `MarketVedaPro feedback: ${topic} — ${name}`, _replyto: email, _template: "table", _captcha: "false",
+      Topic: topic, Name: name, Email: email, Page: page || "-", Device: dev || "-", Message: msg })
+  });
+  const t = await r.text(); let j = {}; try { j = JSON.parse(t); } catch {}
+  if (!r.ok || String(j.success) === "false") return json(req, { error: "Couldn't send right now. Please try again later.", detail: (j.message || t).slice(0, 200) }, 502);
+  return json(req, { ok: true });
+}
+
 export default {
   async scheduled(event, env, ctx) { ctx.waitUntil(pushCron(env, companies)); },
   async fetch(req, env) {
@@ -204,6 +231,7 @@ export default {
     const url = new URL(req.url);
     try {
       if (url.pathname.startsWith("/push/")) return await pushApi(req, env, url.pathname, (b, s) => json(req, b, s));
+      if (url.pathname === "/contact" && req.method === "POST") return await contact(req, env);
       if (url.pathname === "/spot") return await spot(req);
       if (url.pathname === "/q") return await liveQuotes(req, url);
       if (url.pathname === "/companies") return json(req, { companies: await companies(url.searchParams.get("reg")) });

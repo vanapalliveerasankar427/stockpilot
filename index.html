@@ -1011,15 +1011,14 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .tm-chk input:focus-visible+i{outline:2px solid #2b6cff;outline-offset:2px}
 .tm-foot .btn{height:52px;border-radius:999px;font-size:16px;font-weight:700;justify-content:center}
 .tm-foot .btn:disabled{opacity:.45;filter:grayscale(.4);cursor:not-allowed}
-.ct-page{max-width:640px}.ct-wa{display:flex;align-items:center;gap:14px;margin:16px 0;padding:16px 18px;border-radius:22px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#25D366,#128C7E);box-shadow:0 10px 28px -12px #128C7E}
-.ct-wa svg{flex:none}.ct-wa b{display:block;font-size:16.5px}.ct-wa small{opacity:.9;font-size:13px}.ct-wa:active{transform:scale(.98)}
+.ct-page{max-width:640px}.ct-done{text-align:center;padding:40px 10px}.ct-ok{width:72px;height:72px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:34px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--up),#0ea5e9);animation:fadeUp .5s both}
 .ct-form{display:grid;gap:14px;padding:18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 .ct-form textarea{border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:10px 12px;font-family:inherit;font-size:15.5px;font-weight:500;color:var(--ink);width:100%;min-height:130px;resize:vertical}
 .ct-form textarea:focus,.ct-form select:focus{outline:none;border-color:var(--up);box-shadow:0 0 0 3px color-mix(in srgb,var(--up) 22%,transparent)}
 .ct-chips{display:flex;flex-wrap:wrap;gap:8px}.ct-chips button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:8px 13px;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
 .ct-chips button[aria-pressed="true"]{background:var(--up);border-color:var(--up);color:#fff}
-.ct-err{color:var(--down);font-size:12.5px;font-weight:600;min-height:0}.ct-err:empty{display:none}
-.ct-form .btn{height:52px;font-size:16px;font-weight:700;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff}
+.ct-err{color:var(--dn);font-size:12.5px;font-weight:600;min-height:0}.ct-err:empty{display:none}
+.ct-form .btn{height:52px;font-size:16px;font-weight:700}.ct-form .btn:disabled{opacity:.7}.ct-form{position:relative;margin-top:16px}@media(max-width:600px){.ct-two{grid-template-columns:1fr}}
 .ct-warn{font-size:12.5px;color:var(--muted);margin:2px 0 0}.ct-cnt{float:right;font-weight:500}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
@@ -2617,36 +2616,44 @@ const PRIV_SECTIONS=[
  ['Alerts','If you turn on alerts, your browser gives us an anonymous push address and the alert types you chose, so we can send IPO alerts. Turning alerts off deletes it.'],
  ['Third parties','Prices, news and logos load from public sources such as Yahoo Finance, Google News, GitHub and Google\'s icon service, which may see your IP address like any website you visit.'],
  ['Children','MarketVedaPro is meant for adults and is not directed at children under 18.'],
- ['Contact','For questions, problems or deletion requests, use the Contact us page (marketvedapro.com/#contact) or message us on WhatsApp at +91 77998 00495.']];
+ ['Contact','For questions, problems or deletion requests, use the Contact us page at marketvedapro.com/#contact.']];
 function privBody(){return PRIV_SECTIONS.map(([h,t],k)=>`<div class="tm-s"><span>${k+1}</span><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}
 function termsBody(){return TERMS_SECTIONS.map(([h,t],k)=>`<div class="tm-s"><span>${k+1}</span><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}
 
-const CT_WA='917799800495',CT_TOPICS=['Wrong price or data','Allotment check','IPO details','App not working','Suggestion','Other'];let ctTopic='';
-const WA_SVG='<svg width="34" height="34" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>';
+const CT_TOPICS=['Wrong price or data','Allotment check','IPO details','App not working','Suggestion','Other'];let ctTopic='',ctSent=false;
+const CT_MAIL='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>';
 function renderContact(){const el=document.getElementById('contactpage');const from=route.prev&&route.prev!=='contact'?route.prev:'';
+  if(ctSent){el.innerHTML=`<div class="ct-page"><div class="ct-done"><div class="ct-ok">✓</div><h1 class="ptitle" style="font-size:28px">Message sent</h1><p class="psub">Thanks for telling us. We read every message and reply by email, usually within a day.</p><button class="btn" type="button" id="ctAgain">Send another</button> <a class="ghost" href="#today" style="text-decoration:none;display:inline-flex;padding:11px 18px;border-radius:999px">Back to Today</a></div></div>`;
+   document.getElementById('ctAgain').onclick=()=>{ctSent=false;renderContact()};return}
   el.innerHTML=`<div class="ct-page"><div class="eyebrow"><span class="dot"></span>We usually reply within a day</div><h1 class="ptitle">Contact us</h1>
    <p class="psub">Found a wrong price, an allotment that didn't load, or something broken? Tell us and we'll fix it.</p>
-   <a class="ct-wa" href="https://wa.me/${CT_WA}?text=${encodeURIComponent('Hi MarketVedaPro, ')}" target="_blank" rel="noopener">${WA_SVG}<span><b>Chat on WhatsApp</b><small>+91 77998 00495</small></span></a>
    <form class="ct-form" id="ctForm" novalidate autocomplete="on">
     <div><div class="field" style="margin-bottom:8px">What is it about?</div><div class="ct-chips" role="group" aria-label="Topic">${CT_TOPICS.map(t=>`<button type="button" data-ct="${esc(t)}" aria-pressed="${ctTopic===t}">${esc(t)}</button>`).join('')}</div><div class="ct-err" id="ctE0"></div></div>
-    <label class="field" for="ctName">Your name<input id="ctName" maxlength="40" autocomplete="name" placeholder="e.g. Ravi"><span class="ct-err" id="ctE1"></span></label>
-    <label class="field" for="ctMsg">Message <span class="ct-cnt" id="ctCnt">0/1000</span><textarea id="ctMsg" maxlength="1000" placeholder="Which page, which stock or IPO, and what went wrong"></textarea><span class="ct-err" id="ctE2"></span></label>
+    <div class="two ct-two"><label class="field" for="ctName">Your name<input id="ctName" maxlength="40" autocomplete="name" placeholder="e.g. Ravi"><span class="ct-err" id="ctE1"></span></label>
+    <label class="field" for="ctEmail">Your email (for our reply)<input id="ctEmail" type="email" inputmode="email" maxlength="120" autocomplete="email" placeholder="you@example.com"><span class="ct-err" id="ctE3"></span></label></div>
+    <label class="field" for="ctMsg"><span>Message <span class="ct-cnt" id="ctCnt">0/1000</span></span><textarea id="ctMsg" maxlength="1000" placeholder="Which page, which stock or IPO, and what went wrong"></textarea><span class="ct-err" id="ctE2"></span></label>
+    <input type="text" id="ctHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <p class="ct-warn">🔒 Never send your PAN, bank details, passwords or OTPs. We will never ask for them.</p>
-    <button class="btn" type="submit">${WA_SVG.replace(/34/g,'20')} Send on WhatsApp</button>
-    <p class="ct-warn" style="text-align:center">Your message opens in WhatsApp, ready to send. Nothing is stored on our servers.</p>
+    <div class="ct-err" id="ctE9" style="text-align:center"></div>
+    <button class="btn" type="submit" id="ctGo">${CT_MAIL} Send message</button>
    </form></div>`;
-  const f=document.getElementById('ctForm'),m=document.getElementById('ctMsg'),n=document.getElementById('ctName'),E=i=>document.getElementById('ctE'+i);
+  const f=document.getElementById('ctForm'),m=document.getElementById('ctMsg'),n=document.getElementById('ctName'),em=document.getElementById('ctEmail'),E=i=>document.getElementById('ctE'+i);
   f.querySelectorAll('[data-ct]').forEach(b=>b.onclick=()=>{ctTopic=b.dataset.ct;f.querySelectorAll('[data-ct]').forEach(x=>x.setAttribute('aria-pressed',x===b));E(0).textContent=''});
-  m.oninput=()=>{document.getElementById('ctCnt').textContent=m.value.length+'/1000';E(2).textContent=''};n.oninput=()=>E(1).textContent='';
-  f.onsubmit=e=>{e.preventDefault();let ok=true;const name=n.value.trim(),msg=m.value.trim();
+  m.oninput=()=>{document.getElementById('ctCnt').textContent=m.value.length+'/1000';E(2).textContent=''};n.oninput=()=>E(1).textContent='';em.oninput=()=>E(3).textContent='';
+  f.onsubmit=async e=>{e.preventDefault();E(9).textContent='';let ok=true;const name=n.value.trim(),msg=m.value.trim(),mail=em.value.trim();
    if(!ctTopic){E(0).textContent='Pick a topic';ok=false}
    if(name.length<2||!/^[\p{L} .'-]+$/u.test(name)){E(1).textContent='Enter your name (letters only)';ok=false}
+   if(!/^[^\s@]{1,64}@[^\s@]+\.[a-z]{2,24}$/i.test(mail)){E(3).textContent='Enter a valid email so we can reply';ok=false}
    if(msg.length<10){E(2).textContent='Please write a little more (at least 10 characters)';ok=false}
    else if(/\b[A-Z]{5}[0-9]{4}[A-Z]\b/i.test(msg)){E(2).textContent='Please remove the PAN number — we don\'t need it';ok=false}
-   else if(/\b\d{9,18}\b/.test(msg.replace(/\s/g,''))&&/(account|a\/c|acc|ifsc|card|otp|upi)/i.test(msg)){E(2).textContent='Please remove bank or card details';ok=false}
+   else if(/\d{9,18}/.test(msg.replace(/[\s-]/g,''))&&/(account|a\/c|acc|ifsc|card|otp|upi)/i.test(msg)){E(2).textContent='Please remove bank or card details';ok=false}
    if(!ok){const x=f.querySelector('.ct-err:not(:empty)');if(x)x.scrollIntoView({block:'center',behavior:'smooth'});return}
-   const txt=`*MarketVedaPro – ${ctTopic}*\nName: ${name}\n${from?'Page: '+from+'\n':''}\n${msg}\n\n— ${MQ.matches?'Phone':'Desktop'}, ${new Date().toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'})}`;
-   window.open('https://wa.me/'+CT_WA+'?text='+encodeURIComponent(txt),'_blank','noopener');toast('Opening WhatsApp…')}}
+   if(!navigator.onLine){E(9).textContent='You are offline. Connect to the internet and try again.';return}
+   const go=document.getElementById('ctGo');go.disabled=true;go.innerHTML='<span class="spin"></span> Sending…';
+   try{const r=await fetch(ALLOT_API+'/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:ctTopic,name,email:mail,message:msg,page:from,device:MQ.matches?'Phone':'Desktop',hp:document.getElementById('ctHp').value})});
+    const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'Couldn\'t send right now. Please try again later.');
+    ctSent=true;ctTopic='';renderContact();toast('Message sent ✓')}
+   catch(err){E(9).textContent=err.message&&!/fetch/i.test(err.message)?err.message:'Couldn\'t send right now. Please try again later.';go.disabled=false;go.innerHTML=CT_MAIL+' Send message'}}}
 function renderTerms(){const el=document.getElementById('termspage');const acc=(()=>{try{return JSON.parse(localStorage.getItem(TK)||'{}')}catch{return {}}})();
   el.innerHTML=`<div class="tm-page"><div class="eyebrow"><span class="dot"></span>Version ${TERMS_V}</div><h1 class="ptitle">Terms &amp; disclaimer</h1>
    <p class="psub">Please read these before using MarketVedaPro.</p><div class="tm-card">${termsBody()}</div>
