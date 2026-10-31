@@ -1202,7 +1202,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 </section>
 
 <footer><div class="logo" style="margin-bottom:6px"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 3 8-8"/><path d="M15 6h6v6"/></svg></span><span class="wm">MarketVeda<b>Pro</b></span></div><p class="tagline" style="margin-bottom:6px"><b>Know More. Invest Smarter.</b> Stock market, IPOs, gold and silver rates, market news and insights for Indian and global market followers.</p>
-  <p style="margin:6px 0"><a class="link" href="#terms">Terms &amp; disclaimer</a> · <a class="link" href="#pans">My PANs</a></p>
+  <p style="margin:6px 0"><a class="link" href="#terms">Terms &amp; disclaimer</a> · <a class="link" href="#privacy">Privacy policy</a> · <a class="link" href="#pans">My PANs</a></p>
   <p id="srcs"></p>
   <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. MarketVedaPro does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
 </footer>
@@ -2413,12 +2413,12 @@ document.addEventListener('submit',e=>{const f=e.target;let first=null;
   if(first){e.preventDefault();e.stopImmediatePropagation();first.focus();if(navigator.vibrate)navigator.vibrate(30)}},true);
 
 // ===================== routing =====================
-const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms'];
+const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(h.startsWith('pans')){view='pans'}else if(!VIEWS.includes(h))view='markets';
-  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+view));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+(view==='privacy'?'terms':view)));
   const navv=view==='stock'?'stocks':(view==='ipo-allot'||view==='allot'||view==='applications'||view==='pans')?'ipo-allot':(view.startsWith('ipo')||view==='learn'||view==='gmp')?'ipos':view;
-  if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();if(view==='terms')renderTerms();
+  if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();if(view==='terms'||view==='privacy'){renderTerms();if(view==='privacy')setTimeout(()=>{const e=document.getElementById('privacy');if(e)e.scrollIntoView({behavior:'smooth'})},120)}
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
@@ -2537,10 +2537,20 @@ const TERMS_SECTIONS=[
  ['Alerts','IPO and watchlist alerts are a convenience and may arrive late or not at all. Do not rely on them for deadlines such as UPI mandate approval.'],
  ['No liability','MarketVedaPro is provided "as is" without warranties. To the extent permitted by law, we are not liable for any loss or damage arising from use of, or reliance on, this site, its data, signals or alerts.'],
  ['Changes','We may update these terms. If they change, you will be asked to accept them again.']];
+const PRIV_SECTIONS=[
+ ['What we collect','Nothing that identifies you. There are no accounts and no sign-up. We do not use advertising trackers.'],
+ ['Stored on your device','Your watchlist, family names and PANs, IPO applications you log, alert settings and theme are saved only in your browser or app on your device. Clearing the app\'s data deletes them.'],
+ ['PANs','PANs never go to our servers. When you check allotment, each PAN is passed through our relay straight to that IPO\'s registrar (such as KFintech, MUFG Intime or Bigshare) for that one lookup, and is not stored or logged.'],
+ ['Alerts','If you turn on alerts, your browser gives us an anonymous push address and the alert types you chose, so we can send IPO alerts. Turning alerts off deletes it.'],
+ ['Third parties','Prices, news and logos load from public sources such as Yahoo Finance, Google News, GitHub and Google\'s icon service, which may see your IP address like any website you visit.'],
+ ['Children','MarketVedaPro is meant for adults and is not directed at children under 18.'],
+ ['Contact','For questions or deletion requests, use the contact email on our Play Store listing.']];
+function privBody(){return PRIV_SECTIONS.map(([h,t],k)=>`<div class="tm-s"><span>${k+1}</span><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}
 function termsBody(){return TERMS_SECTIONS.map(([h,t],k)=>`<div class="tm-s"><span>${k+1}</span><div><h4>${esc(h)}</h4><p>${esc(t)}</p></div></div>`).join('')}
 function renderTerms(){const el=document.getElementById('termspage');const acc=(()=>{try{return JSON.parse(localStorage.getItem(TK)||'{}')}catch{return {}}})();
   el.innerHTML=`<div class="tm-page"><div class="eyebrow"><span class="dot"></span>Version ${TERMS_V}</div><h1 class="ptitle">Terms &amp; disclaimer</h1>
    <p class="psub">Please read these before using MarketVedaPro.</p><div class="tm-card">${termsBody()}</div>
+   <h2 id="privacy" style="font:800 26px var(--display,inherit);letter-spacing:-.02em;margin:28px 0 0">Privacy policy</h2><div class="tm-card">${privBody()}</div>
    ${acc.v===TERMS_V?`<p class="aw-note">✓ You accepted these terms on ${new Date(acc.at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}.</p>`:''}</div>`}
 function termsGate(){if(termsOK()||document.getElementById('tmGate'))return false;
   const d=document.createElement('div');d.className='tm-gate';d.id='tmGate';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-labelledby','tmT');
@@ -2673,8 +2683,8 @@ addEventListener('scroll',()=>{const n=document.querySelector('nav.top');if(n)n.
   const last=new WeakMap();new MutationObserver(ms=>ms.forEach(m=>{const el=m.target.nodeType===3?m.target.parentElement:m.target;if(!el||!el.closest||!el.closest('.num'))return;const t=el.textContent,p=last.get(el);last.set(el,t);
     if(p&&p!==t){const a=parseFloat(p.replace(/[^\d.-]/g,'')),b=parseFloat(t.replace(/[^\d.-]/g,''));if(isFinite(a)&&isFinite(b)&&a!==b){el.classList.remove('flup','fldn');void el.offsetWidth;el.classList.add(b>a?'flup':'fldn')}}})).observe(document.body,{characterData:true,subtree:true});
 })();
-setTimeout(()=>{if(location.hash!=='#terms')termsGate()},700);
-addEventListener('hashchange',()=>{if(!termsOK()&&location.hash!=='#terms'&&!document.getElementById('tmGate'))termsGate()});
+setTimeout(()=>{if(location.hash!=='#terms'&&location.hash!=='#privacy')termsGate()},700);
+addEventListener('hashchange',()=>{if(!termsOK()&&location.hash!=='#terms'&&location.hash!=='#privacy'&&!document.getElementById('tmGate'))termsGate()});
 // ===================== Android back button: close the open sheet first =====================
 const SHEETS=[['tmGate',null],['askA',()=>{const e=document.getElementById('askA');if(e)e.remove()}],['npanel',()=>npOpen(false)],['palette',()=>closeSearch()],['ov',()=>closeIpo()]];
 const sheetOpen=()=>SHEETS.find(([id])=>{const e=document.getElementById(id);return e&&(id==='tmGate'||id==='askA'||e.classList.contains('on'))});
