@@ -1363,7 +1363,7 @@ const PAST_RAW=[
 const PCOL=['#475569','#334f9e','#9d2a6e','#5a3fc0','#0f766e','#b4561a','#2563eb','#7c3aed','#be123c','#15803d'];
 const PAST=PAST_RAW.map(([id,name,type,o,c,a],k)=>({id,name,type,o:P(o),c:P(c),al:P(a),ls:null,st:'listed',past:true,reg:'',exch:type==='SME'?'SME':'BSE, NSE',lo:0,hi:0,lot:0,ml:1,color:PCOL[k%PCOL.length]})).filter(p=>{const n=t=>String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g,'').replace(/[^a-z0-9]/g,'');return !IPOS.some(i=>n(i.name)===n(p.name))});
 // auto-found IPOs have no listing price: once listed they move to past allotments instead of the Listed tab
-for(let k=IPOS.length-1;k>=0;k--){const i=IPOS[k];if(i.auto&&i.st==='listed'&&!i.listPrice){IPOS.splice(k,1);PAST.unshift({...i,past:true})}}
+{const nn=t=>String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g,'').replace(/[^a-z0-9]/g,'');for(let k=IPOS.length-1;k>=0;k--){const i=IPOS[k];if(i.auto&&i.st==='listed'&&!i.listPrice){IPOS.splice(k,1);if(!PAST.some(p=>nn(p.name)===nn(i.name)))PAST.unshift({...i,past:true})}}}
 const byId=Object.fromEntries([...IPOS,...PAST].map(i=>[i.id,i]));
 
 function statusPill(i){

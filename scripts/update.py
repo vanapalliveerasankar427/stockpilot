@@ -429,9 +429,15 @@ def ipo_calendar(out):
         except Exception as e:
             log(f"ipo calendar {m:%b %Y} failed: {e}")
             continue
-        # SME section comes after the "SME IPOs" heading
-        cut = re.search(r">\s*SME IPOs", page)
-        for part, typ in ((page[:cut.start()] if cut else page, "Mainboard"), (page[cut.start():] if cut else "", "SME")):
+        # the page has one table under "Mainboard IPOs (n)" and one under "SME IPOs (n)"
+        parts = []
+        for typ, label in (("Mainboard", "Mainboard IPOs"), ("SME", "SME IPOs")):
+            h = re.search(r">\s*" + label + r"\s*\(\d+\)\s*<", page)
+            if h:
+                t = re.search(r"<table.*?</table>", page[h.end():], re.S | re.I)
+                if t:
+                    parts.append((t.group(0), typ))
+        for part, typ in parts:
             for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", part, re.S | re.I):
                 link = re.search(r'href="(?:https://www\.ipomarket\.in)?/ipo/([^"]+)"', tr)
                 cells = [text_of(c).strip() for c in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S | re.I)]
@@ -448,7 +454,7 @@ def ipo_calendar(out):
                               "allot": _next_workday(cd).isoformat(), "refund": _next_workday(cd, 2).isoformat(),
                               "list": (ld or _next_workday(cd, 3)).isoformat(), "lo": pr[0], "hi": pr[-1], "lot": int(num(lot) or 0), "src": slug}
     if found:
-        keep = [v for v in found.values() if v["list"] >= (today - dt.timedelta(days=45)).isoformat()]
+        keep = [v for v in found.values() if v["list"] >= (today - dt.timedelta(days=21)).isoformat()]
         out["ipocal"] = sorted(keep, key=lambda v: v["open"])
         log(f"ipo calendar: {len(keep)} IPOs")
 
