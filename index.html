@@ -1076,6 +1076,11 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .pf-bar .csel{flex:0 0 auto;width:170px;min-width:0}
 .pf-foot{display:flex;justify-content:flex-end;margin-top:10px}
 .np-ic.price{background:linear-gradient(135deg,#ffe8cc,#ffd29e);color:#c2410c}.np-ic.am{background:linear-gradient(135deg,#fff3c4,#ffe28a);color:#b45309}.np-ic.pm{background:linear-gradient(135deg,#dbe4ff,#c3d0ff);color:#4338ca}
+
+/* no auto-zoom: phones zoom into any text box under 16px, and double-tap zooms on buttons */
+html{touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,a,[role="button"],label,.mv-act,.mv-pick{touch-action:manipulation}
+@media (max-width:900px),(pointer:coarse){input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-size:16px!important}}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
