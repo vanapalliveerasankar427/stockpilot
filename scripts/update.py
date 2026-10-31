@@ -16,6 +16,16 @@ from concurrent.futures import ThreadPoolExecutor
 
 import requests
 
+# --- temporary deploy probe (removed after check) ---
+import os as _os
+if _os.path.exists('probe.json'):
+    import requests as _rq
+    try:
+        _r=_rq.post('https://stockpilot.vanapalli-veerasankar-927.workers.dev/push/alerts',json={'sub':{'endpoint':'https://fcm.googleapis.com/x','keys':{'p256dh':'x','auth':'y'}},'alerts':[]},headers={'Origin':'https://marketvedapro.com'},timeout=30)
+        open('data/probe.txt','w').write('PROBE %s %s\n'%(_r.status_code,_r.text[:300]))
+    except Exception as _e: open('data/probe.txt','w').write('ERR %s'%_e)
+
+
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
