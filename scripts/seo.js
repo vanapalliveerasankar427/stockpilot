@@ -17,6 +17,8 @@ const evalArr = (start) => { const s = html.indexOf(start); if (s < 0) return []
 const IPOS = evalArr("const IPOS_RAW=[");
 const PAST = evalArr("const PAST_RAW=[").map(([id, name, type, open, close, allot]) => ({ id, name, type, open, close, allot, past: true }));
 const L = live.ipo || {};
+{ const nn = t => String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g, "").replace(/[^a-z0-9]/g, "");
+  for (const c of live.ipocal || []) if (!IPOS.some(r => nn(r.name).includes(nn(c.name)) || nn(c.name).includes(nn(r.name)))) IPOS.push({ ...c, reg: "", minLots: c.type === "SME" ? 2 : 1 }); }
 
 const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const inr = (n, d = 0) => n == null || isNaN(n) ? "—" : "₹" + Number(n).toLocaleString("en-IN", { maximumFractionDigits: d, minimumFractionDigits: d });

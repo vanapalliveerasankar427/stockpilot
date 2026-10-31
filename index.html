@@ -1265,6 +1265,10 @@ const IPOS_RAW=[
   sub:{QIB:2.00,NII:0.35,Retail:0.42,total:0.86,src:'Groww',at:'29 Oct'},color:'#a16207'},
  {id:'vedant',name:'Vedant Poly Fabs Ltd',type:'SME',exch:'SME',sector:'Textiles',open:'2026-11-02',close:'2026-11-04',allot:'',refund:'',list:'',lo:88,hi:94,lot:null,size:56.68,reg:'',color:'#0369a1'},
 ];
+// IPOs found automatically in the IPO calendar (scripts/update.py → data/live.js) that aren't in the list above yet
+(()=>{const nn=t=>String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g,'').replace(/[^a-z0-9]/g,'');const have=IPOS_RAW.map(r=>nn(r.name));const C=['#475569','#334f9e','#9d2a6e','#5a3fc0','#0f766e','#b4561a','#2563eb','#7c3aed','#be123c','#15803d'];
+  ((window.LIVE&&window.LIVE.ipocal)||[]).forEach((c,k)=>{const n=nn(c.name);if(!n||have.some(h=>h.includes(n)||n.includes(h))||IPOS_RAW.some(r=>r.id===c.id))return;
+    IPOS_RAW.push({id:c.id,name:/\b(ltd|limited)\b/i.test(c.name)?c.name:c.name+' Ltd',type:c.type,exch:c.type==='SME'?'SME':'BSE, NSE',sector:'',open:c.open,close:c.close,allot:c.allot,refund:c.refund,list:c.list,lo:c.lo,hi:c.hi,lot:c.lot,size:null,reg:'',minLots:c.type==='SME'?2:1,color:C[k%C.length],auto:true})})})();
 const SOURCES='Sources: Groww, Chittorgarh, HDFC Sky, Zerodha, Upstox, Angel One, Kotak Neo, IPO Platform, IPO Ji, IPO Premium, ScanX, StockGro, Choice India, INDmoney, Multibagg, IPOwiz, Business Today, Zee Business, company announcements.';
 
 // ===================== helpers =====================
@@ -1277,7 +1281,7 @@ const fmt=v=>Math.abs(v).toLocaleString('en-IN',{minimumFractionDigits:2,maximum
 const rs=v=>'₹'+fmt(v), rs0=v=>'₹'+Math.round(Math.abs(v)).toLocaleString('en-IN');
 const sgn=v=>(v>=0?'+':'−')+Math.abs(v).toFixed(2);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const cr=v=>'₹'+v.toLocaleString('en-IN',{maximumFractionDigits:2})+' Cr';
+const cr=v=>v==null||isNaN(v)?'TBA':'₹'+v.toLocaleString('en-IN',{maximumFractionDigits:2})+' Cr';
 const initials=n=>n.replace(/[&().]/g,' ').split(/\s+/).filter(w=>w&&!/^(ltd|limited|india)$/i.test(w)).slice(0,2).map(w=>w[0].toUpperCase()).join('');
 const REGLINK={'KFintech':'https://ipostatus.kfintech.com/','MUFG Intime':'https://in.mpms.mufg.com/Initial_Offer/public-issues.html','Bigshare Services':'https://ipo.bigshareonline.com/IPO_Status.html','Cameo Corporate':'https://ipostatus1.cameoindia.com/','Skyline Financial':'https://www.skylinerta.com/ipo.php','Purva Sharegistry':'https://www.purvashare.com/investor-service/ipo-query','Maashitla Securities':'https://maashitla.com/allotment-status/public-issues','BSE':'https://www.bseindia.com/investors/appli_check.aspx'};
 const allotLink=i=>REGLINK[i.reg]||'https://www.bseindia.com/investors/appli_check.aspx';
@@ -1358,6 +1362,8 @@ const PAST_RAW=[
  ["p-hero-motors", "Hero Motors Limited", "Mainboard", "2026-09-16", "2026-09-18", "2026-09-21"]];
 const PCOL=['#475569','#334f9e','#9d2a6e','#5a3fc0','#0f766e','#b4561a','#2563eb','#7c3aed','#be123c','#15803d'];
 const PAST=PAST_RAW.map(([id,name,type,o,c,a],k)=>({id,name,type,o:P(o),c:P(c),al:P(a),ls:null,st:'listed',past:true,reg:'',exch:type==='SME'?'SME':'BSE, NSE',lo:0,hi:0,lot:0,ml:1,color:PCOL[k%PCOL.length]})).filter(p=>{const n=t=>String(t).toLowerCase().replace(/\b(limited|ltd|india|the|and)\b/g,'').replace(/[^a-z0-9]/g,'');return !IPOS.some(i=>n(i.name)===n(p.name))});
+// auto-found IPOs have no listing price: once listed they move to past allotments instead of the Listed tab
+for(let k=IPOS.length-1;k>=0;k--){const i=IPOS[k];if(i.auto&&i.st==='listed'&&!i.listPrice){IPOS.splice(k,1);PAST.unshift({...i,past:true})}}
 const byId=Object.fromEntries([...IPOS,...PAST].map(i=>[i.id,i]));
 
 function statusPill(i){
@@ -1660,7 +1666,7 @@ function renderScreener(){
     </div>
     <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" style="min-width:980px"><tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${scrK===k?(scrD>0?'ascending':'descending'):'none'}">${l}${scrK===k?(scrD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>
     ${L.map(i=>`<tr class="r" data-open="${i.id}"><td><div style="display:flex;gap:10px;align-items:center"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name.replace(/ Ltd$/,''))}</b><small class="muted" style="display:block;font-size:12px">${i.type==='SME'?esc(i.exch):'Mainboard'} · ${esc(i.sector)}</small></div></div></td>
-      <td>${statusPill(i)}<div style="margin-top:4px">${canApply(i)}</div></td><td>${vBadge(i)}</td><td>${band(i)}</td><td>${i.lot?i.lot.toLocaleString('en-IN'):'TBA'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${i.size.toLocaleString('en-IN')}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${i.gmp&&i.st!=='listed'?chip(gmpPct(i)):i.listPrice?`<span class="muted" style="font-size:12px">listed ${sgn((i.listPrice/i.hi-1)*100)}%</span>`:'—'}</td><td>${estProfit(i)!=null&&i.st!=='listed'?'+'+rs0(estProfit(i)):'—'}</td><td>${d2(i.ls)}</td><td>${starBtn('ipo:'+i.id,i.name)}</td></tr>`).join('')||`<tr><td colspan="12" class="muted" style="text-align:center">No IPOs match.</td></tr>`}</table></div></div>
+      <td>${statusPill(i)}<div style="margin-top:4px">${canApply(i)}</div></td><td>${vBadge(i)}</td><td>${band(i)}</td><td>${i.lot?i.lot.toLocaleString('en-IN'):'TBA'}</td><td>${i.minAmt?rs0(i.minAmt):'TBA'}</td><td>${i.size!=null?i.size.toLocaleString('en-IN'):'TBA'}</td><td>${i.sub?i.sub.total.toFixed(2)+'×':'—'}</td><td>${i.gmp&&i.st!=='listed'?chip(gmpPct(i)):i.listPrice?`<span class="muted" style="font-size:12px">listed ${sgn((i.listPrice/i.hi-1)*100)}%</span>`:'—'}</td><td>${estProfit(i)!=null&&i.st!=='listed'?'+'+rs0(estProfit(i)):'—'}</td><td>${d2(i.ls)}</td><td>${starBtn('ipo:'+i.id,i.name)}</td></tr>`).join('')||`<tr><td colspan="12" class="muted" style="text-align:center">No IPOs match.</td></tr>`}</table></div></div>
     <p class="src">${L.length} of ${IPOS.length} IPOs. Tap a row for details. Est. profit uses GMP × minimum application and is unofficial.</p>`;
   const q=document.getElementById('scrq');q.oninput=()=>{scrQ=q.value.toLowerCase();const pos=q.selectionStart;renderScreener();const n=document.getElementById('scrq');n.focus();n.setSelectionRange(pos,pos)};
   document.querySelectorAll('#scrbody [data-st]').forEach(b=>b.onclick=()=>{scrSt=b.dataset.st;renderScreener()});
@@ -1926,7 +1932,7 @@ function renderMobileIpos(){const el=document.getElementById('mrows');if(!el)ret
       
       listed&&i.listClose?`<span>Day-1 <b>₹${i.listClose.toLocaleString('en-IN')}</b></span>`:'',
       !listed&&i.minAmt?`<span>Min <b>${rs0(i.minAmt)}</b></span>`:''].join('');
-    const vb=v?`<span class="wz-v v-${v.k}">${v.k==='apply'?'Apply':v.k==='consider'?'Consider':'Avoid'}</span>`:'';
+    const vb=v&&['apply','consider','avoid'].includes(v.k)?`<span class="wz-v v-${v.k}">${v.k==='apply'?'Apply':v.k==='consider'?'Consider':'Avoid'}</span>`:'';
     return `<div class="wz" data-q="${i.id}" role="button" tabindex="0" style="animation-delay:${k*35}ms"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div>
       <div class="wz-n"><b>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</b><div class="wz-s"><span class="wz-t ${i.type==='SME'?'sme':''}">${i.type==='SME'?'SME':'MAIN'}</span>${when}${vb}</div></div>
       <div class="wz-r">${right}</div><div class="wz-m">${chips}</div></div>`}).join('')||`<div class="empty" style="margin:12px">No ${mType==='All'?'':mType+' '}IPOs here right now.</div>`;
@@ -2093,7 +2099,7 @@ function renderPans(){const el=document.getElementById('panspage'),M=FAM.members
 }
 function renderAllotPage(id){const i=byId[id],el=document.getElementById('allotpage');if(!i){el.innerHTML='<p class="note">IPO not found.</p>';return}
   if(ALLOT_API&&REGKEY(i.reg)&&T0>=i.al&&!allotAuto[id]&&FAM.members.some(m=>PANS[m])){allotAuto[id]=1;setTimeout(()=>autoCheck(id),0)}
-  if(i.past&&!i.reg&&!i.regTried){el.innerHTML=`<div class="aw"><div class="aw-top"><a class="aw-ib" href="#ipo-allot" aria-label="Back">${AWI.back}</a><h1>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</h1></div><div class="aw-list" style="padding:26px 16px;text-align:center"><div class="skel" style="height:14px;width:60%;margin:0 auto 10px"></div><p class="aw-msg">Finding the registrar for this IPO…</p></div></div>`;findReg(i).then(()=>{if(location.hash==='#allot-'+id){delete allotAuto[id];renderAllotPage(id)}});return}
+  if(!i.reg&&!i.regTried&&i.al&&T0>=i.al){el.innerHTML=`<div class="aw"><div class="aw-top"><a class="aw-ib" href="#ipo-allot" aria-label="Back">${AWI.back}</a><h1>${esc(i.name.replace(/ (Ltd|Limited)\.?$/i,''))}</h1></div><div class="aw-list" style="padding:26px 16px;text-align:center"><div class="skel" style="height:14px;width:60%;margin:0 auto 10px"></div><p class="aw-msg">Finding the registrar for this IPO…</p></div></div>`;findReg(i).then(()=>{if(location.hash==='#allot-'+id){delete allotAuto[id];renderAllotPage(id)}});return}
   renderAllotWiz(i,el);return;
   const st=FAM.st[id]||{},M=FAM.members,al=M.filter(m=>st[m]==='al').length,na=M.filter(m=>st[m]==='na').length,p=profitPerApp(i);
   const reg=i.reg&&REGLINK[i.reg]?REGLINK[i.reg]:'https://www.bseindia.com/investors/appli_check.aspx',regName=i.reg&&REGLINK[i.reg]?i.reg:'BSE';

@@ -340,10 +340,16 @@ def xval(c):
 
 def ipo(out):
     data = dict(out.get("ipo") or {})
+    known = {k.lower() for k in IPOS.values()}
+    names = dict(IPOS)
+    for v in out.get("ipocal") or []:
+        short_ = re.sub(r"\b(limited|ltd|india)\b", "", v["name"], flags=re.I).strip()
+        if v["id"] not in names and not any(k in v["name"].lower() for k in known):
+            names[v["id"]] = short_[:28]
     stamp = NOW.strftime("%-d %b, %-I:%M %p")
     try:
         rows = list(table_rows(get("https://www.ipomarket.in/gmp").text))
-        for iid, key in IPOS.items():
+        for iid, key in names.items():
             c = find_row(rows, key)
             if not c:
                 continue
@@ -365,7 +371,7 @@ def ipo(out):
             t = re.sub(r"\s+", " ", text_of(card))
             title = re.search(r'<a[^>]*href="/ipo/[^"]*"[^>]*>(.*?)</a>', card, re.S)
             title = text_of(title.group(1)).strip().lower() if title else t[:120].lower()
-            iid = next((k for k, key in IPOS.items() if key.lower() in title), None)
+            iid = next((k for k, key in names.items() if key.lower() in title), None)
             if not iid or iid in seen:
                 continue
             seen.add(iid)
@@ -392,6 +398,59 @@ def ipo(out):
         q["ghist"] = h[-30:]
     out["ipo"] = data
 
+
+
+# ----------------------------------------------------------------- IPO calendar: discovers new IPOs automatically
+MON = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+MONTH_NAMES = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+
+
+def _pdate(s):
+    m = re.match(r"(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})", s.strip())
+    return dt.date(int(m.group(3)), MON[m.group(2).lower()], int(m.group(1))) if m else None
+
+
+def _next_workday(d, n=1):
+    while n:
+        d += dt.timedelta(days=1)
+        if d.weekday() < 5:
+            n -= 1
+    return d
+
+
+def ipo_calendar(out):
+    """New IPOs from IPOMarket's monthly calendar (last month, this month, next month)."""
+    today = NOW.date()
+    months = [(today.replace(day=1) - dt.timedelta(days=1)).replace(day=1), today.replace(day=1), (today.replace(day=28) + dt.timedelta(days=4)).replace(day=1)]
+    found = {}
+    for m in months:
+        try:
+            page = get(f"https://www.ipomarket.in/ipo-calendar/{MONTH_NAMES[m.month - 1]}-{m.year}").text
+        except Exception as e:
+            log(f"ipo calendar {m:%b %Y} failed: {e}")
+            continue
+        # SME section comes after the "SME IPOs" heading
+        cut = re.search(r">\s*SME IPOs", page)
+        for part, typ in ((page[:cut.start()] if cut else page, "Mainboard"), (page[cut.start():] if cut else "", "SME")):
+            for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", part, re.S | re.I):
+                link = re.search(r'href="(?:https://www\.ipomarket\.in)?/ipo/([^"]+)"', tr)
+                cells = [text_of(c).strip() for c in re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S | re.I)]
+                if not link or len(cells) < 6:
+                    continue
+                name, o, c, price, lot, lst = cells[:6]
+                od, cd, ld = _pdate(o), _pdate(c), _pdate(lst)
+                pr = [num(x) for x in re.findall(r"[\d,.]+", price)]
+                if not od or not cd or not pr:
+                    continue
+                slug = link.group(1)
+                key = re.sub(r"-(sme-)?ipo$", "", slug).replace("-", "")[:24]
+                found[key] = {"id": key, "name": name, "type": typ, "open": od.isoformat(), "close": cd.isoformat(),
+                              "allot": _next_workday(cd).isoformat(), "refund": _next_workday(cd, 2).isoformat(),
+                              "list": (ld or _next_workday(cd, 3)).isoformat(), "lo": pr[0], "hi": pr[-1], "lot": int(num(lot) or 0), "src": slug}
+    if found:
+        keep = [v for v in found.values() if v["list"] >= (today - dt.timedelta(days=45)).isoformat()]
+        out["ipocal"] = sorted(keep, key=lambda v: v["open"])
+        log(f"ipo calendar: {len(keep)} IPOs")
 
 
 # ----------------------------------------------------------------- NSE index constituents (live movers)
@@ -849,7 +908,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo, flows, news, everything)):
+    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, ipo_calendar, ipo, flows, news, everything)):
         try:
             step(out)
         except Exception as e:
