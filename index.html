@@ -2714,7 +2714,9 @@ let tdF={sme:false,minCap:500};
 // ===================== Today's outlook: likely up / likely down =====================
 let olTab='up',olAll=false;
 function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
-  const L=(olTab==='up'?O.up:O.down)||[],show=olAll?L:L.slice(0,8);
+  const livePct=x=>{const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
+  const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0});
+  const L=olTab==='up'?UP:DN,show=olAll?L:L.slice(0,8);
   const ic={news:'📰',price:'📊',global:'🌍'};
   const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
   const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=q&&q.pct!=null?q.pct:x.pct,pr=q&&q.price!=null?q.price:x.p;
@@ -2725,8 +2727,8 @@ function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   return `<section class="ol"><div class="ol-h"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(O.at)}</div><h2>Today's outlook</h2>
      <p>Stocks with positive or negative signals today, from ${O.headlines} news headlines, quarterly results, global cues and the last session's price and volume.</p></div></div>
     ${O.cues&&O.cues.length?`<div class="ol-cues">${O.cues.map(c=>`<span>🌍 ${esc(c)}</span>`).join('')}</div>`:''}
-    <div class="ol-tabs" role="tablist"><button type="button" role="tab" data-ol="up" aria-selected="${olTab==='up'}"><span>📈</span>Likely up <b>${(O.up||[]).length}</b></button><button type="button" role="tab" data-ol="down" aria-selected="${olTab==='down'}"><span>📉</span>Likely down <b>${(O.down||[]).length}</b></button></div>
-    <div class="ol-list">${show.map(row).join('')||'<p class="aw-msg" style="padding:20px">No strong signals right now. Check back after the next update.</p>'}</div>
+    <div class="ol-tabs" role="tablist"><button type="button" role="tab" data-ol="up" aria-selected="${olTab==='up'}"><span>📈</span>Likely up <b>${UP.length}</b></button><button type="button" role="tab" data-ol="down" aria-selected="${olTab==='down'}"><span>📉</span>Likely down <b>${DN.length}</b></button></div>
+    <div class="ol-list">${show.map(row).join('')||`<p class="aw-msg" style="padding:20px">${olTab==='up'?'No stocks with positive signals are trading up right now.':'No stocks with negative signals are trading down right now.'} Check back after the next update.</p>`}</div>
     ${L.length>8?`<button class="ghost ol-more" type="button" id="olMore">${olAll?'Show fewer':`Show all ${L.length}`}</button>`:''}
     <p class="ol-note">⚠️ These are signals from news and price data, not predictions or buy/sell advice. Prices can move either way; do your own research before you trade.</p></section>`}
 function wireOutlook(){document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});

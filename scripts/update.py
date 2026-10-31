@@ -766,8 +766,9 @@ def outlook(out, uni, q):
         return {"k": k, "n": names.get(k, k), "s": s, "conf": conf, "p": v[0], "pct": v[1], "mc": v[9], "sec": (prof.get(k) or [""])[0], "why": r}
     news_k = {k for k in why if any(x["k"] == "news" for x in why[k])}
     ranked = sorted((k for k in score if k in pool), key=lambda k: -(score[k] + (1.5 if k in news_k else 0) * (1 if score[k] > 0 else -1)))
-    up = [item(k) for k in ranked if score[k] >= 2.5][:25]
-    dn = [item(k) for k in reversed(ranked) if score[k] <= -2.5][:25]
+    # "likely up" only lists stocks that are actually up; "likely down" only those that are down
+    up = [item(k) for k in ranked if score[k] >= 2.5 and (pool[k][1] or 0) > 0][:25]
+    dn = [item(k) for k in reversed(ranked) if score[k] <= -2.5 and (pool[k][1] or 0) < 0][:25]
     out["outlook"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "headlines": len(heads), "screened": len(pool), "cues": cues, "up": up, "down": dn}
     log(f"outlook: {len(heads)} headlines, {len(up)} up, {len(dn)} down")
 
