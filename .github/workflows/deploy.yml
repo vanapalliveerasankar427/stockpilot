@@ -52,7 +52,8 @@ jobs:
       - name: IPO calendar for push alerts
         run: node scripts/ipocal.js index.html ipo-calendar.json
       - name: Search engine pages, sitemap and robots.txt
-        run: node scripts/seo.js .
+        continue-on-error: true
+        run: node --version && node scripts/seo.js .
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

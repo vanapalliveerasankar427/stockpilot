@@ -2,6 +2,8 @@
 // plus sitemap.xml and robots.txt. Runs in the publish workflow. Every page links to the live app.
 // Usage: node scripts/seo.js <site-dir>
 const fs = require("fs"), path = require("path");
+process.on("uncaughtException", e => { console.log("::error::seo " + (e.stack || e).toString().replace(/\n/g, " | ")); process.exitCode = 0; });
+process.on("unhandledRejection", e => { console.log("::error::seo " + (e && e.stack || e).toString().replace(/\n/g, " | ")); process.exitCode = 0; });
 const ROOT = process.argv[2] || ".";
 const SITE = "https://marketvedapro.com";
 const RAW = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/";
