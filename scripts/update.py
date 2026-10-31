@@ -16,6 +16,21 @@ from concurrent.futures import ThreadPoolExecutor
 
 import requests
 
+# --- temporary contact-form probe (removed after check) ---
+import os as _os, json as _json
+if _os.path.exists('probe.json'):
+    import requests as _rq
+    for _b in _json.load(open('probe.json')):
+        try:
+            _r=_rq.post('https://stockpilot.vanapalli-veerasankar-927.workers.dev/contact',json=_b,headers={'Origin':'https://marketvedapro.com'},timeout=30)
+            print('PROBE',_r.status_code,_r.text[:400],flush=True)
+        except Exception as _e: print('PROBE ERR',_e,flush=True)
+    try:
+        _r=_rq.post('https://formsubmit.co/ajax/vanapalli.veerasankar@gmail.com',json={'_subject':'MarketVedaPro contact form activation','Message':'Setup test from GitHub runner'},headers={'Origin':'https://marketvedapro.com','Referer':'https://marketvedapro.com/','Accept':'application/json'},timeout=30)
+        print('PROBE-FS',_r.status_code,_r.text[:400],flush=True)
+    except Exception as _e: print('PROBE-FS ERR',_e,flush=True)
+
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
