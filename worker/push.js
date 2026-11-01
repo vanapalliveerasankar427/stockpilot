@@ -6,7 +6,7 @@ const CAL = "https://marketvedapro.com/ipo-calendar.json";
 const LIVE = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/main/data/live.json";
 const SITE = "https://marketvedapro.com/";
 const PER_RUN = 40; // stay under the free plan's subrequest limit
-const TYPES = ["allot", "open", "close", "list", "am", "pm"];
+const TYPES = ["allot", "open", "close", "list", "am", "mid", "pm"];
 const HOLIDAYS = ["2026-11-10", "2026-11-24", "2026-12-25"]; // NSE weekday trading holidays still ahead (update each year)
 
 const te = new TextEncoder();
@@ -150,32 +150,47 @@ export async function priceCron(env, quotes) {
 
 // ---------- 8:45 AM outlook and 3:45 PM close digests ----------
 const pc = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(2) + "%";
+const DATA_Q = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/data/quotes.json";
+const fx0 = v => (+v).toLocaleString("en-IN", { maximumFractionDigits: 0 });
+// Three market-day updates: 9:20 AM open, 1:00 PM midday, 3:45 PM close. Each needs a fresh index quote from today.
 export async function digestCron(env, quotes) {
   if (!env.PUSH) return;
   const now = IST(), day = ymd(now), dow = now.getUTCDay(), m = now.getUTCHours() * 60 + now.getUTCMinutes();
   if (dow === 0 || dow === 6 || HOLIDAYS.includes(day)) return;
-  let ev = null;
-  if (m >= 8 * 60 + 45 && m < 10 * 60) {
-    if ((await env.PUSH.get("ev:am-" + day, "json") || {}).done) return;
-    const o = (await (await fetch(LIVE, { cf: { cacheTtl: 60 } })).json()).outlook || {};
-    const nm = l => (l || []).slice(0, 3).map(x => x.n || x.k).join(", ");
-    const cue = (o.cues || [])[0];
-    if (!(o.up || []).length && !(o.down || []).length) return;
-    ev = { id: "am-" + day, type: "am", t: "Today's outlook · " + now.toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" }),
-      b: [(o.up || []).length ? "Likely up: " + nm(o.up) : "", (o.down || []).length ? "Likely down: " + nm(o.down) : "", cue || ""].filter(Boolean).join(" · ") + ". Signals, not advice.", u: SITE + "#today" };
-  } else if (m >= 15 * 60 + 45 && m < 17 * 60) {
-    if ((await env.PUSH.get("ev:pm-" + day, "json") || {}).done) return;
-    const q = await quotes(["^NSEI", "^BSESN", "^NSEBANK"]);
-    const n = q["^NSEI"], s = q["^BSESN"], b = q["^NSEBANK"];
-    if (!n || !n[0] || !n[3] || ymd(new Date(n[3] * 1000 + 330 * 60000)) !== day) return; // market didn't trade today
-    let top = ""; try { const L = await (await fetch(LIVE, { cf: { cacheTtl: 60 } })).json(); const g = (L.gainers || [])[0], l = (L.losers || [])[0];
-      const f = x => Array.isArray(x) ? `${x[0]} ${pc(+x[2] || +x[1] || 0)}` : x && (x.sym || x.k) ? `${x.sym || x.k} ${pc(+(x.pct ?? x.p ?? 0))}` : "";
-      top = [g ? "Top gainer " + f(g) : "", l ? "top loser " + f(l) : ""].filter(Boolean).join(", "); } catch {}
-    const fx = v => (+v).toLocaleString("en-IN", { maximumFractionDigits: 0 });
-    ev = { id: "pm-" + day, type: "pm", t: `Market closed: Nifty ${fx(n[0])} (${pc(n[1])})`,
-      b: [s && s[0] ? `Sensex ${fx(s[0])} (${pc(s[1])})` : "", b && b[0] ? `Bank Nifty ${pc(b[1])}` : "", top].filter(Boolean).join(" · "), u: SITE + "#markets" };
+  const W = [["am", 9 * 60 + 20, 10 * 60 + 30], ["mid", 13 * 60, 14 * 60 + 30], ["pm", 15 * 60 + 45, 17 * 60]].find(([, a, b]) => m >= a && m < b);
+  if (!W) return;
+  const [type] = W, id = type + "-" + day;
+  if ((await env.PUSH.get("ev:" + id, "json") || {}).done) return;
+  const q = await quotes(["^NSEI", "^BSESN", "^NSEBANK"]);
+  const n = q["^NSEI"], s = q["^BSESN"], bk = q["^NSEBANK"];
+  if (!n || !n[0] || !n[3] || ymd(new Date(n[3] * 1000 + 330 * 60000)) !== day) return; // market hasn't traded today (yet)
+  let L = {}; try { L = await (await fetch(LIVE, { cf: { cacheTtl: 60 } })).json(); } catch {}
+  const M = L.metals || {}, R = M.retail || {}, B = M.bullion || {}, X = M.mcx || {};
+  const g24 = R.g24 || B.g24, ag = B.ag_kg || (B.ag ? B.ag * 1000 : null) || (R.ag ? R.ag * 1000 : null);
+  const mc = v => v && v.pct != null ? ` (MCX ${pc(v.pct)})` : "";
+  const metals = [g24 ? `Gold 24K ₹${fx0(g24 * 10)}/10g${mc(X.gold)}` : "", ag ? `Silver ₹${fx0(ag)}/kg${mc(X.silver)}` : ""].filter(Boolean).join(" · ");
+  const idx = `Sensex ${fx0(s && s[0] || 0)} (${pc(s && s[1] || 0)}) · Nifty ${fx0(n[0])} (${pc(n[1])})`;
+  const mv = x => Array.isArray(x) ? `${x[0]} ${pc(+x[2] || 0)}` : "";
+  const g = (L.gainers || [])[0], l = (L.losers || [])[0];
+  let ev;
+  if (type === "am") {
+    const dir = n[1] >= 0 ? "up" : "down";
+    ev = { t: `Market open: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])}), opened ${dir}`, metals].filter(Boolean).join(" · "), u: SITE + "#today" };
+  } else if (type === "mid") {
+    let hi = [], lo = [];
+    try { const Q = await (await fetch(DATA_Q, { cf: { cacheTtl: 120 } })).json(), c = Q.cols || [], I = k => c.indexOf(k);
+      const ip = I("price"), ih = I("h52"), il = I("l52"), im = I("mcapCr"), ipc = I("pct");
+      for (const [k, r] of Object.entries(Q.q || {})) { const p = r[ip], mc_ = r[im]; if (!p || !(mc_ >= 2000)) continue;
+        if (r[ih] && p >= r[ih] * 0.998) hi.push([k, mc_, r[ipc]]); else if (r[il] && p <= r[il] * 1.002) lo.push([k, mc_, r[ipc]]); }
+      hi.sort((a, b) => b[1] - a[1]); lo.sort((a, b) => b[1] - a[1]); } catch {}
+    const nm = a => a.slice(0, 3).map(x => x[0]).join(", ") + (a.length > 3 ? ` +${a.length - 3} more` : "");
+    ev = { t: `Midday: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])})`, g ? "Top gainer " + mv(g) : "", l ? "top loser " + mv(l) : "",
+      hi.length ? `52-week high: ${nm(hi)}` : "", lo.length ? `52-week low: ${nm(lo)}` : ""].filter(Boolean).join(" · "), u: SITE + "#markets" };
+  } else {
+    ev = { t: `Market closed: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])})`, bk && bk[0] ? `Bank Nifty ${pc(bk[1])}` : "", g ? "Top gainer " + mv(g) : "", metals].filter(Boolean).join(" · "), u: SITE + "#markets" };
   }
-  if (ev) await broadcast(env, ev, PER_RUN);
+  ev.id = id; ev.type = type;
+  await broadcast(env, ev, PER_RUN);
 }
 
 // ---------- what to send, and when ----------

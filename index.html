@@ -1076,7 +1076,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .pf-bar .csel{flex:0 0 auto;width:170px;min-width:0}
 .pa-row .pa-mid small{white-space:normal;overflow:visible}
 .pf-foot{display:flex;justify-content:flex-end;margin-top:10px}
-.np-ic.price{background:linear-gradient(135deg,#ffe8cc,#ffd29e);color:#c2410c}.np-ic.am{background:linear-gradient(135deg,#fff3c4,#ffe28a);color:#b45309}.np-ic.pm{background:linear-gradient(135deg,#dbe4ff,#c3d0ff);color:#4338ca}
+.np-ic.price{background:linear-gradient(135deg,#ffe8cc,#ffd29e);color:#c2410c}.np-ic.am{background:linear-gradient(135deg,#fff3c4,#ffe28a);color:#b45309}.np-ic.mid{background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#047857}.np-ic.pm{background:linear-gradient(135deg,#dbe4ff,#c3d0ff);color:#4338ca}
 
 /* no auto-zoom: phones zoom into any text box under 16px, and double-tap zooms on buttons */
 html{touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -2782,11 +2782,12 @@ const NI={allot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
  bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>',
  price:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>',
  am:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+ mid:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><circle cx="12" cy="12" r="0"/></svg>',
  pm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>',
  gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>',
  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>'};
-const NLBL={allot:'Allotment',open:'IPO opening',close:'Last day',list:'Listing',watch:'Watchlist',price:'Price alert',am:'Morning outlook',pm:'Market close'};
+const NLBL={allot:'Allotment',open:'IPO opening',close:'Last day',list:'Listing',watch:'Watchlist',price:'Price alert',am:'Market open',mid:'Midday',pm:'Market close'};
 let npView='list';
 function npOpen(on){const el=document.getElementById('npanel'),bk=document.getElementById('nback');el.classList.toggle('on',on);bk.classList.toggle('on',on);
   if(on){npView='list';notifPanel();notifItems().forEach(n=>NS.read[n.id]=NS.read[n.id]||2);saveNS();const bn=document.getElementById('bellN');if(bn)bn.hidden=true;if(MQ.matches)document.body.style.overflow='hidden'}
@@ -2794,7 +2795,7 @@ function npOpen(on){const el=document.getElementById('npanel'),bk=document.getEl
 function notifPanel(){const el=document.getElementById('npanel'),L=notifItems();
   const can='Notification' in window,perm=can?Notification.permission:'unsupported',ios=/iphone|ipad/i.test(navigator.userAgent),standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
   const on=NS.on&&perm==='granted',unread=L.filter(n=>NS.read[n.id]!==1).length;
-  const T=[['allot','Allotment results','When a registrar publishes results'],['open','IPO opening','The day before and the morning it opens'],['close','Last day to apply','Morning of the closing day'],['list','Listing day','Morning of the listing'],['watch','Watchlist moves','Stocks you follow move ±4% or more'],['am','Morning outlook','8:45 AM on market days: likely up and down stocks'],['pm','Market close summary','3:45 PM: Nifty, Sensex and top movers']];
+  const T=[['allot','Allotment results','When a registrar publishes results'],['open','IPO opening','The day before and the morning it opens'],['close','Last day to apply','Morning of the closing day'],['list','Listing day','Morning of the listing'],['watch','Watchlist moves','Stocks you follow move ±4% or more'],['am','Market open','9:20 AM: Sensex, Nifty, gold and silver'],['mid','Midday update','1 PM: market so far, top movers, 52-week highs and lows'],['pm','Market close','3:45 PM: Sensex, Nifty, top mover, gold and silver']];
   const head=(title,left)=>`<div class="np-grab"></div><div class="np-h">${left||''}<h3>${title}</h3>${npView==='list'?`<button class="np-ib" type="button" id="nSet" aria-label="Alert settings">${NI.gear}</button>`:''}<button class="np-ib" type="button" id="nX" aria-label="Close">${NI.x}</button></div>`;
   const cta=!can?`<div class="np-info">${ios&&!standalone?'📲 To get alerts on iPhone, add MarketVedaPro to your Home Screen (Share → Add to Home Screen) and open it from there.':'This browser can\'t show phone alerts. New alerts will still appear here.'}</div>`
     :perm==='denied'?`<div class="np-info">🔕 Alerts are blocked. Allow notifications for MarketVedaPro in your phone's settings, then come back.</div>`
