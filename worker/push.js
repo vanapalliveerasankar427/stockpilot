@@ -192,10 +192,10 @@ async function events(env, companiesOf) {
     const L = live[i.id] || {}, g = L.gmp != null ? L.gmp : i.gmp, gt = g != null && i.hi ? ` · GMP ₹${g} (${(g / i.hi * 100).toFixed(1)}%)` : "";
     const sub = L.sub != null ? ` · ${(+L.sub).toFixed(2)}x subscribed` : "";
     if (hr >= 8 && hr < 22) { // morning alerts go out from 8 AM; anyone who subscribes later in the day still gets them
-      if (i.open === today) out.push({ id: `op-${i.id}-${today}`, type: "open", t: `${short(i.name)} IPO opens today`, b: `${i.type} · ${band(i)}${gt}`, u: SITE + "#ipos" });
-      if (i.close === today && hr < 17) out.push({ id: `cl-${i.id}-${today}`, type: "close", t: `Last day to apply: ${short(i.name)}`, b: `Bidding closes today. Approve the UPI mandate before 5 PM.${sub}${gt}`, u: SITE + "#ipos" });
-      if (i.list === today && hr < 16) out.push({ id: `ls-${i.id}-${today}`, type: "list", t: `${short(i.name)} lists today`, b: `Issue price ₹${i.hi}${gt}. Listing at 10 AM.`, u: SITE + "#ipos" });
-      if (i.open === tmr && hr >= 18) out.push({ id: `up-${i.id}-${today}`, type: "open", t: `${short(i.name)} IPO opens tomorrow`, b: `${i.type} · ${band(i)}${gt}`, u: SITE + "#ipos" });
+      if (i.open === today) out.push({ id: `op-${i.id}-${today}`, type: "open", t: `${short(i.name)} IPO opens today`, b: `${i.type} · ${band(i)}${gt}`, u: SITE + "#ipos/" + encodeURIComponent(i.id) });
+      if (i.close === today && hr < 17) out.push({ id: `cl-${i.id}-${today}`, type: "close", t: `Last day to apply: ${short(i.name)}`, b: `Bidding closes today. Approve the UPI mandate before 5 PM.${sub}${gt}`, u: SITE + "#ipos/" + encodeURIComponent(i.id) });
+      if (i.list === today && hr < 16) out.push({ id: `ls-${i.id}-${today}`, type: "list", t: `${short(i.name)} lists today`, b: `Issue price ₹${i.hi}${gt}. Listing at 10 AM.`, u: SITE + "#ipos/" + encodeURIComponent(i.id) });
+      if (i.open === tmr && hr >= 18) out.push({ id: `up-${i.id}-${today}`, type: "open", t: `${short(i.name)} IPO opens tomorrow`, b: `${i.type} · ${band(i)}${gt}`, u: SITE + "#ipos/" + encodeURIComponent(i.id) });
     }
     // allotment: send as soon as the registrar publishes it (checked every 30 minutes), or by 7 PM on allotment day
     if (i.allot && (i.allot === today || i.allot === ymd(new Date(now.getTime() - 864e5))) && hr >= 11) {
