@@ -2741,7 +2741,7 @@ function termsGate(){if(termsOK()||document.getElementById('tmGate'))return fals
   d.querySelector('#tmL').onclick=e=>{e.preventDefault();d.querySelector('.tm-scroll').scrollTo({top:0,behavior:'smooth'})};
   g.onclick=()=>{if(!c.checked)return;try{localStorage.setItem(TK,JSON.stringify({v:TERMS_V,at:Date.now()}))}catch{}
     d.style.transition='opacity .25s';d.style.opacity='0';setTimeout(()=>{d.remove();document.body.style.overflow='';
-      setTimeout(()=>locAsk().then(()=>setTimeout(()=>askAlerts(false),800)),500);
+      setTimeout(appAsk,500);
       if(typeof isIOS!=='undefined'&&isIOS&&typeof isStandalone==='function'&&!isStandalone())setTimeout(()=>showInstall('ios'),1500);
       else if(typeof deferredInstall!=='undefined'&&deferredInstall)setTimeout(()=>showInstall('android'),1500)},250);toast('Thanks! Welcome to MarketVedaPro')};
   return true}
@@ -2836,8 +2836,9 @@ setTimeout(()=>{try{if(NS.on&&'Notification' in window&&Notification.permission=
 const LOCK='mvp.loc',LOC_TTL=30*864e5;
 const locRec=()=>{try{return JSON.parse(localStorage.getItem(LOCK)||'null')}catch{return null}};
 const locSave=s=>{try{localStorage.setItem(LOCK,JSON.stringify({s,at:Date.now()}))}catch{}};
+const inApp=()=>matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches||navigator.standalone===true||/^android-app:/.test(document.referrer||'');
 function locAsk(){return new Promise(res=>{try{
-  if(!('geolocation' in navigator)||!termsOK())return res();
+  if(!('geolocation' in navigator)||!termsOK()||!inApp())return res();   // only ask inside the installed app, never in a browser tab
   const r=locRec(),fresh=r&&Date.now()-r.at<LOC_TTL;
   const go=()=>navigator.geolocation.getCurrentPosition(p=>{locSave('granted');const n=nearestCity(p.coords.latitude,p.coords.longitude);
       if(n.city){const had=cityGet();citySet(n.city);if(!had)toast('Gold & silver rates set for '+n.city);if(document.getElementById('cityCard'))renderCityCard()}res()},
@@ -2848,25 +2849,25 @@ function locAsk(){return new Promise(res=>{try{
   go()                                                  // first visit or expired: ask now
 }catch{res()}})}
 function askAlerts(force){try{
-  if(!termsOK())return;if(!('Notification' in window)||Notification.permission!=='default'||NS.on)return;
-  if(document.getElementById('askA')||document.getElementById('inst'))return;
-  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
-  if(!force&&!standalone)return;
-  if(!force&&NS.askAt&&Date.now()-NS.askAt<3*864e5)return; if((NS.askN||0)>=4)return;
-  NS.askAt=Date.now();NS.askN=(NS.askN||0)+1;saveNS();
+  if(!termsOK())return false;if(!('Notification' in window)||Notification.permission!=='default'||NS.on)return false;
+  if(document.getElementById('askA')||document.getElementById('inst'))return false;
+  if(!inApp())return false;                             // only inside the installed app, never in a browser tab
+  if(NS.appAskAt&&Date.now()-NS.appAskAt<3*864e5)return false; if((NS.appAskN||0)>=4)return false;
+  NS.appAskAt=Date.now();NS.appAskN=(NS.appAskN||0)+1;saveNS();
   const d=document.createElement('div');d.className='ask';d.id='askA';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-labelledby','askT');
-  d.innerHTML=`<div class="ask-c"><div class="ask-top"><div class="ask-bell">${NI.bell}</div><h3 id="askT">Turn on IPO alerts?</h3><p>We'll tell you the moment something needs your attention, even when the app is closed.</p></div>
-   <div class="ask-l"><div><span class="np-ic open">${NI.open}</span>When an IPO opens for bidding</div><div><span class="np-ic close">${NI.close}</span>Last day to apply and approve UPI</div><div><span class="np-ic allot">${NI.allot}</span>As soon as allotment is out</div><div><span class="np-ic list">${NI.list}</span>On listing day</div></div>
+  d.innerHTML=`<div class="ask-c"><div class="ask-top"><div class="ask-bell">${NI.bell}</div><h3 id="askT">Turn on alerts?</h3><p>We'll tell you the moment something needs your attention, even when the app is closed.</p></div>
+   <div class="ask-l"><div><span class="np-ic open">${NI.open}</span>IPO opening, last day and listing</div><div><span class="np-ic allot">${NI.allot}</span>As soon as allotment is out</div><div><span class="np-ic price">${NI.price}</span>Your price alerts for stocks, gold and silver</div><div><span class="np-ic am">${NI.am}</span>Market open, midday and close updates</div></div>
    <div class="ask-b"><button class="btn shine" type="button" id="askY">Turn on alerts</button><button class="later" type="button" id="askN">Not now</button></div></div>`;
-  document.body.appendChild(d);const close=()=>{d.style.transition='opacity .2s';d.style.opacity='0';setTimeout(()=>d.remove(),200)};
+  document.body.appendChild(d);const close=()=>{d.style.transition='opacity .2s';d.style.opacity='0';setTimeout(()=>{d.remove();setTimeout(locAsk,500)},200)};
   d.onclick=e=>{if(e.target===d)close()};document.getElementById('askN').onclick=close;
   document.getElementById('askY').onclick=async e=>{const b=e.currentTarget;b.disabled=true;b.textContent='Turning on…';
     const r=await Notification.requestPermission();NS.on=r==='granted';
     if(NS.on){notifItems().forEach(n=>NS.seen[n.id]=Date.now());saveNS();const ok=await pushSub(true);if(!ok)notifPush({id:'hello',t:'Alerts are on',b:'You will get IPO openings, last days, allotments and listings.',u:'#ipos'});toast(ok?'Alerts are on, even when the app is closed':'Alerts are on')}
     else{saveNS();toast('You can turn alerts on any time from the 🔔 bell')}
-    close();notifRun()};}catch{}}
-addEventListener('appinstalled',()=>setTimeout(()=>askAlerts(true),1200));
-setTimeout(()=>{if(termsOK())locAsk().then(()=>setTimeout(()=>askAlerts(false),800))},1500);
+    close();notifRun()};return true}catch{return false}}
+function appAsk(){if(!termsOK()||!inApp())return;if(!askAlerts(false))locAsk()}   // installed app: alerts first, then location
+// alerts + location are asked only when the installed app is opened (not in the browser, not right after install in the browser tab)
+setTimeout(appAsk,1500);
 addEventListener('scroll',()=>{const n=document.querySelector('nav.top');if(n)n.classList.toggle('scrolled',scrollY>8)},{passive:true});
 // ===== motion helpers: scroll reveal, button ripple, live price flash =====
 (()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
