@@ -1103,6 +1103,20 @@ body:not(.ready) footer{display:none}
   html{scroll-padding-top:calc(90px + env(safe-area-inset-top))}
   nav.top::before{background:color-mix(in srgb,var(--bg,#fff) 94%,transparent)!important}
 }
+.ol-tabs{grid-template-columns:1fr 1fr 1fr!important}
+.ol-tabs button[data-ol="fno"][aria-selected="true"]{background:linear-gradient(135deg,#a78bfa,#6d28d9);color:#fff;box-shadow:0 10px 24px -10px rgba(109,40,217,.7)}
+@media(max-width:420px){.ol-tabs button{font-size:13px!important;gap:5px!important;padding:11px 4px!important}.ol-tabs button b{padding:1px 6px!important}}
+.fo-risk{margin:4px 0 12px;padding:12px 14px;border-radius:16px;background:color-mix(in srgb,#f59e0b 14%,transparent);border:1px solid color-mix(in srgb,#f59e0b 35%,transparent);font-size:13px;line-height:1.45}
+.fo-sw{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:14px;background:color-mix(in srgb,var(--muted) 10%,transparent)}
+.fo-sw button{border:0;background:none;padding:10px 6px;border-radius:11px;font:700 13.5px var(--sans,inherit);color:var(--muted);cursor:pointer;white-space:nowrap}
+.fo-sw button b{font-size:11.5px;margin-left:4px;opacity:.8}
+.fo-sw button[data-fs="bull"][aria-pressed="true"]{background:linear-gradient(135deg,#34d399,#059669);color:#fff}.fo-sw button[data-fs="bear"][aria-pressed="true"]{background:linear-gradient(135deg,#fb7185,#e11d48);color:#fff}
+.fo-note{font-size:12px;color:var(--muted);margin:8px 2px 10px}
+.fo-row{padding:14px;border-radius:18px;border:1px solid color-mix(in srgb,var(--line) 80%,transparent);margin-bottom:10px;background:color-mix(in srgb,var(--bg,#fff) 60%,transparent);border-left:4px solid var(--up)}.fo-row.d{border-left-color:var(--dn)}
+.fo-top{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.fo-top .lg{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none;position:relative;overflow:hidden}
+.fo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.fo-tag{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--soft)}.fo-tag.u{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}.fo-tag.d{background:color-mix(in srgb,var(--dn) 14%,transparent);color:var(--dn)}
+.fo-why{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.4}
+.fo-oc{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--up);text-decoration:none}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -3220,11 +3234,40 @@ let enhT;new MutationObserver(()=>{clearTimeout(enhT);enhT=setTimeout(()=>enhanc
 // ===================== Today: morning setup + screens on real prices for every NSE stock =====================
 let tdF={sme:false,minCap:500};
 // ===================== Today's outlook: likely up / likely down =====================
+// ===================== F&O signals (F&O stocks only; research signals, not trading tips) =====================
+const FNO=()=>(LIVED&&LIVED.fno&&LIVED.fno.syms)||{};
+function fnoData(){const F=FNO(),O=(LIVED&&LIVED.outlook)||{},up={},dn={};(O.up||[]).forEach(x=>up[x.k]=x);(O.down||[]).forEach(x=>dn[x.k]=x);
+  const rows=[];for(const k of Object.keys(F)){const q=qOf(k);if(!q||!q.price)continue;
+    const px=LT.last[k]!=null?LT.last[k]:q.price,pct=LT.pct[k]!=null?LT.pct[k]:q.pct;if(pct==null)continue;
+    const volx=q.vol&&q.av10?q.vol/q.av10:null,gap=q.open&&q.prev?(q.open/q.prev-1)*100:null;
+    const nh=q.h52&&px>=q.h52*.98,nl=q.l52&&px<=q.l52*1.02,o=pct>=0?up[k]:dn[k],cw={High:3,Medium:2,Low:1};
+    const sc=Math.abs(pct)*(1+Math.min(volx||1,4)/2)+(o?(cw[o.conf]||1)*2:0)+((pct>=0?nh:nl)?1.5:0)+(gap!=null&&Math.sign(gap)===Math.sign(pct)&&Math.abs(gap)>=1?1:0);
+    if(!(o||Math.abs(pct)>=1.5||(volx&&volx>=1.5&&Math.abs(pct)>=.7)))continue;
+    rows.push({k,n:(UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||(o&&o.n)||k,px,pct,volx,gap,nh,nl,o,sc,lot:F[k]})}
+  const bull=rows.filter(r=>r.pct>0).sort((a,b)=>b.sc-a.sc).slice(0,12),bear=rows.filter(r=>r.pct<0).sort((a,b)=>b.sc-a.sc).slice(0,12);
+  return {bull,bear,n:Object.keys(F).length}}
+let fnoSide='bull';
+function fnoHTML(){const F=FNO();
+  if(!Object.keys(F).length)return `<p class="aw-msg" style="padding:20px">The F&amp;O stock list is loading. It refreshes every morning from NSE; check back shortly.</p>`;
+  if(!ALLQ||!UNI){Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(olTab==='fno'){olSig='';olRefresh()}});return `<div style="padding:12px">${LOADER('Scanning F&O stocks…')}</div>`}
+  const D=fnoData(),L=fnoSide==='bull'?D.bull:D.bear,open=mktOpen();
+  const tag=(t,c)=>`<span class="fo-tag ${c||''}">${t}</span>`;
+  const row=(r,i)=>`<div class="fo-row ${r.pct>=0?'u':'d'}" style="animation-delay:${i*35}ms"><a class="fo-top" href="#stock-${esc(r.k)}"><div class="lg" style="background:${colorOf(r.k)};color:#fff">${esc(r.n.slice(0,2).toUpperCase())}${logoImg(r.k)}</div>
+    <div class="ol-nm"><b>${esc(r.n)}</b><small>${esc(r.k)}${r.lot?' · lot '+r.lot.toLocaleString('en-IN'):''}</small></div>
+    <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(r.k)}">${fin(r.px)}</i></b><span data-lcw="${esc(r.k)}">${chip(r.pct,r.px)}</span></div></a>
+    <div class="fo-tags">${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
+    ${r.o&&r.o.why&&r.o.why[0]?`<p class="fo-why">${esc(r.o.why[0].t)}</p>`:''}
+    <a class="fo-oc" href="https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(r.k)}" target="_blank" rel="noopener">Option chain on NSE ↗</a></div>`;
+  return `<div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals from news, price and volume, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
+   <div class="fo-sw" role="group" aria-label="Direction"><button type="button" data-fs="bull" aria-pressed="${fnoSide==='bull'}">▲ Up signals <b>${D.bull.length}</b></button><button type="button" data-fs="bear" aria-pressed="${fnoSide==='bear'}">▼ Down signals <b>${D.bear.length}</b></button></div>
+   <p class="fo-note">${open?'Live during market hours':'Based on the last session; refreshes live from 9:15 AM'} · scanning ${D.n} F&amp;O stocks · ranked by move size, volume, news and 52-week levels</p>
+   <div class="ol-list">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
+
 let olTab='up',olAll=false;
 function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   const livePct=x=>{if(LT.pct[x.k]!=null)return LT.pct[x.k];const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
   const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0});
-  const L=olTab==='up'?UP:DN,show=olAll?L:L.slice(0,8);
+  const L=olTab==='down'?DN:UP,show=olAll?L:L.slice(0,8);
   const ic={news:'📰',price:'📊',global:'🌍'};
   const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
   const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=livePct(x),pr=LT.last[x.k]!=null?LT.last[x.k]:q&&q.price!=null?q.price:x.p;
@@ -3235,22 +3278,22 @@ function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   return `<section class="ol"><div class="ol-h"><div><div class="eyebrow"><span class="dot"></span>Updated ${esc(O.at)}</div><h2>Today's outlook <button type="button" class="mv-act mv-sm" data-act="share" data-what="outlook" aria-label="Share today's outlook">${MI.share}<span>Share</span></button></h2>
      <p>Stocks with positive or negative signals today, from ${O.headlines} news headlines, quarterly results, global cues and the last session's price and volume.</p></div></div>
     ${O.cues&&O.cues.length?`<div class="ol-cues">${O.cues.map(c=>`<span>🌍 ${esc(c)}</span>`).join('')}</div>`:''}
-    <div class="ol-tabs" role="tablist"><button type="button" role="tab" data-ol="up" aria-selected="${olTab==='up'}"><span>📈</span>Likely up <b>${UP.length}</b></button><button type="button" role="tab" data-ol="down" aria-selected="${olTab==='down'}"><span>📉</span>Likely down <b>${DN.length}</b></button></div>
-    <div class="ol-list">${show.map(row).join('')||`<p class="aw-msg" style="padding:20px">${olTab==='up'?'No stocks with positive signals are trading up right now.':'No stocks with negative signals are trading down right now.'} Check back after the next update.</p>`}</div>
-    ${L.length>8?`<button class="ghost ol-more" type="button" id="olMore">${olAll?'Show fewer':`Show all ${L.length}`}</button>`:''}
+    <div class="ol-tabs" role="tablist"><button type="button" role="tab" data-ol="up" aria-selected="${olTab==='up'}"><span>📈</span>Likely up <b>${UP.length}</b></button><button type="button" role="tab" data-ol="down" aria-selected="${olTab==='down'}"><span>📉</span>Likely down <b>${DN.length}</b></button><button type="button" role="tab" data-ol="fno" aria-selected="${olTab==='fno'}"><span>⚡</span>F&amp;O</button></div>
+    ${olTab==='fno'?fnoHTML():`<div class="ol-list">${show.map(row).join('')||`<p class="aw-msg" style="padding:20px">${olTab==='up'?'No stocks with positive signals are trading up right now.':'No stocks with negative signals are trading down right now.'} Check back after the next update.</p>`}</div>
+    ${L.length>8?`<button class="ghost ol-more" type="button" id="olMore">${olAll?'Show fewer':`Show all ${L.length}`}</button>`:''}`}
     <p class="ol-note">⚠️ These are signals from news and price data, not predictions or buy/sell advice. Prices can move either way; do your own research before you trade.</p></section>`}
 // keep Likely up = trading up and Likely down = trading down, using live prices for every outlook stock
 let olLiveAt=0,olSig='';
-const olSet=()=>{const O=LIVED&&LIVED.outlook;if(!O)return '';const p=x=>LT.pct[x.k]!=null?LT.pct[x.k]:(qOf(x.k)||{}).pct??x.pct;return (O.up||[]).filter(x=>p(x)>0).map(x=>x.k).join()+'|'+(O.down||[]).filter(x=>p(x)<0).map(x=>x.k).join()};
+const olSet=()=>{const O=LIVED&&LIVED.outlook;if(!O)return '';if(olTab==='fno'&&ALLQ&&UNI){const D=fnoData();return 'f|'+fnoSide+'|'+D.bull.map(r=>r.k).join()+'|'+D.bear.map(r=>r.k).join()}const p=x=>LT.pct[x.k]!=null?LT.pct[x.k]:(qOf(x.k)||{}).pct??x.pct;return (O.up||[]).filter(x=>p(x)>0).map(x=>x.k).join()+'|'+(O.down||[]).filter(x=>p(x)<0).map(x=>x.k).join()};
 async function olLive(force){const s=document.querySelector('section.ol'),O=LIVED&&LIVED.outlook;if(!s||!O||!ALLOT_API||document.hidden)return;
   if(!force&&Date.now()-olLiveAt<30000)return;olLiveAt=Date.now();
-  const all=[...(O.up||[]),...(O.down||[])],map={};all.forEach(x=>{const y=ysymOf(x.k);if(y)map[decodeURIComponent(y)]=x.k});
+  let all=[...(O.up||[]),...(O.down||[])];if(olTab==='fno'&&ALLQ&&UNI){const D=fnoData();all=all.concat(D.bull,D.bear)}const map={};all.forEach(x=>{const y=ysymOf(x.k);if(y)map[decodeURIComponent(y)]=x.k});
   const ys=Object.keys(map);try{for(let i=0;i<ys.length;i+=80){const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(ys.slice(i,i+80).join(',')),{cache:'no-store'})).json();
     for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(k&&r&&r[0]!=null){LT.last[k]=r[0];if(r[1]!=null)LT.pct[k]=r[1]}}}}catch{}
   olRefresh()}
 function olRefresh(){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();const n=document.querySelector('section.ol');if(n)n.classList.add('ol-quiet');wireOutlook();scrollTo(0,y)}
 ltHooks.push(()=>{if(document.querySelector('section.ol')){olRefresh();if(mktOpen())olLive()}});
-function wireOutlook(){olSig=olSet();if(mktOpen()||!olLiveAt)setTimeout(()=>olLive(),300);document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
+function wireOutlook(){olSig=olSet();document.querySelectorAll('[data-fs]').forEach(b=>b.onclick=()=>{fnoSide=b.dataset.fs;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});if(mktOpen()||!olLiveAt)setTimeout(()=>olLive(),300);document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
   const m=document.getElementById('olMore');if(m)m.onclick=()=>{olAll=!olAll;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()}}
 function renderToday(){const el=document.getElementById('todaypage');if(!el)return;
   const open=LIVED&&LIVED.state==='open',G=(LIVED&&LIVED.global)||[],N=IDX.NIFTY;

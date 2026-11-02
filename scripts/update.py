@@ -968,6 +968,43 @@ def news(out):
         out["news"] = items[:14]
 
 
+# ----------------------------------------------------------------- F&O stock list (refreshed once a day)
+FNO_IDX = {"NIFTY", "BANKNIFTY", "FINNIFTY", "MIDCPNIFTY", "NIFTYNXT50", "SENSEX", "BANKEX"}
+def fno(out):
+    old = out.get("fno") or {}
+    if old.get("date") == NOW.strftime("%Y-%m-%d") and len(old.get("syms") or {}) > 100:
+        return
+    syms = {}
+    for url in ("https://nsearchives.nseindia.com/content/fo/fo_mktlots.csv", "https://archives.nseindia.com/content/fo/fo_mktlots.csv"):
+        try:
+            txt = get(url, headers={**UA, "Referer": "https://www.nseindia.com/"}).text
+            for line in txt.splitlines():
+                c = [x.strip() for x in line.split(",")]
+                if len(c) < 3 or not c[1] or c[1].upper() in ("SYMBOL", "") or c[1].upper() in FNO_IDX:
+                    continue
+                lot = next((int(float(x)) for x in c[2:] if re.fullmatch(r"\d+(\.0+)?", x or "")), None)
+                if re.fullmatch(r"[A-Z0-9&\-]{2,20}", c[1].upper()) and lot:
+                    syms[c[1].upper()] = lot
+            if len(syms) > 100:
+                break
+        except Exception as e:
+            log(f"fno csv {url.split('/')[2]}: {e}")
+    if len(syms) < 100:  # fallback: NSE's underlying list (no lot sizes)
+        try:
+            nse_session()
+            j = get("https://www.nseindia.com/api/underlying-information", headers={**UA, "Referer": "https://www.nseindia.com/products-services/equity-derivatives-list-underlyings-information"}).json()
+            for r in (j.get("data") or {}).get("UnderlyingList") or []:
+                sy = str(r.get("symbol") or "").upper()
+                if sy and sy not in FNO_IDX:
+                    syms.setdefault(sy, (old.get("syms") or {}).get(sy) or 0)
+        except Exception as e:
+            log(f"fno api: {e}")
+    if len(syms) > 100:
+        out["fno"] = {"date": NOW.strftime("%Y-%m-%d"), "syms": syms}
+    else:
+        log(f"fno: only {len(syms)} symbols, keeping previous list")
+
+
 def main():
     os.makedirs(DATA, exist_ok=True)
     path = os.path.join(DATA, "live.json")
@@ -976,7 +1013,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, everything)):
+    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, everything)):
         try:
             step(out)
         except Exception as e:
