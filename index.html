@@ -1381,7 +1381,7 @@ body:not(.ready) footer{display:none}
   <p class="seol" style="margin:6px 0;display:flex;flex-wrap:wrap;gap:4px 12px"><a class="link" href="/stock-market-today/">Stock market today</a><a class="link" href="/ipo/">Upcoming IPOs</a><a class="link" href="/ipo-gmp/">IPO GMP today</a><a class="link" href="/ipo-allotment-status/">IPO allotment status</a><a class="link" href="/gold-rate-today/">Gold rate today</a><a class="link" href="/silver-rate-today/">Silver rate today</a><a class="link" href="/share-price/reliance/">Reliance share price</a><a class="link" href="/share-price/tcs/">TCS share price</a><a class="link" href="/share-price/hdfcbank/">HDFC Bank share price</a></p>
   <p style="margin:6px 0"><a class="link" href="#contact">Contact us</a> · <a class="link" href="#terms">Terms &amp; disclaimer</a> · <a class="link" href="#privacy">Privacy policy</a> · <a class="link" href="#pans">My PANs</a></p>
   <p id="srcs"></p>
-  <p>All figures are real and taken from the public sources named on each card. Market prices update about every minute during NSE hours (9:15 AM–3:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. MarketVedaPro does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
+  <p>All figures are real and taken from the public sources named on each card. Stock, index, gold and silver prices update live every second during market hours (NSE 9:15 AM–3:30 PM, MCX until 11:30 PM) and show the last close otherwise. Subscription figures are snapshots at the time shown; GMP is unofficial grey-market talk, not a forecast. MarketVedaPro does not place IPO applications or trades: you apply in your own broker or bank app. Not investment advice; not registered with SEBI. Investments in securities are subject to market risks.</p>
 </footer>
 </div>
 
@@ -2569,7 +2569,7 @@ function renderStockPage(sym){
     <div id="sx" data-k="${sym==='MM'?'M&M':sym}"></div>
     ${peer.length?`<div class="secht"><div><h2>Peers</h2><p>Other ${esc(s.sector.toLowerCase())} companies in this list</p></div></div><div class="glass card">${peer.map(p=>wlRow(p.sym)).join('')}</div>`:''}
     ${news.length?`<div class="secht"><div><h2>In the news</h2></div></div><div class="glass card">${news.map(newsItem).join('')}</div>`:''}
-    <p class="src">${LIVED?`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)} (refreshes every minute in market hours). P/E and market cap move with the price; quarterly figures from Screener.in.`:"Price, valuation and quarterly figures: Screener.in, 29 Oct 2026 close."}</p>`;
+    <p class="src">${LIVED?`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)} (live every second in market hours). P/E and market cap move with the price; quarterly figures from Screener.in.`:"Price, valuation and quarterly figures: Screener.in, 29 Oct 2026 close."}</p>`;
 }
 
 // ===================== news =====================
@@ -2766,7 +2766,7 @@ let apiOk=true;
 function priceLbl(){if(!LIVED)return 'Close · 29 Oct 2026';const t=new Date(LIVED.updated).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'});return LIVED.state==='open'?`● Live · updated ${t}`:`Last price · ${LIVED.label}`}
 function patchLabels(){if(!LIVED)return;const set=(id,h)=>{const e=document.getElementById(id);if(e)e.innerHTML=h};
   set('st-eb',`Nifty 50 heavyweights · ${esc(priceLbl())}`);
-  set('st-src',`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)}; refreshes about every minute in market hours. P/E, market cap and dividend yield move with the price. Quarterly sales, profit and ROCE: Screener.in.`);
+  set('st-src',`Price and day change: NSE via Yahoo Finance, updated ${esc(LIVED.label)}; live every second in market hours. P/E, market cap and dividend yield move with the price. Quarterly sales, profit and ROCE: Screener.in.`);
   if(LIVED.news&&LIVED.news.length)set('nw-eb',`Latest headlines · updated ${esc(LIVED.label)}`)}
 function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus')||(typeof openSel!=='undefined'&&openSel))return false;
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
