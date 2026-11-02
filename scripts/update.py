@@ -16,6 +16,16 @@ from concurrent.futures import ThreadPoolExecutor
 
 import requests
 
+# --- temporary status probe (removed after check) ---
+import os as _os
+if _os.path.exists('probe.json'):
+    import requests as _rq
+    try:
+        _r=_rq.get('https://stockpilot.vanapalli-veerasankar-927.workers.dev/push/status',timeout=30)
+        open('data/probe.txt','w').write('PROBE %s %s\n'%(_r.status_code,_r.text[:600]))
+    except Exception as _e: open('data/probe.txt','w').write('ERR %s'%_e)
+
+
 
 
 
@@ -743,6 +753,21 @@ def everything(out):
                    "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t", "av3m", "av10"], "q": q},
                   open(os.path.join(OUT_EXTRA, "quotes.json"), "w"), separators=(",", ":"))
     out["universe"] = {"stocks": len(uni.get("s", [])), "quotes": len(q), "at": NOW.strftime("%-d %b, %-I:%M %p")}
+    if q:  # stocks at a 52-week high / low (₹2,000 Cr+), for the midday push and the site
+        try:
+            hi, lo = [], []
+            for k, r in q.items():
+                p, pc, h52, l52, mc = r[0], r[1], r[6], r[7], r[9]
+                if not p or not mc or mc < 2000:
+                    continue
+                if h52 and p >= h52 * 0.998:
+                    hi.append((mc, k, pc))
+                elif l52 and p <= l52 * 1.002:
+                    lo.append((mc, k, pc))
+            hi.sort(reverse=True); lo.sort(reverse=True)
+            out["hilo"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "hi": [[k, pc] for _, k, pc in hi[:40]], "lo": [[k, pc] for _, k, pc in lo[:40]], "nhi": len(hi), "nlo": len(lo)}
+        except Exception as e:
+            log(f"hilo: {e}")
     if q:
         try:
             outlook(out, uni, q)
