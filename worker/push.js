@@ -67,13 +67,20 @@ const okSub = s => s && typeof s.endpoint === "string" && /^https:\/\//.test(s.e
 export async function api(req, env, path, json) {
   if (!env.PUSH) return json({ error: "push storage not set up" }, 503);
   if (path === "/push/key") return json({ key: (await vapid(env)).pub });
+  if (path === "/push/status") { // delivery check for today's market updates (counts only, no personal data)
+    const day = ymd(IST()), o = {};
+    for (const t of NEW_TYPES) o[t] = await env.PUSH.get("ev:" + t + "-v2-" + day, "json");
+    const idx = await env.PUSH.get("pa:idx", "json") || [];
+    return json({ day, digests: o, priceAlertSubs: idx.length, now: IST().toISOString() });
+  }
   const body = req.method === "POST" ? await req.json().catch(() => ({})) : {};
   if (!okSub(body.sub)) return json({ error: "bad subscription" }, 400);
   const id = "s:" + await sha(body.sub.endpoint);
   if (path === "/push/subscribe") {
     const types = TYPES.filter(t => !body.types || body.types[t] !== 0);
+    const off = TYPES.filter(t => body.types && body.types[t] === 0); // remember what was switched OFF, so new alert types start ON
     const old = await env.PUSH.get(id, "json") || {};
-    await env.PUSH.put(id, JSON.stringify({ ...old, sub: { endpoint: body.sub.endpoint, keys: { p256dh: body.sub.keys.p256dh, auth: body.sub.keys.auth } }, types, t: Date.now() }));
+    await env.PUSH.put(id, JSON.stringify({ ...old, sub: { endpoint: body.sub.endpoint, keys: { p256dh: body.sub.keys.p256dh, auth: body.sub.keys.auth } }, types, off, t: Date.now() }));
     if (body.hello) await send(env, body.sub, { t: "Alerts are on", b: "You'll get IPO openings, last days, allotments and listings, even when the app is closed.", u: SITE + "#ipos", tag: "hello" }).catch(() => 0);
     return json({ ok: true });
   }
@@ -159,7 +166,7 @@ export async function digestCron(env, quotes) {
   if (dow === 0 || dow === 6 || HOLIDAYS.includes(day)) return;
   const W = [["am", 9 * 60 + 20, 10 * 60 + 30], ["mid", 13 * 60, 14 * 60 + 30], ["pm", 15 * 60 + 45, 17 * 60]].find(([, a, b]) => m >= a && m < b);
   if (!W) return;
-  const [type] = W, id = type + "-" + day;
+  const [type] = W, id = type + "-v2-" + day;
   if ((await env.PUSH.get("ev:" + id, "json") || {}).done) return;
   const q = await quotes(["^NSEI", "^BSESN", "^NSEBANK"]);
   const n = q["^NSEI"], s = q["^BSESN"], bk = q["^NSEBANK"];
@@ -195,6 +202,8 @@ export async function digestCron(env, quotes) {
 
 // ---------- what to send, and when ----------
 const IST = () => new Date(Date.now() + 330 * 60000);
+const NEW_TYPES = ["am", "mid", "pm"]; // added after launch: older subscriptions get them unless switched off
+const wants = (rec, t) => rec.off ? !rec.off.includes(t) : rec.types ? (rec.types.includes(t) || NEW_TYPES.includes(t)) : true;
 const ymd = d => d.toISOString().slice(0, 10);
 const short = n => String(n).replace(/ (Ltd|Limited)\.?$/i, "");
 const band = i => i.lo === i.hi ? `₹${i.hi}` : `₹${i.lo}–${i.hi}`;
@@ -238,7 +247,7 @@ export async function broadcast(env, ev, budget) {
     const page = await env.PUSH.list({ prefix: "s:", cursor, limit: Math.min(budget, 1000) });
     for (const k of page.keys) {
       const rec = await env.PUSH.get(k.name, "json"); budget--;
-      if (!rec || !(rec.types || TYPES).includes(ev.type)) continue;
+      if (!rec || !wants(rec, ev.type)) continue;
       const code = await send(env, rec.sub, { t: ev.t, b: ev.b, u: ev.u, tag: ev.id }).catch(() => 0);
       if (code === 404 || code === 410) await env.PUSH.delete(k.name); else if (code >= 200 && code < 300) sent++;
     }

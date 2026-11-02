@@ -3083,7 +3083,7 @@ addEventListener('popstate',e=>{const s=sheetOpen();if(s&&sheetPushed){sheetPush
 // ===================== LIVE TICK: every price on screen updates every second during market hours =====================
 const LIDX={NIFTY:'^NSEI',SENSEX:'^BSESN',BANKNIFTY:'^NSEBANK',MIDCAP:'NIFTY_MIDCAP_100.NS',SMALLCAP:'^CNXSC',VIX:'^INDIAVIX'};
 const ysymOf=k=>LIDX[k]||(()=>{const u=UNIMAP&&UNIMAP[k];if(u&&u.y)return u.y;if(u&&u.x==='BSE')return null;return k.replace('M&M','M%26M')+'.NS'})();
-const LT={timer:null,busy:false,last:{},fails:0};
+const LT={timer:null,busy:false,last:{},pct:{},fails:0};
 const mktOpen=()=>{const n=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4),h=n.getHours()+n.getMinutes()/60;return n.getDay()>0&&n.getDay()<6&&h>=9.1&&h<15.6};
 function fmtLp(k,v){return LIDX[k]?(k==='VIX'?v.toFixed(2):fin(v)):n2(v)}
 function chipHTML(p){return chip(p)}
@@ -3092,7 +3092,7 @@ async function liveTick(){if(LT.busy||document.hidden||!ALLOT_API)return;if(!mkt
   const keys=[...new Set(els.map(e=>e.dataset.lp||e.dataset.lc||e.dataset.lcw))].slice(0,80);if(!keys.length)return;
   const map={};keys.forEach(k=>{const y=ysymOf(k);if(y)map[decodeURIComponent(y)]=k});const syms=Object.keys(map);if(!syms.length)return;
   LT.busy=true;try{const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(syms.join(',')),{cache:'no-store'})).json();LT.fails=0;
-    for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(!k||!r||r[0]==null)continue;const [px,pc]=r;const prev=LT.last[k];LT.last[k]=px;
+    for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(!k||!r||r[0]==null)continue;const [px,pc]=r;const prev=LT.last[k];LT.last[k]=px;if(pc!=null)LT.pct[k]=pc;
       // keep the in-memory stores current so any re-render shows the live value too
       if(LIDX[k]&&IDX[k]){IDX[k].v=px;if(pc!=null)IDX[k].pct=pc}
       if(ALLQ&&ALLQ.q[k]){ALLQ.q[k][0]=px;if(pc!=null)ALLQ.q[k][1]=pc}
@@ -3192,12 +3192,12 @@ let tdF={sme:false,minCap:500};
 // ===================== Today's outlook: likely up / likely down =====================
 let olTab='up',olAll=false;
 function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
-  const livePct=x=>{const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
+  const livePct=x=>{if(LT.pct[x.k]!=null)return LT.pct[x.k];const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
   const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0});
   const L=olTab==='up'?UP:DN,show=olAll?L:L.slice(0,8);
   const ic={news:'📰',price:'📊',global:'🌍'};
   const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
-  const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=q&&q.pct!=null?q.pct:x.pct,pr=q&&q.price!=null?q.price:x.p;
+  const row=(x,k)=>{const q=typeof qOf==='function'?qOf(x.k):null,pct=livePct(x),pr=LT.last[x.k]!=null?LT.last[x.k]:q&&q.price!=null?q.price:x.p;
     return `<div class="ol-row ol-${olTab}" style="animation-delay:${k*40}ms"><a class="ol-top" href="#stock-${esc(x.k)}"><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
       <div class="ol-nm"><b>${esc(x.n)}</b><small>${esc(x.k)}${x.sec?' · '+esc(x.sec):''}</small></div><div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(x.k)}">${fin(pr)}</i></b><span data-lcw="${esc(x.k)}">${chip(pct)}</span></div></a>
       <div class="ol-why">${x.why.map(w=>`<div><span>${ic[w.k]||'•'}</span>${w.u?`<a href="${esc(w.u)}" target="_blank" rel="noopener">${esc(w.t)}</a>${w.src?`<em>${esc(w.src)}</em>`:''}`:`<p>${esc(w.t)}</p>`}</div>`).join('')}</div>
@@ -3209,7 +3209,18 @@ function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
     <div class="ol-list">${show.map(row).join('')||`<p class="aw-msg" style="padding:20px">${olTab==='up'?'No stocks with positive signals are trading up right now.':'No stocks with negative signals are trading down right now.'} Check back after the next update.</p>`}</div>
     ${L.length>8?`<button class="ghost ol-more" type="button" id="olMore">${olAll?'Show fewer':`Show all ${L.length}`}</button>`:''}
     <p class="ol-note">⚠️ These are signals from news and price data, not predictions or buy/sell advice. Prices can move either way; do your own research before you trade.</p></section>`}
-function wireOutlook(){document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
+// keep Likely up = trading up and Likely down = trading down, using live prices for every outlook stock
+let olLiveAt=0,olSig='';
+const olSet=()=>{const O=LIVED&&LIVED.outlook;if(!O)return '';const p=x=>LT.pct[x.k]!=null?LT.pct[x.k]:(qOf(x.k)||{}).pct??x.pct;return (O.up||[]).filter(x=>p(x)>0).map(x=>x.k).join()+'|'+(O.down||[]).filter(x=>p(x)<0).map(x=>x.k).join()};
+async function olLive(force){const s=document.querySelector('section.ol'),O=LIVED&&LIVED.outlook;if(!s||!O||!ALLOT_API||document.hidden)return;
+  if(!force&&Date.now()-olLiveAt<30000)return;olLiveAt=Date.now();
+  const all=[...(O.up||[]),...(O.down||[])],map={};all.forEach(x=>{const y=ysymOf(x.k);if(y)map[decodeURIComponent(y)]=x.k});
+  const ys=Object.keys(map);try{for(let i=0;i<ys.length;i+=80){const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(ys.slice(i,i+80).join(',')),{cache:'no-store'})).json();
+    for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(k&&r&&r[0]!=null){LT.last[k]=r[0];if(r[1]!=null)LT.pct[k]=r[1]}}}}catch{}
+  olRefresh()}
+function olRefresh(){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();wireOutlook();scrollTo(0,y)}
+ltHooks.push(()=>{if(document.querySelector('section.ol')){olRefresh();if(mktOpen())olLive()}});
+function wireOutlook(){olSig=olSet();if(mktOpen()||!olLiveAt)setTimeout(()=>olLive(),300);document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
   const m=document.getElementById('olMore');if(m)m.onclick=()=>{olAll=!olAll;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()}}
 function renderToday(){const el=document.getElementById('todaypage');if(!el)return;
   const open=LIVED&&LIVED.state==='open',G=(LIVED&&LIVED.global)||[],N=IDX.NIFTY;
