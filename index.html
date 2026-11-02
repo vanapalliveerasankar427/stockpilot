@@ -1146,8 +1146,15 @@ body:not(.ready) footer{display:none}
 .gl-nm{min-width:0;flex:1;display:grid}.gl-nm b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gl-nm small{font-size:12px;color:var(--muted)}
 .gl-c{flex:none}.gl-c .chg{font-size:12px;padding:3px 7px}.gl-c .chg2 small{display:none}
 .gl-f{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
-@media(max-width:520px){.gl-wrap{padding:12px}.gl-cols{gap:6px}.gl-col{padding:4px}.gl-row{flex-wrap:wrap;gap:6px;padding:8px 4px}.gl-i{display:none}.gl-row .lg{width:28px;height:28px}
-  .gl-nm{flex:1 1 calc(100% - 40px)}.gl-c{width:100%;padding-left:34px}.gl-c .chg2 small{display:inline}}
+.gl-l2{display:none}
+@media(max-width:620px){.gl-wrap{padding:12px}.gl-h{margin-bottom:10px}.gl-h h3{font-size:17px}.gl-seg{min-width:100%}
+  .gl-cols{gap:8px}.gl-col{padding:6px 4px}.gl-t{font-size:13.5px;padding:4px 6px 4px}
+  .gl-row{gap:8px;padding:9px 6px;border-radius:10px}.gl-row+.gl-row{border-top:1px solid color-mix(in srgb,var(--line) 60%,transparent);border-radius:0}
+  .gl-i,.gl-c{display:none}.gl-row .lg{width:30px;height:30px;border-radius:9px}
+  .gl-nm b{font-size:13.5px}.gl-l2{display:flex;justify-content:space-between;align-items:baseline;gap:4px;margin-top:2px}
+  .gl-l2 small{font-size:12px;color:var(--muted)}.gl-l2 small i{font-style:normal;background:none!important}
+  .gl-p{font-style:normal;font-weight:800;font-size:12.5px;color:var(--up);background:none!important}.gl-col.dn .gl-p{color:var(--dn)}
+  .gl-row:hover{background:none}.gl-f .note{font-size:11.5px}}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -2490,7 +2497,7 @@ function renderGainLose(){const el=document.getElementById('gainlose');if(!el)re
     const px=LT.last[k]!=null?LT.last[k]:q.price,pc=LT.pct[k]!=null?LT.pct[k]:q.pct;if(pc==null||!isFinite(pc))continue;L.push({k,n:u.n,px,pc})}
   const n=glMore?25:10,G=L.filter(x=>x.pc>0).sort((a,b)=>b.pc-a.pc).slice(0,n),D=L.filter(x=>x.pc<0).sort((a,b)=>a.pc-b.pc).slice(0,n);
   const row=(x,i)=>`<a class="gl-row" href="#stock-${esc(x.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
-     <div class="gl-nm"><b>${esc(x.n)}</b><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
+     <div class="gl-nm"><b>${esc(x.n)}</b><span class="gl-l2"><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small><em class="gl-p num" data-lc="${esc(x.k)}">${x.pc>=0?'+':''}${x.pc.toFixed(2)}%</em></span></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
   el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large cap'],['mid','Mid & small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
     <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${G.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
     <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${D.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
