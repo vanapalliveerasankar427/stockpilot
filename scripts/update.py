@@ -980,7 +980,7 @@ def fno(out):
             txt = get(url, headers={**UA, "Referer": "https://www.nseindia.com/"}).text
             for line in txt.splitlines():
                 c = [x.strip() for x in line.split(",")]
-                if len(c) < 3 or not c[1] or c[1].upper() in ("SYMBOL", "") or c[1].upper() in FNO_IDX:
+                if len(c) < 3 or not c[1] or c[1].upper() in ("SYMBOL", "") or c[1].upper() in FNO_IDX or c[1].upper().startswith("NIFTY"):
                     continue
                 lot = next((int(float(x)) for x in c[2:] if re.fullmatch(r"\d+(\.0+)?", x or "")), None)
                 if re.fullmatch(r"[A-Z0-9&\-]{2,20}", c[1].upper()) and lot:
