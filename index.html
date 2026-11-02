@@ -1117,6 +1117,23 @@ body:not(.ready) footer{display:none}
 .fo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.fo-tag{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--soft)}.fo-tag.u{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}.fo-tag.d{background:color-mix(in srgb,var(--dn) 14%,transparent);color:var(--dn)}
 .fo-why{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.4}
 .fo-oc{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--up);text-decoration:none}
+/* outlook tabs + F&O cards: always fit the phone width */
+.ol-list{grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.ol-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.ol-tabs{grid-template-columns:minmax(0,1.15fr) minmax(0,1.15fr) minmax(0,.8fr)!important;gap:4px!important}
+.ol-tabs button{min-width:0;overflow:hidden}
+.fo-row{min-width:0;overflow:hidden}.fo-top{min-width:0}.fo-top .ol-nm{min-width:0;flex:1}.fo-top .ol-nm b,.fo-top .ol-nm small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fo-top .ol-px{flex:none}
+@media(max-width:480px){
+  .ol-tabs button{font-size:13px!important;padding:11px 2px!important;gap:4px!important}
+  .ol-tabs button span{display:none}
+  .ol-tabs button b{font-size:11px!important;padding:1px 6px!important}
+  .fo-row{padding:12px}.fo-top{gap:10px}.fo-top .lg{width:36px;height:36px}
+  .fo-top .ol-px b{font-size:14.5px}.fo-top .chg2{font-size:12px}
+}
+@media (hover:none),(pointer:coarse){.ol{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:color-mix(in srgb,var(--glass2) 72%,transparent)!important}}
+/* phones: cover the status-bar strip so content never shows above the fixed top bar */
+@media(max-width:700px){body::before{content:"";position:fixed;left:0;right:0;top:0;height:calc(8px + env(safe-area-inset-top));background:var(--bg);z-index:39;pointer-events:none}}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -3253,9 +3270,9 @@ function fnoHTML(){const F=FNO();
   const D=fnoData(),L=fnoSide==='bull'?D.bull:D.bear,open=mktOpen();
   const tag=(t,c)=>`<span class="fo-tag ${c||''}">${t}</span>`;
   const row=(r,i)=>`<div class="fo-row ${r.pct>=0?'u':'d'}" style="animation-delay:${i*35}ms"><a class="fo-top" href="#stock-${esc(r.k)}"><div class="lg" style="background:${colorOf(r.k)};color:#fff">${esc(r.n.slice(0,2).toUpperCase())}${logoImg(r.k)}</div>
-    <div class="ol-nm"><b>${esc(r.n)}</b><small>${esc(r.k)}${r.lot?' · lot '+r.lot.toLocaleString('en-IN'):''}</small></div>
+    <div class="ol-nm"><b>${esc(r.n)}</b><small>${esc(r.k)}</small></div>
     <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(r.k)}">${fin(r.px)}</i></b><span data-lcw="${esc(r.k)}">${chip(r.pct,r.px)}</span></div></a>
-    <div class="fo-tags">${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
+    <div class="fo-tags">${r.lot?tag(`Lot ${r.lot.toLocaleString('en-IN')}`):''}${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
     ${r.o&&r.o.why&&r.o.why[0]?`<p class="fo-why">${esc(r.o.why[0].t)}</p>`:''}
     <a class="fo-oc" href="https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(r.k)}" target="_blank" rel="noopener">Option chain on NSE ↗</a></div>`;
   return `<div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals from news, price and volume, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
