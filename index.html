@@ -1155,6 +1155,16 @@ body:not(.ready) footer{display:none}
   .gl-l2 small{font-size:12px;color:var(--muted)}.gl-l2 small i{font-style:normal;background:none!important}
   .gl-p{font-style:normal;font-weight:800;font-size:12.5px;color:var(--up);background:none!important}.gl-col.dn .gl-p{color:var(--dn)}
   .gl-row:hover{background:none}.gl-f .note{font-size:11.5px}}
+#subsec{scroll-margin-top:140px}
+.ch-box{margin-top:14px;padding:14px;border-radius:18px;background:color-mix(in srgb,var(--up) 6%,transparent);border:1px solid color-mix(in srgb,var(--up) 22%,transparent)}
+.ch-h{font-weight:800;font-size:15.5px;margin-bottom:6px;display:flex;align-items:center;gap:8px}.ch-h span{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.ch-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}.ch-row:last-of-type{border-bottom:0}
+.ch-ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--soft);font-size:17px;flex:none}
+.ch-m{flex:1;min-width:0;display:grid}.ch-m b{font-size:14px}.ch-m small{font-size:12px;color:var(--muted);line-height:1.35}
+.ch-v{text-align:right;display:grid;flex:none}.ch-v b{font-size:17px;color:var(--up)}.ch-v small{font-size:11.5px;color:var(--muted)}
+.ch-fam{margin-top:8px;padding:12px;border-radius:14px;background:var(--soft)}.ch-fam>b{font-size:13.5px}.ch-fam small{display:block;font-size:11.5px;color:var(--muted);margin-top:6px}
+.ch-fg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}.ch-fg>div{padding:8px;border-radius:12px;background:var(--bg,#fff);display:grid;text-align:center}.ch-fg>div.me{outline:2px solid var(--up)}
+.ch-fg span{font-size:11.5px;color:var(--muted)}.ch-fg b{font-size:16px;color:var(--up)}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -1594,6 +1604,20 @@ function ipoCard(i){
 
 // ===================== IPO MODAL =====================
 const BROKERS=[['Zerodha','Kite app','https://zerodha.com/ipo/'],['Groww','Groww app','https://groww.in/ipo'],['Upstox','Upstox app','https://upstox.com/ipo/'],['Angel One','Angel One app','https://www.angelone.in/upcoming-ipo'],['Kotak Neo','Kotak Neo app','https://www.kotakneo.com/ipo/upcoming-ipo/'],['Dhan','Dhan app','https://dhan.co/'],['Paytm Money','Paytm Money app','https://www.paytmmoney.com/'],['My bank (ASBA)','Net banking','']];
+// allotment chances from subscription (IPOwiz-style estimate)
+function chanceHTML(i){const S=i.sub;if(!S)return '';const sme=i.type==='SME',out=[];
+  const pans=(typeof FAM!=='undefined'&&FAM.members?FAM.members.filter(m=>typeof PANS!=='undefined'&&PANS[m]).length:0);
+  const one=x=>x<=1?1:1/x,pct=p=>p>=.995?'100%':p>=.1?Math.round(p*100)+'%':(p*100).toFixed(1)+'%',inN=x=>x<=1?'every application':`about 1 in ${x<10?x.toFixed(1).replace(/\.0$/,''):Math.round(x).toLocaleString('en-IN')}`;
+  const row=(icon,label,x,desc)=>`<div class="ch-row"><div class="ch-ic">${icon}</div><div class="ch-m"><b>${label}</b><small>${desc}</small></div><div class="ch-v num"><b>${pct(one(x))}</b><small>${x<=1?'full allotment':inN(x)}</small></div></div>`;
+  if(S.Retail!=null)out.push(row('👤',sme?'Individual investor':'Retail (up to ₹2 lakh)',S.Retail,S.Retail<=1?'Undersubscribed: every valid bid should get shares.':`Lucky draw: winners get ${sme?'the minimum application':'1 lot'}. Bidding more lots doesn't raise your chance.`));
+  if(S.NII!=null)out.push(row('💼','HNI (NII)',S.NII,S.NII<=1?'Undersubscribed: full allotment expected.':'Small HNI bids also go to a lucky draw for the minimum HNI size.'));
+  if(S.QIB!=null)out.push(`<div class="ch-row"><div class="ch-ic">🏦</div><div class="ch-m"><b>Institutions (QIB)</b><small>Allotted in proportion to the bid, not by lottery.</small></div><div class="ch-v num"><b>${S.QIB.toFixed(2)}×</b><small>subscribed</small></div></div>`);
+  const r=S.Retail;let fam='';
+  if(r!=null&&r>1){const p=one(r),ks=[...new Set([pans,2,3,5].filter(k=>k>=2))].sort((a,b)=>a-b).slice(0,3);
+    fam=`<div class="ch-fam"><b>👨‍👩‍👧 More PANs, better odds</b><div class="ch-fg">${ks.map(k=>`<div${k===pans?' class="me"':''}><span>${k} PANs${k===pans?' (yours)':''}</span><b class="num">${pct(1-Math.pow(1-p,k))}</b></div>`).join('')}</div><small>Chance that at least one application in the family gets ${sme?'shares':'a lot'}. Each PAN must be a different person with their own demat account.</small></div>`}
+  return `<div class="ch-box"><div class="ch-h">Your allotment chances <span>estimate</span></div>${out.join('')}${fam}
+    <p class="note" style="margin:8px 0 0">Based on ${S.total!=null?S.total.toFixed(2)+'× overall subscription':'subscription'}${S.at?' ('+esc(S.at)+')':''}. Final chances depend on the last day's bids and the registrar's lottery.</p></div>`}
+function openIpoSub(id){openIpo(id);setTimeout(()=>{const e=document.getElementById('subsec');if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},380)}
 function openIpo(id,mode){
   const i=byId[id];if(!i)return;
   const steps=[['Opens',i.o],['Closes',i.c],['Allotment',i.al],['Refund',i.rf],['Demat credit',i.rf],['Listing',i.ls]];
@@ -1615,7 +1639,7 @@ function openIpo(id,mode){
       ${i.type==='SME'?`<p class="note">SME IPOs: individual investors must apply for at least ${i.ml} lots${i.minAmt?` (${rs0(i.minAmt)})`:''}. SME shares are less liquid and riskier than mainboard shares.</p>`:''}
       ${profitStrip(i)}${i.gtrend?`<a class="ghost" href="#gmp-${i.id}" onclick="closeIpo()" style="justify-self:start">Day-wise GMP history →</a>`:''}
       <div class="msec"><h4>Timeline</h4><div class="timeline">${tl}</div></div>
-      <div class="msec"><h4>Subscription${i.sub?` · ${i.sub.total.toFixed(2)}× overall`:''}</h4><div class="cats">${cats}</div></div>
+      <div class="msec" id="subsec"><h4>Subscription${i.sub?` · ${i.sub.total.toFixed(2)}× overall`:''}</h4><div class="cats">${cats}</div>${chanceHTML(i)}</div>
       ${profitCalc(i)}
       ${i.st==='listed'?`<div class="sumline num"><span>Listed at <b>₹${i.listPrice.toLocaleString('en-IN')}</b> against the ₹${i.hi.toLocaleString('en-IN')} issue price (<b class="${i.listPrice>=i.hi?'up':'down'}">${sgn((i.listPrice/i.hi-1)*100)}%</b>), closed day 1 at ₹${i.listClose.toLocaleString('en-IN')}. Source: ${esc(i.listSrc)}.</span></div>`:''}
       ${canApply?`<div class="msec" id="applysec"><h4>1 · Apply in your app</h4><div class="brokers">${BROKERS.map(([n,s,u])=>u?`<a class="broker" href="${u}" target="_blank" rel="noopener"><b>${n}</b><span>${s} ↗</span></a>`:`<div class="broker"><b>${n}</b><span>IPO / ASBA in net banking</span></div>`).join('')}</div>
@@ -1812,13 +1836,14 @@ function renderSub(){
   const L=IPOS.filter(i=>i.sub&&i.st!=='upcoming'&&tOK(i)).sort((a,b)=>b.c-a.c||b.sub.total-a.sub.total);
   const bar=(v,m,c)=>`<div class="bar" style="height:6px"><i style="width:${Math.min(100,v/m*100)}%;background:${c}"></i></div>`;
   document.getElementById('subbody').innerHTML=`<div class="igrid">${L.map(i=>{const s=i.sub,m=Math.max(s.QIB||0,s.NII||0,s.Retail||0,s.total,1),ch=allotChance(i);
-    return `<article class="ipo" style="gap:12px"><div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><div class="nm">${esc(i.name)}</div><div class="meta">${statusPill(i)}<span class="pill plain">${i.type==='SME'?'SME':'Mainboard'}</span>${i.st!=='listed'?vBadge(i):''}</div></div></div>
+    return `<article class="ipo" style="gap:12px;cursor:pointer" data-subo="${i.id}" role="button" tabindex="0"><div class="h"><div class="mono" style="background:${i.color}">${initials(i.name)}${logoImg(i.id)}</div><div style="flex:1;min-width:0"><div class="nm">${esc(i.name)}</div><div class="meta">${statusPill(i)}<span class="pill plain">${i.type==='SME'?'SME':'Mainboard'}</span>${i.st!=='listed'?vBadge(i):''}</div></div></div>
       <div class="row"><span class="muted" style="font-size:13px">Total subscription</span><b class="num" style="font:700 26px var(--display)">${s.total.toFixed(2)}×</b></div>
       ${(s.QIB!=null||s.NII!=null||s.Retail!=null)?[['Institutions (QIB)',s.QIB,'var(--info)'],['HNIs (NII)',s.NII,'var(--acc)'],['Retail',s.Retail,'var(--up)']].filter(x=>x[1]!=null).map(([k,v,c])=>`<div><div class="row num" style="font-size:13px"><span>${k}</span><b>${v.toFixed(2)}×</b></div>${bar(v,m,c)}</div>`).join(''):'<p class="note">Category split not published.</p>'}
       ${i.sday?`<div><span class="lbl" style="font-size:11px">Day by day</span><div style="display:flex;gap:8px;align-items:end;height:70px;margin-top:8px">${i.sday.map(([d,v])=>`<div style="flex:1;display:grid;gap:4px;justify-items:center;align-self:end"><b class="num" style="font-size:11.5px">${v}×</b><div style="width:100%;height:${Math.max(4,v/Math.max(...i.sday.map(x=>x[1]))*44)}px;border-radius:8px;background:var(--acc);opacity:.85" class="sday-bar"></div><span class="muted" style="font-size:11px">${d}</span></div>`).join('')}</div><p class="src" style="margin-top:6px">${esc(i.sdsrc)}.</p></div>`:''}
       ${ch!=null&&i.type!=='SME'?`<div class="gmp"><span class="muted">Rough retail allotment chance (1 lot)</span><b class="num ${ch>=50?'up':ch>=10?'':'down'}">${ch>=99.5?'~100%':ch<1?'<1%':'~'+ch.toFixed(ch<10?1:0)+'%'}</b></div>`:''}
       <span class="src" style="margin:0">${esc(s.src)} · ${esc(s.at)}</span></article>`}).join('')}</div>
     <div class="glass card sec"><h3 style="font-size:18px;margin-bottom:6px">How the allotment chance is estimated</h3><p class="note" style="font-size:14px;max-width:80ch">When the retail portion of a mainboard IPO is oversubscribed, SEBI rules give each valid retail application an equal lottery chance of one lot. If retail is subscribed 30×, roughly 1 in 30 minimum-lot applicants gets shares, so the chance is about 1 ÷ retail subscription. Applying for more lots doesn't improve it, but applying from more family members' PANs does. Treat this as a rough estimate: the real figure depends on how many applications were made, which is published only after allotment.</p></div>`;
+  document.querySelectorAll('[data-subo]').forEach(a=>{a.onclick=()=>openIpoSub(a.dataset.subo);a.onkeydown=e=>{if(e.key==='Enter')openIpoSub(a.dataset.subo)}});
 }
 
 // ===================== Screener =====================
@@ -2159,7 +2184,7 @@ function openQuick(id){const i=byId[id];if(!i)return;const p=profitPerApp(i);
   const g=document.getElementById('qsg');if(g)g.onclick=e=>{e.preventDefault();go('gmp-'+id)};
   document.getElementById('qa-det').onclick=()=>openIpo(id);
   const ap=document.getElementById('qa-apply');if(ap)ap.onclick=()=>openIpo(id,'apply');
-  document.getElementById('qa-sub').onclick=e=>{e.preventDefault();go('ipo-sub')};
+  document.getElementById('qa-sub').onclick=e=>{e.preventDefault();openIpoSub(id)};
   const al=document.getElementById('qa-al');if(al)al.onclick=e=>{e.preventDefault();go('allot-'+id)};
 }
 // open quick sheet instead of full modal from other mobile lists
