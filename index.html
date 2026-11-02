@@ -1134,6 +1134,20 @@ body:not(.ready) footer{display:none}
 @media (hover:none),(pointer:coarse){.ol{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:color-mix(in srgb,var(--glass2) 72%,transparent)!important}}
 /* phones: cover the status-bar strip so content never shows above the fixed top bar */
 @media(max-width:700px){body::before{content:"";position:fixed;left:0;right:0;top:0;height:calc(8px + env(safe-area-inset-top));background:var(--bg);z-index:39;pointer-events:none}}
+.gl-wrap{margin:0 0 16px;padding:16px;border-radius:24px;background:color-mix(in srgb,var(--glass2) 72%,transparent);border:1px solid var(--line)}
+.gl-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.gl-h h3{font-size:18px;margin:0}
+.gl-seg{min-width:min(100%,300px)}.gl-seg button{font-size:13px!important;padding:8px 6px!important}
+.gl-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.gl-col{min-width:0;border-radius:18px;padding:8px;background:color-mix(in srgb,var(--up) 7%,transparent)}.gl-col.dn{background:color-mix(in srgb,var(--dn) 7%,transparent)}
+.gl-t{font-weight:800;font-size:14px;padding:4px 6px 8px;color:var(--up)}.gl-col.dn .gl-t{color:var(--dn)}.gl-t b{font-size:11.5px;opacity:.7;margin-left:4px}
+.gl-row{display:flex;align-items:center;gap:8px;padding:8px 6px;border-radius:12px;text-decoration:none;color:var(--ink);min-width:0}.gl-row:hover{background:var(--soft)}
+.gl-i{font-size:11px;color:var(--muted);width:14px;text-align:right;flex:none}
+.gl-row .lg{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:11px;flex:none;position:relative;overflow:hidden}
+.gl-nm{min-width:0;flex:1;display:grid}.gl-nm b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gl-nm small{font-size:12px;color:var(--muted)}
+.gl-c{flex:none}.gl-c .chg{font-size:12px;padding:3px 7px}.gl-c .chg2 small{display:none}
+.gl-f{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
+@media(max-width:520px){.gl-wrap{padding:12px}.gl-cols{gap:6px}.gl-col{padding:4px}.gl-row{flex-wrap:wrap;gap:6px;padding:8px 4px}.gl-i{display:none}.gl-row .lg{width:28px;height:28px}
+  .gl-nm{flex:1 1 calc(100% - 40px)}.gl-c{width:100%;padding-left:34px}.gl-c .chg2 small{display:inline}}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -1249,6 +1263,7 @@ body:not(.ready) footer{display:none}
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="st-eb">Nifty 50 heavyweights · close 29 Oct 2026</span></div><h1 class="ptitle">Stocks</h1>
     <p class="psub">Search any company listed on NSE or BSE for its live price and key figures. Below: the 25 largest Nifty 50 companies with valuation and latest-quarter results.</p></div></div>
   <button type="button" class="allsearch" onclick="openSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search all NSE &amp; BSE stocks, e.g. “GACM Technologies” or “TATAPOWER”</span></button>
+  <div id="gainlose"></div>
   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
   <p class="src" style="margin-left:4px" id="st-src">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
 </section>
@@ -2465,7 +2480,25 @@ function repaintCharts(){document.getElementById('nchart').innerHTML=areaChart(N
 
 // ===================== stocks =====================
 let sortK='mcap',sortD=-1,curStock=null;
-function renderStocks(){
+
+// ===================== Stocks page: gainers on one side, losers on the other (all NSE stocks, live) =====================
+let glSeg='all',glMore=false,glAt=0;
+function renderGainLose(){const el=document.getElementById('gainlose');if(!el)return;
+  if(!ALLQ||!UNI){el.innerHTML=`<div class="gl-wrap">${LOADER('Finding today\'s top gainers and losers…')}</div>`;Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(ALLQ&&UNI)renderGainLose()});return}
+  const seg={all:[1000,1e12],large:[20000,1e12],mid:[1000,20000]}[glSeg];const L=[];
+  for(const [k,r] of Object.entries(ALLQ.q)){const u=UNIMAP[k];if(!u||u.x!=='NSE')continue;const q=qOf(k);if(!q||!q.price||q.price<20||!(q.mcapCr>=seg[0]&&q.mcapCr<seg[1]))continue;
+    const px=LT.last[k]!=null?LT.last[k]:q.price,pc=LT.pct[k]!=null?LT.pct[k]:q.pct;if(pc==null||!isFinite(pc))continue;L.push({k,n:u.n,px,pc})}
+  const n=glMore?25:10,G=L.filter(x=>x.pc>0).sort((a,b)=>b.pc-a.pc).slice(0,n),D=L.filter(x=>x.pc<0).sort((a,b)=>a.pc-b.pc).slice(0,n);
+  const row=(x,i)=>`<a class="gl-row" href="#stock-${esc(x.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
+     <div class="gl-nm"><b>${esc(x.n)}</b><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
+  el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large cap'],['mid','Mid & small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
+    <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${G.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
+    <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${D.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
+    <div class="gl-f"><span class="note">NSE stocks above ₹20 and ₹1,000 Cr market cap · ${mktOpen()?'live':'last session'}</span><button class="ghost" type="button" id="glMore">${glMore?'Show top 10':'Show top 25'}</button></div></div>`;
+  el.querySelectorAll('[data-gl]').forEach(b=>b.onclick=()=>{glSeg=b.dataset.gl;renderGainLose()});
+  el.querySelector('#glMore').onclick=()=>{glMore=!glMore;renderGainLose()};glAt=Date.now()}
+setTimeout(()=>ltHooks.push(()=>{if(document.getElementById('v-stocks').classList.contains('on')&&Date.now()-glAt>20000&&!document.querySelector('#gainlose :hover')){const y=scrollY;loadAllQuotes().then(()=>{renderGainLose();scrollTo(0,y)})}}),0);
+function renderStocks(){renderGainLose();
   const cols=[['name','Company'],['price','Price ₹'],['day','Day'],['mcap','Market cap'],['pe','P/E'],['npv','Profit YoY'],['salesv','Sales YoY'],['roce','ROCE']];
   const rows=[...STOCKS].sort((a,b)=>{const va=sortK==='day'?(DAYCHG[a.sym]?.[0]??-999):a[sortK],vb=sortK==='day'?(DAYCHG[b.sym]?.[0]??-999):b[sortK];return (va>vb?1:va<vb?-1:0)*sortD});
   document.getElementById('stbl').innerHTML=`<tr>${cols.map(([k,l])=>`<th data-k="${k}" aria-sort="${sortK===k?(sortD>0?'ascending':'descending'):'none'}">${l}${sortK===k?(sortD>0?' ↑':' ↓'):''}</th>`).join('')}<th></th></tr>`+
