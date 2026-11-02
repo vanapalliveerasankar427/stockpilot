@@ -1085,6 +1085,15 @@ button,a,[role="button"],label,.mv-act,.mv-pick{touch-action:manipulation}
 /* no flash on open: the footer stays hidden until the first page is shown */
 body:not(.ready) footer{display:none}
 .ol-quiet .ol-row{animation:none!important}
+/* phones: keep the screen steady. A moving background under the frosted-glass cards makes iPhones redraw the
+   cards every frame, which looks like shaking; tap-hover lifts also jump cards. */
+@media (hover:none),(pointer:coarse){
+  .aurora i{animation:none!important}
+  .glass,.ipo,.stat,.tile,.app,.aw-pans,.al-alert{transform:none!important;will-change:auto}
+  .glass.card:hover,.ipo:hover,.stat:hover,.tile:hover,.aw-pans:hover,.al-alert:hover{transform:none!important}
+  .glass{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+}
+@media (prefers-reduced-motion:reduce){.aurora i,.mark,.tape .track{animation:none!important}}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
