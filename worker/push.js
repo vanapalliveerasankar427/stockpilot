@@ -157,7 +157,6 @@ export async function priceCron(env, quotes) {
 
 // ---------- 8:45 AM outlook and 3:45 PM close digests ----------
 const pc = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(2) + "%";
-const DATA_Q = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/data/quotes.json";
 const fx0 = v => (+v).toLocaleString("en-IN", { maximumFractionDigits: 0 });
 // Three market-day updates: 9:20 AM open, 1:00 PM midday, 3:45 PM close. Each needs a fresh index quote from today.
 export async function digestCron(env, quotes) {
@@ -184,15 +183,11 @@ export async function digestCron(env, quotes) {
     const dir = n[1] >= 0 ? "up" : "down";
     ev = { t: `Market open: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])}), opened ${dir}`, metals].filter(Boolean).join(" · "), u: SITE + "#today" };
   } else if (type === "mid") {
-    let hi = [], lo = [];
-    try { const Q = await (await fetch(DATA_Q, { cf: { cacheTtl: 120 } })).json(), c = Q.cols || [], I = k => c.indexOf(k);
-      const ip = I("price"), ih = I("h52"), il = I("l52"), im = I("mcapCr"), ipc = I("pct");
-      for (const [k, r] of Object.entries(Q.q || {})) { const p = r[ip], mc_ = r[im]; if (!p || !(mc_ >= 2000)) continue;
-        if (r[ih] && p >= r[ih] * 0.998) hi.push([k, mc_, r[ipc]]); else if (r[il] && p <= r[il] * 1.002) lo.push([k, mc_, r[ipc]]); }
-      hi.sort((a, b) => b[1] - a[1]); lo.sort((a, b) => b[1] - a[1]); } catch {}
-    const nm = a => a.slice(0, 3).map(x => x[0]).join(", ") + (a.length > 3 ? ` +${a.length - 3} more` : "");
+    const H = L.hilo || {}, hi = (H.hi || []).map(x => [x[0]]), lo = (H.lo || []).map(x => [x[0]]); // computed by the data job (no big downloads here: the free plan allows 10 ms of CPU)
+    const hiN = H.nhi || hi.length, loN = H.nlo || lo.length;
+    const nm = (a, n) => a.slice(0, 3).map(x => x[0]).join(", ") + (n > 3 ? ` +${n - 3} more` : "");
     ev = { t: `Midday: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])})`, g ? "Top gainer " + mv(g) : "", l ? "top loser " + mv(l) : "",
-      hi.length ? `52-week high: ${nm(hi)}` : "", lo.length ? `52-week low: ${nm(lo)}` : ""].filter(Boolean).join(" · "), u: SITE + "#markets" };
+      hi.length ? `52-week high: ${nm(hi, hiN)}` : "", lo.length ? `52-week low: ${nm(lo, loN)}` : ""].filter(Boolean).join(" · "), u: SITE + "#markets" };
   } else {
     ev = { t: `Market closed: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])})`, bk && bk[0] ? `Bank Nifty ${pc(bk[1])}` : "", g ? "Top gainer " + mv(g) : "", metals].filter(Boolean).join(" · "), u: SITE + "#markets" };
   }
@@ -242,18 +237,19 @@ export async function cron(env, companiesOf) {
 export async function broadcast(env, ev, budget) {
   const st = await env.PUSH.get("ev:" + ev.id, "json") || {};
   if (st.done) return budget;
-  let cursor = st.cursor, sent = st.sent || 0;
+  let cursor = st.cursor, sent = st.sent || 0; const codes = st.codes || {};
   while (budget > 0) {
     const page = await env.PUSH.list({ prefix: "s:", cursor, limit: Math.min(budget, 1000) });
     for (const k of page.keys) {
       const rec = await env.PUSH.get(k.name, "json"); budget--;
       if (!rec || !wants(rec, ev.type)) continue;
       const code = await send(env, rec.sub, { t: ev.t, b: ev.b, u: ev.u, tag: ev.id }).catch(() => 0);
+      codes[code] = (codes[code] || 0) + 1; // delivery result per push service status (for /push/status)
       if (code === 404 || code === 410) await env.PUSH.delete(k.name); else if (code >= 200 && code < 300) sent++;
     }
     cursor = page.list_complete ? null : page.cursor;
-    if (page.list_complete) { await env.PUSH.put("ev:" + ev.id, JSON.stringify({ done: true, sent, at: Date.now() }), { expirationTtl: 20 * 86400 }); break; }
-    if (budget <= 0) await env.PUSH.put("ev:" + ev.id, JSON.stringify({ cursor, sent }), { expirationTtl: 3 * 86400 });
+    if (page.list_complete) { await env.PUSH.put("ev:" + ev.id, JSON.stringify({ done: true, sent, codes, at: Date.now() }), { expirationTtl: 20 * 86400 }); break; }
+    if (budget <= 0) await env.PUSH.put("ev:" + ev.id, JSON.stringify({ cursor, sent, codes }), { expirationTtl: 3 * 86400 });
   }
   return budget;
 }
