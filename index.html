@@ -1082,6 +1082,9 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 html{touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button,a,[role="button"],label,.mv-act,.mv-pick{touch-action:manipulation}
 @media (max-width:900px),(pointer:coarse){input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-size:16px!important}}
+/* no flash on open: the footer stays hidden until the first page is shown */
+body:not(.ready) footer{display:none}
+.ol-quiet .ol-row{animation:none!important}
 .tm-page{max-width:760px}.tm-card{margin-top:16px;padding:6px 18px;border-radius:24px;background:color-mix(in srgb,var(--bg,#fff) 80%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 
 /* live metals */
@@ -2553,7 +2556,7 @@ document.addEventListener('submit',e=>{const f=e.target;let first=null;
 const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy','contact','portfolio','alerts'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('ipos/')){const id=decodeURIComponent(h.slice(5));view='ipos';history.replaceState(null,'','#ipos');setTimeout(()=>{if(byId[id])openIpo(id);else toast('This IPO is no longer in the list')},120)}else if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(h.startsWith('pans')){view='pans'}else if(!VIEWS.includes(h))view='markets';
-  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+(view==='privacy'?'terms':view)));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+(view==='privacy'?'terms':view)));document.body.classList.add('ready');
   const navv=(view==='portfolio'||view==='alerts')?'watchlist':view==='stock'?'stocks':(view==='ipo-allot'||view==='allot'||view==='applications'||view==='pans')?'ipo-allot':(view.startsWith('ipo')||view==='learn'||view==='gmp')?'ipos':view;
   if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();if(view==='contact')renderContact();else route.prev=view;if(view==='terms'||view==='privacy'){renderTerms();if(view==='privacy')setTimeout(()=>{const e=document.getElementById('privacy');if(e)e.scrollIntoView({behavior:'smooth'})},120)}
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
@@ -3218,7 +3221,7 @@ async function olLive(force){const s=document.querySelector('section.ol'),O=LIVE
   const ys=Object.keys(map);try{for(let i=0;i<ys.length;i+=80){const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(ys.slice(i,i+80).join(',')),{cache:'no-store'})).json();
     for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(k&&r&&r[0]!=null){LT.last[k]=r[0];if(r[1]!=null)LT.pct[k]=r[1]}}}}catch{}
   olRefresh()}
-function olRefresh(){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();wireOutlook();scrollTo(0,y)}
+function olRefresh(){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();const n=document.querySelector('section.ol');if(n)n.classList.add('ol-quiet');wireOutlook();scrollTo(0,y)}
 ltHooks.push(()=>{if(document.querySelector('section.ol')){olRefresh();if(mktOpen())olLive()}});
 function wireOutlook(){olSig=olSet();if(mktOpen()||!olLiveAt)setTimeout(()=>olLive(),300);document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
   const m=document.getElementById('olMore');if(m)m.onclick=()=>{olAll=!olAll;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()}}
