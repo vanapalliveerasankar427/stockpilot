@@ -59,6 +59,7 @@ async function send(env, sub, msg) {
   const r = await fetch(sub.endpoint, { method: "POST", body, headers: {
     Authorization: await vapidHeader(env, sub.endpoint), "Content-Encoding": "aes128gcm", "Content-Type": "application/octet-stream",
     TTL: "43200", Urgency: "high", Topic: String(msg.tag || "mvp").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 32) } });
+  if (r.status >= 300) { try { send.lastErr = `${r.status} ${new URL(sub.endpoint).host}: ${(await r.text()).slice(0, 140)}`; } catch {} }
   return r.status;
 }
 
@@ -69,7 +70,7 @@ export async function api(req, env, path, json) {
   if (path === "/push/key") return json({ key: (await vapid(env)).pub });
   if (path === "/push/status") { // delivery check for today's market updates (counts only, no personal data)
     const day = ymd(IST()), o = {};
-    for (const t of NEW_TYPES) o[t] = await env.PUSH.get("ev:" + t + "-v2-" + day, "json");
+    for (const t of NEW_TYPES) { const e = await env.PUSH.get("ev:" + t + "-v2-" + day, "json"); o[t] = e && { done: !!e.done, sent: e.sent, codes: e.codes, errs: e.errs, retryLeft: (e.retry || []).length, at: e.at }; }
     const idx = await env.PUSH.get("pa:idx", "json") || [];
     return json({ day, digests: o, priceAlertSubs: idx.length, now: IST().toISOString() });
   }
@@ -166,7 +167,8 @@ export async function digestCron(env, quotes) {
   const W = [["am", 9 * 60 + 20, 10 * 60 + 30], ["mid", 13 * 60, 14 * 60 + 30], ["pm", 15 * 60 + 45, 17 * 60]].find(([, a, b]) => m >= a && m < b);
   if (!W) return;
   const [type] = W, id = type + "-v2-" + day;
-  if ((await env.PUSH.get("ev:" + id, "json") || {}).done) return;
+  const prev = await env.PUSH.get("ev:" + id, "json") || {};
+  if (prev.done) { if ((prev.retry || []).length && !prev.retried) await broadcast(env, { id, type, t: "", b: "", u: "" }, PER_RUN); return; }
   const q = await quotes(["^NSEI", "^BSESN", "^NSEBANK"]);
   const n = q["^NSEI"], s = q["^BSESN"], bk = q["^NSEBANK"];
   if (!n || !n[0] || !n[3] || ymd(new Date(n[3] * 1000 + 330 * 60000)) !== day) return; // market hasn't traded today (yet)
@@ -234,22 +236,39 @@ export async function cron(env, companiesOf) {
   let budget = PER_RUN;
   for (const ev of await events(env, companies)) { if (budget <= 0) break; budget = await broadcast(env, ev, budget); }
 }
+// Sends one event to every subscriber. A failed delivery (not "gone") is retried right away, and once more on the next run.
+const okCode = c => c >= 200 && c < 300, goneCode = c => c === 404 || c === 410;
+async function sendRetry(env, k, rec, msg, codes, errs) {
+  let code = await send(env, rec.sub, msg).catch(e => { send.lastErr = "network: " + String(e.message || e).slice(0, 120); return 0; });
+  if (!okCode(code) && !goneCode(code)) { await new Promise(r => setTimeout(r, 1500)); code = await send(env, rec.sub, msg).catch(() => 0); }
+  codes[code] = (codes[code] || 0) + 1;
+  if (!okCode(code) && !goneCode(code) && send.lastErr && errs.length < 5) errs.push(send.lastErr);
+  if (goneCode(code)) await env.PUSH.delete(k);
+  return code;
+}
 export async function broadcast(env, ev, budget) {
-  const st = await env.PUSH.get("ev:" + ev.id, "json") || {};
-  if (st.done) return budget;
-  let cursor = st.cursor, sent = st.sent || 0; const codes = st.codes || {};
+  const key = "ev:" + ev.id, st = await env.PUSH.get(key, "json") || {};
+  const msg = { t: ev.t, b: ev.b, u: ev.u, tag: ev.id };
+  if (st.done) { // second chance for phones that failed last time
+    if (!(st.retry || []).length || st.retried) return budget;
+    const codes = st.codes || {}, errs = st.errs || [], left = [];
+    for (const k of st.retry) { if (budget-- <= 0) { left.push(k); continue; } const rec = await env.PUSH.get(k, "json"); if (!rec) continue;
+      const c = await sendRetry(env, k, rec, st.msg || msg, codes, errs); if (okCode(c)) st.sent = (st.sent || 0) + 1; else if (!goneCode(c)) left.push(k); }
+    await env.PUSH.put(key, JSON.stringify({ ...st, codes, errs, retry: left, retried: true, rat: Date.now() }), { expirationTtl: 20 * 86400 });
+    return budget;
+  }
+  let cursor = st.cursor, sent = st.sent || 0; const codes = st.codes || {}, retry = st.retry || [], errs = st.errs || [];
   while (budget > 0) {
     const page = await env.PUSH.list({ prefix: "s:", cursor, limit: Math.min(budget, 1000) });
     for (const k of page.keys) {
       const rec = await env.PUSH.get(k.name, "json"); budget--;
       if (!rec || !wants(rec, ev.type)) continue;
-      const code = await send(env, rec.sub, { t: ev.t, b: ev.b, u: ev.u, tag: ev.id }).catch(() => 0);
-      codes[code] = (codes[code] || 0) + 1; // delivery result per push service status (for /push/status)
-      if (code === 404 || code === 410) await env.PUSH.delete(k.name); else if (code >= 200 && code < 300) sent++;
+      const code = await sendRetry(env, k.name, rec, msg, codes, errs);
+      if (okCode(code)) sent++; else if (!goneCode(code)) retry.push(k.name);
     }
     cursor = page.list_complete ? null : page.cursor;
-    if (page.list_complete) { await env.PUSH.put("ev:" + ev.id, JSON.stringify({ done: true, sent, codes, at: Date.now() }), { expirationTtl: 20 * 86400 }); break; }
-    if (budget <= 0) await env.PUSH.put("ev:" + ev.id, JSON.stringify({ cursor, sent, codes }), { expirationTtl: 3 * 86400 });
+    if (page.list_complete) { await env.PUSH.put(key, JSON.stringify({ done: true, sent, codes, errs, retry, msg: retry.length ? msg : undefined, at: Date.now() }), { expirationTtl: 20 * 86400 }); break; }
+    if (budget <= 0) await env.PUSH.put(key, JSON.stringify({ cursor, sent, codes, errs, retry, msg }), { expirationTtl: 3 * 86400 });
   }
   return budget;
 }
