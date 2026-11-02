@@ -1,13 +1,13 @@
 {
- "label": "2 Nov 2026, 1:12 PM IST",
- "updated": "2026-11-02T13:12:35+05:30",
+ "label": "2 Nov 2026, 1:13 PM IST",
+ "updated": "2026-11-02T13:13:18+05:30",
  "state": "open",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "2 Nov 2026, 1:12 PM",
+  "date": "2 Nov 2026, 1:13 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -93,13 +93,13 @@
     "v": 138722.0,
     "ch": 237.0,
     "pct": 0.17,
-    "t": "2 Nov, 1:12 PM"
+    "t": "2 Nov, 1:13 PM"
    },
    "silver": {
     "v": 182221.0,
     "ch": 3089.0,
     "pct": 1.72,
-    "t": "2 Nov, 1:12 PM"
+    "t": "2 Nov, 1:13 PM"
    }
   },
   "retail": {
@@ -314,70 +314,70 @@
    "g24_10": 139150.0,
    "ag_kg": 182790.0,
    "ag": 182.79,
-   "t": "2 Nov, 1:12 PM"
+   "t": "2 Nov, 1:13 PM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 23230.55,
+   "v": 23218.0,
    "prev": 23053.1,
-   "ch": 177.45,
-   "pct": 0.77,
+   "ch": 164.9,
+   "pct": 0.72,
    "high": 23360.5,
    "low": 23211.8,
    "open": 23239.45,
-   "t": 1793605354
+   "t": 1793605397
   },
   "SENSEX": {
-   "v": 75255.0,
+   "v": 75271.26,
    "prev": 74459.53,
-   "ch": 795.47,
-   "pct": 1.07,
+   "ch": 811.73,
+   "pct": 1.09,
    "high": 75557.06,
    "low": 75097.5,
    "open": 75152.54,
-   "t": 1793604453
+   "t": 1793604496
   },
   "BANKNIFTY": {
-   "v": 54652.35,
+   "v": 54616.8,
    "prev": 54686.95,
-   "ch": -34.6,
-   "pct": -0.06,
+   "ch": -70.15,
+   "pct": -0.13,
    "high": 55046.35,
    "low": 54604.8,
    "open": 54866.15,
-   "t": 1793605345
+   "t": 1793605398
   },
   "MIDCAP": {
-   "v": 57790.45,
+   "v": 57759.95,
    "prev": 57301.25,
-   "ch": 489.2,
-   "pct": 0.85,
+   "ch": 458.7,
+   "pct": 0.8,
    "high": 58097.9,
    "low": 57469.75,
    "open": 57483.95,
-   "t": 1793605355
+   "t": 1793605398
   },
   "SMALLCAP": {
-   "v": 18564.25,
+   "v": 18551.3,
    "prev": 18463.6,
-   "ch": 100.65,
-   "pct": 0.55,
+   "ch": 87.7,
+   "pct": 0.47,
    "high": 18643.25,
    "low": 18381.65,
    "open": 18446.8,
-   "t": 1793605355
+   "t": 1793605398
   },
   "VIX": {
-   "v": 15.81,
+   "v": 15.85,
    "prev": 15.3,
-   "ch": 0.51,
-   "pct": 3.33,
-   "high": 15.82,
+   "ch": 0.55,
+   "pct": 3.59,
+   "high": 15.87,
    "low": 14.55,
    "open": 15.3,
-   "t": 1793605354
+   "t": 1793605397
   }
  },
  "nifty8": [
@@ -411,18 +411,18 @@
   ],
   [
    "2 Nov",
-   23230.55
+   23218.0
   ]
  ],
  "usdinr": {
-  "v": 94.87,
+  "v": 94.89,
   "prev": 94.94,
-  "ch": -0.07,
-  "pct": -0.07,
+  "ch": -0.05,
+  "pct": -0.05,
   "high": 94.95,
   "low": 94.69,
   "open": 94.94,
-  "t": 1793605353
+  "t": 1793605396
  },
  "brent": {
   "v": 110.08,
@@ -432,163 +432,163 @@
   "high": 112.38,
   "low": 109.32,
   "open": 109.88,
-  "t": 1793604745
+  "t": 1793604784
  },
  "goldSpot": {
-  "v": 3913.8,
+  "v": 3913.0,
   "prev": 3898.9,
-  "ch": 14.9,
-  "pct": 0.38,
+  "ch": 14.1,
+  "pct": 0.36,
   "high": 3928.1,
   "low": 3889.0,
   "open": 3910.2,
-  "t": 1793604741
+  "t": 1793604796
  },
  "sectors": [
   [
    "Energy",
-   2.84
+   2.8
   ],
   [
    "Infra",
-   2.39
+   2.35
   ],
   [
    "Metal",
-   2.32
+   2.29
   ],
   [
    "Auto",
-   1.22
+   1.07
   ],
   [
    "PSU Bank",
-   0.74
+   0.65
   ],
   [
    "Realty",
-   0.55
+   0.45
   ],
   [
    "Fin. Services",
-   0.05
-  ],
-  [
-   "Bank",
-   -0.06
+   -0.03
   ],
   [
    "FMCG",
-   -0.07
+   -0.09
+  ],
+  [
+   "Bank",
+   -0.13
   ]
  ],
  "stocks": {
   "RELIANCE": {
-   "v": 1251.6,
-   "pct": 7.44
+   "v": 1250.6,
+   "pct": 7.36
   },
   "BHARTIARTL": {
-   "v": 1984.3,
-   "pct": 0.54
+   "v": 1984.6,
+   "pct": 0.55
   },
   "HDFCBANK": {
-   "v": 689.65,
-   "pct": -0.45
+   "v": 689.05,
+   "pct": -0.54
   },
   "ICICIBANK": {
-   "v": 1378.4,
-   "pct": -1.4
+   "v": 1377.5,
+   "pct": -1.47
   },
   "TCS": {
-   "v": 2505.7,
-   "pct": 0.12
+   "v": 2504.6,
+   "pct": 0.08
   },
   "SBIN": {
-   "v": 974.1,
-   "pct": 1.27
+   "v": 973.0,
+   "pct": 1.16
   },
   "BAJFINANCE": {
-   "v": 954.1,
-   "pct": 1.6
+   "v": 953.15,
+   "pct": 1.5
   },
   "LT": {
-   "v": 3914.9,
-   "pct": 1.12
+   "v": 3912.3,
+   "pct": 1.05
   },
   "INFY": {
-   "v": 1154.3,
-   "pct": -2.59
+   "v": 1154.0,
+   "pct": -2.62
   },
   "KOTAKBANK": {
-   "v": 458.3,
-   "pct": -0.71
+   "v": 458.25,
+   "pct": -0.73
   },
   "HINDUNILVR": {
-   "v": 1879.8,
+   "v": 1879.9,
    "pct": 0.82
   },
   "ADANIPORTS": {
-   "v": 1823.6,
-   "pct": -1.43
+   "v": 1823.2,
+   "pct": -1.45
   },
   "SUNPHARMA": {
-   "v": 1753.4,
-   "pct": -1.37
+   "v": 1752.8,
+   "pct": -1.4
   },
   "TITAN": {
-   "v": 4448.2,
-   "pct": 0.26
+   "v": 4446.7,
+   "pct": 0.23
   },
   "AXISBANK": {
-   "v": 1204.5,
-   "pct": -1.03
+   "v": 1203.6,
+   "pct": -1.1
   },
   "HCLTECH": {
-   "v": 1431.9,
-   "pct": 0.27
+   "v": 1431.4,
+   "pct": 0.23
   },
   "MARUTI": {
-   "v": 11633.0,
-   "pct": 2.07
+   "v": 11624.0,
+   "pct": 1.99
   },
   "MM": {
-   "v": 2891.3,
-   "pct": 1.8
+   "v": 2885.5,
+   "pct": 1.59
   },
   "ADANIENT": {
-   "v": 2592.5,
-   "pct": 0.51
+   "v": 2590.6,
+   "pct": 0.43
   },
   "ITC": {
-   "v": 264.1,
-   "pct": -0.56
+   "v": 264.0,
+   "pct": -0.6
   },
   "ULTRACEMCO": {
-   "v": 11249.0,
-   "pct": 1.85
+   "v": 11245.0,
+   "pct": 1.81
   },
   "ETERNAL": {
    "v": 344.85,
    "pct": 0.35
   },
   "JSWSTEEL": {
-   "v": 1286.6,
-   "pct": 3.26
+   "v": 1288.7,
+   "pct": 3.43
   },
   "NTPC": {
-   "v": 323.45,
-   "pct": 2.28
+   "v": 323.4,
+   "pct": 2.26
   },
   "BAJAJ-AUTO": {
-   "v": 10271.0,
-   "pct": -0.76
+   "v": 10263.0,
+   "pct": -0.84
   }
  },
  "gainers": [
   [
    "RELIANCE",
    "Reliance Industries",
-   7.44
+   7.36
   ],
   [
    "TATASTEEL",
@@ -598,44 +598,44 @@
   [
    "SHRIRAMFIN",
    "Shriram Finance",
-   4.53
+   4.33
   ],
   [
    "COALINDIA",
    "Coal India",
-   4.32
+   4.28
   ],
   [
    "JIOFIN",
    "Jio Financial Services",
-   3.96
+   3.88
   ]
  ],
  "losers": [
   [
    "INFY",
    "Infosys",
-   -2.59
-  ],
-  [
-   "ADANIPORTS",
-   "Adani Ports and Special Economic Zone",
-   -1.43
+   -2.62
   ],
   [
    "ICICIBANK",
    "ICICI Bank",
-   -1.4
+   -1.47
+  ],
+  [
+   "ADANIPORTS",
+   "Adani Ports and Special Economic Zone",
+   -1.45
   ],
   [
    "SUNPHARMA",
    "Sun Pharmaceutical Industries",
-   -1.37
+   -1.4
   ],
   [
-   "AXISBANK",
-   "Axis Bank",
-   -1.03
+   "HDFCLIFE",
+   "HDFC Life Insurance Company",
+   -1.13
   ]
  ],
  "breadth": {
@@ -2098,52 +2098,52 @@
   }
  },
  "nse": {
-  "n50": "2 Nov, 1:12 PM",
-  "mid": "2 Nov, 1:12 PM",
-  "small": "2 Nov, 1:12 PM"
+  "n50": "2 Nov, 1:13 PM",
+  "mid": "2 Nov, 1:13 PM",
+  "small": "2 Nov, 1:13 PM"
  },
  "midg": [
   [
    "Dixon Technologies (India)",
-   12.44
+   12.41
   ],
   [
    "NLC India",
-   4.59
+   4.6
   ],
   [
    "Vishal Mega Mart",
-   4.41
+   4.32
   ],
   [
    "Cochin Shipyard",
-   4.11
+   4.07
   ],
   [
-   "Tata Communications",
-   3.87
+   "Rail Vikas Nigam",
+   3.85
   ]
  ],
  "midl": [
   [
    "PB Fintech",
-   -6.7
+   -6.76
   ],
   [
    "Lodha Developers",
-   -3.07
+   -3.15
   ],
   [
    "Bank of Maharashtra",
-   -2.93
+   -3.02
   ],
   [
    "Blue Star",
-   -2.87
+   -2.89
   ],
   [
    "ICICI Lombard General Insurance Company",
-   -2.01
+   -2.07
   ]
  ],
  "smallg": [
@@ -2153,29 +2153,29 @@
   ],
   [
    "Inox Wind",
-   10.02
+   9.91
   ],
   [
    "Affle 3i",
-   9.19
+   9.18
   ],
   [
    "NBCC (India)",
-   8.67
+   8.53
   ],
   [
    "Delhivery",
-   6.3
+   6.11
   ]
  ],
  "smalll": [
   [
    "Syrma SGS Technology",
-   -5.77
+   -5.78
   ],
   [
    "Indraprastha Gas",
-   -5.08
+   -5.13
   ],
   [
    "Sterlite Technologies",
@@ -2247,9 +2247,9 @@
   ],
   [
    "Hang Seng",
-   23411.06,
-   0.5,
-   1793604452
+   23406.26,
+   0.48,
+   1793604496
   ],
   [
    "FTSE 100",
