@@ -1,13 +1,13 @@
 {
- "label": "2 Nov 2026, 10:32 AM IST",
- "updated": "2026-11-02T10:32:23+05:30",
+ "label": "2 Nov 2026, 10:33 AM IST",
+ "updated": "2026-11-02T10:33:16+05:30",
  "state": "open",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "2 Nov 2026, 10:32 AM",
+  "date": "2 Nov 2026, 10:33 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -88,13 +88,13 @@
     "v": 138777.0,
     "ch": 292.0,
     "pct": 0.21,
-    "t": "2 Nov, 10:32 AM"
+    "t": "2 Nov, 10:33 AM"
    },
    "silver": {
     "v": 180789.0,
     "ch": 1657.0,
     "pct": 0.93,
-    "t": "2 Nov, 10:32 AM"
+    "t": "2 Nov, 10:33 AM"
    }
   },
   "retail": {
@@ -309,70 +309,70 @@
    "g24_10": 139210.0,
    "ag_kg": 181350.0,
    "ag": 181.35,
-   "t": "2 Nov, 10:32 AM"
+   "t": "2 Nov, 10:33 AM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 23337.55,
+   "v": 23333.7,
    "prev": 23053.1,
-   "ch": 284.45,
-   "pct": 1.23,
+   "ch": 280.6,
+   "pct": 1.22,
    "high": 23344.05,
    "low": 23211.8,
    "open": 23222.3,
-   "t": 1793595743
+   "t": 1793595796
   },
   "SENSEX": {
-   "v": 75380.16,
+   "v": 75374.58,
    "prev": 74459.53,
-   "ch": 920.63,
-   "pct": 1.24,
+   "ch": 915.05,
+   "pct": 1.23,
    "high": 75489.7,
    "low": 75097.5,
    "open": 75152.54,
-   "t": 1793594843
+   "t": 1793594895
   },
   "BANKNIFTY": {
-   "v": 54935.05,
+   "v": 54926.3,
    "prev": 54686.95,
-   "ch": 248.1,
-   "pct": 0.45,
+   "ch": 239.35,
+   "pct": 0.44,
    "high": 55046.35,
    "low": 54776.25,
    "open": 54866.15,
-   "t": 1793595743
+   "t": 1793595796
   },
   "MIDCAP": {
-   "v": 57889.15,
+   "v": 57909.8,
    "prev": 57301.25,
-   "ch": 587.9,
-   "pct": 1.03,
-   "high": 57902.45,
+   "ch": 608.55,
+   "pct": 1.06,
+   "high": 57912.85,
    "low": 57469.75,
    "open": 57483.95,
-   "t": 1793595743
+   "t": 1793595796
   },
   "SMALLCAP": {
-   "v": 18608.35,
+   "v": 18618.2,
    "prev": 18463.6,
-   "ch": 144.75,
-   "pct": 0.78,
+   "ch": 154.6,
+   "pct": 0.84,
    "high": 18639.2,
    "low": 18381.65,
    "open": 18446.8,
-   "t": 1793595743
+   "t": 1793595796
   },
   "VIX": {
-   "v": 15.66,
+   "v": 15.67,
    "prev": 15.3,
-   "ch": 0.36,
-   "pct": 2.35,
+   "ch": 0.37,
+   "pct": 2.42,
    "high": 15.7,
    "low": 14.55,
    "open": 15.3,
-   "t": 1793595743
+   "t": 1793595796
   }
  },
  "nifty8": [
@@ -406,18 +406,18 @@
   ],
   [
    "2 Nov",
-   23337.55
+   23332.95
   ]
  ],
  "usdinr": {
-  "v": 94.84,
+  "v": 94.86,
   "prev": 94.94,
-  "ch": -0.09,
-  "pct": -0.1,
+  "ch": -0.08,
+  "pct": -0.08,
   "high": 94.95,
   "low": 94.69,
   "open": 94.94,
-  "t": 1793595742
+  "t": 1793595794
  },
  "brent": {
   "v": 110.04,
@@ -427,22 +427,22 @@
   "high": 112.38,
   "low": 109.63,
   "open": null,
-  "t": 1793595109
+  "t": 1793595148
  },
  "goldSpot": {
-  "v": 3907.4,
+  "v": 3907.9,
   "prev": 3898.9,
-  "ch": 8.5,
-  "pct": 0.22,
+  "ch": 9.0,
+  "pct": 0.23,
   "high": 3923.9,
   "low": 3889.0,
   "open": null,
-  "t": 1793595115
+  "t": 1793595190
  },
  "sectors": [
   [
    "Energy",
-   2.85
+   2.9
   ],
   [
    "Infra",
@@ -454,15 +454,15 @@
   ],
   [
    "PSU Bank",
-   1.36
+   1.37
   ],
   [
    "Realty",
-   1.12
+   1.22
   ],
   [
    "Auto",
-   1.1
+   1.08
   ],
   [
    "FMCG",
@@ -470,7 +470,7 @@
   ],
   [
    "Media",
-   0.64
+   0.72
   ],
   [
    "Fin. Services",
@@ -479,84 +479,84 @@
  ],
  "stocks": {
   "RELIANCE": {
-   "v": 1251.0,
-   "pct": 7.39
+   "v": 1250.5,
+   "pct": 7.35
   },
   "BHARTIARTL": {
-   "v": 1987.8,
-   "pct": 0.71
+   "v": 1986.9,
+   "pct": 0.67
   },
   "HDFCBANK": {
-   "v": 694.05,
-   "pct": 0.18
+   "v": 694.0,
+   "pct": 0.17
   },
   "ICICIBANK": {
-   "v": 1392.9,
-   "pct": -0.36
+   "v": 1392.4,
+   "pct": -0.4
   },
   "TCS": {
-   "v": 2535.1,
-   "pct": 1.3
+   "v": 2532.9,
+   "pct": 1.21
   },
   "SBIN": {
-   "v": 979.35,
-   "pct": 1.82
+   "v": 979.2,
+   "pct": 1.8
   },
   "BAJFINANCE": {
-   "v": 947.05,
-   "pct": 0.85
+   "v": 947.3,
+   "pct": 0.87
   },
   "LT": {
-   "v": 3927.7,
+   "v": 3928.0,
    "pct": 1.45
   },
   "INFY": {
-   "v": 1177.2,
-   "pct": -0.66
+   "v": 1175.2,
+   "pct": -0.83
   },
   "KOTAKBANK": {
-   "v": 465.05,
-   "pct": 0.75
+   "v": 464.65,
+   "pct": 0.66
   },
   "HINDUNILVR": {
-   "v": 1896.0,
-   "pct": 1.68
+   "v": 1896.6,
+   "pct": 1.72
   },
   "ADANIPORTS": {
-   "v": 1832.8,
-   "pct": -0.93
+   "v": 1834.1,
+   "pct": -0.86
   },
   "SUNPHARMA": {
-   "v": 1770.4,
-   "pct": -0.41
+   "v": 1771.3,
+   "pct": -0.36
   },
   "TITAN": {
-   "v": 4427.3,
-   "pct": -0.21
+   "v": 4428.5,
+   "pct": -0.18
   },
   "AXISBANK": {
-   "v": 1212.1,
-   "pct": -0.4
+   "v": 1212.0,
+   "pct": -0.41
   },
   "HCLTECH": {
-   "v": 1449.5,
-   "pct": 1.5
+   "v": 1448.6,
+   "pct": 1.44
   },
   "MARUTI": {
    "v": 11745.0,
    "pct": 3.05
   },
   "MM": {
-   "v": 2884.4,
-   "pct": 1.55
+   "v": 2884.1,
+   "pct": 1.54
   },
   "ADANIENT": {
-   "v": 2586.1,
-   "pct": 0.26
+   "v": 2592.0,
+   "pct": 0.49
   },
   "ITC": {
-   "v": 267.6,
-   "pct": 0.75
+   "v": 267.65,
+   "pct": 0.77
   },
   "ULTRACEMCO": {
    "v": 11284.0,
@@ -567,28 +567,28 @@
    "pct": 0.93
   },
   "JSWSTEEL": {
-   "v": 1268.9,
-   "pct": 1.84
+   "v": 1268.7,
+   "pct": 1.82
   },
   "NTPC": {
-   "v": 325.4,
-   "pct": 2.89
+   "v": 325.05,
+   "pct": 2.78
   },
   "BAJAJ-AUTO": {
-   "v": 10264.0,
-   "pct": -0.83
+   "v": 10263.0,
+   "pct": -0.84
   }
  },
  "gainers": [
   [
    "RELIANCE",
    "Reliance Industries",
-   7.39
+   7.35
   ],
   [
    "MAXHEALTH",
    "Max Healthcare Institute",
-   4.64
+   4.69
   ],
   [
    "JIOFIN",
@@ -598,7 +598,7 @@
   [
    "TATASTEEL",
    "Tata Steel",
-   4.21
+   4.16
   ],
   [
    "COALINDIA",
@@ -610,27 +610,27 @@
   [
    "ADANIPORTS",
    "Adani Ports and Special Economic Zone",
-   -0.93
+   -0.86
   ],
   [
    "BAJAJ-AUTO",
    "Bajaj Auto",
-   -0.83
+   -0.84
   ],
   [
    "INFY",
    "Infosys",
-   -0.66
+   -0.83
   ],
   [
    "TRENT",
    "Trent",
-   -0.61
+   -0.58
   ],
   [
    "EICHERMOT",
    "Eicher Motors",
-   -0.54
+   -0.52
   ]
  ],
  "breadth": {
@@ -1068,12 +1068,7 @@
    "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNV2VwMmxweENPTExJQkM2Y0ZsTDNNOXloUFV3T3c4TzhEYVJ5Qm9YZ2dBOFZZZ3prVFdwalVoTmV5QV95WnBYaF9ERXhOTU1nMkxqTWpZY2Jsb0k0QVhidkpJYy03ZUxHdkJ4dTNPUEtScEIwWTJhYS1NTk1QVnl4YXYzU2FFQ0hUMDB6QnNYMlRjZFNtVjVWdGdoZDQ2OFAycTJjZTJ0a0NjS3ZfaVZXdlVtTHJxX3FTU1B1WkZUVTFqZHdSYi1yWER3U1MxOHJhUF8yekVOdldCNFBoR3hwRtIB5gFBVV95cUxPVXZXX0RFUVR2eU15dXBIWEVtbU1XajhwY1pscUxqR3FjOU92bUR6NzlkQjdZUm1zNTJwVVNQck1Fc21wcEE0LWRZZmxvQms2eDNTdllaN042OV8zNUtXUWhZX1lZLVZiUlVjaWZoZ01IeWcxU0xQeXI1OUFvTXBKSHowWXlrNGxqbmpXVlpGZUZWQkRxYmx5cnJuajU0c0F0bVFrOXM1Q1htbko2WVBvSzRVbHM0akR6aWhVbjMwQ1JvOUtkc195U3BCTEUwS2tEZzJGSlI2UUpBZjVWV1c5b1J5Smp5UQ?oc=5"
   }
  ],
- "log": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 27 IPOs",
-  "subscription: 11 IPOs from 13 cards",
-  "outlook: 267 headlines, 25 up, 6 down"
- ],
+ "log": [],
  "members": {
   "n50": {
    "day": "2026-11-02",
@@ -2092,9 +2087,9 @@
   }
  },
  "nse": {
-  "n50": "2 Nov, 10:32 AM",
-  "mid": "2 Nov, 10:32 AM",
-  "small": "2 Nov, 10:32 AM"
+  "n50": "2 Nov, 10:33 AM",
+  "mid": "2 Nov, 10:33 AM",
+  "small": "2 Nov, 10:33 AM"
  },
  "midg": [
   [
@@ -2103,51 +2098,51 @@
   ],
   [
    "Rail Vikas Nigam",
-   4.97
+   4.94
   ],
   [
    "GE Vernova T&D India",
-   4.43
+   4.67
   ],
   [
    "Vishal Mega Mart",
-   4.38
+   4.43
   ],
   [
    "PI Industries",
-   4.31
+   4.41
   ]
  ],
  "midl": [
   [
    "PB Fintech",
-   -3.3
+   -3.5
   ],
   [
    "Lodha Developers",
-   -2.42
-  ],
-  [
-   "Blue Star",
-   -1.73
+   -2.3
   ],
   [
    "Federal Bank",
-   -1.72
+   -1.71
+  ],
+  [
+   "Blue Star",
+   -1.7
   ],
   [
    "Laurus Labs",
-   -1.59
+   -1.56
   ]
  ],
  "smallg": [
   [
    "ITI",
-   17.94
+   17.95
   ],
   [
    "Affle 3i",
-   8.81
+   10.08
   ],
   [
    "Delhivery",
@@ -2155,17 +2150,17 @@
   ],
   [
    "Inox Wind",
-   8.32
+   8.42
   ],
   [
    "NBCC (India)",
-   6.88
+   6.79
   ]
  ],
  "smalll": [
   [
    "Indraprastha Gas",
-   -5.29
+   -5.28
   ],
   [
    "Sterlite Technologies",
@@ -2177,11 +2172,11 @@
   ],
   [
    "MTAR Technologies",
-   -4.56
+   -4.2
   ],
   [
    "Navin Fluorine International",
-   -4.22
+   -3.73
   ]
  ],
  "eod": {
@@ -2234,9 +2229,9 @@
   ],
   [
    "Nikkei 225",
-   63439.06,
+   63441.48,
    0.24,
-   1793594840
+   1793594895
   ],
   [
    "Hang Seng",
