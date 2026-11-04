@@ -1,13 +1,13 @@
 {
- "label": "4 Nov 2026, 3:30 PM IST",
- "updated": "2026-11-04T15:30:46+05:30",
+ "label": "4 Nov 2026, 3:32 PM IST",
+ "updated": "2026-11-04T15:32:25+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "4 Nov 2026, 3:30 PM",
+  "date": "4 Nov 2026, 3:32 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -103,13 +103,13 @@
     "v": 142750.0,
     "ch": 3298.0,
     "pct": 2.37,
-    "t": "4 Nov, 3:30 PM"
+    "t": "4 Nov, 3:32 PM"
    },
    "silver": {
     "v": 186600.0,
     "ch": 6902.0,
     "pct": 3.84,
-    "t": "4 Nov, 3:30 PM"
+    "t": "4 Nov, 3:32 PM"
    }
   },
   "retail": {
@@ -324,7 +324,7 @@
    "g24_10": 143220.0,
    "ag_kg": 187210.0,
    "ag": 187.21,
-   "t": "4 Nov, 3:30 PM"
+   "t": "4 Nov, 3:32 PM"
   }
  },
  "logos": [],
@@ -337,7 +337,7 @@
    "high": 23960.6,
    "low": 23696.15,
    "open": 23734.15,
-   "t": 1793786446
+   "t": 1793786471
   },
   "SENSEX": {
    "v": 77246.77,
@@ -347,7 +347,7 @@
    "high": 77396.04,
    "low": 76604.85,
    "open": 76845.65,
-   "t": 1793785545
+   "t": 1793785644
   },
   "BANKNIFTY": {
    "v": 55913.6,
@@ -357,37 +357,37 @@
    "high": 55946.85,
    "low": 55294.5,
    "open": 55485.1,
-   "t": 1793786445
+   "t": 1793786471
   },
   "MIDCAP": {
-   "v": 59515.65,
+   "v": 59505.5,
    "prev": 58596.25,
-   "ch": 919.4,
-   "pct": 1.57,
+   "ch": 909.25,
+   "pct": 1.55,
    "high": 59515.65,
    "low": 58317.6,
    "open": 58479.7,
-   "t": 1793786445
+   "t": 1793786471
   },
   "SMALLCAP": {
-   "v": 19040.15,
+   "v": 19026.4,
    "prev": 18652.85,
-   "ch": 387.3,
-   "pct": 2.08,
+   "ch": 373.55,
+   "pct": 2.0,
    "high": 19042.65,
    "low": 18535.55,
    "open": 18631.8,
-   "t": 1793786446
+   "t": 1793786471
   },
   "VIX": {
-   "v": 15.17,
+   "v": 15.18,
    "prev": 15.72,
-   "ch": -0.55,
-   "pct": -3.5,
+   "ch": -0.54,
+   "pct": -3.44,
    "high": 16.14,
    "low": 15.12,
    "open": 15.72,
-   "t": 1793786445
+   "t": 1793786544
   }
  },
  "nifty8": [
@@ -428,11 +428,11 @@
   "v": 94.63,
   "prev": 94.73,
   "ch": -0.1,
-  "pct": -0.1,
+  "pct": -0.11,
   "high": 94.87,
   "low": 94.49,
   "open": 94.73,
-  "t": 1793786435
+  "t": 1793786471
  },
  "brent": {
   "v": 102.86,
@@ -442,30 +442,30 @@
   "high": 104.87,
   "low": 102.15,
   "open": 103.63,
-  "t": 1793785842
+  "t": 1793785945
  },
  "goldSpot": {
-  "v": 4053.6,
+  "v": 4053.5,
   "prev": 3940.4,
-  "ch": 113.2,
+  "ch": 113.1,
   "pct": 2.87,
   "high": 4058.7,
   "low": 3928.2,
   "open": 3962.7,
-  "t": 1793785838
+  "t": 1793785933
  },
  "sectors": [
   [
-   "Media",
-   5.36
-  ],
-  [
    "Realty",
-   5.26
+   5.25
   ],
   [
    "FMCG",
    5.21
+  ],
+  [
+   "Media",
+   5.15
   ],
   [
    "Auto",
@@ -485,11 +485,11 @@
   ],
   [
    "Energy",
-   2.1
+   2.06
   ],
   [
    "Pharma",
-   0.81
+   0.84
   ]
  ],
  "stocks": {
@@ -1151,12 +1151,7 @@
    "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wUGJHUTdGMmpRZFZQSU5xaGE0Y0NKZUlicU9tQXFJMm5ENWVPYmpIQkFUSTVWMTJ0enoyTWdCU0lOMXlSMmxFOEFTUk5ycEd3Y1plOFA0WXg5c2xIdXRtbk9ucjBNNk9Oc1Q1WVBR?oc=5"
   }
  ],
- "log": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 26 IPOs",
-  "subscription: 9 IPOs from 10 cards",
-  "outlook: 435 headlines, 25 up, 18 down"
- ],
+ "log": [],
  "members": {
   "n50": {
    "day": "2026-11-04",
@@ -2175,22 +2170,18 @@
   }
  },
  "nse": {
-  "n50": "4 Nov, 3:30 PM",
-  "mid": "4 Nov, 3:30 PM",
-  "small": "4 Nov, 3:30 PM"
+  "n50": "4 Nov, 3:32 PM",
+  "mid": "4 Nov, 3:32 PM",
+  "small": "4 Nov, 3:32 PM"
  },
  "midg": [
   [
    "NLC India",
-   8.97
+   7.54
   ],
   [
    "Exide Industries",
-   6.43
-  ],
-  [
-   "Hindustan Copper",
-   6.37
+   6.4
   ],
   [
    "Bharat Heavy Electricals",
@@ -2199,6 +2190,10 @@
   [
    "Lodha Developers",
    5.77
+  ],
+  [
+   "Hindustan Copper",
+   5.73
   ]
  ],
  "midl": [
@@ -2226,45 +2221,45 @@
  "smallg": [
   [
    "Gujarat Mineral Development Corporation",
-   10.08
+   10.24
   ],
   [
    "Redington",
-   9.47
-  ],
-  [
-   "IIFL Finance",
-   7.48
-  ],
-  [
-   "Godawari Power & Ispat",
-   7.32
+   9.4
   ],
   [
    "Jyoti CNC Automation",
-   7.1
+   6.98
+  ],
+  [
+   "Inox Wind",
+   6.87
+  ],
+  [
+   "IIFL Finance",
+   6.77
   ]
  ],
  "smalll": [
   [
    "MTAR Technologies",
-   -4.49
-  ],
-  [
-   "ITI",
-   -3.23
+   -4.37
   ],
   [
    "Acutaas Chemicals",
-   -3.1
+   -3.25
   ],
   [
    "Urban Company",
-   -2.94
+   -2.77
+  ],
+  [
+   "ITI",
+   -2.75
   ],
   [
    "Cholamandalam Financial Holdings",
-   -1.96
+   -1.82
   ]
  ],
  "eod": {
@@ -2345,9 +2340,9 @@
   ],
   [
    "FTSE 100",
-   10712.57,
-   0.7,
-   1793785545
+   10717.37,
+   0.74,
+   1793785644
   ],
   [
    "US 10Y yield",
