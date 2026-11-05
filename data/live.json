@@ -1,6 +1,6 @@
 {
  "label": "5 Nov 2026, 3:39 PM IST",
- "updated": "2026-11-05T15:39:04+05:30",
+ "updated": "2026-11-05T15:39:50+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -345,14 +345,14 @@
    "t": 1793872876
   },
   "SENSEX": {
-   "v": 79328.13,
+   "v": 79326.2,
    "prev": 77301.4,
-   "ch": 2026.73,
+   "ch": 2024.8,
    "pct": 2.62,
    "high": 79470.03,
    "low": 78520.56,
    "open": 78910.94,
-   "t": 1793872443
+   "t": 1793872489
   },
   "BANKNIFTY": {
    "v": 57773.65,
@@ -385,14 +385,14 @@
    "t": 1793872876
   },
   "VIX": {
-   "v": 15.59,
+   "v": 15.6,
    "prev": 15.19,
-   "ch": 0.4,
-   "pct": 2.63,
+   "ch": 0.41,
+   "pct": 2.7,
    "high": 15.96,
    "low": 11.62,
    "open": 15.19,
-   "t": 1793873344
+   "t": 1793873389
   }
  },
  "nifty8": [
@@ -440,24 +440,24 @@
   "t": 1793872935
  },
  "brent": {
-  "v": 95.9,
+  "v": 95.94,
   "prev": 94.62,
-  "ch": 1.28,
-  "pct": 1.35,
+  "ch": 1.32,
+  "pct": 1.4,
   "high": 95.96,
   "low": 93.44,
   "open": 93.59,
-  "t": 1793872741
+  "t": 1793872775
  },
  "goldSpot": {
-  "v": 4133.1,
+  "v": 4132.7,
   "prev": 4073.0,
-  "ch": 60.1,
-  "pct": 1.48,
+  "ch": 59.7,
+  "pct": 1.47,
   "high": 4155.8,
   "low": 4067.0,
   "open": 4149.4,
-  "t": 1793872741
+  "t": 1793872785
  },
  "sectors": [
   [
@@ -711,7 +711,7 @@
    "snii": 82.3,
    "sr": 20.91,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "jio": {
    "gmp": 1119.0,
@@ -769,7 +769,7 @@
   "antala": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "5 Nov, 3:35 PM",
+   "gat": "5 Nov, 3:39 PM",
    "ghist": [
     [
      "30 Oct",
@@ -805,7 +805,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -842,7 +842,7 @@
    "snii": null,
    "sr": 555.72,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "johnsoncab": {
    "gmp": 8.0,
@@ -879,7 +879,7 @@
    "snii": null,
    "sr": 17.86,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "vectras": {
    "gmp": 0.0,
@@ -916,7 +916,7 @@
    "snii": null,
    "sr": 4.43,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "hgs": {
    "gmp": 25.0,
@@ -988,7 +988,7 @@
    "snii": null,
    "sr": 2.26,
    "ssrc": "IPOMarket",
-   "sat": "5 Nov, 3:35 PM"
+   "sat": "5 Nov, 3:39 PM"
   },
   "wiscon": {
    "sub": 1.15,
@@ -1039,7 +1039,7 @@
   "dii_sell": 20105.05,
   "fii_buy": 21607.38,
   "fii_sell": 14323.35,
-  "fetched": "5 Nov, 3:35 PM",
+  "fetched": "5 Nov, 3:39 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1169,7 +1169,12 @@
    "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNE1zRnJTV0VtTHpjWU9ucEFFSUtma0VBV3JaRkw4cXJSODZyQV80dThrb1FVX2tkaXctV0pUTEk0OVVmZnRnQ2dRTkZzb0k3dXBKM2s3OUx6UGRPOENUVmVQYnNlVnh2bFRQUVJoOUpKdmYzbkV4Wk1mTDNwV1hWTGIwMXhNSzRqMmZURWpfOA?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 6 IPOs from 7 cards",
+  "outlook: 356 headlines, 25 up, 25 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-05",
@@ -2323,23 +2328,23 @@
   },
   "2026-11-05": {
    "NIFTY": 24536.6,
-   "SENSEX": 79328.13,
+   "SENSEX": 79326.2,
    "BANKNIFTY": 57773.65,
    "MIDCAP": 60620.9,
    "SMALLCAP": 19132.45,
-   "VIX": 15.59
+   "VIX": 15.6
   }
  },
  "fulllog": [
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 6 IPOs from 7 cards",
-  "outlook: 357 headlines, 25 up, 25 down"
+  "outlook: 356 headlines, 25 up, 25 down"
  ],
  "universe": {
   "stocks": 4712,
   "quotes": 4711,
-  "at": "5 Nov, 3:35 PM"
+  "at": "5 Nov, 3:39 PM"
  },
  "global": [
   [
@@ -2374,9 +2379,9 @@
   ],
   [
    "FTSE 100",
-   10914.98,
-   0.79,
-   1793872444
+   10915.77,
+   0.8,
+   1793872490
   ],
   [
    "US 10Y yield",
@@ -2386,8 +2391,8 @@
   ]
  ],
  "outlook": {
-  "at": "5 Nov, 3:35 PM",
-  "headlines": 357,
+  "at": "5 Nov, 3:39 PM",
+  "headlines": 356,
   "screened": 1797,
   "cues": [
    "US tech (Nasdaq) rose 1.4% in the last session",
@@ -2532,10 +2537,10 @@
      },
      {
       "k": "news",
-      "t": "BHEL Bags Adani Power Orders Worth Up to ₹28,000 Crore for Four Thermal Projects",
+      "t": "BHEL Bags 6,400 MW Thermal Power Orders from Adani Power for Four Projects",
       "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ2tPek9nZGRrTDFqSFFZckpjTnNzSThpNUc2RXExcUU0UlUtTmh0VHhIVHpsNU5Xc3BLclBmbng3dHljT1JiY1VtbWFOOFIyVjN4VThhbmJWaWZnZ3RCMFN0dHNYV3JiMmVBbDRyTlNNTUd6aFVXUld2WFJNYVI4d3R6SQ?oc=5",
-      "src": "Indianweb2.com"
+      "u": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBPMEU2Q0JBeDhIY0RJVEVwZUw4SzdrcEZxSzlxblBRQUNvX1AyYUEySlpMUl9CRi1hYXFqM1A2ZTdtTFMzcUlUOXJuWE02RXBFa0NpbkdRYXhlZU1pQWpDNE5OTDVCaVJ5LXRzRGFwbTZXUHBvcjMtNl9n?oc=5",
+      "src": "Indian PSU"
      }
     ]
    },
@@ -4159,7 +4164,7 @@
   }
  },
  "hilo": {
-  "at": "5 Nov, 3:35 PM",
+  "at": "5 Nov, 3:39 PM",
   "hi": [
    [
     "ICICIBANK",
