@@ -1,13 +1,13 @@
 {
- "label": "6 Nov 2026, 11:18 PM IST",
- "updated": "2026-11-06T23:18:22+05:30",
+ "label": "7 Nov 2026, 4:33 AM IST",
+ "updated": "2026-11-07T04:33:02+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "6 Nov 2026, 11:18 PM",
+  "date": "7 Nov 2026, 4:33 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -104,22 +104,22 @@
    "g585": 8275.0,
    "p999": 14413,
    "pag": 187.3,
-   "sess": "6 Nov · PM",
-   "g999_10": 141452.0,
+   "sess": "6 Nov",
+   "g999_10": 141452,
    "ag": 182.87
   },
   "mcx": {
    "gold": {
-    "v": 141918.0,
-    "ch": -2177.0,
-    "pct": -1.51,
-    "t": "6 Nov, 11:18 PM"
+    "v": 142364.0,
+    "ch": -1731.0,
+    "pct": -1.2,
+    "t": "7 Nov, 4:33 AM"
    },
    "silver": {
-    "v": 184452.0,
-    "ch": -2688.0,
-    "pct": -1.44,
-    "t": "6 Nov, 11:18 PM"
+    "v": 184977.0,
+    "ch": 190.0,
+    "pct": 0.1,
+    "t": "7 Nov, 4:33 AM"
    }
   },
   "retail": {
@@ -325,16 +325,16 @@
      "ag": 205.0
     }
    },
-   "at": "6 Nov, 11:17 PM",
-   "at_ts": 1793987233.609396,
+   "at": "7 Nov, 4:33 AM",
+   "at_ts": 1794006182.885122,
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 14240.0,
-   "g24_10": 142400.0,
-   "ag_kg": 185080.0,
-   "ag": 185.08,
-   "t": "6 Nov, 11:18 PM"
+   "g24": 14286.0,
+   "g24_10": 142860.0,
+   "ag_kg": 185630.0,
+   "ag": 185.63,
+   "t": "7 Nov, 4:33 AM"
   }
  },
  "logos": [],
@@ -402,6 +402,10 @@
  },
  "nifty8": [
   [
+   "27 Oct",
+   22749.75
+  ],
+  [
    "28 Oct",
    22698.85
   ],
@@ -428,10 +432,6 @@
   [
    "5 Nov",
    24536.6
-  ],
-  [
-   "6 Nov",
-   25030.35
   ]
  ],
  "usdinr": {
@@ -442,27 +442,27 @@
   "high": 94.5,
   "low": 93.81,
   "open": 94.46,
-  "t": 1793985209
+  "t": 1794001006
  },
  "brent": {
-  "v": 97.36,
+  "v": 97.76,
   "prev": 98.29,
-  "ch": -0.93,
-  "pct": -0.95,
+  "ch": -0.53,
+  "pct": -0.54,
   "high": 100.92,
   "low": 96.71,
   "open": 99.59,
-  "t": 1793986702
+  "t": 1794002384
  },
  "goldSpot": {
-  "v": 4068.0,
+  "v": 4079.5,
   "prev": 4113.5,
-  "ch": -45.5,
-  "pct": -1.11,
+  "ch": -34.0,
+  "pct": -0.83,
   "high": 4116.2,
   "low": 4035.6,
   "open": 4053.6,
-  "t": 1793986697
+  "t": 1794002399
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "6 Nov, 11:18 PM"
+   "sat": "7 Nov, 4:33 AM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -851,7 +851,7 @@
    "snii": null,
    "sr": 555.72,
    "ssrc": "IPOMarket",
-   "sat": "6 Nov, 11:18 PM"
+   "sat": "7 Nov, 4:33 AM"
   },
   "johnsoncab": {
    "gmp": 8.0,
@@ -888,7 +888,7 @@
    "snii": null,
    "sr": 17.86,
    "ssrc": "IPOMarket",
-   "sat": "6 Nov, 11:18 PM"
+   "sat": "7 Nov, 4:33 AM"
   },
   "vectras": {
    "gmp": 0.0,
@@ -925,7 +925,7 @@
    "snii": null,
    "sr": 4.43,
    "ssrc": "IPOMarket",
-   "sat": "6 Nov, 11:18 PM"
+   "sat": "7 Nov, 4:33 AM"
   },
   "hgs": {
    "gmp": 25.0,
@@ -997,7 +997,7 @@
    "snii": null,
    "sr": 2.26,
    "ssrc": "IPOMarket",
-   "sat": "6 Nov, 11:18 PM"
+   "sat": "7 Nov, 4:33 AM"
   },
   "wiscon": {
    "sub": 1.15,
@@ -1048,7 +1048,7 @@
   "dii_sell": 24053.02,
   "fii_buy": 30455.63,
   "fii_sell": 16705.81,
-  "fetched": "6 Nov, 11:18 PM",
+  "fetched": "7 Nov, 4:33 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1090,6 +1090,20 @@
  },
  "news": [
   {
+   "tag": "IPO",
+   "t": "Gulf Lloyds (India) IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "7 Nov, 12:58 AM",
+   "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxVlc3Vm1xUDkyRkd5OWxkVmVGSWo3aVVGblJPRVBreWpVVHRUX2tiaEUya0pEbGtBRHlCeE9HT3poNXNOS010Qm1ENE1LN2JUQnBnYXl1TlB6UQ?oc=5"
+  },
+  {
+   "tag": "IPO",
+   "t": "Kanishk Aluminium India Limited IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "6 Nov, 10:53 PM",
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE02MWhuaGpqbHJtTUs5QVVINmRxUHlySE1yeVJlQjMxRHdoREMtd3VrTTdQNlJQTUYwaGtkWUFSclFWbFo5djc3V0g2Q0RKcHh4cWxLQkRGekh1RmhrcGN2eDRn?oc=5"
+  },
+  {
    "tag": "Results",
    "t": "Prabha Energy NSE:PRABHA Q2 FY27 Results Newspaper Publication",
    "s": "Kalkine India",
@@ -1104,18 +1118,18 @@
    "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE01aERxSURBbk9DRWlLeEtZNE54RHhBZGNra043VW12QTJoanRJV0NWMUFOVEFibGNIVkhWWm5EM281SEo1dGljUi0xTEQ5WEdMMlJ5V3RfZ3JReV95M083WHVIeDZIWkhMa0E?oc=5"
   },
   {
-   "tag": "IPO",
-   "t": "Manilam Industries India Ltd. IPO GMP Today with Listing Gain Expectation",
-   "s": "IPO Watch",
-   "d": "6 Nov, 7:54 PM",
-   "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9BUXNObkVtYUdTT194UTBRQUNGOE5FeDdfSld3R3NyVGFFd2dTMXdMWkFSN21ONnBaV25rMkJITkVvTUZuOHliRlkyRHptUW1Oa2cyTWx1UFoyTlBtV0lfZkg4RDE5Q09T?oc=5"
-  },
-  {
    "tag": "Economy",
    "t": "Rupee hits six-month high of 93.91 against dollar on oil price decline",
    "s": "Business Standard",
    "d": "6 Nov, 6:07 PM",
    "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSnE3RmZjZUFyemRpY2lmbnc4dG8tT2FubzE1RW5nUjNULUtEZlQ1Rk83Y083bS1PcDFxTjdNVzRfeFVkcHpBZ0JKdVRTY1ZiWXBfOVF4V0ZlMzRqZVR1d3Z2dFBxa0d0MHphaFB0X0Z0eXYwQ0x0dV9nYS13Y2xsTVdoelU1amVFMHFSOG45SlcyM3BPWUZ0cVlleU0zcjBLN2g2bDVtS2swWGxwVXhWSENIUFEtTF9od0ZxS2tLTXZ1QWxkMWhMcDFPdUQ2SHhpZjU00gHYAUFVX3lxTE0yRkhzV2o2LWdmUENPM3ctT1Y4VUNMOFlzLXZfVXlBTWpNNm1hSkNoOGtNNjVldU9ueGt0bWg1RUpobzJGRGhIbzZnanpaRzF4Mmt0ZzNCVDhFUENxam1TdzlfM2lEQjViazdCeGFpV0FHcjNIWnBvbTBkRGY2U2x0UHhWRWNqUUxmTDF2RHpKVi1XQVdncnR3ek1pNmhLLVljOEM4cmFVTFFIWTQ1bGVoOGpFdWNyc0hURzlUM21rYTgwYkt1NVA2WlF3M1ZfVndZQkJsaV9COQ?oc=5"
+  },
+  {
+   "tag": "Economy",
+   "t": "India's foreign exchange reserves drop by $2.69 billion to $717 billion",
+   "s": "Business Standard",
+   "d": "6 Nov, 5:35 PM",
+   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPM2luaG80RVZrRW5fQUFOX2Q5czZtOG5GUGRaeDhManFPc1VyQmVfbnlqNDEtaXpDTkdURE0zSkxaUkpZLXBFUVN1U3FUSzFtR2hGeGxsck1iaVF0TFM3N09HQU1Ya2VnZUhNWGFHRVFMVTE2TGRIMlRLb1hvVU54b2RLQ0tFLS10ajJ6VC1wdnM0MXRxVXRIS25GMVF2Y0h5QjNuclg5cFplZGJXV25DNHdjREZGWjNxTzZXc2JQNFd5UzNpRm1PbU5Mb245R2tHZGfSAdcBQVVfeXFMTTJDdl9sMDB2MmZEUkZTNFoxNUZaX1BYWmR0Y3NJb1gzaHlHY0xwUVVYTGNWX1lydkJHWnhSUFQtNnY3bktoV2NLcEQ0eXREb1ExdFNPWGsxcTVvTEM5RGVFUmpwN0s2dmFqaTVOTVpBYmZUNE1FczZsel9QTDhHU1FESkVpUGlmWHFuWXpud1ZUSHhXcVkwYnRDX2QwcE5aald5eklDbDNVZXRmTUpNUk9GaW5sdFJtY0NXVm9jSGx6WWt5MHJlajFhSEVVRFZtNkk3XzdFcm8?oc=5"
   },
   {
    "tag": "Markets",
@@ -1133,17 +1147,17 @@
   },
   {
    "tag": "Markets",
+   "t": "Why Is Stock Market Rising Today? Sensex Reclaims 80,500, Nifty Nears 24,850: Four Reasons Explained",
+   "s": "NDTV Profit",
+   "d": "6 Nov, 1:05 PM",
+   "u": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPem1JUktWZkY3bmxXOEllRXlySm9PalM4cDd4Q2R5TjExUGtub1F6Tmc5VWtjNjZWdkx3WlBXWEEzazBpY3QyV0RLemZabmE0R2xOMGlNT3VCRW55R3ZLNzVfUFQ1RUxlTV9uVXJoTll5czdYa01lOU41SURwNjctMWhBQy1JUHdpdngwNXg1UzVRNEgxaHhOejk0aHA2a0h0aVdrMEpuVVVFakF4bEc3N0RvcEVZOGVweVhKdFRySTFwcDhKV0gzZkJmZll4eFFNTGNpalFTV1V6dUx5WnFPVHdFblllWXBFV2RPRldLYVJVa0FCaTBkTGk3cUowcHlFdWlrQUhOMlVVV2xV0gGUAkFVX3lxTFBvclBxWktRejZvUFRHaG1Rd3dIWXpldGRSLVBNRDBEWjhQVWRPUXg2MzRkdWVuNHd0bTlMU0h1dm5MUDJQbVJ3TFJVR1dxNGFidl9WMTJoRVpkNWp3QVhPaXg0cDFSSUJxNDNTbHQtQnBzaE02QmxFYUQwZjBoX0hYMWVKTkJQUWlFbXQ2YVVQZlV6VzNiNzRsdWFWY1EwQm1yNDNCUmRwdHdxZ2lmdlYzQmdJbDliellybWRtcHZiZXNZYkV6WG1mSlM2UV9iZ2RjeFlibWpGZlFMV250Y0Uya0tKSTY0c0VrRlRXNGlzRXdTcEJpUG44bUJHWGZ1SWEyYXJhd0Q4MDZxYkxVUW5YdnNidw?oc=5"
+  },
+  {
+   "tag": "Markets",
    "t": "Sensex, Nifty Open Flat as Oil Rebounds, Asian Stocks Fall",
    "s": "HDFC Sky",
    "d": "6 Nov, 10:13 AM",
    "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQdm9fVmNIYmVScXppMGR6ZFE1cTlaRllwUUZ3UmlHaTlZbjRsOGs4b2I2My1rM1FaM25NMGUwUkNmelZzdEtILWJqU1BmLWVxN05CRzVmNlNHT05NUEN0OW1hT0o0U0w5VHJyMHg2bGJGSzRYdWpBWEwwTjZuc0Fnb1ZhZjlyUUhndTJ3dVdFY0FTajg4eDhnallFUVYwRnNGR1hLTS1RS284UGtNWkpZWlh4VHlYTGtXNVZBV0QxblYwVEY5RXViUVpjZFpEUWZyaF9UU3RZRUJDV3EtdVN5UzkzVWlISUxDWTZLQ0ZjUnEtR0kzUWhXSmc1YjVVQQ?oc=5"
-  },
-  {
-   "tag": "Markets",
-   "t": "Stock Market Today: Sensex, Nifty Trade Flat Amid Bloodbath In Global Markets",
-   "s": "ETV Bharat",
-   "d": "6 Nov, 9:49 AM",
-   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQLXFuZ1NsbWltMjlRQ0d4eFVnV25WWlE2b0lCU2ZtSkRwOXRKemQtUUlzUVo3VllHTFBhZGVjNk5NcXdlOUkyemFBT3JtTWhJb2RPYmwyUDd3RTE3SDc1dEVpdjNkWVFBWjFuX0MxaHhkcmpnOXZ6YVhrTDJHd2FLMHp5ZWZxUWd2Wm9uRVI1ellzelNiX003TDFTLVliRW5qZXJZdUZoWkw0eG9oMFJwN1d2aUI2YkhyVy11cV9EOVBiamFVWE5SOXlfZUpnSG51ZWk2OS1NY9IB3AFBVV95cUxNNlpYQ0s4anJ1aXlxblNRUnE4Y2xfWUZiM1JqUlRPR1hDRHFqRGZkb2lfUUtLanA2VllKVzRqSkFIR2NJTFFGdkd6RmJDem5CQ3hqQjFvcUhNTHhxNERPajFuUGZyb3lKUEFhZmM5VE15cnJJSW9EaTFKV3VRNTR6cU5BcnFObWtpdEVmME9XYlpycEpQaDRTWllscTZQUVhndGZZR2hSb0ZsNUE4dEY0SjFCSjlRdkJuQXB0VDd2eU9RR21ZbVRGUHRBN011S0tOTF81dk5DdXB6ZkN4?oc=5"
   },
   {
    "tag": "Economy",
@@ -1167,37 +1181,24 @@
    "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQaGtKeTI1Z0RDQUNyUUc3T1lmb3luWC1hYnRCU1JFT3g0ZTRjLVAyczFKVjhtWFVaOVlkdXNIX3BMTDAzZDFiRV9kNm5EdlpWS0tGSlFJMkFoOTQ3anVTZW0xb2d5NVhzTUluTDk3N1FxLTNEdS03VFNyclNuQTJWa045VVJaY3R0bWRjWFQzVlE2blpJT3RrM29DTEZCandubGEzajBLRU1WcF9lQXI3YWlnaERkMUtRZXhsenVRRy12SmtwQWxMaWl5NXMwN2xuaFRfLVJxYkpnMVVkRWtr0gHkAUFVX3lxTE9vR1ZuVnhnNVU5MDMwc0dqcDFCb05mLWV4MFdhVnFuc2NfRXN5amJONm9qUEVtYXM0UXNkTUlwNnYzcEVLSFdIbDQ4LTVnbU9vQnlxeG9lR0Q0VDVWVFZKNXQ0MzdfVUN0dFZ5NmMyNHRSUzZqRTN0WUh5VmQ5U0ZXRk9UYmpycVJLeFY5akpHWjdIUG5sdTJTUTloTEdKZ1p3Q00tVlZiSk1HcmxDNk1NcU9RaFZrazVtdzlGM3AxTnlHRFByMGFNendWS000YVB4V3BKUGQxX1g1VElCMi1wZ0RwLQ?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "RBI’s USD-INR Swap Facility Sparks Unprecedented Forex Inflows, Banks Raise USD 73 Billion in 11 weeks",
-   "s": "DD News",
-   "d": "5 Nov, 11:57 PM",
-   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTzY0NlVINGVMV1hHLWFCOU5WdHFfVHYwa0NTZU9zdkxvT292LS1wV2RLZWZDanQ4alhWbmFkYmVzblJLUThxbzRKMHdDNUY3eW5rLUI5eDJmYW9fNXZHTnNuV3I5eDJTZ1FOZVU5bGE4SDFsZTRyVnI0bVVvNzZNbVBNSGdLdHkySDBYNXAxNTYwZksxZUl4bGVEWnFWYVhhR0ozUHhXc1J5UjNKa3l2QjhxZDVoM0hiUjI1eksycU5BYV94?oc=5"
-  },
-  {
    "tag": "IPO",
    "t": "HGS India shares to list tomorrow; GMP at 34%, check expected listing price",
    "s": "Moneycontrol.com",
    "d": "5 Nov, 4:42 PM",
    "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSlczN2J1RFh6dll4WFJHMmJDSWJTdGJmSnRrU05oOF9EdEVWOWt3Q0NiSHEwemQ2dXdBV2ZadVVMWVl4TWtMRE5UcjZCbVZoSXF0c3l3Y21XUGRNNGwzUl9GVWlfdXJoX3N2dVdnUEl3SUNZUE9Hc25vXzhHYlptM21TSFRjT0x2NE5DY3F5RHdBNEJjbHhxLXlEWUdtd0lxeDc4WlE2dDhyRF9peTRTbEF1WTBORklHb1ZJMDBCd0FfTFNzUlViUlFJcHpEUdIB0wFBVV95cUxONVF0OEVKTk5xbW1HVy0xbW1WbXdVOHlwZkhHVXFhMkxjMjkwMzlYTmpjOEpnXzFjcURkZEZVUVU3cENNWjVmYldUREszUGJLMlNVanp2eHB0d3RySjVUOFU0M1hnODJZOWJhYWdldnNDNjlPY08xdFQzNDRDTmNHUDBOcGsxTTNwVkl0NWZIZHFCaXhiMlk1NkxlR1FaZ3REUDUycmFtaHJ1eXdQaXhCMTM5VWpfUldiNlJ3aTJsc1paZE9ScDZ6YnVmTVZ4T2dZSzlF?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "BSE vs NSE vs MCX vs IEX shares: Which exchange stock to buy after Q2 results for good returns? Experts' views",
-   "s": "Livemint",
-   "d": "5 Nov, 12:50 PM",
-   "u": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNajBOdlZGY3BfWVVrbnh3Ul8zaTI2UURaVTItR0xTeW9YalRTcHJPQnVTNU96NXhGaEg2TVFqWG9KNDYxOV9nelRhTUNhamtYRkpPNVMzTERTOUxMTkduLXo1MVJRTlF3YWJaRkNkNmw1UEVSeVUtNW5FQ1dmVDJTcUFwd0pIcUhuSWJRa0JNY1pOZFRXSHpaYlFBQkhwX01WT1E0ZlRkTE13YXBDNGhmODNqNGJFc1BmMUFmVC1IeTdXbVpBY2drRjdrWjVPZXk3ZXpxSHZPRDQ5bXBfZ2xJMkh6MEF4QlJoTVZMNzNYTHVic19ITzk4RmtmSVZhYnBwZ1FWTUdSRTDSAY4CQVVfeXFMTUg3cFBSTkVzeXc3V0VEQnEzTEJxeG9RaXprYkJ0WE44N0FzOWpPc1F3eUFCR19sOWhqYVYyaGdmZHRaYzZ3bW55aGpwemlYMmFMeUtEZkhicUtIN2RxTXJNUnRNWTN4MFBpa0pabFlMNWoxOHlvbXZHOWhiaWhWUUF3REJlcVpYdDZkVG90UWRCbXdtNHhUclREZlNuY0gyY0hrbmhidXhIZmRPRkhSNVkxbW4wMExuQjYtX3F1U3I5NmFDTVVGR19STl9yd0RZamxreF9WT25TejNBOVJnaVdiOE8zQnU1S2VEd0VNUnJQeldLaFZzeVNGYmdvdWRvbHlyQ3o4dEpWbGwwVWN3?oc=5"
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 5 IPOs from 6 cards",
   "bse eod 2026-11-06: 5059 scrips",
-  "outlook: 286 headlines, 25 up, 23 down"
+  "outlook: 297 headlines, 25 up, 24 down"
  ],
  "members": {
   "n50": {
-   "day": "2026-11-06",
+   "day": "2026-11-07",
    "list": [
     [
      "ADANIENT",
@@ -1402,7 +1403,7 @@
    ]
   },
   "mid": {
-   "day": "2026-11-06",
+   "day": "2026-11-07",
    "list": [
     [
      "360ONE",
@@ -1807,7 +1808,7 @@
    ]
   },
   "small": {
-   "day": "2026-11-06",
+   "day": "2026-11-07",
    "list": [
     [
      "AARTIIND",
@@ -2213,9 +2214,9 @@
   }
  },
  "nse": {
-  "n50": "6 Nov, 11:18 PM",
-  "mid": "6 Nov, 11:18 PM",
-  "small": "6 Nov, 11:18 PM"
+  "n50": "7 Nov, 4:33 AM",
+  "mid": "7 Nov, 4:33 AM",
+  "small": "7 Nov, 4:33 AM"
  },
  "midg": [
   [
@@ -2364,35 +2365,36 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 5 IPOs from 6 cards",
   "bse eod 2026-11-06: 5059 scrips",
-  "outlook: 286 headlines, 25 up, 23 down"
+  "outlook: 297 headlines, 25 up, 24 down"
  ],
  "universe": {
-  "stocks": 5263,
-  "quotes": 4738,
-  "at": "6 Nov, 11:18 PM"
+  "stocks": 5267,
+  "quotes": 4744,
+  "at": "7 Nov, 4:33 AM"
  },
  "global": [
   [
    "Dow Jones",
-   51454.03,
-   -0.13,
-   1793987301
+   51285.73,
+   -0.46,
+   1794001033
   ],
   [
    "S&P 500",
-   7388.06,
-   0.47,
-   1793987301
+   7376.86,
+   0.31,
+   1794001029
   ],
   [
    "Nasdaq",
-   24558.68,
-   1.0,
-   1793987299
+   24579.42,
+   1.09,
+   1794003359
   ],
   [
    "Nikkei 225",
@@ -2414,17 +2416,17 @@
   ],
   [
    "US 10Y yield",
-   4.85,
-   0.21,
-   1793986396
+   4.86,
+   0.45,
+   1793995196
   ]
  ],
  "outlook": {
-  "at": "6 Nov, 11:18 PM",
-  "headlines": 286,
-  "screened": 1805,
+  "at": "7 Nov, 4:33 AM",
+  "headlines": 297,
+  "screened": 1806,
   "cues": [
-   "US tech (Nasdaq) rose 1.0% in the last session",
+   "US tech (Nasdaq) rose 1.1% in the last session",
    "Nikkei 225 -6.0%",
    "Hang Seng +2.4%"
   ],
@@ -2443,7 +2445,7 @@
       "k": "news",
       "t": "Hindalco Q2 results: Net profit rises 59% to Rs 7,532 crore, beats estimates",
       "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMmZNZ2ltZy1sMWlDOWdub3VBYWh6ZjZTc29lX1YxX1J6MkVLaWpnRW9uc0ZCd2pIMVBaRzhXRldFRk55SWQxd2VuTjVvM2FNcG1obU1BN1lrQlk5MWFjeWl3c3ZISUwxczA3TnRLa3hPOGwtY0s2dWhSZ2FXWlVSVVFYWkkybWRfNXh1bXVpaWpsOHlza2FGN29GRGNKWGFJNnROajNBOHlhR2ZGUGh4dXpSYjA2R0pTNVJXajdKS0VDZnVzZjIzcTNjX1VHaE5nRkFBZmV3?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMmZNZ2ltZy1sMWlDOWdub3VBYWh6ZjZTc29lX1YxX1J6MkVLaWpnRW9uc0ZCd2pIMVBaRzhXRldFRk55SWQxd2VuTjVvM2FNcG1obU1BN1lrQlk5MWFjeWl3c3ZISUwxczA3TnRLa3hPOGwtY0s2dWhSZ2FXWlVSVVFYWkkybWRfNXh1bXVpaWpsOHlza2FGN29GRGNKWGFJNnROajNBOHlhR2ZGUGh4dXpSYjA2R0pTNVJXajdKS0VDZnVzZjIzcTNjX1VHaE5nRkFBZmV30gHbAUFVX3lxTE4xMjRtNXBxMmxPNktSR1hnbF8wYW9EUWRESENNZ1poSy1oWHZ3TWlHeVNKd09aQWlLcFVYZktIQ1NuWFNETHBfOFhyN1JSMFBwZXUxYXBaX0sxTDRIcmVMRjVoYlFYQ1pSVFhtd2dVZTl1aDYtb1JWUHRvR1FnNXhGVEtITk43WlBvQkh3NmdMMlpwUWx4NHBKZ2MzYjh1ZmVvVUliOE5YTWhTSDF0ZU12QzdTRjZWMjR5X1daSmUzNFk4RlNvaDJZeEJ5dE5zVmhpRXUySWE1eWoyZw?oc=5",
       "src": "Moneycontrol.com"
      },
      {
@@ -2470,7 +2472,7 @@
    {
     "k": "SIEMENS",
     "n": "Siemens",
-    "s": 16.6,
+    "s": 18.6,
     "conf": "High",
     "p": 3560.0,
     "pct": 3.73,
@@ -2488,13 +2490,20 @@
       "k": "news",
       "t": "Siemens Q2 Results: Profit grows 5% to Rs 504 crore",
       "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOUJfZkl4em5MRnB4b2ZWNE5ZYzMtSTdyVVUxc25jWk1pODJaM2J2NG8tWkcyRFdaNTNwUnpjSVNCREtBc3BLYzVuNFdyenBtajFKOUpQeXpSX2tzbGE1ak12WW5GdzhiOWlDVEJTRFp4akU5TjJaVXAwZUMyVl9jTW96RFhCdmZOTVRIaE1PQVlfS056dnhSLTIxaHZSNUpfSlhsSHQ2X3hvZnJqY003OGRURV9SU29yMzBNNWZLNFdPZG5wWGfSAcsBQVVfeXFMTW92MGtKdmdoWG8xMVpIdmZWRENhMGVWcV82aktUczRCaHJJMzJ3d3RaZVhXRDM3bTBwU0E5WXBtY1pXcmZ1aWJPYzZtWUpySnRKWDFKSHVMc2hKWEtYLUY1aEpfN2o2R1hkTlNISFhkVUlFaTFrODZyM0hTX0hOVF9KalhVaHBQdE1WTHNneDkxSTFZU21iNl9OVDdSUjRqVko0eENINjNoM0NIT25DWFpQdHZkWmNHb0dRR0xpbVpKX0o3Z3VLNjMzYnc?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOUlMwUm8tMzJmcGpxR3lGRlVZMzVrRXhfblBySTBKeC0yQmxPNDg3bFR4LXVObk1rZ29rclZ4UGc0b3QzSjRFOTdCeTJkMHZHdnFteUtDc0RMR3NDODQzX3JuVXRoV0tXSE50Tm1IVjVDRjQ3VDhiZ2Z5Nk9PYkJxZTF2R1Q4Y252SEc3YnozWkctTzNXZVRwN2lkMzVGYVdDY045UnR3RjdLLXdwcnBTWUdlaGI0YUtjTjhKaU9La09NWjZ0SjR6UllPamd3YlpCVFHSAcsBQVVfeXFMTW92MGtKdmdoWG8xMVpIdmZWRENhMGVWcV82aktUczRCaHJJMzJ3d3RaZVhXRDM3bTBwU0E5WXBtY1pXcmZ1aWJPYzZtWUpySnRKWDFKSHVMc2hKWEtYLUY1aEpfN2o2R1hkTlNISFhkVUlFaTFrODZyM0hTX0hOVF9KalhVaHBQdE1WTHNneDkxSTFZU21iNl9OVDdSUjRqVko0eENINjNoM0NIT25DWFpQdHZkWmNHb0dRR0xpbVpKX0o3Z3VLNjMzYnc?oc=5",
       "src": "The Economic Times"
      },
      {
       "k": "price",
       "t": "Closed strong: +3.7% on 3.6× usual volume, near the day's high",
       "s": 2.5546333783175887
+     },
+     {
+      "k": "news",
+      "t": "Siemens Wins Taiwan Metro Signaling Mandate as Buyback Passes 5.5 Million Shares",
+      "s": 2,
+      "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPTTRkSlBhSzZZeERyd1BqQWQ5NzNWZzBESThiQlVQVTNqZ0w0cHVsUGkwYThDV1VUOW5KajByNTlaYzIxbk9SRVFvY3JzMmttY3dXVWtuVDhiNlU0VWUyQzFVbHlGSWE1aTdwbUZHUzdqSEJFVUg2LXZ3b09reVlyV3ZZN0s1blVSTjVoNVZTRTZZa3AzN1huTXdBVmRyZ2xMOFVqbF9NX2JUemxaOVYwRXE3TmM2Zllid1hxUUhOc2dSWVM3WEVWdkVMSlpPaTFwUDFhc0ZvekU0b3VKTVAtRm9CdkVZRUk?oc=5",
+      "src": "ad-hoc-news.de"
      }
     ]
    },
@@ -2521,6 +2530,37 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPTy1LMmd5UGdKRXNNank3eEhXb056V1NWczZGUXdEZFlQZWVVNlYxTGhja3hxRWxOSXFzRV9xbXF4NEpSZjZZeTNpRk16RkVtTHFyTFZmMFUyOFViQ1BvRWI0UmxBbWxQemRjRU9yRWVLVnd4NlZybURhZVdNNmNjZ2RXT1VJNEo0MlhCQVRrVnRlZVFzeUp3Y1d6RmlvMnUyVlFEUWhnUWRHdGQxWVFVZkRIbGNPOWNEbHQtMEEwN0d5ZmpLaG94RVpDUUZIQ2hPUG1QSnh4eGxlZ2lCMFHSAeMBQVVfeXFMUHlxV0pFS3RoX0tDLXZFaHd2am9FbUdoSHROMzBnWnVmNTcyVHlHS0dyN1N1X0dISVpfOVVRUFd2Vkd5V0tURFVhWDZna1Y2VnFZTDM2bHptdEVRWGhxVjBaaVdzanBiWXVrU3V6OG45dFZ6VWV1b3U2bzFqeEc1VnprWlF4YlpYczVDRzc3Q1k4UW9BQWJXcHd2M1NFMzE3dlc0TWJVdURtTDhSdTBsaUJLR1EwSVAycXZwVHJvSGowcm1DV0J3c2hDdng2MzdKUWpObGU0eWxvWjRXTnAySEIya00?oc=5",
       "src": "Business Standard"
+     }
+    ]
+   },
+   {
+    "k": "M&M",
+    "n": "Mahindra & Mahindra",
+    "s": 14.2,
+    "conf": "High",
+    "p": 3287.2,
+    "pct": 5.11,
+    "mc": 394714.5,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Mahindra & Mahindra shares gain 3% after Q2 profit jumps 25% to Rs 4,588 crore, revenue grows 25%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNc1JrM0RpUDRpYmRXQUxzc2xrTklaYjg3NDhBcTNEcU9mNWZ5TmttZENRZWh4X2lQRTlwcHUzNHJubTFCTjlCMlhZMzRQa1pGZDRhUzAwajNRX0ZOT01ldHlXLTJ4NWVHd3p3anhJZkpPVVpVbUFCaWZ0RkpDYWhlWXNVNlBjWGNSdUNZWnVRVGdQVkZvVlNZTU96dzhXSFRoLUJJdl9nMXh5THE1SW51TDRoTWw5dEZtSUtKdzZsVl91WXRXa3ZHS1ZOZGlPaklKOGd5R2lXVDltOXROTk4xcVJDOWlUdktNTnRac25jNE15QkxiRzRz0gH8AUFVX3lxTFBJVWNRbUNvdG11S3k4LWFQWG9qak8weUpPTlZ0NDFCQTdaYWJSaHhUQXc4WDdVOVFMazJNenhXNjl3UjhxdFVjUlZCakFDYUFNUmwwX2ppYVNNUkI3czJ3Ujc3cG54bWpTNVRsQ0Z5UmlUZG1WTnVUNjJzc3lWdVM1LUVoZXpSY0o0QlRUN0FkaEF2MGZPLW5Zbmg2SXV1c21DWlcxdktwVGhvV1pUWGo5V3dUUTN0cmhTZXUzaTA0Qjd0Q3dTMmQ4T0FTVkZleHJpOHZ6MHVzZFBFRVZoMTJ6dGlLMFhCZDBDNHpFeUFtSGVQRmxLLUlfV0RyaA?oc=5",
+      "src": "The Economic Times"
+     },
+     {
+      "k": "news",
+      "t": "Mahindra & Mahindra shares jump 5% for second day after Q2 show; what’s powering the auto stock?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQQ3lrUHJzb3daLURqdk1PMGt6R1NqbzBDc3FrQm8yUzVrQmFLbEZYRUJCcnNnVkU4d3A3OGdSMTBYWmU2REFmZ1lacmx6clMyMmp2UnhvLUdHQ3Naa2xXaTE0eWtBXzRZQ05WdXhyX2pMVXVRaWQxR0F3WnIxcUNuVzdvLVRzcW8zc19DVGRkME1zYm5vNlQ5VjVCNmVWMlI5RVpqaFBaV0xFdWtfVnZIT01BeW84QTdoVzVHUWZLSUtxbWhKWUhMRnYyM2JhTjc4VWhzcDF4dS05c05CcGV5cU81c1l5YXc3VkFNRw?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +5.1% on 3.0× usual volume, near the day's high",
+      "s": 2.2326401270957428
      }
     ]
    },
@@ -2589,6 +2629,32 @@
     ]
    },
    {
+    "k": "BEL",
+    "n": "Bharat Electronics",
+    "s": 12,
+    "conf": "High",
+    "p": 396.0,
+    "pct": 0.23,
+    "mc": 289467.2,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Bharat Electronics bags additional orders worth ₹909 crore since October 21",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZFNCb2NaTF9Xa2ZXSERSTXBfR0liODhZMHFFZC1iZDdLNEJ3aU4tbnJ3eW5vaWU2UFJLTkRxcmN1OS1aSmQ4TS10dE1KbUlrV0wzdUIyQkk4R0g5Z2s4ZkZaWUZfM3B3Vng4ZVEzdHNxVXFsclFQQWVjcWhsSWl4aGxzR1k1V1J3aTFvNVp0ak5yNnJKNlhoZFpWUm9jQ3hISTZzSFQ3c3dLN0xqUG0wN1ZFMTYtVG8wSXhtOUJjWUtmN09vZ2p0Z2RobnhubXFKc3J1VzlBVVLSAd4BQVVfeXFMTUtFQWN6YmREMktGU2lRcE5HXy1lQTM2bFRvSHBad0NwVzFqLUVsVnF0WVpVS3N0WGhFSXB0X2JhdFd0UFB5amNqaXU2UjBPZFZWQ1BjYXRqN3ZibnljbW5qeUdUWE4xQkpFZUZIdjJDYnEzRUZMMjl5Rkk0LVlVRHBkYnkxYldLS0pWTEpxTmJGQVR4dkptVmhKR0JiT0trMFg1UFBsT3JYb1VEN3RvVTBRcWF1X0ZLeDdrTHF6aWJDaUhORWhCdWZ3Y05oWjlIckNpSzRSX0pGdmtfcU9B?oc=5",
+      "src": "CNBC TV18"
+     },
+     {
+      "k": "news",
+      "t": "Bharat Electronics bags additional orders worth ₹909 crore since October 21 - CNBC TV18",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdGlLUGsyQlRWcTBWTEtYZ1JjV0RXMENGNFBBbW0wc0pCNDZROU9PU3FoMklsNE01OTkycGFuVUprSWZlTmJVVDEzckpIM3pfZ0RFN2Q5Ym5lcXYwbmk3TXNuTkZqSnBJemhHb0k4RGk4NjNOaW9mMXV0RWNLSWV0NUFmTjBvOHVwSXNCTGY5ekFmb3FGcWhvZGFNZm8wYjZuVzV6Vi1jX0EzWFhqbUdmaU1tSlFETzA?oc=5",
+      "src": "LinkedIn"
+     }
+    ]
+   },
+   {
     "k": "SAILIFE",
     "n": "Sai Life Sciences",
     "s": 11.0,
@@ -2644,61 +2710,6 @@
     ]
    },
    {
-    "k": "M&M",
-    "n": "Mahindra & Mahindra",
-    "s": 10.2,
-    "conf": "High",
-    "p": 3287.2,
-    "pct": 5.11,
-    "mc": 394714.5,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Mahindra & Mahindra shares gain 3% after Q2 profit jumps 25% to Rs 4,588 crore, revenue grows 25%",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNc1JrM0RpUDRpYmRXQUxzc2xrTklaYjg3NDhBcTNEcU9mNWZ5TmttZENRZWh4X2lQRTlwcHUzNHJubTFCTjlCMlhZMzRQa1pGZDRhUzAwajNRX0ZOT01ldHlXLTJ4NWVHd3p3anhJZkpPVVpVbUFCaWZ0RkpDYWhlWXNVNlBjWGNSdUNZWnVRVGdQVkZvVlNZTU96dzhXSFRoLUJJdl9nMXh5THE1SW51TDRoTWw5dEZtSUtKdzZsVl91WXRXa3ZHS1ZOZGlPaklKOGd5R2lXVDltOXROTk4xcVJDOWlUdktNTnRac25jNE15QkxiRzRz0gH8AUFVX3lxTFBJVWNRbUNvdG11S3k4LWFQWG9qak8weUpPTlZ0NDFCQTdaYWJSaHhUQXc4WDdVOVFMazJNenhXNjl3UjhxdFVjUlZCakFDYUFNUmwwX2ppYVNNUkI3czJ3Ujc3cG54bWpTNVRsQ0Z5UmlUZG1WTnVUNjJzc3lWdVM1LUVoZXpSY0o0QlRUN0FkaEF2MGZPLW5Zbmg2SXV1c21DWlcxdktwVGhvV1pUWGo5V3dUUTN0cmhTZXUzaTA0Qjd0Q3dTMmQ4T0FTVkZleHJpOHZ6MHVzZFBFRVZoMTJ6dGlLMFhCZDBDNHpFeUFtSGVQRmxLLUlfV0RyaA?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.1% on 3.0× usual volume, near the day's high",
-      "s": 2.2326401270957428
-     }
-    ]
-   },
-   {
-    "k": "MPHASIS",
-    "n": "MphasiS",
-    "s": 9,
-    "conf": "High",
-    "p": 2520.0,
-    "pct": 0.4,
-    "mc": 48099.4,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Mphasis shares jump 8% after Q2 results; FY27 revenue growth seen at upper end of guidance",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMDJaV19CUXlRY3VjOUdINlhKWXlKMDV2MWZrQ09MRC1DeDBkVWxvT3hQaWJvcThsS2FDeWhONERuUHhZOWgxRndwN0ZQNDhodWxiR2hzaUdBVmZKNWdmR1k1Y3l0c0JRdGIzQkpCc05Bd0VuaE82Z19MMk9fVGp2T0tPSUNCY0dmbzNxSnZtYUVqVmNkMjBIX0Y2OTdiRW56TGxfSExtVnh4RUkyMnlpOFdYcnRXTElobVBDNzB3UXRnc0V4b29OT3NLQQ?oc=5",
-      "src": "CNBC TV18"
-     },
-     {
-      "k": "news",
-      "t": "Q2 results: Mphasis profit climbs as AI-led deal wins hit $466 million, pipeline reaches record high",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQajdiRFNoNGs0WGx5d000WE5EaEpNUlVLMjgwZE5remxXeS1PNm92OVpfRUxIWHB0eFZqckU3bDNaVW9LOWdQRmdjVndGaDVWZFBKY01ZdEpBb2cwZzJXU2Foc19TdVNfMkJLdEFMSkRSZkQ5SE5Fa3BxbmNQUGthYmJRNXZZSnRVWGlCLVFBelFNd1Uzcks0aWNFYU9iMUlmakNNb0pfc01uSFBoQ1RrV19vaHplZE9hSjcwM2lfRVDSAcYBQVVfeXFMT1RaZmhORHBFQ0ozbnBpcFJRVTh6dnpHTnNEQVZVVll6R3U4QUhNU1VwUFAtcm9tVzFIa1JXRTVKVElpOUJ0SUlITjZDRDBwS2k3T0d3bU9EdXZJVDhTZ0d6QmJmTXd2S09GLUFDbkM3QUlYUzRaWFRoVE9jSkpzNFVtV3JvSXlYR2xNQnRHLUtBcUhMWEZaSHJvVFdkQWpjbW5ubjBPU3M5WjNxOUtJYUFPUUFuUU5MUzZPY0FwOEsteGpzQjl3?oc=5",
-      "src": "CNBC TV18"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq +1.0% overnight; IT stocks often follow",
-      "s": 1
-     }
-    ]
-   },
-   {
     "k": "JUBLFOOD",
     "n": "Jubilant Foodworks",
     "s": 8,
@@ -2737,21 +2748,21 @@
     ]
    },
    {
-    "k": "SULA",
-    "n": "Sula Vineyards",
+    "k": "ASTRAZEN",
+    "n": "AstraZeneca Pharma India",
     "s": 8,
     "conf": "High",
-    "p": 137.79,
-    "pct": 0.01,
-    "mc": 1163.6,
-    "sec": "Consumer Defensive",
+    "p": 6373.5,
+    "pct": 1.26,
+    "mc": 15933.7,
+    "sec": "Healthcare",
     "why": [
      {
       "k": "news",
-      "t": "Sula Vineyards Q2 Results: Net profit surges 35% on premium wine sales, wine tourism growth",
+      "t": "AstraZeneca Pharma shares rally 7% after Q2 results; net profit rises 14.9% YoY to Rs 62.3 crore, revenue jumps 30.4%",
       "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeFctZFlaRFRLSG5ySG9EdlV2clpJcUloZmU2Mm13WlVsTXNjNkUzc1ZBS2xIYW1mRUtkWTVEczVWVkExVkNCSjNzZFlEcnVEMDg2NU1GRTBUZjNEa3N0VUt5Xzl6aVdURlFHMkxySzdXYmpnaDlvbV81d2FSOEFKZlJDcXJWcGlXWWVXRzJFNXlkT01nLUs2WlRNeXdiODlaSFJUZ29YdHQzS25WTm10alQ5bm5qUmg0SERxeG9oWkwwdw?oc=5",
-      "src": "IndiaIPO"
+      "u": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNYUJ6MFd3c2RBNzNZWnlWekNRMDl3cXp5c0t4TUFEaVgyMXAzSXF4U2FvdXhySWtOTXFzbF9WejN0WjI5d1RWWTQxRlhKejJlenR0T0I5RjNIWEhjbXdQUm11QWJjbkhpSEdEYUtIN0NtUGlaNERhQXlheVdOZGlsYVROaGNDYnZIeFcwc3FaM2xyQjVHLVZFVU5mQzV4OGRMMGtYYk51SG0wLVo0UnBqeFk2ZXFzQzR1RjFGQmNPa2tTemY0aWZYZFY1eUtfZ3BXY25McWltUTZYcGRaR3EyVENpMkFTTExQYjl0aENwSTFmUzg?oc=5",
+      "src": "Business Upturn"
      }
     ]
    },
@@ -2779,7 +2790,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq +1.0% overnight; IT stocks often follow",
+      "t": "Nasdaq +1.1% overnight; IT stocks often follow",
       "s": 1
      }
     ]
@@ -2857,6 +2868,30 @@
     ]
    },
    {
+    "k": "HAVELLS",
+    "n": "Havells India",
+    "s": 6.1,
+    "conf": "High",
+    "p": 1128.0,
+    "pct": 5.61,
+    "mc": 70789.0,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "SENSEX jumps over 1,000 pts, NIFTY above 24,700; Havells, Tube Investment, M&M among buzzing stocks",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNV1Y4Q081ekprQ1BRMlFhdDM5WUFBaEJRNHBBVnRwRkY5OXlYdnhwTFBLam42UGZlMEd2bUJBaUtZRGpQVzM0OFBvdkpBMDkxOWk4anFCTTlWYWNIU2t3cDVHQUFrVWpkekdwSk1iS3ZVYVhBVHBIbHhUWEJrY2IzbmVsWTVZRWlvbkVNRTg0VEw4TGJ0M2RrWkd3Z1dId2ZSSThYVUxfeVhPbHlLdXlPNER4MlU1djRlR005SkNwVGFubWpBc2JHSFk4cnV0YmtJRkk2TXhfNUxYTXZ4aTdWQU1vR3R1YUFKZ2U5ZG9n?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +5.6% on 2.8× usual volume, near the day's high",
+      "s": 2.1461541636329775
+     }
+    ]
+   },
+   {
     "k": "ADANIPORTS",
     "n": "Adani Ports and Special Economic Zone",
     "s": 6,
@@ -2900,26 +2935,26 @@
     ]
    },
    {
-    "k": "FORCEMOT",
-    "n": "FORCE MOTORS",
+    "k": "MCX",
+    "n": "Multi Commodity Exchange of India",
     "s": 5.6,
     "conf": "Medium",
-    "p": 18968.0,
-    "pct": 3.19,
-    "mc": 24992.7,
-    "sec": "Consumer Cyclical",
+    "p": 3528.0,
+    "pct": 4.81,
+    "mc": 89792.6,
+    "sec": "Financial Services",
     "why": [
      {
       "k": "news",
-      "t": "Auto sector stocks today, November 6: M&M jumps 3.44%, Force Motors gains 1.44%, Hyundai Motor India up 1.08%",
+      "t": "Sebi approves re-appointment of Mohan Shenoi as MCX non-independent director",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPalNQNngzUG9RSkVPdXdiZWdZU0NYczN3WHZlZU1jVVQ4dDhOd3p2QUE0NGJ3aEhGM284TFRHcFNSZ3YyM1hGUC1iQnBCalVfU2c1QlRfb3ZzMF8xd2ZkTF9FRHowOEVCV0s1MllISW96cmxNVUpaZHpNZ2JvVGtLUWVyY0Y5ZmRoc1BCMkQ2R2hQMk9VR0Ztc0Zqd2ZEd1FjZkJWOElmR3p0Y2xpRF83dWJpdnZ1YWttb1hhN2htTUFPV2dCUXU0QU12bk9wak82am9RMjQ1c081TUxnelJoVHNpeTE4QQ?oc=5",
-      "src": "Business Upturn"
+      "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbHFLT21KQnRzM1AybVF6ZXUxcWNoRHlLY1VXX3haZzI5NVZvZW4tUldUX18zaEM5bTRtQU5oNmpLOV9kc19jbnNCU0tVckNEQklEVy1MbXk5MUVHT0xHNnlJUjdOVVZZTUpvdnB1TmJ5NU9yU3IyRzFTSTUwQ1JzYjd4Ri1kRFpSR3lBSWVYR0Z6b1lPNFVUbkZkeWlrME9oLV9yMjBKMGk5RGdvYktDVklsWEd3UHhlcU9kc2Jja2NVVDBCSFE?oc=5",
+      "src": "scanx.trade"
      },
      {
       "k": "price",
-      "t": "Closed strong: +3.2% on 1.6× usual volume, near the day's high",
-      "s": 1.57440482806144
+      "t": "Closed strong: +4.8% on 1.7× usual volume, near the day's high",
+      "s": 1.5918849521482388
      }
     ]
    },
@@ -2942,7 +2977,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq +1.0% overnight; IT stocks often follow",
+      "t": "Nasdaq +1.1% overnight; IT stocks often follow",
       "s": 1
      }
     ]
@@ -2966,7 +3001,31 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq +1.0% overnight; IT stocks often follow",
+      "t": "Nasdaq +1.1% overnight; IT stocks often follow",
+      "s": 1
+     }
+    ]
+   },
+   {
+    "k": "MPHASIS",
+    "n": "MphasiS",
+    "s": 5,
+    "conf": "Medium",
+    "p": 2520.0,
+    "pct": 0.4,
+    "mc": 48099.4,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Mphasis shares jump 8% after Q2 results; FY27 revenue growth seen at upper end of guidance",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMDJaV19CUXlRY3VjOUdINlhKWXlKMDV2MWZrQ09MRC1DeDBkVWxvT3hQaWJvcThsS2FDeWhONERuUHhZOWgxRndwN0ZQNDhodWxiR2hzaUdBVmZKNWdmR1k1Y3l0c0JRdGIzQkpCc05Bd0VuaE82Z19MMk9fVGp2T0tPSUNCY0dmbzNxSnZtYUVqVmNkMjBIX0Y2OTdiRW56TGxfSExtVnh4RUkyMnlpOFdYcnRXTElobVBDNzB3UXRnc0V4b29OT3NLQdIB0AFBVV95cUxOaWlOSUxpaTFxd2swUzNic1ozZ19HUU0wdnpueEdNeGcxRWlySTF6SVFqWGljbGdWb0lUeU5QejJzQXN0QTQ0dURYc1JLWTdKaTNVd2U1a1RYcV9pZFdGLWFSZXdOeTJuRTVBQ3ZpOFJvMGI1U3liWERpZUt6Ukc3M0ZVVUpIUGg1TFQxRmJ5djhSMFlXYjJMSldKbHJINktIR2JYN3RDUGZRbDA0MW5rZTUxVVBmTkV4X2QydF9qRUJ2WXV5cU1DNTk5QWhCS0hq?oc=5",
+      "src": "CNBC TV18"
+     },
+     {
+      "k": "global",
+      "t": "Nasdaq +1.1% overnight; IT stocks often follow",
       "s": 1
      }
     ]
@@ -2987,44 +3046,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5zSUxKVUV1YnQ1TlpVT0IxWVRXNHd0YXlMeEQ4NHF5NFVRNGpTaWtpdW0wYW4tQXBPUFVDazI4alJmclBrQUgxYXlsclR6bERQYzJlcEhiYlFEeEtE?oc=5",
       "src": "Univest"
-     }
-    ]
-   },
-   {
-    "k": "SUZLON",
-    "n": "Suzlon Energy",
-    "s": 4,
-    "conf": "Medium",
-    "p": 38.8,
-    "pct": 0.54,
-    "mc": 53336.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Suzlon Energy Shares Slip After 12% Weekly Rally; Why Investors Are Still Not Convinced",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOSVRnekR2cGNSTVNBbFVBQVZCY0trazNNWllmZFNjTUl5eTl0WFVWS1E4N0hVVUkxRDVlX0JjU1VMY0hnZW5jREVEalA3eVRoSDdScENEdU5QYWJseUpBSC05c0VpWU9IQy1JXzgwWEswck5CMlk3LTZCZUdSUllveXlNU0NMN29jSEpGNlhWdllyRmd0cFBwdWhnRWUzaVNtVkx4WWxYcG51bGVYbDUxd1IzTDVGQ3E1ZDNaakIyd2JMNmdwYzJKY2MzdlhKTU5Rekpkd2dZbFVHWXlvZnVCZHJwSFZVWjFoZ2JTX0pTcDIxaUo2a18xSVNuZ1U4Q0Exem0ydUcwT2xjbUnSAZMCQVVfeXFMTVR0Wm5CdlVVMWFWR2ZTTjJFSDFtWk96ZmtUVXc2N0hJS0JiNUhHbUhiRk8xZHluSU9TQTM0a0hFV1VYTndWdFZfR1Z6SkhmdHhWVGpicFVTYjNzdGRiMlBMZEtzWUxOLW94TTNPMWtMdkNaNEp1R3MzSWpqZWo2UnJGbV9BTWhKVXVScVFsVUo4NVV0ZkhrS2RDUHc5dTBNNGFld2UtTUd2QWt2eGYxemY4T0JiME5xMHI3U2hwaWk4ZVB1TEt4SkpsZGRRcVM2RmNYWENlQjQ4RDY4c3JzT2FTcWk1c0lKSm5SMEhwN29kYXJTT1RMWE5iQ1JIc2pmSDdWZDVWSFp0Z0RhdWtmOERsajQ?oc=5",
-      "src": "NDTV Profit"
-     }
-    ]
-   },
-   {
-    "k": "HYUNDAI",
-    "n": "Hyundai Motor India",
-    "s": 4,
-    "conf": "Medium",
-    "p": 2130.0,
-    "pct": 0.42,
-    "mc": 173071.3,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Auto sector stocks today, November 6: M&M jumps 3.44%, Force Motors gains 1.44%, Hyundai Motor India up 1.08%",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPalNQNngzUG9RSkVPdXdiZWdZU0NYczN3WHZlZU1jVVQ4dDhOd3p2QUE0NGJ3aEhGM284TFRHcFNSZ3YyM1hGUC1iQnBCalVfU2c1QlRfb3ZzMF8xd2ZkTF9FRHowOEVCV0s1MllISW96cmxNVUpaZHpNZ2JvVGtLUWVyY0Y5ZmRoc1BCMkQ2R2hQMk9VR0Ztc0Zqd2ZEd1FjZkJWOElmR3p0Y2xpRF83dWJpdnZ1YWttb1hhN2htTUFPV2dCUXU0QU12bk9wak82am9RMjQ1c081TUxnelJoVHNpeTE4QQ?oc=5",
-      "src": "Business Upturn"
      }
     ]
    },
@@ -3052,7 +3073,7 @@
    {
     "k": "ASTRAL",
     "n": "Astral",
-    "s": -11.0,
+    "s": -15.0,
     "conf": "High",
     "p": 1253.6,
     "pct": -9.68,
@@ -3072,6 +3093,13 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOTE5yM2p5TDJoZUt3aWhwY3VPaldHTmVKTGlpRzdPcWg5OGduY1JaUTViZFpLOGpFcWIzbjl1NERjUVF6ME5nVFVwN05xbktfenRsY0FzaEtnUUt4OUozRXhoMHJLTFlqR0N2UHE5LXVxZXZNUE5LbmxkQWZpai1SczIwWUU0UE9HN0QxaU5YZzdmc29tRXY4MUgzTm82R205cEcxdnpMNnFtRlJhdkpwWVJRUGxqWjZyU1E5bXAzVXdjR2FhRmhLRnUydGFOYi1OTzRYV3pVU3AzTDJmcm9PSGlaSnROcHVJS0dJSnc4S0JJc2ZJRW1qeGhfZFU0cGl0MXRpZmFJRdIBjAJBVV95cUxPN0ZaUmk5Zk9oOG5MOXBnRXM3M2VYMm8xdm8xcV9rUi01TmJRVnVjUDYxVzRSYTlqMXZSLUZmWU81aHZYeVd0b3NEdnJwYk5abXRybXVFU0U3amVlSWJRcXJxUEVDeF9PX1ZFaHNkWWwxQ1pLZi1YdlFHOFJtNGk0SFQ4ZWFxMWFiMUpLb1B6MGt5SXFsSFd0X3lRNkFrc0lzTl9kaHZYalp3cFdvNHltSnZWMTJMZXY4M3E1bnBIZ0pPODZyWU9SVFlydjZ2eFJjWWNTeFV0NEYyeUpPREd4QWV2RzJTaFIxaXJkOHE4N1lkejVTQlBnWkJuaVZUbnp6aXBac083MEhZdTEy?oc=5",
       "src": "Moneycontrol.com"
+     },
+     {
+      "k": "news",
+      "t": "Astral Share Price Hits 52-Week Low After Q2 Results",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMif0FVX3lxTE84ZmhDNkNnU1lGYkJmUjc1NVZ5SzVJaVpWVm15Zk1XRFBPeUczQkZ1RUNfTUJ1WnZOTGZ4Z195bUdEUTM0QXRaVGh2cU9NQ3FwQTVxNVNvRDFVWFhEdEpVRy0tNjJFWGhmZHZqVzBTVm9yRThLUUhoeGMyeUtjNUU?oc=5",
+      "src": "Business Outreach Magazine"
      },
      {
       "k": "price",
@@ -3224,25 +3252,51 @@
     ]
    },
    {
-    "k": "KAYNES",
-    "n": "Kaynes Technology India",
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "s": -4,
+    "conf": "Medium",
+    "p": 3767.7,
+    "pct": -4.85,
+    "mc": 21093.1,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Data Patterns Q2 results: Net profit falls 55% to ₹22 crore, revenue declines 56%",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVzJFdGFkN2FEaE9BUUFoS0RjMWNyLVMyNW5nZUlCZmtsUkthUGdVZ3YzZ29acnltWXBFbGFhbG9fNFBhS0x1MllYRE5qc0ZGQy16SDN3ckExbjNjV0dtODhvc2lxX1ZhVXFpekZ1blFuVWMtdEJ2MmY2bndQel9DakRpT0VEc0N6Z2pzVjd6RnV0VEt0VFU4Wlk5Zl82Z2xnSU40ek8zZUZJRVRqV1lwN0U3OGhDZGVyZGxmRlJHd2RRSGQ5RjhKSmdidmw2RVF5R1HSAdcBQVVfeXFMTXdGR3lzTnBNTGZSTmRRWEF1dmZDUkpsaVJ2V0l3Zm1xMXZaeXBGdTBnV2g4QXlpXzRmaWRDQzJ3WUpoSkwzc2VsUGkzS1QzUk1pS1R5TWRyX1lpUkloRGhYWlc4NkU2LWVkcEkyUWZkREFMVjJVd09MZmpudVJfWkZaUjBMeldHaWVVejV1UHJaYTVob2pQNVNzQ1ZJN2pBM29LM2l2RVNBWnJQdzk3Y3ROSGc5TlhMbHl3NmhlRkF4UDdkeTJkaThpckV1dDJOMW8yQ29adlU?oc=5",
+      "src": "CNBC TV18"
+     },
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Volatile Trading",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOSFNYWU5ZMV96cjdwZ2sxN0JGV25xcWdaaHA3d1dyRGJ1YlpaLU9LMmNTUnJUMzhyejB1a2pLMWhuUmxWdGlNRnlGNkhFZmtiS3hMTDRtdldHRnRDc1lPa1ZUMmVTUzUtMWxNX0txS0JfcTlhZk96WlpFSUpiNHZaX3dwbXJtUXEzWDlLNEdodExWb0VnYXRzUjhWOC1odHFjWGR3dmdpOFBOWlU0M0txOG44TEFMU0xoSFE3RTRKYkY5NVVWQkpxQ0RQQTA4OWM?oc=5",
+      "src": "MarketsMojo"
+     }
+    ]
+   },
+   {
+    "k": "ACSTECH",
+    "n": "ACS Technologies",
     "s": -3,
     "conf": "Low",
-    "p": 3233.0,
-    "pct": -1.81,
-    "mc": 21733.0,
+    "p": 69.97,
+    "pct": -2.64,
+    "mc": 520.5,
     "sec": "Technology",
     "why": [
      {
       "k": "news",
-      "t": "What Kaynes Technology India Investors Missed Before The Fall",
+      "t": "Below All Moving Averages and Now at Lower Circuit: ACS Technologies Ltd Loses 5% in a Single Session",
       "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNb2J3UnJjd1NkLXBBYVdsWVo0cDlSekstMndRR1pzZnlRWmlJUlVKUEtXeC05YUpCYXU2MTZ5QU1USWRoMXpCc2JWdjR4dG0wOXZMVGU5VGlCSWFjRWpwc0xGcFJucUxNM3h3bU1Id0wxNzgxWjhNSnEtcVRmUWJMQ2IxZ0NLanE1NUZNNUd3VVprdFBjTUJ4UDA5UVhvRjlfUXlUZk9kbGt4Y2ZsMURwTFNDenFjb1NSSnBnek1Va0M0RXhOZWFKV0ZhZVdyWl9naXZhMlA2ZjVVX1Jj0gHiAUFVX3lxTFBjc2Zyd2dmTWRvamY3S3ZVTGRRUlJBbzlBRi0wOE5ZbzQ3S29DS28zeFRjNWRfU1dDSHc5TnZjOWFURDdDMWp2RUU3QkRaTXpEQVA2OVV6aVZsN3JNbDhnUjM2cHVwLXZLcFd3S2VNRnZtNlVUOHZ3aXA0b1RoakRoU3RvM2tneXFlMkhLb1ZIU1UyeU1HNkNQVC10YTVCOGF5X25hQVVfMkdObVhUcXdnZ1FQV216X1Z4NDJXZlU0U0lvQmZETzRmVlNnUWNVWFRMZE5OUWNhdTBpdmgybUdROUE?oc=5",
-      "src": "Simply Wall St"
+      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOaW9WYld4SnZmMGFuRW8xek9WNTFUSm1id2cxYklDRmZHYl9nQXlxN0FEelFuSUsyLXFxN3g3cnF2Z2dydWlkY25FeVVfVV84WC1XTnZfWkpGS2FLV2g4bjdMTmtHemtlTXExXy0tRWpNZ2pQbWNzcVF4d3FoNk1rZXJ6NzM0eU9EYmx5T1ZtQjN3YURUNWxqdGI4Z2lTakVmNS1DYWlzQVJUeEx5cGxUTDMtc1VFZXhXdjEtSEJIWHIwbkU?oc=5",
+      "src": "MarketsMojo"
      },
      {
       "k": "global",
-      "t": "Nasdaq +1.0% overnight; IT stocks often follow",
+      "t": "Nasdaq +1.1% overnight; IT stocks often follow",
       "s": 1
      }
     ]
@@ -3824,20 +3878,6 @@
    "src": "johnsoncab-electricals-sme-ipo"
   },
   {
-   "id": "maxwellengineeringsoluti",
-   "name": "Maxwell Engineering Solutions",
-   "type": "SME",
-   "open": "2026-10-30",
-   "close": "2026-11-03",
-   "allot": "2026-11-04",
-   "refund": "2026-11-05",
-   "list": "2026-11-06",
-   "lo": 150.0,
-   "hi": 158.0,
-   "lot": 800,
-   "src": "maxwell-engineering-solutions-sme-ipo"
-  },
-  {
    "id": "vectrasenprocon",
    "name": "Vectras Enprocon",
    "type": "SME",
@@ -3850,6 +3890,20 @@
    "hi": 105.0,
    "lot": 1200,
    "src": "vectras-enprocon-sme-ipo"
+  },
+  {
+   "id": "maxwellengineeringsoluti",
+   "name": "Maxwell Engineering Solutions",
+   "type": "SME",
+   "open": "2026-10-30",
+   "close": "2026-11-03",
+   "allot": "2026-11-04",
+   "refund": "2026-11-05",
+   "list": "2026-11-06",
+   "lo": 150.0,
+   "hi": 158.0,
+   "lot": 800,
+   "src": "maxwell-engineering-solutions-sme-ipo"
   },
   {
    "id": "hgsindia",
@@ -3881,7 +3935,7 @@
   }
  ],
  "fno": {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "syms": {
    "ADANIENSOL": 675,
    "ANANDRATHI": 250,
@@ -4104,7 +4158,7 @@
   }
  },
  "hilo": {
-  "at": "6 Nov, 11:18 PM",
+  "at": "7 Nov, 4:33 AM",
   "hi": [
    [
     "ICICIBANK",
@@ -4177,7 +4231,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "6 Nov, 11:18 PM",
+  "at": "7 Nov, 4:33 AM",
   "g": [
    [
     "544943",
@@ -5003,7 +5057,7 @@
   ]
  },
  "allmov": {
-  "at": "6 Nov, 11:18 PM",
+  "at": "7 Nov, 4:33 AM",
   "g": [
    [
     "B544943",
@@ -5093,6 +5147,11 @@
     -13.85
    ],
    [
+    "B890242",
+    "Ola Electric Mobility",
+    -13.25
+   ],
+   [
     "NACLIND",
     "NACL Industries",
     -12.67
@@ -5101,11 +5160,6 @@
     "KINGFA",
     "Kingfa Science & Technology (India)",
     -12.63
-   ],
-   [
-    "B524174",
-    "Kesar Petroproducts",
-    -12.34
    ]
   ]
  }
