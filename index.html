@@ -1642,7 +1642,7 @@ function openIpo(id,mode){
       <div class="msec"><h4>Timeline</h4><div class="timeline">${tl}</div></div>
       <div class="msec" id="subsec"><h4>Subscription${i.sub?` · ${i.sub.total.toFixed(2)}× overall`:''}</h4><div class="cats">${cats}</div>${chanceHTML(i)}</div>
       ${profitCalc(i)}
-      ${i.st==='listed'?`<div class="sumline num"><span>Listed at <b>₹${i.listPrice.toLocaleString('en-IN')}</b> against the ₹${i.hi.toLocaleString('en-IN')} issue price (<b class="${i.listPrice>=i.hi?'up':'down'}">${sgn((i.listPrice/i.hi-1)*100)}%</b>), closed day 1 at ₹${i.listClose.toLocaleString('en-IN')}. Source: ${esc(i.listSrc)}.</span></div>`:''}
+      ${i.st==='listed'&&i.listPrice&&i.hi?`<div class="sumline num"><span>Listed at <b>₹${i.listPrice.toLocaleString('en-IN')}</b> against the ₹${i.hi.toLocaleString('en-IN')} issue price (<b class="${i.listPrice>=i.hi?'up':'down'}">${sgn((i.listPrice/i.hi-1)*100)}%</b>), ${i.listClose?`closed day 1 at ₹${i.listClose.toLocaleString('en-IN')}.`:''} Source: ${esc(i.listSrc)}.</span></div>`:''}
       ${canApply?`<div class="msec" id="applysec"><h4>1 · Apply in your app</h4><div class="brokers">${BROKERS.map(([n,s,u])=>u?`<a class="broker" href="${u}" target="_blank" rel="noopener"><b>${n}</b><span>${s} ↗</span></a>`:`<div class="broker"><b>${n}</b><span>IPO / ASBA in net banking</span></div>`).join('')}</div>
         <p class="note" style="margin-top:10px">Search for <b>${esc(i.name.replace(/ Ltd$/,''))}</b> in your app's IPO section, bid at cut-off, then approve the UPI mandate before ${d2(i.c)}, 4 PM.</p></div>
       <div class="msec"><h4>2 · Log it here to track it</h4>
