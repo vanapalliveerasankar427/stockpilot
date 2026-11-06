@@ -114,7 +114,7 @@ def bse_closes(keys):
             series.setdefault("B" + code, []).append((di, c))
     out = {}
     for k, pts in series.items():
-        if len(pts) >= 5:
+        if len(pts) >= 2:  # even rarely traded BSE shares get a chart
             d0 = pts[0][0]
             out[k] = {"d0": d0, "d": [x - d0 for x, _ in pts], "c": [round(c, 2) for _, c in pts], "src": "BSE"}
     return out
