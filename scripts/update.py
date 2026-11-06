@@ -800,12 +800,25 @@ def everything(out):
                    "cols": ["price", "pct", "prev", "open", "high", "low", "h52", "l52", "vol", "mcapCr", "pe", "eps", "pb", "dy", "t", "av3m", "av10"], "q": q},
                   open(os.path.join(OUT_EXTRA, "quotes.json"), "w"), separators=(",", ":"))
     out["universe"] = {"stocks": len(uni.get("s", [])), "quotes": len(q), "at": NOW.strftime("%-d %b, %-I:%M %p")}
+    if q:  # whole-market movers (every NSE stock + BSE-only stocks) for the market pushes
+        try:
+            names = {r[0]: r[1] for r in uni.get("s", [])}
+            rows = [[k, names.get(k, k), r[1]] for k, r in q.items() if r[1] is not None and isinstance(r[14], (int, float)) and not re.match(r"^B\d+$", k)]
+            bm = out.get("bse_movers") or {}
+            for side in ("g", "l"):
+                for code, nm, ltp, pct, *_ in bm.get(side, []):
+                    if "B" + code in names:
+                        rows.append(["B" + code, names["B" + code], pct])
+            rows.sort(key=lambda x: x[2])
+            out["allmov"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "g": [x for x in rows[::-1] if x[2] > 0][:10], "l": [x for x in rows if x[2] < 0][:10]}
+        except Exception as e:
+            log(f"allmov: {e}")
     if q:  # stocks at a 52-week high / low (₹2,000 Cr+), for the midday push and the site
         try:
             hi, lo = [], []
             for k, r in q.items():
                 p, pc, h52, l52, mc = r[0], r[1], r[6], r[7], r[9]
-                if not p or not r[8]:  # every stock that traded today, any size
+                if not p or not r[8] or not isinstance(r[14], (int, float)):  # every stock that traded today, any size
                     continue
                 if h52 and p >= h52 * 0.998:
                     hi.append((mc, k, pc))
@@ -1096,14 +1109,20 @@ def bse_movers(out):
             lst = []
             for r in rows[:60]:
                 code = str(pick(r, "scripcd", "scripcode", "scrip_cd") or "").strip()
-                name = str(pick(r, "scripname", "longname", "shortname", "companyname") or "").strip()
+                name = str(pick(r, "longname") or pick(r, "scripname", "shortname", "companyname") or "").strip()
+                if re.search(r"-RE\d*$", str(r.get("scripname", ""))) or str(r.get("scrip_grp", "")).upper() in ("RE",):
+                    continue  # rights entitlements, not shares
                 try:
                     ltp = float(str(pick(r, "ltradert", "ltp", "lastrate", "currrate", "close") or "").replace(",", ""))
                     pct = float(str(pick(r, "changepercent", "perchg", "pctchange", "chgper", "percent") or "").replace(",", ""))
                 except ValueError:
                     continue
                 if code and name:
-                    lst.append([code, re.sub(r"\s+(Limited|Ltd\.?)$", "", name, flags=re.I), ltp, pct])
+                    try:
+                        pv = float(str(pick(r, "prevdayclose", "prevclose") or "").replace(",", "")) or None
+                    except ValueError:
+                        pv = None
+                    lst.append([code, re.sub(r"\s+(Limited|Ltd\.?)$", "", name, flags=re.I), ltp, pct, pv])
             res["g" if gl == "gainer" else "l"] = lst
         except Exception as e:
             log(f"bse movers {gl}: {e}")
@@ -1111,7 +1130,7 @@ def bse_movers(out):
         out["bse_movers"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), **res}
     elif sample is None:
         log("bse movers: empty")
-    if sample is not None:
+    if sample is not None and not (res.get("g") or res.get("l")):
         log(f"bse movers sample: {json.dumps(sample)[:300]}")
 
 

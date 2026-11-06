@@ -178,8 +178,8 @@ export async function digestCron(env, quotes) {
   const mc = v => v && v.pct != null ? ` (MCX ${pc(v.pct)})` : "";
   const metals = [g24 ? `Gold 24K ₹${fx0(g24 * 10)}/10g${mc(X.gold)}` : "", ag ? `Silver ₹${fx0(ag)}/kg${mc(X.silver)}` : ""].filter(Boolean).join(" · ");
   const idx = `Sensex ${fx0(s && s[0] || 0)} (${pc(s && s[1] || 0)}) · Nifty ${fx0(n[0])} (${pc(n[1])})`;
-  const mv = x => Array.isArray(x) ? `${x[0]} ${pc(+x[2] || 0)}` : "";
-  const g = (L.gainers || [])[0], l = (L.losers || [])[0];
+  const mv = x => Array.isArray(x) ? `${String(x[1] || x[0]).slice(0, 28)} ${pc(+x[2] || 0)}` : "";
+  const AM = L.allmov || {}, g = (AM.g || L.gainers || [])[0], l = (AM.l || L.losers || [])[0]; // whole market (NSE + BSE)
   let ev;
   if (type === "am") {
     const dir = n[1] >= 0 ? "up" : "down";

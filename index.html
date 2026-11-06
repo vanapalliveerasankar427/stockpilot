@@ -1145,6 +1145,7 @@ body:not(.ready) footer{display:none}
 .gl-row .lg{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:11px;flex:none;position:relative;overflow:hidden}
 .gl-nm{min-width:0;flex:1;display:grid}.gl-nm b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gl-nm small{font-size:12px;color:var(--muted)}
 .gl-c{flex:none}.gl-c .chg{font-size:12px;padding:3px 7px}.gl-c .chg2 small{display:none}
+.gl-x{font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:5px;background:color-mix(in srgb,#f59e0b 22%,transparent);color:#b45309;vertical-align:middle}
 .gl-f{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
 .gl-l2{display:none}
 @media(max-width:620px){.gl-wrap{padding:12px}.gl-h{margin-bottom:10px}.gl-h h3{font-size:17px}.gl-seg{min-width:100%}
@@ -2518,17 +2519,18 @@ let glSeg='all',glMore=false,glAt=0;
 function renderGainLose(){const el=document.getElementById('gainlose');if(!el)return;
   if(!ALLQ||!UNI){el.innerHTML=`<div class="gl-wrap">${LOADER('Finding today\'s top gainers and losers…')}</div>`;Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(ALLQ&&UNI)renderGainLose()});return}
   const seg={all:[0,1e15],large:[20000,1e15],mid:[0,20000]}[glSeg];const L=[];
-  for(const [k,r] of Object.entries(ALLQ.q)){const u=UNIMAP[k];if(!u||u.x!=='NSE')continue;const q=qOf(k);if(!q||!q.price)continue;const mc=q.mcapCr;if(glSeg!=='all'&&(mc==null||!(mc>=seg[0]&&mc<seg[1])))continue; // All = every NSE stock, no size filter
+  for(const [k,r] of Object.entries(ALLQ.q)){const u=UNIMAP[k];if(!u||!/^NSE/.test(u.x))continue;const q=qOf(k);if(!q||!q.price)continue;const mc=q.mcapCr;if(glSeg!=='all'&&(mc==null||!(mc>=seg[0]&&mc<seg[1])))continue; // All = every NSE stock, no size filter
     const px=LT.last[k]!=null?LT.last[k]:q.price,pc=LT.pct[k]!=null?LT.pct[k]:q.pct;if(pc==null||!isFinite(pc))continue;
     if(Math.abs(pc)>25&&q.open&&q.prev&&Math.abs(q.open/q.prev-1)>.25)continue; // split/bonus day: the feed's previous close isn't adjusted, so the % is wrong
     L.push({k,n:u.n,px,pc})}
+  if(glSeg==='all'){const M=(LIVED&&LIVED.bse_movers)||{};[...(M.g||[]),...(M.l||[])].forEach(([c,n,ltp,pct])=>{const k='B'+c,u=UNIMAP[k];if(u&&ltp&&pct!=null&&!(Math.abs(pct)>25&&/-RE/.test(n)))L.push({k,n:u.n,px:ltp,pc:pct,bse:1})})} // BSE-only stocks (live from BSE)
   const n=glMore?25:10,G=L.filter(x=>x.pc>0).sort((a,b)=>b.pc-a.pc).slice(0,n),D=L.filter(x=>x.pc<0).sort((a,b)=>a.pc-b.pc).slice(0,n);
   const row=(x,i)=>`<a class="gl-row" href="#stock-${esc(x.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
-     <div class="gl-nm"><b>${esc(x.n)}</b><span class="gl-l2"><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small><em class="gl-p num" data-lc="${esc(x.k)}">${x.pc>=0?'+':''}${x.pc.toFixed(2)}%</em></span></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
+     <div class="gl-nm"><b>${esc(x.n)}${x.bse?' <span class="gl-x">BSE</span>':''}</b><span class="gl-l2"><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small><em class="gl-p num" data-lc="${esc(x.k)}">${x.pc>=0?'+':''}${x.pc.toFixed(2)}%</em></span></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
   el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large cap'],['mid','Mid & small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
     <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${G.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
     <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${D.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
-    <div class="gl-f"><span class="note">All NSE stocks · Large cap = ₹20,000 Cr+ · ${mktOpen()?'live':'last session'}</span><button class="ghost" type="button" id="glMore">${glMore?'Show top 10':'Show top 25'}</button></div></div>`;
+    <div class="gl-f"><span class="note">Every NSE and BSE stock · Large cap = ₹20,000 Cr+ · ${mktOpen()?'live':'last session'}</span><button class="ghost" type="button" id="glMore">${glMore?'Show top 10':'Show top 25'}</button></div></div>`;
   el.querySelectorAll('[data-gl]').forEach(b=>b.onclick=()=>{glSeg=b.dataset.gl;renderGainLose()});
   el.querySelector('#glMore').onclick=()=>{glMore=!glMore;renderGainLose()};glAt=Date.now()}
 setTimeout(()=>ltHooks.push(()=>{if(document.getElementById('v-stocks').classList.contains('on')&&Date.now()-glAt>20000&&!document.querySelector('#gainlose :hover')){const y=scrollY;loadAllQuotes().then(()=>{renderGainLose();scrollTo(0,y)})}}),0);
@@ -2594,7 +2596,10 @@ function loadUniverse(){if(UNI)return Promise.resolve(UNI);if(uniLoading)return 
   uniLoading=fetch(DATA_RAW+'universe.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){UNI=j.s.map(r=>({k:r[0],n:r[1],x:r[2],y:r[3],bid:r[4]||'',l:(r[0]+' '+r[1]+' '+(r[4]||'')).toLowerCase()}));UNIMAP=Object.fromEntries(UNI.map(u=>[u.k,u]))}return UNI}).catch(()=>null).finally(()=>{uniLoading=null});return uniLoading}
 function loadAllQuotes(force){if(ALLQ&&!force&&Date.now()-allqAt<60000)return Promise.resolve(ALLQ);
   return fetch(DATA_RAW+'quotes.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.q){ALLQ=j;allqAt=Date.now()}return ALLQ}).catch(()=>ALLQ)}
-const qOf=k=>{const r=ALLQ&&ALLQ.q[k];if(!r)return null;const o={};ALLQ.cols.forEach((c,i)=>o[c]=r[i]);return o};
+// BSE-only stocks: the all-stock file has BSE's previous close; BSE's live gainers/losers list gives today's price for the movers
+let BSEL=null,BSELat=null;const bseLive=()=>{const M=LIVED&&LIVED.bse_movers;if(!M)return {};if(M!==BSELat){BSELat=M;BSEL={};[...(M.g||[]),...(M.l||[])].forEach(([c,n,ltp,pct,pv])=>BSEL['B'+c]={ltp,pct,pv})}return BSEL};
+const qOf=k=>{const r=ALLQ&&ALLQ.q[k];const b=/^B\d+$/.test(k)?bseLive()[k]:null;if(!r&&!b)return null;const o={};if(r)ALLQ.cols.forEach((c,i)=>o[c]=r[i]);
+  if(b){o.price=b.ltp;o.pct=b.pct;if(b.pv)o.prev=b.pv;o.t=Math.floor(Date.now()/1000);o.bseLive=true}return o};
 function searchUni(q,lim){if(!UNI||!q)return [];const t=q.toLowerCase().trim(),words=t.split(/\s+/);const res=[];
   for(const u of UNI){if(!words.every(w=>u.l.includes(w)))continue;const sym=u.k.toLowerCase(),nm=u.n.toLowerCase();
     const sc=(sym===t?0:sym.startsWith(t)?1:nm.startsWith(t)?2:nm.includes(' '+t)?3:4)+(u.x==='NSE'?0:.5);res.push([sc,u]);if(res.length>4000)break}
