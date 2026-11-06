@@ -1077,6 +1077,44 @@ def fno(out):
         log(f"fno: only {len(syms)} symbols, keeping previous list")
 
 
+# ----------------------------------------------------------------- BSE all-market gainers & losers (live, includes BSE-only stocks)
+def bse_movers(out):
+    res, sample = {}, None
+    for gl in ("gainer", "loser"):
+        try:
+            S.get("https://www.bseindia.com/", timeout=20)
+            j = get(f"https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype={gl}&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
+                    headers={"Referer": "https://www.bseindia.com/", "Origin": "https://www.bseindia.com"}).json()
+            rows = j if isinstance(j, list) else (j.get("Table") or j.get("table") or next((v for v in j.values() if isinstance(v, list)), []))
+            if rows and sample is None:
+                sample = {k: rows[0][k] for k in list(rows[0])[:14]}
+            def pick(r, *names):
+                for k in r:
+                    kl = k.lower().replace("_", "")
+                    if any(n in kl for n in names):
+                        return r[k]
+            lst = []
+            for r in rows[:60]:
+                code = str(pick(r, "scripcd", "scripcode", "scrip_cd") or "").strip()
+                name = str(pick(r, "scripname", "longname", "shortname", "companyname") or "").strip()
+                try:
+                    ltp = float(str(pick(r, "ltradert", "ltp", "lastrate", "currrate", "close") or "").replace(",", ""))
+                    pct = float(str(pick(r, "changepercent", "perchg", "pctchange", "chgper", "percent") or "").replace(",", ""))
+                except ValueError:
+                    continue
+                if code and name:
+                    lst.append([code, re.sub(r"\s+(Limited|Ltd\.?)$", "", name, flags=re.I), ltp, pct])
+            res["g" if gl == "gainer" else "l"] = lst
+        except Exception as e:
+            log(f"bse movers {gl}: {e}")
+    if res.get("g") or res.get("l"):
+        out["bse_movers"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), **res}
+    elif sample is None:
+        log("bse movers: empty")
+    if sample is not None:
+        log(f"bse movers sample: {json.dumps(sample)[:300]}")
+
+
 def main():
     os.makedirs(DATA, exist_ok=True)
     path = os.path.join(DATA, "live.json")
@@ -1085,7 +1123,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx) if fast else (markets, nse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, everything)):
+    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, everything)):
         try:
             step(out)
         except Exception as e:
