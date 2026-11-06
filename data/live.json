@@ -1,13 +1,13 @@
 {
- "label": "6 Nov 2026, 3:35 PM IST",
- "updated": "2026-11-06T15:35:57+05:30",
+ "label": "6 Nov 2026, 3:36 PM IST",
+ "updated": "2026-11-06T15:36:41+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "6 Nov 2026, 3:35 PM",
+  "date": "6 Nov 2026, 3:36 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 142389.0,
     "ch": -1706.0,
     "pct": -1.18,
-    "t": "6 Nov, 3:35 PM"
+    "t": "6 Nov, 3:36 PM"
    },
    "silver": {
     "v": 185055.0,
     "ch": -2085.0,
     "pct": -1.11,
-    "t": "6 Nov, 3:35 PM"
+    "t": "6 Nov, 3:36 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 142880.0,
    "ag_kg": 185690.0,
    "ag": 185.69,
-   "t": "6 Nov, 3:35 PM"
+   "t": "6 Nov, 3:36 PM"
   }
  },
  "logos": [],
@@ -350,14 +350,14 @@
    "t": 1793959282
   },
   "SENSEX": {
-   "v": 80742.82,
+   "v": 80745.66,
    "prev": 79310.01,
-   "ch": 1432.81,
+   "ch": 1435.65,
    "pct": 1.81,
    "high": 80874.32,
    "low": 79016.05,
    "open": 79426.32,
-   "t": 1793958656
+   "t": 1793958700
   },
   "BANKNIFTY": {
    "v": 59086.0,
@@ -384,20 +384,20 @@
    "prev": 19132.45,
    "ch": -157.4,
    "pct": -0.82,
-   "high": 18985.15,
+   "high": 18985.65,
    "low": 18757.75,
    "open": 18946.8,
    "t": 1793959282
   },
   "VIX": {
-   "v": 17.69,
+   "v": 17.68,
    "prev": 15.58,
-   "ch": 2.11,
-   "pct": 13.54,
-   "high": 17.69,
+   "ch": 2.1,
+   "pct": 13.48,
+   "high": 17.71,
    "low": 14.46,
    "open": 15.58,
-   "t": 1793959556
+   "t": 1793959600
   }
  },
  "nifty8": [
@@ -445,24 +445,24 @@
   "t": 1793959351
  },
  "brent": {
-  "v": 96.88,
+  "v": 96.81,
   "prev": 98.29,
-  "ch": -1.41,
-  "pct": -1.43,
+  "ch": -1.48,
+  "pct": -1.51,
   "high": 100.92,
   "low": 96.65,
   "open": 99.59,
-  "t": 1793958935
+  "t": 1793958972
  },
  "goldSpot": {
-  "v": 4083.6,
+  "v": 4084.4,
   "prev": 4113.5,
-  "ch": -29.9,
-  "pct": -0.73,
+  "ch": -29.1,
+  "pct": -0.71,
   "high": 4116.2,
   "low": 4044.5,
   "open": 4053.8,
-  "t": 1793958956
+  "t": 1793958995
  },
  "sectors": [
   [
@@ -2202,9 +2202,9 @@
   }
  },
  "nse": {
-  "n50": "6 Nov, 3:35 PM",
-  "mid": "6 Nov, 3:35 PM",
-  "small": "6 Nov, 3:35 PM"
+  "n50": "6 Nov, 3:36 PM",
+  "mid": "6 Nov, 3:36 PM",
+  "small": "6 Nov, 3:36 PM"
  },
  "midg": [
   [
@@ -2345,11 +2345,11 @@
   },
   "2026-11-06": {
    "NIFTY": 25030.35,
-   "SENSEX": 80742.82,
+   "SENSEX": 80745.66,
    "BANKNIFTY": 59086.0,
    "MIDCAP": 60606.65,
    "SMALLCAP": 18975.05,
-   "VIX": 17.69
+   "VIX": 17.68
   }
  },
  "fulllog": [
@@ -2397,9 +2397,9 @@
   ],
   [
    "FTSE 100",
-   10621.36,
+   10621.27,
    -1.5,
-   1793958657
+   1793958701
   ],
   [
    "US 10Y yield",
@@ -4213,7 +4213,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "6 Nov, 3:35 PM",
+  "at": "6 Nov, 3:36 PM",
   "g": [
    [
     "530405",
@@ -4645,13 +4645,6 @@
     869.4
    ],
    [
-    "544455",
-    "GNG Electronics",
-    583.65,
-    -20.0,
-    729.55
-   ],
-   [
     "526269",
     "Crestchem",
     115.15,
@@ -4659,99 +4652,85 @@
     143.9
    ],
    [
+    "544455",
+    "GNG Electronics",
+    590.0,
+    -19.13,
+    729.55
+   ],
+   [
     "500411",
     "Thermax",
-    2748.0,
-    -17.29,
+    2742.25,
+    -17.46,
     3322.5
-   ],
-   [
-    "543310",
-    "Times Green Energy (India)",
-    54.2,
-    -15.33,
-    64.01
-   ],
-   [
-    "544119",
-    "Rashi Peripherals",
-    738.6,
-    -14.61,
-    864.95
    ],
    [
     "531254",
     "Optimus Finance",
-    16.98,
-    -14.29,
+    16.75,
+    -15.45,
     19.81
-   ],
-   [
-    "533553",
-    "TD Power Systems",
-    579.2,
-    -13.43,
-    669.05
-   ],
-   [
-    "890242",
-    "Ola Electric Mobility",
-    21.09,
-    -13.25,
-    24.31
-   ],
-   [
-    "524019",
-    "Kingfa Science & Technology (India) Ltd-$",
-    5931.8,
-    -12.58,
-    6785.6
-   ],
-   [
-    "513536",
-    "Gujarat Natural Resources",
-    10.74,
-    -12.18,
-    12.23
-   ],
-   [
-    "500444",
-    "West Coast Paper Mills",
-    732.95,
-    -11.98,
-    832.75
    ],
    [
     "524174",
     "Kesar Petroproducts",
-    11.42,
-    -11.95,
+    10.97,
+    -15.42,
     12.97
+   ],
+   [
+    "544119",
+    "Rashi Peripherals",
+    740.5,
+    -14.39,
+    864.95
+   ],
+   [
+    "533553",
+    "TD Power Systems",
+    578.0,
+    -13.61,
+    669.05
+   ],
+   [
+    "513536",
+    "Gujarat Natural Resources",
+    10.61,
+    -13.25,
+    12.23
+   ],
+   [
+    "890242",
+    "Ola Electric Mobility",
+    21.2,
+    -12.79,
+    24.31
+   ],
+   [
+    "524019",
+    "Kingfa Science & Technology (India)",
+    5933.0,
+    -12.56,
+    6785.6
+   ],
+   [
+    "500444",
+    "West Coast Paper Mills",
+    735.95,
+    -11.62,
+    832.75
    ],
    [
     "543417",
     "RateGain Travel Technologies",
-    722.0,
-    -11.9,
+    724.25,
+    -11.62,
     819.5
    ],
    [
-    "543545",
-    "Veerkrupa Jewellers",
-    0.52,
-    -11.86,
-    0.59
-   ],
-   [
-    "524709",
-    "NACL Industries",
-    118.45,
-    -11.57,
-    133.95
-   ],
-   [
     "523489",
-    "Chennai Meenakshi Multispeciality Hospital Ltd-$",
+    "Chennai Meenakshi Multispeciality Hospital",
     33.21,
     -11.44,
     37.5
@@ -4764,11 +4743,25 @@
     24.5
    ],
    [
-    "543896",
-    "Avalon Technologies",
-    1872.1,
-    -10.9,
-    2101.1
+    "524709",
+    "NACL Industries",
+    118.7,
+    -11.38,
+    133.95
+   ],
+   [
+    "544559",
+    "Om Metallogic",
+    25.07,
+    -11.32,
+    28.27
+   ],
+   [
+    "544602",
+    "Allcargo Global",
+    10.86,
+    -11.27,
+    12.24
    ],
    [
     "532651",
@@ -4778,18 +4771,18 @@
     30.79
    ],
    [
-    "513548",
-    "Sharda Ispat",
-    151.3,
-    -10.74,
-    169.5
+    "520008",
+    "Rico Auto Industries",
+    97.91,
+    -10.79,
+    109.75
    ],
    [
-    "543972",
-    "Aeroflex Industries",
-    482.35,
-    -10.72,
-    540.25
+    "513548",
+    "Sharda Ispat",
+    151.5,
+    -10.62,
+    169.5
    ],
    [
     "512597",
@@ -4799,11 +4792,11 @@
     223.5
    ],
    [
-    "520008",
-    "Rico Auto Industries",
-    98.32,
-    -10.41,
-    109.75
+    "543972",
+    "Aeroflex Industries",
+    483.95,
+    -10.42,
+    540.25
    ],
    [
     "539835",
@@ -4813,11 +4806,11 @@
     1.47
    ],
    [
-    "544094",
-    "Euphoria Infotech (India)",
-    26.0,
-    -10.03,
-    28.9
+    "543986",
+    "South West Pinnacle Exploration",
+    171.5,
+    -10.0,
+    190.55
    ],
    [
     "544057",
@@ -4848,25 +4841,11 @@
     74.39
    ],
    [
-    "543176",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2MONTHLY DIVIDEND PLANREINVESTMENT",
-    47.74,
-    -9.98,
-    53.03
-   ],
-   [
     "543184",
     "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
     25.17,
     -9.98,
     27.96
-   ],
-   [
-    "544198",
-    "Dee Development Engineers",
-    542.3,
-    -9.98,
-    602.45
    ],
    [
     "543814",
@@ -4883,6 +4862,13 @@
     18.3
    ],
    [
+    "538707",
+    "Rajasthan Cylinders & Containers",
+    23.2,
+    -9.94,
+    25.76
+   ],
+   [
     "543110",
     "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
     7.7,
@@ -4890,18 +4876,11 @@
     8.55
    ],
    [
-    "543617",
-    "Reetech International",
-    14.61,
-    -9.93,
-    16.22
-   ],
-   [
-    "530135",
-    "Optiemus Infracom",
-    744.5,
-    -9.9,
-    826.3
+    "543153",
+    "NIPPON INDIA EQUITY SAVINGS FUND -  SEGREGATED PORTFOLIO 2 - DIRECT GROWTH PLAN(Issue Price: 0.01)",
+    24.81,
+    -9.91,
+    27.54
    ],
    [
     "532113",
@@ -4918,11 +4897,11 @@
     6.99
    ],
    [
-    "544612",
-    "Tenneco Clean Air India",
-    421.75,
-    -9.82,
-    467.65
+    "530135",
+    "Optiemus Infracom",
+    745.0,
+    -9.84,
+    826.3
    ],
    [
     "500277",
@@ -4932,18 +4911,18 @@
     5.01
    ],
    [
+    "500078",
+    "Oriental Aromatics",
+    492.95,
+    -9.77,
+    546.3
+   ],
+   [
     "532486",
     "Pokarna",
     735.0,
     -9.77,
     814.6
-   ],
-   [
-    "500078",
-    "Oriental Aromatics Ltd-$",
-    493.0,
-    -9.76,
-    546.3
    ],
    [
     "544944",
@@ -4953,11 +4932,11 @@
     68.7
    ],
    [
-    "532830",
-    "Astral",
-    1251.65,
-    -9.71,
-    1386.25
+    "544198",
+    "Dee Development Engineers",
+    544.2,
+    -9.67,
+    602.45
    ],
    [
     "543799",
@@ -4967,18 +4946,25 @@
     158.0
    ],
    [
-    "532259",
-    "Apar Industries",
-    14118.95,
-    -9.57,
-    15613.8
-   ],
-   [
     "543309",
     "Adeshwar Meditex",
     17.0,
     -9.57,
     18.8
+   ],
+   [
+    "532830",
+    "Astral",
+    1254.0,
+    -9.54,
+    1386.25
+   ],
+   [
+    "543896",
+    "Avalon Technologies",
+    1901.45,
+    -9.5,
+    2101.1
    ],
    [
     "540144",
@@ -4988,11 +4974,18 @@
     21.0
    ],
    [
-    "522152",
-    "Solitaire Machine Tools",
-    73.0,
+    "532259",
+    "Apar Industries",
+    14140.0,
     -9.44,
-    80.61
+    15613.8
+   ],
+   [
+    "544613",
+    "Fujiyama Power Systems",
+    350.95,
+    -9.43,
+    387.5
    ],
    [
     "543754",
@@ -5002,39 +4995,46 @@
     95.5
    ],
    [
+    "544195",
+    "United Cotfab",
+    12.5,
+    -9.42,
+    13.8
+   ],
+   [
+    "522152",
+    "Solitaire Machine Tools",
+    73.03,
+    -9.4,
+    80.61
+   ],
+   [
     "514300",
-    "Pioneer Embroideries Ltd-$",
+    "Pioneer Embroideries",
     18.31,
     -9.36,
     20.2
    ],
    [
-    "543986",
-    "South West Pinnacle Exploration",
-    173.0,
-    -9.21,
-    190.55
+    "544612",
+    "Tenneco Clean Air India",
+    424.1,
+    -9.31,
+    467.65
    ],
    [
-    "524400",
-    "Ishita Drugs & Industries",
-    71.0,
-    -8.96,
-    77.99
+    "543182",
+    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT MONTHLY DIVIDEND PLANDIVIDEND PAYOUT",
+    24.71,
+    -9.29,
+    27.24
    ],
    [
-    "544613",
-    "Fujiyama Power Systems",
-    353.0,
-    -8.9,
-    387.5
-   ],
-   [
-    "519183",
-    "Adf Foods Ltd-$",
-    240.4,
-    -8.8,
-    263.6
+    "544805",
+    "Jivial Industries",
+    69.1,
+    -9.08,
+    76.0
    ]
   ]
  },
