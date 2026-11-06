@@ -3333,12 +3333,12 @@ function fnoData(){const F=FNO(),O=(LIVED&&LIVED.outlook)||{},up={},dn={};(O.up|
     const sc=Math.abs(pct)*(1+Math.min(volx||1,4)/2)+(o?(cw[o.conf]||1)*2:0)+((pct>=0?nh:nl)?1.5:0)+(gap!=null&&Math.sign(gap)===Math.sign(pct)&&Math.abs(gap)>=1?1:0);
     if(!(o||Math.abs(pct)>=1.5||(volx&&volx>=1.5&&Math.abs(pct)>=.7)))continue;
     rows.push({k,n:(UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||(o&&o.n)||k,px,pct,volx,gap,nh,nl,o,sc,lot:F[k]})}
-  const bull=rows.filter(r=>r.pct>0).sort((a,b)=>b.sc-a.sc).slice(0,12),bear=rows.filter(r=>r.pct<0).sort((a,b)=>b.sc-a.sc).slice(0,12);
+  const bull=rows.filter(r=>r.pct>0).sort((a,b)=>b.sc-a.sc).slice(0,12).sort((a,b)=>b.pct-a.pct),bear=rows.filter(r=>r.pct<0).sort((a,b)=>b.sc-a.sc).slice(0,12).sort((a,b)=>a.pct-b.pct); // pick by signal strength, show biggest move first
   return {bull,bear,n:Object.keys(F).length}}
 let fnoSide='bull';
 function fnoHTML(){const F=FNO();
   if(!Object.keys(F).length)return `<p class="aw-msg" style="padding:20px">The F&amp;O stock list is loading. It refreshes every morning from NSE; check back shortly.</p>`;
-  if(!ALLQ||!UNI){Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(olTab==='fno'){olSig='';olRefresh()}});return `<div style="padding:12px">${LOADER('Scanning F&O stocks…')}</div>`}
+  if(!ALLQ||!UNI){Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(olTab==='fno'){olSig='';olRefresh(true)}});return `<div style="padding:12px">${LOADER('Scanning F&O stocks…')}</div>`}
   const D=fnoData(),L=fnoSide==='bull'?D.bull:D.bear,open=mktOpen();
   const tag=(t,c)=>`<span class="fo-tag ${c||''}">${t}</span>`;
   const row=(r,i)=>`<div class="fo-row ${r.pct>=0?'u':'d'}" style="animation-delay:${i*35}ms"><a class="fo-top" href="#stock-${esc(r.k)}"><div class="lg" style="background:${colorOf(r.k)};color:#fff">${esc(r.n.slice(0,2).toUpperCase())}${logoImg(r.k)}</div>
@@ -3355,7 +3355,7 @@ function fnoHTML(){const F=FNO();
 let olTab='up',olAll=false;
 function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   const livePct=x=>{if(LT.pct[x.k]!=null)return LT.pct[x.k];const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
-  const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0});
+  const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}).sort((a,b)=>livePct(b)-livePct(a)),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0}).sort((a,b)=>livePct(a)-livePct(b)); // biggest move first
   const L=olTab==='down'?DN:UP,show=olAll?L:L.slice(0,8);
   const ic={news:'📰',price:'📊',global:'🌍'};
   const conf=c=>`<span class="ol-conf ${c.toLowerCase()}"><i></i><i></i><i></i>${c}</span>`;
@@ -3373,14 +3373,15 @@ function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
     <p class="ol-note">⚠️ These are signals from news and price data, not predictions or buy/sell advice. Prices can move either way; do your own research before you trade.</p></section>`}
 // keep Likely up = trading up and Likely down = trading down, using live prices for every outlook stock
 let olLiveAt=0,olSig='';
-const olSet=()=>{const O=LIVED&&LIVED.outlook;if(!O)return '';if(olTab==='fno'&&ALLQ&&UNI){const D=fnoData();return 'f|'+fnoSide+'|'+D.bull.map(r=>r.k).join()+'|'+D.bear.map(r=>r.k).join()}const p=x=>LT.pct[x.k]!=null?LT.pct[x.k]:(qOf(x.k)||{}).pct??x.pct;return (O.up||[]).filter(x=>p(x)>0).map(x=>x.k).join()+'|'+(O.down||[]).filter(x=>p(x)<0).map(x=>x.k).join()};
+const olSet=()=>{const O=LIVED&&LIVED.outlook;if(!O)return '';/*order changes re-render too*/if(olTab==='fno'&&ALLQ&&UNI){const D=fnoData();return 'f|'+fnoSide+'|'+D.bull.map(r=>r.k).join()+'|'+D.bear.map(r=>r.k).join()}const p=x=>LT.pct[x.k]!=null?LT.pct[x.k]:(qOf(x.k)||{}).pct??x.pct;return (O.up||[]).filter(x=>p(x)>0).sort((a,b)=>p(b)-p(a)).map(x=>x.k).join()+'|'+(O.down||[]).filter(x=>p(x)<0).sort((a,b)=>p(a)-p(b)).map(x=>x.k).join()};
 async function olLive(force){const s=document.querySelector('section.ol'),O=LIVED&&LIVED.outlook;if(!s||!O||!ALLOT_API||document.hidden)return;
   if(!force&&Date.now()-olLiveAt<30000)return;olLiveAt=Date.now();
   let all=[...(O.up||[]),...(O.down||[])];if(olTab==='fno'&&ALLQ&&UNI){const D=fnoData();all=all.concat(D.bull,D.bear)}const map={};all.forEach(x=>{const y=ysymOf(x.k);if(y)map[decodeURIComponent(y)]=x.k});
   const ys=Object.keys(map);try{for(let i=0;i<ys.length;i+=80){const d=await (await fetch(ALLOT_API+'/q?s='+encodeURIComponent(ys.slice(i,i+80).join(',')),{cache:'no-store'})).json();
     for(const [y,r] of Object.entries(d.q||{})){const k=map[y];if(k&&r&&r[0]!=null){LT.last[k]=r[0];if(r[1]!=null)LT.pct[k]=r[1]}}}}catch{}
-  olRefresh()}
-function olRefresh(){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();const n=document.querySelector('section.ol');if(n)n.classList.add('ol-quiet');wireOutlook();scrollTo(0,y)}
+  
+  olRefresh(true)}
+let olRAt=0;function olRefresh(force){const s=document.querySelector('section.ol');if(!s)return;const sig=olSet();if(sig===olSig)return;if(!force&&Date.now()-olRAt<10000)return;olRAt=Date.now();olSig=sig;const y=scrollY;s.outerHTML=outlookHTML();const n=document.querySelector('section.ol');if(n)n.classList.add('ol-quiet');wireOutlook();scrollTo(0,y)}
 ltHooks.push(()=>{if(document.querySelector('section.ol')){olRefresh();if(mktOpen())olLive()}});
 function wireOutlook(){olSig=olSet();document.querySelectorAll('[data-fs]').forEach(b=>b.onclick=()=>{fnoSide=b.dataset.fs;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});if(mktOpen()||!olLiveAt)setTimeout(()=>olLive(),300);document.querySelectorAll('[data-ol]').forEach(b=>b.onclick=()=>{olTab=b.dataset.ol;olAll=false;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()});
   const m=document.getElementById('olMore');if(m)m.onclick=()=>{olAll=!olAll;const s=document.querySelector('section.ol');if(s)s.outerHTML=outlookHTML();wireOutlook()}}
