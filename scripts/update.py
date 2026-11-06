@@ -658,6 +658,33 @@ def universe():
     return {"day": NOW.strftime("%Y-%m-%d"), "s": rows, "bse": nb, "tries": tries, "v": 2}
 
 
+def bse_eod():
+    """Latest BSE daily price file (bhavcopy): scrip code -> [close, prev close, open, high, low, volume, day]."""
+    for back in range(0, 8):
+        d = NOW.date() - dt.timedelta(days=back)
+        if d.weekday() >= 5 or (back == 0 and NOW.hour < 19):
+            continue
+        url = f"https://www.bseindia.com/download/BhavCopy/Equity/BhavCopy_BSE_CM_0_0_0_{d:%Y%m%d}_F_0000.CSV"
+        try:
+            txt = get(url, headers={"Referer": "https://www.bseindia.com/"}).text
+            lines = [l.split(",") for l in txt.strip().splitlines()]
+            head = [h.strip() for h in lines[0]]
+            ci = head.index("FinInstrmId")
+            g = lambda r, col: float(r[head.index(col)]) if col in head and r[head.index(col)].strip() else None
+            res = {}
+            for r in lines[1:]:
+                try:
+                    res[r[ci].strip()] = [g(r, "ClsPric"), g(r, "PrvsClsgPric"), g(r, "OpnPric"), g(r, "HghPric"), g(r, "LwPric"), g(r, "TtlTradgVol"), d.strftime("%-d %b")]
+                except (ValueError, IndexError):
+                    pass
+            if len(res) > 1000:
+                log(f"bse eod {d}: {len(res)} scrips")
+                return res
+        except Exception as e:
+            log(f"bse eod {d} failed: {e}")
+    return {}
+
+
 def yahoo_crumb():
     S.get("https://fc.yahoo.com", timeout=20, allow_redirects=True)
     c = S.get("https://query1.finance.yahoo.com/v1/test/getcrumb", timeout=20).text.strip()
@@ -709,10 +736,28 @@ def all_quotes(uni):
                               g("trailingPE"), g("epsTrailingTwelveMonths"), g("priceToBook"),
                               round(q["trailingAnnualDividendYield"] * 100, 2) if isinstance(q.get("trailingAnnualDividendYield"), (int, float)) else None,
                               q.get("regularMarketTime"), q.get("averageDailyVolume3Month"), q.get("averageDailyVolume10Day")]
-    if len(out) < len(ysyms) * 0.5:
-        # fallback: one chart request per NSE symbol (price, change, day range, 52-week range)
-        log(f"batch quotes gave {len(out)}; using per-symbol fallback for NSE")
-        nse = [s for s in ysyms if s.endswith(".NS") and key_of[s] not in out]
+    if crumb:  # second pass for batches Yahoo dropped (rate limits): smaller chunks, one at a time
+        miss = [s for s in ysyms if s.endswith(".NS") and key_of[s] not in out]
+        if miss:
+            got0 = len(out)
+            for i in range(0, len(miss), 40):
+                for q in safe_batch(miss[i:i + 40]):
+                    k, p = key_of.get(q.get("symbol")), q.get("regularMarketPrice")
+                    if k and p is not None:
+                        g = lambda f, nd=2: round(q[f], nd) if isinstance(q.get(f), (int, float)) else None
+                        mc = q.get("marketCap")
+                        out[k] = [g("regularMarketPrice"), g("regularMarketChangePercent"), g("regularMarketPreviousClose"), g("regularMarketOpen"),
+                                  g("regularMarketDayHigh"), g("regularMarketDayLow"), g("fiftyTwoWeekHigh"), g("fiftyTwoWeekLow"),
+                                  q.get("regularMarketVolume"), round(mc / 1e7, 1) if isinstance(mc, (int, float)) else None,
+                                  g("trailingPE"), g("epsTrailingTwelveMonths"), g("priceToBook"),
+                                  round(q["trailingAnnualDividendYield"] * 100, 2) if isinstance(q.get("trailingAnnualDividendYield"), (int, float)) else None,
+                                  q.get("regularMarketTime"), q.get("averageDailyVolume3Month"), q.get("averageDailyVolume10Day")]
+            log(f"quotes retry: +{len(out) - got0} of {len(miss)} missing NSE")
+    nse_miss = [s for s in ysyms if s.endswith(".NS") and key_of[s] not in out]
+    if nse_miss and (len(out) < len(ysyms) * 0.5 or len(nse_miss) <= 600):
+        # fallback: one chart request per missing NSE symbol (price, change, day range, 52-week range)
+        log(f"per-symbol fallback for {len(nse_miss)} NSE stocks")
+        nse = nse_miss
 
         def one(sym):
             try:
@@ -726,7 +771,17 @@ def all_quotes(uni):
             for sym, row in ex.map(one, nse):
                 if row:
                     out[key_of[sym]] = row
+    # split / bonus day: Yahoo's previous close isn't adjusted, so the day change is wrong; drop it
+    for k, r in out.items():
+        if r[1] is not None and abs(r[1]) > 25 and r[2] and r[3] and abs(r[3] / r[2] - 1) > 0.25:
+            r[1] = None
     # BSE-only scrips that Yahoo doesn't price: use BSE's official close from its daily price file
+    eod = bse_eod() if sum(1 for r in uni.get("s", []) if r[2] == "BSE" and r[0] not in out) > 200 else {}
+    for r in uni.get("s", []):
+        if r[0] not in out and r[2] == "BSE" and (len(r) < 6 or not r[5]) and r[0][1:] in eod:
+            c, pv, o, h, l, v, day = eod[r[0][1:]]
+            if c is not None:
+                out[r[0]] = [c, round((c / pv - 1) * 100, 2) if pv else None, pv, o, h, l, None, None, v, None, None, None, None, None, "BSE close " + day]
     for r in uni.get("s", []):
         if r[0] in out or len(r) < 6 or not r[5] or r[5][0] is None:
             continue
@@ -750,7 +805,8 @@ def everything(out):
             hi, lo = [], []
             for k, r in q.items():
                 p, pc, h52, l52, mc = r[0], r[1], r[6], r[7], r[9]
-                if not p or not mc or mc < 2000:
+                to = p * (r[8] or 0) / 1e7 if p else 0  # today's turnover, ₹ Cr
+                if not p or (mc or 0) < 2000 and not (mc is None and to >= 25):
                     continue
                 if h52 and p >= h52 * 0.998:
                     hi.append((mc, k, pc))
