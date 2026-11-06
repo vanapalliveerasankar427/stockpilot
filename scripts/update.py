@@ -805,14 +805,13 @@ def everything(out):
             hi, lo = [], []
             for k, r in q.items():
                 p, pc, h52, l52, mc = r[0], r[1], r[6], r[7], r[9]
-                to = p * (r[8] or 0) / 1e7 if p else 0  # today's turnover, ₹ Cr
-                if not p or (mc or 0) < 2000 and not (mc is None and to >= 25):
+                if not p or not r[8]:  # every stock that traded today, any size
                     continue
                 if h52 and p >= h52 * 0.998:
                     hi.append((mc, k, pc))
                 elif l52 and p <= l52 * 1.002:
                     lo.append((mc, k, pc))
-            hi.sort(reverse=True); lo.sort(reverse=True)
+            hi.sort(key=lambda x: x[0] or 0, reverse=True); lo.sort(key=lambda x: x[0] or 0, reverse=True)
             out["hilo"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "hi": [[k, pc] for _, k, pc in hi[:40]], "lo": [[k, pc] for _, k, pc in lo[:40]], "nhi": len(hi), "nlo": len(lo)}
         except Exception as e:
             log(f"hilo: {e}")
