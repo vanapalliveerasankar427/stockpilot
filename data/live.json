@@ -1,13 +1,13 @@
 {
- "label": "6 Nov 2026, 3:29 PM IST",
- "updated": "2026-11-06T15:29:53+05:30",
- "state": "open",
+ "label": "6 Nov 2026, 3:30 PM IST",
+ "updated": "2026-11-06T15:30:38+05:30",
+ "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "6 Nov 2026, 3:29 PM",
+  "date": "6 Nov 2026, 3:30 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -110,16 +110,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 142580.0,
-    "ch": -1515.0,
-    "pct": -1.05,
-    "t": "6 Nov, 3:29 PM"
+    "v": 142531.0,
+    "ch": -1564.0,
+    "pct": -1.09,
+    "t": "6 Nov, 3:30 PM"
    },
    "silver": {
-    "v": 185368.0,
-    "ch": -1772.0,
-    "pct": -0.95,
-    "t": "6 Nov, 3:29 PM"
+    "v": 185482.0,
+    "ch": -1658.0,
+    "pct": -0.89,
+    "t": "6 Nov, 3:30 PM"
    }
   },
   "retail": {
@@ -330,11 +330,11 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 14307.0,
-   "g24_10": 143070.0,
-   "ag_kg": 186000.0,
-   "ag": 186.0,
-   "t": "6 Nov, 3:29 PM"
+   "g24": 14302.0,
+   "g24_10": 143020.0,
+   "ag_kg": 186120.0,
+   "ag": 186.12,
+   "t": "6 Nov, 3:30 PM"
   }
  },
  "logos": [],
@@ -347,17 +347,17 @@
    "high": 25030.35,
    "low": 24388.05,
    "open": 24518.2,
-   "t": 1793959192
+   "t": 1793959237
   },
   "SENSEX": {
-   "v": 80785.64,
+   "v": 80793.29,
    "prev": 79310.01,
-   "ch": 1475.63,
-   "pct": 1.86,
+   "ch": 1483.28,
+   "pct": 1.87,
    "high": 80874.32,
    "low": 79016.05,
    "open": 79426.32,
-   "t": 1793958291
+   "t": 1793958336
   },
   "BANKNIFTY": {
    "v": 59086.0,
@@ -367,37 +367,37 @@
    "high": 59086.0,
    "low": 57320.8,
    "open": 57692.25,
-   "t": 1793959191
+   "t": 1793959236
   },
   "MIDCAP": {
-   "v": 60621.65,
+   "v": 60618.9,
    "prev": 60620.9,
-   "ch": 0.75,
-   "pct": 0.0,
+   "ch": -2.0,
+   "pct": -0.0,
    "high": 60623.8,
    "low": 59670.85,
    "open": 60177.55,
-   "t": 1793959191
+   "t": 1793959236
   },
   "SMALLCAP": {
-   "v": 18976.95,
+   "v": 18980.4,
    "prev": 19132.45,
-   "ch": -155.5,
-   "pct": -0.81,
+   "ch": -152.05,
+   "pct": -0.79,
    "high": 18985.15,
    "low": 18757.75,
    "open": 18946.8,
-   "t": 1793959192
+   "t": 1793959237
   },
   "VIX": {
-   "v": 17.56,
+   "v": 17.57,
    "prev": 15.58,
-   "ch": 1.98,
-   "pct": 12.71,
-   "high": 17.57,
+   "ch": 1.99,
+   "pct": 12.77,
+   "high": 17.59,
    "low": 14.46,
    "open": 15.58,
-   "t": 1793959191
+   "t": 1793959237
   }
  },
  "nifty8": [
@@ -435,34 +435,34 @@
   ]
  ],
  "usdinr": {
-  "v": 93.91,
+  "v": 93.89,
   "prev": 94.47,
-  "ch": -0.56,
-  "pct": -0.59,
+  "ch": -0.58,
+  "pct": -0.61,
   "high": 94.5,
   "low": 93.81,
   "open": 94.46,
-  "t": 1793959188
+  "t": 1793959234
  },
  "brent": {
-  "v": 96.77,
+  "v": 96.73,
   "prev": 98.29,
-  "ch": -1.52,
-  "pct": -1.55,
+  "ch": -1.56,
+  "pct": -1.59,
   "high": 100.92,
   "low": 96.65,
   "open": 99.59,
-  "t": 1793958581
+  "t": 1793958633
  },
  "goldSpot": {
-  "v": 4084.4,
+  "v": 4083.5,
   "prev": 4113.5,
-  "ch": -29.1,
-  "pct": -0.71,
+  "ch": -30.0,
+  "pct": -0.73,
   "high": 4116.2,
   "low": 4044.5,
   "open": 4053.8,
-  "t": 1793958588
+  "t": 1793958635
  },
  "sectors": [
   [
@@ -495,7 +495,7 @@
   ],
   [
    "Metal",
-   1.67
+   1.64
   ],
   [
    "Infra",
@@ -2202,9 +2202,9 @@
   }
  },
  "nse": {
-  "n50": "6 Nov, 3:29 PM",
-  "mid": "6 Nov, 3:29 PM",
-  "small": "6 Nov, 3:29 PM"
+  "n50": "6 Nov, 3:30 PM",
+  "mid": "6 Nov, 3:30 PM",
+  "small": "6 Nov, 3:30 PM"
  },
  "midg": [
   [
@@ -2235,7 +2235,7 @@
   ],
   [
    "Apar Industries",
-   -9.55
+   -9.43
   ],
   [
    "Fortis Healthcare",
@@ -2253,23 +2253,23 @@
  "smallg": [
   [
    "Sai Life Sciences",
-   10.69
+   10.88
   ],
   [
    "Cemindia Projects",
-   5.17
+   5.41
   ],
   [
    "Crompton Greaves Consumer Electricals",
    4.42
   ],
   [
-   "Force Motors",
-   3.19
+   "IIFL Finance",
+   3.23
   ],
   [
-   "Cholamandalam Financial Holdings",
-   3.03
+   "Force Motors",
+   3.19
   ]
  ],
  "smalll": [
@@ -2279,11 +2279,11 @@
   ],
   [
    "Tenneco Clean Air India",
-   -9.42
+   -9.41
   ],
   [
    "Redington",
-   -8.07
+   -7.83
   ],
   [
    "Welspun Corp",
@@ -2389,9 +2389,9 @@
   ],
   [
    "FTSE 100",
-   10638.04,
-   -1.34,
-   1793958292
+   10637.38,
+   -1.35,
+   1793958337
   ],
   [
    "US 10Y yield",
@@ -4206,7 +4206,7 @@
   "nlo": 7
  },
  "bse_movers": {
-  "at": "6 Nov, 3:29 PM",
+  "at": "6 Nov, 3:30 PM",
   "g": [
    [
     "530405",
@@ -4265,17 +4265,10 @@
     0.83
    ],
    [
-    "544233",
-    "Mahalaxmi Fabric Mills",
-    21.4,
-    18.23,
-    18.1
-   ],
-   [
     "544468",
     "B. D. Industries (Pune)",
-    136.35,
-    18.1,
+    136.95,
+    18.62,
     115.45
    ],
    [
@@ -4293,6 +4286,13 @@
     50.4
    ],
    [
+    "540952",
+    "Lorenzini Apparels",
+    11.3,
+    16.14,
+    9.73
+   ],
+   [
     "509040",
     "Netlink Solutions India",
     190.9,
@@ -4307,25 +4307,25 @@
     0.83
    ],
    [
-    "540952",
-    "Lorenzini Apparels",
-    11.25,
-    15.62,
-    9.73
-   ],
-   [
-    "514312",
-    "Jaihind Industries",
-    51.99,
-    15.56,
-    44.99
-   ],
-   [
     "514358",
     "Everlon Financials",
     132.9,
     15.26,
     115.3
+   ],
+   [
+    "534733",
+    "Aerpace Industries",
+    59.06,
+    15.17,
+    51.28
+   ],
+   [
+    "514312",
+    "Jaihind Industries",
+    51.74,
+    15.0,
+    44.99
    ],
    [
     "544163",
@@ -4335,31 +4335,31 @@
     33.3
    ],
    [
-    "534733",
-    "Aerpace Industries",
-    58.47,
-    14.02,
-    51.28
-   ],
-   [
-    "544523",
-    "Ivalue Infosolutions",
-    220.0,
-    13.43,
-    193.95
+    "544233",
+    "Mahalaxmi Fabric Mills",
+    20.43,
+    12.87,
+    18.1
    ],
    [
     "543923",
     "IKIO Technologies",
-    195.35,
-    12.69,
+    195.3,
+    12.66,
     173.35
+   ],
+   [
+    "544523",
+    "Ivalue Infosolutions",
+    218.05,
+    12.43,
+    193.95
    ],
    [
     "535916",
     "Alacrity Securities",
-    41.69,
-    12.07,
+    41.65,
+    11.96,
     37.2
    ],
    [
@@ -4370,20 +4370,6 @@
     21.0
    ],
    [
-    "543614",
-    "Tips Films",
-    359.75,
-    11.83,
-    321.7
-   ],
-   [
-    "533262",
-    "Ramky Infrastructure",
-    388.0,
-    11.67,
-    347.45
-   ],
-   [
     "544304",
     "Jungle Camps India",
     48.0,
@@ -4391,11 +4377,11 @@
     43.0
    ],
    [
-    "500108",
-    "Mahanagar Telephone Nigam",
-    26.92,
-    11.52,
-    24.14
+    "543614",
+    "Tips Films",
+    359.0,
+    11.59,
+    321.7
    ],
    [
     "538610",
@@ -4405,17 +4391,10 @@
     0.62
    ],
    [
-    "532371",
-    "Tata Teleservices (Maharashtra)",
-    39.4,
-    11.24,
-    35.42
-   ],
-   [
     "517506",
     "TTK Prestige",
-    611.6,
-    11.16,
+    610.95,
+    11.04,
     550.2
    ],
    [
@@ -4426,11 +4405,39 @@
     8.38
    ],
    [
+    "532371",
+    "Tata Teleservices (Maharashtra)",
+    39.29,
+    10.93,
+    35.42
+   ],
+   [
+    "543310",
+    "Times Green Energy (India)",
+    70.99,
+    10.9,
+    64.01
+   ],
+   [
     "544306",
     "Sai Life Sciences",
-    1767.0,
-    10.7,
+    1770.0,
+    10.89,
     1596.2
+   ],
+   [
+    "500108",
+    "Mahanagar Telephone Nigam",
+    26.75,
+    10.81,
+    24.14
+   ],
+   [
+    "533262",
+    "Ramky Infrastructure",
+    385.0,
+    10.81,
+    347.45
    ],
    [
     "544565",
@@ -4438,13 +4445,6 @@
     37.5,
     10.29,
     34.0
-   ],
-   [
-    "544726",
-    "Kotyark Industries",
-    40.5,
-    10.08,
-    36.79
    ],
    [
     "543453",
@@ -4480,6 +4480,13 @@
     1000.0,
     9.96,
     909.4
+   ],
+   [
+    "543099",
+    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
+    54.8,
+    9.93,
+    49.85
    ],
    [
     "543536",
@@ -4545,13 +4552,6 @@
     7.96
    ],
    [
-    "543153",
-    "NIPPON INDIA EQUITY SAVINGS FUND -  SEGREGATED PORTFOLIO 2 - DIRECT GROWTH PLAN(Issue Price: 0.01)",
-    30.18,
-    9.59,
-    27.54
-   ],
-   [
     "543079",
     "NIPPON INDIA STRATEGIC DEBT FUND -  SEGREGATED PORTFOLIO 2 - GROWTH PLAN(Issue Price:Rs.0.01)",
     4.35,
@@ -4564,13 +4564,6 @@
     30.06,
     9.51,
     27.45
-   ],
-   [
-    "543989",
-    "Sai Silks (Kalamandir)",
-    88.84,
-    9.4,
-    81.21
    ],
    [
     "530421",
@@ -4594,6 +4587,13 @@
     11.21
    ],
    [
+    "543989",
+    "Sai Silks (Kalamandir)",
+    88.8,
+    9.35,
+    81.21
+   ],
+   [
     "541701",
     "Supershakti Metaliks",
     225.0,
@@ -4608,25 +4608,25 @@
     160.0
    ],
    [
+    "539042",
+    "AGI Infra",
+    302.35,
+    8.99,
+    277.4
+   ],
+   [
+    "544122",
+    "Entero Healthcare Solutions",
+    1911.9,
+    8.95,
+    1754.85
+   ],
+   [
     "890234",
     "Vertex Securities",
     0.61,
     8.93,
     0.56
-   ],
-   [
-    "511664",
-    "BGIL Films & Technologies",
-    7.35,
-    8.89,
-    6.75
-   ],
-   [
-    "540686",
-    "Smruthi Organics",
-    157.0,
-    8.88,
-    144.2
    ]
   ],
   "l": [
@@ -4638,13 +4638,6 @@
     869.4
    ],
    [
-    "544455",
-    "GNG Electronics",
-    583.7,
-    -19.99,
-    729.55
-   ],
-   [
     "526269",
     "Crestchem",
     115.15,
@@ -4652,10 +4645,17 @@
     143.9
    ],
    [
+    "544455",
+    "GNG Electronics",
+    590.0,
+    -19.13,
+    729.55
+   ],
+   [
     "500411",
     "Thermax",
-    2741.8,
-    -17.48,
+    2742.25,
+    -17.46,
     3322.5
    ],
    [
@@ -4666,25 +4666,32 @@
     19.81
    ],
    [
-    "544119",
-    "Rashi Peripherals",
-    736.85,
-    -14.81,
-    864.95
-   ],
-   [
     "524174",
     "Kesar Petroproducts",
-    11.13,
-    -14.19,
+    10.97,
+    -15.42,
     12.97
+   ],
+   [
+    "544119",
+    "Rashi Peripherals",
+    740.5,
+    -14.39,
+    864.95
    ],
    [
     "533553",
     "TD Power Systems",
-    579.6,
-    -13.37,
+    578.0,
+    -13.61,
     669.05
+   ],
+   [
+    "513536",
+    "Gujarat Natural Resources",
+    10.61,
+    -13.25,
+    12.23
    ],
    [
     "890242",
@@ -4695,42 +4702,28 @@
    ],
    [
     "524019",
-    "Kingfa Science & Technology (India)",
-    5950.0,
-    -12.31,
+    "Kingfa Science & Technology (India) Ltd-$",
+    5933.0,
+    -12.56,
     6785.6
    ],
    [
     "500444",
     "West Coast Paper Mills",
-    730.3,
-    -12.3,
+    735.95,
+    -11.62,
     832.75
-   ],
-   [
-    "513536",
-    "Gujarat Natural Resources",
-    10.74,
-    -12.18,
-    12.23
    ],
    [
     "543417",
     "RateGain Travel Technologies",
-    723.0,
-    -11.78,
+    724.25,
+    -11.62,
     819.5
    ],
    [
-    "524709",
-    "NACL Industries",
-    118.25,
-    -11.72,
-    133.95
-   ],
-   [
     "523489",
-    "Chennai Meenakshi Multispeciality Hospital",
+    "Chennai Meenakshi Multispeciality Hospital Ltd-$",
     33.21,
     -11.44,
     37.5
@@ -4741,6 +4734,13 @@
     21.71,
     -11.39,
     24.5
+   ],
+   [
+    "524709",
+    "NACL Industries",
+    118.7,
+    -11.38,
+    133.95
    ],
    [
     "544559",
@@ -4764,10 +4764,17 @@
     30.79
    ],
    [
+    "520008",
+    "Rico Auto Industries",
+    97.91,
+    -10.79,
+    109.75
+   ],
+   [
     "513548",
     "Sharda Ispat",
-    151.3,
-    -10.74,
+    151.5,
+    -10.62,
     169.5
    ],
    [
@@ -4780,16 +4787,9 @@
    [
     "543972",
     "Aeroflex Industries",
-    483.5,
-    -10.5,
+    483.95,
+    -10.42,
     540.25
-   ],
-   [
-    "520008",
-    "Rico Auto Industries",
-    98.45,
-    -10.3,
-    109.75
    ],
    [
     "539835",
@@ -4797,6 +4797,13 @@
     1.32,
     -10.2,
     1.47
+   ],
+   [
+    "543986",
+    "South West Pinnacle Exploration",
+    171.5,
+    -10.0,
+    190.55
    ],
    [
     "544057",
@@ -4827,13 +4834,6 @@
     74.39
    ],
    [
-    "543176",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2MONTHLY DIVIDEND PLANREINVESTMENT",
-    47.74,
-    -9.98,
-    53.03
-   ],
-   [
     "543184",
     "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
     25.17,
@@ -4855,18 +4855,18 @@
     18.3
    ],
    [
+    "538707",
+    "Rajasthan Cylinders & Containers",
+    23.2,
+    -9.94,
+    25.76
+   ],
+   [
     "543110",
     "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
     7.7,
     -9.94,
     8.55
-   ],
-   [
-    "543896",
-    "Avalon Technologies",
-    1892.3,
-    -9.94,
-    2101.1
    ],
    [
     "543153",
@@ -4883,18 +4883,18 @@
     8.39
    ],
    [
-    "543986",
-    "South West Pinnacle Exploration",
-    171.7,
-    -9.89,
-    190.55
-   ],
-   [
     "543092",
     "NIPPON INDIA HYBRID BOND FUND -  SEGREGATED PORTFOLIO 2 - GROWTH PLAN GROWTH OPTION(Issue Price : Rs.0.01)",
     6.3,
     -9.87,
     6.99
+   ],
+   [
+    "530135",
+    "Optiemus Infracom",
+    745.0,
+    -9.84,
+    826.3
    ],
    [
     "500277",
@@ -4905,7 +4905,7 @@
    ],
    [
     "500078",
-    "Oriental Aromatics",
+    "Oriental Aromatics Ltd-$",
     492.95,
     -9.77,
     546.3
@@ -4923,13 +4923,6 @@
     62.0,
     -9.75,
     68.7
-   ],
-   [
-    "530135",
-    "Optiemus Infracom",
-    745.9,
-    -9.73,
-    826.3
    ],
    [
     "532830",
@@ -4960,6 +4953,13 @@
     18.8
    ],
    [
+    "543896",
+    "Avalon Technologies",
+    1901.45,
+    -9.5,
+    2101.1
+   ],
+   [
     "540144",
     "DRA Consultants",
     19.01,
@@ -4967,11 +4967,11 @@
     21.0
    ],
    [
-    "522152",
-    "Solitaire Machine Tools",
-    73.0,
+    "532259",
+    "Apar Industries",
+    14140.0,
     -9.44,
-    80.61
+    15613.8
    ],
    [
     "544613",
@@ -4988,15 +4988,22 @@
     95.5
    ],
    [
-    "532259",
-    "Apar Industries",
-    14150.0,
-    -9.38,
-    15613.8
+    "544195",
+    "United Cotfab",
+    12.5,
+    -9.42,
+    13.8
+   ],
+   [
+    "522152",
+    "Solitaire Machine Tools",
+    73.03,
+    -9.4,
+    80.61
    ],
    [
     "514300",
-    "Pioneer Embroideries",
+    "Pioneer Embroideries Ltd-$",
     18.31,
     -9.36,
     20.2
@@ -5004,9 +5011,16 @@
    [
     "544612",
     "Tenneco Clean Air India",
-    424.0,
-    -9.33,
+    424.1,
+    -9.31,
     467.65
+   ],
+   [
+    "543182",
+    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT MONTHLY DIVIDEND PLANDIVIDEND PAYOUT",
+    24.71,
+    -9.29,
+    27.24
    ],
    [
     "544805",
@@ -5014,20 +5028,6 @@
     69.1,
     -9.08,
     76.0
-   ],
-   [
-    "539479",
-    "GTV Engineering",
-    16.61,
-    -8.99,
-    18.25
-   ],
-   [
-    "524400",
-    "Ishita Drugs & Industries",
-    71.0,
-    -8.96,
-    77.99
    ]
   ]
  },
