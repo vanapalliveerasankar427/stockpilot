@@ -1,13 +1,13 @@
 {
- "label": "9 Nov 2026, 3:43 PM IST",
- "updated": "2026-11-09T15:43:31+05:30",
+ "label": "9 Nov 2026, 3:44 PM IST",
+ "updated": "2026-11-09T15:44:15+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "9 Nov 2026, 3:43 PM",
+  "date": "9 Nov 2026, 3:44 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143556.0,
     "ch": 1004.0,
     "pct": 0.7,
-    "t": "9 Nov, 3:43 PM"
+    "t": "9 Nov, 3:44 PM"
    },
    "silver": {
     "v": 187322.0,
     "ch": 2222.0,
     "pct": 1.2,
-    "t": "9 Nov, 3:43 PM"
+    "t": "9 Nov, 3:44 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 144080.0,
    "ag_kg": 188010.0,
    "ag": 188.01,
-   "t": "9 Nov, 3:43 PM"
+   "t": "9 Nov, 3:44 PM"
   }
  },
  "logos": [],
@@ -350,14 +350,14 @@
    "t": 1794218487
   },
   "SENSEX": {
-   "v": 81079.51,
+   "v": 81106.65,
    "prev": 81028.02,
-   "ch": 51.49,
-   "pct": 0.06,
+   "ch": 78.63,
+   "pct": 0.1,
    "high": 81339.41,
    "low": 80519.31,
    "open": 81313.44,
-   "t": 1794218310
+   "t": 1794218354
   },
   "BANKNIFTY": {
    "v": 59741.25,
@@ -397,7 +397,7 @@
    "high": 18.44,
    "low": 16.77,
    "open": 18.43,
-   "t": 1794219209
+   "t": 1794219253
   }
  },
  "nifty8": [
@@ -445,24 +445,24 @@
   "t": 1794218646
  },
  "brent": {
-  "v": 97.45,
+  "v": 97.42,
   "prev": 98.32,
-  "ch": -0.87,
-  "pct": -0.88,
+  "ch": -0.9,
+  "pct": -0.92,
   "high": 98.42,
   "low": 96.12,
   "open": 98.33,
-  "t": 1794218599
+  "t": 1794218654
  },
  "goldSpot": {
-  "v": 4108.2,
+  "v": 4108.5,
   "prev": 4074.9,
-  "ch": 33.3,
+  "ch": 33.6,
   "pct": 0.82,
   "high": 4143.3,
   "low": 4062.5,
   "open": 4132.6,
-  "t": 1794218607
+  "t": 1794218649
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "9 Nov, 3:40 PM"
+   "sat": "9 Nov, 3:44 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -997,7 +997,7 @@
    "snii": null,
    "sr": 2.26,
    "ssrc": "IPOMarket",
-   "sat": "9 Nov, 3:40 PM"
+   "sat": "9 Nov, 3:44 PM"
   },
   "wiscon": {
    "sub": 1.15,
@@ -1048,7 +1048,7 @@
   "dii_sell": 1031.42,
   "fii_buy": 52.39,
   "fii_sell": 52.64,
-  "fetched": "9 Nov, 3:40 PM",
+  "fetched": "9 Nov, 3:44 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1193,7 +1193,15 @@
    "u": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPOU9YanpnV1Q4VzNNVk5aQXl4NDJOdUlIZkMwcnJjUTRiQzAyMjUyejY5TkhDR0hTbVhpcS1kanlZcGwwV1RkRDVQZzZLdndkN0VCMzg0MXJDb1YxbG1ZSnpuYzdlREtWMmtUMFRZWWk3RGxzTDBXY1dJaGNpNkZrNVFDdncyNjk3U3l4cnptenhVaEVNeG5lU2U5YW95VG5uT3BhLUlaQQ?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 2 IPOs from 2 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-06: 5059 scrips",
+  "outlook: 224 headlines, 25 up, 8 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-09",
@@ -2212,9 +2220,9 @@
   }
  },
  "nse": {
-  "n50": "9 Nov, 3:43 PM",
-  "mid": "9 Nov, 3:43 PM",
-  "small": "9 Nov, 3:43 PM"
+  "n50": "9 Nov, 3:44 PM",
+  "mid": "9 Nov, 3:44 PM",
+  "small": "9 Nov, 3:44 PM"
  },
  "midg": [
   [
@@ -2363,7 +2371,7 @@
   },
   "2026-11-09": {
    "NIFTY": 25044.65,
-   "SENSEX": 81079.51,
+   "SENSEX": 81106.65,
    "BANKNIFTY": 59741.25,
    "MIDCAP": 61022.55,
    "SMALLCAP": 19185.05,
@@ -2371,19 +2379,18 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 2 IPOs from 2 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-06: 5059 scrips",
-  "outlook: 224 headlines, 25 up, 7 down"
+  "outlook: 224 headlines, 25 up, 8 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4742,
-  "at": "9 Nov, 3:40 PM"
+  "at": "9 Nov, 3:44 PM"
  },
  "global": [
   [
@@ -2418,9 +2425,9 @@
   ],
   [
    "FTSE 100",
-   10731.65,
-   0.54,
-   1794218310
+   10730.52,
+   0.53,
+   1794218354
   ],
   [
    "US 10Y yield",
@@ -2430,7 +2437,7 @@
   ]
  ],
  "outlook": {
-  "at": "9 Nov, 3:40 PM",
+  "at": "9 Nov, 3:44 PM",
   "headlines": 224,
   "screened": 1805,
   "cues": [
@@ -2622,6 +2629,32 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMDlKTk1JS01renVrMWwtTTVnTXdPRDRSbC0zdWw3OGs4MUZuamx0OEswZnNtQVZRVVZ0YU5aZWVIb3lOWWcwQnh6Q1J4WW9YWTAtWEI4NHRfX3BfcVZqQUx1ODMtN1BaWUtzUGxoTWVJRzRQNUpNVFQ1ZzlzUFZDQlJhNzRPeFlRZDVuVlRVZTNmWDkzbzhWLThHRjVPUzVIRUt3TzMyUWl0Zy1wNnpXV2kxZU8yOUYwX3Y4MkpvV1g3cEU2a0RQZktldEVwQ1dQX3B0LVB30gHbAUFVX3lxTE9VLThDN3ZCdW9oR0pNOE9rNFFyMkZFeTBCcm5rd3Q5aFZpQ2hZQTRwcmU4SXJzZmU1NThSSTBuTUVQVDFRQ0l1MUpDRHlRb1BHU255NFNINTRVa19kX1JYZXpJMVBNN191NVFnZ2xfVFVpN1dMQXZsZU1BZGVtUlQ3SzNPTkp4cGdzYWVmN0ZBelROejc0cVhnUlBYZ1NETzRyWXctakxVWnJ5OTF4R1d4OEwyMVJ3WFpJME03QmtGWmJ6bnBQem1yY1Q0RkRCTFZpMlJhSEQwb3RyWQ?oc=5",
       "src": "Business Standard"
+     }
+    ]
+   },
+   {
+    "k": "HDFCBANK",
+    "n": "HDFC Bank",
+    "s": 8,
+    "conf": "High",
+    "p": 798.15,
+    "pct": 1.79,
+    "mc": 1231728.6,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "HDFC Bank shares jump 2%, rally 12% in a month: Is leadership reset reviving investor confidence?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPY1VXZ01fQmV1U2tJcElTeldWQjhCbzVJdVk5SVRTRm1rUWVtUDAwUzUzVFRfRzJBdzN4SW9QSDNaRzNiSUh5UnpZRmZJemU1c05CNXpLb2VlUDVFOFE5bGt5UWl5Q0xLMm55NG42QWlGcnpxaTlsNVV6cmZzYkZtTGpfMlJ4WEJ2d1dJNlNvT0lHdWh0VjRGTmQ0T1NTNGd0azRTem1yTTNZR0R0cldwczU3YjdxSXA0SFVpeXBIUzJIY015RmwtdDY0RzdRX0pOV2FGSHF5NTdvNG1iVTRmdEl4VEp6Zw?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "news",
+      "t": "HDFCBANK Limited Gains Over 3% but Profit Booking Caps Rally",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPX052cEZhNWtsUTROSFRyXzJXWnZ4aGtmUVRUTFgwdGRJMUNZUmRHQ3gwM1lCczNfSzA1QkRqOFhZT3V6SU5CQ1FPMzBKcUhNX3hDRS1jTWMtMThTc3Y3cUYwTWpQS1h5VXhNQWQ3TjhzMWRoMEgwVW9pWHZ6ZVdYdU9PZkROMXNBMndRTGJiTWlaS3hQTEs2T1lrN1NUUE50VGR1THJ3?oc=5",
+      "src": "Multibagg AI"
      }
     ]
    },
@@ -2822,25 +2855,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYVFVa1pIZm5vMGhSSnVLdVNpQzlINVpKSFR6cFItcGIzWHd5SFJSZy1MMHB0VlpEMWhiaVlkRmk0LW5oUTJvVVNjNTNqYmxEdXVNMklNT3Y4UWVwTVM5VTd5TUxyWWNvWEthMWM3NzZLOVI4Tlhxc0c0YlZXMXNxWWphRTdWNHVrcHV3RE5FMF9BNVhrVmxyazJldVh0M0QxVGFWN1ZzOXVYOVJpRkxxaVpIWW9mQ2szZF9DZTd6V2pIOGRMMkRoZm9OUErSAdIBQVVfeXFMT2F2aUk2LVhwa3pQUlYwY2tkOHFhVGFQNkpfYmdZTlEtZEM0OS13VnFZZlBaZUJDeWlUN2ZXVmtjTjRNMjJSd0tpQmkzbE9CTW96eHhRTXg5RTI4dWxQckRYclZSXzdHMkxMUG1oZWtLa2k2SjY4UzVxdFdNc1BUWGpjRWxXNVdrMF9nQ3lOVmNlZ0pINEhaaFBnUkpJWkFZdkpRV1k3aWxfMFNMaFh0OC1xVGNvc2VjNlByaGVGU3lVTHJCVVU3TWU0NFdaaVE3eWxR?oc=5",
       "src": "Business Standard"
-     }
-    ]
-   },
-   {
-    "k": "HDFCBANK",
-    "n": "HDFC Bank",
-    "s": 4,
-    "conf": "Medium",
-    "p": 798.15,
-    "pct": 1.79,
-    "mc": 1231728.6,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "HDFCBANK Limited Gains Over 3% but Profit Booking Caps Rally",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPX052cEZhNWtsUTROSFRyXzJXWnZ4aGtmUVRUTFgwdGRJMUNZUmRHQ3gwM1lCczNfSzA1QkRqOFhZT3V6SU5CQ1FPMzBKcUhNX3hDRS1jTWMtMThTc3Y3cUYwTWpQS1h5VXhNQWQ3TjhzMWRoMEgwVW9pWHZ6ZVdYdU9PZkROMXNBMndRTGJiTWlaS3hQTEs2T1lrN1NUUE50VGR1THJ3?oc=5",
-      "src": "Multibagg AI"
      }
     ]
    },
@@ -3075,6 +3089,25 @@
       "k": "price",
       "t": "Closed weak: -5.8% on 12.6× usual volume, near the day's low",
       "s": -3.0
+     }
+    ]
+   },
+   {
+    "k": "VENUSREM",
+    "n": "Venus Remedies",
+    "s": -4,
+    "conf": "Medium",
+    "p": 1448.3,
+    "pct": -4.14,
+    "mc": 1938.2,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "news",
+      "t": "Below All Moving Averages and Now at Lower Circuit: Venus Remedies Ltd Loses 4.96% in a Single Session",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcVloX3pyWkFvbUdDSm1PVk1ha19LSE9lYWZOMWNtQldqUXpfNEtEQ3hMNEFsYmgxaXE3WTlscHJycWtmMDFpSVhkeDRMQ0hmWFFNU1phU05mTXNvSXlfYzI1ZVhlUmRfNU9sY01KLXo5NGw4LVJZM0tnZXoxQ19fdThvTmRZNEM4ODVvdjVUbmxOcXVZd3k5akVFWGJMV1BiNGFic3NtV2lIamlZS3BuM092NHR6NjNrZzVrR0FlT2Y?oc=5",
+      "src": "MarketsMojo"
      }
     ]
    },
@@ -3760,7 +3793,7 @@
   }
  },
  "hilo": {
-  "at": "9 Nov, 3:40 PM",
+  "at": "9 Nov, 3:44 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3837,18 +3870,18 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "9 Nov, 3:43 PM",
+  "at": "9 Nov, 3:44 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories",
+    "Makers Laboratories Ltd-$",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     297.75,
     19.99,
     248.15
@@ -3939,7 +3972,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics",
+    "Salzer Electronics Ltd-$",
     544.3,
     13.92,
     477.8
@@ -4121,7 +4154,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies",
+    "Chembond Material Technologies Ltd-$",
     203.0,
     9.4,
     185.55
@@ -4142,7 +4175,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     57.5,
     9.27,
     52.62
@@ -4663,7 +4696,7 @@
   ]
  },
  "allmov": {
-  "at": "9 Nov, 3:40 PM",
+  "at": "9 Nov, 3:44 PM",
   "g": [
    [
     "TRANSWORLD",
