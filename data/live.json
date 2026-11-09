@@ -1,6 +1,6 @@
 {
  "label": "9 Nov 2026, 1:20 PM IST",
- "updated": "2026-11-09T13:20:05+05:30",
+ "updated": "2026-11-09T13:20:57+05:30",
  "state": "open",
  "metals": {
   "g24": 14394.0,
@@ -110,15 +110,15 @@
   },
   "mcx": {
    "gold": {
-    "v": 143410.0,
-    "ch": 858.0,
-    "pct": 0.6,
+    "v": 143419.0,
+    "ch": 867.0,
+    "pct": 0.61,
     "t": "9 Nov, 1:20 PM"
    },
    "silver": {
-    "v": 186572.0,
-    "ch": 1472.0,
-    "pct": 0.8,
+    "v": 186455.0,
+    "ch": 1355.0,
+    "pct": 0.73,
     "t": "9 Nov, 1:20 PM"
    }
   },
@@ -330,74 +330,74 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 14394.0,
-   "g24_10": 143940.0,
-   "ag_kg": 187260.0,
-   "ag": 187.26,
+   "g24": 14395.0,
+   "g24_10": 143950.0,
+   "ag_kg": 187140.0,
+   "ag": 187.14,
    "t": "9 Nov, 1:20 PM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 24889.1,
+   "v": 24884.0,
    "prev": 25030.35,
-   "ch": -141.25,
-   "pct": -0.56,
+   "ch": -146.35,
+   "pct": -0.58,
    "high": 25084.05,
    "low": 24838.75,
    "open": 25073.65,
-   "t": 1794210604
+   "t": 1794210656
   },
   "SENSEX": {
-   "v": 80829.58,
+   "v": 80895.11,
    "prev": 81028.02,
-   "ch": -198.44,
-   "pct": -0.24,
+   "ch": -132.91,
+   "pct": -0.16,
    "high": 81339.41,
    "low": 80519.31,
    "open": 81313.44,
-   "t": 1794209703
+   "t": 1794209755
   },
   "BANKNIFTY": {
-   "v": 59131.95,
+   "v": 59117.05,
    "prev": 59086.0,
-   "ch": 45.95,
-   "pct": 0.08,
+   "ch": 31.05,
+   "pct": 0.05,
    "high": 59609.65,
    "low": 58877.85,
    "open": 59219.95,
-   "t": 1794210604
+   "t": 1794210657
   },
   "MIDCAP": {
-   "v": 60581.8,
+   "v": 60567.6,
    "prev": 60606.65,
-   "ch": -24.85,
-   "pct": -0.04,
+   "ch": -39.05,
+   "pct": -0.06,
    "high": 60784.5,
    "low": 60334.1,
    "open": 60731.0,
-   "t": 1794210604
+   "t": 1794210657
   },
   "SMALLCAP": {
-   "v": 19122.85,
+   "v": 19120.25,
    "prev": 18975.05,
-   "ch": 147.8,
-   "pct": 0.78,
+   "ch": 145.2,
+   "pct": 0.77,
    "high": 19182.65,
    "low": 18954.75,
    "open": 19150.0,
-   "t": 1794210604
+   "t": 1794210656
   },
   "VIX": {
-   "v": 17.5,
+   "v": 17.57,
    "prev": 17.46,
-   "ch": 0.04,
-   "pct": 0.23,
+   "ch": 0.11,
+   "pct": 0.63,
    "high": 18.44,
    "low": 16.77,
    "open": 18.43,
-   "t": 1794210604
+   "t": 1794210657
   }
  },
  "nifty8": [
@@ -431,7 +431,7 @@
   ],
   [
    "9 Nov",
-   24889.1
+   24884.45
   ]
  ],
  "usdinr": {
@@ -442,205 +442,205 @@
   "high": 94.12,
   "low": 93.67,
   "open": 93.9,
-  "t": 1794210597
+  "t": 1794210657
  },
  "brent": {
-  "v": 96.3,
+  "v": 96.38,
   "prev": 98.32,
-  "ch": -2.02,
-  "pct": -2.05,
+  "ch": -1.94,
+  "pct": -1.97,
   "high": 98.42,
   "low": 96.16,
   "open": 98.33,
-  "t": 1794210005
+  "t": 1794210051
  },
  "goldSpot": {
-  "v": 4104.2,
+  "v": 4103.5,
   "prev": 4074.9,
-  "ch": 29.3,
-  "pct": 0.72,
+  "ch": 28.6,
+  "pct": 0.7,
   "high": 4143.3,
   "low": 4062.5,
   "open": 4132.6,
-  "t": 1794210000
+  "t": 1794210054
  },
  "sectors": [
   [
    "PSU Bank",
-   1.98
+   1.93
   ],
   [
    "Pharma",
-   1.33
+   1.32
   ],
   [
    "Media",
-   0.44
+   0.43
   ],
   [
    "Realty",
-   0.32
-  ],
-  [
-   "Bank",
-   0.08
+   0.25
   ],
   [
    "Fin. Services",
-   0.08
+   0.06
+  ],
+  [
+   "Bank",
+   0.05
   ],
   [
    "Energy",
-   -0.13
-  ],
-  [
-   "FMCG",
-   -0.32
+   -0.16
   ],
   [
    "Auto",
    -0.34
+  ],
+  [
+   "FMCG",
+   -0.37
   ]
  ],
  "stocks": {
   "RELIANCE": {
-   "v": 1319.0,
-   "pct": -0.38
+   "v": 1319.5,
+   "pct": -0.34
   },
   "BHARTIARTL": {
-   "v": 2045.9,
-   "pct": -1.9
+   "v": 2046.0,
+   "pct": -1.89
   },
   "HDFCBANK": {
-   "v": 792.35,
-   "pct": 1.05
+   "v": 791.85,
+   "pct": 0.99
   },
   "ICICIBANK": {
-   "v": 1578.3,
-   "pct": 0.85
+   "v": 1579.0,
+   "pct": 0.89
   },
   "TCS": {
-   "v": 2455.6,
-   "pct": -1.73
+   "v": 2454.9,
+   "pct": -1.76
   },
   "SBIN": {
-   "v": 1034.3,
-   "pct": 1.8
+   "v": 1033.8,
+   "pct": 1.75
   },
   "BAJFINANCE": {
-   "v": 1067.9,
-   "pct": -1.28
+   "v": 1067.7,
+   "pct": -1.3
   },
   "LT": {
-   "v": 4123.4,
-   "pct": 0.33
+   "v": 4122.9,
+   "pct": 0.31
   },
   "INFY": {
-   "v": 1145.7,
-   "pct": -2.21
+   "v": 1145.2,
+   "pct": -2.25
   },
   "KOTAKBANK": {
-   "v": 475.8,
-   "pct": -0.98
+   "v": 475.45,
+   "pct": -1.05
   },
   "HINDUNILVR": {
-   "v": 1988.7,
-   "pct": -0.42
+   "v": 1987.5,
+   "pct": -0.48
   },
   "ADANIPORTS": {
    "v": 1930.7,
    "pct": -0.95
   },
   "SUNPHARMA": {
-   "v": 1903.9,
-   "pct": -0.58
+   "v": 1903.3,
+   "pct": -0.61
   },
   "TITAN": {
-   "v": 4982.6,
-   "pct": -0.16
+   "v": 4982.2,
+   "pct": -0.17
   },
   "AXISBANK": {
-   "v": 1298.6,
-   "pct": -1.22
+   "v": 1298.8,
+   "pct": -1.21
   },
   "HCLTECH": {
-   "v": 1399.4,
-   "pct": -2.95
+   "v": 1398.9,
+   "pct": -2.99
   },
   "MARUTI": {
-   "v": 12832.0,
-   "pct": 0.13
+   "v": 12838.0,
+   "pct": 0.18
   },
   "MM": {
-   "v": 3274.5,
-   "pct": 0.21
+   "v": 3273.8,
+   "pct": 0.18
   },
   "ADANIENT": {
-   "v": 2700.0,
+   "v": 2699.9,
    "pct": -1.14
   },
   "ITC": {
-   "v": 279.7,
-   "pct": -1.32
+   "v": 279.5,
+   "pct": -1.39
   },
   "ULTRACEMCO": {
-   "v": 12192.0,
+   "v": 12191.0,
    "pct": -2.46
   },
   "ETERNAL": {
-   "v": 359.6,
-   "pct": -1.32
+   "v": 359.5,
+   "pct": -1.34
   },
   "JSWSTEEL": {
-   "v": 1347.1,
-   "pct": -0.3
+   "v": 1346.2,
+   "pct": -0.36
   },
   "NTPC": {
-   "v": 325.4,
-   "pct": 0.84
+   "v": 325.15,
+   "pct": 0.76
   },
   "BAJAJ-AUTO": {
-   "v": 10880.0,
-   "pct": -0.27
+   "v": 10882.0,
+   "pct": -0.26
   }
  },
  "gainers": [
   [
    "SBIN",
    "State Bank of India",
-   1.8
+   1.75
   ],
   [
    "NESTLEIND",
    "Nestle India",
-   1.17
+   1.09
   ],
   [
    "HDFCBANK",
    "HDFC Bank",
-   1.05
-  ],
-  [
-   "TRENT",
-   "Trent",
-   0.9
+   0.99
   ],
   [
    "ICICIBANK",
    "ICICI Bank",
-   0.85
+   0.89
+  ],
+  [
+   "TRENT",
+   "Trent",
+   0.82
   ]
  ],
  "losers": [
   [
    "HCLTECH",
    "HCL Technologies",
-   -2.95
+   -2.99
   ],
   [
    "TATASTEEL",
    "Tata Steel",
-   -2.56
+   -2.63
   ],
   [
    "ULTRACEMCO",
@@ -650,16 +650,16 @@
   [
    "INFY",
    "Infosys",
-   -2.21
+   -2.25
   ],
   [
    "BHARTIARTL",
    "Bharti Airtel",
-   -1.9
+   -1.89
   ]
  ],
  "breadth": {
-  "up": 15,
+  "up": 14,
   "n": 50,
   "label": "Nifty 50 stocks"
  },
@@ -1193,15 +1193,7 @@
    "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPYXhKYjZyTGFYYkVoRFE4anBIS1UyM1pzWjN5aXJyb1RlLVVkNlAwYmhKOVl0Ti1YanhrMU01MmFwS2dzRThvZEhZYWdTcjdHUFgtbkl5OTR4QjV4ZmJqX0d4Z1VhUzJZNW1nLVdzSVNSdGU1eVAyNjY4MkdQRFhIMmVEbEZtdWtEQXdHUDVDUnkxNTE1R2pJMzlxYkZ0V21SYXIwTFhCUDRxNXBjZFdqckVSV1hTTno2TmFNYW5VWXRqODZVbHp5dDVXWW5ONWl6bE93?oc=5"
   }
  ],
- "log": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 26 IPOs",
-  "subscription: 2 IPOs from 2 cards",
-  "quotes retry: +0 of 1 missing NSE",
-  "per-symbol fallback for 1 NSE stocks",
-  "bse eod 2026-11-06: 5059 scrips",
-  "outlook: 203 headlines, 25 up, 6 down"
- ],
+ "log": [],
  "members": {
   "n50": {
    "day": "2026-11-09",
@@ -2227,51 +2219,51 @@
  "midg": [
   [
    "Indian Renewable Energy Development Agency",
-   6.89
+   6.98
   ],
   [
    "Exide Industries",
-   3.79
+   3.81
   ],
   [
    "Glenmark Pharmaceuticals",
-   3.36
+   3.4
   ],
   [
    "Laurus Labs",
-   2.97
+   2.93
   ],
   [
    "Cochin Shipyard",
-   2.79
+   2.82
   ]
  ],
  "midl": [
   [
    "Jubilant Foodworks",
-   -4.55
+   -4.56
   ],
   [
    "MphasiS",
-   -3.64
-  ],
-  [
-   "Mahindra & Mahindra Financial Services",
-   -2.31
+   -3.69
   ],
   [
    "Vishal Mega Mart",
-   -2.24
+   -2.3
   ],
   [
-   "Ashok Leyland",
-   -2.08
+   "Mahindra & Mahindra Financial Services",
+   -2.29
+  ],
+  [
+   "Apar Industries",
+   -2.15
   ]
  ],
  "smallg": [
   [
    "Data Patterns (India)",
-   8.37
+   8.26
   ],
   [
    "Gland Pharma",
@@ -2279,25 +2271,25 @@
   ],
   [
    "Sai Life Sciences",
-   6.15
+   6.19
   ],
   [
    "Neuland Laboratories",
-   4.24
+   4.19
   ],
   [
    "Affle 3i",
-   3.47
+   3.51
   ]
  ],
  "smalll": [
   [
    "TD Power Systems",
-   -6.17
+   -6.26
   ],
   [
    "R R Kabel",
-   -5.95
+   -5.98
   ],
   [
    "Sterlite Technologies",
@@ -2411,9 +2403,9 @@
   ],
   [
    "Hang Seng",
-   24474.56,
-   -0.03,
-   1794209704
+   24472.23,
+   -0.04,
+   1794209754
   ],
   [
    "FTSE 100",
@@ -3739,7 +3731,7 @@
   "g": [
    [
     "506919",
-    "Makers Laboratories Ltd-$",
+    "Makers Laboratories",
     267.1,
     19.99,
     222.6
@@ -3775,13 +3767,13 @@
    [
     "520151",
     "Transworld Shipping Lines",
-    237.2,
-    18.57,
+    237.0,
+    18.47,
     200.05
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     293.5,
     18.28,
     248.15
@@ -3829,39 +3821,32 @@
     28.1
    ],
    [
-    "533001",
-    "Somi Conveyor Beltings",
-    82.69,
-    13.41,
-    72.91
+    "517059",
+    "Salzer Electronics",
+    542.35,
+    13.51,
+    477.8
    ],
    [
-    "517059",
-    "Salzer Electronics Ltd-$",
-    540.35,
-    13.09,
-    477.8
+    "544004",
+    "IRM Energy",
+    273.55,
+    12.76,
+    242.6
    ],
    [
     "542323",
     "KPI Green Energy",
-    344.55,
-    12.93,
+    343.35,
+    12.54,
     305.1
    ],
    [
     "524348",
     "Aarti Drugs",
-    505.15,
-    12.21,
+    504.9,
+    12.15,
     450.2
-   ],
-   [
-    "544004",
-    "IRM Energy",
-    271.95,
-    12.1,
-    242.6
    ],
    [
     "542802",
@@ -3892,18 +3877,18 @@
     225.0
    ],
    [
-    "524164",
-    "IOL Chemicals & Pharmaceuticals",
-    204.4,
-    10.91,
-    184.3
-   ],
-   [
     "531931",
     "Sai Capital",
     163.0,
     10.88,
     147.0
+   ],
+   [
+    "524164",
+    "IOL Chemicals & Pharmaceuticals",
+    204.25,
+    10.82,
+    184.3
    ],
    [
     "523840",
@@ -3920,25 +3905,18 @@
     145.95
    ],
    [
+    "504132",
+    "Permanent Magnets",
+    1239.95,
+    10.27,
+    1124.45
+   ],
+   [
     "531769",
     "PFL Infotech",
     4.19,
     10.26,
     3.8
-   ],
-   [
-    "500028",
-    "ATV Projects India",
-    21.95,
-    10.25,
-    19.91
-   ],
-   [
-    "504132",
-    "Permanent Magnets Ltd-$",
-    1238.75,
-    10.16,
-    1124.45
    ],
    [
     "532894",
@@ -3956,7 +3934,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals Ltd-$",
+    "Laffans Petrochemicals",
     29.7,
     10.0,
     27.0
@@ -4018,13 +3996,6 @@
     196.05
    ],
    [
-    "533576",
-    "Vaswani Industries",
-    47.98,
-    9.54,
-    43.8
-   ],
-   [
     "539526",
     "Suncare Traders",
     0.46,
@@ -4039,8 +4010,15 @@
     2.42
    ],
    [
+    "500028",
+    "ATV Projects India",
+    21.8,
+    9.49,
+    19.91
+   ],
+   [
     "530871",
-    "Chembond Material Technologies Ltd-$",
+    "Chembond Material Technologies",
     203.0,
     9.4,
     185.55
@@ -4051,6 +4029,13 @@
     2.35,
     9.3,
     2.15
+   ],
+   [
+    "533001",
+    "Somi Conveyor Beltings",
+    79.65,
+    9.24,
+    72.91
    ],
    [
     "509449",
@@ -4095,6 +4080,13 @@
     0.99
    ],
    [
+    "506235",
+    "Alembic",
+    108.1,
+    9.08,
+    99.1
+   ],
+   [
     "526415",
     "OK Play India",
     3.14,
@@ -4103,7 +4095,7 @@
    ],
    [
     "532100",
-    "Indo City Infotech Ltd-$",
+    "Indo City Infotech",
     13.69,
     9.0,
     12.56
@@ -4114,13 +4106,6 @@
     6.67,
     8.99,
     6.12
-   ],
-   [
-    "513250",
-    "Jyoti Structures",
-    10.94,
-    8.96,
-    10.04
    ],
    [
     "531416",
@@ -4144,11 +4129,18 @@
     8.0
    ],
    [
-    "506235",
-    "Alembic",
-    107.64,
-    8.62,
-    99.1
+    "513250",
+    "Jyoti Structures",
+    10.91,
+    8.67,
+    10.04
+   ],
+   [
+    "543428",
+    "Data Patterns (India)",
+    4012.05,
+    8.43,
+    3700.1
    ]
   ],
   "l": [
@@ -4172,13 +4164,6 @@
     22.99,
     -17.15,
     27.75
-   ],
-   [
-    "530741",
-    "Ovobel Foods",
-    197.0,
-    -16.37,
-    235.55
    ],
    [
     "543231",
@@ -4207,6 +4192,13 @@
     5.1,
     -14.86,
     5.99
+   ],
+   [
+    "530741",
+    "Ovobel Foods",
+    201.0,
+    -14.67,
+    235.55
    ],
    [
     "513117",
@@ -4253,8 +4245,8 @@
    [
     "544455",
     "GNG Electronics",
-    544.65,
-    -10.03,
+    544.3,
+    -10.09,
     605.35
    ],
    [
@@ -4357,7 +4349,7 @@
    ],
    [
     "590018",
-    "Hisar Metal Industries",
+    "Hisar Metal Industries Ltd-$",
     140.0,
     -8.5,
     153.0
@@ -4426,18 +4418,18 @@
     18.16
    ],
    [
-    "544119",
-    "Rashi Peripherals",
-    680.0,
-    -7.72,
-    736.85
-   ],
-   [
     "530217",
     "Swojas Foods",
     7.0,
     -7.65,
     7.58
+   ],
+   [
+    "544119",
+    "Rashi Peripherals",
+    680.55,
+    -7.64,
+    736.85
    ],
    [
     "543986",
@@ -4482,6 +4474,13 @@
     60.99
    ],
    [
+    "500339",
+    "Rain Industries",
+    162.4,
+    -7.25,
+    175.1
+   ],
+   [
     "544635",
     "Luxury Time",
     64.0,
@@ -4511,7 +4510,7 @@
    ],
    [
     "514264",
-    "Seasons Textiles",
+    "Seasons Textiles Ltd-$",
     16.52,
     -7.19,
     17.8
@@ -4538,13 +4537,6 @@
     102.36
    ],
    [
-    "511501",
-    "Bharat Bhushan Finance & Commodity Brokers",
-    22.21,
-    -7.15,
-    23.92
-   ],
-   [
     "541418",
     "Nakoda Group of Industries",
     41.1,
@@ -4552,18 +4544,18 @@
     44.25
    ],
    [
-    "500339",
-    "Rain Industries",
-    162.75,
-    -7.05,
-    175.1
-   ],
-   [
     "513295",
     "Imec Services",
     64.99,
     -7.02,
     69.9
+   ],
+   [
+    "535566",
+    "KIFS Financial Services",
+    108.0,
+    -7.02,
+    116.15
    ]
   ]
  },
