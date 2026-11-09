@@ -1,13 +1,13 @@
 {
- "label": "9 Nov 2026, 3:34 PM IST",
- "updated": "2026-11-09T15:34:24+05:30",
+ "label": "9 Nov 2026, 3:35 PM IST",
+ "updated": "2026-11-09T15:35:08+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "9 Nov 2026, 3:34 PM",
+  "date": "9 Nov 2026, 3:35 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143516.0,
     "ch": 964.0,
     "pct": 0.68,
-    "t": "9 Nov, 3:34 PM"
+    "t": "9 Nov, 3:35 PM"
    },
    "silver": {
     "v": 187390.0,
     "ch": 2290.0,
     "pct": 1.24,
-    "t": "9 Nov, 3:34 PM"
+    "t": "9 Nov, 3:35 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 144040.0,
    "ag_kg": 188080.0,
    "ag": 188.08,
-   "t": "9 Nov, 3:34 PM"
+   "t": "9 Nov, 3:35 PM"
   }
  },
  "logos": [],
@@ -350,14 +350,14 @@
    "t": 1794218487
   },
   "SENSEX": {
-   "v": 81065.26,
+   "v": 80998.85,
    "prev": 81028.02,
-   "ch": 37.24,
-   "pct": 0.05,
+   "ch": -29.17,
+   "pct": -0.04,
    "high": 81339.41,
    "low": 80519.31,
    "open": 81313.44,
-   "t": 1794217762
+   "t": 1794217806
   },
   "BANKNIFTY": {
    "v": 59741.25,
@@ -390,14 +390,14 @@
    "t": 1794218487
   },
   "VIX": {
-   "v": 17.41,
+   "v": 17.4,
    "prev": 17.46,
-   "ch": -0.05,
-   "pct": -0.29,
+   "ch": -0.06,
+   "pct": -0.34,
    "high": 18.44,
    "low": 16.77,
    "open": 18.43,
-   "t": 1794218662
+   "t": 1794218706
   }
  },
  "nifty8": [
@@ -445,24 +445,24 @@
   "t": 1794218646
  },
  "brent": {
-  "v": 97.4,
+  "v": 97.46,
   "prev": 98.32,
-  "ch": -0.92,
-  "pct": -0.94,
+  "ch": -0.86,
+  "pct": -0.87,
   "high": 98.42,
   "low": 96.12,
   "open": 98.33,
-  "t": 1794218045
+  "t": 1794218097
  },
  "goldSpot": {
-  "v": 4106.5,
+  "v": 4106.2,
   "prev": 4074.9,
-  "ch": 31.6,
-  "pct": 0.78,
+  "ch": 31.3,
+  "pct": 0.77,
   "high": 4143.3,
   "low": 4062.5,
   "open": 4132.6,
-  "t": 1794218055
+  "t": 1794218102
  },
  "sectors": [
   [
@@ -2212,9 +2212,9 @@
   }
  },
  "nse": {
-  "n50": "9 Nov, 3:34 PM",
-  "mid": "9 Nov, 3:34 PM",
-  "small": "9 Nov, 3:34 PM"
+  "n50": "9 Nov, 3:35 PM",
+  "mid": "9 Nov, 3:35 PM",
+  "small": "9 Nov, 3:35 PM"
  },
  "midg": [
   [
@@ -2360,6 +2360,14 @@
    "MIDCAP": 60606.65,
    "SMALLCAP": 18975.05,
    "VIX": 17.46
+  },
+  "2026-11-09": {
+   "NIFTY": 25044.65,
+   "SENSEX": 80998.85,
+   "BANKNIFTY": 59741.25,
+   "MIDCAP": 61022.55,
+   "SMALLCAP": 19185.05,
+   "VIX": 17.4
   }
  },
  "fulllog": [
@@ -2409,9 +2417,9 @@
   ],
   [
    "FTSE 100",
-   10735.44,
-   0.58,
-   1794217763
+   10734.79,
+   0.57,
+   1794217807
   ],
   [
    "US 10Y yield",
@@ -3850,18 +3858,18 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "9 Nov, 3:34 PM",
+  "at": "9 Nov, 3:35 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories",
+    "Makers Laboratories Ltd-$",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     297.75,
     19.99,
     248.15
@@ -3952,7 +3960,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics",
+    "Salzer Electronics Ltd-$",
     544.3,
     13.92,
     477.8
@@ -4134,7 +4142,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies",
+    "Chembond Material Technologies Ltd-$",
     203.0,
     9.4,
     185.55
@@ -4155,7 +4163,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     57.5,
     9.27,
     52.62
