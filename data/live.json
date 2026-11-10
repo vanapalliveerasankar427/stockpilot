@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 3:41 PM IST",
- "updated": "2026-11-10T15:41:45+05:30",
+ "label": "10 Nov 2026, 3:42 PM IST",
+ "updated": "2026-11-10T15:42:30+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 3:41 PM",
+  "date": "10 Nov 2026, 3:42 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -118,13 +118,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 3:41 PM"
+    "t": "10 Nov, 3:42 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 3:41 PM"
+    "t": "10 Nov, 3:42 PM"
    }
   },
   "retail": {
@@ -330,8 +330,8 @@
      "ag": 205.0
     }
    },
-   "at": "10 Nov, 3:11 PM",
-   "at_ts": 1794303671.298006,
+   "at": "10 Nov, 3:42 PM",
+   "at_ts": 1794305550.845841,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -339,7 +339,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 3:41 PM"
+   "t": "10 Nov, 3:42 PM"
   }
  },
  "logos": [],
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 89.74,
+  "v": 89.66,
   "prev": 92.57,
-  "ch": -2.83,
-  "pct": -3.06,
+  "ch": -2.91,
+  "pct": -3.14,
   "high": 92.82,
   "low": 89.21,
   "open": 91.61,
-  "t": 1794304904
+  "t": 1794304945
  },
  "goldSpot": {
-  "v": 4095.5,
+  "v": 4095.8,
   "prev": 4114.5,
-  "ch": -19.0,
-  "pct": -0.46,
+  "ch": -18.7,
+  "pct": -0.45,
   "high": 4156.2,
   "low": 4089.1,
   "open": 4124.3,
-  "t": 1794304901
+  "t": 1794304945
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 3:38 PM"
+   "sat": "10 Nov, 3:42 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 3:38 PM",
+  "fetched": "10 Nov, 3:42 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,17 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "city metals: 24 cities",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 238 headlines, 25 up, 8 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2222,9 +2232,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 3:41 PM",
-  "mid": "10 Nov, 3:41 PM",
-  "small": "10 Nov, 3:41 PM"
+  "n50": "10 Nov, 3:42 PM",
+  "mid": "10 Nov, 3:42 PM",
+  "small": "10 Nov, 3:42 PM"
  },
  "midg": [
   [
@@ -2390,6 +2400,7 @@
  },
  "fulllog": [
   "ibja: no gold figure found",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
@@ -2401,7 +2412,7 @@
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 3:38 PM"
+  "at": "10 Nov, 3:42 PM"
  },
  "global": [
   [
@@ -2436,9 +2447,9 @@
   ],
   [
    "FTSE 100",
-   10815.53,
-   0.3,
-   1794304604
+   10816.18,
+   0.31,
+   1794304649
   ],
   [
    "US 10Y yield",
@@ -2448,12 +2459,12 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 3:38 PM",
+  "at": "10 Nov, 3:42 PM",
   "headlines": 238,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
-   "Brent crude down 3.3%",
+   "Brent crude down 3.1%",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
    "Nikkei 225 +2.9%"
@@ -2503,25 +2514,6 @@
     ]
    },
    {
-    "k": "GLAND",
-    "n": "Gland Pharma",
-    "s": 8,
-    "conf": "High",
-    "p": 3302.4,
-    "pct": 5.41,
-    "mc": 54493.2,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
-      "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
     "k": "GUJENERGY",
     "n": "GUJARAT ENERGY",
     "s": 8,
@@ -2537,6 +2529,25 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOc25vTjlySExFVlByelNwdC1xaG9CWllUanhHTV9UYURYdlU5Tm9LejRLNWJwRXVDVDVtVUpGbFAxNVFqZUV5NXJTclhyVGRJT2VWSWdhVDVfVlV6ZGhWWVZCdTRYeDUyWlMzOTlxREJyQ2ZYU3BaUHdJb3hCVk5LMnQzZkxhRjRfMm1jWF9adGZQMTQ2ekE0VTRIOWQzS0lJWG1adG5GcURPR2lLbUdoMHNtSUN6R3FyOTVObUJZdUZYaXZZU1g5WURxeGhYQ0xxaWNnenR0QldjdVFwWUxjNVdjS3ZTU0tSak5iREozQ3FVd2ZvX0Fqak5JZmtMdnpnQXVSbEtiMHJKT2V2RDdSYtIBlgJBVV95cUxOMkRfZ0o1RTdpTTMzRUFTXzNrQ1JiUHhvTmdaMnNGbGZKTHNnUGs4NjhTQTlHeV9qVUlXMUFkemhQaEJwZ0poTnNubkdwT3NCaE5QdkpCcWhoWHE4Z2xTQnl5N3JuNGhjU0ZWbnhwbWVwaHo0dmxlNVo3dl9pMWU0RDNtR2JKTUFTclBTTG9RTFNJWU5CcktWRU45cWVBblR5a0xWb1M5LTRib0taSmRLLTI4SUVSX3FicUo0aG9Za1NtMmlTSXZaZVl3SVlabFE1V0JoWTByOVd3aFoxX1hZTVNIWUt4LXE5Q2RVOUFUUFhRTUotZG5OWlJZZlpXUTg4Qm5TamYxbVhxM3NfYUpzMzdGdVZOUQ?oc=5",
       "src": "Livemint"
+     }
+    ]
+   },
+   {
+    "k": "GLAND",
+    "n": "Gland Pharma",
+    "s": 8,
+    "conf": "High",
+    "p": 3302.4,
+    "pct": 5.41,
+    "mc": 54493.2,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "news",
+      "t": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
+      "src": "Moneycontrol.com"
      }
     ]
    },
@@ -3679,7 +3690,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 3:38 PM",
+  "at": "10 Nov, 3:42 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3768,7 +3779,7 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 3:41 PM",
+  "at": "10 Nov, 3:42 PM",
   "g": [
    [
     "506919",
@@ -4594,7 +4605,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 3:38 PM",
+  "at": "10 Nov, 3:42 PM",
   "g": [
    [
     "TRANSWORLD",
