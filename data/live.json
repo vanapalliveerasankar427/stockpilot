@@ -1,6 +1,6 @@
 {
  "label": "10 Nov 2026, 12:38 PM IST",
- "updated": "2026-11-10T12:38:04+05:30",
+ "updated": "2026-11-10T12:38:49+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.11,
+  "v": 91.16,
   "prev": 92.57,
-  "ch": -1.46,
-  "pct": -1.58,
+  "ch": -1.41,
+  "pct": -1.52,
   "high": 92.82,
   "low": 90.74,
   "open": 91.61,
-  "t": 1794293820
+  "t": 1794293904
  },
  "goldSpot": {
-  "v": 4128.2,
+  "v": 4128.7,
   "prev": 4114.5,
-  "ch": 13.7,
-  "pct": 0.33,
+  "ch": 14.2,
+  "pct": 0.35,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794293882
+  "t": 1794293925
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:34 PM"
+   "sat": "10 Nov, 12:38 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:34 PM",
+  "fetched": "10 Nov, 12:38 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 250 headlines, 25 up, 10 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2376,19 +2384,18 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 249 headlines, 25 up, 10 down"
+  "outlook: 250 headlines, 25 up, 10 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:34 PM"
+  "at": "10 Nov, 12:38 PM"
  },
  "global": [
   [
@@ -2417,9 +2424,9 @@
   ],
   [
    "Hang Seng",
-   24557.03,
+   24557.42,
    0.31,
-   1794293582
+   1794293626
   ],
   [
    "FTSE 100",
@@ -2435,8 +2442,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:34 PM",
-  "headlines": 249,
+  "at": "10 Nov, 12:38 PM",
+  "headlines": 250,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -3739,7 +3746,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:34 PM",
+  "at": "10 Nov, 12:38 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -4654,7 +4661,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:34 PM",
+  "at": "10 Nov, 12:38 PM",
   "g": [
    [
     "TRANSWORLD",
