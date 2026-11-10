@@ -1,6 +1,6 @@
 {
  "label": "10 Nov 2026, 12:34 PM IST",
- "updated": "2026-11-10T12:34:06+05:30",
+ "updated": "2026-11-10T12:34:51+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -325,8 +325,8 @@
      "ag": 205.0
     }
    },
-   "at": "10 Nov, 12:03 PM",
-   "at_ts": 1794292423.84511,
+   "at": "10 Nov, 12:34 PM",
+   "at_ts": 1794294291.650487,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 90.87,
+  "v": 90.97,
   "prev": 92.57,
-  "ch": -1.7,
-  "pct": -1.84,
+  "ch": -1.6,
+  "pct": -1.73,
   "high": 92.82,
   "low": 90.74,
   "open": 91.61,
-  "t": 1794293626
+  "t": 1794293686
  },
  "goldSpot": {
-  "v": 4128.8,
+  "v": 4129.5,
   "prev": 4114.5,
-  "ch": 14.3,
-  "pct": 0.35,
+  "ch": 15.0,
+  "pct": 0.36,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794293638
+  "t": 1794293684
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:30 PM"
+   "sat": "10 Nov, 12:34 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:30 PM",
+  "fetched": "10 Nov, 12:34 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,16 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "city metals: 24 cities",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 249 headlines, 25 up, 10 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2376,18 +2385,19 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 253 headlines, 25 up, 10 down"
+  "outlook: 249 headlines, 25 up, 10 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:30 PM"
+  "at": "10 Nov, 12:34 PM"
  },
  "global": [
   [
@@ -2416,9 +2426,9 @@
   ],
   [
    "Hang Seng",
-   24545.52,
+   24546.35,
    0.26,
-   1794293344
+   1794293390
   ],
   [
    "FTSE 100",
@@ -2434,8 +2444,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:30 PM",
-  "headlines": 253,
+  "at": "10 Nov, 12:34 PM",
+  "headlines": 249,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -2502,6 +2512,30 @@
     ]
    },
    {
+    "k": "VOLTAS",
+    "n": "Voltas",
+    "s": 9.8,
+    "conf": "High",
+    "p": 1090.1,
+    "pct": 3.18,
+    "mc": 36069.7,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
+      "src": "Livemint"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
+      "s": 1.7614208979249046
+     }
+    ]
+   },
+   {
     "k": "OLECTRA",
     "n": "Olectra Greentech",
     "s": 8,
@@ -2521,25 +2555,6 @@
     ]
    },
    {
-    "k": "GUJENERGY",
-    "n": "GUJARAT ENERGY",
-    "s": 8,
-    "conf": "High",
-    "p": 227.49,
-    "pct": 1.55,
-    "mc": 21343.8,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "Top PSU stock to buy: Brokerage sees 50% upside! Gujarat Energy shares gain 2% as profit surges 26% - Check target price",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOc25vTjlySExFVlByelNwdC1xaG9CWllUanhHTV9UYURYdlU5Tm9LejRLNWJwRXVDVDVtVUpGbFAxNVFqZUV5NXJTclhyVGRJT2VWSWdhVDVfVlV6ZGhWWVZCdTRYeDUyWlMzOTlxREJyQ2ZYU3BaUHdJb3hCVk5LMnQzZkxhRjRfMm1jWF9adGZQMTQ2ekE0VTRIOWQzS0lJWG1adG5GcURPR2lLbUdoMHNtSUN6R3FyOTVObUJZdUZYaXZZU1g5WURxeGhYQ0xxaWNnenR0QldjdVFwWUxjNVdjS3ZTU0tSak5iREozQ3FVd2ZvX0Fqak5JZmtMdnpnQXVSbEtiMHJKT2V2RDdSYtIBlgJBVV95cUxOMkRfZ0o1RTdpTTMzRUFTXzNrQ1JiUHhvTmdaMnNGbGZKTHNnUGs4NjhTQTlHeV9qVUlXMUFkemhQaEJwZ0poTnNubkdwT3NCaE5QdkpCcWhoWHE4Z2xTQnl5N3JuNGhjU0ZWbnhwbWVwaHo0dmxlNVo3dl9pMWU0RDNtR2JKTUFTclBTTG9RTFNJWU5CcktWRU45cWVBblR5a0xWb1M5LTRib0taSmRLLTI4SUVSX3FicUo0aG9Za1NtMmlTSXZaZVl3SVlabFE1V0JoWTByOVd3aFoxX1hZTVNIWUt4LXE5Q2RVOUFUUFhRTUotZG5OWlJZZlpXUTg4Qm5TamYxbVhxM3NfYUpzMzdGdVZOUQ?oc=5",
-      "src": "Livemint"
-     }
-    ]
-   },
-   {
     "k": "GLAND",
     "n": "Gland Pharma",
     "s": 8,
@@ -2555,6 +2570,25 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
       "src": "Moneycontrol.com"
+     }
+    ]
+   },
+   {
+    "k": "GUJENERGY",
+    "n": "GUJARAT ENERGY",
+    "s": 8,
+    "conf": "High",
+    "p": 227.49,
+    "pct": 1.55,
+    "mc": 21343.8,
+    "sec": "Utilities",
+    "why": [
+     {
+      "k": "news",
+      "t": "Top PSU stock to buy: Brokerage sees 50% upside! Gujarat Energy shares gain 2% as profit surges 26% - Check target price",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOc25vTjlySExFVlByelNwdC1xaG9CWllUanhHTV9UYURYdlU5Tm9LejRLNWJwRXVDVDVtVUpGbFAxNVFqZUV5NXJTclhyVGRJT2VWSWdhVDVfVlV6ZGhWWVZCdTRYeDUyWlMzOTlxREJyQ2ZYU3BaUHdJb3hCVk5LMnQzZkxhRjRfMm1jWF9adGZQMTQ2ekE0VTRIOWQzS0lJWG1adG5GcURPR2lLbUdoMHNtSUN6R3FyOTVObUJZdUZYaXZZU1g5WURxeGhYQ0xxaWNnenR0QldjdVFwWUxjNVdjS3ZTU0tSak5iREozQ3FVd2ZvX0Fqak5JZmtMdnpnQXVSbEtiMHJKT2V2RDdSYtIBlgJBVV95cUxOMkRfZ0o1RTdpTTMzRUFTXzNrQ1JiUHhvTmdaMnNGbGZKTHNnUGs4NjhTQTlHeV9qVUlXMUFkemhQaEJwZ0poTnNubkdwT3NCaE5QdkpCcWhoWHE4Z2xTQnl5N3JuNGhjU0ZWbnhwbWVwaHo0dmxlNVo3dl9pMWU0RDNtR2JKTUFTclBTTG9RTFNJWU5CcktWRU45cWVBblR5a0xWb1M5LTRib0taSmRLLTI4SUVSX3FicUo0aG9Za1NtMmlTSXZaZVl3SVlabFE1V0JoWTByOVd3aFoxX1hZTVNIWUt4LXE5Q2RVOUFUUFhRTUotZG5OWlJZZlpXUTg4Qm5TamYxbVhxM3NfYUpzMzdGdVZOUQ?oc=5",
+      "src": "Livemint"
      }
     ]
    },
@@ -2636,37 +2670,6 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBCZC1pdUxEeWhlaUl0Q3dvZ1BOMVc3NGZ5UmNoWDQtMWJsZjVGQndqaTVycGNoMXRmY0dpRDlPMU9MMFFxVzUyRlVjbksyUzZreF9odllMX1ZOdE9wM1oxeDlINUhFRWZINTZjcGJn?oc=5",
       "src": "Metro Rail News"
-     }
-    ]
-   },
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "s": 5.8,
-    "conf": "Medium",
-    "p": 1090.1,
-    "pct": 3.18,
-    "mc": 36069.7,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "news",
-      "t": "Voltas Q2 FY27 results: Shares fall as brokerages flag margin risks",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc3J5R281ZVVJR1g0ZDVyWUZDcG9xOWpVa1l4T0NJN2pSYkRldlF3NFpXc3QyZGQ1MVhHX0ZZcXlwWjJReXhNQ09Gd05sV3hFbUxFZ1Bvd2wyZVBJUnE4Z1Jhcjc0ejRxSmQ3eGVwcEhzdWltWFpEN05HYlpXbzM1ZFVINnNCNUZTekt4bmxxOVJvVkpWclh6WjQ4bGpvVk9k?oc=5",
-      "src": "Alice Blue"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
-      "s": 1.7614208979249046
      }
     ]
    },
@@ -2956,42 +2959,6 @@
   ],
   "down": [
    {
-    "k": "HFCL",
-    "n": "HFCL",
-    "s": -8.8,
-    "conf": "High",
-    "p": 206.47,
-    "pct": -4.63,
-    "mc": 31595.4,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "HFCL shares locked in 5% lower circuit, down 21% in a month despite record Q2 profit: What lies ahead?",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNUFZLdlQzZFRfZDBJRUlJX29XU1haclNPRnJtWi1TVGRSUkxESXNzNE9IUHhUeGVwUVpCRWRjMmszaWlDVHZsY2M2Z181T1VLeURQcGxFWXNJVkFJeW83elNscUEzcHR2UFVDZ1czMkVIRjVmWGpCRTdQWlZzNEhUTDI1aGNRUFdVM05TRkF1VXlUQm1VblJ1QzB0QkI5MGowS2Y2OV9oRG5LYUNqS2ZhYVhqR2NqSGlCelV2WnlwTFBMR215RWxqb1JyVG40Ti1ITnRjU2VINkhldkliWmpydFk0RlJyVWJCZ2tKejkxZmxLLW5VTkxUUkQ4RdIBgAJBVV95cUxOb1JsaWY3akotZk0zSExCRmlKVmpEMENYNXRQVzdmbGNDZElfZmZVNTBkRGZOM1FoNXl4Rm0ya3RjSzNKM0R4enRGR00zbXVvTUlKOXBFUzVveDQ3WjJVbmRFaVBPalFJU1VwZUF1OGZCT2NiNm9yN1VFaE83anlFOUFOQnNFVkRUcHFGTkJFZF9RbzF2RU4tVFhnSkZCbnpwN2VSRHlQaFBaS2V3NW1DTGN5YkFoOHB6NHBHNjBDQTMtSzJaTWdyQ0ttSWtHd1piRkh5ZU84bDJlSS0xYzQ2RG10RzhtUTNhdkV1WnYzOWYySWc2V0tuMW9BY19jZy1C?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "news",
-      "t": "HFCL Share Price: HFCL Lower Circuit, What Lies Ahead",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNSDVMV3BRRUhKUWdfQ1dVYVlmM04zcEYxc21LdE1zbXowQzkxUnpPdlJhNmV5cTVER3NXeEstU0g5VllnSVQyZ21vcTFrdlQxRlNVNDRNU1NXaGl0X25GbGt0REhKMGVmSVpiZFRQa3dGdkpxbkNNdHpVcGVhR0F5cGxQa3cyRTFKdUZwczBYckYtMllkVEdtUjhUa1ZHVm5QMHdodm5hUXpfeENqNVpGcFRNZWdpdkd5TmRjR1RCcw?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed weak: -4.6% on 2.1× usual volume, near the day's low",
-      "s": -1.7918571069871907
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq +2.7% overnight; IT stocks often follow",
-      "s": 1
-     }
-    ]
-   },
-   {
     "k": "MONEYVIEW",
     "n": "Moneyview",
     "s": -7,
@@ -3007,6 +2974,35 @@
       "s": -8,
       "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUVY1ZXJvZ0JGS1JRR1pzZW4xUHVWaUlQMk1NMmFFQW9RQmZydGc1ZHYwNzJmUFBybkVkUi05RUZMS1JTa3FlQzlCdUc5d3JDMnhYQUlvQU55dnhjWXJVNVdZc0xjMklrWEJ2Wk43dGFSb2ExczE5OXBGME40Rnl6RUQ2eDVUeVFhcDdna1IySlYzX05vbDY0Vl9mRnN6aE1HNmpyNmItZFdqQQ?oc=5",
       "src": "Multibagg AI"
+     },
+     {
+      "k": "global",
+      "t": "Nasdaq +2.7% overnight; IT stocks often follow",
+      "s": 1
+     }
+    ]
+   },
+   {
+    "k": "HFCL",
+    "n": "HFCL",
+    "s": -4.8,
+    "conf": "Medium",
+    "p": 206.47,
+    "pct": -4.63,
+    "mc": 31595.4,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "HFCL Share Price: HFCL Lower Circuit, What Lies Ahead",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNSDVMV3BRRUhKUWdfQ1dVYVlmM04zcEYxc21LdE1zbXowQzkxUnpPdlJhNmV5cTVER3NXeEstU0g5VllnSVQyZ21vcTFrdlQxRlNVNDRNU1NXaGl0X25GbGt0REhKMGVmSVpiZFRQa3dGdkpxbkNNdHpVcGVhR0F5cGxQa3cyRTFKdUZwczBYckYtMllkVEdtUjhUa1ZHVm5QMHdodm5hUXpfeENqNVpGcFRNZWdpdkd5TmRjR1RCcw?oc=5",
+      "src": "Univest"
+     },
+     {
+      "k": "price",
+      "t": "Closed weak: -4.6% on 2.1× usual volume, near the day's low",
+      "s": -1.7918571069871907
      },
      {
       "k": "global",
@@ -3752,7 +3748,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:30 PM",
+  "at": "10 Nov, 12:34 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -4667,7 +4663,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:30 PM",
+  "at": "10 Nov, 12:34 PM",
   "g": [
    [
     "TRANSWORLD",
