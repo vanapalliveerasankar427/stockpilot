@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 11:00 AM IST",
- "updated": "2026-11-10T11:00:16+05:30",
+ "label": "10 Nov 2026, 11:01 AM IST",
+ "updated": "2026-11-10T11:01:00+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 11:00 AM",
+  "date": "10 Nov 2026, 11:01 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 11:00 AM"
+    "t": "10 Nov, 11:01 AM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 11:00 AM"
+    "t": "10 Nov, 11:01 AM"
    }
   },
   "retail": {
@@ -325,8 +325,8 @@
      "ag": 205.0
     }
    },
-   "at": "10 Nov, 10:29 AM",
-   "at_ts": 1794286774.365424,
+   "at": "10 Nov, 11:01 AM",
+   "at_ts": 1794288660.419907,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -334,7 +334,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 11:00 AM"
+   "t": "10 Nov, 11:01 AM"
   }
  },
  "logos": [],
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.46,
+  "v": 91.44,
   "prev": 92.57,
-  "ch": -1.11,
-  "pct": -1.2,
+  "ch": -1.13,
+  "pct": -1.22,
   "high": 92.82,
   "low": 91.34,
   "open": 91.61,
-  "t": 1794288000
+  "t": 1794288031
  },
  "goldSpot": {
-  "v": 4125.8,
+  "v": 4125.3,
   "prev": 4114.5,
-  "ch": 11.3,
-  "pct": 0.27,
+  "ch": 10.8,
+  "pct": 0.26,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794288013
+  "t": 1794288058
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 10:57 AM"
+   "sat": "10 Nov, 11:01 AM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 10:57 AM",
+  "fetched": "10 Nov, 11:01 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,16 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "city metals: 24 cities",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 262 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2217,9 +2226,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 11:00 AM",
-  "mid": "10 Nov, 11:00 AM",
-  "small": "10 Nov, 11:00 AM"
+  "n50": "10 Nov, 11:01 AM",
+  "mid": "10 Nov, 11:01 AM",
+  "small": "10 Nov, 11:01 AM"
  },
  "midg": [
   [
@@ -2376,18 +2385,19 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 260 headlines, 25 up, 11 down"
+  "outlook: 262 headlines, 25 up, 11 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 10:57 AM"
+  "at": "10 Nov, 11:01 AM"
  },
  "global": [
   [
@@ -2410,15 +2420,15 @@
   ],
   [
    "Nikkei 225",
-   60368.17,
-   2.71,
-   1794287715
+   60374.8,
+   2.72,
+   1794287755
   ],
   [
    "Hang Seng",
-   24522.93,
-   0.17,
-   1794287714
+   24519.82,
+   0.15,
+   1794287758
   ],
   [
    "FTSE 100",
@@ -2434,16 +2444,49 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 10:57 AM",
-  "headlines": 260,
+  "at": "10 Nov, 11:01 AM",
+  "headlines": 262,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
-   "Nikkei 225 +2.6%"
+   "Nikkei 225 +2.7%"
   ],
   "up": [
+   {
+    "k": "BHEL",
+    "n": "Bharat Heavy Electricals",
+    "s": 18,
+    "conf": "High",
+    "p": 422.95,
+    "pct": 1.38,
+    "mc": 147273.9,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "BHEL Bags Adani Power Orders Worth Up to Rs. 280 bn",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNdmQyQkd3em0tN0xNcEpzZ191dzFjZmhNM2tnSjJWY3l2NEZ4eWFkenY3S2ZaNFJ3b1dZdkZ6SU13bmlfX0FadFV4VW5rXzI0STJYRFp0b3A0Sy1UMjFHS2E0dTJKeFhHRWpJd1FnQ0dHaEtsc2MzWVBvMXk3SFN3Vzl6WnNIVjRyNkYyTG5yNDFXclltZktDZmV3dERXM3VNQV9YX0poSnZBVXBSaW1GV0RaT0dJVjNPQ2VqdG1jLTVsUU1TTmhEaWNILUFFcHoyRTktbElWWQ?oc=5",
+      "src": "Construction World"
+     },
+     {
+      "k": "news",
+      "t": "BHEL bags Rs 600-900 crore order from Power Grid for synchronous condensers",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcjB1cUdhWFoyb1hMdlJMVDZzTDN4UnlkczB1OHFMQWNOenpHOEdGcTJ5VTZsSVR6VUFLbXdVTlYxaTJLLTlKTzRwM1pfeFNHY0g1c3FIWTgwNGxMRnRidTBXUHY0amlVS1hFRWEwMnd1ZXZGUDBGcFBIdmRvSXlzZ2Q3UGZDSEpGNFhnNko1bEZScXV4MDlYOGpnb0w1aGg1SS12WG8ycDdIM29PYVUwMVotTXY1S1Q1d0HSAboBQVVfeXFMT3IwdXFHYVhaMm9YTHZSTFQ2c0wzeFJ5ZHMwdThxTEFjTnp6RzhHRnEyeVU2bElUelVBS213VU5WMWkySy05Sk80cDNaX3hTR2NINXNxSFk4MDRsTEZ0YnUwV1B2NGppVUtYRUVhMDJ3dWV2RlAwRnBQSHZkb0l5c2dkN1BmQ0hKRjRYZzZKNWxGUnF1eDA5WDhqZ29MNWhoNUktdlhvMnA3SDNvT2FVMDFaLU12NUtUNXdB?oc=5",
+      "src": "PSU Watch"
+     },
+     {
+      "k": "news",
+      "t": "BHEL Bags Synchronous Condenser Order From Power Grid Worth Up to ₹900 Crore",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUWdrNzNMMUZaaW5JeHFkTFFUb0FhSnRRa3RWWU5sT2h5eDFOSHdESEM1Rkw3RnNLeEZSaHU0S0QtM25qYzk3S1JSYVQwMkZBZnVuX2NBV3o4REFtRV9Yem55djlmUUp5eU9DUzkxbTZxQmRKQ0Q1OFdhSU1NbGFYc3MwcmFHQWM1Ui0zN2ZnSFg3MzV0THF3TXBpZFhUSF9BNHdoaW5sQXRaYzVzR0gtQ1I5YTduc3NVcWpHdnhrcw?oc=5",
+      "src": "Trade Brains"
+     }
+    ]
+   },
    {
     "k": "DATAPATTNS",
     "n": "Data Patterns (India)",
@@ -2509,28 +2552,26 @@
     ]
    },
    {
-    "k": "BHEL",
-    "n": "Bharat Heavy Electricals",
-    "s": 12,
+    "k": "VOLTAS",
+    "n": "Voltas",
+    "s": 9.8,
     "conf": "High",
-    "p": 422.95,
-    "pct": 1.38,
-    "mc": 147273.9,
-    "sec": "Industrials",
+    "p": 1090.1,
+    "pct": 3.18,
+    "mc": 36069.7,
+    "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "news",
-      "t": "BHEL Bags Adani Power Orders Worth Up to Rs. 280 bn",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNdmQyQkd3em0tN0xNcEpzZ191dzFjZmhNM2tnSjJWY3l2NEZ4eWFkenY3S2ZaNFJ3b1dZdkZ6SU13bmlfX0FadFV4VW5rXzI0STJYRFp0b3A0Sy1UMjFHS2E0dTJKeFhHRWpJd1FnQ0dHaEtsc2MzWVBvMXk3SFN3Vzl6WnNIVjRyNkYyTG5yNDFXclltZktDZmV3dERXM3VNQV9YX0poSnZBVXBSaW1GV0RaT0dJVjNPQ2VqdG1jLTVsUU1TTmhEaWNILUFFcHoyRTktbElWWQ?oc=5",
-      "src": "Construction World"
+      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
+      "src": "Livemint"
      },
      {
-      "k": "news",
-      "t": "BHEL Bags Synchronous Condenser Order From Power Grid Worth Up to ₹900 Crore",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQUWdrNzNMMUZaaW5JeHFkTFFUb0FhSnRRa3RWWU5sT2h5eDFOSHdESEM1Rkw3RnNLeEZSaHU0S0QtM25qYzk3S1JSYVQwMkZBZnVuX2NBV3o4REFtRV9Yem55djlmUUp5eU9DUzkxbTZxQmRKQ0Q1OFdhSU1NbGFYc3MwcmFHQWM1Ui0zN2ZnSFg3MzV0THF3TXBpZFhUSF9BNHdoaW5sQXRaYzVzR0gtQ1I5YTduc3NVcWpHdnhrcw?oc=5",
-      "src": "Trade Brains"
+      "k": "price",
+      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
+      "s": 1.7614208979249046
      }
     ]
    },
@@ -2659,6 +2700,25 @@
     ]
    },
    {
+    "k": "HINDALCO",
+    "n": "Hindalco Industries",
+    "s": 6,
+    "conf": "High",
+    "p": 960.0,
+    "pct": 0.73,
+    "mc": 213104.4,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Hindalco Q2 results FY27: Net profit rises 58.8% as shares decline 3% on cost concerns",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMU5UQ1lzdVZFZVc0cnNKWExnaW5vUjhEM2pSb3RLQkRDUDRxQWRwZXJha2NlRWFyQ2I3UjV3SEM5YU5CYXY3dEFiS2hHZ0IxLXoyUjFWdGFZQUM5dndnRDFuOFVkOUpvLXU0Q2VsSUVudXdoRjZtQlIwdVNmRU5HLTFpam9WMkFSNXFfczhpcUVacXd0NUdmZGJmdU11UFQ5dURtbWpEQmpUSE5GUzV1R0JLQk5YaGc?oc=5",
+      "src": "Alice Blue"
+     }
+    ]
+   },
+   {
     "k": "ADANIPOWER",
     "n": "Adani Power",
     "s": 6,
@@ -2717,37 +2777,6 @@
       "k": "price",
       "t": "Closed strong: +4.5% on 2.1× usual volume, near the day's high",
       "s": 1.8066543771759602
-     }
-    ]
-   },
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "s": 5.8,
-    "conf": "Medium",
-    "p": 1090.1,
-    "pct": 3.18,
-    "mc": 36069.7,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "news",
-      "t": "Voltas Q2 FY27 results: Shares fall as brokerages flag margin risks",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc3J5R281ZVVJR1g0ZDVyWUZDcG9xOWpVa1l4T0NJN2pSYkRldlF3NFpXc3QyZGQ1MVhHX0ZZcXlwWjJReXhNQ09Gd05sV3hFbUxFZ1Bvd2wyZVBJUnE4Z1Jhcjc0ejRxSmQ3eGVwcEhzdWltWFpEN05HYlpXbzM1ZFVINnNCNUZTekt4bmxxOVJvVkpWclh6WjQ4bGpvVk9k?oc=5",
-      "src": "Alice Blue"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
-      "s": 1.7614208979249046
      }
     ]
    },
@@ -2962,23 +2991,6 @@
      {
       "k": "price",
       "t": "Closed strong: +11.1% on 12.4× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "GHCL",
-    "n": "GHCL",
-    "s": 3.0,
-    "conf": "Low",
-    "p": 450.6,
-    "pct": 5.71,
-    "mc": 4151.4,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +5.7% on 5.6× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3801,7 +3813,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 10:57 AM",
+  "at": "10 Nov, 11:01 AM",
   "hi": [
    [
     "ICICIBANK",
@@ -3890,7 +3902,7 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 11:00 AM",
+  "at": "10 Nov, 11:01 AM",
   "g": [
    [
     "506919",
@@ -4716,7 +4728,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 10:57 AM",
+  "at": "10 Nov, 11:01 AM",
   "g": [
    [
     "TRANSWORLD",
