@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 12:14 PM IST",
- "updated": "2026-11-10T12:14:45+05:30",
+ "label": "10 Nov 2026, 12:15 PM IST",
+ "updated": "2026-11-10T12:15:30+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 12:14 PM",
+  "date": "10 Nov 2026, 12:15 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 12:14 PM"
+    "t": "10 Nov, 12:15 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 12:14 PM"
+    "t": "10 Nov, 12:15 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 12:14 PM"
+   "t": "10 Nov, 12:15 PM"
   }
  },
  "logos": [],
@@ -455,14 +455,14 @@
   "t": 1794292480
  },
  "goldSpot": {
-  "v": 4134.0,
+  "v": 4134.5,
   "prev": 4114.5,
-  "ch": 19.5,
-  "pct": 0.47,
+  "ch": 20.0,
+  "pct": 0.49,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794292480
+  "t": 1794292521
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:11 PM"
+   "sat": "10 Nov, 12:15 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:11 PM",
+  "fetched": "10 Nov, 12:15 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 261 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2217,9 +2225,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 12:14 PM",
-  "mid": "10 Nov, 12:14 PM",
-  "small": "10 Nov, 12:14 PM"
+  "n50": "10 Nov, 12:15 PM",
+  "mid": "10 Nov, 12:15 PM",
+  "small": "10 Nov, 12:15 PM"
  },
  "midg": [
   [
@@ -2382,12 +2390,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 260 headlines, 25 up, 11 down"
+  "outlook: 261 headlines, 25 up, 11 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:11 PM"
+  "at": "10 Nov, 12:15 PM"
  },
  "global": [
   [
@@ -2410,15 +2418,15 @@
   ],
   [
    "Nikkei 225",
-   60424.22,
-   2.81,
-   1794292180
+   60459.58,
+   2.87,
+   1794292201
   ],
   [
    "Hang Seng",
-   24597.06,
-   0.47,
-   1794292182
+   24598.71,
+   0.48,
+   1794292228
   ],
   [
    "FTSE 100",
@@ -2434,14 +2442,14 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:11 PM",
-  "headlines": 260,
+  "at": "10 Nov, 12:15 PM",
+  "headlines": 261,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
-   "Nikkei 225 +2.8%"
+   "Nikkei 225 +2.9%"
   ],
   "up": [
    {
@@ -3550,7 +3558,7 @@
   },
   {
    "id": "vedantpolyfabs",
-   "name": "Vedant Poly Fabs",
+   "name": "Vedant Poly Fabs Limited",
    "type": "SME",
    "open": "2026-11-02",
    "close": "2026-11-04",
@@ -3558,7 +3566,7 @@
    "refund": "2026-11-06",
    "list": "2026-11-09",
    "lo": 88.0,
-   "hi": 94.0,
+   "hi": 88.0,
    "lot": 1200,
    "src": "vedant-poly-fabs-sme-ipo"
   }
@@ -3787,7 +3795,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:11 PM",
+  "at": "10 Nov, 12:15 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3876,7 +3884,7 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 12:14 PM",
+  "at": "10 Nov, 12:15 PM",
   "g": [
    [
     "506919",
@@ -4702,7 +4710,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:11 PM",
+  "at": "10 Nov, 12:15 PM",
   "g": [
    [
     "TRANSWORLD",
