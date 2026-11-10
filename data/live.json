@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 2:15 PM IST",
- "updated": "2026-11-10T14:15:42+05:30",
+ "label": "10 Nov 2026, 2:16 PM IST",
+ "updated": "2026-11-10T14:16:26+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 2:15 PM",
+  "date": "10 Nov 2026, 2:16 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -118,13 +118,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 2:15 PM"
+    "t": "10 Nov, 2:16 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 2:15 PM"
+    "t": "10 Nov, 2:16 PM"
    }
   },
   "retail": {
@@ -339,7 +339,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 2:15 PM"
+   "t": "10 Nov, 2:16 PM"
   }
  },
  "logos": [],
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 90.2,
+  "v": 90.33,
   "prev": 92.57,
-  "ch": -2.37,
-  "pct": -2.56,
+  "ch": -2.24,
+  "pct": -2.42,
   "high": 92.82,
   "low": 90.17,
   "open": 91.61,
-  "t": 1794299738
+  "t": 1794299782
  },
  "goldSpot": {
-  "v": 4126.2,
+  "v": 4125.9,
   "prev": 4114.5,
-  "ch": 11.7,
+  "ch": 11.4,
   "pct": 0.28,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794299730
+  "t": 1794299783
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 2:12 PM"
+   "sat": "10 Nov, 2:16 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 2:12 PM",
+  "fetched": "10 Nov, 2:16 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,16 @@
    "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdFphWVFiemVnYWtVeHo2VlhpWS1vcjI2bkExT0tSTUlTQjBGTm1tVG94Y2hQcVpBZTdONGVuVlFPWDcyc2ZuaU5nU2tFYnJycHV4OV9TbEdxd1ZQZlc0aWpJeW1uWXE3Nmw3MUN6bFNZcG9qejY1ZXROX1lMRzFxWVZ2OW1LalNBQUxBeURLdmI3T3NmSEZjalhnRkVuU19sLUI2MGFsYl9hNEdBTk50bWNhQWxTX0pDR1gwMWpfdHpZYTNzZkHSAcsBQVVfeXFMTnEwdEJGdG5JS3JhcHlYZndpd0trUndLTFZZd0hiSnI5RktuUGNqZWVRSUM5RHJwT0FkVUxtZmZrT3RPd3o0eUxuOHM3OUxUTF9mSnRkaTVuanVoMWlhRnBpcjRVMDlKR2hTeDJITXR6R2R6cWFLcnphMnJBZlRTOTZhaEl4aHRlNkZjS2FCVGNLSC11d3pDVGVfa0xBY2NrSlhadVlIbHUxRjFTYjNnbFNYemRXbzFsbFpCNmM3SEdsQXlEN3IyN2FYQzg?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 241 headlines, 25 up, 9 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2222,9 +2231,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 2:15 PM",
-  "mid": "10 Nov, 2:15 PM",
-  "small": "10 Nov, 2:15 PM"
+  "n50": "10 Nov, 2:16 PM",
+  "mid": "10 Nov, 2:16 PM",
+  "small": "10 Nov, 2:16 PM"
  },
  "midg": [
   [
@@ -2388,12 +2397,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 239 headlines, 25 up, 9 down"
+  "outlook: 241 headlines, 25 up, 9 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 2:12 PM"
+  "at": "10 Nov, 2:16 PM"
  },
  "global": [
   [
@@ -2428,9 +2437,9 @@
   ],
   [
    "FTSE 100",
-   10833.76,
-   0.47,
-   1794299441
+   10829.77,
+   0.43,
+   1794299485
   ],
   [
    "US 10Y yield",
@@ -2440,12 +2449,12 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 2:12 PM",
-  "headlines": 239,
+  "at": "10 Nov, 2:16 PM",
+  "headlines": 241,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
-   "Brent crude down 2.3%",
+   "Brent crude down 2.4%",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
    "Nikkei 225 +2.9%"
@@ -3690,7 +3699,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 2:12 PM",
+  "at": "10 Nov, 2:16 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3779,18 +3788,18 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 2:15 PM",
+  "at": "10 Nov, 2:16 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories Ltd-$",
+    "Makers Laboratories",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     297.75,
     19.99,
     248.15
@@ -3846,7 +3855,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics Ltd-$",
+    "Salzer Electronics",
     551.25,
     15.37,
     477.8
@@ -4070,7 +4079,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies Ltd-$",
+    "Chembond Material Technologies",
     203.0,
     9.4,
     185.55
@@ -4091,7 +4100,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     57.45,
     9.18,
     52.62
@@ -4605,7 +4614,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 2:12 PM",
+  "at": "10 Nov, 2:16 PM",
   "g": [
    [
     "TRANSWORLD",
