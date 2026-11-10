@@ -1,6 +1,6 @@
 {
  "label": "10 Nov 2026, 11:55 AM IST",
- "updated": "2026-11-10T11:55:08+05:30",
+ "updated": "2026-11-10T11:55:53+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.48,
+  "v": 91.59,
   "prev": 92.57,
-  "ch": -1.09,
-  "pct": -1.18,
+  "ch": -0.98,
+  "pct": -1.06,
   "high": 92.82,
   "low": 91.32,
   "open": 91.61,
-  "t": 1794291295
+  "t": 1794291348
  },
  "goldSpot": {
-  "v": 4131.1,
+  "v": 4130.0,
   "prev": 4114.5,
-  "ch": 16.6,
-  "pct": 0.4,
+  "ch": 15.5,
+  "pct": 0.38,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794291293
+  "t": 1794291349
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 11:51 AM"
+   "sat": "10 Nov, 11:55 AM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 11:51 AM",
+  "fetched": "10 Nov, 11:55 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 261 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2387,7 +2395,7 @@
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 11:51 AM"
+  "at": "10 Nov, 11:55 AM"
  },
  "global": [
   [
@@ -2410,15 +2418,15 @@
   ],
   [
    "Nikkei 225",
-   60567.82,
+   60570.88,
    3.05,
-   1794291005
+   1794291050
   ],
   [
    "Hang Seng",
-   24573.38,
-   0.37,
-   1794291006
+   24586.04,
+   0.43,
+   1794291052
   ],
   [
    "FTSE 100",
@@ -2434,14 +2442,14 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 11:51 AM",
+  "at": "10 Nov, 11:55 AM",
   "headlines": 261,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
-   "Nikkei 225 +2.9%"
+   "Nikkei 225 +3.0%"
   ],
   "up": [
    {
@@ -3792,7 +3800,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 11:51 AM",
+  "at": "10 Nov, 11:55 AM",
   "hi": [
    [
     "ICICIBANK",
@@ -4707,7 +4715,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 11:51 AM",
+  "at": "10 Nov, 11:55 AM",
   "g": [
    [
     "TRANSWORLD",
