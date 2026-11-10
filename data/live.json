@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 12:45 PM IST",
- "updated": "2026-11-10T12:45:49+05:30",
+ "label": "10 Nov 2026, 12:46 PM IST",
+ "updated": "2026-11-10T12:46:33+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 12:45 PM",
+  "date": "10 Nov 2026, 12:46 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 12:45 PM"
+    "t": "10 Nov, 12:46 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 12:45 PM"
+    "t": "10 Nov, 12:46 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 12:45 PM"
+   "t": "10 Nov, 12:46 PM"
   }
  },
  "logos": [],
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.24,
+  "v": 91.38,
   "prev": 92.57,
-  "ch": -1.33,
-  "pct": -1.44,
+  "ch": -1.19,
+  "pct": -1.29,
   "high": 92.82,
   "low": 90.74,
   "open": 91.61,
-  "t": 1794294345
+  "t": 1794294384
  },
  "goldSpot": {
-  "v": 4131.5,
+  "v": 4131.6,
   "prev": 4114.5,
-  "ch": 17.0,
-  "pct": 0.41,
+  "ch": 17.1,
+  "pct": 0.42,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794294342
+  "t": 1794294384
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:42 PM"
+   "sat": "10 Nov, 12:46 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:42 PM",
+  "fetched": "10 Nov, 12:46 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 252 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2217,9 +2225,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 12:45 PM",
-  "mid": "10 Nov, 12:45 PM",
-  "small": "10 Nov, 12:45 PM"
+  "n50": "10 Nov, 12:46 PM",
+  "mid": "10 Nov, 12:46 PM",
+  "small": "10 Nov, 12:46 PM"
  },
  "midg": [
   [
@@ -2382,12 +2390,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 248 headlines, 25 up, 10 down"
+  "outlook: 252 headlines, 25 up, 11 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:42 PM"
+  "at": "10 Nov, 12:46 PM"
  },
  "global": [
   [
@@ -2416,9 +2424,9 @@
   ],
   [
    "Hang Seng",
-   24549.33,
-   0.28,
-   1794294046
+   24556.32,
+   0.3,
+   1794294090
   ],
   [
    "FTSE 100",
@@ -2434,8 +2442,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:42 PM",
-  "headlines": 248,
+  "at": "10 Nov, 12:46 PM",
+  "headlines": 252,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -3036,6 +3044,30 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUlhMenotbjd5dVRCZXpDMTlOV2pudlotVGNrZTVVcjZ0SEd0cEliTTc3aEFrU0Jqdm0tWURvU1RYMDVsaVEyOWQ5d0NWWFZLWXFIU0RQRUlNbWdIdDJKZlFBVmlsNVFkNUd1ZWc5djZRYm9hM0I2bVhGdERwMnctRDFPTUhGaWRiM2JvNS05WnkyUFc4aW9JempXcmJWSDR0OXV5X3l1dTdhTVdwajhDRXZyRVowYUxCSlZlYVdB0gHDAUFVX3lxTE13YkxLdUN3UXZDWjFXMjIzdDdJdEJCQTNsVk5hUU1ib050Ymwtbmhpd1B5WW05dlo0YzlGUFZsQ3pYVkUwRU5nVmRXVThINV92eFYySlJtMDV2TlVFRWRjUzFjRDFmZ3RlZlZLT0ZzVEVFQXVDbXhYMjhZczEtdlo1Ny1vY19TSjVCZTBXcTNROEdWMHFoQTc4NzlzZXVJSG1halRBdjVQRWdYT0VNOWxjekJoM01GTlIwaTNyZzFOUkRnYw?oc=5",
       "src": "Simply Wall St"
+     }
+    ]
+   },
+   {
+    "k": "INFY",
+    "n": "Infosys",
+    "s": -3,
+    "conf": "Low",
+    "p": 1154.1,
+    "pct": -1.49,
+    "mc": 467453.9,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Nifty IT index falls over 1% as global AI stocks stage recovery; Mphasis, HCL Tech, Infosys down 2-3%",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPeE5kc2xXRTZINmprN0czcFNVX2ZCTGd1WU9hVEkwUzRjNkk1SjJjdFM5dnJMTVpyUXlQbDZiczZJdmNYVmlFNm9FeXE2cE1XdW9NWUZsdE4xS2hULUVqa2lKSzN3VzYzaGZQZE4xQVpGNzlpVWthQ25YeFhPMmI4cDMtdU5EMVlzZnlQZW5sLVRLWTQzMlp2QTgyVTlyUDRJXzFHejF3NTctQkdybDFoN2Q1bTE3TF9HTWtrNFVMd0JjbkhIUk5NOEpkM3dsdHdOcGtyaUtsNjlwVFhZVnpwT0taN3Y3UXpyWUFSMzF5dmk?oc=5",
+      "src": "TradingView"
+     },
+     {
+      "k": "global",
+      "t": "Nasdaq +2.7% overnight; IT stocks often follow",
+      "s": 1
      }
     ]
    },
@@ -3738,7 +3770,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:42 PM",
+  "at": "10 Nov, 12:46 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3827,18 +3859,18 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 12:45 PM",
+  "at": "10 Nov, 12:46 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories Ltd-$",
+    "Makers Laboratories",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     297.75,
     19.99,
     248.15
@@ -3894,7 +3926,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics Ltd-$",
+    "Salzer Electronics",
     551.25,
     15.37,
     477.8
@@ -4118,7 +4150,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies Ltd-$",
+    "Chembond Material Technologies",
     203.0,
     9.4,
     185.55
@@ -4139,7 +4171,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     57.45,
     9.18,
     52.62
@@ -4653,7 +4685,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:42 PM",
+  "at": "10 Nov, 12:46 PM",
   "g": [
    [
     "TRANSWORLD",
