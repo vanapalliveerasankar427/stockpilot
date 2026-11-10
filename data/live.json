@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 11:43 AM IST",
- "updated": "2026-11-10T11:43:26+05:30",
+ "label": "10 Nov 2026, 11:44 AM IST",
+ "updated": "2026-11-10T11:44:10+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 11:43 AM",
+  "date": "10 Nov 2026, 11:44 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 11:43 AM"
+    "t": "10 Nov, 11:44 AM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 11:43 AM"
+    "t": "10 Nov, 11:44 AM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 11:43 AM"
+   "t": "10 Nov, 11:44 AM"
   }
  },
  "logos": [],
@@ -452,17 +452,17 @@
   "high": 92.82,
   "low": 91.34,
   "open": 91.61,
-  "t": 1794290597
+  "t": 1794290640
  },
  "goldSpot": {
-  "v": 4131.2,
+  "v": 4131.9,
   "prev": 4114.5,
-  "ch": 16.7,
-  "pct": 0.41,
+  "ch": 17.4,
+  "pct": 0.42,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794290603
+  "t": 1794290637
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 11:40 AM"
+   "sat": "10 Nov, 11:44 AM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 11:40 AM",
+  "fetched": "10 Nov, 11:44 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 260 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2217,9 +2225,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 11:43 AM",
-  "mid": "10 Nov, 11:43 AM",
-  "small": "10 Nov, 11:43 AM"
+  "n50": "10 Nov, 11:44 AM",
+  "mid": "10 Nov, 11:44 AM",
+  "small": "10 Nov, 11:44 AM"
  },
  "midg": [
   [
@@ -2382,12 +2390,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 263 headlines, 25 up, 11 down"
+  "outlook: 260 headlines, 25 up, 11 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 11:40 AM"
+  "at": "10 Nov, 11:44 AM"
  },
  "global": [
   [
@@ -2410,15 +2418,15 @@
   ],
   [
    "Nikkei 225",
-   60655.01,
-   3.2,
-   1794290305
+   60605.81,
+   3.11,
+   1794290345
   ],
   [
    "Hang Seng",
-   24561.42,
-   0.32,
-   1794290304
+   24556.29,
+   0.3,
+   1794290348
   ],
   [
    "FTSE 100",
@@ -2434,14 +2442,14 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 11:40 AM",
-  "headlines": 263,
+  "at": "10 Nov, 11:44 AM",
+  "headlines": 260,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
-   "Nikkei 225 +3.2%"
+   "Nikkei 225 +3.1%"
   ],
   "up": [
    {
@@ -2512,30 +2520,6 @@
       "k": "price",
       "t": "Closed strong: +8.7% on 6.2× usual volume, near the day's high",
       "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "s": 9.8,
-    "conf": "High",
-    "p": 1090.1,
-    "pct": 3.18,
-    "mc": 36069.7,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
-      "s": 1.7614208979249046
      }
     ]
    },
@@ -2741,6 +2725,37 @@
       "k": "price",
       "t": "Closed strong: +4.5% on 2.1× usual volume, near the day's high",
       "s": 1.8066543771759602
+     }
+    ]
+   },
+   {
+    "k": "VOLTAS",
+    "n": "Voltas",
+    "s": 5.8,
+    "conf": "Medium",
+    "p": 1090.1,
+    "pct": 3.18,
+    "mc": 36069.7,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
+      "src": "Livemint"
+     },
+     {
+      "k": "news",
+      "t": "Voltas Q2 FY27 results: Shares fall as brokerages flag margin risks",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc3J5R281ZVVJR1g0ZDVyWUZDcG9xOWpVa1l4T0NJN2pSYkRldlF3NFpXc3QyZGQ1MVhHX0ZZcXlwWjJReXhNQ09Gd05sV3hFbUxFZ1Bvd2wyZVBJUnE4Z1Jhcjc0ejRxSmQ3eGVwcEhzdWltWFpEN05HYlpXbzM1ZFVINnNCNUZTekt4bmxxOVJvVkpWclh6WjQ4bGpvVk9k?oc=5",
+      "src": "Alice Blue"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
+      "s": 1.7614208979249046
      }
     ]
    },
@@ -3792,7 +3807,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 11:40 AM",
+  "at": "10 Nov, 11:44 AM",
   "hi": [
    [
     "ICICIBANK",
@@ -3881,18 +3896,18 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 11:43 AM",
+  "at": "10 Nov, 11:44 AM",
   "g": [
    [
     "506919",
-    "Makers Laboratories",
+    "Makers Laboratories Ltd-$",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     297.75,
     19.99,
     248.15
@@ -3948,7 +3963,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics",
+    "Salzer Electronics Ltd-$",
     551.25,
     15.37,
     477.8
@@ -4172,7 +4187,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies",
+    "Chembond Material Technologies Ltd-$",
     203.0,
     9.4,
     185.55
@@ -4193,7 +4208,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     57.45,
     9.18,
     52.62
@@ -4707,7 +4722,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 11:40 AM",
+  "at": "10 Nov, 11:44 AM",
   "g": [
    [
     "TRANSWORLD",
