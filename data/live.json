@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 1:36 PM IST",
- "updated": "2026-11-10T13:36:40+05:30",
+ "label": "10 Nov 2026, 1:37 PM IST",
+ "updated": "2026-11-10T13:37:25+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 1:36 PM",
+  "date": "10 Nov 2026, 1:37 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -118,13 +118,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 1:36 PM"
+    "t": "10 Nov, 1:37 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 1:36 PM"
+    "t": "10 Nov, 1:37 PM"
    }
   },
   "retail": {
@@ -330,8 +330,8 @@
      "ag": 205.0
     }
    },
-   "at": "10 Nov, 1:06 PM",
-   "at_ts": 1794296163.410814,
+   "at": "10 Nov, 1:37 PM",
+   "at_ts": 1794298045.059779,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -339,7 +339,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 1:36 PM"
+   "t": "10 Nov, 1:37 PM"
   }
  },
  "logos": [],
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.14,
+  "v": 91.06,
   "prev": 92.57,
-  "ch": -1.43,
-  "pct": -1.54,
+  "ch": -1.51,
+  "pct": -1.63,
   "high": 92.82,
   "low": 90.63,
   "open": 91.61,
-  "t": 1794297394
+  "t": 1794297438
  },
  "goldSpot": {
-  "v": 4122.5,
+  "v": 4122.4,
   "prev": 4114.5,
-  "ch": 8.0,
+  "ch": 7.9,
   "pct": 0.19,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794297399
+  "t": 1794297442
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 1:33 PM"
+   "sat": "10 Nov, 1:37 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 1:33 PM",
+  "fetched": "10 Nov, 1:37 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,17 @@
    "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdFphWVFiemVnYWtVeHo2VlhpWS1vcjI2bkExT0tSTUlTQjBGTm1tVG94Y2hQcVpBZTdONGVuVlFPWDcyc2ZuaU5nU2tFYnJycHV4OV9TbEdxd1ZQZlc0aWpJeW1uWXE3Nmw3MUN6bFNZcG9qejY1ZXROX1lMRzFxWVZ2OW1LalNBQUxBeURLdmI3T3NmSEZjalhnRkVuU19sLUI2MGFsYl9hNEdBTk50bWNhQWxTX0pDR1gwMWpfdHpZYTNzZkHSAcsBQVVfeXFMTnEwdEJGdG5JS3JhcHlYZndpd0trUndLTFZZd0hiSnI5RktuUGNqZWVRSUM5RHJwT0FkVUxtZmZrT3RPd3o0eUxuOHM3OUxUTF9mSnRkaTVuanVoMWlhRnBpcjRVMDlKR2hTeDJITXR6R2R6cWFLcnphMnJBZlRTOTZhaEl4aHRlNkZjS2FCVGNLSC11d3pDVGVfa0xBY2NrSlhadVlIbHUxRjFTYjNnbFNYemRXbzFsbFpCNmM3SEdsQXlEN3IyN2FYQzg?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "city metals: 24 cities",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 243 headlines, 25 up, 9 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2222,9 +2232,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 1:36 PM",
-  "mid": "10 Nov, 1:36 PM",
-  "small": "10 Nov, 1:36 PM"
+  "n50": "10 Nov, 1:37 PM",
+  "mid": "10 Nov, 1:37 PM",
+  "small": "10 Nov, 1:37 PM"
  },
  "midg": [
   [
@@ -2382,18 +2392,19 @@
  },
  "fulllog": [
   "ibja: no gold figure found",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 246 headlines, 25 up, 9 down"
+  "outlook: 243 headlines, 25 up, 9 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 1:33 PM"
+  "at": "10 Nov, 1:37 PM"
  },
  "global": [
   [
@@ -2422,9 +2433,9 @@
   ],
   [
    "Hang Seng",
-   24530.58,
-   0.2,
-   1794297098
+   24529.48,
+   0.19,
+   1794297142
   ],
   [
    "FTSE 100",
@@ -2440,8 +2451,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 1:33 PM",
-  "headlines": 246,
+  "at": "10 Nov, 1:37 PM",
+  "headlines": 243,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -2556,6 +2567,30 @@
     ]
    },
    {
+    "k": "IREDA",
+    "n": "Indian Renewable Energy Development Agency",
+    "s": 7.0,
+    "conf": "High",
+    "p": 119.65,
+    "pct": 7.47,
+    "mc": 33612.5,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "IREDA shares climb 20% in seven sessions; what should existing investors do?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQcnZlR1JsOV81LXFqaEN2ZnYtSE9QZUtsS3p3LUNUUXJsOTFpRjA1NEdnZTBmOGt3YXhadFNZOGNYcEtQc0lpTzBiNUgxQjBjaUJCbWZHYU5OSlpiOFFwcnZaLWoyVE9vY3RqdF9tQkw3SlNVSkYxTDRTQlBCRHJzQ19PRXdMTlZ5dF9FQk9pR2h1MkxzUVJEQXVwclpqU3VJSW1saERfWDl0NzBMcERHblYxTVd0X0Q4S2V1aUstbkk1MWRiLWh5YjdMWkNkZ3JYUXBzTVJjYkTSAd4BQVVfeXFMTlVCWTJTVG9EMEQ5S3VUOFZJS2RXMkpmTGJCaE1qUS1YZHA3ODl3RkIwa055TlJqajM1MWhTVVM5N1hneDJmTDZPaUcxYllQWGVxakhCM3ZjSTdWaVJoOU5kUHFVUjVYS3FDSUlodzFLdmlvQ1ROempGTUI2aG9KYkJSTktRLVdCQ0FoSktmSFUyNkI3Z2NISGViLXpGNDNtUVZGZ280bWNZZDlLY21BaExZUTJFXzUzbWUyS2JNTGV1eUF2bmVIVFZmNFV6RmQ1VmhlcHFESHVaOFNvVnZ3?oc=5",
+      "src": "Business Today"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +7.5% on 9.8× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
     "k": "TEXRAIL",
     "n": "Texmaco Rail & Engineering",
     "s": 6,
@@ -2652,25 +2687,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSDhjclkyczRzQ1hUNVhBN2ZpYWIzVFczcXV1OWppNVlaSEF2NE9MLUdOeGFKX2VIdFMwSndmdkpxbkFsSHU3NWtaVXVud0trM2FuZjV5U0hxaC1ycS1vdkxpYjVQdEMyYnhrcUJ6YXhmakZTX0duQ1kzTWppRWFzTEd2eFYwaF84dUpxTmV4bkNQMWlpaHU0dW0wZ0tjbFc5UF9raWF3endIOXE2cVNwNnNtUDJkY2pwTkVXWW5sNi0yTV9MeWNqRFFJdDItX0EyTHI0?oc=5",
       "src": "IndiaIPO"
-     }
-    ]
-   },
-   {
-    "k": "UNOMINDA",
-    "n": "UNO Minda",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1353.8,
-    "pct": 2.82,
-    "mc": 78176.1,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Uno Minda zooms 26% in November, stock nears record high; here's why",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYVFVa1pIZm5vMGhSSnVLdVNpQzlINVpKSFR6cFItcGIzWHd5SFJSZy1MMHB0VlpEMWhiaVlkRmk0LW5oUTJvVVNjNTNqYmxEdXVNMklNT3Y4UWVwTVM5VTd5TUxyWWNvWEthMWM3NzZLOVI4Tlhxc0c0YlZXMXNxWWphRTdWNHVrcHV3RE5FMF9BNVhrVmxyazJldVh0M0QxVGFWN1ZzOXVYOVJpRkxxaVpIWW9mQ2szZF9DZTd6V2pIOGRMMkRoZm9OUErSAdIBQVVfeXFMT2F2aUk2LVhwa3pQUlYwY2tkOHFhVGFQNkpfYmdZTlEtZEM0OS13VnFZZlBaZUJDeWlUN2ZXVmtjTjRNMjJSd0tpQmkzbE9CTW96eHhRTXg5RTI4dWxQckRYclZSXzdHMkxMUG1oZWtLa2k2SjY4UzVxdFdNc1BUWGpjRWxXNVdrMF9nQ3lOVmNlZ0pINEhaaFBnUkpJWkFZdkpRV1k3aWxfMFNMaFh0OC1xVGNvc2VjNlByaGVGU3lVTHJCVVU3TWU0NFdaaVE3eWxR?oc=5",
-      "src": "Business Standard"
      }
     ]
    },
@@ -2839,23 +2855,6 @@
     ]
    },
    {
-    "k": "IREDA",
-    "n": "Indian Renewable Energy Development Agency",
-    "s": 3.0,
-    "conf": "Low",
-    "p": 119.65,
-    "pct": 7.47,
-    "mc": 33612.5,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +7.5% on 9.8× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
     "k": "KPEL",
     "n": "K.P. Energy",
     "s": 3.0,
@@ -2919,6 +2918,23 @@
      {
       "k": "price",
       "t": "Closed strong: +11.9% on 76.8× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "RPEL",
+    "n": "Raghav Productivity Enhancers",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 1919.6,
+    "pct": 6.0,
+    "mc": 8815.2,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +6.0% on 5.4× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3686,7 +3702,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 1:33 PM",
+  "at": "10 Nov, 1:37 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3775,18 +3791,18 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 1:36 PM",
+  "at": "10 Nov, 1:37 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories",
+    "Makers Laboratories Ltd-$",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     297.75,
     19.99,
     248.15
@@ -3842,7 +3858,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics",
+    "Salzer Electronics Ltd-$",
     551.25,
     15.37,
     477.8
@@ -4066,7 +4082,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies",
+    "Chembond Material Technologies Ltd-$",
     203.0,
     9.4,
     185.55
@@ -4087,7 +4103,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     57.45,
     9.18,
     52.62
@@ -4601,7 +4617,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 1:33 PM",
+  "at": "10 Nov, 1:37 PM",
   "g": [
    [
     "TRANSWORLD",
