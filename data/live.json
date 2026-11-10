@@ -1,6 +1,6 @@
 {
  "label": "10 Nov 2026, 1:17 PM IST",
- "updated": "2026-11-10T13:17:10+05:30",
+ "updated": "2026-11-10T13:17:54+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.18,
+  "v": 91.1,
   "prev": 92.57,
-  "ch": -1.39,
-  "pct": -1.5,
+  "ch": -1.47,
+  "pct": -1.59,
   "high": 92.82,
   "low": 90.74,
   "open": 91.61,
-  "t": 1794296227
+  "t": 1794296268
  },
  "goldSpot": {
-  "v": 4125.3,
+  "v": 4124.9,
   "prev": 4114.5,
-  "ch": 10.8,
-  "pct": 0.26,
+  "ch": 10.4,
+  "pct": 0.25,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794296229
+  "t": 1794296272
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 1:13 PM"
+   "sat": "10 Nov, 1:17 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 1:13 PM",
+  "fetched": "10 Nov, 1:17 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,16 @@
    "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdFphWVFiemVnYWtVeHo2VlhpWS1vcjI2bkExT0tSTUlTQjBGTm1tVG94Y2hQcVpBZTdONGVuVlFPWDcyc2ZuaU5nU2tFYnJycHV4OV9TbEdxd1ZQZlc0aWpJeW1uWXE3Nmw3MUN6bFNZcG9qejY1ZXROX1lMRzFxWVZ2OW1LalNBQUxBeURLdmI3T3NmSEZjalhnRkVuU19sLUI2MGFsYl9hNEdBTk50bWNhQWxTX0pDR1gwMWpfdHpZYTNzZkHSAcsBQVVfeXFMTnEwdEJGdG5JS3JhcHlYZndpd0trUndLTFZZd0hiSnI5RktuUGNqZWVRSUM5RHJwT0FkVUxtZmZrT3RPd3o0eUxuOHM3OUxUTF9mSnRkaTVuanVoMWlhRnBpcjRVMDlKR2hTeDJITXR6R2R6cWFLcnphMnJBZlRTOTZhaEl4aHRlNkZjS2FCVGNLSC11d3pDVGVfa0xBY2NrSlhadVlIbHUxRjFTYjNnbFNYemRXbzFsbFpCNmM3SEdsQXlEN3IyN2FYQzg?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 244 headlines, 25 up, 9 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2388,12 +2397,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 246 headlines, 25 up, 10 down"
+  "outlook: 244 headlines, 25 up, 9 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 1:13 PM"
+  "at": "10 Nov, 1:17 PM"
  },
  "global": [
   [
@@ -2422,9 +2431,9 @@
   ],
   [
    "Hang Seng",
-   24556.45,
-   0.3,
-   1794295928
+   24551.05,
+   0.28,
+   1794295972
   ],
   [
    "FTSE 100",
@@ -2440,8 +2449,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 1:13 PM",
-  "headlines": 246,
+  "at": "10 Nov, 1:17 PM",
+  "headlines": 244,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -2943,25 +2952,6 @@
    }
   ],
   "down": [
-   {
-    "k": "MRF",
-    "n": "MRF",
-    "s": -8,
-    "conf": "High",
-    "p": 125105.0,
-    "pct": -1.26,
-    "mc": 53058.8,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "MRF Q2 Results: Net Profit Falls 28% To Rs 369 Crore, Declares Dividend; Check Record Date",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNQ0c1VV9sOW13OV9uQ0VGNG8tUmk0V3FQbVJhYUZqY3ExYUp2MHJsOU1yWTBGblFPS1JqZGV6VVN3eDRfZVZaYVpabHM5MTdwOGZvTzY0YkMyMHUxVUxFU1JlVWMwQTZEbDdlZWRfTlNCSDlNS2dWaEo1YTlfX2lpcUFKLW56dkxjUEhmcXFFNFFuLWhsd1hrRVltbHkzUzQwVVVvVDR3YUc4MDYwSUk2TUZweFRVVmJBZXlCbDhxS0ZiY1paSnNpTl83T09Zd21lRFdYMEdNdVNKQW90Y3NyOXdISEFOVWdHNDBHT1hDdjM3N0Y5aEpMQnFVWGlHeWFC0gGIAkFVX3lxTE5yQU01MlN4dnZydDZEY0NnSXhPeldmTlBwTkE2N2txek9GNW96UlA1WlktZUtGcVVGR2RvalVhMFR6OUdOVXlYMkJqU3BmdkVFVl9ySVRQalA0ZHk3R1hnMDB6cjhQcGtnSjVqcXhDLWxvOS14ZUg4SFJrNmlISGdPTUduN2pGNjRSZzdQOUFJOWY1OFQ4ZDRWYy15M2diZnljYjlvUmt4V2J4OU9Cbi00UjJnVXRRX1BEUGJFVkpTRmhHQmU1RW9YVW14ZTVKVW1uemdMWW5nNElNaGxiemo0V091WXRlUTlXMzhVMkZmMDhaTG51VTJXM2xua2U3M2VOVHdOelFncg?oc=5",
-      "src": "NDTV Profit"
-     }
-    ]
-   },
    {
     "k": "MONEYVIEW",
     "n": "Moneyview",
@@ -3486,7 +3476,7 @@
   },
   {
    "id": "vedantpolyfabs",
-   "name": "Vedant Poly Fabs Limited",
+   "name": "Vedant Poly Fabs",
    "type": "SME",
    "open": "2026-11-02",
    "close": "2026-11-04",
@@ -3494,7 +3484,7 @@
    "refund": "2026-11-06",
    "list": "2026-11-09",
    "lo": 88.0,
-   "hi": 88.0,
+   "hi": 94.0,
    "lot": 1200,
    "src": "vedant-poly-fabs-sme-ipo"
   }
@@ -3723,7 +3713,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 1:13 PM",
+  "at": "10 Nov, 1:17 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3816,14 +3806,14 @@
   "g": [
    [
     "506919",
-    "Makers Laboratories Ltd-$",
+    "Makers Laboratories",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     297.75,
     19.99,
     248.15
@@ -3879,7 +3869,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics Ltd-$",
+    "Salzer Electronics",
     551.25,
     15.37,
     477.8
@@ -4103,7 +4093,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies Ltd-$",
+    "Chembond Material Technologies",
     203.0,
     9.4,
     185.55
@@ -4124,7 +4114,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     57.45,
     9.18,
     52.62
@@ -4638,7 +4628,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 1:13 PM",
+  "at": "10 Nov, 1:17 PM",
   "g": [
    [
     "TRANSWORLD",
