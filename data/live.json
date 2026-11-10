@@ -1,6 +1,6 @@
 {
  "label": "10 Nov 2026, 3:26 PM IST",
- "updated": "2026-11-10T15:26:10+05:30",
+ "updated": "2026-11-10T15:26:54+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 89.58,
+  "v": 89.7,
   "prev": 92.57,
-  "ch": -2.99,
-  "pct": -3.23,
+  "ch": -2.87,
+  "pct": -3.1,
   "high": 92.82,
-  "low": 89.52,
+  "low": 89.51,
   "open": 91.61,
-  "t": 1794303968
+  "t": 1794304012
  },
  "goldSpot": {
-  "v": 4091.5,
+  "v": 4090.2,
   "prev": 4114.5,
-  "ch": -23.0,
-  "pct": -0.56,
+  "ch": -24.3,
+  "pct": -0.59,
   "high": 4156.2,
-  "low": 4090.0,
+  "low": 4089.1,
   "open": 4124.3,
-  "t": 1794303967
+  "t": 1794304013
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 3:23 PM"
+   "sat": "10 Nov, 3:26 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 3:23 PM",
+  "fetched": "10 Nov, 3:26 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,16 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 235 headlines, 25 up, 8 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2393,7 +2402,7 @@
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 3:23 PM"
+  "at": "10 Nov, 3:26 PM"
  },
  "global": [
   [
@@ -2428,9 +2437,9 @@
   ],
   [
    "FTSE 100",
-   10807.1,
+   10806.12,
    0.22,
-   1794303669
+   1794303714
   ],
   [
    "US 10Y yield",
@@ -2440,12 +2449,12 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 3:23 PM",
+  "at": "10 Nov, 3:26 PM",
   "headlines": 235,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
-   "Brent crude down 2.9%",
+   "Brent crude down 3.1%",
    "Dow Jones +2.1%",
    "S&P 500 +2.4%",
    "Nikkei 225 +2.9%"
@@ -3671,7 +3680,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 3:23 PM",
+  "at": "10 Nov, 3:26 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -4586,7 +4595,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 3:23 PM",
+  "at": "10 Nov, 3:26 PM",
   "g": [
    [
     "TRANSWORLD",
