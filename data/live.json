@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 12:18 PM IST",
- "updated": "2026-11-10T12:18:37+05:30",
+ "label": "10 Nov 2026, 12:19 PM IST",
+ "updated": "2026-11-10T12:19:21+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 12:18 PM",
+  "date": "10 Nov 2026, 12:19 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -113,13 +113,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 12:18 PM"
+    "t": "10 Nov, 12:19 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 12:18 PM"
+    "t": "10 Nov, 12:19 PM"
    }
   },
   "retail": {
@@ -334,7 +334,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 12:18 PM"
+   "t": "10 Nov, 12:19 PM"
   }
  },
  "logos": [],
@@ -445,24 +445,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.11,
+  "v": 91.13,
   "prev": 92.57,
-  "ch": -1.46,
-  "pct": -1.58,
+  "ch": -1.44,
+  "pct": -1.56,
   "high": 92.82,
   "low": 90.92,
   "open": 91.61,
-  "t": 1794292685
+  "t": 1794292748
  },
  "goldSpot": {
-  "v": 4133.7,
+  "v": 4133.2,
   "prev": 4114.5,
-  "ch": 19.2,
-  "pct": 0.47,
+  "ch": 18.7,
+  "pct": 0.45,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794292714
+  "t": 1794292752
  },
  "sectors": [
   [
@@ -814,7 +814,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:15 PM"
+   "sat": "10 Nov, 12:19 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1048,7 +1048,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:15 PM",
+  "fetched": "10 Nov, 12:19 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1198,7 +1198,15 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 253 headlines, 25 up, 10 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2217,9 +2225,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 12:18 PM",
-  "mid": "10 Nov, 12:18 PM",
-  "small": "10 Nov, 12:18 PM"
+  "n50": "10 Nov, 12:19 PM",
+  "mid": "10 Nov, 12:19 PM",
+  "small": "10 Nov, 12:19 PM"
  },
  "midg": [
   [
@@ -2382,12 +2390,12 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 261 headlines, 25 up, 11 down"
+  "outlook: 253 headlines, 25 up, 10 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:15 PM"
+  "at": "10 Nov, 12:19 PM"
  },
  "global": [
   [
@@ -2416,9 +2424,9 @@
   ],
   [
    "Hang Seng",
-   24590.45,
-   0.44,
-   1794292416
+   24596.52,
+   0.47,
+   1794292458
   ],
   [
    "FTSE 100",
@@ -2434,8 +2442,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:15 PM",
-  "headlines": 261,
+  "at": "10 Nov, 12:19 PM",
+  "headlines": 253,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -2444,44 +2452,6 @@
    "Nikkei 225 +2.9%"
   ],
   "up": [
-   {
-    "k": "DATAPATTNS",
-    "n": "Data Patterns (India)",
-    "s": 15.0,
-    "conf": "High",
-    "p": 4025.0,
-    "pct": 8.67,
-    "mc": 22533.5,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Rebound",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPaFJpYnBQdFhGN3IxZmVKMGZmQ2hoU1QyV1ZwUjlKNk12endPc3V2WTZoQkc1cHRqekFMMzhHbjA4RGYxc01LdmN1dElqM19XVGNzLUZGM04zblJ6Vy00aVh5XzFjRU9jcW53ZUwwQUZGUGlxNmk1NVlCWHlXTDNVeDc3UWtjblM0ZFpJTzdudjNxbWpXVE9WcTRvdXNXQlpucWQxeWhnYWVCS1FwRUQxbDVLdDVvakN1M2lidUZmYUhPN1FvZnlSWkFnVnVuQQ?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "news",
-      "t": "Earnings call transcript: Data Patterns India beats Q2 2026 EPS, shares rise 7.6% By Investing.com",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX2JaZEc3ZWNONmVaTUVISFNjRjdJTVM4SXdEMGh0S0VRanFoSjJOVGEzbHNfQ3Bma3NZTVNrbFZEMWNIR2lYaTFFWjliTjdiOGhHSDRqOEJwRmlpVURCemVUZG92WE9ZUjVqMDNiVk42SGVNNkszbHNyVHBYVTlKaFFhOFZlbU96MnJtUE1Vb1pqSG8zNHZsdUtSdEZ4SkZKWTd4V1plSE0tWlRNVi1YdGpUN25qeDBYNnVlbFBrMGx0c250UDVxMnRjVVZsTUVua2dQbA?oc=5",
-      "src": "Investing.com India"
-     },
-     {
-      "k": "news",
-      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Market Signals",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbTFaUDRhOW1XQjdFVFcxc1lnRHprcmJkSHRhbV9zajFlWWluazVlb2FmTk9kVXR1TGo3LU92Z2xQQjFNYjFUVjVRNW5SR0hqeEVaRGZUanktcUhmN2dYYWpRTVllNllKQkMtMlB2c2FsQUctOXZLdUdseGszRVd6TGxPLTZpcGdyN2daUDBsNWhQOWlHUUN4eXRhQkJkLThSYnZEUERHejhTTjRQOFU4eVVwUUZRNUVzcEFGTVdvNURkODZjOWxfN3ZpeEQ3aDVKVHpNcmptSQ?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +8.7% on 6.2× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
    {
     "k": "BHEL",
     "n": "Bharat Heavy Electricals",
@@ -2505,6 +2475,37 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcjB1cUdhWFoyb1hMdlJMVDZzTDN4UnlkczB1OHFMQWNOenpHOEdGcTJ5VTZsSVR6VUFLbXdVTlYxaTJLLTlKTzRwM1pfeFNHY0g1c3FIWTgwNGxMRnRidTBXUHY0amlVS1hFRWEwMnd1ZXZGUDBGcFBIdmRvSXlzZ2Q3UGZDSEpGNFhnNko1bEZScXV4MDlYOGpnb0w1aGg1SS12WG8ycDdIM29PYVUwMVotTXY1S1Q1d0HSAboBQVVfeXFMT3IwdXFHYVhaMm9YTHZSTFQ2c0wzeFJ5ZHMwdThxTEFjTnp6RzhHRnEyeVU2bElUelVBS213VU5WMWkySy05Sk80cDNaX3hTR2NINXNxSFk4MDRsTEZ0YnUwV1B2NGppVUtYRUVhMDJ3dWV2RlAwRnBQSHZkb0l5c2dkN1BmQ0hKRjRYZzZKNWxGUnF1eDA5WDhqZ29MNWhoNUktdlhvMnA3SDNvT2FVMDFaLU12NUtUNXdB?oc=5",
       "src": "PSU Watch"
+     }
+    ]
+   },
+   {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "s": 11.0,
+    "conf": "High",
+    "p": 4025.0,
+    "pct": 8.67,
+    "mc": 22533.5,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Earnings call transcript: Data Patterns India beats Q2 2026 EPS, shares rise 7.6% By Investing.com",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX2JaZEc3ZWNONmVaTUVISFNjRjdJTVM4SXdEMGh0S0VRanFoSjJOVGEzbHNfQ3Bma3NZTVNrbFZEMWNIR2lYaTFFWjliTjdiOGhHSDRqOEJwRmlpVURCemVUZG92WE9ZUjVqMDNiVk42SGVNNkszbHNyVHBYVTlKaFFhOFZlbU96MnJtUE1Vb1pqSG8zNHZsdUtSdEZ4SkZKWTd4V1plSE0tWlRNVi1YdGpUN25qeDBYNnVlbFBrMGx0c250UDVxMnRjVVZsTUVua2dQbA?oc=5",
+      "src": "Investing.com India"
+     },
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Rebound",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPaFJpYnBQdFhGN3IxZmVKMGZmQ2hoU1QyV1ZwUjlKNk12endPc3V2WTZoQkc1cHRqekFMMzhHbjA4RGYxc01LdmN1dElqM19XVGNzLUZGM04zblJ6Vy00aVh5XzFjRU9jcW53ZUwwQUZGUGlxNmk1NVlCWHlXTDNVeDc3UWtjblM0ZFpJTzdudjNxbWpXVE9WcTRvdXNXQlpucWQxeWhnYWVCS1FwRUQxbDVLdDVvakN1M2lidUZmYUhPN1FvZnlSWkFnVnVuQQ?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +8.7% on 6.2× usual volume, near the day's high",
+      "s": 3.0
      }
     ]
    },
@@ -2633,30 +2634,6 @@
     ]
    },
    {
-    "k": "PNB",
-    "n": "Punjab National Bank",
-    "s": 6.0,
-    "conf": "High",
-    "p": 132.17,
-    "pct": 5.27,
-    "mc": 151902.2,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "SBI, PNB, Bank of Baroda: NIFTY PSU Bank index rallies up to 3.7% amid weak market; what’s powering PSU bank stocks?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQRkNzTldJRWsxNzZycHJHaHhnbGJzLTZneVhLOXFDcmlzd0hNUEZLZU10YzhNQ3E2UnFBc3dKR0pOZzh1UU1QcUtfZng3eUxLVjFkV0lTT05oQjk5U1lLOGd5UHRkRmZQUUFoQkVDY1MxeWdOZVlwN19jRzV0R0t3Yk1Ea2tRX0ZRTVZvUGhyblFpekZwd0RaMnZHYWFpY0VRNDlQc2d6Q3F6eHhubXprQUhYYlhJTXRFbEd1X2l1VnIycFhVRWxXRmVZcE5JMjZGTTVSNWJzMUtKa28wRmlENUMzMVBsWmJJbjRvY3dtbEZ0Vi1sR2pGaFBZR3NyUQ?oc=5",
-      "src": "Upstox"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.3% on 2.6× usual volume, near the day's high",
-      "s": 2.0487099565752787
-     }
-    ]
-   },
-   {
     "k": "HINDALCO",
     "n": "Hindalco Industries",
     "s": 6,
@@ -2710,30 +2687,6 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBCZC1pdUxEeWhlaUl0Q3dvZ1BOMVc3NGZ5UmNoWDQtMWJsZjVGQndqaTVycGNoMXRmY0dpRDlPMU9MMFFxVzUyRlVjbksyUzZreF9odllMX1ZOdE9wM1oxeDlINUhFRWZINTZjcGJn?oc=5",
       "src": "Metro Rail News"
-     }
-    ]
-   },
-   {
-    "k": "BANKBARODA",
-    "n": "Bank of Baroda",
-    "s": 5.8,
-    "conf": "Medium",
-    "p": 260.01,
-    "pct": 4.46,
-    "mc": 134460.6,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "SBI, PNB, Bank of Baroda: NIFTY PSU Bank index rallies up to 3.7% amid weak market; what’s powering PSU bank stocks?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQRkNzTldJRWsxNzZycHJHaHhnbGJzLTZneVhLOXFDcmlzd0hNUEZLZU10YzhNQ3E2UnFBc3dKR0pOZzh1UU1QcUtfZng3eUxLVjFkV0lTT05oQjk5U1lLOGd5UHRkRmZQUUFoQkVDY1MxeWdOZVlwN19jRzV0R0t3Yk1Ea2tRX0ZRTVZvUGhyblFpekZwd0RaMnZHYWFpY0VRNDlQc2d6Q3F6eHhubXprQUhYYlhJTXRFbEd1X2l1VnIycFhVRWxXRmVZcE5JMjZGTTVSNWJzMUtKa28wRmlENUMzMVBsWmJJbjRvY3dtbEZ0Vi1sR2pGaFBZR3NyUQ?oc=5",
-      "src": "Upstox"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +4.5% on 2.1× usual volume, near the day's high",
-      "s": 1.8066543771759602
      }
     ]
    },
@@ -2800,25 +2753,6 @@
     ]
    },
    {
-    "k": "KPIGREEN",
-    "n": "KPI Green Energy",
-    "s": 4,
-    "conf": "Medium",
-    "p": 331.4,
-    "pct": 8.6,
-    "mc": 6550.8,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "KPI Green Energy shares jump 9% on massive volume spike ahead of Q2 results; what's driving the rally?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZWNya19UQTlkYWZoVnZEOF9CUi1rWWtTOUhtX0ZobTRMMXh6eWx4UmhIbmZfNTRYaFp1YkwzSmRiSHlaVS1wb3JDSS1hRXVYQ2g3c3k2alZkTE45ci1vYUZiUHdJNHRLRzhDM2ZHNEFFMi1IWHBBa3lNOFh4VE92VEpXSHkxRmc3UTF0bVdTbm9ibU12SkRONzJRVlR2RExVZ0xHQndJNzYzRDhZWWlaRElBcmZEZ2Nka01oUzdISVlJYjBmTktVNERQYk50ZFE?oc=5",
-      "src": "IndiaIPO"
-     }
-    ]
-   },
-   {
     "k": "UNOMINDA",
     "n": "UNO Minda",
     "s": 4,
@@ -2834,6 +2768,25 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYVFVa1pIZm5vMGhSSnVLdVNpQzlINVpKSFR6cFItcGIzWHd5SFJSZy1MMHB0VlpEMWhiaVlkRmk0LW5oUTJvVVNjNTNqYmxEdXVNMklNT3Y4UWVwTVM5VTd5TUxyWWNvWEthMWM3NzZLOVI4Tlhxc0c0YlZXMXNxWWphRTdWNHVrcHV3RE5FMF9BNVhrVmxyazJldVh0M0QxVGFWN1ZzOXVYOVJpRkxxaVpIWW9mQ2szZF9DZTd6V2pIOGRMMkRoZm9OUErSAdIBQVVfeXFMT2F2aUk2LVhwa3pQUlYwY2tkOHFhVGFQNkpfYmdZTlEtZEM0OS13VnFZZlBaZUJDeWlUN2ZXVmtjTjRNMjJSd0tpQmkzbE9CTW96eHhRTXg5RTI4dWxQckRYclZSXzdHMkxMUG1oZWtLa2k2SjY4UzVxdFdNc1BUWGpjRWxXNVdrMF9nQ3lOVmNlZ0pINEhaaFBnUkpJWkFZdkpRV1k3aWxfMFNMaFh0OC1xVGNvc2VjNlByaGVGU3lVTHJCVVU3TWU0NFdaaVE3eWxR?oc=5",
       "src": "Business Standard"
+     }
+    ]
+   },
+   {
+    "k": "KPIGREEN",
+    "n": "KPI Green Energy",
+    "s": 4,
+    "conf": "Medium",
+    "p": 331.4,
+    "pct": 8.6,
+    "mc": 6550.8,
+    "sec": "Utilities",
+    "why": [
+     {
+      "k": "news",
+      "t": "KPI Green Energy shares jump 9% on massive volume spike ahead of Q2 results; what's driving the rally?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOel9XczZ5Vll4cGF4UTl6Nk9WMDk2ay1td2pydC1rTFVZNHBiSkVWWlVUMkROdnlQYnhzNTdPM1ZDTEtkVVRpUkM0S3dFV1pYT3p1YWZUQWd3dUprMm5OWnJkR0dVVkItdjVyczhHa292M18wMU11VFVSOXZoV1J4R2JtdVNDTGFDMmdiem9kNXRLOEljQTZlbjFlV2puRkg1OW5TbnQ3RTVXX2xmU0JEU3JHUmdLaHZiV1RIVlhXNkxSTXdSaFUzWTJpUVRPUHdKUDQtRmxZelkwWTM5SlFuNlBkeG5fOVV4U2FwSmtBYWxVUU9wU1VFbFhiTlnSAYICQVVfeXFMT3FPMGsyemNQdkloN2VlOGY2bjVLb2VkQlU2SHhmY3U3QkxhbW9lSHEtUlRJRWdPSzVrQ25xMTNZOFpmMVhEUlF6NlZ0WUp3NG15OFAwamc3SmlhMy1KQ0xiTkhfallwc2F0ZzFPWDVGdnYweEE2M1lIWmtXRC1KWlBzY29HaUk5UVU3Rm5zYVJDUXBTR0tPOERBSmx4MEZMdHJFTngzQ3QxOFBiZTFydFdWZEl5RWE3OG9mTmp0dEJUZ05xRmRxOElNcWhfTDkySDg4dDRHZ2RVcmJGdC1scGF2S0x1SG4tRjFORzI0YUJCVm9wUU4zYmVITkNiaG5ETWtR?oc=5",
+      "src": "Livemint"
      }
     ]
    },
@@ -2968,6 +2921,40 @@
       "s": 3.0
      }
     ]
+   },
+   {
+    "k": "GLAXO",
+    "n": "GlaxoSmithKline Pharmaceuticals",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 2710.0,
+    "pct": 6.71,
+    "mc": 45909.0,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +6.7% on 10.2× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "GUFICBIO",
+    "n": "Gufic Biosciences",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 474.35,
+    "pct": 8.72,
+    "mc": 4756.9,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +8.7% on 11.2× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
    }
   ],
   "down": [
@@ -3046,25 +3033,6 @@
       "t": "Below All Moving Averages and Now at Lower Circuit: SML Mahindra Ltd Loses 4.21% in a Single Session",
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaEhvRGl6WVcxb2xPN29fb01qZFFpYXNVYl81akNQaHRpblFVUXBrblZwNW0tcGZFWm11anBTVDVDSlQyZFhja3dLcEhkdFdlRXpsRmZrMjFvUkI2V2RGQWlWNGxRc2xVVFY4MDh2djJLN0hBYzBnMW9kVk5nMUljMUFuZk9oa19VUjRQQ0o1dWJhWm14SVpzdC1CZDlISjlXOVF5RHBuVmpKN0ZMejJQLTZjRVZ0STRIX2N0OUd3?oc=5",
-      "src": "MarketsMojo"
-     }
-    ]
-   },
-   {
-    "k": "VENUSREM",
-    "n": "Venus Remedies",
-    "s": -4,
-    "conf": "Medium",
-    "p": 1448.3,
-    "pct": -4.14,
-    "mc": 1938.2,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Below All Moving Averages and Now at Lower Circuit: Venus Remedies Ltd Loses 4.96% in a Single Session",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcVloX3pyWkFvbUdDSm1PVk1ha19LSE9lYWZOMWNtQldqUXpfNEtEQ3hMNEFsYmgxaXE3WTlscHJycWtmMDFpSVhkeDRMQ0hmWFFNU1phU05mTXNvSXlfYzI1ZVhlUmRfNU9sY01KLXo5NGw4LVJZM0tnZXoxQ19fdThvTmRZNEM4ODVvdjVUbmxOcXVZd3k5akVFWGJMV1BiNGFic3NtV2lIamlZS3BuM092NHR6NjNrZzVrR0FlT2Y?oc=5",
       "src": "MarketsMojo"
      }
     ]
@@ -3787,7 +3755,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:15 PM",
+  "at": "10 Nov, 12:19 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3876,7 +3844,7 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 12:18 PM",
+  "at": "10 Nov, 12:19 PM",
   "g": [
    [
     "506919",
@@ -4702,7 +4670,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:15 PM",
+  "at": "10 Nov, 12:19 PM",
   "g": [
    [
     "TRANSWORLD",
