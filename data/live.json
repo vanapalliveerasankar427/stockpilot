@@ -1,13 +1,13 @@
 {
- "label": "10 Nov 2026, 12:57 PM IST",
- "updated": "2026-11-10T12:57:33+05:30",
+ "label": "10 Nov 2026, 12:58 PM IST",
+ "updated": "2026-11-10T12:58:17+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "10 Nov 2026, 12:57 PM",
+  "date": "10 Nov 2026, 12:58 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -118,13 +118,13 @@
     "v": 143106.0,
     "ch": -60.0,
     "pct": -0.04,
-    "t": "10 Nov, 12:57 PM"
+    "t": "10 Nov, 12:58 PM"
    },
    "silver": {
     "v": 187015.0,
     "ch": -112.0,
     "pct": -0.06,
-    "t": "10 Nov, 12:57 PM"
+    "t": "10 Nov, 12:58 PM"
    }
   },
   "retail": {
@@ -339,7 +339,7 @@
    "g24_10": 143640.0,
    "ag_kg": 187720.0,
    "ag": 187.72,
-   "t": "10 Nov, 12:57 PM"
+   "t": "10 Nov, 12:58 PM"
   }
  },
  "logos": [],
@@ -450,24 +450,24 @@
   "t": 1794282953
  },
  "brent": {
-  "v": 91.39,
+  "v": 91.36,
   "prev": 92.57,
-  "ch": -1.18,
-  "pct": -1.27,
+  "ch": -1.21,
+  "pct": -1.31,
   "high": 92.82,
   "low": 90.74,
   "open": 91.61,
-  "t": 1794295047
+  "t": 1794295097
  },
  "goldSpot": {
-  "v": 4125.0,
+  "v": 4125.5,
   "prev": 4114.5,
-  "ch": 10.5,
-  "pct": 0.26,
+  "ch": 11.0,
+  "pct": 0.27,
   "high": 4156.2,
   "low": 4117.3,
   "open": 4124.3,
-  "t": 1794295050
+  "t": 1794295093
  },
  "sectors": [
   [
@@ -819,7 +819,7 @@
    "snii": null,
    "sr": 0.42,
    "ssrc": "IPOMarket",
-   "sat": "10 Nov, 12:54 PM"
+   "sat": "10 Nov, 12:58 PM"
   },
   "maxwell": {
    "gmp": 80.0,
@@ -1053,7 +1053,7 @@
   "dii_sell": 19937.5,
   "fii_buy": 20310.99,
   "fii_sell": 13098.77,
-  "fetched": "10 Nov, 12:54 PM",
+  "fetched": "10 Nov, 12:58 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1203,7 +1203,16 @@
    "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYlRGRkFRSGJFOVVaUmlZbDZfYWVZT2JGNHVaaVBBeVlKSmlWaFBna3lfVS1ub0R5VUZuUDQ1ZFRWSzBWa3NVVURnU1lubTB0QXNBNDFsUUxSSWJtTE85cmNEQ2tJQzRQMUZUZHNPMTZzbDhRZHRmQUwzcTlibDVXcnFISDRPU216RWdWc3czV0dXNFhsSmJtM1p6VE5BX2tWZmVicEdNZmtaT0hHdkJ4a0dmLUdhanJuRGtmZEdZRXdQTWRXWEFsVHo4c2tFZWV2WVhxR016VjNQUmZ2RUxHNzBRTC1zeWfSAewBQVVfeXFMUHRZdzZSTW81dldwVU0xUWV0RENEV3VIX3ZHTjdNa1RzajNiNUZzVmZieHBYODY5Y1YwNlNEYTcxRU4xZGFFMEdBN2U0bHVfQVZCQTlJWmpjMVlBbkVwd2hvZzFIVThka0IzdmFmOWlYOGIzWlMwMFFHSXI3aGM5SFMwSU13NVJVSWhLemRIdDM3SWhkTzJlazNKeUNlbC0zMGgwdW9zeDY4Rkp3dXFWdV9ES1NVZ0dsWnoxRnAycVByMXp2UUYtR3dUS3MzQkpMZ05jN2lIcnZWQ3FhYTI1VzNtUzJkaFJqVlRnUlo?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ibja: no gold figure found",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 26 IPOs",
+  "subscription: 1 IPOs from 1 cards",
+  "quotes retry: +0 of 1 missing NSE",
+  "per-symbol fallback for 1 NSE stocks",
+  "bse eod 2026-11-09: 5107 scrips",
+  "outlook: 248 headlines, 25 up, 11 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-10",
@@ -2222,9 +2231,9 @@
   }
  },
  "nse": {
-  "n50": "10 Nov, 12:57 PM",
-  "mid": "10 Nov, 12:57 PM",
-  "small": "10 Nov, 12:57 PM"
+  "n50": "10 Nov, 12:58 PM",
+  "mid": "10 Nov, 12:58 PM",
+  "small": "10 Nov, 12:58 PM"
  },
  "midg": [
   [
@@ -2381,18 +2390,19 @@
   }
  },
  "fulllog": [
+  "ibja: no gold figure found",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 26 IPOs",
   "subscription: 1 IPOs from 1 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 246 headlines, 25 up, 10 down"
+  "outlook: 248 headlines, 25 up, 11 down"
  ],
  "universe": {
   "stocks": 5397,
   "quotes": 4810,
-  "at": "10 Nov, 12:54 PM"
+  "at": "10 Nov, 12:58 PM"
  },
  "global": [
   [
@@ -2421,9 +2431,9 @@
   ],
   [
    "Hang Seng",
-   24541.5,
-   0.24,
-   1794294750
+   24534.47,
+   0.21,
+   1794294794
   ],
   [
    "FTSE 100",
@@ -2439,8 +2449,8 @@
   ]
  ],
  "outlook": {
-  "at": "10 Nov, 12:54 PM",
-  "headlines": 246,
+  "at": "10 Nov, 12:58 PM",
+  "headlines": 248,
   "screened": 1792,
   "cues": [
    "US tech (Nasdaq) rose 2.7% in the last session",
@@ -2449,32 +2459,6 @@
    "Nikkei 225 +2.9%"
   ],
   "up": [
-   {
-    "k": "BHEL",
-    "n": "Bharat Heavy Electricals",
-    "s": 12,
-    "conf": "High",
-    "p": 422.95,
-    "pct": 1.38,
-    "mc": 147273.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "BHEL Bags Adani Power Orders Worth Up to Rs. 280 bn",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNdmQyQkd3em0tN0xNcEpzZ191dzFjZmhNM2tnSjJWY3l2NEZ4eWFkenY3S2ZaNFJ3b1dZdkZ6SU13bmlfX0FadFV4VW5rXzI0STJYRFp0b3A0Sy1UMjFHS2E0dTJKeFhHRWpJd1FnQ0dHaEtsc2MzWVBvMXk3SFN3Vzl6WnNIVjRyNkYyTG5yNDFXclltZktDZmV3dERXM3VNQV9YX0poSnZBVXBSaW1GV0RaT0dJVjNPQ2VqdG1jLTVsUU1TTmhEaWNILUFFcHoyRTktbElWWQ?oc=5",
-      "src": "Construction World"
-     },
-     {
-      "k": "news",
-      "t": "BHEL bags Rs 600-900 crore order from Power Grid for synchronous condensers",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcjB1cUdhWFoyb1hMdlJMVDZzTDN4UnlkczB1OHFMQWNOenpHOEdGcTJ5VTZsSVR6VUFLbXdVTlYxaTJLLTlKTzRwM1pfeFNHY0g1c3FIWTgwNGxMRnRidTBXUHY0amlVS1hFRWEwMnd1ZXZGUDBGcFBIdmRvSXlzZ2Q3UGZDSEpGNFhnNko1bEZScXV4MDlYOGpnb0w1aGg1SS12WG8ycDdIM29PYVUwMVotTXY1S1Q1d0HSAboBQVVfeXFMT3IwdXFHYVhaMm9YTHZSTFQ2c0wzeFJ5ZHMwdThxTEFjTnp6RzhHRnEyeVU2bElUelVBS213VU5WMWkySy05Sk80cDNaX3hTR2NINXNxSFk4MDRsTEZ0YnUwV1B2NGppVUtYRUVhMDJ3dWV2RlAwRnBQSHZkb0l5c2dkN1BmQ0hKRjRYZzZKNWxGUnF1eDA5WDhqZ29MNWhoNUktdlhvMnA3SDNvT2FVMDFaLU12NUtUNXdB?oc=5",
-      "src": "PSU Watch"
-     }
-    ]
-   },
    {
     "k": "DATAPATTNS",
     "n": "Data Patterns (India)",
@@ -2507,30 +2491,6 @@
     ]
    },
    {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "s": 9.8,
-    "conf": "High",
-    "p": 1090.1,
-    "pct": 3.18,
-    "mc": 36069.7,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
-      "s": 1.7614208979249046
-     }
-    ]
-   },
-   {
     "k": "OLECTRA",
     "n": "Olectra Greentech",
     "s": 8,
@@ -2550,25 +2510,6 @@
     ]
    },
    {
-    "k": "GLAND",
-    "n": "Gland Pharma",
-    "s": 8,
-    "conf": "High",
-    "p": 3302.4,
-    "pct": 5.41,
-    "mc": 54493.2,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
-      "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
     "k": "GUJENERGY",
     "n": "GUJARAT ENERGY",
     "s": 8,
@@ -2584,6 +2525,25 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOc25vTjlySExFVlByelNwdC1xaG9CWllUanhHTV9UYURYdlU5Tm9LejRLNWJwRXVDVDVtVUpGbFAxNVFqZUV5NXJTclhyVGRJT2VWSWdhVDVfVlV6ZGhWWVZCdTRYeDUyWlMzOTlxREJyQ2ZYU3BaUHdJb3hCVk5LMnQzZkxhRjRfMm1jWF9adGZQMTQ2ekE0VTRIOWQzS0lJWG1adG5GcURPR2lLbUdoMHNtSUN6R3FyOTVObUJZdUZYaXZZU1g5WURxeGhYQ0xxaWNnenR0QldjdVFwWUxjNVdjS3ZTU0tSak5iREozQ3FVd2ZvX0Fqak5JZmtMdnpnQXVSbEtiMHJKT2V2RDdSYtIBlgJBVV95cUxOMkRfZ0o1RTdpTTMzRUFTXzNrQ1JiUHhvTmdaMnNGbGZKTHNnUGs4NjhTQTlHeV9qVUlXMUFkemhQaEJwZ0poTnNubkdwT3NCaE5QdkpCcWhoWHE4Z2xTQnl5N3JuNGhjU0ZWbnhwbWVwaHo0dmxlNVo3dl9pMWU0RDNtR2JKTUFTclBTTG9RTFNJWU5CcktWRU45cWVBblR5a0xWb1M5LTRib0taSmRLLTI4SUVSX3FicUo0aG9Za1NtMmlTSXZaZVl3SVlabFE1V0JoWTByOVd3aFoxX1hZTVNIWUt4LXE5Q2RVOUFUUFhRTUotZG5OWlJZZlpXUTg4Qm5TamYxbVhxM3NfYUpzMzdGdVZOUQ?oc=5",
       "src": "Livemint"
+     }
+    ]
+   },
+   {
+    "k": "GLAND",
+    "n": "Gland Pharma",
+    "s": 8,
+    "conf": "High",
+    "p": 3302.4,
+    "pct": 5.41,
+    "mc": 54493.2,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "news",
+      "t": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPNFBLby1hQmNtYlhYN0RncEp3bFVCa203NGZkRDdZTXJiZVhESnpBLUN4X0JpY21qNjVUaWZzZlM5Sk1PVlRDcU00d2ZVVk5iX1hUaGl3bE1vYzluM1ZiZGlKUjJaTWtSZVpzVlRtY0R5Zkw0YnFYbklZNEswVG5LYWY1QU9wWDNxSW5uajBnMXRwdVRuTU5FT1dobHF1cFpPRXZrSFk1dDlOTXBBUGtFTmo2ZU9pNFRLNndPWE1KM0x4S1doQVlPX3F5U1BQRThwVGN0aF9xMmtIWHphZDcyQmdBajRJY2pEVFJHVFpJdWtsdFQ0NzBYWmtB0gH_AUFVX3lxTE11OW5yckNLX2RFYTdPOF9pY1Nmek9UT0poQk9sSHVZWkdtdnpCN2MyeTlfV1gxdy12LV9yX0t6NzdUbmFNNUF6NjlGS3NQTXJPSVpBbHluWXlCU2JtNUtwOE1pRkFIbTJDSDVGdXEyU3ZjTHNpR2lRanRaaFlVa2cxVl80SjdjXzBZSkk1cTU0N1B4WWtvQ2VlNzN0V0xuQUZTTnhaaEVyWWRFWklqakNmOFFEQllDOFpKbjcyR0xSeHBzY0dpRmUtMGlhcFc3NHpqMjNTOVYwTFo5a3luc3dTSTU2RXJXSkhhN1Ewa2ItTzU2RE5OTUd6dGhDb1hUVQ?oc=5",
+      "src": "Moneycontrol.com"
      }
     ]
    },
@@ -2631,25 +2591,6 @@
     ]
    },
    {
-    "k": "ADANIPOWER",
-    "n": "Adani Power",
-    "s": 6,
-    "conf": "High",
-    "p": 206.0,
-    "pct": 0.78,
-    "mc": 397264.7,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "BHEL Bags Adani Power Orders Worth Up to Rs. 280 bn",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNdmQyQkd3em0tN0xNcEpzZ191dzFjZmhNM2tnSjJWY3l2NEZ4eWFkenY3S2ZaNFJ3b1dZdkZ6SU13bmlfX0FadFV4VW5rXzI0STJYRFp0b3A0Sy1UMjFHS2E0dTJKeFhHRWpJd1FnQ0dHaEtsc2MzWVBvMXk3SFN3Vzl6WnNIVjRyNkYyTG5yNDFXclltZktDZmV3dERXM3VNQV9YX0poSnZBVXBSaW1GV0RaT0dJVjNPQ2VqdG1jLTVsUU1TTmhEaWNILUFFcHoyRTktbElWWQ?oc=5",
-      "src": "Construction World"
-     }
-    ]
-   },
-   {
     "k": "TEXRAIL",
     "n": "Texmaco Rail & Engineering",
     "s": 6,
@@ -2665,6 +2606,56 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBCZC1pdUxEeWhlaUl0Q3dvZ1BOMVc3NGZ5UmNoWDQtMWJsZjVGQndqaTVycGNoMXRmY0dpRDlPMU9MMFFxVzUyRlVjbksyUzZreF9odllMX1ZOdE9wM1oxeDlINUhFRWZINTZjcGJn?oc=5",
       "src": "Metro Rail News"
+     }
+    ]
+   },
+   {
+    "k": "BHEL",
+    "n": "Bharat Heavy Electricals",
+    "s": 6,
+    "conf": "High",
+    "p": 422.95,
+    "pct": 1.38,
+    "mc": 147273.9,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "BHEL bags Rs 600-900 crore order from Power Grid for synchronous condensers",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcjB1cUdhWFoyb1hMdlJMVDZzTDN4UnlkczB1OHFMQWNOenpHOEdGcTJ5VTZsSVR6VUFLbXdVTlYxaTJLLTlKTzRwM1pfeFNHY0g1c3FIWTgwNGxMRnRidTBXUHY0amlVS1hFRWEwMnd1ZXZGUDBGcFBIdmRvSXlzZ2Q3UGZDSEpGNFhnNko1bEZScXV4MDlYOGpnb0w1aGg1SS12WG8ycDdIM29PYVUwMVotTXY1S1Q1d0HSAboBQVVfeXFMT3IwdXFHYVhaMm9YTHZSTFQ2c0wzeFJ5ZHMwdThxTEFjTnp6RzhHRnEyeVU2bElUelVBS213VU5WMWkySy05Sk80cDNaX3hTR2NINXNxSFk4MDRsTEZ0YnUwV1B2NGppVUtYRUVhMDJ3dWV2RlAwRnBQSHZkb0l5c2dkN1BmQ0hKRjRYZzZKNWxGUnF1eDA5WDhqZ29MNWhoNUktdlhvMnA3SDNvT2FVMDFaLU12NUtUNXdB?oc=5",
+      "src": "PSU Watch"
+     }
+    ]
+   },
+   {
+    "k": "VOLTAS",
+    "n": "Voltas",
+    "s": 5.8,
+    "conf": "Medium",
+    "p": 1090.1,
+    "pct": 3.18,
+    "mc": 36069.7,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Winter is coming! Voltas delivers strong Q2 results. Should you buy the Tata Group AC maker as cold winds rise?",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOOXdYR3ptdXI1c0J1SDZtQ3poU2VsN01fRHRqR1NkM0s2SGpleU42SHlFUG45YlNrcWsycjA4UEUxZTh3clpEcmxIMHQxX3NCS191TnVXdUl3VVJoNVNLTmhXM3JjQnVQN19LZHctTDk0UlQ1OF9rckI2MFhvUm95NXdmWDk3X1RCNXR4dUp3LW5LRFM0alpCVmlkMkpmY3lDUEJOcGhQc1RZRkNBVW5WMGxFY1Rrb0NzX081cjVDYWZRWlZZY1NJWi1YY0UzOERnSDlUSVFkdXlqUlB3YV9zU3NqNkVzeFFIWll5T1ZYQTZUYmtNMEVrMDZjbFBDV1BoTjBIOVRhRWMwZ9IBjwJBVV95cUxQVmVQMnctc0U4Z2twYkMzb05meDhfZmx4U25uTEx2SFd3dDFCT01qQ0tTQnlac0Y2U3BGOWl2UWRxdUFmOG5WQzZJa3F5SU43SEloWl8ydHNSbDhFc2FfTnhfZDIwZEp5TDZrLXMxMjNFazFXLUZxeXVGVDBhWG9ZYlFIVzZ5R1pTd0RoTWFpVkQ2Z05rVFRSWF9FRlVDRUo5eGxZOUpCejJ4aHVqeDFqSkhtRFczYlQ4Uk41b0lrX3RpMjRDNTU1TnJ6XzJqOFowY3Z6ZmFaLUpBWHVSX1BIX1c5V0lrTjhqcTByVjNqNXFwS2x3MWdUbUxBWlJSZnA5Qk9xVkFTWUowOTJ6SjVZ?oc=5",
+      "src": "Livemint"
+     },
+     {
+      "k": "news",
+      "t": "Voltas Q2 FY27 results: Shares fall as brokerages flag margin risks",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc3J5R281ZVVJR1g0ZDVyWUZDcG9xOWpVa1l4T0NJN2pSYkRldlF3NFpXc3QyZGQ1MVhHX0ZZcXlwWjJReXhNQ09Gd05sV3hFbUxFZ1Bvd2wyZVBJUnE4Z1Jhcjc0ejRxSmQ3eGVwcEhzdWltWFpEN05HYlpXbzM1ZFVINnNCNUZTekt4bmxxOVJvVkpWclh6WjQ4bGpvVk9k?oc=5",
+      "src": "Alice Blue"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +3.2% on 2.0× usual volume, near the day's high",
+      "s": 1.7614208979249046
      }
     ]
    },
@@ -2950,9 +2941,45 @@
       "s": 3.0
      }
     ]
+   },
+   {
+    "k": "KPEL",
+    "n": "K.P. Energy",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 204.9,
+    "pct": 20.0,
+    "mc": 1389.2,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +20.0% on 39.3× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
    }
   ],
   "down": [
+   {
+    "k": "MRF",
+    "n": "MRF",
+    "s": -8,
+    "conf": "High",
+    "p": 125105.0,
+    "pct": -1.26,
+    "mc": 53058.8,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "MRF Q2 Results: Net Profit Falls 28% To Rs 369 Crore, Declares Dividend; Check Record Date",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNQ0c1VV9sOW13OV9uQ0VGNG8tUmk0V3FQbVJhYUZqY3ExYUp2MHJsOU1yWTBGblFPS1JqZGV6VVN3eDRfZVZaYVpabHM5MTdwOGZvTzY0YkMyMHUxVUxFU1JlVWMwQTZEbDdlZWRfTlNCSDlNS2dWaEo1YTlfX2lpcUFKLW56dkxjUEhmcXFFNFFuLWhsd1hrRVltbHkzUzQwVVVvVDR3YUc4MDYwSUk2TUZweFRVVmJBZXlCbDhxS0ZiY1paSnNpTl83T09Zd21lRFdYMEdNdVNKQW90Y3NyOXdISEFOVWdHNDBHT1hDdjM3N0Y5aEpMQnFVWGlHeWFC0gGIAkFVX3lxTE5yQU01MlN4dnZydDZEY0NnSXhPeldmTlBwTkE2N2txek9GNW96UlA1WlktZUtGcVVGR2RvalVhMFR6OUdOVXlYMkJqU3BmdkVFVl9ySVRQalA0ZHk3R1hnMDB6cjhQcGtnSjVqcXhDLWxvOS14ZUg4SFJrNmlISGdPTUduN2pGNjRSZzdQOUFJOWY1OFQ4ZDRWYy15M2diZnljYjlvUmt4V2J4OU9Cbi00UjJnVXRRX1BEUGJFVkpTRmhHQmU1RW9YVW14ZTVKVW1uemdMWW5nNElNaGxiemo0V091WXRlUTlXMzhVMkZmMDhaTG51VTJXM2xua2U3M2VOVHdOelFncg?oc=5",
+      "src": "NDTV Profit"
+     }
+    ]
+   },
    {
     "k": "MONEYVIEW",
     "n": "Moneyview",
@@ -3743,7 +3770,7 @@
   }
  },
  "hilo": {
-  "at": "10 Nov, 12:54 PM",
+  "at": "10 Nov, 12:58 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -3832,18 +3859,18 @@
   "nlo": 10
  },
  "bse_movers": {
-  "at": "10 Nov, 12:57 PM",
+  "at": "10 Nov, 12:58 PM",
   "g": [
    [
     "506919",
-    "Makers Laboratories Ltd-$",
+    "Makers Laboratories",
     267.1,
     19.99,
     222.6
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     297.75,
     19.99,
     248.15
@@ -3899,7 +3926,7 @@
    ],
    [
     "517059",
-    "Salzer Electronics Ltd-$",
+    "Salzer Electronics",
     551.25,
     15.37,
     477.8
@@ -4123,7 +4150,7 @@
    ],
    [
     "530871",
-    "Chembond Material Technologies Ltd-$",
+    "Chembond Material Technologies",
     203.0,
     9.4,
     185.55
@@ -4144,7 +4171,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     57.45,
     9.18,
     52.62
@@ -4658,7 +4685,7 @@
   ]
  },
  "allmov": {
-  "at": "10 Nov, 12:54 PM",
+  "at": "10 Nov, 12:58 PM",
   "g": [
    [
     "TRANSWORLD",
