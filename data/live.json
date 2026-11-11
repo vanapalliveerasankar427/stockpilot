@@ -1,6 +1,6 @@
 {
  "label": "11 Nov 2026, 3:40 PM IST",
- "updated": "2026-11-11T15:40:05+05:30",
+ "updated": "2026-11-11T15:40:58+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -120,15 +120,15 @@
   },
   "mcx": {
    "gold": {
-    "v": 141550.0,
-    "ch": 1025.0,
-    "pct": 0.73,
+    "v": 141580.0,
+    "ch": 1055.0,
+    "pct": 0.75,
     "t": "11 Nov, 3:40 PM"
    },
    "silver": {
-    "v": 187700.0,
-    "ch": 5124.0,
-    "pct": 2.81,
+    "v": 187910.0,
+    "ch": 5334.0,
+    "pct": 2.92,
     "t": "11 Nov, 3:40 PM"
    }
   },
@@ -340,10 +340,10 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 14209.0,
-   "g24_10": 142090.0,
-   "ag_kg": 188420.0,
-   "ag": 188.42,
+   "g24": 14212.0,
+   "g24_10": 142120.0,
+   "ag_kg": 188630.0,
+   "ag": 188.63,
    "t": "11 Nov, 3:40 PM"
   }
  },
@@ -360,14 +360,14 @@
    "t": 1794391288
   },
   "SENSEX": {
-   "v": 82126.5,
+   "v": 81940.26,
    "prev": 81106.65,
-   "ch": 1019.85,
-   "pct": 1.26,
+   "ch": 833.61,
+   "pct": 1.03,
    "high": 82520.4,
    "low": 81417.39,
    "open": 82122.18,
-   "t": 1794390904
+   "t": 1794390958
   },
   "BANKNIFTY": {
    "v": 60792.4,
@@ -407,7 +407,7 @@
    "high": 17.83,
    "low": 15.64,
    "open": 17.42,
-   "t": 1794391803
+   "t": 1794391856
   }
  },
  "nifty8": [
@@ -455,24 +455,24 @@
   "t": 1794391418
  },
  "brent": {
-  "v": 92.93,
+  "v": 92.96,
   "prev": 91.49,
-  "ch": 1.44,
-  "pct": 1.57,
-  "high": 92.95,
+  "ch": 1.47,
+  "pct": 1.61,
+  "high": 92.98,
   "low": 91.48,
   "open": 92.4,
-  "t": 1794391196
+  "t": 1794391252
  },
  "goldSpot": {
-  "v": 4058.6,
+  "v": 4060.8,
   "prev": 4030.2,
-  "ch": 28.4,
-  "pct": 0.7,
+  "ch": 30.6,
+  "pct": 0.76,
   "high": 4074.7,
   "low": 4034.1,
   "open": 4055.3,
-  "t": 1794391201
+  "t": 1794391256
  },
  "sectors": [
   [
@@ -1208,15 +1208,7 @@
    "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNZjdZYkhmdjJISzFjaXV5RFREMzU3T29zbS1hNjRqWU5MRXJ2b3JFQV9ydWdNQk81V3dlMF83ejJlU3FtTGtFVFZoZlFSQnkzNl9IaElSSWpWZEZDR0szd2lCOGpQTHNRYkJXclFGbWo5T3Y1YmtITmg1Wk9TMWlDUU0wVUNmQ092SDJBU193UDl6LXlXbUVJTTdPNEdHdkFhS1RJdXNmckFJel9qVmFKMnItNjl3Mmd2d1ZXZGlnUm0wNEUxV2twVFVRTzdtZWt0ckpPYm01N01RMXhzRDB30gHkAUFVX3lxTFBJaHFLamRZVWZmVVRDVjR0WU9yY09hMHZCaWgyZjRhWC1zNEYwNmlVUjVaNVAtVnJ1Z3VURFlkLVpMQ2hLLXNScEFPRnN2UXRoUk85U0p0RlZia25zWndZQlpKWVJWbXhEbVlqMFF2QjJYZE1zWmpYWFVlMnB0RnZLSG9XQjhuQVNTd21QNDlVUTJOdmppZ1Zxb2h3VFUyYXdyclcxYXhfWFMzRkYteVI0aUxacnUxRHBLYkc1X2tIbXFCalZneWRmcmZqeUw3djNJWU8yVTFvdmh0V1NsQk9GeGFOZw?oc=5"
   }
  ],
- "log": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 26 IPOs",
-  "subscription: 0 IPOs from 0 cards",
-  "results cal: 1500 upcoming (597 NSE)",
-  "bse eod 2026-11-10 failed: 'FinInstrmId' is not in list",
-  "bse eod 2026-11-09: 5107 scrips",
-  "outlook: 259 headlines, 25 up, 7 down"
- ],
+ "log": [],
  "members": {
   "n50": {
    "day": "2026-11-11",
@@ -2402,7 +2394,7 @@
   },
   "2026-11-11": {
    "NIFTY": 25255.05,
-   "SENSEX": 82126.5,
+   "SENSEX": 81940.26,
    "BANKNIFTY": 60792.4,
    "MIDCAP": 61519.1,
    "SMALLCAP": 19489.35,
@@ -2456,9 +2448,9 @@
   ],
   [
    "FTSE 100",
-   10782.49,
-   0.29,
-   1794390903
+   10781.23,
+   0.28,
+   1794390957
   ],
   [
    "US 10Y yield",
