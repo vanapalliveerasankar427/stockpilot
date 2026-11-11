@@ -6,7 +6,7 @@ const CAL = "https://marketvedapro.com/ipo-calendar.json";
 const LIVE = "https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/main/data/live.json";
 const SITE = "https://marketvedapro.com/";
 const PER_RUN = 40; // stay under the free plan's subrequest limit
-const TYPES = ["allot", "open", "close", "list", "am", "mid", "pm"];
+const TYPES = ["allot", "open", "close", "list", "am", "mid", "pm", "tw"];
 const HOLIDAYS = ["2026-11-10", "2026-11-24", "2026-12-25"]; // NSE weekday trading holidays still ahead (update each year)
 
 const te = new TextEncoder();
@@ -164,7 +164,7 @@ export async function digestCron(env, quotes) {
   if (!env.PUSH) return;
   const now = IST(), day = ymd(now), dow = now.getUTCDay(), m = now.getUTCHours() * 60 + now.getUTCMinutes();
   if (dow === 0 || dow === 6 || HOLIDAYS.includes(day)) return;
-  const W = [["am", 9 * 60 + 20, 10 * 60 + 30], ["mid", 13 * 60, 14 * 60 + 30], ["pm", 15 * 60 + 45, 17 * 60]].find(([, a, b]) => m >= a && m < b);
+  const W = [["am", 9 * 60 + 20, 10 * 60 + 30], ["mid", 13 * 60, 14 * 60 + 30], ["tw", 15 * 60 + 20, 15 * 60 + 50], ["pm", 15 * 60 + 50, 17 * 60], ["twe", 20 * 60, 22 * 60]].find(([, a, b]) => m >= a && m < b);
   if (!W) return;
   const [type] = W, id = type + "-v2-" + day;
   const prev = await env.PUSH.get("ev:" + id, "json") || {};
@@ -193,13 +193,19 @@ export async function digestCron(env, quotes) {
   } else {
     ev = { t: `Market closed: Sensex ${fx0(s[0])} (${pc(s[1])})`, b: [`Nifty ${fx0(n[0])} (${pc(n[1])})`, bk && bk[0] ? `Bank Nifty ${pc(bk[1])}` : "", g ? "Top gainer " + mv(g) : "", metals].filter(Boolean).join(" · "), u: SITE + "#markets" };
   }
-  ev.id = id; ev.type = type;
+  if (type === "tw" || type === "twe") { // Tomorrow's watch: 3:20 PM list and the 8 PM refresh after evening results
+    const T = L.tw || {}, P = (T.picks || []).slice(0, 3);
+    if (!P.length || (type === "twe" && T.phase !== "evening")) return;
+    const why = o => { const w = (o.why || [])[0] || {}; return w.t === "results" ? "results" : w.t === "news" ? "news" : w.t === "momentum" ? "strong close" : ""; };
+    ev = { t: type === "tw" ? `Tomorrow's watch for ${T.for}` : `Tomorrow's watch updated after today's results`, b: P.map(o => `${String(o.n).slice(0, 24)} (${why(o)})`).join(" · ") + `${(T.fo || []).length ? ` · ${T.fo.length} F&O stocks` : ""}. Signals, not advice.`, u: SITE + "#tomorrow" };
+  }
+  ev.id = id; ev.type = type === "twe" ? "tw" : type;
   await broadcast(env, ev, PER_RUN);
 }
 
 // ---------- what to send, and when ----------
 const IST = () => new Date(Date.now() + 330 * 60000);
-const NEW_TYPES = ["am", "mid", "pm"]; // added after launch: older subscriptions get them unless switched off
+const NEW_TYPES = ["am", "mid", "pm", "tw"]; // added after launch: older subscriptions get them unless switched off
 const wants = (rec, t) => rec.off ? !rec.off.includes(t) : rec.types ? (rec.types.includes(t) || NEW_TYPES.includes(t)) : true;
 const ymd = d => d.toISOString().slice(0, 10);
 const short = n => String(n).replace(/ (Ltd|Limited)\.?$/i, "");

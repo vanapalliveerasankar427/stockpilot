@@ -11,6 +11,7 @@ import json
 import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 
@@ -790,6 +791,130 @@ def all_quotes(uni):
     return out
 
 
+# ----------------------------------------------------------------- results calendar (NSE + BSE), refreshed hourly
+def results_cal(out):
+    old = out.get("rescal") or {}
+    if old.get("ts") and time.time() - old["ts"] < 3600 and old.get("items"):
+        return
+    items, seen = [], set()
+    def add(sym, name, d, src):
+        key = (sym, d)
+        if sym and d and key not in seen:
+            seen.add(key); items.append({"k": sym, "n": name, "d": d, "src": src})
+    def ddate(v):
+        v = str(v or "").strip()[:11]
+        for f in ("%d-%b-%Y", "%d %b %Y", "%Y-%m-%d", "%d/%m/%Y"):
+            try:
+                return dt.datetime.strptime(v, f).date().isoformat()
+            except ValueError:
+                pass
+    try:  # NSE board meetings for financial results (NSE symbols)
+        nse_session()
+        j = get("https://www.nseindia.com/api/event-calendar", headers={**UA, "Referer": "https://www.nseindia.com/companies-listing/corporate-filings-event-calendar"}).json()
+        for r in (j if isinstance(j, list) else j.get("data") or []):
+            purpose = f"{r.get('purpose', '')} {r.get('bm_desc', '')}".lower()
+            if "result" in purpose:
+                add(str(r.get("symbol", "")).upper(), r.get("company", ""), ddate(r.get("date")), "NSE")
+    except Exception as e:
+        log(f"results cal nse: {e}")
+    try:  # BSE forthcoming results (adds BSE-only companies)
+        S.get("https://www.bseindia.com/", timeout=20)
+        j = get("https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w", headers={"Referer": "https://www.bseindia.com/", "Origin": "https://www.bseindia.com"}).json()
+        rows = j if isinstance(j, list) else (j.get("Table") or next((v for v in j.values() if isinstance(v, list)), []))
+        for r in rows:
+            low = {k.lower(): v for k, v in r.items()}
+            code = str(low.get("scrip_code") or low.get("scrip_cd") or "").strip()
+            add("B" + code if code else "", low.get("long_name") or low.get("short_name") or "", ddate(low.get("meeting_date")), "BSE")
+        if rows and not any(i["src"] == "BSE" for i in items):
+            log(f"results cal bse sample: {json.dumps(rows[0])[:240]}")
+    except Exception as e:
+        log(f"results cal bse: {e}")
+    if items:
+        today = NOW.date().isoformat()
+        out["rescal"] = {"ts": time.time(), "at": NOW.strftime("%-d %b, %-I:%M %p"), "items": sorted([i for i in items if i["d"] >= today], key=lambda i: i["d"])[:1500]}
+        log(f"results cal: {len(out['rescal']['items'])} upcoming ({sum(i['src']=='NSE' for i in items)} NSE)")
+
+
+# ----------------------------------------------------------------- Tomorrow's watch: stocks with a reason to move next session
+RESULT_WORDS = re.compile(r"\b(q[1-4]|quarter|results?|profit|net income|pat|ebitda|revenue|earnings)\b", re.I)
+def tomorrow_watch(out, uni, q):
+    names = {r[0]: r[1] for r in uni.get("s", [])}
+    fno = (out.get("fno") or {}).get("syms") or {}
+    today = NOW.date()
+    hm = NOW.hour * 60 + NOW.minute
+    live_today = sum(1 for r in q.values() if isinstance(r[14], (int, float)) and dt.datetime.fromtimestamp(r[14], IST).date() == today) > 500
+    tw = out.get("tw") or {}
+    hist = tw.get("hist") or []
+    snap = tw.get("snap")
+    # 1) score yesterday's (or the last) snapshot once the next session has closed
+    if snap and snap.get("d") != today.isoformat() and live_today and hm >= 15 * 60 + 35 and not any(h.get("d") == snap["d"] for h in hist):
+        res = []
+        for k, p0 in snap.get("px", {}).items():
+            r = q.get(k)
+            if r and r[0] and p0:
+                res.append([k, round((r[0] / p0 - 1) * 100, 2)])
+        if res:
+            res.sort(key=lambda x: -x[1])
+            hist.insert(0, {"d": snap["d"], "on": today.isoformat(), "n": len(res), "up": sum(1 for _, v in res if v > 0),
+                            "avg": round(sum(v for _, v in res) / len(res), 2), "best": res[:3], "worst": res[-2:], "all": res})
+            hist = hist[:30]
+    # 2) build today's lists
+    nxt = today + dt.timedelta(days=1)
+    while nxt.weekday() >= 5:
+        nxt += dt.timedelta(days=1)
+    cal = (out.get("rescal") or {}).get("items") or []
+    due_days = {today.isoformat(), nxt.isoformat()} if hm >= 9 * 60 else {today.isoformat()}
+    rows = {}
+    def row(k):
+        r = q.get(k)
+        if not r or not r[0]:
+            return None
+        if k not in rows:
+            vx = (r[8] / r[16]) if r[8] and len(r) > 16 and r[16] else None
+            rows[k] = {"k": k, "n": names.get(k, k), "p": r[0], "pct": r[1], "vx": round(vx, 1) if vx else None, "fo": k in fno, "why": [], "s": 0.0}
+        return rows[k]
+    for x in (out.get("outlook") or {}).get("up", []):  # results and positive news (already scored by the outlook)
+        news = [w for w in x.get("why", []) if w.get("k") == "news"]
+        if news and (x.get("pct") or 0) > -1:
+            o = row(x["k"])
+            if o:
+                res = any(RESULT_WORDS.search(w.get("t", "")) for w in news)
+                o["why"].append({"t": "results" if res else "news", "x": news[0].get("t", "")[:160], "u": news[0].get("u", "")})
+                o["s"] += x.get("s", 0) * (1.4 if res else 1.0)
+    for i in cal:  # results due after today's close / before the next open
+        if i["d"] in due_days:
+            o = row(i["k"])
+            if o:
+                o["why"].append({"t": "due", "x": "Results " + ("today" if i["d"] == today.isoformat() else "on " + dt.date.fromisoformat(i["d"]).strftime("%-d %b"))})
+                o["s"] += 4 + (2 if o["fo"] else 0)
+    for k, r in q.items():  # strong close: up 2%+, near the day's high, on 2x+ normal volume, ₹1 Cr+ traded
+        try:
+            p, pct, hi, vol = r[0], r[1], r[4], r[8]
+            av = r[16] if len(r) > 16 else None
+            if not (p and pct and hi and vol and av) or pct < 2 or pct > 19.9 or p < hi * 0.985 or vol < 2 * av or p * vol < 1e7:
+                continue
+            o = row(k)
+            o["why"].append({"t": "momentum", "x": f"Up {pct:.1f}%, closing near the day's high on {vol / av:.1f}× normal volume"})
+            o["s"] += pct * min(vol / av, 5) / 2
+        except Exception:
+            continue
+    L = [o for o in rows.values() if o["why"]]
+    L.sort(key=lambda o: -o["s"])
+    picks = [o for o in L if any(w["t"] in ("results", "news", "momentum") for w in o["why"])][:25]
+    fo = [o for o in L if o["fo"] and any(w["t"] in ("results", "news", "momentum") for w in o["why"])][:12]
+    due = [o for o in L if any(w["t"] == "due" for w in o["why"]) and not any(w["t"] in ("results", "news") for w in o["why"])][:25]
+    for o in L:
+        o["s"] = round(o["s"], 1)
+    phase = "pre" if hm < 9 * 60 + 15 else "live" if hm < 15 * 60 + 15 else "close" if hm < 19 * 60 else "evening"
+    # 3) freeze the list from 3:15 PM (and refresh it after the evening results), scored next session
+    if live_today and phase in ("close", "evening") and (not snap or snap.get("d") != today.isoformat() or phase == "evening"):
+        sel = (picks[:15] + [o for o in fo if o not in picks[:15]])[:20]
+        snap = {"d": today.isoformat(), "phase": phase, "px": {o["k"]: o["p"] for o in sel}}
+    tw = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "phase": phase, "for": nxt.strftime("%a %-d %b") if hm >= 15 * 60 + 15 else today.strftime("%a %-d %b"),
+          "picks": picks, "fo": fo, "due": due, "snap": snap, "hist": hist}
+    out["tw"] = tw
+
+
 def everything(out):
     os.makedirs(OUT_EXTRA, exist_ok=True)
     uni = universe()
@@ -833,6 +958,10 @@ def everything(out):
             outlook(out, uni, q)
         except Exception as e:
             log(f"outlook crashed: {e}")
+        try:
+            tomorrow_watch(out, uni, q)
+        except Exception as e:
+            log(f"tomorrow watch crashed: {e}")
 
 
 # ----------------------------------------------------------------- today's outlook (likely up / likely down)
@@ -1142,7 +1271,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, everything)):
+    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, results_cal, everything)):
         try:
             step(out)
         except Exception as e:
