@@ -1128,6 +1128,8 @@ body:not(.ready) footer{display:none}
 .oc-t td{padding:5px 2px;text-align:center;border-top:1px solid color-mix(in srgb,var(--line) 60%,transparent);line-height:1.25}.oc-t td small{display:block;font-size:10.5px;color:var(--muted)}
 .oc-t td.k{font-weight:800}.oc-t td.itm{background:color-mix(in srgb,var(--up) 9%,transparent)}.oc-t td.itp{background:color-mix(in srgb,var(--dn) 9%,transparent)}
 .oc-t tr.atm td{border-top:2px solid var(--ink)}.oc-t .hi{outline:2px solid color-mix(in srgb,var(--up) 60%,transparent);outline-offset:-2px;border-radius:6px}
+.oc-seg{display:flex;gap:4px;padding:3px;border-radius:12px;background:var(--soft);margin-top:4px}.oc-seg button{flex:1;border:0;background:none;font:inherit;font-size:13px;font-weight:700;padding:7px 4px;border-radius:9px;color:var(--muted);cursor:pointer}.oc-seg button[aria-pressed="true"]{background:var(--glass2,var(--bg));color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.oc-l td,.oc-l th{text-align:left;padding-left:6px}.oc-l tr.itmr td{background:color-mix(in srgb,var(--up) 8%,transparent)}.oc-l tr.cheap td:first-child{box-shadow:inset 3px 0 0 var(--up)}.oc-l td.up{color:var(--up)}.oc-l td.down{color:var(--dn)}
 .oc-f{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
 /* outlook tabs + F&O cards: always fit the phone width */
 .ol-list{grid-template-columns:minmax(0,1fr)}
@@ -3471,7 +3473,7 @@ function fnoHTML(){const F=FNO();
 
 let olTab='up',olAll=false;
 // ---- Calls & puts (nearest expiry) from NSE's option chain, refreshed by the data job
-let OC=null,ocAt=0;const OC_OPEN=new Set();
+let OC=null,ocAt=0;const OC_OPEN=new Set(),OC_SIDE={};
 function loadOC(){if(OC&&Date.now()-ocAt<60000)return Promise.resolve(OC);return fetch(DATA_RAW+'oc.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){OC=j;ocAt=Date.now()}return OC}).catch(()=>OC)}
 function ocBtn(k,side,label){const o=OC_OPEN.has(k);return `<div class="oc-w"><button type="button" class="oc-btn" data-oc="${esc(k)}" data-side="${side}" aria-expanded="${o}">📊 ${label?esc(label)+' calls &amp; puts':'Calls &amp; puts'} ${o?'▴':'▾'}</button><div class="oc-box" data-ocb="${esc(k)}" data-side="${side}"></div></div>`}
 function ocHTML(k,side){const e=OC&&OC.s&&OC.s[k];
@@ -3479,18 +3481,18 @@ function ocHTML(k,side){const e=OC&&OC.s&&OC.s[k];
   const R=e.r,u=e.u,lot=e.lot||0,fk=v=>Number.isInteger(+v)?(+v).toLocaleString('en-IN'):n2(v);let a=0;R.forEach((r,i)=>{if(Math.abs(r[0]-u)<Math.abs(R[a][0]-u))a=i});const rows=R.slice(Math.max(0,a-5),a+6);
   const pl=v=>v==null?'':lot?'₹'+(v*lot>=1e5?(v*lot/1e5).toFixed(2)+' L':Math.round(v*lot).toLocaleString('en-IN'))+'/lot':'';
   const cell=(v,ch,cls)=>`<td class="${cls}">${v==null?'—':'₹'+n2(v)}<small>${pl(v)}${ch!=null?` · <span class="${ch>=0?'up':'down'}">${ch>=0?'+':''}${ch}%</span>`:''}</small></td>`;
-  const otmC=R.filter(r=>r[0]>=u&&r[1]),otmP=R.filter(r=>r[0]<=u&&r[6]).reverse();
-  const pick=(L,t)=>L.slice(0,3).map(r=>`<b>${fk(r[0])} ${t} ₹${n2(t==='CE'?r[1]:r[6])}</b> (${pl(t==='CE'?r[1]:r[6])})`).join(', ');
-  const hiK=side==='p'?(otmP[0]||[])[0]:(otmC[0]||[])[0];
+  const sd=OC_SIDE[k]||(side==='p'?'p':'c'),ci=sd==='c'?1:6,list=R.filter(r=>r[ci]).map(r=>({K:r[0],v:r[ci],ch:r[ci+1],cost:r[ci]*(lot||1),itm:sd==='c'?r[0]<u:r[0]>u,away:(r[0]/u-1)*100})).sort((x,y)=>x.cost-y.cost);
+  const rs=(x,i)=>`<tr class="${x.itm?'itmr':''}${i===0?' cheap':''}"><td class="k">${fk(x.K)} <small>${sd==='c'?'CE':'PE'}</small></td><td><b>${lot?'₹'+Math.round(x.cost).toLocaleString('en-IN'):'—'}</b><small>₹${n2(x.v)} × ${lot||'?'}</small></td><td>${x.away>=0?'+':''}${x.away.toFixed(1)}%<small>${x.itm?'in the money':'from price'}</small></td><td class="${x.ch==null?'':x.ch>=0?'up':'down'}">${x.ch==null?'—':(x.ch>=0?'+':'')+x.ch+'%'}</td></tr>`;
   const exp=String(e.exp).replace(/-\d{4}$/,'');
-  return `<div class="oc-meta">Expiry <b>${esc(exp)}</b> · 1 lot = <b>${lot?lot.toLocaleString('en-IN'):'?'}</b> · Price <b class="num">₹${n2(u)}</b> · ${esc(String(e.ts||'').replace(/^(\d+)-(\w+)-\d{4} (\d+:\d+):\d+$/,'$1 $2, $3'))}</div>
-   <div class="oc-chips">${e.sup?`<span title="Strike with the most put open interest">🛡️ Support ₹${fk(e.sup)}</span>`:''}${e.res?`<span title="Strike with the most call open interest">🚧 Resistance ₹${fk(e.res)}</span>`:''}${e.pcr!=null?`<span title="Put-call ratio of open interest">PCR ${e.pcr}</span>`:''}</div>
-   ${side!=='p'&&otmC.length?`<p class="oc-pick">📈 Calls just above the price: ${pick(otmC,'CE')}</p>`:''}${side!=='c'||k==='NIFTY'||k==='BANKNIFTY'||!otmC.length?(otmP.length?`<p class="oc-pick">📉 Puts just below the price: ${pick(otmP,'PE')}</p>`:''):''}
-   <table class="oc-t num"><thead><tr><th>CALL ₹</th><th>Strike</th><th>PUT ₹</th></tr></thead><tbody>${rows.map(r=>`<tr class="${r===R[a]?'atm':''}">${cell(r[1],r[2],(r[0]<u?'itm':'')+(side!=='p'&&r[0]===hiK?' hi':''))}<td class="k">${fk(r[0])}</td>${cell(r[6],r[7],(r[0]>u?'itp':'')+(side==='p'&&r[0]===hiK?' hi':''))}</tr>`).join('')}</tbody></table>
+  return `<div class="oc-meta">Expiry <b>${esc(exp)}</b> · 1 lot = <b>${lot?lot.toLocaleString('en-IN'):'?'}</b> · Price <b class="num">${k==='NIFTY'||k==='BANKNIFTY'?'':'₹'}${n2(u)}</b> · ${esc(String(e.ts||'').replace(/^(\d+)-(\w+)-\d{4} (\d+:\d+):\d+$/,'$1 $2, $3'))}</div>
+   <div class="oc-chips">${e.sup?`<span title="Strike with the most put open interest">🛡️ Support ${fk(e.sup)}</span>`:''}${e.res?`<span title="Strike with the most call open interest">🚧 Resistance ${fk(e.res)}</span>`:''}${e.pcr!=null?`<span title="Put-call ratio of open interest">PCR ${e.pcr}</span>`:''}</div>
+   <div class="oc-seg" role="group" aria-label="Calls or puts"><button type="button" data-ocs="c" data-k="${esc(k)}" aria-pressed="${sd==='c'}">📈 Calls (CE)</button><button type="button" data-ocs="p" data-k="${esc(k)}" aria-pressed="${sd==='p'}">📉 Puts (PE)</button></div>
+   <p class="oc-meta" style="margin:6px 0">Sorted by cost of 1 lot, cheapest first. Cheaper options are further from the price and need a bigger move to pay off.</p>
+   <table class="oc-t oc-l num"><thead><tr><th>Strike</th><th>1 lot costs</th><th>Strike vs price</th><th>Today</th></tr></thead><tbody>${list.map(rs).join('')}</tbody></table>
    <p class="oc-f">Premium per share, cost per lot below it. Shaded = in the money. Option buyers can lose the whole premium; these are prices, not buy/sell advice. <a class="link" href="https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(k)}" target="_blank" rel="noopener">Full chain on NSE ↗</a></p>`}
 function ocFill(){document.querySelectorAll('.oc-box').forEach(b=>{const k=b.dataset.ocb,open=OC_OPEN.has(k);const btn=b.parentElement.querySelector('.oc-btn');if(btn&&btn.getAttribute('aria-expanded')!==String(open)){btn.setAttribute('aria-expanded',open);btn.innerHTML=btn.innerHTML.replace(/[▴▾]/,open?'▴':'▾')}
-  if(!open){if(b.innerHTML)b.innerHTML='';return}const sig=(OC&&OC.at||0)+'';if(b.dataset.sig===sig&&b.innerHTML)return;if(!OC){b.innerHTML=LOADER('Loading calls and puts…');loadOC().then(()=>{b.dataset.sig='';ocFill()});return}b.innerHTML=ocHTML(k,b.dataset.side);b.dataset.sig=sig})}
-document.addEventListener('click',e=>{const t=e.target.closest('.oc-btn');if(!t)return;e.preventDefault();const k=t.dataset.oc;OC_OPEN.has(k)?OC_OPEN.delete(k):OC_OPEN.add(k);ocFill()});
+  if(!open){if(b.innerHTML)b.innerHTML='';return}const sig=(OC&&OC.at||0)+'|'+(OC_SIDE[k]||'');if(b.dataset.sig===sig&&b.innerHTML)return;if(!OC){b.innerHTML=LOADER('Loading calls and puts…');loadOC().then(()=>{b.dataset.sig='';ocFill()});return}b.innerHTML=ocHTML(k,b.dataset.side);b.dataset.sig=sig})}
+document.addEventListener('click',e=>{const sb=e.target.closest('[data-ocs]');if(sb){e.preventDefault();OC_SIDE[sb.dataset.k]=sb.dataset.ocs;ocFill();return}const t=e.target.closest('.oc-btn');if(!t)return;e.preventDefault();const k=t.dataset.oc;OC_OPEN.has(k)?OC_OPEN.delete(k):OC_OPEN.add(k);ocFill()});
 setInterval(()=>{if(document.hidden||!OC_OPEN.size)return;if(Date.now()-ocAt>60000)loadOC().then(ocFill);else ocFill()},3000);
 // Keep every live list in order of % move: biggest rise first (data-ls="d") or biggest fall first ("a"), re-sorted on each live tick
 function liveSort(){if(document.hidden)return;try{liveSort0()}catch(e){}}
