@@ -1,13 +1,13 @@
 {
- "label": "12 Nov 2026, 8:23 PM IST",
- "updated": "2026-11-12T20:23:27+05:30",
+ "label": "12 Nov 2026, 8:33 PM IST",
+ "updated": "2026-11-12T20:33:44+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "12 Nov 2026, 8:23 PM",
+  "date": "12 Nov 2026, 8:33 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -125,16 +125,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136519.0,
-    "ch": -3197.0,
-    "pct": -2.29,
-    "t": "12 Nov, 8:23 PM"
+    "v": 136020.0,
+    "ch": -3696.0,
+    "pct": -2.65,
+    "t": "12 Nov, 8:33 PM"
    },
    "silver": {
-    "v": 179300.0,
-    "ch": -5225.0,
-    "pct": -2.83,
-    "t": "12 Nov, 8:23 PM"
+    "v": 178714.0,
+    "ch": -5811.0,
+    "pct": -3.15,
+    "t": "12 Nov, 8:33 PM"
    }
   },
   "retail": {
@@ -345,11 +345,11 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13705.0,
-   "g24_10": 137050.0,
-   "ag_kg": 180000.0,
-   "ag": 180.0,
-   "t": "12 Nov, 8:23 PM"
+   "g24": 13655.0,
+   "g24_10": 136550.0,
+   "ag_kg": 179410.0,
+   "ag": 179.41,
+   "t": "12 Nov, 8:33 PM"
   }
  },
  "logos": [],
@@ -460,24 +460,24 @@
   "t": 1794493433
  },
  "brent": {
-  "v": 93.45,
+  "v": 93.51,
   "prev": 92.76,
-  "ch": 0.69,
-  "pct": 0.74,
+  "ch": 0.75,
+  "pct": 0.81,
   "high": 94.36,
   "low": 91.19,
   "open": 91.28,
-  "t": 1794494578
+  "t": 1794495195
  },
  "goldSpot": {
-  "v": 3893.8,
+  "v": 3886.7,
   "prev": 4000.5,
-  "ch": -106.7,
-  "pct": -2.67,
+  "ch": -113.8,
+  "pct": -2.84,
   "high": 4005.9,
-  "low": 3887.7,
+  "low": 3884.4,
   "open": 3981.0,
-  "t": 1794494599
+  "t": 1794495223
  },
  "sectors": [
   [
@@ -1063,7 +1063,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "12 Nov, 8:23 PM",
+  "fetched": "12 Nov, 8:33 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1120,6 +1120,13 @@
  },
  "news": [
   {
+   "tag": "IPO",
+   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "12 Nov, 8:24 PM",
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
+  },
+  {
    "tag": "Results",
    "t": "Reliance Power Board Meets To Approve Q2 Financial Results",
    "s": "Sahi",
@@ -1153,13 +1160,6 @@
    "s": "IPO Watch",
    "d": "12 Nov, 5:30 PM",
    "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5VMWwxMk1kR2pPbWlqTW5yQm1KX1l5UVB6djFSTWExV1hCb1hxeXgtemZlVFRsN2IxY2VXUFBRSDRueUVBZXdURWhjZXAxOTY4ektnMEgtUV9yZWJa?oc=5"
-  },
-  {
-   "tag": "IPO",
-   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
-   "s": "IPO Watch",
-   "d": "12 Nov, 5:19 PM",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
   },
   {
    "tag": "Economy",
@@ -1219,12 +1219,11 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 307 headlines, 25 up, 17 down"
+  "outlook: 327 headlines, 25 up, 16 down"
  ],
  "members": {
   "n50": {
@@ -2244,9 +2243,9 @@
   }
  },
  "nse": {
-  "n50": "12 Nov, 8:23 PM",
-  "mid": "12 Nov, 8:23 PM",
-  "small": "12 Nov, 8:23 PM"
+  "n50": "12 Nov, 8:33 PM",
+  "mid": "12 Nov, 8:33 PM",
+  "small": "12 Nov, 8:33 PM"
  },
  "midg": [
   [
@@ -2419,36 +2418,35 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 307 headlines, 25 up, 17 down"
+  "outlook: 327 headlines, 25 up, 16 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4795,
-  "at": "12 Nov, 8:23 PM"
+  "at": "12 Nov, 8:33 PM"
  },
  "global": [
   [
    "Dow Jones",
-   52561.82,
-   0.14,
-   1794495206
+   52367.66,
+   -0.23,
+   1794495823
   ],
   [
    "S&P 500",
-   7608.49,
-   -0.14,
-   1794495203
+   7582.26,
+   -0.49,
+   1794495823
   ],
   [
    "Nasdaq",
-   25390.77,
-   -0.3,
-   1794495205
+   25293.22,
+   -0.68,
+   1794495819
   ],
   [
    "Nikkei 225",
@@ -2464,20 +2462,20 @@
   ],
   [
    "FTSE 100",
-   10842.25,
-   0.06,
-   1794494306
+   10853.22,
+   0.16,
+   1794494923
   ],
   [
    "US 10Y yield",
-   5.04,
-   0.84,
-   1794494304
+   5.06,
+   1.16,
+   1794494914
   ]
  ],
  "outlook": {
-  "at": "12 Nov, 8:23 PM",
-  "headlines": 307,
+  "at": "12 Nov, 8:33 PM",
+  "headlines": 327,
   "screened": 1808,
   "cues": [
    "Hang Seng -2.2%"
@@ -2615,6 +2613,32 @@
       "k": "price",
       "t": "Closed strong: +11.9% on 30.5× usual volume, near the day's high",
       "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "ASTRAMICRO",
+    "n": "Astra Microwave Products",
+    "s": 12,
+    "conf": "High",
+    "p": 1785.8,
+    "pct": 3.39,
+    "mc": 16955.3,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Astra Microwave Q2 Results: Stock jumps 5% on strong profit growth, margin expansion - CNBC TV18",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSHpQUFI1T2FSTkNmSDhGZjEzMzlpVWZHZ1N4emlEZkxMYXFId3FINk5aQVpCNkcwdEpZYUVpTW1hT19jVGx1QXpVREs0X21KQ3NqOXZTTDJRRWtaVjgwQ2d6QjdQOEdmQnNBWDZ1MWhienRYcW9aeHJmaUNMWkZZczNCd1d6NjdiNDE0dmltOTlmMnBMVW0xWnFkUjVXZ1liMy1ZRDZQZnZmbDlrOFVRYzdfSXdWZw?oc=5",
+      "src": "LinkedIn"
+     },
+     {
+      "k": "news",
+      "t": "Astra Microwave Q2 Results: Stock jumps 5% on strong profit growth, margin expansion",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPNll3V3hiTW5NTU0tZmFFMVQwVW9HXzBhS1U1cnhvRzZlSU14X0xaSEJkbzlvUVZud0xwejN5bTVpaHR6ZXNGQkRva205eG4xOGpvejBkWURNa083bjBCTlZvVnFmMHA4X0lBTEQxTUZhZFUxa2t2LVBFSWtybFR5eXpqa1NaM1c3QTBsRGhxdnYyTTNqSG1qUVdKYUZkRE9Ub1ZEaGY2SzZ5bEtlLTFxS0dWMnJUd1ZBekNKNk5JZEZtSHFUZUpFN05TY2VPQ3ZVVThfdEY5WE5CdEhBOUxBbHFZT3DSAeoBQVVfeXFMT3lqei1EbHM5ajRTeG9yaTB1TWlGRjljd3FTYkRUbm9aeGJmNWlUUU1uWWZHdEs4NU56bWdXQURSMWNzZWZnZXMxNkU1cjNHNjRHZjctN1pfOEFKel93SU1qbUZqX1c0UEw2UTNxZnlNMGc1bXNsS0pMRE9XMjFfWm9JNlpvMmE0cU1iQ1hvRjFFbWZ2N25JMkVIOU8wQ0pkTU9zdzU5M0lDU3VVWDZRblg1ekQycEpXQ0IzUlZIY3NrNmZKRDd1SVdhb2ZxWk5rbV9feHBUY3NHTlRkYnNnSGpwWEp3VGJ5UE93?oc=5",
+      "src": "CNBC TV18"
      }
     ]
    },
@@ -2783,6 +2807,25 @@
     ]
    },
    {
+    "k": "LANDMARK",
+    "n": "Landmark Cars",
+    "s": 8,
+    "conf": "High",
+    "p": 498.6,
+    "pct": 1.82,
+    "mc": 2067.4,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Landmark Cars Q2 results: Net profit jumps over 15 times YoY to Rs 18.5 crore; revenue rises 19.9%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQX3BFeG1ndzFPUDZidnRfTFZTNERFNEJBbW9QYWYwMmF1T184aEREem5xS3JGb3p6ZGI5eW9zQWFub2p3d3plclZjRFVBOFZNTHhWdmZzX2VJTlpJZ0g5N2FhOVZMTXY4cGo3RWNieDluR3lOcEhIeHJJMEZqdVNrYXhlV3hZa21sVjlsQWtfWXMtdlllZlY4c2JLS28xWk9aUnRJa010cjZfZnd2bDlDWlRlbjJOLXg4cm9JdHlQbTZCRjdnNWlUeHoxOTBiRUJKX1I3bWV6S1dPUjg4MXNwTFc3SDhFcGtlLXlSaDlrOFlMWS16?oc=5",
+      "src": "Business Upturn"
+     }
+    ]
+   },
+   {
     "k": "REDINGTON",
     "n": "Redington",
     "s": 8,
@@ -2893,6 +2936,25 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPOWtKdzAzaGJMTVkzWXJZNURsWmdRblV4YzlQcGRtdS1mWlhoUm5wckhwTy1nSUJPbWI3RUVfbXYwMzhuTVJTUDVPUGRLQ2o5NUhxX3EzQno3Y0hNclBmVHhQeW1NTC13X2VGRUpWa2YtaGxiTTVLUm1QSG5DaDU2WWNPd0l3T2lfbUFhNFJiSmxjZUQ5LU94SHFlY28zdlM3aUVSNHM1VEtkVVQ3NkRPOU5VQ21zVERhVEZqc2tRaFI2VDJOVHZZb1hlRHVGcnpYaDR3RXlfZ1QzclFaVzAzNVVObUpqUnQteVHSAe8BQVVfeXFMUG1VdHFRNFhVekFmSWRva1RHRDVVUEVFamJBbktrRS1xZ0tTOXlEazFydVJ1REJmUWdKTzNZWWZNRXBZaEtIaDdPSHVDYzA5dHRJUGlDNnJyMUUxY3l1LUJiWGlaNjZLY2txTzRUNnhBQV9QQ21DcnhlX0l3TlhoVnplMGEzUUkxZllXLVBIelJQVW0wTkxJdFpuM1RNSFlRM180czVkR0luUV9pSV8zeDliU0dNQjFhMklEeXpmd18wejROS0hhNHdULWhZMWd4cl9EblZhMFRYemdMRXpoZEJCbjZYemJoemhPaFZZN1U?oc=5",
       "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "DHUNINV",
+    "n": "Dhunseri Investments",
+    "s": 6,
+    "conf": "High",
+    "p": 1004.85,
+    "pct": 5.12,
+    "mc": 612.7,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "Dhunseri Investments Q2 Results: Turns profitable, revenue more than doubles YoY",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOelI5RTJTSHRSa0J6ME9JS0R6WmVUenVFc01XejRPVWstQzVFcTRuUS1HZDc4N29xVUhpMzVFYlNsR0NNUnhlcnpwWklhLVZIS1ozeVhSVFBqZ0tJVnBkTmdNcUdhWE9wckszbVhFdHZMU2VMRzVqbFJnWjgwUDJLb2J0bGhNVXRtSi10Y0NVYTlFbW9hNk96bDJpdU1fNHpyeEJMZVdFcm1rNjJzaHY2WExPSlBybUhZZjBKZ0tETnQ?oc=5",
+      "src": "scanx.trade"
      }
     ]
    },
@@ -3014,63 +3076,6 @@
       "src": "Business Today"
      }
     ]
-   },
-   {
-    "k": "CAMS",
-    "n": "Computer Age Management Services",
-    "s": 4,
-    "conf": "Medium",
-    "p": 743.0,
-    "pct": 2.7,
-    "mc": 18464.7,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "NSDL, CAMS, KFin Tech shares gain; what's fuelling the rise in capital market-themed stocks?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWnMzZW9CakxGSmV6VGNIcjlxWXFLSnZRVVFYbWNVQm5YSWxya2wwaUx3bTdmanktUlhkTkR0N3QwWC0xYThlWjRsMHJxTHllQmdQS2FHN1RBWVk5T1ZWRjZqMnZpMV90VGdrMFBzSWRmcGRaYWN6aElFOC1acno0Mkh4aXJQYmVzS0UxZlV3ODRoMlBXY3E5Tm1SWHJDNS1OaEUtNzlXTTU5VTBfV1lBYjJ1V3ZERDh0emRoaENUZWY0NXAyZXNkLVZpbW80bTE2b3B5dks4alU5b1AyaXQtWXRHeVBNS1YtbC1F0gHwAUFVX3lxTE5iYjVZV1pyV0s2bTJyNGFQdi1jeFBhZ2hQVHN6ZHBqZGlrWDNiZzhnOGNNeHRqSEhDeTBJVUYzbktRNE11TGhLQno5d1RZV09NczNwOXZJdWItYVF6Q0x4Y0JoNTE4T0N5eHRXM2ZTRW1iT2pXVkl1andEMDhUczR5eVZfT0w0cVo3X1o1VFVKRWRiRHFRMWVGOUhYdFJqNnA1WnEzYlg3RGVLeno0SVBwQ1lqVEUxN1g1SHVzT28zanpFQk5Tc1hnTGd4eGxCNXhFa2Fic2JpQ1psUUNwejB0eTRCUVJXaV9iY1dJelpfNg?oc=5",
-      "src": "Business Today"
-     }
-    ]
-   },
-   {
-    "k": "MEESHO",
-    "n": "Meesho",
-    "s": 4,
-    "conf": "Medium",
-    "p": 254.11,
-    "pct": 2.4,
-    "mc": 117678.6,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Meesho shares rise over 2% after MSCI India Standard Index inclusion",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNFdGNzJJREpMaEJPRjJrSmp4QmF0NUNQcWN2d2d5MHJhZGFweGh1QlNoNFA1NzdKRkhaa0MzemRReno5TEVGTWgwMmszM2g3TXFxcHQ2dDhobW9kd0RlWE94QUtoZmxpblVhbkFVVWpfZU5Tb2tlZTRycUZDUVdua2NiWlBWNmpVSU15dWdwcF8xU09MXy1xanlJZi1iMzVEVmZBZmF3ZXZZc3hScmEyQ1JPZmNSNnlMQS1F0gHAAUFVX3lxTE9KcFpuNXR1Sm9LWnpod1ozR1gxcmlKaUEzVjktRjVXSUE1Z3FHNHp0bHFYcVFlRVFFWGNfelk1dkFuNVROSUw4R3hESGxqbUlSZ1Y4ZGdDMVROcWlydzh4bnA0ckhjc21wTVZTTnlNUXgyZFcyWHBwQXY0NGs2LVRSaXM4LWlacG9TRFdCS3VSZnlTWTlTUnN3SkJqQ2dYMFZCaGhFc2RpckJCc2g1UUNLLU1pSG9WTVhWSDBQMU1udA?oc=5",
-      "src": "ET Now"
-     }
-    ]
-   },
-   {
-    "k": "CLEANMAX",
-    "n": "Clean Max Enviro Energy Solutions",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1305.3,
-    "pct": 4.05,
-    "mc": 15351.1,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "Clean Max Enviro Energy shares jump 7%; stock trades 27% above IPO price - What's driving the rally? | Check key levels",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNa2MtZDRlbFgxOHNVLW44TG5PNWN2MUdPbTFzTlg1ZEhGVUFlUkx1a2FRek9zd20wakx6alN4TUxBVW5rT05HZ0htWUg5N0ZhYkJaRXc1Z0hNeE9fc3QwdlZKc1BKNGlqSjFpSTNCWGdkSW5MdnZWTzJmaGFMc0tyWDdUaVhPTFFLeGtDUHY3UVkta2NuVWJqT3FqNXp1T1NuNFkxaVUwVXdYa25hV1dEWDFYaVJUNXFJZFNsUUgyUmxELTNJb01GNXpIQkNXNE11TTFvV1NzQnZIS0JjQUlHQ2dJWTdmb0xkMl9nb1YzN0Q1cXI1NlFaNVo4VkQ?oc=5",
-      "src": "TradingView"
-     }
-    ]
    }
   ],
   "down": [
@@ -3113,6 +3118,39 @@
     ]
    },
    {
+    "k": "ALKEM",
+    "n": "Alkem Laboratories",
+    "s": -16,
+    "conf": "High",
+    "p": 5302.0,
+    "pct": -2.68,
+    "mc": 63393.4,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "news",
+      "t": "Alkem Laboratories Q2 Results: Net Profit Falls 12% To Rs 675 Crore; Ropes In Gopal Kothari As CFO",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOMlJyRjl2YkJvTC1rcEhTMmtCM1lNUGhabnd5c1NiUXVrOVVTcDZSbnZKZEl4T1F2bEhRZS1aeTE0VkducFFITDUwU0Vtd2daemxLTFRvd1pRdXRpNUZmakZzTW1xUXdXTjFZanJpd2hNcFRGWGotODB0dG1LQV9NSVFlUWJiRWhqUDBJVllFM1owekYwR1dEMnVmQ3ctNW1hbVJfR1ZfeUdBYUNjcXZoTmhKZW1ySVNCRmJndVlvLTBYQ04tUURMbUljR0FWRDBXbjlYcUFrdEg2ZXNFdlRXS9IB6AFBVV95cUxON1dJVHBvSVl5WjBtVlRFZ2JQZjNhRTEwVUlTeXlzRUlfd3hZOU1uOFRBRzF2WWEya3p2UjdrNDB5dUo2RlhJMkRDUF9wOUZBY21MUGRObkNQaGJwLVFTTnJtSW5kNFhkU25WY0VhRXlwZXdPTjM5NEQ2TWhEbDMxcWJtZ1hhSEl2TFVzREN1UU5HQ1FmSUdvTDAzNUh2NFFBVTJySUdKeVVtdjA4S29FcmxoUmZ1Wm40Ry1Zc05Ea2p2cVJ6TmNON1VoWjNHNjVWcTMxRDNKMEY4ODY1Qk4xV2wyV1lWRHct?oc=5",
+      "src": "NDTV Profit"
+     },
+     {
+      "k": "news",
+      "t": "Alkem Laboratories Q2 profit falls 12% YoY to ₹675 crore, EBITDA grows 22%; board appoints new CFO",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPcWd2SC1wU25LUTNURGFNWDh1OGJDS3UtNnhqeEZFOTA3ZXhDNk1nMlhKTmJuMEtfVU1Vd2d2UmMtbXpzR3RDTU5ocWN4VkpoNXFuNEdDVnB6aTI0UjlwcmQtbE9JUVFoeng5azFmTGFQc3duZjRDZmhYTk9uRnAtZ1UyTkhxd0JCRUVpNVFNYVVVUXdQY2ZhRjBsbVljekdQYnhRLVhIVjdKS21vR0xaQ280ZUdJTm00SlVseFlYN1BsZXFWWl9qTENtN011algxajdJXzhEaEJpWkdXTm00b1JzaG9HXzMwaHNz?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "news",
+      "t": "Alkem Laboratories Q2 results: Net profit falls 11.8% YoY to Rs 675 crore, revenue up 13.8%",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNRlVNNzBDVUpndTYwNUtIZ3ZMLXhlNVl1U3BodS0ta3VkaHBJQ0Mtam1QajZtLXVQWXVMcWxYWVFRQzQwVHdCWnRJbDFDcXkwM3FZd1NVcjFoNmRvX0VtTTZrRGk0SWsyblhvNGRzWG43cmI2R1ZvQ1dlT1V3QzZMeE82UUZCdTZzZUlMNjFyc0NHcEs5bnRTZHdfX3JpTXNNVEN0c09MZGh6ZXRZVFMxSWlDeVh0dDM2b1hPdHJRQUkwNUtQY293Y19ZNW5mSVp5S1EyN0wtSmpieEJZbW5acXhlQzVEZ243U3c?oc=5",
+      "src": "Business Upturn"
+     }
+    ]
+   },
+   {
     "k": "PAGEIND",
     "n": "Page Industries",
     "s": -15.0,
@@ -3147,32 +3185,6 @@
       "k": "price",
       "t": "Closed weak: -12.9% on 15.2× usual volume, near the day's low",
       "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "ALKEM",
-    "n": "Alkem Laboratories",
-    "s": -12,
-    "conf": "High",
-    "p": 5302.0,
-    "pct": -2.68,
-    "mc": 63393.4,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Alkem Laboratories Q2 Results: Net Profit Falls 12% To Rs 675 Crore; Ropes In Gopal Kothari As CFO",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOMlJyRjl2YkJvTC1rcEhTMmtCM1lNUGhabnd5c1NiUXVrOVVTcDZSbnZKZEl4T1F2bEhRZS1aeTE0VkducFFITDUwU0Vtd2daemxLTFRvd1pRdXRpNUZmakZzTW1xUXdXTjFZanJpd2hNcFRGWGotODB0dG1LQV9NSVFlUWJiRWhqUDBJVllFM1owekYwR1dEMnVmQ3ctNW1hbVJfR1ZfeUdBYUNjcXZoTmhKZW1ySVNCRmJndVlvLTBYQ04tUURMbUljR0FWRDBXbjlYcUFrdEg2ZXNFdlRXS9IB6AFBVV95cUxON1dJVHBvSVl5WjBtVlRFZ2JQZjNhRTEwVUlTeXlzRUlfd3hZOU1uOFRBRzF2WWEya3p2UjdrNDB5dUo2RlhJMkRDUF9wOUZBY21MUGRObkNQaGJwLVFTTnJtSW5kNFhkU25WY0VhRXlwZXdPTjM5NEQ2TWhEbDMxcWJtZ1hhSEl2TFVzREN1UU5HQ1FmSUdvTDAzNUh2NFFBVTJySUdKeVVtdjA4S29FcmxoUmZ1Wm40Ry1Zc05Ea2p2cVJ6TmNON1VoWjNHNjVWcTMxRDNKMEY4ODY1Qk4xV2wyV1lWRHct?oc=5",
-      "src": "NDTV Profit"
-     },
-     {
-      "k": "news",
-      "t": "Alkem Laboratories Q2 profit falls 12% YoY to ₹675 crore, EBITDA grows 22%; board appoints new CFO",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPcWd2SC1wU25LUTNURGFNWDh1OGJDS3UtNnhqeEZFOTA3ZXhDNk1nMlhKTmJuMEtfVU1Vd2d2UmMtbXpzR3RDTU5ocWN4VkpoNXFuNEdDVnB6aTI0UjlwcmQtbE9JUVFoeng5azFmTGFQc3duZjRDZmhYTk9uRnAtZ1UyTkhxd0JCRUVpNVFNYVVVUXdQY2ZhRjBsbVljekdQYnhRLVhIVjdKS21vR0xaQ280ZUdJTm00SlVseFlYN1BsZXFWWl9qTENtN011algxajdJXzhEaEJpWkdXTm00b1JzaG9HXzMwaHNz?oc=5",
-      "src": "Upstox"
      }
     ]
    },
@@ -3373,23 +3385,6 @@
      {
       "k": "price",
       "t": "Closed weak: -5.3% on 7.8× usual volume, near the day's low",
-      "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "LOKESHMACH",
-    "n": "Lokesh Machines",
-    "s": -3.0,
-    "conf": "Low",
-    "p": 371.25,
-    "pct": -8.11,
-    "mc": 809.2,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -8.1% on 8.3× usual volume, near the day's low",
       "s": -3.0
      }
     ]
@@ -4009,7 +4004,7 @@
   }
  },
  "hilo": {
-  "at": "12 Nov, 8:23 PM",
+  "at": "12 Nov, 8:33 PM",
   "hi": [
    [
     "PAYTM",
@@ -4078,7 +4073,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "12 Nov, 8:23 PM",
+  "at": "12 Nov, 8:33 PM",
   "g": [
    [
     "544535",
@@ -4497,7 +4492,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods",
+    "Flex Foods Ltd-$",
     43.84,
     -18.78,
     53.98
@@ -4630,7 +4625,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes",
+    "Mukat Pipes Ltd-$",
     15.62,
     -8.44,
     17.06
@@ -4700,7 +4695,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping",
+    "Shahi Shipping Ltd-$",
     10.05,
     -7.63,
     10.88
@@ -4749,7 +4744,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals",
+    "Laffans Petrochemicals Ltd-$",
     27.34,
     -7.01,
     29.4
@@ -4770,7 +4765,7 @@
    ],
    [
     "530821",
-    "SSPDL",
+    "SSPDL Ltd-$",
     13.57,
     -6.86,
     14.57
@@ -4798,7 +4793,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     283.2,
     -6.63,
     303.3
@@ -4854,7 +4849,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     54.19,
     -6.41,
     57.9
@@ -4897,7 +4892,7 @@
   ]
  },
  "allmov": {
-  "at": "12 Nov, 8:23 PM",
+  "at": "12 Nov, 8:33 PM",
   "g": [
    [
     "B544535",
@@ -14010,7 +14005,7 @@
   ]
  },
  "tw": {
-  "at": "12 Nov, 8:23 PM",
+  "at": "12 Nov, 8:33 PM",
   "phase": "evening",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14201,6 +14196,22 @@
     "s": 18.2
    },
    {
+    "k": "ASTRAMICRO",
+    "n": "Astra Microwave Products",
+    "p": 1785.8,
+    "pct": 3.39,
+    "vx": 8.2,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Astra Microwave Q2 Results: Stock jumps 5% on strong profit growth, margin expansion - CNBC TV18",
+      "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSHpQUFI1T2FSTkNmSDhGZjEzMzlpVWZHZ1N4emlEZkxMYXFId3FINk5aQVpCNkcwdEpZYUVpTW1hT19jVGx1QXpVREs0X21KQ3NqOXZTTDJRRWtaVjgwQ2d6QjdQOEdmQnNBWDZ1MWhienRYcW9aeHJmaUNMWkZZczNCd1d6NjdiNDE0dmltOTlmMnBMVW0xWnFkUjVXZ1liMy1ZRDZQZnZmbDlrOFVRYzdfSXdWZw?oc=5"
+     }
+    ],
+    "s": 16.8
+   },
+   {
     "k": "PAYTM",
     "n": "One 97 Communications",
     "p": 1925.0,
@@ -14321,6 +14332,22 @@
     "s": 11.2
    },
    {
+    "k": "LANDMARK",
+    "n": "Landmark Cars",
+    "p": 498.6,
+    "pct": 1.82,
+    "vx": 4.5,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Landmark Cars Q2 results: Net profit jumps over 15 times YoY to Rs 18.5 crore; revenue rises 19.9%",
+      "u": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQX3BFeG1ndzFPUDZidnRfTFZTNERFNEJBbW9QYWYwMmF1T184aEREem5xS3JGb3p6ZGI5eW9zQWFub2p3d3plclZjRFVBOFZNTHhWdmZzX2VJTlpJZ0g5N2FhOVZMTXY4cGo3RWNieDluR3lOcEhIeHJJMEZqdVNrYXhlV3hZa21sVjlsQWtfWXMtdlllZlY4c2JLS28xWk9aUnRJa010cjZfZnd2bDlDWlRlbjJOLXg4cm9JdHlQbTZCRjdnNWlUeHoxOTBiRUJKX1I3bWV6S1dPUjg4MXNwTFc3SDhFcGtlLXlSaDlrOFlMWS16?oc=5"
+     }
+    ],
+    "s": 11.2
+   },
+   {
     "k": "REDINGTON",
     "n": "Redington",
     "p": 359.1,
@@ -14397,41 +14424,6 @@
      }
     ],
     "s": 11.0
-   },
-   {
-    "k": "GABRIEL",
-    "n": "Gabriel India",
-    "p": 1641.2,
-    "pct": 16.53,
-    "vx": 55.5,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
-      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbG9UV3k0b1JrRmNNSFVjR21vRTFhOG1VSUwyNGRXdy1pamJiUkp3bXV5SUd5aGJVQVBuQWRtQWVTYjNvYnl6TEZWNmxINnBpZm1rNkNhWmtoTUpCNnVtdjlEd0V4cGNPR1hSWEc0LWVQcDhDbUdTSUdaNFYtdUZkYVUzckV4b2p0Q2Qzb3ZKX1l3ZTFDTThKR294azZTZXptcG1xNWpSWWFDeTFDNlEzWkxwRm9XNGtFTTFVV0tibkxYNV9Zc2U2NHJiMUJEMmlUSmpRZjBB0gHbAUFVX3lxTFBLeFlOdWlXaHJ5OG1CYlQ1UnljYktVRkQ2eVZNWW5ERjVFd2NYakZmNGpZbm5ZWGQzS3l5YmtuWTdXb2F1SmhUZGlJbm52TU4xeGNsNzZNR2FhRjhkdzdoQS10YnFheXN2anBLMGhseE9QTy1Md3dlc3drNUd5VGUwel9ZSEx5N25TanBTYW10RzYzNGQ5b2FlM2JqWUM5M2h4S2RDbDJqLVFzZ2tZeFhVdUNfeXA0YzBRVWxnYm1QOEdFNk5TbTBjUFFPVUJUMlNVX0pHbGllVlJ5NA?oc=5"
-     }
-    ],
-    "s": 11.0
-   },
-   {
-    "k": "FUSIONCX",
-    "n": "Fusion CX",
-    "p": 302.0,
-    "pct": 5.01,
-    "vx": 2.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "due",
-      "x": "Results on 13 Nov"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.0%, closing near the day's high on 2.6× normal volume"
-     }
-    ],
-    "s": 10.6
    }
   ],
   "fo": [
@@ -15050,10 +15042,10 @@
     "CANHLIFE": 132.1,
     "INDNIPPON": 1260.7,
     "INDGN": 666.05,
+    "ASTRAMICRO": 1785.8,
     "PAYTM": 1925.0,
     "DATAPATTNS": 4231.0,
     "LEMONTREE": 120.41,
-    "INNOVACAP": 1162.8,
     "CDSL": 1455.0,
     "BEL": 404.8,
     "MOTILALOFS": 1216.8,
