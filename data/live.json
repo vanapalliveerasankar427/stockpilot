@@ -1,6 +1,6 @@
 {
  "label": "12 Nov 2026, 3:39 PM IST",
- "updated": "2026-11-12T15:39:00+05:30",
+ "updated": "2026-11-12T15:39:48+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -365,14 +365,14 @@
    "t": 1794477685
   },
   "SENSEX": {
-   "v": 81496.77,
+   "v": 81431.79,
    "prev": 81879.4,
-   "ch": -382.63,
-   "pct": -0.47,
+   "ch": -447.61,
+   "pct": -0.55,
    "high": 82325.61,
    "low": 81576.15,
    "open": 81808.81,
-   "t": 1794477239
+   "t": 1794477286
   },
   "BANKNIFTY": {
    "v": 61518.5,
@@ -412,7 +412,7 @@
    "high": 17.55,
    "low": 15.25,
    "open": 17.56,
-   "t": 1794478139
+   "t": 1794478187
   }
  },
  "nifty8": [
@@ -460,24 +460,24 @@
   "t": 1794477800
  },
  "brent": {
-  "v": 92.34,
+  "v": 92.44,
   "prev": 92.76,
-  "ch": -0.42,
-  "pct": -0.45,
+  "ch": -0.32,
+  "pct": -0.34,
   "high": 93.92,
   "low": 91.19,
   "open": 91.28,
-  "t": 1794477480
+  "t": 1794477583
  },
  "goldSpot": {
-  "v": 3947.8,
+  "v": 3948.4,
   "prev": 4000.5,
-  "ch": -52.7,
-  "pct": -1.32,
+  "ch": -52.1,
+  "pct": -1.3,
   "high": 4005.9,
   "low": 3929.5,
   "open": 3981.0,
-  "t": 1794477539
+  "t": 1794477584
  },
  "sectors": [
   [
@@ -1063,7 +1063,7 @@
   "dii_sell": 28138.92,
   "fii_buy": 30087.21,
   "fii_sell": 17523.88,
-  "fetched": "12 Nov, 3:35 PM",
+  "fetched": "12 Nov, 3:39 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1218,7 +1218,13 @@
    "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPb1Bhc253SGlMZGdtdjFTWk9raTg0ckVuNEJuM0YycUtidDd4dll4Z2RIM0t3TXlxX1hvZnpxZG1FanQzOTFDeW9BalFwLTVrSnRGbDJVa0tzMHNQZUdkR3pwQUZMYTlDOFhCOGhuSzgyZW1aQkVCcE9rRkhUU3Jtd3dmbW1PMV9Gd0NCZHNRN2xfeUdmeFZxb2cxTEp0VjhNRFVnWWlmNW40WUFJQUlpNzNnS1g0QTA2Vi0tYkRIb09paUxB?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 24 IPOs",
+  "subscription: 0 IPOs from 0 cards",
+  "bse eod 2026-11-11: 5235 scrips",
+  "outlook: 310 headlines, 25 up, 15 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-12",
@@ -2404,7 +2410,7 @@
   },
   "2026-11-12": {
    "NIFTY": 25299.35,
-   "SENSEX": 81496.77,
+   "SENSEX": 81431.79,
    "BANKNIFTY": 61518.5,
    "MIDCAP": 62039.0,
    "SMALLCAP": 19706.75,
@@ -2416,12 +2422,12 @@
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-11: 5235 scrips",
-  "outlook: 302 headlines, 25 up, 16 down"
+  "outlook: 310 headlines, 25 up, 15 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4810,
-  "at": "12 Nov, 3:35 PM"
+  "at": "12 Nov, 3:39 PM"
  },
  "global": [
   [
@@ -2456,9 +2462,9 @@
   ],
   [
    "FTSE 100",
-   10875.36,
-   0.37,
-   1794477240
+   10874.94,
+   0.36,
+   1794477287
   ],
   [
    "US 10Y yield",
@@ -2468,8 +2474,8 @@
   ]
  ],
  "outlook": {
-  "at": "12 Nov, 3:35 PM",
-  "headlines": 302,
+  "at": "12 Nov, 3:39 PM",
+  "headlines": 310,
   "screened": 1808,
   "cues": [
    "US tech (Nasdaq) rose 1.6% in the last session",
@@ -2949,8 +2955,8 @@
      },
      {
       "k": "price",
-      "t": "Closed strong: +4.4% on 2.3× usual volume, near the day's high",
-      "s": 1.8775828225724505
+      "t": "Closed strong: +4.4% on 2.2× usual volume, near the day's high",
+      "s": 1.8724574517389827
      }
     ]
    },
@@ -3003,44 +3009,6 @@
     ]
    },
    {
-    "k": "PNB",
-    "n": "Punjab National Bank",
-    "s": 4,
-    "conf": "Medium",
-    "p": 141.79,
-    "pct": 2.39,
-    "mc": 162958.4,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
-      "src": "Upstox"
-     }
-    ]
-   },
-   {
-    "k": "IOB",
-    "n": "Indian Overseas Bank",
-    "s": 4,
-    "conf": "Medium",
-    "p": 31.61,
-    "pct": 0.44,
-    "mc": 60870.1,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
-      "src": "Upstox"
-     }
-    ]
-   },
-   {
     "k": "AVANTIFEED",
     "n": "Avanti Feeds",
     "s": 4,
@@ -3079,6 +3047,44 @@
     ]
    },
    {
+    "k": "PNB",
+    "n": "Punjab National Bank",
+    "s": 4,
+    "conf": "Medium",
+    "p": 141.79,
+    "pct": 2.39,
+    "mc": 162958.4,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
+      "src": "Upstox"
+     }
+    ]
+   },
+   {
+    "k": "IOB",
+    "n": "Indian Overseas Bank",
+    "s": 4,
+    "conf": "Medium",
+    "p": 31.61,
+    "pct": 0.44,
+    "mc": 60870.1,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
+      "src": "Upstox"
+     }
+    ]
+   },
+   {
     "k": "DCXINDIA",
     "n": "DCX Systems",
     "s": 4,
@@ -3102,13 +3108,20 @@
    {
     "k": "BDL",
     "n": "Bharat Dynamics",
-    "s": -19.0,
+    "s": -27.0,
     "conf": "High",
     "p": 1055.1,
     "pct": -4.08,
     "mc": 38676.0,
     "sec": "Industrials",
     "why": [
+     {
+      "k": "news",
+      "t": "Bharat Dynamics Q2 FY27 results: Net profit drops 15% YoY; revenue increases to ₹1,664 crore",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMkt0dXlLSUtndEVEeXVMR2xWM2pMS1JVNU10OXZDaFYyTl82cUpxaHBmeGtwOEVqUlFFYUIxTHFabFQ3YXZ5ZTNIY2lIcmQtMFIwUG5rS0RVaDNtMF9vRmJua19KUVRKUDhaTXF0Q3E1MWs4NEdZcnFjeXZkeUMwZUVaRUJsUDNIdExEN1VFSXN5allBR1Rxbkx3el9Gb3Iza1ZZTWVOblNqZnJvR2VwZEg0OVZoVUFLcmxfdUJMYmMzVlR4aXZMQjNSODh6eWp2MWgxbGQ1NWZvaDY0MlA2Wk9ZTmwxZw?oc=5",
+      "src": "Upstox"
+     },
      {
       "k": "news",
       "t": "Bharat Dynamics Q2 Results: Shares tumble 4% after weak earnings; operating profit falls 57%",
@@ -3182,7 +3195,7 @@
      },
      {
       "k": "price",
-      "t": "Closed weak: -12.9% on 16.9× usual volume, near the day's low",
+      "t": "Closed weak: -12.9% on 16.7× usual volume, near the day's low",
       "s": -3.0
      }
     ]
@@ -3256,27 +3269,8 @@
      },
      {
       "k": "price",
-      "t": "Closed weak: -4.4% on 2.1× usual volume, near the day's low",
-      "s": -1.8016703390379591
-     }
-    ]
-   },
-   {
-    "k": "COCHINSHIP",
-    "n": "Cochin Shipyard",
-    "s": -4,
-    "conf": "Medium",
-    "p": 1196.0,
-    "pct": -0.5,
-    "mc": 31464.5,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Cochin Shipyard Shares Fall 7% As Q2 Profit Halves, Shipbuilding Business Slips Into Loss",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNGVGTG44VURoUXRUWjk4djNyNEpvQU5UWEFYNF9lWFRDQmkxTDYzYTlrblhabGNRcjlNLWpnNldpTHhwRHNVRE5sYWs2RjY5RVh1Z1NNellmNjBNa3JnNFZ0djRmVW5zZ3l6ZE4ydlRTOFNSOTJDNDlhdmIzY1c1YUFXMnpXQkFjVkhOM2lqMEw2QkRBak5TMU5hWXdESEpnZGVBU21UYk4xY29Xcl9teXpDWXdnUWhqelJza1NocXdJZGFKWGVEVmpHMA?oc=5",
-      "src": "BW Businessworld"
+      "t": "Closed weak: -4.4% on 2.0× usual volume, near the day's low",
+      "s": -1.7697205005928704
      }
     ]
    },
@@ -4013,7 +4007,7 @@
   }
  },
  "hilo": {
-  "at": "12 Nov, 3:35 PM",
+  "at": "12 Nov, 3:39 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -4174,7 +4168,7 @@
    ],
    [
     "505714",
-    "Gabriel India Ltd-$",
+    "Gabriel India",
     1619.0,
     14.94,
     1408.55
@@ -4223,7 +4217,7 @@
    ],
    [
     "513353",
-    "Cochin Minerals & Rutiles Ltd-$",
+    "Cochin Minerals & Rutiles",
     323.0,
     13.55,
     284.45
@@ -4370,7 +4364,7 @@
    ],
    [
     "523828",
-    "Menon Bearings Ltd-$",
+    "Menon Bearings",
     360.8,
     10.0,
     328.0
@@ -4505,7 +4499,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods",
+    "Flex Foods Ltd-$",
     45.0,
     -16.64,
     53.98
@@ -4659,7 +4653,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes",
+    "Mukat Pipes Ltd-$",
     15.62,
     -8.44,
     17.06
@@ -4708,7 +4702,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping",
+    "Shahi Shipping Ltd-$",
     10.05,
     -7.63,
     10.88
@@ -4729,7 +4723,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals",
+    "Laffans Petrochemicals Ltd-$",
     27.25,
     -7.31,
     29.4
@@ -4750,7 +4744,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     281.9,
     -7.06,
     303.3
@@ -4834,7 +4828,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     54.25,
     -6.3,
     57.9
@@ -4905,7 +4899,7 @@
   ]
  },
  "allmov": {
-  "at": "12 Nov, 3:35 PM",
+  "at": "12 Nov, 3:39 PM",
   "g": [
    [
     "B544535",
@@ -14018,7 +14012,7 @@
   ]
  },
  "tw": {
-  "at": "12 Nov, 3:35 PM",
+  "at": "12 Nov, 3:39 PM",
   "phase": "close",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14241,7 +14235,7 @@
       "x": "Up 7.3%, closing near the day's high on 3.8× normal volume"
      }
     ],
-    "s": 14.1
+    "s": 14.0
    },
    {
     "k": "LEMONTREE",
@@ -14468,14 +14462,14 @@
       "x": "Up 7.3%, closing near the day's high on 3.8× normal volume"
      }
     ],
-    "s": 14.1
+    "s": 14.0
    },
    {
     "k": "DATAPATTNS",
     "n": "Data Patterns (India)",
     "p": 4231.0,
     "pct": 4.42,
-    "vx": 2.3,
+    "vx": 2.2,
     "fo": true,
     "why": [
      {
@@ -14485,7 +14479,7 @@
      },
      {
       "t": "momentum",
-      "x": "Up 4.4%, closing near the day's high on 2.3× normal volume"
+      "x": "Up 4.4%, closing near the day's high on 2.2× normal volume"
      }
     ],
     "s": 10.9
@@ -14571,7 +14565,7 @@
       "x": "Up 2.4%, closing near the day's high on 2.9× normal volume"
      }
     ],
-    "s": 7.5
+    "s": 7.4
    },
    {
     "k": "ABCAPITAL",
@@ -14593,15 +14587,15 @@
     "n": "ICICI Life Insurance",
     "p": 466.95,
     "pct": 3.77,
-    "vx": 3.6,
+    "vx": 3.5,
     "fo": true,
     "why": [
      {
       "t": "momentum",
-      "x": "Up 3.8%, closing near the day's high on 3.6× normal volume"
+      "x": "Up 3.8%, closing near the day's high on 3.5× normal volume"
      }
     ],
-    "s": 6.7
+    "s": 6.6
    },
    {
     "k": "PHOENIXLTD",
@@ -14616,7 +14610,7 @@
       "x": "Up 5.6%, closing near the day's high on 2.2× normal volume"
      }
     ],
-    "s": 6.3
+    "s": 6.0
    },
    {
     "k": "MFSL",
@@ -14631,7 +14625,7 @@
       "x": "Up 5.5%, closing near the day's high on 2.1× normal volume"
      }
     ],
-    "s": 5.9
+    "s": 5.8
    }
   ],
   "due": [
@@ -14716,7 +14710,7 @@
     "n": "ABB India",
     "p": 6923.0,
     "pct": -0.57,
-    "vx": 1.2,
+    "vx": 1.1,
     "fo": true,
     "why": [
      {
@@ -14731,7 +14725,7 @@
     "n": "Eicher Motors",
     "p": 7549.0,
     "pct": -0.57,
-    "vx": 1.8,
+    "vx": 1.7,
     "fo": true,
     "why": [
      {
