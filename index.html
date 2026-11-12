@@ -2568,8 +2568,8 @@ function renderGainLose(){const el=document.getElementById('gainlose');if(!el)re
   const row=(x,i)=>`<a class="gl-row" href="#stock-${esc(x.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
      <div class="gl-nm"><b>${esc(x.n)}${x.bse?' <span class="gl-x">BSE</span>':''}</b><span class="gl-l2"><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small><em class="gl-p num" data-lc="${esc(x.k)}">${x.pc>=0?'+':''}${x.pc.toFixed(2)}%</em></span></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
   el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large'],['mid','Mid'],['small','Small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
-    <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${GA.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
-    <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${DA.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
+    <div class="gl-cols"><div class="gl-col up" data-ls="d" data-li=".gl-row"><div class="gl-t">▲ Top gainers <b>${GA.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
+    <div class="gl-col dn" data-ls="a" data-li=".gl-row"><div class="gl-t">▼ Top losers <b>${DA.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
     <div class="gl-f"><span class="note">Every NSE and BSE stock · Large ₹20,000 Cr+ · Mid ₹5,000–20,000 Cr · Small under ₹5,000 Cr · ${mktOpen()?'live':'last session'}</span><span style="display:flex;gap:6px">${more?`<button class="ghost" type="button" id="glMore">Show 50 more</button><button class="ghost" type="button" id="glAll">Show all</button>`:''}${glN>10?`<button class="ghost" type="button" id="glLess">Top 10</button>`:''}</span></div></div>`;
   el.querySelectorAll('[data-gl]').forEach(b=>b.onclick=()=>{glSeg=b.dataset.gl;glN=10;renderGainLose()});
   const y0=()=>scrollY,keep=f=>{const y=y0();f();renderGainLose();scrollTo(0,y)};
@@ -2628,14 +2628,14 @@ function renderTomorrow(){const el=document.getElementById('tomorrowpage');if(!e
      <div class="tw-best">${(last.best||[]).map(([k,v])=>`<a href="#stock-${esc(k)}"><b>${esc((UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k)}</b><span class="${v>=0?'up':'down'} num">${v>=0?'+':''}${v}%</span></a>`).join('')}</div>
      ${H.length>1?`<p class="note" style="margin:8px 0 0">Last ${H.length} lists: ${H.reduce((a,h)=>a+h.up,0)} of ${H.reduce((a,h)=>a+h.n,0)} stocks rose the next session (${Math.round(H.reduce((a,h)=>a+h.up,0)/Math.max(1,H.reduce((a,h)=>a+h.n,0))*100)}%).</p>`:''}</div>`
     :`<div class="tw-rec"><span class="lbl">Track record</span><small>Starts after the first list: every evening we score how the previous list actually did.</small></div>`;
-  const twp=o=>{const v=LT.pct[o.k]!=null?LT.pct[o.k]:o.pct;return v==null?-999:v};const L=(twTab==='fo'?T.fo:twTab==='due'?T.due:T.picks).slice().sort((a,b)=>twp(b)-twp(a)); // biggest % first
+  const twp=o=>{let v=LT.pct[o.k]!=null?LT.pct[o.k]:pctOf(o.k);if(v==null)v=o.pct;return v==null?-999:v};const L=(twTab==='fo'?T.fo:twTab==='due'?T.due:T.picks).slice().sort((a,b)=>twp(b)-twp(a)); // biggest % first
   el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>${esc(PH[0])} · updated ${esc(T.at)}</div><h1 class="ptitle">Tomorrow's watch</h1>
     <p class="psub">Stocks with a reason to move next session: results just out, positive news, and strong closes on heavy volume. ${esc(PH[1])}.</p></div></div>
    <div class="tw-warn">⚠️ Signals for research, not buy/sell advice. A good list still misses often: results can disappoint, and global markets can pull everything down overnight. MarketVedaPro is not SEBI-registered.</div>
    ${rec}
    <div class="tw-tabs" role="tablist">${[['picks','Top picks',T.picks.length],['fo','F&O',T.fo.length],['due','Results due',T.due.length]].map(([k,l,n])=>`<button type="button" role="tab" data-tw="${k}" aria-selected="${twTab===k}">${l} <b>${n}</b></button>`).join('')}</div>
    ${twTab==='due'?'<p class="note" style="margin:0 0 10px">Board meetings for results after today\'s close or before the next open. The direction is unknown until the numbers are out; the 8 PM update moves good results into Top picks.</p>':''}
-   <div class="tw-list">${(L||[]).map(card).join('')||`<p class="aw-msg" style="padding:20px">Nothing here right now.</p>`}</div>
+   <div class="tw-list" data-ls="d" data-li=".tw-card">${(L||[]).map(card).join('')||`<p class="aw-msg" style="padding:20px">Nothing here right now.</p>`}</div>
    <p class="note" style="margin-top:12px">How it's built: results and positive news from ${esc(String((LIVED.outlook&&LIVED.outlook.headlines)||'hundreds of'))} headlines, NSE &amp; BSE results calendars, and every stock that closed up 2%+ near its day's high on 2× normal volume. Alerts at 3:20 PM and 8 PM (bell → settings → Tomorrow's watch).</p>`;
   el.querySelectorAll('[data-tw]').forEach(b=>b.onclick=()=>{twTab=b.dataset.tw;renderTomorrow()})}
 function renderStocks(){renderGainLose();
@@ -3455,9 +3455,17 @@ function fnoHTML(){const F=FNO();
   return `<div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals from news, price and volume, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
    <div class="fo-sw" role="group" aria-label="Direction"><button type="button" data-fs="bull" aria-pressed="${fnoSide==='bull'}">▲ Up signals <b>${D.bull.length}</b></button><button type="button" data-fs="bear" aria-pressed="${fnoSide==='bear'}">▼ Down signals <b>${D.bear.length}</b></button></div>
    <p class="fo-note">${open?'Live during market hours':'Based on the last session; refreshes live from 9:15 AM'} · scanning ${D.n} F&amp;O stocks · ranked by move size, volume, news and 52-week levels</p>
-   <div class="ol-list">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
+   <div class="ol-list" data-ls="${fnoSide==='bull'?'d':'a'}" data-li=".fo-row">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
 
 let olTab='up',olAll=false;
+// Keep every live list in order of % move: biggest rise first (data-ls="d") or biggest fall first ("a"), re-sorted on each live tick
+function liveSort(){if(document.hidden)return;try{liveSort0()}catch(e){}}
+function liveSort0(){document.querySelectorAll('[data-ls]').forEach(box=>{const sel=box.dataset.li,dir=box.dataset.ls==='a'?1:-1;const it=[...box.querySelectorAll(':scope > '+sel)];if(it.length<2)return;
+  const v=e=>{const a=e.matches('a[href^="#stock-"]')?e:e.querySelector('a[href^="#stock-"]');if(!a)return null;const k=decodeURIComponent(a.getAttribute('href').slice(7));const x=LT.pct[k]!=null?LT.pct[k]:pctOf(k);return x==null||!isFinite(x)?null:+x};
+  const kv=it.map((e,i)=>[e,v(e),i]),srt=kv.slice().sort((a,b)=>a[1]==null?1:b[1]==null?-1:(a[1]-b[1])*dir||a[2]-b[2]);
+  if(srt.every((x,i)=>x[0]===it[i]))return;const anchor=it[it.length-1].nextSibling;srt.forEach(([e])=>{e.style.animation='none';box.insertBefore(e,anchor)});
+  srt.forEach(([e],i)=>{const r=e.querySelector('.tw-rank,.gl-i');if(r)r.textContent=i+1})})}
+setTimeout(()=>ltHooks.push(liveSort),0);setInterval(liveSort,3000);
 function outlookHTML(){const O=LIVED&&LIVED.outlook;if(!O)return '';
   const livePct=x=>{if(LT.pct[x.k]!=null)return LT.pct[x.k];const q=typeof qOf==='function'?qOf(x.k):null;return q&&q.pct!=null?q.pct:x.pct};
   const UP=(O.up||[]).filter(x=>{const p=livePct(x);return p!=null&&p>0}).sort((a,b)=>livePct(b)-livePct(a)),DN=(O.down||[]).filter(x=>{const p=livePct(x);return p!=null&&p<0}).sort((a,b)=>livePct(a)-livePct(b)); // biggest move first
@@ -3521,12 +3529,12 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
        L.filter(([u,q])=>q.vr>=3).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>vx(q)],
      ['🏆','Top gainers','Biggest rises among the stocks screened.',[...L].sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>vx(q)],
      ['🔻','Top losers','Biggest falls among the stocks screened.',[...L].sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>vx(q)]];
-    b.innerHTML=`<div class="tday-h"><span class="lbl" style="margin:0">Screened ${L.length.toLocaleString('en-IN')} NSE stocks</span>
+    b.innerHTML=`<div class="tday-h"><span class="lbl" style="margin:0">Screened ${L.length.toLocaleString('en-IN')} NSE and BSE stocks</span>
        <div class="seg" id="tdCap">${[[0,'All sizes'],[500,'₹500 Cr+'],[5000,'₹5,000 Cr+'],[20000,'Large caps']].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${tdF.minCap===v}">${l}</button>`).join('')}</div>
        <label class="check" style="display:flex;gap:6px;align-items:center;font-size:13.5px"><input type="checkbox" id="tdSme" ${tdF.sme?'checked':''}> Include SME</label>
        <span class="muted" style="font-size:12.5px">Prices: ${esc(ALLQ.label)}</span></div>
-     <div class="scr">${S.map(([ic,t,d,arr,why])=>`<div class="glass card"><h3><i>${ic}</i>${t}${t.startsWith('Top ')?'':`<span class="pill plain" style="margin-left:auto;font-size:11.5px">${arr.length}</span>`}</h3><p class="d">${d}</p>${arr.slice(0,8).map(x=>row(x,why(x))).join('')||'<p class="note" style="padding:10px 0">No stocks match right now.</p>'}</div>`).join('')}</div>
-     <p class="src">Rules use real NSE prices, volumes and 52-week ranges via Yahoo Finance, updated every few minutes in market hours. Stocks under ₹20 are left out. Before 9:15 AM the lists reflect the previous session. Not investment advice: do your own research before you trade.</p>`;
+     <div class="scr">${S.map(([ic,t,d,arr,why])=>`<div class="glass card" data-ls="${/losers|pressure|low/i.test(t)?'a':'d'}" data-li=".srow"><h3><i>${ic}</i>${t}${t.startsWith('Top ')?'':`<span class="pill plain" style="margin-left:auto;font-size:11.5px">${arr.length}</span>`}</h3><p class="d">${d}</p>${arr.slice(0,8).map(x=>row(x,why(x))).join('')||'<p class="note" style="padding:10px 0">No stocks match right now.</p>'}</div>`).join('')}</div>
+     <p class="src">Rules use real NSE prices, volumes and 52-week ranges via Yahoo Finance, updated every few minutes in market hours. Before 9:15 AM the lists reflect the previous session. Not investment advice: do your own research before you trade.</p>`;
     b.querySelectorAll('#tdCap button').forEach(x=>x.onclick=()=>{tdF.minCap=+x.dataset.v;renderToday()});
     const sm=document.getElementById('tdSme');if(sm)sm.onchange=()=>{tdF.sme=sm.checked;renderToday()};
   })}
