@@ -132,7 +132,8 @@ def bse_closes(keys):
     return out
 
 
-FUND_TYPES = ["quarterlyTotalRevenue", "quarterlyNetIncome", "quarterlyBasicEPS", "annualTotalRevenue", "annualNetIncome", "annualBasicEPS"]
+FUND_TYPES = ["quarterlyTotalRevenue", "quarterlyNetIncome", "quarterlyBasicEPS", "annualTotalRevenue", "annualNetIncome", "annualBasicEPS",
+              "annualStockholdersEquity", "annualTotalDebt", "annualOperatingCashFlow"]
 
 
 def fundamentals(ysym):

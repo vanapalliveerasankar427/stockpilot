@@ -1183,6 +1183,20 @@ body:not(.ready) footer{display:none}
 .ch-fg span{font-size:11.5px;color:var(--muted)}.ch-fg b{font-size:16px;color:var(--up)}
 .pn-entry{display:flex;align-items:center;gap:12px;margin:12px 0 16px;padding:14px 16px;border-radius:20px;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,color-mix(in srgb,#f59e0b 16%,transparent),color-mix(in srgb,#ef4444 10%,transparent));border:1px solid color-mix(in srgb,#f59e0b 30%,transparent)}
 .pn-entry>span:nth-child(2){flex:1;display:grid}.pn-entry b{font-size:15.5px}.pn-entry small{color:var(--muted);font-size:12.5px}
+.gr-entry{background:linear-gradient(135deg,color-mix(in srgb,#10b981 16%,transparent),color-mix(in srgb,#3b82f6 12%,transparent))}.gr-coin{background:linear-gradient(135deg,#34d399,#2563eb)!important;font-size:18px}
+.gr-h h2{margin:4px 0 6px;font-size:24px}.gr-warn{font-size:13px;line-height:1.55;padding:12px 14px;border-radius:16px;background:color-mix(in srgb,#f59e0b 14%,transparent);border:1px solid color-mix(in srgb,#f59e0b 35%,transparent);margin:10px 0}
+.gr-how{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 12px}.gr-how summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.gr-tabs{display:flex;gap:4px;padding:3px;border-radius:12px;background:var(--soft);margin:8px 0}.gr-tabs button{flex:1;border:0;background:none;font:inherit;font-size:13px;font-weight:700;padding:8px 2px;border-radius:9px;color:var(--muted);cursor:pointer}.gr-tabs button[aria-pressed="true"]{background:var(--glass2,var(--bg));color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.gr-sort{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--muted);margin:0 0 10px;flex-wrap:wrap}.gr-sort select{font:inherit;padding:5px 8px;border-radius:10px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}
+.gr-list{display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}@media(min-width:900px){.gr-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.gr-card{border-radius:20px;padding:14px;background:var(--glass,var(--bg));border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.gr-top{display:grid;grid-template-columns:22px 40px minmax(0,1fr) auto;gap:10px;align-items:center;text-decoration:none;color:var(--ink)}.gr-top .lg{width:40px;height:40px;border-radius:12px}
+.gr-rank{font-weight:800;color:var(--muted);font-size:13px}.gr-nm b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gr-nm small{color:var(--muted);font-size:12px}
+.gr-px{text-align:right}.gr-px b{font-size:15px}.gr-px small{display:block;font-size:11.5px;color:var(--muted)}
+.gr-m{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}.gr-m span{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--soft)}.gr-m span.g{color:var(--up)}
+.gr-p{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gr-p>div{border-radius:14px;padding:9px 10px;background:color-mix(in srgb,var(--up) 8%,transparent)}
+.gr-p span{display:block;font-size:11.5px;color:var(--muted);font-weight:600}.gr-p b{font-size:17px}.gr-p em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--up);margin-left:4px}.gr-p small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.gr-risk{font-size:11.5px;color:#d97706;font-weight:600;margin-top:8px}
 .pn-coin{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#fbbf24,#d97706);flex:none}
 .pn-warn{margin:0 0 14px;padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.45;background:color-mix(in srgb,#f59e0b 13%,transparent);border:1px solid color-mix(in srgb,#f59e0b 32%,transparent)}
 .pn-bands{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
@@ -1332,6 +1346,7 @@ body:not(.ready) footer{display:none}
   <div class="phead"><div><div class="eyebrow"><span class="dot"></span><span id="st-eb">Nifty 50 heavyweights · close 29 Oct 2026</span></div><h1 class="ptitle">Stocks</h1>
     <p class="psub">Search any company listed on NSE or BSE for its live price and key figures. Below: the 25 largest Nifty 50 companies with valuation and latest-quarter results.</p></div></div>
   <button type="button" class="allsearch" onclick="openSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search all NSE &amp; BSE stocks, e.g. “GACM Technologies” or “TATAPOWER”</span></button>
+  <a class="pn-entry gr-entry" href="#growth"><span class="pn-coin gr-coin">🚀</span><span><b>Growth stocks · 1-year &amp; 2-year potential</b><small>Companies growing revenue and profit fast at a fair price, checked daily</small></span><span aria-hidden="true">→</span></a>
   <a class="pn-entry" href="#penny"><span class="pn-coin">₹</span><span><b>Penny stocks</b><small>Every NSE &amp; BSE share under ₹20, by price band</small></span><span aria-hidden="true">→</span></a>
   <div id="gainlose"></div>
   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
@@ -1389,6 +1404,7 @@ body:not(.ready) footer{display:none}
 <section class="view" id="v-alerts"><div id="alertspage"></div></section>
 <section class="view" id="v-penny"><div id="pennypage"></div></section>
 <section class="view" id="v-tomorrow"><div id="tomorrowpage"></div></section>
+<section class="view" id="v-growth"><div id="growthpage"></div></section>
 <section class="view" id="v-contact"><div id="contactpage"></div></section>
 <section class="view" id="v-terms"><div id="termspage"></div></section>
 <!-- ========== WATCHLIST ========== -->
@@ -2801,16 +2817,16 @@ document.addEventListener('submit',e=>{const f=e.target;let first=null;
   if(first){e.preventDefault();e.stopImmediatePropagation();first.focus();if(navigator.vibrate)navigator.vibrate(30)}},true);
 
 // ===================== routing =====================
-const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy','contact','portfolio','alerts','penny','tomorrow'];
+const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy','contact','portfolio','alerts','penny','tomorrow','growth'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('ipos/')){const id=decodeURIComponent(h.slice(5));view='ipos';history.replaceState(null,'','#ipos');setTimeout(()=>{if(byId[id])openIpo(id);else toast('This IPO is no longer in the list')},120)}else if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(h.startsWith('pans')){view='pans'}else if(!VIEWS.includes(h))view='markets';
   document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+(view==='privacy'?'terms':view)));document.body.classList.add('ready');
-  const navv=(view==='portfolio'||view==='alerts')?'watchlist':(view==='stock'||view==='penny')?'stocks':(view==='ipo-allot'||view==='allot'||view==='applications'||view==='pans')?'ipo-allot':(view.startsWith('ipo')||view==='learn'||view==='gmp')?'ipos':view;
+  const navv=(view==='portfolio'||view==='alerts')?'watchlist':(view==='stock'||view==='penny'||view==='growth')?'stocks':(view==='ipo-allot'||view==='allot'||view==='applications'||view==='pans')?'ipo-allot':(view.startsWith('ipo')||view==='learn'||view==='gmp')?'ipos':view;
   if(view==='gmp')renderGmpPage(sub);if(view==='allot'){if(route.last!==h)delete allotAuto[sub];renderAllotPage(sub)}route.last=h;if(view==='pans')renderPans();if(view==='contact')renderContact();else route.prev=view;if(view==='terms'||view==='privacy'){renderTerms();if(view==='privacy')setTimeout(()=>{const e=document.getElementById('privacy');if(e)e.scrollIntoView({behavior:'smooth'})},120)}
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
-  if(view==='stocks')renderStocks();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
+  if(view==='stocks')renderStocks();if(view==='growth')renderGrowth();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
   scrollTo({top:0});requestAnimationFrame(animateView)}
 addEventListener('hashchange',route);
 
@@ -3473,6 +3489,33 @@ function fnoHTML(){const F=FNO();
    <div class="ol-list" data-ls="${fnoSide==='bull'?'d':'a'}" data-li=".fo-row">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
 
 let olTab='up',olAll=false;
+// ---- Growth stocks: daily fundamentals screen with 1-year / 2-year price scenarios
+let GR=null,grAt=0,grSeg='all',grSort='s',grN=30;
+function loadGrowth(){if(GR&&Date.now()-grAt<30*6e4)return Promise.resolve(GR);return fetch(DATA_RAW.replace(/\/data\/$/,'/main/')+'data/growth.json?t='+Math.floor(Date.now()/36e5),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.items){GR=j;grAt=Date.now()}return GR}).catch(()=>GR)}
+function renderGrowth(){const el=document.getElementById('growthpage');if(!el)return;
+  if(!GR){el.innerHTML=`<div class="glass card">${LOADER('Loading growth stocks…')}</div>`;loadGrowth().then(j=>{if(j)renderGrowth();else el.innerHTML='<div class="glass card"><p class="note">The growth list is being prepared. It updates once a day, so please check back in a little while.</p></div>'});return}
+  const seg={all:[0,1e15],large:[20000,1e15],mid:[5000,20000],small:[0,5000]}[grSeg];
+  const px=x=>{const v=LT.last[x.k]!=null?LT.last[x.k]:pxOf(x.k);return v||x.px};
+  let L=GR.items.filter(x=>x.mc>=seg[0]&&x.mc<seg[1]).map(x=>{const p=px(x),f=p/x.px;return {...x,cp:p,p1:x.p1.map(v=>v*f),p2:x.p2.map(v=>v*f)}});
+  const by={s:(a,b)=>b.s-a.s,u2:(a,b)=>b.g-a.g||b.s-a.s,peg:(a,b)=>a.peg-b.peg,pg:(a,b)=>b.pg-a.pg,rg:(a,b)=>b.rg-a.rg,mc:(a,b)=>a.mc-b.mc}[grSort];L.sort(by);
+  const up=(t,p)=>((t/p-1)*100),f=v=>'₹'+(v>=1000?Math.round(v).toLocaleString('en-IN'):n2(v));
+  const card=(x,i)=>`<div class="gr-card"><a class="gr-top" href="#stock-${esc(x.k)}"><span class="gr-rank">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
+     <div class="gr-nm"><b>${esc(x.n)}</b><small>${esc(x.k.replace(/^B(\d+)$/,'BSE $1'))}${x.sec?' · '+esc(x.sec):''} · ${lcr(x.mc)}</small></div><div class="gr-px num"><b>₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.cp)}</i></b><small>score ${x.s}/100</small></div></a>
+     <div class="gr-m num"><span class="g">Revenue +${x.rg}%/yr</span><span class="g">Profit +${x.pg}%/yr</span>${x.qrg!=null?`<span>Last quarter sales ${x.qrg>=0?'+':''}${x.qrg}%</span>`:''}<span>P/E ${x.pe}</span><span>PEG ${x.peg}</span>${x.roe!=null?`<span>ROE ${x.roe}%</span>`:''}${x.de!=null?`<span>Debt/equity ${x.de}</span>`:''}</div>
+     <div class="gr-p num"><div><span>In 1 year (if growth continues)</span><b>${f(x.p1[1])}</b><em>+${up(x.p1[1],x.cp).toFixed(0)}%</em><small>Range ${f(x.p1[0])} – ${f(x.p1[2])}</small></div><div><span>In 2 years (if growth continues)</span><b>${f(x.p2[1])}</b><em>+${up(x.p2[1],x.cp).toFixed(0)}%</em><small>Range ${f(x.p2[0])} – ${f(x.p2[2])}</small></div></div>
+     ${x.mc<1000?'<div class="gr-risk">⚠️ Small company (under ₹1,000 Cr): bigger swings, harder to sell.</div>':''}</div>`;
+  el.innerHTML=`<div class="gr-h"><span class="lbl">Growth stocks</span><h2>🚀 Strong growth at a fair price</h2>
+   <p class="note" style="margin:0">${GR.items.length} of ${GR.screened.toLocaleString('en-IN')} companies with reported results pass · updated once a day (${esc(GR.label)})</p></div>
+   <div class="gr-warn">⚠️ <b>These are scenarios, not predictions.</b> The 1-year and 2-year prices assume the company keeps growing profit at its recent pace and the market values it the same way. Growth often slows, and prices can fall. Not investment advice; MarketVedaPro is not SEBI-registered.</div>
+   <details class="gr-how"><summary>How stocks are picked</summary>Every company is checked daily against its reported results: profit in each of the last 4 quarters; revenue growing 15%+ a year and profit 20%+ a year over up to 3 years; sales still growing in the latest quarter; P/E under 60 and PEG (P/E ÷ growth) under 1.5, so it isn't already priced for perfection; where reported, debt under 1× equity and return on equity above 12%. Companies under ₹50 Cr are left out. The scenario uses the average of revenue and profit growth (capped at 30% a year). The range runs from half that growth with a lower valuation, to slightly faster growth.</details>
+   <div class="gr-tabs" role="group" aria-label="Company size">${[['all','All'],['large','Large'],['mid','Mid'],['small','Small']].map(([k,l])=>`<button type="button" data-gs="${k}" aria-pressed="${grSeg===k}">${l} <small class="num">${GR.items.filter(x=>{const sg={all:[0,1e15],large:[20000,1e15],mid:[5000,20000],small:[0,5000]}[k];return x.mc>=sg[0]&&x.mc<sg[1]}).length}</small></button>`).join('')}</div>
+   <label class="gr-sort">Sort by <select id="grSort">${[['s','Best overall score'],['u2','Highest 2-year potential'],['peg','Cheapest for its growth (PEG)'],['pg','Fastest profit growth'],['rg','Fastest revenue growth'],['mc','Smallest companies first']].map(([v,l])=>`<option value="${v}" ${grSort===v?'selected':''}>${l}</option>`).join('')}</select></label>
+   <div class="gr-list">${L.slice(0,grN).map(card).join('')||'<p class="note">No companies in this group pass today.</p>'}</div>
+   ${L.length>grN?`<button class="ghost" type="button" id="grMore" style="margin:14px auto;display:block">Show ${Math.min(30,L.length-grN)} more (${L.length-grN} left)</button>`:''}
+   <p class="src">Results: company filings via Yahoo Finance, refreshed in rolling batches. Prices: NSE/BSE.</p>`;
+  el.querySelectorAll('[data-gs]').forEach(b=>b.onclick=()=>{grSeg=b.dataset.gs;grN=30;renderGrowth()});
+  el.querySelector('#grSort').onchange=e=>{grSort=e.target.value;grN=30;renderGrowth()};
+  const m=el.querySelector('#grMore');if(m)m.onclick=()=>{const y=scrollY;grN+=30;renderGrowth();scrollTo(0,y)}}
 // ---- Calls & puts (nearest expiry) from NSE's option chain, refreshed by the data job
 let OC=null,ocAt=0;const OC_OPEN=new Set(),OC_SIDE={},OC_CH={},OH={};let ocRange=30;
 const OPT_RAW=DATA_RAW.replace(/\/data\/$/,'/opt/');
@@ -3554,7 +3597,7 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
   const glob=`<div class="gl num">${G.map(([n,v,p])=>`<div><span>${esc(n)}</span><b>${n.includes('yield')?v.toFixed(2)+'%':v.toLocaleString('en-US',{maximumFractionDigits:2})}</b>${chip(p)}</div>`).join('')}
     <div><span>Nifty 50 ${open?'now':'last close'}</span><b>${fin(N.v)}</b>${chip(N.pct)}</div><div><span>India VIX</span><b>${IDX.VIX.v.toFixed(2)}</b>${chip(IDX.VIX.pct)}</div>
     ${window.FLOWS&&FLOWS.fii!=null?`<div><span>FII net (${esc(String(FLOWS.date||'').slice(0,6))})</span><b class="${FLOWS.fii>=0?'up':'down'}">${FLOWS.fii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.fii)).toLocaleString('en-IN')} Cr</b></div><div><span>DII net</span><b class="${FLOWS.dii>=0?'up':'down'}">${FLOWS.dii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.dii)).toLocaleString('en-IN')} Cr</b></div>`:''}</div>`;
-  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card">${LOADER('Loading prices for every NSE and BSE stock…')}${SKROWS(4)}</div></div>`;
+  el.innerHTML=head+`<a class="pn-entry gr-entry" href="#growth"><span class="pn-coin gr-coin">🚀</span><span><b>Growth stocks · 1-year &amp; 2-year potential</b><small>Companies growing revenue and profit fast at a fair price, checked daily</small></span><span aria-hidden="true">→</span></a>`+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card">${LOADER('Loading prices for every NSE and BSE stock…')}${SKROWS(4)}</div></div>`;
   wireOutlook();
   Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{const b=document.getElementById('tdbody');if(!b||!ALLQ||!UNI)return;
     const L=[];for(const u of UNI){if(/SME/.test(u.x)&&!tdF.sme)continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;

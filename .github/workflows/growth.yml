@@ -1,0 +1,40 @@
+name: Growth screen
+
+# Once a day after the history job: companies with steady revenue and profit growth at a
+# sensible valuation, with 1-year and 2-year price scenarios. Writes data/growth.json on main.
+on:
+  schedule:
+    - cron: "0 12 * * *"      # 5:30 PM IST
+    - cron: "30 2 * * *"      # 8:00 AM IST (backup)
+  push:
+    branches: [main]
+    paths: [".github/workflows/growth.yml", "scripts/growth.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: growth
+  cancel-in-progress: true
+
+jobs:
+  growth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: History snapshot
+        run: git clone -q --depth 1 --branch hist "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" hist
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python scripts/growth.py
+      - name: Commit
+        run: |
+          git config user.name marketvedapro-bot && git config user.email marketvedapro-bot@users.noreply.github.com
+          git add data/growth.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Growth screen $(TZ=Asia/Kolkata date '+%d %b %Y')"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
