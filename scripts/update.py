@@ -1263,6 +1263,121 @@ def bse_movers(out):
         log(f"bse movers sample: {json.dumps(sample)[:300]}")
 
 
+# ----------------------------------------------------------------- option chains (calls & puts)
+OC_IDX = ("NIFTY", "BANKNIFTY")
+
+
+def option_chains(out):
+    """Nearest-expiry calls and puts around the current price for F&O stocks (+ Nifty, Bank Nifty).
+    Written to out/oc.json on the data branch. Biggest movers refresh every pass in market hours,
+    the rest in rotation; after the close each one gets a final refresh."""
+    path = os.path.join(OUT_EXTRA, "oc.json")
+    os.makedirs(OUT_EXTRA, exist_ok=True)
+    try:
+        oc = json.load(open(path))
+    except Exception:
+        try:
+            oc = get(RAW_DATA + "oc.json").json()
+        except Exception:
+            oc = {}
+    oc.setdefault("s", {})
+    oc.setdefault("exp", {})
+    if oc.get("expday") != NOW.strftime("%Y-%m-%d"):
+        oc["exp"], oc["expday"] = {}, NOW.strftime("%Y-%m-%d")
+    lots = dict((out.get("fno") or {}).get("syms") or {})
+    if not lots:
+        json.dump(oc, open(path, "w"), separators=(",", ":"))
+        return
+    # index lot sizes (the F&O list skips indices)
+    if not oc.get("ilot") or oc.get("ilotday") != NOW.strftime("%Y-%m-%d"):
+        try:
+            txt = get("https://nsearchives.nseindia.com/content/fo/fo_mktlots.csv", headers={**UA, "Referer": "https://www.nseindia.com/"}).text
+            il = {}
+            for line in txt.splitlines():
+                c = [x.strip() for x in line.split(",")]
+                if len(c) > 2 and c[1].upper() in OC_IDX:
+                    v = next((int(float(x)) for x in c[2:] if re.fullmatch(r"\d+(\.0+)?", x or "")), None)
+                    if v:
+                        il[c[1].upper()] = v
+            if il:
+                oc["ilot"], oc["ilotday"] = il, NOW.strftime("%Y-%m-%d")
+        except Exception as e:
+            log(f"oc index lots: {e}")
+    hm = NOW.hour * 100 + NOW.minute
+    mkt = NOW.weekday() < 5 and 915 <= hm < 1535
+    close_ts = NOW.replace(hour=15, minute=31, second=0, microsecond=0).timestamp()
+    try:
+        qq = json.load(open(os.path.join(OUT_EXTRA, "quotes.json")))["q"]
+    except Exception:
+        qq = {}
+    pct = {k: abs(v[1] or 0) for k, v in qq.items() if k in lots and v and v[1] is not None}
+    movers = sorted(pct, key=lambda k: -pct[k])[:25]
+    def stale(k):
+        e = oc["s"].get(k)
+        if not e:
+            return True
+        if mkt:
+            return time.time() - e["at"] > 20 * 60
+        return NOW.weekday() < 5 and hm >= 1535 and e["at"] < close_ts
+    todo = list(OC_IDX) + [k for k in movers if mkt or stale(k)]
+    rest = sorted((k for k in lots if k not in todo and stale(k)), key=lambda k: (oc["s"].get(k) or {}).get("at", 0))
+    todo += rest[:max(0, 60 - len(todo))]
+    if not todo:
+        json.dump(oc, open(path, "w"), separators=(",", ":"))
+        return
+    H = {**UA, "Accept": "application/json,text/plain,*/*", "Referer": "https://www.nseindia.com/option-chain"}
+    try:
+        S.get("https://www.nseindia.com/option-chain", headers=UA, timeout=20)
+    except Exception:
+        pass
+    ok = fail = 0
+    t_end = time.time() + 75
+    for k in todo:
+        if time.time() > t_end:
+            break
+        idx = k in OC_IDX
+        try:
+            ex = oc["exp"].get(k)
+            if not ex:
+                ci = S.get(f"https://www.nseindia.com/api/option-chain-contract-info?symbol={requests.utils.quote(k)}", headers=H, timeout=15).json()
+                ex = (ci.get("expiryDates") or [None])[0]
+                if not ex:
+                    fail += 1
+                    continue
+                oc["exp"][k] = ex
+            j = S.get("https://www.nseindia.com/api/option-chain-v3", params={"type": "Indices" if idx else "Equity", "symbol": k, "expiry": ex}, headers=H, timeout=15).json()
+            rec = j.get("records") or {}
+            u = rec.get("underlyingValue")
+            data = [d for d in rec.get("data") or [] if d.get("strikePrice") is not None]
+            if not u or not data:
+                fail += 1
+                continue
+            data.sort(key=lambda d: d["strikePrice"])
+            atm = min(range(len(data)), key=lambda i: abs(data[i]["strikePrice"] - u))
+            def side(o):
+                if not o:
+                    return [None] * 5
+                return [o.get("lastPrice") or None, round(o["pChange"], 1) if o.get("pChange") is not None else None,
+                        o.get("openInterest") or 0, o.get("totalTradedVolume") or 0, o.get("impliedVolatility") or None]
+            rows = [[d["strikePrice"], *side(d.get("CE")), *side(d.get("PE"))] for d in data[max(0, atm - 8): atm + 9]]
+            ce_oi = sum((d.get("CE") or {}).get("openInterest") or 0 for d in data)
+            pe_oi = sum((d.get("PE") or {}).get("openInterest") or 0 for d in data)
+            res = max(data, key=lambda d: (d.get("CE") or {}).get("openInterest") or 0)["strikePrice"]
+            sup = max(data, key=lambda d: (d.get("PE") or {}).get("openInterest") or 0)["strikePrice"]
+            oc["s"][k] = {"at": int(time.time()), "ts": rec.get("timestamp"), "exp": ex, "u": u,
+                          "lot": (oc.get("ilot") or {}).get(k) if idx else lots.get(k), "pcr": round(pe_oi / ce_oi, 2) if ce_oi else None,
+                          "res": res, "sup": sup, "r": rows}
+            ok += 1
+        except Exception as e:
+            fail += 1
+            if fail <= 2:
+                log(f"oc {k}: {str(e)[:120]}")
+        time.sleep(0.25)
+    oc["at"] = int(time.time())
+    json.dump(oc, open(path, "w"), separators=(",", ":"))
+    log(f"option chains: {ok} ok, {fail} failed, {len(oc['s'])} stored")
+
+
 def main():
     os.makedirs(DATA, exist_ok=True)
     path = os.path.join(DATA, "live.json")
@@ -1271,7 +1386,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, results_cal, everything)):
+    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, results_cal, everything, option_chains)):
         try:
             step(out)
         except Exception as e:
