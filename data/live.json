@@ -1,13 +1,13 @@
 {
- "label": "12 Nov 2026, 5:18 PM IST",
- "updated": "2026-11-12T17:18:28+05:30",
+ "label": "12 Nov 2026, 5:28 PM IST",
+ "updated": "2026-11-12T17:28:45+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "12 Nov 2026, 5:18 PM",
+  "date": "12 Nov 2026, 5:28 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -125,16 +125,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 138096.0,
-    "ch": -1620.0,
+    "v": 138100.0,
+    "ch": -1616.0,
     "pct": -1.16,
-    "t": "12 Nov, 5:18 PM"
+    "t": "12 Nov, 5:28 PM"
    },
    "silver": {
-    "v": 181348.0,
-    "ch": -3177.0,
-    "pct": -1.72,
-    "t": "12 Nov, 5:18 PM"
+    "v": 181104.0,
+    "ch": -3421.0,
+    "pct": -1.85,
+    "t": "12 Nov, 5:28 PM"
    }
   },
   "retail": {
@@ -347,9 +347,9 @@
   "bullion": {
    "g24": 13864.0,
    "g24_10": 138640.0,
-   "ag_kg": 182060.0,
-   "ag": 182.06,
-   "t": "12 Nov, 5:18 PM"
+   "ag_kg": 181810.0,
+   "ag": 181.81,
+   "t": "12 Nov, 5:28 PM"
   }
  },
  "logos": [],
@@ -460,24 +460,24 @@
   "t": 1794477800
  },
  "brent": {
-  "v": 92.31,
+  "v": 92.18,
   "prev": 92.76,
-  "ch": -0.45,
-  "pct": -0.49,
+  "ch": -0.58,
+  "pct": -0.63,
   "high": 93.89,
   "low": 91.19,
   "open": 91.28,
-  "t": 1794483486
+  "t": 1794484112
  },
  "goldSpot": {
-  "v": 3952.8,
+  "v": 3953.4,
   "prev": 4000.5,
-  "ch": -47.7,
-  "pct": -1.19,
+  "ch": -47.1,
+  "pct": -1.18,
   "high": 4005.9,
   "low": 3929.5,
   "open": 3981.0,
-  "t": 1794483495
+  "t": 1794484123
  },
  "sectors": [
   [
@@ -1063,7 +1063,7 @@
   "dii_sell": 28138.92,
   "fii_buy": 30087.21,
   "fii_sell": 17523.88,
-  "fetched": "12 Nov, 5:18 PM",
+  "fetched": "12 Nov, 5:28 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1121,6 +1121,20 @@
  "news": [
   {
    "tag": "IPO",
+   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "12 Nov, 5:19 PM",
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
+  },
+  {
+   "tag": "Economy",
+   "t": "Retail inflation breaches RBI's 6% upper limit at 2-yr high of 6.09% in Oct",
+   "s": "Business Standard",
+   "d": "12 Nov, 5:07 PM",
+   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcHlEM25SSjBvRUx5Wnc2V1lKQkRlZFVXZmZQREYyZTRaU1RtX2UwSmRUdzRsM3dRQXUxa0pOMmhzQWlfaXVGQ3hEalVMQ3JUZGJVRmhhVmx3VWM0WVFoUnFXUE54VE5DZ3d4RDBXVmlkM1JJX1NHN2VSMUhOZzdzVDhvUk4taUJ3VXRyRTd6clp3S2RLWHhCWjhacEktVWxzOG5XbmQ4bU1zRlI4d2tobHF6cVd2aS1jeUU3SmJGLTdmcDhRbmtvNlNJeVliU2ZjMUIwXzgtc9IB3AFBVV95cUxNWUVGQXF5aUo1YnhSYXRaUXhKT1JSby1IS01ka1RuRmhuV1BaRkozSFhGRGd3RFl0QW9MWnNieFFBNzA0MVVTUV9YSFAzRVpzdmtBdFI2ZlF5NHhleVlWQkw1ZlpfaGc3RG40ZkJTVzJxdTJ0aDVCYVpvU0c0dzZ6ODY5bWtUR0RPQTgzMzFfaXM0dmRUNW0wNHpqTEJqeVpFcHFqbkJENmtVS1FpRG9Rc1Y3YWQ0U1JMbjdGMTZjbjFkRDFtUWNDYXpxcXNxc1M1ckVxVWlvdGFGU2pl?oc=5"
+  },
+  {
+   "tag": "IPO",
    "t": "Crystal Crop Protection IPO Details",
    "s": "IPO Watch",
    "d": "12 Nov, 4:58 PM",
@@ -1139,13 +1153,6 @@
    "s": "Upstox",
    "d": "12 Nov, 3:54 PM",
    "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOaFZPbWZTSTlZNWRUNW9Hc0ZrZkVMMVl5eUVGUU5WM0h6b0hDWXpRYTl6RzgxUWZ4TUhOTDlLZmVOV0RVTnhrVi1ENTU0NXpCZ1Z4S2h4bEVmVmItcHVfQkRnbkJLQnR6SGlpV2htYW9GRU1ab2VIR1BYTFVlTmNjRWVrYWd4NXoxS0hpcWh4bjl3VTN0eUY3MGJCSlRyNEkzd2V4V0VHR2FYV0g3MXNhdDJzWldHa09WOUZUMksxVnhtb05Ka2ZvX3U1UXBENWVyTXR2Ykk5ZXRtZUhNdlp5eFNXZVk0MUw4MGJjczRzdy1RU0lpdDVZWHZzb2NHSkdtZGc?oc=5"
-  },
-  {
-   "tag": "IPO",
-   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
-   "s": "IPO Watch",
-   "d": "12 Nov, 2:17 PM",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
   },
   {
    "tag": "IPO",
@@ -1184,13 +1191,6 @@
   },
   {
    "tag": "Economy",
-   "t": "India's Q2 GDP growth likely to hit 7.8%, beating RBI estimate: SBI",
-   "s": "Fortune India",
-   "d": "11 Nov, 5:31 PM",
-   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTFlsOXJHbG1jdVpUeTFnWXUyZWx0VmhPM3NfNUZMT0R3T1FHNGdKdVJiM082Z2ZteWFqUVFmOGtXeWVkX0VySXNXWFY4Qjc3Wi14SVVxaVVER1NUcTF5QlVRcE0zMndWZzJKU2ZuZldGeWtCalZGMF85bVdPSFVGVExtR2Jzd3lPenA2SFZVSkwtUUI1M20wdGhWdnlKbHJpQThYQ0NOcklHQdIBtwFBVV95cUxPd0dvenJ2UHRlODRMMlZBOThLcmtJU0Z2U3hTOVItQ1lxOUstd19fbkRDaHBjMlVDM2lxU0xoM0xBU1RwVko4Q1dYcDFtQURRdzJJV2k0SUpiTVhaeUxjdy05WjBzNmZxUHVKR1F1Y29NLThINDE4OElVaDJhTjJqZ1lPZlJYMnFvVjlQdnlYUG94SkpGampfT2ZFcGlnYi1QRlA0NG92a0hPT3htZ3p4eHdJV3JiaGc?oc=5"
-  },
-  {
-   "tag": "Economy",
    "t": "In India, economic momentum has outpaced geopolitical gravity. There’s more to be done",
    "s": "The Indian Express",
    "d": "11 Nov, 4:54 PM",
@@ -1214,17 +1214,16 @@
    "tag": "Economy",
    "t": "Moody's lifts India growth forecast, sees economy well positioned to sustain near 7% growth",
    "s": "Reuters",
-   "d": "11 Nov, 1:08 PM",
+   "d": "11 Nov, 1:20 PM",
    "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPb1Bhc253SGlMZGdtdjFTWk9raTg0ckVuNEJuM0YycUtidDd4dll4Z2RIM0t3TXlxX1hvZnpxZG1FanQzOTFDeW9BalFwLTVrSnRGbDJVa0tzMHNQZUdkR3pwQUZMYTlDOFhCOGhuSzgyZW1aQkVCcE9rRkhUU3Jtd3dmbW1PMV9Gd0NCZHNRN2xfeUdmeFZxb2cxTEp0VjhNRFVnWWlmNW40WUFJQUlpNzNnS1g0QTA2Vi0tYkRIb09paUxB?oc=5"
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-11: 5235 scrips",
-  "outlook: 311 headlines, 25 up, 17 down"
+  "outlook: 312 headlines, 25 up, 17 down"
  ],
  "members": {
   "n50": {
@@ -2244,9 +2243,9 @@
   }
  },
  "nse": {
-  "n50": "12 Nov, 5:18 PM",
-  "mid": "12 Nov, 5:18 PM",
-  "small": "12 Nov, 5:18 PM"
+  "n50": "12 Nov, 5:28 PM",
+  "mid": "12 Nov, 5:28 PM",
+  "small": "12 Nov, 5:28 PM"
  },
  "midg": [
   [
@@ -2419,17 +2418,16 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-11: 5235 scrips",
-  "outlook: 311 headlines, 25 up, 17 down"
+  "outlook: 312 headlines, 25 up, 17 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4810,
-  "at": "12 Nov, 5:18 PM"
+  "at": "12 Nov, 5:28 PM"
  },
  "global": [
   [
@@ -2464,9 +2462,9 @@
   ],
   [
    "FTSE 100",
-   10874.18,
-   0.36,
-   1794483207
+   10873.53,
+   0.35,
+   1794483824
   ],
   [
    "US 10Y yield",
@@ -2476,8 +2474,8 @@
   ]
  ],
  "outlook": {
-  "at": "12 Nov, 5:18 PM",
-  "headlines": 311,
+  "at": "12 Nov, 5:28 PM",
+  "headlines": 312,
   "screened": 1808,
   "cues": [
    "US tech (Nasdaq) rose 1.6% in the last session",
@@ -2737,6 +2735,37 @@
     ]
    },
    {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "s": 9.8,
+    "conf": "High",
+    "p": 4231.0,
+    "pct": 4.42,
+    "mc": 23686.8,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Market Momentum",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcDN5YWw1N0NUN2FUU2x1ZlRDdUdkcTk4UUJNMm5jLXZJTE50bVJWRFk2WnNYMERSZkFqS0pQaTNadHpJRTQtS0RKTkIzUS1hbmdpVExiTzYyUlNKSVFKMkJhQTA1STRXTlBmRzlObERkMjZVdVA2cU5CTTVHYm1mMkswSFJ5bEprRUs1RTB2ajc4MHdLZUN5ZTBYX0MyYWF5QWgtcTZnOXFGZnAtOWNaVk5lNmpPMEo3VHFVMUh6bXFOX0p6WnZaOFMyMVJBenRubGNMbFFScUU?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +4.4% on 2.1× usual volume, near the day's high",
+      "s": 1.7816598860121096
+     }
+    ]
+   },
+   {
     "k": "REDINGTON",
     "n": "Redington",
     "s": 9,
@@ -2809,32 +2838,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQUkFtTzdsd0pULUwwYUY3Nl9fUWtBZWJKbEtKdXRxLUxyWm9LOHFUNEtHQzJob21YSUltazR0MnJlMHB1cTl1RFg4NWUxZTVBR2NWblJWU0lQczZBQXhFVmxwM2xmMFZSa09LMnluTlVjR2xRdkRxRWwtY3Q4ckh5bks2VHh1SWE4dy1Kaw?oc=5",
       "src": "Equitypandit"
-     }
-    ]
-   },
-   {
-    "k": "ROTO",
-    "n": "Roto Pumps",
-    "s": 8,
-    "conf": "High",
-    "p": 76.96,
-    "pct": 14.46,
-    "mc": 1453.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Roto Pumps Share Price Jumps 19% on Q2 Results",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOQnduYXlpQnVQb205cWxSNkR5VXprck9ZS3NYWUEtak5lOWNXaVZEdnRUSkxiS3pyaDdWN3JvUzBjWnpRVTJWUzJDQ3diLWVvRE5FTU54UF9NU1lHbXJGZzhtWU5iQ0tyTV9nMTNJN1pxTGJ4TjlTUE41WnhNejB4U1VCdXFneEhyRWZYNnJVTEhzbE45S1E3eHM5QWFXNHZRX083MDNWTUtRSVd0YWpPT0V0elVrV0R4Ti1iWnhpV1RUWk1EanFiaUdlbXk1cm5H?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "news",
-      "t": "Small-cap stock under ₹100: Roto Pumps shares jump 19% today, soar 28% in 4 days - What's fuelling the rally?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOUEI1MWNWQWxvOWxfdVg0N1RwNjJoUFU3RjFPbFlzV0J2UGtOZXAtSDVDM3pJNFlvWHEyYW0yRkozTG83TG1HQ1JIVUNrdF81bDExWVprVlVISXhRM0UyWVpRVzVaUHBkMU4yU3JaVmJrVHBHQll1VGM1bmkwWDgxNXdUVm01bkVnWGg5YkJrZUY0UjQwQjA4NVVmczZJYmYxdUY1VkZnaEprQW5OZXZteDhZVVZWcFN4dkRlSGl1VFk0Qzl3RFRnMHdQLTVvdzlpcmk3UFdmUWJuUnpOd240OFd1TE03OUh6Y1g3OGRBeWE0ODJhSmJkNHF3SEdnYmJZQXfSAYcCQVVfeXFMTXhENno2dUN2a245dnF0RmhMdFVQUmV3Y182LVNZZU9qdmJUcVNoZDBmUmNNc0hsRjAzRVN4bndnRTNRbUgzNmtyZVVKRGdMaVNHSy01WkF0bTFLUGFIZkhpWFc5YVJPZDJQcG82N3c0czVybDZtQzJiaUxSUURlRVZMS2FVSHdVNGRJQlFPMVFra21mcFFSbjFtV2ZOUzJrMEhvQjBwTmc2QVZNMXpNWmFQbmIzVWRFRVIwalZNcldNTUJCY2dySE5RZzk5VERmRmN0RE5PQnNaUjNhMXIySko5YTVuT1V1WXhQMldUY2F0VkQ4VWszV1l5dnZtNTZZdFF1OS01bzA?oc=5",
-      "src": "Livemint"
      }
     ]
    },
@@ -2922,30 +2925,6 @@
     ]
    },
    {
-    "k": "PROTEAN",
-    "n": "Protean eGov Technologies",
-    "s": 7,
-    "conf": "High",
-    "p": 723.3,
-    "pct": 0.51,
-    "mc": 2949.6,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Protean eGov shares surge 7.4% as Yubi partnership boosts sentiment",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOSDMzaHJWcFNnd2xoZDRabG5tVkNXZzYyZ1BkLTBqYWs2bXh3ZWZaUVVZQ3hNdHZhd1J6eW5tUmdvcTFYal85TXdvNDJJcWc5VnY0MkhhWFNFRDF0X3N2MGRtaHN2VjEtVHlROVJNelJxZ0ptVzlOeU5hSmlESU13SVBYeDFHdnFmU19WV3ItWmM3WHNyeXEyejVSaDBZazlxT2VNRlQ0elBKa3dTSjFsUTNJNXlsX2lGejhVZXNWTV9WSzJ2d29CZDJfa2ZuRDg3eVBVRkJQbHR6aVBo0gHjAUFVX3lxTE9zdVU4SE1NY2hrOFRjdGllclVDVldORjhIODlLLTFkWElXd3doTHFMa3BkYldDYzlHT0RjVTIwN1lvb2NFMlgyNk5zQ05sOVpUQ1N6WTAyQXpQM3BydEZCREZveDJPZGh5MnphdHhXNC1mX081Ymt6bkdKa0gzeTYzMU84VllSVzJza2Qxa00xb19yTnJDN3NmYVUwN05DUS1qWFFULWtndnB1Q2hqSjRMS09zaTZBMjV5X0otNWQ4Q2ZILXE4OTF1dzYtSmdQNm1weDYxNDVncy1vckg1T3hQMzhj?oc=5",
-      "src": "BusinessLine"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq +1.6% overnight; IT stocks often follow",
-      "s": 1
-     }
-    ]
-   },
-   {
     "k": "BNAGROCHEM",
     "n": "BN Agrochem",
     "s": 7.0,
@@ -3008,30 +2987,6 @@
     ]
    },
    {
-    "k": "DATAPATTNS",
-    "n": "Data Patterns (India)",
-    "s": 5.9,
-    "conf": "Medium",
-    "p": 4231.0,
-    "pct": 4.42,
-    "mc": 23686.8,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +4.4% on 2.2× usual volume, near the day's high",
-      "s": 1.8724574517389827
-     }
-    ]
-   },
-   {
     "k": "CAMS",
     "n": "Computer Age Management Services",
     "s": 5,
@@ -3076,6 +3031,44 @@
       "k": "global",
       "t": "Nasdaq +1.6% overnight; IT stocks often follow",
       "s": 1
+     }
+    ]
+   },
+   {
+    "k": "IOB",
+    "n": "Indian Overseas Bank",
+    "s": 4,
+    "conf": "Medium",
+    "p": 31.61,
+    "pct": 0.44,
+    "mc": 60870.1,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
+      "src": "Upstox"
+     }
+    ]
+   },
+   {
+    "k": "PNB",
+    "n": "Punjab National Bank",
+    "s": 4,
+    "conf": "Medium",
+    "p": 141.79,
+    "pct": 2.39,
+    "mc": 162958.4,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
+      "src": "Upstox"
      }
     ]
    },
@@ -3267,39 +3260,6 @@
     ]
    },
    {
-    "k": "HAL",
-    "n": "Hindustan Aeronautics",
-    "s": -8,
-    "conf": "High",
-    "p": 4843.4,
-    "pct": -2.13,
-    "mc": 323914.5,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "HAL shares fall 2% as Q2 EBITDA margin misses estimate, stock hits intraday low of ₹4,736.60 after a sharp slide",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPd05iMW16d2RuQngwNDhYcUJ1ckFJbWJIV2pRbmxEUEJfTlAwekJ1cTI2YTlvenRRWFpiUkYtczktMGY1TWV2WGh5bm1mSEdpSG1tX19NYlg4MkFHTnJuV2ZFQ0VPZFFPR0JYVkdZMFdoVVNvZ1FYSXhkVVNyeDdaUmMtNGVMbVhsVnJlMGdDdHFUYnV1ZFhKTXZoODNFRVJsQm9KTGw5YkFsc3hzaC1nWnE0cG9teHJMc05CdDRDWjFwVjY2ZXFQTUZ5eUR4Yk82VDZJZUJLZ2N3Uk8yWFo2U0dIbW1BaU8wRWNJaTNseU1HMWVqcjc0?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "news",
-      "t": "Why are HAL shares falling over 3% today despite 10.6% YoY rise in Q2 net profit? Explained",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOGlnbVVyRXp3dWxEZjBZN1U4NmY0WEhTZUY3NjNnWWpEWmJBcmwwcUk3MXRfc2RVNkM4NFlrSXlyRVFVX3QxVWpwd3daUXpLc0pJZXlxZjFoSndqc1REX1EybjVNZEdXUGZ1M0Y4dldtTWdLMlRjZTZ5clo5OGMxZ0FvQUpZbF9VVWVfMmFEZWNZM1kzUm8xcU54aFM1aC1TY0hGdWFiVEdpYXZEOF9iMkFuUDIwbGx6S1NXQWM0WWk4QjZRcHlSWkptMTY2RXd4WEt3?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "news",
-      "t": "HAL Shares Slide After Q2 Results as Margin Narrows",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWkhEaUxNTzJfNHJfR1hZc1N1SE9PLTQ0WDh2SFVXX2xxWm9QM2RmYlVUamsyekpfN0RsaFFUN3BNbHUydktmY0xWRDZIb3U3VVJjMkNLR3BiVlJmSzdhVXlKalV3djJBbS1GT3dlNk9hdXdLYVVrUXhRaUxvYlNZc25lN2d3dDRI?oc=5",
-      "src": "Equitypandit"
-     }
-    ]
-   },
-   {
     "k": "MUKANDLTD",
     "n": "Mukand",
     "s": -7.0,
@@ -3318,7 +3278,7 @@
      },
      {
       "k": "price",
-      "t": "Closed weak: -5.3% on 8.3× usual volume, near the day's low",
+      "t": "Closed weak: -5.3% on 7.8× usual volume, near the day's low",
       "s": -3.0
      }
     ]
@@ -3382,6 +3342,39 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNGVGTG44VURoUXRUWjk4djNyNEpvQU5UWEFYNF9lWFRDQmkxTDYzYTlrblhabGNRcjlNLWpnNldpTHhwRHNVRE5sYWs2RjY5RVh1Z1NNellmNjBNa3JnNFZ0djRmVW5zZ3l6ZE4ydlRTOFNSOTJDNDlhdmIzY1c1YUFXMnpXQkFjVkhOM2lqMEw2QkRBak5TMU5hWXdESEpnZGVBU21UYk4xY29Xcl9teXpDWXdnUWhqelJza1NocXdJZGFKWGVEVmpHMA?oc=5",
       "src": "BW Businessworld"
+     }
+    ]
+   },
+   {
+    "k": "HAL",
+    "n": "Hindustan Aeronautics",
+    "s": -4,
+    "conf": "Medium",
+    "p": 4843.4,
+    "pct": -2.13,
+    "mc": 323914.5,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "HAL shares fall 2% as Q2 EBITDA margin misses estimate, stock hits intraday low of ₹4,736.60 after a sharp slide",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPd05iMW16d2RuQngwNDhYcUJ1ckFJbWJIV2pRbmxEUEJfTlAwekJ1cTI2YTlvenRRWFpiUkYtczktMGY1TWV2WGh5bm1mSEdpSG1tX19NYlg4MkFHTnJuV2ZFQ0VPZFFPR0JYVkdZMFdoVVNvZ1FYSXhkVVNyeDdaUmMtNGVMbVhsVnJlMGdDdHFUYnV1ZFhKTXZoODNFRVJsQm9KTGw5YkFsc3hzaC1nWnE0cG9teHJMc05CdDRDWjFwVjY2ZXFQTUZ5eUR4Yk82VDZJZUJLZ2N3Uk8yWFo2U0dIbW1BaU8wRWNJaTNseU1HMWVqcjc0?oc=5",
+      "src": "Business Upturn"
+     },
+     {
+      "k": "news",
+      "t": "HAL Q2 FY27 results: Net profit jumps 16% YoY; revenue grows to ₹7,613 crore, margin slips",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQTzFqc3JJaWFOZUdQRTBsTUUwcVhfM3VMTmlqZzJWM3NreGxqLUxJV2d4STd4cDZOa1J2UV9lNTJqQWdZZVZ2VXJ5aDlyUl9zUkxwRl8zcE1xdFg2OXN6X2lFWVBkRUJrMTdKWkVCbkdvaHUzV195aHlCcW4xblFGZmdKV1dJSTA4NTVJUHUweTdsOGdDZHpYV1ZRRVB2SmR1TkRKZmJhVEFqb3pXdk9hejc0aU8tWHYyWUFjbkNyMm1GMS0tMU83UUF6WnVfQUk1RVVRV0tTdmxFSmRqZGJKbkNnaVh0ZFVEMlRrWUtoUzY0M0pqdjBUNjNZREU4OVU?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "news",
+      "t": "HAL Shares Slide After Q2 Results as Margin Narrows",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWkhEaUxNTzJfNHJfR1hZc1N1SE9PLTQ0WDh2SFVXX2xxWm9QM2RmYlVUamsyekpfN0RsaFFUN3BNbHUydktmY0xWRDZIb3U3VVJjMkNLR3BiVlJmSzdhVXlKalV3djJBbS1GT3dlNk9hdXdLYVVrUXhRaUxvYlNZc25lN2d3dDRI?oc=5",
+      "src": "Equitypandit"
      }
     ]
    },
@@ -4068,7 +4061,7 @@
   }
  },
  "hilo": {
-  "at": "12 Nov, 5:18 PM",
+  "at": "12 Nov, 5:28 PM",
   "hi": [
    [
     "PAYTM",
@@ -4137,7 +4130,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "12 Nov, 5:18 PM",
+  "at": "12 Nov, 5:28 PM",
   "g": [
    [
     "544535",
@@ -4197,7 +4190,7 @@
    ],
    [
     "505714",
-    "Gabriel India Ltd-$",
+    "Gabriel India",
     1641.95,
     16.57,
     1408.55
@@ -4246,7 +4239,7 @@
    ],
    [
     "513353",
-    "Cochin Minerals & Rutiles Ltd-$",
+    "Cochin Minerals & Rutiles",
     324.2,
     13.97,
     284.45
@@ -4393,7 +4386,7 @@
    ],
    [
     "524542",
-    "Sukhjit Starch & Chemicals Ltd-$",
+    "Sukhjit Starch & Chemicals",
     152.1,
     10.06,
     138.2
@@ -4556,7 +4549,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods",
+    "Flex Foods Ltd-$",
     43.84,
     -18.78,
     53.98
@@ -4689,7 +4682,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes",
+    "Mukat Pipes Ltd-$",
     15.62,
     -8.44,
     17.06
@@ -4759,7 +4752,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping",
+    "Shahi Shipping Ltd-$",
     10.05,
     -7.63,
     10.88
@@ -4808,7 +4801,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals",
+    "Laffans Petrochemicals Ltd-$",
     27.34,
     -7.01,
     29.4
@@ -4829,7 +4822,7 @@
    ],
    [
     "530821",
-    "SSPDL",
+    "SSPDL Ltd-$",
     13.57,
     -6.86,
     14.57
@@ -4857,7 +4850,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     283.2,
     -6.63,
     303.3
@@ -4913,7 +4906,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     54.19,
     -6.41,
     57.9
@@ -4956,7 +4949,7 @@
   ]
  },
  "allmov": {
-  "at": "12 Nov, 5:18 PM",
+  "at": "12 Nov, 5:28 PM",
   "g": [
    [
     "B544535",
@@ -14069,7 +14062,7 @@
   ]
  },
  "tw": {
-  "at": "12 Nov, 5:18 PM",
+  "at": "12 Nov, 5:28 PM",
   "phase": "close",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14307,6 +14300,26 @@
     "s": 15.2
    },
    {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "p": 4231.0,
+    "pct": 4.42,
+    "vx": 2.1,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 4.4%, closing near the day's high on 2.1× normal volume"
+     }
+    ],
+    "s": 14.4
+   },
+   {
     "k": "INNOVACAP",
     "n": "Innova Captab",
     "p": 1162.8,
@@ -14326,6 +14339,25 @@
     "s": 13.2
    },
    {
+    "k": "AXISCADES",
+    "n": "AXISCADES Technologies",
+    "p": 1918.3,
+    "pct": 5.78,
+    "vx": 3.0,
+    "fo": false,
+    "why": [
+     {
+      "t": "due",
+      "x": "Results on 13 Nov"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 5.8%, closing near the day's high on 3.0× normal volume"
+     }
+    ],
+    "s": 12.8
+   },
+   {
     "k": "REDINGTON",
     "n": "Redington",
     "p": 359.1,
@@ -14340,25 +14372,6 @@
      }
     ],
     "s": 12.6
-   },
-   {
-    "k": "AXISCADES",
-    "n": "AXISCADES Technologies",
-    "p": 1918.3,
-    "pct": 5.78,
-    "vx": 2.9,
-    "fo": false,
-    "why": [
-     {
-      "t": "due",
-      "x": "Results on 13 Nov"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.8%, closing near the day's high on 2.9× normal volume"
-     }
-    ],
-    "s": 12.4
    },
    {
     "k": "CONTROLPR",
@@ -14403,22 +14416,6 @@
       "t": "results",
       "x": "34% rise in a year! Why Hindustan Copper shares are rising 6% today? Check target, stop loss, returns",
       "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONnRrZFZFZUx2UWh4VHJUenpXRkNLX1QtZXlGYmFUX2c4Q3UtbjkzRW1uWkVxS2F6MTZWQkpKa3ZzcThkeWRCS1czR2V1ckhkbHZfekRULWVtaENsYW96eEQ2MDVIcno5YUNRUm5yMWNiVUttQVREMExoWjlJTVJjRS1KZ2gwQTVtNUsxSGVXN0lVTVZzaDZkUk5FZnYwZE9VaUNHMmdYWmJ6SmpVX0JrdU91S1lkRzc1OE5NZVpVa3FWWk1SSTd1RzVkcndydjViQkNpczA3Uk9MbXEwM1JLZmdlQUs4bDBlTmlNTTNMUEU5WUhQdENWYdIB_gFBVV95cUxNaUVDMnFnM2paOWhraGlQNnVRalc5blljRl95OG9tNFNCOW1PYTFmVEtmMG1vUl9lckZyaExVclA5LTdrMzNTZExtSERKcjBBUE9IMmxSTVpyNGtXUVdsZlJJb3NPTlI5Z29RODNwUnlTWGlhTGo2QUpMeGp1aE9WYVM3REF0QjdkNFNkZGpmNEVhUkZiR01VQ3Y3ZlVMekxfYVZkTDgxWE9GNHdtaTNmZC1nVUVncVpwMGg2OGgxalBUZEZ0bmppX1pFbG04a2ZqWWt4Z0I1Ui1lQ3pTUndlMzNlYi10VTJfMktVRmVUdFFzVXpUM0EzZ3NVbWVVQQ?oc=5"
-     }
-    ],
-    "s": 11.2
-   },
-   {
-    "k": "ROTO",
-    "n": "Roto Pumps",
-    "p": 76.96,
-    "pct": 14.46,
-    "vx": 69.8,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Roto Pumps Share Price Jumps 19% on Q2 Results",
-      "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOQnduYXlpQnVQb205cWxSNkR5VXprck9ZS3NYWUEtak5lOWNXaVZEdnRUSkxiS3pyaDdWN3JvUzBjWnpRVTJWUzJDQ3diLWVvRE5FTU54UF9NU1lHbXJGZzhtWU5iQ0tyTV9nMTNJN1pxTGJ4TjlTUE41WnhNejB4U1VCdXFneEhyRWZYNnJVTEhzbE45S1E3eHM5QWFXNHZRX083MDNWTUtRSVd0YWpPT0V0elVrV0R4Ti1iWnhpV1RUWk1EanFiaUdlbXk1cm5H?oc=5"
      }
     ],
     "s": 11.2
@@ -14527,7 +14524,7 @@
     "n": "Data Patterns (India)",
     "p": 4231.0,
     "pct": 4.42,
-    "vx": 2.2,
+    "vx": 2.1,
     "fo": true,
     "why": [
      {
@@ -14537,17 +14534,17 @@
      },
      {
       "t": "momentum",
-      "x": "Up 4.4%, closing near the day's high on 2.2× normal volume"
+      "x": "Up 4.4%, closing near the day's high on 2.1× normal volume"
      }
     ],
-    "s": 10.9
+    "s": 14.4
    },
    {
     "k": "BAJFINANCE",
     "n": "Bajaj Finance",
     "p": 1115.0,
     "pct": 3.36,
-    "vx": 1.2,
+    "vx": 1.1,
     "fo": true,
     "why": [
      {
@@ -14621,6 +14618,26 @@
     "s": 6.6
    },
    {
+    "k": "PNB",
+    "n": "Punjab National Bank",
+    "p": 141.79,
+    "pct": 2.39,
+    "vx": 2.1,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 2.4%, closing near the day's high on 2.1× normal volume"
+     }
+    ],
+    "s": 6.5
+   },
+   {
     "k": "ICICILIFE",
     "n": "ICICI Life Insurance",
     "p": 466.95,
@@ -14665,21 +14682,6 @@
      }
     ],
     "s": 5.0
-   },
-   {
-    "k": "PRESTIGE",
-    "n": "Prestige Estates Projects",
-    "p": 1693.9,
-    "pct": 4.24,
-    "vx": 2.2,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.2%, closing near the day's high on 2.2× normal volume"
-     }
-    ],
-    "s": 4.6
    }
   ],
   "due": [
@@ -14707,7 +14709,7 @@
     "n": "AXISCADES Technologies",
     "p": 1918.3,
     "pct": 5.78,
-    "vx": 2.9,
+    "vx": 3.0,
     "fo": false,
     "why": [
      {
@@ -14716,10 +14718,10 @@
      },
      {
       "t": "momentum",
-      "x": "Up 5.8%, closing near the day's high on 2.9× normal volume"
+      "x": "Up 5.8%, closing near the day's high on 3.0× normal volume"
      }
     ],
-    "s": 12.4
+    "s": 12.8
    },
    {
     "k": "FUSIONCX",
