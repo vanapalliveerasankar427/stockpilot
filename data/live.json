@@ -1,6 +1,6 @@
 {
  "label": "12 Nov 2026, 3:45 PM IST",
- "updated": "2026-11-12T15:45:36+05:30",
+ "updated": "2026-11-12T15:45:57+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -340,8 +340,8 @@
      "ag": 200.0
     }
    },
-   "at": "12 Nov, 3:18 PM",
-   "at_ts": 1794476924.472722,
+   "at": "12 Nov, 3:45 PM",
+   "at_ts": 1794478557.998915,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -372,7 +372,7 @@
    "high": 82325.61,
    "low": 81576.15,
    "open": 81808.81,
-   "t": 1794477636
+   "t": 1794477657
   },
   "BANKNIFTY": {
    "v": 61518.5,
@@ -464,20 +464,20 @@
   "prev": 92.76,
   "ch": -0.57,
   "pct": -0.61,
-  "high": 93.92,
+  "high": 93.89,
   "low": 91.19,
   "open": 91.28,
   "t": 1794477935
  },
  "goldSpot": {
-  "v": 3949.6,
+  "v": 3949.9,
   "prev": 4000.5,
-  "ch": -50.9,
-  "pct": -1.27,
+  "ch": -50.6,
+  "pct": -1.26,
   "high": 4005.9,
   "low": 3929.5,
   "open": 3981.0,
-  "t": 1794477933
+  "t": 1794477942
  },
  "sectors": [
   [
@@ -1063,7 +1063,7 @@
   "dii_sell": 28138.92,
   "fii_buy": 30087.21,
   "fii_sell": 17523.88,
-  "fetched": "12 Nov, 3:43 PM",
+  "fetched": "12 Nov, 3:45 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1216,9 +1216,24 @@
    "s": "Kalkine India",
    "d": "11 Nov, 3:03 PM",
    "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOaWxtSTR2SkczRU1SdkJsRDdhQXFGaVlCbGxiMWs2ZTRtQm9EdEtTcGN3bnFnQnZCeFY1QTdHUzJOVFR4SmFwSEdrdU1sX3RmMWdWSEl5c2VnVnRzMGVDZGVLQ1JvMHBLZktUQzNNSXRFQ19xdGFfdWcxUGFUYXNRZWR4YmFzRUlibEZ5aUswdnoxVE54OXFDaHQzVDBpT2gzZFdKM2NHdEFoc1NsaUV1cjJlUlF5VVc5cnVDOXVXdGVmWXJWb3ZVN3k3QzZXUQ?oc=5"
+  },
+  {
+   "tag": "Economy",
+   "t": "Moody's lifts India growth forecast, sees economy well positioned to sustain near 7% growth",
+   "s": "Reuters",
+   "d": "11 Nov, 1:08 PM",
+   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPb1Bhc253SGlMZGdtdjFTWk9raTg0ckVuNEJuM0YycUtidDd4dll4Z2RIM0t3TXlxX1hvZnpxZG1FanQzOTFDeW9BalFwLTVrSnRGbDJVa0tzMHNQZUdkR3pwQUZMYTlDOFhCOGhuSzgyZW1aQkVCcE9rRkhUU3Jtd3dmbW1PMV9Gd0NCZHNRN2xfeUdmeFZxb2cxTEp0VjhNRFVnWWlmNW40WUFJQUlpNzNnS1g0QTA2Vi0tYkRIb09paUxB?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "city metals: 24 cities",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 24 IPOs",
+  "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (430 NSE)",
+  "bse eod 2026-11-11: 5235 scrips",
+  "outlook: 305 headlines, 25 up, 16 down"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-12",
@@ -2415,13 +2430,14 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (430 NSE)",
   "bse eod 2026-11-11: 5235 scrips",
-  "outlook: 303 headlines, 25 up, 16 down"
+  "outlook: 305 headlines, 25 up, 16 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4810,
-  "at": "12 Nov, 3:43 PM"
+  "at": "12 Nov, 3:45 PM"
  },
  "global": [
   [
@@ -2456,9 +2472,9 @@
   ],
   [
    "FTSE 100",
-   10875.5,
+   10875.77,
    0.37,
-   1794477636
+   1794477657
   ],
   [
    "US 10Y yield",
@@ -2468,8 +2484,8 @@
   ]
  ],
  "outlook": {
-  "at": "12 Nov, 3:43 PM",
-  "headlines": 303,
+  "at": "12 Nov, 3:45 PM",
+  "headlines": 305,
   "screened": 1808,
   "cues": [
    "US tech (Nasdaq) rose 1.6% in the last session",
@@ -2724,6 +2740,37 @@
     ]
    },
    {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "s": 9.9,
+    "conf": "High",
+    "p": 4231.0,
+    "pct": 4.42,
+    "mc": 23686.8,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "news",
+      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Market Momentum",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcDN5YWw1N0NUN2FUU2x1ZlRDdUdkcTk4UUJNMm5jLXZJTE50bVJWRFk2WnNYMERSZkFqS0pQaTNadHpJRTQtS0RKTkIzUS1hbmdpVExiTzYyUlNKSVFKMkJhQTA1STRXTlBmRzlObERkMjZVdVA2cU5CTTVHYm1mMkswSFJ5bEprRUs1RTB2ajc4MHdLZUN5ZTBYX0MyYWF5QWgtcTZnOXFGZnAtOWNaVk5lNmpPMEo3VHFVMUh6bXFOX0p6WnZaOFMyMVJBenRubGNMbFFScUU?oc=5",
+      "src": "MarketsMojo"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +4.4% on 2.2× usual volume, near the day's high",
+      "s": 1.8724574517389827
+     }
+    ]
+   },
+   {
     "k": "REDINGTON",
     "n": "Redington",
     "s": 9,
@@ -2844,7 +2891,7 @@
     "conf": "High",
     "p": 1339.7,
     "pct": 0.32,
-    "mc": null,
+    "mc": 1812945.3,
     "sec": "Energy",
     "why": [
      {
@@ -2931,30 +2978,6 @@
     ]
    },
    {
-    "k": "DATAPATTNS",
-    "n": "Data Patterns (India)",
-    "s": 5.9,
-    "conf": "Medium",
-    "p": 4231.0,
-    "pct": 4.42,
-    "mc": 23686.8,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Market Momentum",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcDN5YWw1N0NUN2FUU2x1ZlRDdUdkcTk4UUJNMm5jLXZJTE50bVJWRFk2WnNYMERSZkFqS0pQaTNadHpJRTQtS0RKTkIzUS1hbmdpVExiTzYyUlNKSVFKMkJhQTA1STRXTlBmRzlObERkMjZVdVA2cU5CTTVHYm1mMkswSFJ5bEprRUs1RTB2ajc4MHdLZUN5ZTBYX0MyYWF5QWgtcTZnOXFGZnAtOWNaVk5lNmpPMEo3VHFVMUh6bXFOX0p6WnZaOFMyMVJBenRubGNMbFFScUU?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +4.4% on 2.2× usual volume, near the day's high",
-      "s": 1.8724574517389827
-     }
-    ]
-   },
-   {
     "k": "CAMS",
     "n": "Computer Age Management Services",
     "s": 5,
@@ -3003,25 +3026,6 @@
     ]
    },
    {
-    "k": "AVANTIFEED",
-    "n": "Avanti Feeds",
-    "s": 4,
-    "conf": "Medium",
-    "p": 762.9,
-    "pct": 8.35,
-    "mc": 10394.2,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "news",
-      "t": "Avanti Feeds, Apex Frozen Foods shares surge nearly 8% as UAE explores shrimp imports from Andhra Pradesh",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNUGpxXzJpb3lTREVoaHhMUmltaWFjRWRQQjhYdzEwUHhBXzVCX0JZRVRrS3JaVlFtZ200dXlXQWxRQnh6dmU1Yks3Uk9VSHdRQ3Y3aGJtYXdoMTdzdHZCNjdLdk5BdGZ4anhWR0oyRURZTWFhdUthRHpzbjN4WldZVXM4UFJnbi1Za3JuY2hieHBUQlZVNnZWWElLdkEweFllb3RGdmUxSmhIWVJVSmlWUmZkZ3U4LUlObjZLTUNLSDU2OXVUU0JnSEJXYXBoOG44bEZpY2tWZF9UVWtiTEd6UHVQOGhsZDNTelk0YnBHS19SS19iQ2p3RnFR?oc=5",
-      "src": "TradingView"
-     }
-    ]
-   },
-   {
     "k": "APEX",
     "n": "Apex Frozen Foods",
     "s": 4,
@@ -3041,13 +3045,32 @@
     ]
    },
    {
-    "k": "PNB",
-    "n": "Punjab National Bank",
+    "k": "AVANTIFEED",
+    "n": "Avanti Feeds",
     "s": 4,
     "conf": "Medium",
-    "p": 141.79,
-    "pct": 2.39,
-    "mc": 162958.4,
+    "p": 762.9,
+    "pct": 8.35,
+    "mc": 10394.2,
+    "sec": "Consumer Defensive",
+    "why": [
+     {
+      "k": "news",
+      "t": "Avanti Feeds, Apex Frozen Foods shares surge nearly 8% as UAE explores shrimp imports from Andhra Pradesh",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNUGpxXzJpb3lTREVoaHhMUmltaWFjRWRQQjhYdzEwUHhBXzVCX0JZRVRrS3JaVlFtZ200dXlXQWxRQnh6dmU1Yks3Uk9VSHdRQ3Y3aGJtYXdoMTdzdHZCNjdLdk5BdGZ4anhWR0oyRURZTWFhdUthRHpzbjN4WldZVXM4UFJnbi1Za3JuY2hieHBUQlZVNnZWWElLdkEweFllb3RGdmUxSmhIWVJVSmlWUmZkZ3U4LUlObjZLTUNLSDU2OXVUU0JnSEJXYXBoOG44bEZpY2tWZF9UVWtiTEd6UHVQOGhsZDNTelk0YnBHS19SS19iQ2p3RnFR?oc=5",
+      "src": "TradingView"
+     }
+    ]
+   },
+   {
+    "k": "IOB",
+    "n": "Indian Overseas Bank",
+    "s": 4,
+    "conf": "Medium",
+    "p": 31.61,
+    "pct": 0.44,
+    "mc": 60870.1,
     "sec": "Financial Services",
     "why": [
      {
@@ -3060,13 +3083,13 @@
     ]
    },
    {
-    "k": "IOB",
-    "n": "Indian Overseas Bank",
+    "k": "PNB",
+    "n": "Punjab National Bank",
     "s": 4,
     "conf": "Medium",
-    "p": 31.61,
-    "pct": 0.44,
-    "mc": 60870.1,
+    "p": 141.79,
+    "pct": 2.39,
+    "mc": 162958.4,
     "sec": "Financial Services",
     "why": [
      {
@@ -3102,13 +3125,20 @@
    {
     "k": "BDL",
     "n": "Bharat Dynamics",
-    "s": -19.0,
+    "s": -27.0,
     "conf": "High",
     "p": 1055.1,
     "pct": -4.08,
     "mc": 38676.0,
     "sec": "Industrials",
     "why": [
+     {
+      "k": "news",
+      "t": "Bharat Dynamics Q2 FY27 results: Net profit drops 15% YoY; revenue increases to ₹1,664 crore",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMkt0dXlLSUtndEVEeXVMR2xWM2pMS1JVNU10OXZDaFYyTl82cUpxaHBmeGtwOEVqUlFFYUIxTHFabFQ3YXZ5ZTNIY2lIcmQtMFIwUG5rS0RVaDNtMF9vRmJua19KUVRKUDhaTXF0Q3E1MWs4NEdZcnFjeXZkeUMwZUVaRUJsUDNIdExEN1VFSXN5allBR1Rxbkx3el9Gb3Iza1ZZTWVOblNqZnJvR2VwZEg0OVZoVUFLcmxfdUJMYmMzVlR4aXZMQjNSODh6eWp2MWgxbGQ1NWZvaDY0MlA2Wk9ZTmwxZw?oc=5",
+      "src": "Upstox"
+     },
      {
       "k": "news",
       "t": "Bharat Dynamics Q2 Results: Shares tumble 4% after weak earnings; operating profit falls 57%",
@@ -4013,7 +4043,7 @@
   }
  },
  "hilo": {
-  "at": "12 Nov, 3:43 PM",
+  "at": "12 Nov, 3:45 PM",
   "hi": [
    [
     "ICICIBANK",
@@ -4505,7 +4535,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods",
+    "Flex Foods Ltd-$",
     45.0,
     -16.64,
     53.98
@@ -4659,7 +4689,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes",
+    "Mukat Pipes Ltd-$",
     15.62,
     -8.44,
     17.06
@@ -4708,7 +4738,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping",
+    "Shahi Shipping Ltd-$",
     10.05,
     -7.63,
     10.88
@@ -4729,7 +4759,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals",
+    "Laffans Petrochemicals Ltd-$",
     27.25,
     -7.31,
     29.4
@@ -4750,7 +4780,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties",
+    "Resonance Specialties Ltd-$",
     281.9,
     -7.06,
     303.3
@@ -4834,7 +4864,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India",
+    "Rasandik Engineering Industries India Ltd-$",
     54.25,
     -6.3,
     57.9
@@ -4905,7 +4935,7 @@
   ]
  },
  "allmov": {
-  "at": "12 Nov, 3:43 PM",
+  "at": "12 Nov, 3:45 PM",
   "g": [
    [
     "B544535",
@@ -5012,8 +5042,8 @@
   ]
  },
  "rescal": {
-  "ts": 1794477707.6214843,
-  "at": "12 Nov, 3:31 PM",
+  "ts": 1794478570.4028966,
+  "at": "12 Nov, 3:45 PM",
   "items": [
    {
     "k": "B539096",
@@ -14018,7 +14048,7 @@
   ]
  },
  "tw": {
-  "at": "12 Nov, 3:43 PM",
+  "at": "12 Nov, 3:45 PM",
   "phase": "close",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14208,6 +14238,26 @@
      }
     ],
     "s": 18.5
+   },
+   {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "p": 4231.0,
+    "pct": 4.42,
+    "vx": 2.2,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 4.4%, closing near the day's high on 2.2× normal volume"
+     }
+    ],
+    "s": 14.9
    },
    {
     "k": "INNOVACAP",
@@ -14416,22 +14466,6 @@
      }
     ],
     "s": 11.2
-   },
-   {
-    "k": "TMCV",
-    "n": "Tata Motors",
-    "p": 453.4,
-    "pct": 1.65,
-    "vx": 1.5,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Autoline Industries Bags Tata Motors Programmes Worth About ₹180 Crore a Year; Q2 Revenue Jumps 75.75%",
-      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNOGxTVVhDZmUyLU1JQ3ZtZDZORzNPV3pMc3ctdFFJaUxteUZXMDc2VXNmWEhxTVd2R0xJQlFDa0hCM3UzZTFNbmNJdGsycl9hM0ExeFdkTl8yNDU2X0hVd3UzdWZMMGhBTnpQQ1V3TGZWRFBnWXRidzI5cktkbENfdVZqcDRtSWZpaE1ORlR6djNRSmo4bGtxajJRZnllNDZGOFhGRUNBWVJqa2kxTnBXUnJ2WWppU0Vua2wxZldyZTZpMFlhSi14M19SS3R3ZWZWTjBGOGhqLUt0bU55NGc?oc=5"
-     }
-    ],
-    "s": 11.2
    }
   ],
   "fo": [
@@ -14456,6 +14490,26 @@
     "s": 44.3
    },
    {
+    "k": "DATAPATTNS",
+    "n": "Data Patterns (India)",
+    "p": 4231.0,
+    "pct": 4.42,
+    "vx": 2.2,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Momentum",
+      "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZDFONjBWZ0M3MU5Zdy1uY0dyVV9vbUpkd1NtRWFpQ2dKcDRNT0JKdEhKS001SFEtVm9pWGVDVV9fNkJMSWtCOFh4TmhFQzNjTGw1bzRMbHBybDh5Q3hJOExVeXhYZmc0Rml5dmc4TzQ5eU1WQnJWSFR3SmtyalVJOWdBRmtvekNqcGVnWGc2WHpkd3llam1tUjBRZFZQRGo5bE5hVnQ1R1lDdDFqU3ZoN0RVSlYxZHUwcFAzX3FhRkVycDc2MElBSnVvLUc1VlE?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 4.4%, closing near the day's high on 2.2× normal volume"
+     }
+    ],
+    "s": 14.9
+   },
+   {
     "k": "PAYTM",
     "n": "One 97 Communications",
     "p": 1925.0,
@@ -14469,26 +14523,6 @@
      }
     ],
     "s": 14.0
-   },
-   {
-    "k": "DATAPATTNS",
-    "n": "Data Patterns (India)",
-    "p": 4231.0,
-    "pct": 4.42,
-    "vx": 2.2,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Data Patterns (India) Ltd Sees Sharp Open Interest Surge Amid Bullish Market Momentum",
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcDN5YWw1N0NUN2FUU2x1ZlRDdUdkcTk4UUJNMm5jLXZJTE50bVJWRFk2WnNYMERSZkFqS0pQaTNadHpJRTQtS0RKTkIzUS1hbmdpVExiTzYyUlNKSVFKMkJhQTA1STRXTlBmRzlObERkMjZVdVA2cU5CTTVHYm1mMkswSFJ5bEprRUs1RTB2ajc4MHdLZUN5ZTBYX0MyYWF5QWgtcTZnOXFGZnAtOWNaVk5lNmpPMEo3VHFVMUh6bXFOX0p6WnZaOFMyMVJBenRubGNMbFFScUU?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 4.4%, closing near the day's high on 2.2× normal volume"
-     }
-    ],
-    "s": 10.9
    },
    {
     "k": "BAJFINANCE",
@@ -15031,28 +15065,142 @@
    "d": "2026-11-12",
    "phase": "close",
    "px": {
-    "GODREJIND": 1092.65,
-    "SPCENET": 4.59,
-    "KALYANKJIL": 714.0,
-    "MIDHANI": 406.4,
-    "HINDOILEXP": 189.79,
-    "KMEW": 713.1,
-    "HINDCOPPER": 447.0,
-    "EDELALTS": 1831.1,
-    "CUPID": 384.75,
-    "KESORAMIND": 14.58,
+    "GODREJIND": 1084.1,
+    "KALYANKJIL": 710.9,
+    "MIDHANI": 405.85,
+    "KMEW": 713.0,
+    "HINDCOPPER": 446.15,
+    "EDELALTS": 1833.2,
+    "CUPID": 384.8,
+    "INDGN": 666.05,
     "BNAGROCHEM": 154.92,
-    "CANHLIFE": 132.0,
-    "INDNIPPON": 1261.0,
-    "INDGN": 665.4,
-    "BALAJITELE": 102.5,
-    "PAYTM": 1921.2,
-    "PNB": 142.25,
-    "BAJFINANCE": 1114.1,
-    "BEL": 404.25,
-    "RELIANCE": 1337.2
+    "CANHLIFE": 132.1,
+    "INDNIPPON": 1260.7,
+    "DATAPATTNS": 4231.0,
+    "INNOVACAP": 1162.8,
+    "PAYTM": 1925.0,
+    "LEMONTREE": 120.41,
+    "BAJFINANCE": 1115.0,
+    "BEL": 404.8,
+    "RELIANCE": 1339.7,
+    "MOTILALOFS": 1216.8,
+    "PNB": 141.79
    }
   },
-  "hist": []
+  "hist": [
+   {
+    "d": "2026-11-11",
+    "on": "2026-11-12",
+    "n": 20,
+    "up": 8,
+    "avg": 0.15,
+    "best": [
+     [
+      "KALYANKJIL",
+      7.1
+     ],
+     [
+      "EDELALTS",
+      4.99
+     ],
+     [
+      "PNB",
+      2.39
+     ]
+    ],
+    "worst": [
+     [
+      "APOLLO",
+      -3.09
+     ],
+     [
+      "SEJALLTD",
+      -3.15
+     ]
+    ],
+    "all": [
+     [
+      "KALYANKJIL",
+      7.1
+     ],
+     [
+      "EDELALTS",
+      4.99
+     ],
+     [
+      "PNB",
+      2.39
+     ],
+     [
+      "SUNTV",
+      2.23
+     ],
+     [
+      "SUDARSCHEM",
+      1.41
+     ],
+     [
+      "PROTEAN",
+      0.51
+     ],
+     [
+      "BANKBARODA",
+      0.42
+     ],
+     [
+      "FEDERALBNK",
+      0.25
+     ],
+     [
+      "ELIN",
+      -0.17
+     ],
+     [
+      "BHEL",
+      -0.19
+     ],
+     [
+      "GRSE",
+      -0.62
+     ],
+     [
+      "TATASTEEL",
+      -0.68
+     ],
+     [
+      "AONESTEELS",
+      -0.71
+     ],
+     [
+      "MSTCLTD",
+      -0.95
+     ],
+     [
+      "ASHOKA",
+      -1.04
+     ],
+     [
+      "POWERGRID",
+      -1.63
+     ],
+     [
+      "RVNL",
+      -1.91
+     ],
+     [
+      "SALASAR",
+      -2.11
+     ],
+     [
+      "APOLLO",
+      -3.09
+     ],
+     [
+      "SEJALLTD",
+      -3.15
+     ]
+    ]
+   }
+  ]
  }
 }
