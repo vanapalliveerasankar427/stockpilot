@@ -59,3 +59,4 @@ jobs:
             if [ "$DOW" -ge 6 ] || [ "$NOW" -lt 0900 ] || [ "$NOW" -ge 1545 ]; then break; fi
             sleep 40
           done
+
