@@ -73,6 +73,18 @@ def intraday(ysym):
     return {"t0": t0, "t": [(t - t0) // 60 for t, _ in pts], "c": [round(c, 2) for _, c in pts]}
 
 
+def weekly(ysym):
+    """Weekly closes for the whole listed history (for the 3Y / 5Y / All charts)."""
+    j = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{requests.utils.quote(ysym)}", params={"range": "max", "interval": "1wk"}).json()
+    r = j["chart"]["result"][0]
+    ts, cl = r.get("timestamp") or [], r["indicators"]["quote"][0].get("close") or []
+    pts = [(t // 86400, c) for t, c in zip(ts, cl) if c]
+    if len(pts) < 5:
+        return None
+    d0 = pts[0][0]
+    return {"d0": d0, "d": [d - d0 for d, _ in pts], "c": [round(c, 2) for _, c in pts]}
+
+
 # BSE-only scrips: Yahoo has little history for them, so build it from BSE's own daily price files
 def bse_closes(keys):
     path = os.path.join(OUT, "bse_closes.json")
@@ -192,6 +204,22 @@ def main():
                 stats["chart_fail"] += 1
         except Exception:
             stats["chart_fail"] += 1
+        # long history: weekly closes are only needed before the daily (2-year) series starts,
+        # so a stored copy stays good until the daily series moves past its end (~2 years)
+        o = old_file(key)
+        ow = o.get("w")
+        if "p" in rec:
+            if ow and ow["d0"] + ow["d"][-1] >= rec["p"]["d0"] + 7:
+                rec["w"] = ow
+            else:
+                try:
+                    w = weekly(ysym)
+                    if w and w["d0"] < rec["p"]["d0"] - 3:
+                        rec["w"] = w
+                        stats["weekly"] = stats.get("weekly", 0) + 1
+                except Exception:
+                    if ow:
+                        rec["w"] = ow
         if "p" not in rec and key in BSEH:
             rec["p"] = BSEH[key]
             stats["bse_hist"] = stats.get("bse_hist", 0) + 1
@@ -219,7 +247,6 @@ def main():
                 except Exception:
                     pass
         else:
-            o = old_file(key)
             if o.get("f"):
                 rec["f"] = o["f"]
         if key in prof:

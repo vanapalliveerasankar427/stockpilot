@@ -662,6 +662,7 @@ input[type=checkbox]:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(i
 .sxr{display:inline-flex;gap:2px;padding:4px;border-radius:12px;background:var(--soft)}
 .sxr button{border:0;background:none;padding:6px 11px;border-radius:9px;font-weight:600;font-size:13px;color:var(--muted);cursor:pointer}
 .sxr button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+@media(max-width:700px){.sxr{display:flex;width:100%;box-sizing:border-box}.sxr button{flex:1;padding:6px 0;font-size:12.5px;min-width:0}}
 .sxtip{position:absolute;top:6px;left:0;pointer-events:none;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:6px 9px;font-size:12.5px;box-shadow:0 8px 20px -8px rgba(0,0,0,.3);white-space:nowrap;display:none}
 .fbars{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:8px;align-items:end;height:150px;margin-top:10px}
 .fbars>div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%}.fbars>div>div{flex:1;min-height:0}
@@ -2554,24 +2555,25 @@ function repaintCharts(){document.getElementById('nchart').innerHTML=areaChart(N
 let sortK='day',sortD=-1,curStock=null;
 
 // ===================== Stocks page: gainers on one side, losers on the other (all NSE stocks, live) =====================
-let glSeg='all',glMore=false,glAt=0;
+let glSeg='all',glN=10,glAt=0;
 function renderGainLose(){const el=document.getElementById('gainlose');if(!el)return;
   if(!ALLQ||!UNI){el.innerHTML=`<div class="gl-wrap">${LOADER('Finding today\'s top gainers and losers…')}</div>`;Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(ALLQ&&UNI)renderGainLose()});return}
-  const seg={all:[0,1e15],large:[20000,1e15],mid:[0,20000]}[glSeg];const L=[];
+  const seg={all:[0,1e15],large:[20000,1e15],mid:[5000,20000],small:[0,5000]}[glSeg];const L=[];
   for(const [k,r] of Object.entries(ALLQ.q)){const u=UNIMAP[k];if(!u||!/^NSE/.test(u.x))continue;const q=qOf(k);if(!q||!q.price)continue;const mc=q.mcapCr;if(glSeg!=='all'&&(mc==null||!(mc>=seg[0]&&mc<seg[1])))continue; // All = every NSE stock, no size filter
     const px=LT.last[k]!=null?LT.last[k]:q.price,pc=LT.pct[k]!=null?LT.pct[k]:q.pct;if(pc==null||!isFinite(pc))continue;
     if(Math.abs(pc)>25&&q.open&&q.prev&&Math.abs(q.open/q.prev-1)>.25)continue; // split/bonus day: the feed's previous close isn't adjusted, so the % is wrong
     L.push({k,n:u.n,px,pc})}
   if(glSeg==='all'){const M=(LIVED&&LIVED.bse_movers)||{};[...(M.g||[]),...(M.l||[])].forEach(([c,n,ltp,pct])=>{const k='B'+c,u=UNIMAP[k];if(u&&ltp&&pct!=null&&!(Math.abs(pct)>25&&/-RE/.test(n)))L.push({k,n:u.n,px:ltp,pc:pct,bse:1})})} // BSE-only stocks (live from BSE)
-  const n=glMore?25:10,G=L.filter(x=>x.pc>0).sort((a,b)=>b.pc-a.pc).slice(0,n),D=L.filter(x=>x.pc<0).sort((a,b)=>a.pc-b.pc).slice(0,n);
+  const GA=L.filter(x=>x.pc>0).sort((a,b)=>b.pc-a.pc),DA=L.filter(x=>x.pc<0).sort((a,b)=>a.pc-b.pc),G=GA.slice(0,glN),D=DA.slice(0,glN),more=Math.max(GA.length,DA.length)>glN;
   const row=(x,i)=>`<a class="gl-row" href="#stock-${esc(x.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(x.k)};color:#fff">${esc(x.n.slice(0,2).toUpperCase())}${logoImg(x.k)}</div>
      <div class="gl-nm"><b>${esc(x.n)}${x.bse?' <span class="gl-x">BSE</span>':''}</b><span class="gl-l2"><small class="num">₹<i class="lp" data-lp="${esc(x.k)}">${n2(x.px)}</i></small><em class="gl-p num" data-lc="${esc(x.k)}">${x.pc>=0?'+':''}${x.pc.toFixed(2)}%</em></span></div><span class="gl-c" data-lcw="${esc(x.k)}">${chip(x.pc,x.px)}</span></a>`;
-  el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large cap'],['mid','Mid & small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
-    <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${G.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
-    <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${D.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
-    <div class="gl-f"><span class="note">Every NSE and BSE stock · Large cap = ₹20,000 Cr+ · ${mktOpen()?'live':'last session'}</span><button class="ghost" type="button" id="glMore">${glMore?'Show top 10':'Show top 25'}</button></div></div>`;
-  el.querySelectorAll('[data-gl]').forEach(b=>b.onclick=()=>{glSeg=b.dataset.gl;renderGainLose()});
-  el.querySelector('#glMore').onclick=()=>{glMore=!glMore;renderGainLose()};glAt=Date.now()}
+  el.innerHTML=`<div class="gl-wrap"><div class="gl-h"><h3>Today's top movers</h3><div class="mv-seg gl-seg" role="group" aria-label="Company size">${[['all','All'],['large','Large'],['mid','Mid'],['small','Small']].map(([k,l])=>`<button type="button" data-gl="${k}" aria-pressed="${glSeg===k}">${l}</button>`).join('')}</div></div>
+    <div class="gl-cols"><div class="gl-col up"><div class="gl-t">▲ Top gainers <b>${GA.length}</b></div>${G.map(row).join('')||'<p class="note">No stocks are up right now.</p>'}</div>
+    <div class="gl-col dn"><div class="gl-t">▼ Top losers <b>${DA.length}</b></div>${D.map(row).join('')||'<p class="note">No stocks are down right now.</p>'}</div></div>
+    <div class="gl-f"><span class="note">Every NSE and BSE stock · Large ₹20,000 Cr+ · Mid ₹5,000–20,000 Cr · Small under ₹5,000 Cr · ${mktOpen()?'live':'last session'}</span><span style="display:flex;gap:6px">${more?`<button class="ghost" type="button" id="glMore">Show 50 more</button><button class="ghost" type="button" id="glAll">Show all</button>`:''}${glN>10?`<button class="ghost" type="button" id="glLess">Top 10</button>`:''}</span></div></div>`;
+  el.querySelectorAll('[data-gl]').forEach(b=>b.onclick=()=>{glSeg=b.dataset.gl;glN=10;renderGainLose()});
+  const y0=()=>scrollY,keep=f=>{const y=y0();f();renderGainLose();scrollTo(0,y)};
+  const bm=el.querySelector('#glMore'),ba=el.querySelector('#glAll'),bl=el.querySelector('#glLess');if(bm)bm.onclick=()=>keep(()=>glN+=50);if(ba)ba.onclick=()=>keep(()=>glN=1e5);if(bl)bl.onclick=()=>{glN=10;renderGainLose();el.scrollIntoView({block:'start'})};glAt=Date.now()}
 setTimeout(()=>ltHooks.push(()=>{if(document.getElementById('v-stocks').classList.contains('on')&&Date.now()-glAt>20000&&!document.querySelector('#gainlose :hover')){const y=scrollY;loadAllQuotes().then(()=>{renderGainLose();scrollTo(0,y)})}}),0);
 
 // ===================== Penny stocks: every NSE & BSE share under ₹20, by price band =====================
@@ -3554,13 +3556,16 @@ function sxWithToday(p,k){if(!p||!p.d||!p.d.length)return p;const q=qOf(k),px=px
   let day=null;if(typeof q.t==='number')day=Math.floor((q.t*1000+330*60000)/864e5);else if(typeof q.t==='string'){const m=q.t.match(/(\d+) (\w{3})/);if(m){const d=new Date(m[1]+' '+m[2]+' '+new Date().getFullYear()+' 12:00 UTC');if(!isNaN(d))day=Math.floor(d/864e5)}}
   if(q.bseLive)day=Math.floor((Date.now()+330*60000)/864e5);if(day==null)return p;const rel=day-p.d0;if(rel<=p.d.at(-1))return p;
   return {...p,d:[...p.d,rel],c:[...p.c,+px]}}
+function sxLong(h){const p=h.p,w=h.w;if(!p||!w||!w.d||!w.d.length)return p;const D=[],C=[];for(let i=0;i<w.d.length;i++){const a=w.d[i]+w.d0-p.d0;if(a<0){D.push(a);C.push(w.c[i])}}
+  if(!D.length)return p;return {...p,d:[...D,...p.d],c:[...C,...p.c]}} // weekly closes before the 2-year daily history, so 3Y/5Y/All reach back to listing
+function sxSpan(h){const L=sxLong(h);return L&&L.d.length?L.d.at(-1)-L.d[0]:0}
 function sxChart(p,days,k){p=sxWithToday(p,k);const d0=p.d0,last=p.d.at(-1),from=last-days;let pts=p.d.map((d,i)=>[d,p.c[i]]).filter(x=>x[0]>=from);
   const q=qOf(k)||(byStock[k==='M&M'?'MM':k]?{price:byStock[k==='M&M'?'MM':k].price}:null);
   if(q&&q.price&&LIVED&&LIVED.state==='open'){const today=Math.floor(Date.now()/864e5)-d0;if(today>pts.at(-1)[0])pts.push([today,q.price]);else pts[pts.length-1]=[pts.at(-1)[0],q.price]}
   if(pts.length<2)return '<p class="note">Not enough price history yet.</p>';
   const W=640,Hh=220,pad=8,mn=Math.min(...pts.map(x=>x[1])),mx=Math.max(...pts.map(x=>x[1])),rg=mx-mn||1,X=i=>pad+i/(pts.length-1)*(W-2*pad),Y=v=>pad+(1-(v-mn)/rg)*(Hh-2*pad-18);
   const up=pts.at(-1)[1]>=pts[0][1],col=up?'var(--up)':'var(--dn)',line=pts.map((x,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(x[1]).toFixed(1)}`).join(' ');
-  const dt=x=>new Date((d0+x)*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:days>200?'2-digit':undefined});
+  const dt=x=>new Date((d0+x)*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:days>200?(days>3000?'numeric':'2-digit'):undefined});
   const ch=(pts.at(-1)[1]/pts[0][1]-1)*100;
   return `<div class="row" style="margin-bottom:6px"><b class="num ${up?'up':'down'}">${ch>=0?'+':''}${ch.toFixed(2)}%</b><span class="muted num" style="font-size:12.5px">${dt(pts[0][0])} – ${dt(pts.at(-1)[0])} · low ₹${n2(mn)} · high ₹${n2(mx)}</span></div>
    <div class="sxchart"><svg viewBox="0 0 ${W} ${Hh}" preserveAspectRatio="none" aria-label="Price chart"><defs><linearGradient id="sxg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${up?'#00A37A':'#E5484D'}" stop-opacity=".28"/><stop offset="1" stop-color="${up?'#00A37A':'#E5484D'}" stop-opacity="0"/></linearGradient></defs>
@@ -3582,7 +3587,7 @@ function sxAbout(a){if(!a)return '';const w=a.website?a.website.replace(/^https?
 function fillExtras(){const box=document.getElementById('sx');if(!box||box.dataset.done)return;const k=box.dataset.k;box.dataset.done=1;
   box.innerHTML='<div class="glass card sec"><div class="sk-blk" style="height:28px;width:55%;margin-bottom:14px"></div><div class="sk-blk" style="height:240px;margin-bottom:12px"></div><div class="sk-blk" style="height:120px"></div></div>';
   Promise.all([loadHist(k),loadAllQuotes()]).then(([h])=>{if(!document.body.contains(box))return;if(!h){box.innerHTML=`<div class="glass card sec"><p class="note">${/^B\d+$/.test(k)?'No price chart yet: this BSE share has traded on fewer than 2 days in the last year. Its latest official price is shown above.':'Chart and financials for this stock are added after the next daily update (around 4:30 PM).'}</p></div>`;return}
-    const draw=()=>{box.innerHTML=`<div class="glass card sec"><div class="row" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"><span class="lbl" style="margin:0">Price chart</span><div class="sxr">${[...(h.i?[[1,'1D']]:[]),[7,'1W'],[30,'1M'],[91,'3M'],[182,'6M'],[365,'1Y'],[730,'2Y']].map(([d,l])=>`<button type="button" data-d="${d}" aria-pressed="${sxRange===d||(!h.i&&sxRange===1&&d===7)}">${l}</button>`).join('')}</div></div>${sxRange<=7&&h.i?sxIntra(h.i,sxRange,k):h.p?(h.p.d.length<3?`<p class="note">This share trades rarely: only ${h.p.d.length} trading day${h.p.d.length>1?'s':''} in the last year, so there isn't enough history for a chart.</p>`:sxChart(h.p,Math.max(sxRange,7),k)):'<p class="note">No price history yet: this share has hardly traded on BSE in the last year.</p>'}${h.p&&h.p.src==='BSE'?'<p class="src" style="margin-top:6px">Daily closes from BSE\'s official price files. BSE-only shares have no intraday chart.</p>':''}</div>
+    const draw=()=>{box.innerHTML=`<div class="glass card sec"><div class="row" style="flex-wrap:wrap;gap:8px;margin-bottom:8px"><span class="lbl" style="margin:0">Price chart</span><div class="sxr">${[...(h.i?[[1,'1D']]:[]),[7,'1W'],[30,'1M'],[91,'3M'],[182,'6M'],[365,'1Y'],...(sxSpan(h)>760?[[1096,'3Y']]:[]),...(sxSpan(h)>1130?[[1827,'5Y']]:[]),[99999,'All']].map(([d,l])=>`<button type="button" data-d="${d}" aria-pressed="${sxRange===d||(!h.i&&sxRange===1&&d===7)}">${l}</button>`).join('')}</div></div>${sxRange<=7&&h.i?sxIntra(h.i,sxRange,k):h.p?(h.p.d.length<3?`<p class="note">This share trades rarely: only ${h.p.d.length} trading day${h.p.d.length>1?'s':''} in the last year, so there isn't enough history for a chart.</p>`:sxChart(sxLong(h),Math.max(sxRange,7),k)):'<p class="note">No price history yet: this share has hardly traded on BSE in the last year.</p>'}${h.p&&h.p.src==='BSE'?'<p class="src" style="margin-top:6px">Daily closes from BSE\'s official price files. BSE-only shares have no intraday chart.</p>':''}</div>
       <div class="grid2 sec">${sxFin(h.f)||'<div class="glass card"><span class="lbl">Results</span><p class="note" style="margin-top:8px">Quarterly results for this company are not available yet. They are filled in over the week.</p></div>'}${sxAbout(h.a)||''}</div>`;
       box.querySelectorAll('.sxr button').forEach(b=>b.onclick=()=>{sxRange=+b.dataset.d;draw()});
       const svg=box.querySelector('.sxchart svg'),tip=box.querySelector('#sxtip'),meta=box.querySelector('#sxpts');if(!svg||!meta)return;const M=JSON.parse(meta.textContent),vl=box.querySelector('#sxv');
