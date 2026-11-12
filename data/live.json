@@ -1,6 +1,6 @@
 {
  "label": "13 Nov 2026, 3:09 AM IST",
- "updated": "2026-11-13T03:09:25+05:30",
+ "updated": "2026-11-13T03:09:59+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -475,14 +475,14 @@
   "t": 1794518959
  },
  "goldSpot": {
-  "v": 3879.0,
+  "v": 3878.9,
   "prev": 4000.5,
-  "ch": -121.5,
+  "ch": -121.6,
   "pct": -3.04,
   "high": 4005.9,
-  "low": 3857.1,
+  "low": 3856.8,
   "open": 3981.0,
-  "t": 1794518950
+  "t": 1794518995
  },
  "sectors": [
   [
@@ -1224,11 +1224,9 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
-  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
@@ -2428,11 +2426,9 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
-  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
@@ -2461,7 +2457,7 @@
    "Nasdaq",
    25366.09,
    -0.39,
-   1794519563
+   1794519598
   ],
   [
    "Nikkei 225",
