@@ -1,9 +1,10 @@
 name: Update data
 
 # Open pages read data/live.json straight from this repository, so a data update
-# only needs a commit. During market hours one run keeps updating prices about every minute
-# (full update incl. IBJA, GMP and news every ~5 minutes)
-# until the close, so it doesn't depend on GitHub starting a new run each time.
+# only needs a commit. One run keeps going all the time and hands over to a fresh run every
+# ~5.5 hours: prices about every minute in market hours (full update every ~5 minutes),
+# every 4 minutes pre-market, every 10 minutes in the evening, every 30 minutes at night.
+# The schedules below are only a backup in case the chain ever breaks.
 on:
   schedule:
     # GitHub often starts scheduled runs late or skips them, so weekdays get many chances to
@@ -50,21 +51,25 @@ jobs:
             }
           i=0
           while true; do
-            if [ $((i % 5)) -eq 0 ]; then python scripts/update.py || true; else python scripts/update.py --fast || true; fi
+            NOW=$(TZ=Asia/Kolkata date +%H%M); DOW=$(TZ=Asia/Kolkata date +%u)
+            MKT=0; if [ "$DOW" -le 5 ] && [ "$NOW" -ge 0900 ] && [ "$NOW" -lt 1545 ]; then MKT=1; fi
+            if [ "$MKT" = 1 ] && [ $((i % 5)) -ne 0 ]; then python scripts/update.py --fast || true; else python scripts/update.py || true; fi
             i=$((i+1))
             publish_extra
             git add data
             if ! git diff --cached --quiet; then
               git commit -q -m "Data update $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"
-              git pull -q --rebase -X theirs || true
-              git push -q || true
+            fi
+            git pull -q --rebase -X theirs || true   # also picks up script changes
+            git push -q || true
+            # Jobs stop after ~6 hours: hand over to a fresh run so updates never depend on
+            # GitHub's scheduler (which sometimes starts runs late or skips them).
+            if [ "$SECONDS" -gt 19800 ]; then
+              if gh api -X POST "repos/${GITHUB_REPOSITORY}/actions/workflows/data.yml/dispatches" -f ref=main; then break; fi
             fi
             NOW=$(TZ=Asia/Kolkata date +%H%M); DOW=$(TZ=Asia/Kolkata date +%u)
-            if [ "$DOW" -ge 6 ] || [ "$NOW" -lt 0500 ] || [ "$NOW" -ge 1545 ]; then break; fi
-            # Jobs stop after ~6 hours: hand over to a fresh run before that.
-            if [ "$SECONDS" -gt 19800 ]; then
-              gh api -X POST "repos/${GITHUB_REPOSITORY}/actions/workflows/data.yml/dispatches" -f ref=main || true
-              break
-            fi
-            if [ "$NOW" -lt 0900 ]; then sleep 240; else sleep 40; fi
+            if [ "$DOW" -le 5 ] && [ "$NOW" -ge 0900 ] && [ "$NOW" -lt 1545 ]; then sleep 40
+            elif [ "$DOW" -le 5 ] && [ "$NOW" -ge 0500 ] && [ "$NOW" -lt 0900 ]; then sleep 240
+            elif [ "$DOW" -le 5 ] && [ "$NOW" -ge 1545 ] && [ "$NOW" -lt 2100 ]; then sleep 600
+            else sleep 1800; fi
           done

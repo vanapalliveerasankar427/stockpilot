@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
   pages: write
   id-token: write
 
@@ -26,6 +27,13 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Restart the price updates if they have stopped
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          age=$(( $(date +%s) - $(git log -1 --format=%ct) ))
+          echo "Last commit ${age}s ago"
+          if [ "$age" -gt 2700 ]; then gh api -X POST "repos/${GITHUB_REPOSITORY}/actions/workflows/data.yml/dispatches" -f ref=main || true; fi
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
