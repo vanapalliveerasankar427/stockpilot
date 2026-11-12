@@ -2551,7 +2551,7 @@ function renderMarkets(){
 function repaintCharts(){document.getElementById('nchart').innerHTML=areaChart(NIFTY8)}
 
 // ===================== stocks =====================
-let sortK='mcap',sortD=-1,curStock=null;
+let sortK='day',sortD=-1,curStock=null;
 
 // ===================== Stocks page: gainers on one side, losers on the other (all NSE stocks, live) =====================
 let glSeg='all',glMore=false,glAt=0;
@@ -2626,7 +2626,7 @@ function renderTomorrow(){const el=document.getElementById('tomorrowpage');if(!e
      <div class="tw-best">${(last.best||[]).map(([k,v])=>`<a href="#stock-${esc(k)}"><b>${esc((UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k)}</b><span class="${v>=0?'up':'down'} num">${v>=0?'+':''}${v}%</span></a>`).join('')}</div>
      ${H.length>1?`<p class="note" style="margin:8px 0 0">Last ${H.length} lists: ${H.reduce((a,h)=>a+h.up,0)} of ${H.reduce((a,h)=>a+h.n,0)} stocks rose the next session (${Math.round(H.reduce((a,h)=>a+h.up,0)/Math.max(1,H.reduce((a,h)=>a+h.n,0))*100)}%).</p>`:''}</div>`
     :`<div class="tw-rec"><span class="lbl">Track record</span><small>Starts after the first list: every evening we score how the previous list actually did.</small></div>`;
-  const L=twTab==='fo'?T.fo:twTab==='due'?T.due:T.picks;
+  const twp=o=>{const v=LT.pct[o.k]!=null?LT.pct[o.k]:o.pct;return v==null?-999:v};const L=(twTab==='fo'?T.fo:twTab==='due'?T.due:T.picks).slice().sort((a,b)=>twp(b)-twp(a)); // biggest % first
   el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>${esc(PH[0])} · updated ${esc(T.at)}</div><h1 class="ptitle">Tomorrow's watch</h1>
     <p class="psub">Stocks with a reason to move next session: results just out, positive news, and strong closes on heavy volume. ${esc(PH[1])}.</p></div></div>
    <div class="tw-warn">⚠️ Signals for research, not buy/sell advice. A good list still misses often: results can disappoint, and global markets can pull everything down overnight. MarketVedaPro is not SEBI-registered.</div>
@@ -3424,7 +3424,7 @@ addEventListener('scroll',()=>closeSel(),{passive:true});addEventListener('resiz
 let enhT;new MutationObserver(()=>{clearTimeout(enhT);enhT=setTimeout(()=>enhanceControls(),20)}).observe(document.body,{childList:true,subtree:true});
 
 // ===================== Today: morning setup + screens on real prices for every NSE stock =====================
-let tdF={sme:false,minCap:500};
+let tdF={sme:true,minCap:0};
 // ===================== Today's outlook: likely up / likely down =====================
 // ===================== F&O signals (F&O stocks only; research signals, not trading tips) =====================
 const FNO=()=>(LIVED&&LIVED.fno&&LIVED.fno.syms)||{};
@@ -3497,25 +3497,26 @@ function renderToday(){const el=document.getElementById('todaypage');if(!el)retu
   const glob=`<div class="gl num">${G.map(([n,v,p])=>`<div><span>${esc(n)}</span><b>${n.includes('yield')?v.toFixed(2)+'%':v.toLocaleString('en-US',{maximumFractionDigits:2})}</b>${chip(p)}</div>`).join('')}
     <div><span>Nifty 50 ${open?'now':'last close'}</span><b>${fin(N.v)}</b>${chip(N.pct)}</div><div><span>India VIX</span><b>${IDX.VIX.v.toFixed(2)}</b>${chip(IDX.VIX.pct)}</div>
     ${window.FLOWS&&FLOWS.fii!=null?`<div><span>FII net (${esc(String(FLOWS.date||'').slice(0,6))})</span><b class="${FLOWS.fii>=0?'up':'down'}">${FLOWS.fii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.fii)).toLocaleString('en-IN')} Cr</b></div><div><span>DII net</span><b class="${FLOWS.dii>=0?'up':'down'}">${FLOWS.dii>=0?'+':'−'}₹${Math.abs(Math.round(FLOWS.dii)).toLocaleString('en-IN')} Cr</b></div>`:''}</div>`;
-  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card">${LOADER('Loading prices for every NSE stock…')}${SKROWS(4)}</div></div>`;
+  el.innerHTML=head+outlookHTML()+`<h3 style="font-size:17px;margin:0 0 10px">Global cues</h3>`+glob+`<div id="tdbody"><div class="glass card">${LOADER('Loading prices for every NSE and BSE stock…')}${SKROWS(4)}</div></div>`;
   wireOutlook();
   Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{const b=document.getElementById('tdbody');if(!b||!ALLQ||!UNI)return;
-    const L=[];for(const u of UNI){if(u.x==='BSE'||(u.x==='NSE SME'&&!tdF.sme))continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;
-      if(q.price<20||(q.mcapCr!=null&&q.mcapCr<tdF.minCap)||(q.mcapCr==null&&tdF.minCap>0&&q.price*(q.vol||0)<2e7))continue;const av=q.av10||q.av3m;q.vr=av&&q.vol?q.vol/av:null;
+    const L=[];for(const u of UNI){if(/SME/.test(u.x)&&!tdF.sme)continue;const q=qOf(u.k);if(!q||q.price==null||q.pct==null)continue;
+      if((q.mcapCr!=null&&q.mcapCr<tdF.minCap)||(q.mcapCr==null&&tdF.minCap>0&&q.price*(q.vol||0)<2e7))continue;const av=q.av10||q.av3m;q.vr=av&&q.vol?q.vol/av:null;
       q.pos=(q.high>q.low)?(q.price-q.low)/(q.high-q.low):null;L.push([u,q])}
+    {const mx=Math.max(0,...L.map(([u,q])=>q.t||0));for(let i=L.length-1;i>=0;i--){const t=L[i][1].t;if(t&&mx-t>20*3600)L.splice(i,1)}} // drop stale (not traded today) rows
     const row=([u,q],why)=>`<a class="srow" href="#stock-${esc(u.k)}" style="grid-template-columns:34px 1fr auto auto"><div class="lg" style="width:34px;height:34px;border-radius:10px;font-size:11px;background:${colorOf(u.k)};color:#fff">${esc(u.n.slice(0,2).toUpperCase())}${logoImg(u.k)}</div><div><b>${esc(u.n)}</b><small>${esc(u.k)}${q.mcapCr?' · '+lcr(q.mcapCr):''}</small></div><span class="why">${why}</span><div class="px num">₹<i class="lp" data-lp="${esc(u.k)}">${n2(q.price)}</i><small class="${q.pct>=0?'up':'down'}" style="display:block" data-lc="${esc(u.k)}">${q.pct>=0?'+':''}${q.pct.toFixed(2)}%</small></div></a>`;
     const vx=q=>q.vr?q.vr.toFixed(1)+'× vol':'';
     const S=[
      ['🚀','Strong momentum','Up 2% or more on at least 1.5× normal volume, closing near the day\'s high. Often watched for follow-through.',
-       L.filter(([u,q])=>q.pct>=2&&q.vr>=1.5&&q.pos>=.7).sort((a,b)=>b[1].pct*b[1].vr-a[1].pct*a[1].vr),([u,q])=>vx(q)+' · near high'],
+       L.filter(([u,q])=>q.pct>=2&&q.vr>=1.5&&q.pos>=.7).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>vx(q)+' · near high'],
      ['⚠️','Under pressure','Down 2% or more on heavy volume, closing near the day\'s low. Often watched for further weakness.',
-       L.filter(([u,q])=>q.pct<=-2&&q.vr>=1.5&&q.pos!=null&&q.pos<=.3).sort((a,b)=>a[1].pct*b[1].vr-b[1].pct*a[1].vr),([u,q])=>vx(q)+' · near low'],
+       L.filter(([u,q])=>q.pct<=-2&&q.vr>=1.5&&q.pos!=null&&q.pos<=.3).sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>vx(q)+' · near low'],
      ['📈','At a 52-week high','Trading within 2% of the highest price of the past year.',
-       L.filter(([u,q])=>q.h52&&q.price>=q.h52*.98).sort((a,b)=>b[1].price/b[1].h52-a[1].price/a[1].h52||b[1].pct-a[1].pct),([u,q])=>q.price>=q.h52?'new high':((1-q.price/q.h52)*100).toFixed(1)+'% below high'],
+       L.filter(([u,q])=>q.h52&&q.price>=q.h52*.98).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>q.price>=q.h52?'new high':((1-q.price/q.h52)*100).toFixed(1)+'% below high'],
      ['📉','At a 52-week low','Trading within 2% of the lowest price of the past year.',
-       L.filter(([u,q])=>q.l52&&q.price<=q.l52*1.02).sort((a,b)=>a[1].price/a[1].l52-b[1].price/b[1].l52),([u,q])=>q.price<=q.l52?'new low':((q.price/q.l52-1)*100).toFixed(1)+'% above low'],
+       L.filter(([u,q])=>q.l52&&q.price<=q.l52*1.02).sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>q.price<=q.l52?'new low':((q.price/q.l52-1)*100).toFixed(1)+'% above low'],
      ['🔊','Volume shockers','Traded at least 3× their usual volume. Something may be happening; check the news.',
-       L.filter(([u,q])=>q.vr>=3).sort((a,b)=>b[1].vr-a[1].vr),([u,q])=>vx(q)],
+       L.filter(([u,q])=>q.vr>=3).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>vx(q)],
      ['🏆','Top gainers','Biggest rises among the stocks screened.',[...L].sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>vx(q)],
      ['🔻','Top losers','Biggest falls among the stocks screened.',[...L].sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>vx(q)]];
     b.innerHTML=`<div class="tday-h"><span class="lbl" style="margin:0">Screened ${L.length.toLocaleString('en-IN')} NSE stocks</span>
