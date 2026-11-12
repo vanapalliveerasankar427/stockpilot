@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 3:45 AM IST",
- "updated": "2026-11-13T03:45:03+05:30",
+ "label": "13 Nov 2026, 4:04 AM IST",
+ "updated": "2026-11-13T04:04:19+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 3:45 AM",
+  "date": "13 Nov 2026, 4:04 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 3:45 AM"
+    "t": "13 Nov, 4:04 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 3:45 AM"
+    "t": "13 Nov, 4:04 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 3:45 AM"
+   "t": "13 Nov, 4:04 AM"
   }
  },
  "logos": [],
@@ -480,7 +480,7 @@
   "ch": -118.8,
   "pct": -2.97,
   "high": 4005.9,
-  "low": 3856.8,
+  "low": 3857.1,
   "open": 3981.0,
   "t": 1794520799
  },
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 3:45 AM",
+  "fetched": "13 Nov, 4:04 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1224,15 +1224,13 @@
   }
  ],
  "log": [
-  "quote BHARTIARTL.NS failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
-  "quote MARUTI.NS failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 309 headlines, 25 up, 14 down",
+  "outlook: 310 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2253,9 +2251,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 3:45 AM",
-  "mid": "13 Nov, 3:45 AM",
-  "small": "13 Nov, 3:45 AM"
+  "n50": "13 Nov, 4:04 AM",
+  "mid": "13 Nov, 4:04 AM",
+  "small": "13 Nov, 4:04 AM"
  },
  "midg": [
   [
@@ -2428,21 +2426,19 @@
   }
  },
  "fulllog": [
-  "quote BHARTIARTL.NS failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
-  "quote MARUTI.NS failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 309 headlines, 25 up, 14 down",
+  "outlook: 310 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 3:45 AM"
+  "at": "13 Nov, 4:04 AM"
  },
  "global": [
   [
@@ -2461,7 +2457,7 @@
    "Nasdaq",
    25366.09,
    -0.39,
-   1794521700
+   1794521759
   ],
   [
    "Nikkei 225",
@@ -2489,8 +2485,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 3:45 AM",
-  "headlines": 309,
+  "at": "13 Nov, 4:04 AM",
+  "headlines": 310,
   "screened": 1808,
   "cues": [
    "Brent crude up 3.2%",
@@ -2771,6 +2767,32 @@
     ]
    },
    {
+    "k": "CLEANMAX",
+    "n": "Clean Max Enviro Energy Solutions",
+    "s": 8,
+    "conf": "High",
+    "p": 1305.3,
+    "pct": 4.05,
+    "mc": 15351.1,
+    "sec": "Utilities",
+    "why": [
+     {
+      "k": "news",
+      "t": "Clean Max Enviro Energy shares jump 7%; stock trades 27% above IPO price - What's driving the rally? | Check key levels",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNa2MtZDRlbFgxOHNVLW44TG5PNWN2MUdPbTFzTlg1ZEhGVUFlUkx1a2FRek9zd20wakx6alN4TUxBVW5rT05HZ0htWUg5N0ZhYkJaRXc1Z0hNeE9fc3QwdlZKc1BKNGlqSjFpSTNCWGdkSW5MdnZWTzJmaGFMc0tyWDdUaVhPTFFLeGtDUHY3UVkta2NuVWJqT3FqNXp1T1NuNFkxaVUwVXdYa25hV1dEWDFYaVJUNXFJZFNsUUgyUmxELTNJb01GNXpIQkNXNE11TTFvV1NzQnZIS0JjQUlHQ2dJWTdmb0xkMl9nb1YzN0Q1cXI1NlFaNVo4VkQ?oc=5",
+      "src": "TradingView"
+     },
+     {
+      "k": "news",
+      "t": "Clean Max Share Price Jumps 7%: Q2 Profit, Green Bond, Levels",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQcUtSNTUyN1ROeVF0RU50SFRTMnNQVThtUzVuZW9RMXNGSWJpNTRERXFTMmVlR2c2elNuNDJRWXNuTjhCWHQ4bHZ0NmN5QmctMXBzU2RvWHJLYjJuLWo5Q1lMZVFvX1pvcjFtS0JrYTBGaXVnS0diMHRqRFBndFpIZzVEZFVUdw?oc=5",
+      "src": "Univest"
+     }
+    ]
+   },
+   {
     "k": "ZEEL",
     "n": "Zee Entertainment Enterprises",
     "s": 8,
@@ -2935,13 +2957,13 @@
     ]
    },
    {
-    "k": "APEX",
-    "n": "Apex Frozen Foods",
+    "k": "AVANTIFEED",
+    "n": "Avanti Feeds",
     "s": 4,
     "conf": "Medium",
-    "p": 343.0,
-    "pct": 5.26,
-    "mc": 1071.9,
+    "p": 762.9,
+    "pct": 8.35,
+    "mc": 10394.2,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -2954,13 +2976,13 @@
     ]
    },
    {
-    "k": "AVANTIFEED",
-    "n": "Avanti Feeds",
+    "k": "APEX",
+    "n": "Apex Frozen Foods",
     "s": 4,
     "conf": "Medium",
-    "p": 762.9,
-    "pct": 8.35,
-    "mc": 10394.2,
+    "p": 343.0,
+    "pct": 5.26,
+    "mc": 1071.9,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -3026,25 +3048,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNFdGNzJJREpMaEJPRjJrSmp4QmF0NUNQcWN2d2d5MHJhZGFweGh1QlNoNFA1NzdKRkhaa0MzemRReno5TEVGTWgwMmszM2g3TXFxcHQ2dDhobW9kd0RlWE94QUtoZmxpblVhbkFVVWpfZU5Tb2tlZTRycUZDUVdua2NiWlBWNmpVSU15dWdwcF8xU09MXy1xanlJZi1iMzVEVmZBZmF3ZXZZc3hScmEyQ1JPZmNSNnlMQS1F0gHAAUFVX3lxTE9KcFpuNXR1Sm9LWnpod1ozR1gxcmlKaUEzVjktRjVXSUE1Z3FHNHp0bHFYcVFlRVFFWGNfelk1dkFuNVROSUw4R3hESGxqbUlSZ1Y4ZGdDMVROcWlydzh4bnA0ckhjc21wTVZTTnlNUXgyZFcyWHBwQXY0NGs2LVRSaXM4LWlacG9TRFdCS3VSZnlTWTlTUnN3SkJqQ2dYMFZCaGhFc2RpckJCc2g1UUNLLU1pSG9WTVhWSDBQMU1udA?oc=5",
       "src": "ET Now"
-     }
-    ]
-   },
-   {
-    "k": "CLEANMAX",
-    "n": "Clean Max Enviro Energy Solutions",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1305.3,
-    "pct": 4.05,
-    "mc": 15351.1,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "Clean Max Enviro Energy shares jump 7%; stock trades 27% above IPO price - What's driving the rally? | Check key levels",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNa2MtZDRlbFgxOHNVLW44TG5PNWN2MUdPbTFzTlg1ZEhGVUFlUkx1a2FRek9zd20wakx6alN4TUxBVW5rT05HZ0htWUg5N0ZhYkJaRXc1Z0hNeE9fc3QwdlZKc1BKNGlqSjFpSTNCWGdkSW5MdnZWTzJmaGFMc0tyWDdUaVhPTFFLeGtDUHY3UVkta2NuVWJqT3FqNXp1T1NuNFkxaVUwVXdYa25hV1dEWDFYaVJUNXFJZFNsUUgyUmxELTNJb01GNXpIQkNXNE11TTFvV1NzQnZIS0JjQUlHQ2dJWTdmb0xkMl9nb1YzN0Q1cXI1NlFaNVo4VkQ?oc=5",
-      "src": "TradingView"
      }
     ]
    },
@@ -3924,7 +3927,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 3:45 AM",
+  "at": "13 Nov, 4:04 AM",
   "hi": [
    [
     "PAYTM",
@@ -3993,7 +3996,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 3:45 AM",
+  "at": "13 Nov, 4:04 AM",
   "g": [
    [
     "544535",
@@ -4412,7 +4415,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods Ltd-$",
+    "Flex Foods",
     43.84,
     -18.78,
     53.98
@@ -4545,7 +4548,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes Ltd-$",
+    "Mukat Pipes",
     15.62,
     -8.44,
     17.06
@@ -4615,7 +4618,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping Ltd-$",
+    "Shahi Shipping",
     10.05,
     -7.63,
     10.88
@@ -4664,7 +4667,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals Ltd-$",
+    "Laffans Petrochemicals",
     27.34,
     -7.01,
     29.4
@@ -4685,7 +4688,7 @@
    ],
    [
     "530821",
-    "SSPDL Ltd-$",
+    "SSPDL",
     13.57,
     -6.86,
     14.57
@@ -4713,7 +4716,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     283.2,
     -6.63,
     303.3
@@ -4769,7 +4772,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     54.19,
     -6.41,
     57.9
@@ -4812,7 +4815,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 3:45 AM",
+  "at": "13 Nov, 4:04 AM",
   "g": [
    [
     "B544535",
@@ -13925,7 +13928,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 3:45 AM",
+  "at": "13 Nov, 4:04 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14194,6 +14197,22 @@
     "s": 11.2
    },
    {
+    "k": "CLEANMAX",
+    "n": "Clean Max Enviro Energy Solutions",
+    "p": 1305.3,
+    "pct": 4.05,
+    "vx": 1.6,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Clean Max Enviro Energy shares jump 7%; stock trades 27% above IPO price - What's driving the rally? | Check key levels",
+      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNa2MtZDRlbFgxOHNVLW44TG5PNWN2MUdPbTFzTlg1ZEhGVUFlUkx1a2FRek9zd20wakx6alN4TUxBVW5rT05HZ0htWUg5N0ZhYkJaRXc1Z0hNeE9fc3QwdlZKc1BKNGlqSjFpSTNCWGdkSW5MdnZWTzJmaGFMc0tyWDdUaVhPTFFLeGtDUHY3UVkta2NuVWJqT3FqNXp1T1NuNFkxaVUwVXdYa25hV1dEWDFYaVJUNXFJZFNsUUgyUmxELTNJb01GNXpIQkNXNE11TTFvV1NzQnZIS0JjQUlHQ2dJWTdmb0xkMl9nb1YzN0Q1cXI1NlFaNVo4VkQ?oc=5"
+     }
+    ],
+    "s": 11.2
+   },
+   {
     "k": "TMCV",
     "n": "Tata Motors",
     "p": 453.4,
@@ -14320,21 +14339,6 @@
      }
     ],
     "s": 9.4
-   },
-   {
-    "k": "SIMPLEXINF",
-    "n": "Simplex Infrastructures",
-    "p": 302.2,
-    "pct": 3.97,
-    "vx": 4.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.0%, closing near the day's high on 4.7× normal volume"
-     }
-    ],
-    "s": 9.2
    }
   ],
   "fo": [
