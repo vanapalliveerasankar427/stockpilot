@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 1:36 AM IST",
- "updated": "2026-11-13T01:36:27+05:30",
+ "label": "13 Nov 2026, 1:38 AM IST",
+ "updated": "2026-11-13T01:38:20+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 1:36 AM",
+  "date": "13 Nov 2026, 1:38 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 1:36 AM"
+    "t": "13 Nov, 1:38 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 1:36 AM"
+    "t": "13 Nov, 1:38 AM"
    }
   },
   "retail": {
@@ -345,8 +345,8 @@
      "ag": 200.0
     }
    },
-   "at": "13 Nov, 1:07 AM",
-   "at_ts": 1794512279.494454,
+   "at": "13 Nov, 1:38 AM",
+   "at_ts": 1794514100.100613,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 1:36 AM"
+   "t": "13 Nov, 1:38 AM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794498013
  },
  "brent": {
-  "v": 96.05,
+  "v": 96.03,
   "prev": 92.76,
-  "ch": 3.29,
-  "pct": 3.55,
+  "ch": 3.27,
+  "pct": 3.53,
   "high": 96.14,
   "low": 91.19,
   "open": 91.28,
-  "t": 1794513358
+  "t": 1794513438
  },
  "goldSpot": {
-  "v": 3888.3,
+  "v": 3887.5,
   "prev": 4000.5,
-  "ch": -112.2,
-  "pct": -2.8,
+  "ch": -113.0,
+  "pct": -2.82,
   "high": 4005.9,
   "low": 3857.1,
   "open": 3981.0,
-  "t": 1794513384
+  "t": 1794513478
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 1:36 AM",
+  "fetched": "13 Nov, 1:38 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1230,8 +1230,7 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 310 headlines, 25 up, 14 down",
-  "option chains: 60 ok, 0 failed, 176 stored"
+  "outlook: 310 headlines, 25 up, 14 down"
  ],
  "members": {
   "n50": {
@@ -2251,9 +2250,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 1:36 AM",
-  "mid": "13 Nov, 1:36 AM",
-  "small": "13 Nov, 1:36 AM"
+  "n50": "13 Nov, 1:38 AM",
+  "mid": "13 Nov, 1:38 AM",
+  "small": "13 Nov, 1:38 AM"
  },
  "midg": [
   [
@@ -2432,32 +2431,31 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 310 headlines, 25 up, 14 down",
-  "option chains: 60 ok, 0 failed, 176 stored"
+  "outlook: 310 headlines, 25 up, 14 down"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 1:36 AM"
+  "at": "13 Nov, 1:38 AM"
  },
  "global": [
   [
    "Dow Jones",
-   52385.16,
-   -0.19,
-   1794513987
+   52379.32,
+   -0.2,
+   1794514099
   ],
   [
    "S&P 500",
-   7597.04,
-   -0.29,
-   1794513987
+   7595.51,
+   -0.31,
+   1794514099
   ],
   [
    "Nasdaq",
-   25343.53,
-   -0.48,
-   1794513986
+   25337.06,
+   -0.51,
+   1794514098
   ],
   [
    "Nikkei 225",
@@ -2481,11 +2479,11 @@
    "US 10Y yield",
    5.11,
    2.14,
-   1794513074
+   1794513194
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 1:36 AM",
+  "at": "13 Nov, 1:38 AM",
   "headlines": 310,
   "screened": 1808,
   "cues": [
@@ -2940,25 +2938,6 @@
     "p": 31.61,
     "pct": 0.44,
     "mc": 60870.1,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "SBI, IOB, PNB shares fly high; NIFTY PSU Bank index surges 15% in a month",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNYkVUMUFBa3ZSay13LXlxYVM3dmJGUUZDTUdhZ2lWS0hvMjlidzZMcUVNUTRTSEpsLXQxNGVBNnBRRFdmai1lYjhkcWtuTlJJMEVHbFQ0NWVleWV6RWlNeXk0bDVLYW9ZZG5RQjUxR0hsMFFWNWloLVZPdW1DakdzYlFkZV9mNHJodnZpMGxSOHdBU3JCbzVPNm9kZGNVWmJ5ZmdFVUlnTkNzeHB4LVJ2M19PTmRfQmRSVFFkbk9GcVJLbUl1STMtMG5pdmpPRVZzNWc?oc=5",
-      "src": "Upstox"
-     }
-    ]
-   },
-   {
-    "k": "PNB",
-    "n": "Punjab National Bank",
-    "s": 4,
-    "conf": "Medium",
-    "p": 141.79,
-    "pct": 2.39,
-    "mc": 162958.4,
     "sec": "Financial Services",
     "why": [
      {
@@ -3941,7 +3920,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 1:36 AM",
+  "at": "13 Nov, 1:38 AM",
   "hi": [
    [
     "PAYTM",
@@ -4010,7 +3989,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 1:36 AM",
+  "at": "13 Nov, 1:38 AM",
   "g": [
    [
     "544535",
@@ -4070,7 +4049,7 @@
    ],
    [
     "505714",
-    "Gabriel India",
+    "Gabriel India Ltd-$",
     1641.95,
     16.57,
     1408.55
@@ -4119,7 +4098,7 @@
    ],
    [
     "513353",
-    "Cochin Minerals & Rutiles",
+    "Cochin Minerals & Rutiles Ltd-$",
     324.2,
     13.97,
     284.45
@@ -4266,7 +4245,7 @@
    ],
    [
     "524542",
-    "Sukhjit Starch & Chemicals",
+    "Sukhjit Starch & Chemicals Ltd-$",
     152.1,
     10.06,
     138.2
@@ -4429,7 +4408,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods Ltd-$",
+    "Flex Foods",
     43.84,
     -18.78,
     53.98
@@ -4562,7 +4541,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes Ltd-$",
+    "Mukat Pipes",
     15.62,
     -8.44,
     17.06
@@ -4632,7 +4611,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping Ltd-$",
+    "Shahi Shipping",
     10.05,
     -7.63,
     10.88
@@ -4681,7 +4660,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals Ltd-$",
+    "Laffans Petrochemicals",
     27.34,
     -7.01,
     29.4
@@ -4702,7 +4681,7 @@
    ],
    [
     "530821",
-    "SSPDL Ltd-$",
+    "SSPDL",
     13.57,
     -6.86,
     14.57
@@ -4730,7 +4709,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     283.2,
     -6.63,
     303.3
@@ -4786,7 +4765,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     54.19,
     -6.41,
     57.9
@@ -4829,7 +4808,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 1:36 AM",
+  "at": "13 Nov, 1:38 AM",
   "g": [
    [
     "B544535",
@@ -13942,7 +13921,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 1:36 AM",
+  "at": "13 Nov, 1:38 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
