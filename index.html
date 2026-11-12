@@ -1118,6 +1118,17 @@ body:not(.ready) footer{display:none}
 .fo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.fo-tag{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--soft)}.fo-tag.u{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}.fo-tag.d{background:color-mix(in srgb,var(--dn) 14%,transparent);color:var(--dn)}
 .fo-why{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.4}
 .fo-oc{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--up);text-decoration:none}
+.oc-w{margin-top:10px}.oc-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--soft);color:var(--ink);font:inherit;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;cursor:pointer}
+.oc-btn[aria-expanded="true"]{background:var(--ink);color:var(--bg,#fff)}.oc-idx{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px}.oc-idx .oc-w{margin:0}.oc-idx .oc-w:has(.oc-box:not(:empty)){flex-basis:100%}
+.oc-box:empty{display:none}.oc-box{margin-top:10px;border:1px solid var(--line);border-radius:14px;padding:10px;background:color-mix(in srgb,var(--soft) 60%,transparent)}
+.oc-meta{font-size:12px;color:var(--muted);line-height:1.5}.oc-meta b{color:var(--ink)}
+.oc-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.oc-chips span{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--soft)}
+.oc-pick{font-size:12.5px;margin:6px 0 8px;line-height:1.5}.oc-pick b{white-space:nowrap}
+.oc-t{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed}.oc-t th{font-size:11px;color:var(--muted);font-weight:700;padding:4px 2px;text-align:center}
+.oc-t td{padding:5px 2px;text-align:center;border-top:1px solid color-mix(in srgb,var(--line) 60%,transparent);line-height:1.25}.oc-t td small{display:block;font-size:10.5px;color:var(--muted)}
+.oc-t td.k{font-weight:800}.oc-t td.itm{background:color-mix(in srgb,var(--up) 9%,transparent)}.oc-t td.itp{background:color-mix(in srgb,var(--dn) 9%,transparent)}
+.oc-t tr.atm td{border-top:2px solid var(--ink)}.oc-t .hi{outline:2px solid color-mix(in srgb,var(--up) 60%,transparent);outline-offset:-2px;border-radius:6px}
+.oc-f{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
 /* outlook tabs + F&O cards: always fit the phone width */
 .ol-list{grid-template-columns:minmax(0,1fr)}
 @media(min-width:900px){.ol-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
@@ -2622,7 +2633,7 @@ function renderTomorrow(){const el=document.getElementById('tomorrowpage');if(!e
     return `<div class="tw-card" style="animation-delay:${Math.min(i,10)*40}ms"><a class="tw-top" href="#stock-${esc(o.k)}"><span class="tw-rank">${i+1}</span><div class="lg" style="background:${colorOf(o.k)};color:#fff">${esc(o.n.slice(0,2).toUpperCase())}${logoImg(o.k)}</div>
      <div class="tw-nm"><b>${esc(o.n)}</b><small>${esc(o.k.replace(/^B(\d+)$/,'BSE $1'))}${o.fo?' · <span class="tw-fo">F&amp;O</span>':''}</small></div>
      <div class="tw-px num"><b>₹<i class="lp" data-lp="${esc(o.k)}">${n2(px)}</i></b>${pc!=null?`<span data-lcw="${esc(o.k)}">${chip(pc,px)}</span>`:''}</div></a>
-     <div class="tw-why">${o.why.map(w=>{const t=tagF[w.t]||['•',w.t,''];return `<div class="tw-w ${t[2]}"><span class="tw-t">${t[0]} ${t[1]}</span>${w.u?`<a href="${esc(w.u)}" target="_blank" rel="noopener">${esc(w.x)}</a>`:`<span>${esc(w.x)}</span>`}</div>`}).join('')}</div></div>`};
+     <div class="tw-why">${o.why.map(w=>{const t=tagF[w.t]||['•',w.t,''];return `<div class="tw-w ${t[2]}"><span class="tw-t">${t[0]} ${t[1]}</span>${w.u?`<a href="${esc(w.u)}" target="_blank" rel="noopener">${esc(w.x)}</a>`:`<span>${esc(w.x)}</span>`}</div>`}).join('')}</div>${o.fo?ocBtn(o.k,'c'):''}</div>`};
   const H=T.hist||[],last=H[0];
   const rec=last?`<div class="tw-rec"><div><span class="lbl">How the last list did</span><b class="num">${last.up} of ${last.n} went up</b><small>List from ${new Date(last.d).toLocaleDateString('en-IN',{day:'numeric',month:'short'})} → closed ${new Date(last.on).toLocaleDateString('en-IN',{day:'numeric',month:'short'})} · average <span class="${last.avg>=0?'up':'down'}">${last.avg>=0?'+':''}${last.avg}%</span></small></div>
      <div class="tw-best">${(last.best||[]).map(([k,v])=>`<a href="#stock-${esc(k)}"><b>${esc((UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k)}</b><span class="${v>=0?'up':'down'} num">${v>=0?'+':''}${v}%</span></a>`).join('')}</div>
@@ -3451,13 +3462,36 @@ function fnoHTML(){const F=FNO();
     <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(r.k)}">${fin(r.px)}</i></b><span data-lcw="${esc(r.k)}">${chip(r.pct,r.px)}</span></div></a>
     <div class="fo-tags">${r.lot?tag(`Lot ${r.lot.toLocaleString('en-IN')}`):''}${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
     ${r.o&&r.o.why&&r.o.why[0]?`<p class="fo-why">${esc(r.o.why[0].t)}</p>`:''}
-    <a class="fo-oc" href="https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(r.k)}" target="_blank" rel="noopener">Option chain on NSE ↗</a></div>`;
+    ${ocBtn(r.k,r.pct>=0?'c':'p')}</div>`;
   return `<div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals from news, price and volume, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
+   <div class="oc-idx"><span class="lbl" style="margin:0">Index options</span>${ocBtn('NIFTY','c','Nifty 50')}${ocBtn('BANKNIFTY','c','Bank Nifty')}</div>
    <div class="fo-sw" role="group" aria-label="Direction"><button type="button" data-fs="bull" aria-pressed="${fnoSide==='bull'}">▲ Up signals <b>${D.bull.length}</b></button><button type="button" data-fs="bear" aria-pressed="${fnoSide==='bear'}">▼ Down signals <b>${D.bear.length}</b></button></div>
    <p class="fo-note">${open?'Live during market hours':'Based on the last session; refreshes live from 9:15 AM'} · scanning ${D.n} F&amp;O stocks · ranked by move size, volume, news and 52-week levels</p>
    <div class="ol-list" data-ls="${fnoSide==='bull'?'d':'a'}" data-li=".fo-row">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
 
 let olTab='up',olAll=false;
+// ---- Calls & puts (nearest expiry) from NSE's option chain, refreshed by the data job
+let OC=null,ocAt=0;const OC_OPEN=new Set();
+function loadOC(){if(OC&&Date.now()-ocAt<60000)return Promise.resolve(OC);return fetch(DATA_RAW+'oc.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&j.s){OC=j;ocAt=Date.now()}return OC}).catch(()=>OC)}
+function ocBtn(k,side,label){const o=OC_OPEN.has(k);return `<div class="oc-w"><button type="button" class="oc-btn" data-oc="${esc(k)}" data-side="${side}" aria-expanded="${o}">📊 ${label?esc(label)+' calls &amp; puts':'Calls &amp; puts'} ${o?'▴':'▾'}</button><div class="oc-box" data-ocb="${esc(k)}" data-side="${side}"></div></div>`}
+function ocHTML(k,side){const e=OC&&OC.s&&OC.s[k];
+  if(!e)return `<p class="oc-meta">Calls and puts for ${esc(k)} are being collected. They refresh every few minutes in market hours, so check back shortly.</p>`;
+  const R=e.r,u=e.u,lot=e.lot||0,fk=v=>Number.isInteger(+v)?(+v).toLocaleString('en-IN'):n2(v);let a=0;R.forEach((r,i)=>{if(Math.abs(r[0]-u)<Math.abs(R[a][0]-u))a=i});const rows=R.slice(Math.max(0,a-5),a+6);
+  const pl=v=>v==null?'':lot?'₹'+(v*lot>=1e5?(v*lot/1e5).toFixed(2)+' L':Math.round(v*lot).toLocaleString('en-IN'))+'/lot':'';
+  const cell=(v,ch,cls)=>`<td class="${cls}">${v==null?'—':'₹'+n2(v)}<small>${pl(v)}${ch!=null?` · <span class="${ch>=0?'up':'down'}">${ch>=0?'+':''}${ch}%</span>`:''}</small></td>`;
+  const otmC=R.filter(r=>r[0]>=u&&r[1]),otmP=R.filter(r=>r[0]<=u&&r[6]).reverse();
+  const pick=(L,t)=>L.slice(0,3).map(r=>`<b>${fk(r[0])} ${t} ₹${n2(t==='CE'?r[1]:r[6])}</b> (${pl(t==='CE'?r[1]:r[6])})`).join(', ');
+  const hiK=side==='p'?(otmP[0]||[])[0]:(otmC[0]||[])[0];
+  const exp=String(e.exp).replace(/-\d{4}$/,'');
+  return `<div class="oc-meta">Expiry <b>${esc(exp)}</b> · 1 lot = <b>${lot?lot.toLocaleString('en-IN'):'?'}</b> · Price <b class="num">₹${n2(u)}</b> · ${esc(String(e.ts||'').replace(/^(\d+)-(\w+)-\d{4} (\d+:\d+):\d+$/,'$1 $2, $3'))}</div>
+   <div class="oc-chips">${e.sup?`<span title="Strike with the most put open interest">🛡️ Support ₹${fk(e.sup)}</span>`:''}${e.res?`<span title="Strike with the most call open interest">🚧 Resistance ₹${fk(e.res)}</span>`:''}${e.pcr!=null?`<span title="Put-call ratio of open interest">PCR ${e.pcr}</span>`:''}</div>
+   ${side!=='p'&&otmC.length?`<p class="oc-pick">📈 Calls just above the price: ${pick(otmC,'CE')}</p>`:''}${side!=='c'||k==='NIFTY'||k==='BANKNIFTY'||!otmC.length?(otmP.length?`<p class="oc-pick">📉 Puts just below the price: ${pick(otmP,'PE')}</p>`:''):''}
+   <table class="oc-t num"><thead><tr><th>CALL ₹</th><th>Strike</th><th>PUT ₹</th></tr></thead><tbody>${rows.map(r=>`<tr class="${r===R[a]?'atm':''}">${cell(r[1],r[2],(r[0]<u?'itm':'')+(side!=='p'&&r[0]===hiK?' hi':''))}<td class="k">${fk(r[0])}</td>${cell(r[6],r[7],(r[0]>u?'itp':'')+(side==='p'&&r[0]===hiK?' hi':''))}</tr>`).join('')}</tbody></table>
+   <p class="oc-f">Premium per share, cost per lot below it. Shaded = in the money. Option buyers can lose the whole premium; these are prices, not buy/sell advice. <a class="link" href="https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(k)}" target="_blank" rel="noopener">Full chain on NSE ↗</a></p>`}
+function ocFill(){document.querySelectorAll('.oc-box').forEach(b=>{const k=b.dataset.ocb,open=OC_OPEN.has(k);const btn=b.parentElement.querySelector('.oc-btn');if(btn&&btn.getAttribute('aria-expanded')!==String(open)){btn.setAttribute('aria-expanded',open);btn.innerHTML=btn.innerHTML.replace(/[▴▾]/,open?'▴':'▾')}
+  if(!open){if(b.innerHTML)b.innerHTML='';return}const sig=(OC&&OC.at||0)+'';if(b.dataset.sig===sig&&b.innerHTML)return;if(!OC){b.innerHTML=LOADER('Loading calls and puts…');loadOC().then(()=>{b.dataset.sig='';ocFill()});return}b.innerHTML=ocHTML(k,b.dataset.side);b.dataset.sig=sig})}
+document.addEventListener('click',e=>{const t=e.target.closest('.oc-btn');if(!t)return;e.preventDefault();const k=t.dataset.oc;OC_OPEN.has(k)?OC_OPEN.delete(k):OC_OPEN.add(k);ocFill()});
+setInterval(()=>{if(document.hidden||!OC_OPEN.size)return;if(Date.now()-ocAt>60000)loadOC().then(ocFill);else ocFill()},3000);
 // Keep every live list in order of % move: biggest rise first (data-ls="d") or biggest fall first ("a"), re-sorted on each live tick
 function liveSort(){if(document.hidden)return;try{liveSort0()}catch(e){}}
 function liveSort0(){document.querySelectorAll('[data-ls]').forEach(box=>{const sel=box.dataset.li,dir=box.dataset.ls==='a'?1:-1;const it=[...box.querySelectorAll(':scope > '+sel)];if(it.length<2)return;
@@ -3603,7 +3637,7 @@ function fillExtras(){const box=document.getElementById('sx');if(!box||box.datas
         tip.style.display='block';tip.innerHTML=`<b>₹${n2(pt[1])}</b> · ${M.intra?new Date(pt[0]*1000).toLocaleString('en-IN',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'}):new Date((M.d0+pt[0])*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;const px=(M.pad+i/(M.p.length-1)*(M.W-2*M.pad))/M.W*r.width;tip.style.left=Math.max(0,Math.min(r.width-tip.offsetWidth,px-tip.offsetWidth/2))+'px';vl.setAttribute('x1',M.pad+i/(M.p.length-1)*(M.W-2*M.pad));vl.setAttribute('x2',vl.getAttribute('x1'));vl.setAttribute('opacity',1)};
       svg.addEventListener('pointermove',mv);svg.addEventListener('touchmove',mv,{passive:true});svg.addEventListener('pointerleave',()=>{tip.style.display='none';vl.setAttribute('opacity',0)})};
     draw()})}
-let sxT;new MutationObserver(()=>{clearTimeout(sxT);sxT=setTimeout(fillExtras,30)}).observe(document.body,{childList:true,subtree:true});
+let sxT;new MutationObserver(()=>{clearTimeout(sxT);sxT=setTimeout(()=>{fillExtras();if(OC_OPEN.size)ocFill()},30)}).observe(document.body,{childList:true,subtree:true});
 
 // ===================== init =====================
 document.getElementById('asof').textContent='Real IPO data · updated '+UPDATED;
