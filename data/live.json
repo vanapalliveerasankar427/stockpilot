@@ -1,13 +1,13 @@
 {
- "label": "12 Nov 2026, 7:21 PM IST",
- "updated": "2026-11-12T19:21:44+05:30",
+ "label": "12 Nov 2026, 7:32 PM IST",
+ "updated": "2026-11-12T19:32:03+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "12 Nov 2026, 7:21 PM",
+  "date": "12 Nov 2026, 7:32 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -125,16 +125,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136809.0,
-    "ch": -2907.0,
-    "pct": -2.08,
-    "t": "12 Nov, 7:21 PM"
+    "v": 136686.0,
+    "ch": -3030.0,
+    "pct": -2.17,
+    "t": "12 Nov, 7:32 PM"
    },
    "silver": {
-    "v": 179411.0,
-    "ch": -5114.0,
-    "pct": -2.77,
-    "t": "12 Nov, 7:21 PM"
+    "v": 179107.0,
+    "ch": -5418.0,
+    "pct": -2.94,
+    "t": "12 Nov, 7:32 PM"
    }
   },
   "retail": {
@@ -345,11 +345,11 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13734.0,
-   "g24_10": 137340.0,
-   "ag_kg": 180110.0,
-   "ag": 180.11,
-   "t": "12 Nov, 7:21 PM"
+   "g24": 13722.0,
+   "g24_10": 137220.0,
+   "ag_kg": 179810.0,
+   "ag": 179.81,
+   "t": "12 Nov, 7:32 PM"
   }
  },
  "logos": [],
@@ -460,24 +460,24 @@
   "t": 1794477800
  },
  "brent": {
-  "v": 93.73,
+  "v": 93.56,
   "prev": 92.76,
-  "ch": 0.97,
-  "pct": 1.05,
+  "ch": 0.8,
+  "pct": 0.86,
   "high": 94.36,
   "low": 91.19,
   "open": 91.28,
-  "t": 1794490902
+  "t": 1794491520
  },
  "goldSpot": {
-  "v": 3910.0,
+  "v": 3893.6,
   "prev": 4000.5,
-  "ch": -90.5,
-  "pct": -2.26,
+  "ch": -106.9,
+  "pct": -2.67,
   "high": 4005.9,
-  "low": 3905.6,
+  "low": 3890.4,
   "open": 3981.0,
-  "t": 1794490903
+  "t": 1794491521
  },
  "sectors": [
   [
@@ -1063,7 +1063,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "12 Nov, 7:21 PM",
+  "fetched": "12 Nov, 7:32 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1119,6 +1119,13 @@
   ]
  },
  "news": [
+  {
+   "tag": "Economy",
+   "t": "India's economy is holding up. But economists see headwinds building for FY28",
+   "s": "CNBC TV18",
+   "d": "12 Nov, 7:24 PM",
+   "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPUzQwODhPdXVnS0lsRDFDd2J4ckhhREROVFBKOVVWb3YyUHNka3ZuNzg5amQxMnRsSlc4ZVd6UVJtNi1uN1YwUVpEcGFNdG5HdF9jcFBoRUZtWVNXTWZtWDV3SGNla2dHcVdLcjBEelgwbTVJd0pwUkZBa2JaTTVwYTZrY09pbzE5V2tCWWNvRE5HUlFfVVM0c3E3MDF6QzFOcVQzQXh0VDNka2lVWnhvTNIBtgFBVV95cUxQT2M5RnFYejY5OVpmM0hXSTVGQlZhQkVqR0JpVF9mOUVNWGVBUUFIX0kyMXJRc01oSWZyaHBaUGE4b3lmOWEzYjJkcTFOZUFhWW1OSXBseXFSTkJXOHBZLVdNU2Iwd0RxNmdYRUl6bFVCQ1oxYURKX21OREZoM2VwOV92cjFiMGE4VXkxWUFGN1hQVmFMNFN2U3pJdUxwRXBXaVRlZlVBUUdzY1poNzJ5MzlNQzZzdw?oc=5"
+  },
   {
    "tag": "IPO",
    "t": "Hindustan Coca Cola IPO GMP Today with Listing Gain Expectation",
@@ -1190,13 +1197,6 @@
    "u": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOa0NZcURrQ3I3cmF2d1dpY3c5LUNHa0xwTlVrX2xTSGtJc19yLXd3MDJzSGRTU0ZZMVJ0WVpkdlRVV2I2bkdNRHBYRDBENjRHTVB6eVNjSlJEUC03b1pWLU9VclZJZzkyVzdXMFlfb05vZmJtTDkyUHV2bDVrcWVtcno4VnM2OUpTY25MRHNJbTh3LW5XREJ4SWVZaVFZU2RwR0ZIRzdEMkJ1WTdYNDVPd0JyeDA3YTZsQnl4NVdyM19xdXg3TWlMZERidGNTb0xldzdaSDVraVQ1dlJQdWwwSDJvZGRkODhZQW8waVVnc1VnUnNXYVFnYUpn?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "In India, economic momentum has outpaced geopolitical gravity. There’s more to be done",
-   "s": "The Indian Express",
-   "d": "11 Nov, 4:54 PM",
-   "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQclRCTkVSdnV6bzQwcy1XRGhPVXRmZkdBWGZXRU1aVFAxMHROcDdrMHhuazdRV2ZWUHJ1OG5vUXVTS2o1SXZTdXNqSnpudldqRklrV2F1LVZ4TlBjOENBZy1DRUxCRS1xUmJjTDBOTUd1NWxuWHBGckFvcWszbnR5dTFDeTVuS0pBRWJndTdJcERFMzVSQkxzZlZaLXNNMHhxbmozY3djOUQyNmR1Y3Z6SUZtMnFmMDZncE9QRkhrYUpXbFE1Y3FR0gHOAUFVX3lxTE9WWWRuRWNQMUxKU19KNHVObkViN29HVXp5OFhEWFBlOXM4VnloWENBVzg5NlBQUVhSX3h1VThpWTVMNkNMNnZWNno4NDc0NjdEcDYzRURwWHdENEMydVZ3WUtHaE80SXBERlNBcVdFYVZrbW5vRzNJVnRjUk9ma2llOGJkaWVBSkpvRHd4aEFJVVcwSWZYTXgxczdNdkZvSU5VZE1saDQtLVR1Y0FlWnJTenlHT2R5c25kZnlyNnItNkZEeVRrMnM3NGwwdW9B?oc=5"
-  },
-  {
    "tag": "IPO",
    "t": "The IPO Effect in India: 15 Listings, 24 Months, and the Gap Between the Pop and the Payoff",
    "s": "DataDrivenInvestor",
@@ -1219,12 +1219,11 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 317 headlines, 25 up, 17 down"
+  "outlook: 314 headlines, 25 up, 17 down"
  ],
  "members": {
   "n50": {
@@ -2244,9 +2243,9 @@
   }
  },
  "nse": {
-  "n50": "12 Nov, 7:21 PM",
-  "mid": "12 Nov, 7:21 PM",
-  "small": "12 Nov, 7:21 PM"
+  "n50": "12 Nov, 7:32 PM",
+  "mid": "12 Nov, 7:32 PM",
+  "small": "12 Nov, 7:32 PM"
  },
  "midg": [
   [
@@ -2419,17 +2418,16 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 0 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 317 headlines, 25 up, 17 down"
+  "outlook: 314 headlines, 25 up, 17 down"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4795,
-  "at": "12 Nov, 7:21 PM"
+  "at": "12 Nov, 7:32 PM"
  },
  "global": [
   [
@@ -2464,20 +2462,20 @@
   ],
   [
    "FTSE 100",
-   10824.91,
-   -0.1,
-   1794490603
+   10831.32,
+   -0.04,
+   1794491221
   ],
   [
    "US 10Y yield",
    5.05,
-   1.12,
-   1794490594
+   1.04,
+   1794491214
   ]
  ],
  "outlook": {
-  "at": "12 Nov, 7:21 PM",
-  "headlines": 317,
+  "at": "12 Nov, 7:32 PM",
+  "headlines": 314,
   "screened": 1808,
   "cues": [
    "US tech (Nasdaq) rose 1.6% in the last session",
@@ -2603,8 +2601,8 @@
       "k": "news",
       "t": "Godrej Industries shares surge 8%, lead midcap gainers as Temasek invests Rs 2,500 crore in Godrej Capital",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNTVZ6ME9xWlBXUWtyeTJURGE5b2U4Q3VUaVFHTmdrVGdBVWNrZDRNUkNiaHdHSUJ4OGhOWnA0SEhIZjNYX0N3TVJ6V2cxMFU5S0hva2tBeF9UWHpZOEtuTkE1SG1mZUpTSGpkOEpabXQ5Vk1Mc0k0LTZ3Q1AtLXRyaHQ3cDVOSnc2SUVpN2E5cTVJMVVya2YwYTIwM2tsajBRM2Yyc1VRaWprNTl5dHNhQVRyMUc3Uk5LM1BZTG9saEtlUTBFendnQmxSOUJBcXRpd19VVndBRFZXVEFkcUVDRVRUUHdmRlF4VmFhWHJhb2ZfT2p6cTlueG43TQ?oc=5",
-      "src": "TradingView"
+      "u": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPekNKS2o1QUJncWR4MmV2VEVqWjZTUmExTDR6NXgwUElvNGdEb1FWMHVXU1BOTkdEdlpHbVRuUEF3SWh3VHZiQ1JfVzFtaWRPT2haMTVObzdWSFUwaWNhMWpKVGU3eUNvakRHcUpiTGV5U2xMNTRKT2VsTlFKQ05mWGJvTDFNZHY4VVlIWnJzTVR5NGxVLUoxT0Q0YUFKWjRXRV85cVdzLXlOLW9ILVZBM1ZNZFBMWEhHZndYYkFRMEJBdGFGOXNWOFJTVmptTVcyVGQxUUVuWmxQMTI0S0drNDIxLWZCLXI1U3BuRnJfX2lsYV9kVlgxQXU0dC05MjRsNXVz0gGDAkFVX3lxTE96Q0pLajVBQmdxZHgyZXZURWpaNlNSYTFMNHo1eDBQSW80Z0RvUVYwdVdTUE5OR0R2WkdtVG5QQXdJaHdUdmJDUl9XMW1pZE9PaFoxNU5vN1ZIVTBpY2ExakpUZTd5Q29qREdxSmJMZXlTbEw1NEpPZWxOUUpDTmZYYm9MMU1kdjhVWUhacnNNVHk0bFUtSjFPRDRhQUpaNFdFXzlxV3MteU4tb0gtVkEzVk1kUExYSEdmd1hiQVEwQkF0YUY5c1Y4UlNWam1NVzJUZDFRRW5abFAxMjRLR2s0MjEtZkItcjVTcG5Gcl9faWxhX2RWWDFBdTR0LTkyNGw1dXM?oc=5",
+      "src": "Moneycontrol.com"
      },
      {
       "k": "news",
@@ -2830,25 +2828,6 @@
     ]
    },
    {
-    "k": "GESHIP",
-    "n": "The Great Eastern Shipping Company",
-    "s": 8,
-    "conf": "High",
-    "p": 1449.5,
-    "pct": 0.99,
-    "mc": 19479.1,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Great Eastern Shipping Set For A Strong Q3? Nomura Raises Target Price, Sees 39% Upside",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOSkdpdjN5blRiRHZMUi1pUDRYT2YtVzllS2g3ZTBPSDBTOTM1dW9MdUZOaTE0Nmgta245RzdNbGdxWTA2M0thLXl3UjFpWVpQeDZ4ZEYweWFFWDF3OEhjZXd2M3QwRXBSX3pUUjdSbmVVVnhnY0FBM2ZGWjR3V0trbjJNdW1pdXhJUW12UGlxNklwR2pmYnlEbEw2WlhaTl9aZE9LT2VhVTZ1bjZhWTl1ZVliUDllYlNza2hIa1FyUDd3Ymh6SG5TWTJLTTczMjBqS2w5Yk5fWnd2emNHb1VQSWpxV19YZmNoaDRpS2FpdGhpQTRiU1VTVEVJNjF1QUtRbzVrN0ZJbDYxbXdWX3JteWEwRWd5eUN1WHUtc9IBpAJBVV95cUxPWXFFZjlmMEdXSl9ueHg2aVVkWGkyRVhhRnBiUWJzSi1ScW93V3pBaW43b3N0MDhxV3JJeUtmSGZRN2hoX1pvOUdYSmMzeDgza2twajRkTnA0TzBDcUF5ZGFnWHZNYUk5V08tTnlCeVRVRDF2dTZoYnlVV1NFay12ekx4RjNzMGhWcGFEeFkzTTIwNUlvQlVlakMybUJZOXV1bndqaFhtTjNJMnNaaVVLZ2ZoeDZveTlBdzNuQlVNbkdpc3F1cktUOF8yWjJFR29ydXVUZkg3N2IzeWY3MU93VEJVLXg3c0ZQVWpzYi1TSXRmZWZtUjJIRUY5WGZvdjdKT21FS2NJOTdEZUVTOFBId1gyQ2pNOGR0NHh3QWtDVnEzYUZM?oc=5",
-      "src": "NDTV Profit"
-     }
-    ]
-   },
-   {
     "k": "BEL",
     "n": "Bharat Electronics",
     "s": 8,
@@ -2863,6 +2842,25 @@
       "t": "BEL To Gain From Defence Order Pipeline? UBS Sees Attractive Risk-Reward, Raises Target Price",
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMijwJBVV95cUxOUWlCT3VMS01vc3RwcUttMlU5UHZFd3N1dDQ3RHJtczZjckZIT0hkMzJzYXZGYmFkX1V2c2F3S1JWeElEZjFhVmYtYVd5QWRITFY2anFnaDlwVkZLclMtbHoyZV9PZUtnWlZHLWdRclFyMjd6VW1KSVRnYklCSWg2ZkpxWXlCelpJYjQyTGVkQ2ZabWZZU25XNXVSMDlYVjVzdzZlVGY5UmxOdnh4OHB2dXd3aWVzaF9Fd2xfdTJZVG1YTmY3SXZnWkhWZ1VfWVhMOWQ1Ykp2cWthaXlEMWFma3RyTV9GTXFWclF3dUl5Y2RSczRpd2tYOHFmOHhxRmVUTzNIWUZ1a2RwalBrRkQ40gGXAkFVX3lxTE9ySVE4c0cxZ2dRM1JJcjJpNWFrNV9wRVdvSFBmanJkTzBXdmMySnlVNzRSSUZrbk9WNHdhc3Vfc3lRYVdNcE93U000SXVQenVJZlN5N2dPVlZvRkp0UEZqMGZZVVdUelJKWE42V1RFMTg1M3FTUzNPTlphaXhQMUx4eU51N24zVlBwcWctSk5od1hjV0Ezc0wyLWhXQ3JwTjBYSGN4R0RFT1RuWmlhUk9BV3llbWwtdVdobUpGTWkybHdnNG9JcVFNY1hpcngxSzNOOFhWcHBHblRSN0F4eUNrX0kyVmExbU5fNGFPTm45VDhVa24zWHV4WUZJU1FBSGFsR2Y1Q2FnQk91NHluWFRlMWllOVlMZw?oc=5",
+      "src": "NDTV Profit"
+     }
+    ]
+   },
+   {
+    "k": "GESHIP",
+    "n": "The Great Eastern Shipping Company",
+    "s": 8,
+    "conf": "High",
+    "p": 1449.5,
+    "pct": 0.99,
+    "mc": 19479.1,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Great Eastern Shipping Set For A Strong Q3? Nomura Raises Target Price, Sees 39% Upside",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOSkdpdjN5blRiRHZMUi1pUDRYT2YtVzllS2g3ZTBPSDBTOTM1dW9MdUZOaTE0Nmgta245RzdNbGdxWTA2M0thLXl3UjFpWVpQeDZ4ZEYweWFFWDF3OEhjZXd2M3QwRXBSX3pUUjdSbmVVVnhnY0FBM2ZGWjR3V0trbjJNdW1pdXhJUW12UGlxNklwR2pmYnlEbEw2WlhaTl9aZE9LT2VhVTZ1bjZhWTl1ZVliUDllYlNza2hIa1FyUDd3Ymh6SG5TWTJLTTczMjBqS2w5Yk5fWnd2emNHb1VQSWpxV19YZmNoaDRpS2FpdGhpQTRiU1VTVEVJNjF1QUtRbzVrN0ZJbDYxbXdWX3JteWEwRWd5eUN1WHUtc9IBpAJBVV95cUxPWXFFZjlmMEdXSl9ueHg2aVVkWGkyRVhhRnBiUWJzSi1ScW93V3pBaW43b3N0MDhxV3JJeUtmSGZRN2hoX1pvOUdYSmMzeDgza2twajRkTnA0TzBDcUF5ZGFnWHZNYUk5V08tTnlCeVRVRDF2dTZoYnlVV1NFay12ekx4RjNzMGhWcGFEeFkzTTIwNUlvQlVlakMybUJZOXV1bndqaFhtTjNJMnNaaVVLZ2ZoeDZveTlBdzNuQlVNbkdpc3F1cktUOF8yWjJFR29ydXVUZkg3N2IzeWY3MU93VEJVLXg3c0ZQVWpzYi1TSXRmZWZtUjJIRUY5WGZvdjdKT21FS2NJOTdEZUVTOFBId1gyQ2pNOGR0NHh3QWtDVnEzYUZM?oc=5",
       "src": "NDTV Profit"
      }
     ]
@@ -4042,7 +4040,7 @@
   }
  },
  "hilo": {
-  "at": "12 Nov, 7:21 PM",
+  "at": "12 Nov, 7:32 PM",
   "hi": [
    [
     "PAYTM",
@@ -4111,7 +4109,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "12 Nov, 7:21 PM",
+  "at": "12 Nov, 7:32 PM",
   "g": [
    [
     "544535",
@@ -4530,7 +4528,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods Ltd-$",
+    "Flex Foods",
     43.84,
     -18.78,
     53.98
@@ -4663,7 +4661,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes Ltd-$",
+    "Mukat Pipes",
     15.62,
     -8.44,
     17.06
@@ -4733,7 +4731,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping Ltd-$",
+    "Shahi Shipping",
     10.05,
     -7.63,
     10.88
@@ -4782,7 +4780,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals Ltd-$",
+    "Laffans Petrochemicals",
     27.34,
     -7.01,
     29.4
@@ -4803,7 +4801,7 @@
    ],
    [
     "530821",
-    "SSPDL Ltd-$",
+    "SSPDL",
     13.57,
     -6.86,
     14.57
@@ -4831,7 +4829,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     283.2,
     -6.63,
     303.3
@@ -4887,7 +4885,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     54.19,
     -6.41,
     57.9
@@ -4930,7 +4928,7 @@
   ]
  },
  "allmov": {
-  "at": "12 Nov, 7:21 PM",
+  "at": "12 Nov, 7:32 PM",
   "g": [
    [
     "B544535",
@@ -14043,7 +14041,7 @@
   ]
  },
  "tw": {
-  "at": "12 Nov, 7:21 PM",
+  "at": "12 Nov, 7:32 PM",
   "phase": "evening",
   "for": "Fri 13 Nov",
   "picks": [
