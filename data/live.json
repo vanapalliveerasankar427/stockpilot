@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 10:30 AM IST",
- "updated": "2026-11-13T10:30:47+05:30",
+ "label": "13 Nov 2026, 10:31 AM IST",
+ "updated": "2026-11-13T10:31:38+05:30",
  "state": "open",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 10:30 AM",
+  "date": "13 Nov 2026, 10:31 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 137213.0,
     "ch": 988.0,
     "pct": 0.73,
-    "t": "13 Nov, 10:30 AM"
+    "t": "13 Nov, 10:31 AM"
    },
    "silver": {
     "v": 178948.0,
     "ch": 224.0,
     "pct": 0.13,
-    "t": "13 Nov, 10:30 AM"
+    "t": "13 Nov, 10:31 AM"
    }
   },
   "retail": {
@@ -345,8 +345,8 @@
      "ag": 199.9
     }
    },
-   "at": "13 Nov, 9:57 AM",
-   "at_ts": 1794544071.707546,
+   "at": "13 Nov, 10:31 AM",
+   "at_ts": 1794546098.985982,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -354,70 +354,70 @@
    "g24_10": 137760.0,
    "ag_kg": 179660.0,
    "ag": 179.66,
-   "t": "13 Nov, 10:30 AM"
+   "t": "13 Nov, 10:31 AM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 25200.35,
+   "v": 25205.25,
    "prev": 25299.35,
-   "ch": -99.0,
-   "pct": -0.39,
+   "ch": -94.1,
+   "pct": -0.37,
    "high": 25229.4,
    "low": 25077.55,
    "open": 25201.9,
-   "t": 1794546045
+   "t": 1794546097
   },
   "SENSEX": {
-   "v": 81768.89,
+   "v": 81771.28,
    "prev": 81911.01,
-   "ch": -142.12,
+   "ch": -139.73,
    "pct": -0.17,
    "high": 81835.82,
    "low": 81300.46,
    "open": 81813.42,
-   "t": 1794545144
+   "t": 1794545196
   },
   "BANKNIFTY": {
-   "v": 61016.0,
+   "v": 61025.7,
    "prev": 61518.5,
-   "ch": -502.5,
-   "pct": -0.82,
+   "ch": -492.8,
+   "pct": -0.8,
    "high": 61300.55,
    "low": 60862.2,
    "open": 61300.55,
-   "t": 1794546046
+   "t": 1794546097
   },
   "MIDCAP": {
-   "v": 62141.5,
+   "v": 62152.4,
    "prev": 62039.0,
-   "ch": 102.5,
-   "pct": 0.17,
+   "ch": 113.4,
+   "pct": 0.18,
    "high": 62217.6,
    "low": 61581.95,
    "open": 61844.9,
-   "t": 1794546046
+   "t": 1794546097
   },
   "SMALLCAP": {
-   "v": 19742.6,
+   "v": 19745.4,
    "prev": 19706.75,
-   "ch": 35.85,
-   "pct": 0.18,
+   "ch": 38.65,
+   "pct": 0.2,
    "high": 19794.25,
    "low": 19589.0,
    "open": 19673.4,
-   "t": 1794546045
+   "t": 1794546097
   },
   "VIX": {
-   "v": 16.3,
+   "v": 16.29,
    "prev": 16.62,
-   "ch": -0.32,
-   "pct": -1.93,
+   "ch": -0.33,
+   "pct": -1.99,
    "high": 16.88,
    "low": 15.3,
    "open": 16.62,
-   "t": 1794546045
+   "t": 1794546097
   }
  },
  "nifty8": [
@@ -451,43 +451,43 @@
   ],
   [
    "13 Nov",
-   25202.55
+   25205.35
   ]
  ],
  "usdinr": {
-  "v": 94.13,
+  "v": 94.14,
   "prev": 94.04,
-  "ch": 0.09,
-  "pct": 0.1,
+  "ch": 0.1,
+  "pct": 0.11,
   "high": 94.18,
   "low": 94.03,
   "open": 94.03,
-  "t": 1794546042
+  "t": 1794546092
  },
  "brent": {
-  "v": 95.75,
+  "v": 95.7,
   "prev": 95.82,
-  "ch": -0.07,
-  "pct": -0.07,
+  "ch": -0.12,
+  "pct": -0.13,
   "high": 96.0,
   "low": 95.07,
   "open": null,
-  "t": 1794545445
+  "t": 1794545498
  },
  "goldSpot": {
-  "v": 3914.4,
+  "v": 3914.0,
   "prev": 3885.3,
-  "ch": 29.1,
-  "pct": 0.75,
+  "ch": 28.7,
+  "pct": 0.74,
   "high": 3926.1,
   "low": 3879.1,
   "open": null,
-  "t": 1794545443
+  "t": 1794545490
  },
  "sectors": [
   [
    "Media",
-   0.7
+   0.78
   ],
   [
    "Energy",
@@ -495,159 +495,159 @@
   ],
   [
    "Pharma",
-   0.57
+   0.59
   ],
   [
    "IT",
-   0.31
-  ],
-  [
-   "Infra",
-   0.2
+   0.35
   ],
   [
    "FMCG",
-   0.14
+   0.19
+  ],
+  [
+   "Infra",
+   0.19
   ],
   [
    "Metal",
-   -0.44
+   -0.42
+  ],
+  [
+   "Realty",
+   -0.53
   ],
   [
    "PSU Bank",
    -0.53
-  ],
-  [
-   "Realty",
-   -0.55
   ]
  ],
  "stocks": {
   "RELIANCE": {
-   "v": 1345.0,
-   "pct": 0.4
+   "v": 1344.8,
+   "pct": 0.38
   },
   "BHARTIARTL": {
-   "v": 2099.7,
-   "pct": 0.18
+   "v": 2102.0,
+   "pct": 0.29
   },
   "HDFCBANK": {
-   "v": 800.85,
-   "pct": -1.41
+   "v": 801.3,
+   "pct": -1.35
   },
   "ICICIBANK": {
    "v": 1580.5,
    "pct": -0.6
   },
   "TCS": {
-   "v": 2440.8,
-   "pct": -0.07
+   "v": 2443.3,
+   "pct": 0.04
   },
   "SBIN": {
-   "v": 1077.5,
-   "pct": -0.83
+   "v": 1077.4,
+   "pct": -0.84
   },
   "BAJFINANCE": {
-   "v": 1106.35,
-   "pct": -0.78
+   "v": 1106.55,
+   "pct": -0.76
   },
   "LT": {
-   "v": 4166.2,
-   "pct": 0.17
+   "v": 4169.4,
+   "pct": 0.25
   },
   "INFY": {
-   "v": 1150.8,
-   "pct": -0.03
+   "v": 1151.3,
+   "pct": 0.01
   },
   "KOTAKBANK": {
    "v": 486.55,
    "pct": -0.79
   },
   "HINDUNILVR": {
-   "v": 1987.0,
-   "pct": 0.66
+   "v": 1987.6,
+   "pct": 0.69
   },
   "ADANIPORTS": {
-   "v": 1918.0,
-   "pct": -0.62
+   "v": 1917.8,
+   "pct": -0.63
   },
   "SUNPHARMA": {
-   "v": 1910.7,
-   "pct": 1.36
+   "v": 1911.6,
+   "pct": 1.41
   },
   "TITAN": {
-   "v": 4857.5,
-   "pct": -1.31
+   "v": 4858.0,
+   "pct": -1.3
   },
   "AXISBANK": {
-   "v": 1327.8,
-   "pct": -1.12
+   "v": 1328.3,
+   "pct": -1.09
   },
   "HCLTECH": {
-   "v": 1390.8,
-   "pct": 0.72
+   "v": 1391.9,
+   "pct": 0.8
   },
   "MARUTI": {
-   "v": 12919.0,
-   "pct": -0.81
+   "v": 12916.0,
+   "pct": -0.83
   },
   "MM": {
-   "v": 3356.6,
-   "pct": -1.25
+   "v": 3353.9,
+   "pct": -1.33
   },
   "ADANIENT": {
-   "v": 2724.0,
-   "pct": -0.64
+   "v": 2724.9,
+   "pct": -0.61
   },
   "ITC": {
-   "v": 284.15,
-   "pct": 0.04
+   "v": 284.35,
+   "pct": 0.11
   },
   "ULTRACEMCO": {
-   "v": 12240.0,
-   "pct": -0.79
+   "v": 12244.0,
+   "pct": -0.75
   },
   "ETERNAL": {
-   "v": 365.5,
-   "pct": 0.32
+   "v": 365.45,
+   "pct": 0.3
   },
   "JSWSTEEL": {
-   "v": 1349.8,
-   "pct": -0.17
+   "v": 1349.9,
+   "pct": -0.16
   },
   "NTPC": {
    "v": 321.3,
    "pct": -0.53
   },
   "BAJAJ-AUTO": {
-   "v": 10930.0,
-   "pct": -0.14
+   "v": 10926.0,
+   "pct": -0.17
   }
  },
  "gainers": [
   [
    "SUNPHARMA",
    "Sun Pharmaceutical Industries",
-   1.36
+   1.41
   ],
   [
    "APOLLOHOSP",
    "Apollo Hospitals Enterprise",
-   1.23
+   1.25
   ],
   [
    "DRREDDY",
    "Dr. Reddy's Laboratories",
-   0.79
+   0.83
   ],
   [
    "HCLTECH",
    "HCL Technologies",
-   0.72
+   0.8
   ],
   [
-   "ONGC",
-   "Oil & Natural Gas Corporation",
+   "HINDUNILVR",
+   "Hindustan Unilever",
    0.69
   ]
  ],
@@ -655,31 +655,31 @@
   [
    "SHRIRAMFIN",
    "Shriram Finance",
-   -2.65
+   -2.64
   ],
   [
    "HDFCBANK",
    "HDFC Bank",
-   -1.41
+   -1.35
+  ],
+  [
+   "M&M",
+   "Mahindra & Mahindra",
+   -1.33
   ],
   [
    "TITAN",
    "Titan Company",
-   -1.31
+   -1.3
   ],
   [
    "SBILIFE",
    "SBI Life Insurance Company",
-   -1.29
-  ],
-  [
-   "BAJAJFINSV",
-   "Bajaj Finserv",
-   -1.27
+   -1.3
   ]
  ],
  "breadth": {
-  "up": 19,
+  "up": 21,
   "n": 50,
   "label": "Nifty 50 stocks"
  },
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 10:26 AM",
+  "fetched": "13 Nov, 10:31 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1146,13 +1146,6 @@
    "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQV1Q2MVBYQ3NxUTg1Q1Y3dTF4UzBfcHY1MGtTS0RzcHp4cTJLTUs0b2tDcGFMV1FaWlVCX3hmTjM5LUVlNlRNcnVJSW41RzNVNmZudUlrVU52eGVDNG5lTzk0cEpyNy14MzA5UTFhUW02WGcySnJsM0NvSmlNOENpbnRWUVV1Z1RaRHhDVkozek42S2lYbk1icnVCT3RpeXotS05TM2FPU1BXeEpkbE1MTHYtX0N3a0xPb0hWeHZJM18yRXNobEFhdjRLYlFLZ9IB0wFBVV95cUxNNEIyU2x6ZUNwSUU4YzNneDV0UjdHY2ZkRVJSQUVXN3VGRlhhenFJU29CVVhYOVNqUGZ6QmxCODJXbE9WbG1DZGNuOV9xNzFsME5IWkIxMTNvMXZZcnFfOFlrR0xSZUJ3aFZJakpzTjNJRUhrUzAxT2xISFJSQUg5UlN1eWUtVjNUbHZiSmtHcUVtLUdZSTBHcUoyVzM3VzhlMUVIT1YtZjZGVERyQkppZzhXLXVaNVFKZWFUUkhleDdkQWc0R1pqYmVkeU4xX0pCaHdB?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "Uneven monsoons, El Nino pose upside risks to inflation; another RBI hike possible: Report",
-   "s": "The Economic Times",
-   "d": "13 Nov, 9:05 AM",
-   "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPXzl6LV9fRlFkOWpwOTVFWDZ6UHlsM1liZnBGWUQ2U19wQ2lROGc1X0UtQ1U4YzBXcFFMTUEzNkRpY0hxUjRyX0loVWtVYVpaM01iZ1k1dE14akhuSEtPNEk1MURLTGVkUkhsNjFFQmJBdGdPLVZIdURIRjJBeTN3WU5WbDJmZ0N4T01mWDE4YmJPQy1EUVJfM1RDSzRBWnFxRk1MWG9sZHV0OVJhT1hxVkx0LWsxMnh3NVRQdUI2dTRqdnRxd240czUtQ0hJOHU5cXV3MGI0UGNIMk1jbGJaY3Y5LVl6eGJxcnZhbkhyUDA2aUlPZjJ5c2NoNFlOTUt6TVAtVw?oc=5"
-  },
-  {
    "tag": "Markets",
    "t": "Stock Market Today: Gift Nifty Signals Weak Opening",
    "s": "HDFC Sky",
@@ -1172,6 +1165,13 @@
    "s": "IPO Watch",
    "d": "13 Nov, 8:19 AM",
    "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03N1RIcE9ySVlhZ0c0bzZaSGZ4dDRYQW5FcXJtb3Zwc2NwSkZmX2Y1RmpHMXdnc2tYNnRpajZPQWhobEkxNllPV0hQNjRpdUVzWFBicm1XdkNtOUpWM1VHem9CZHVQWFU?oc=5"
+  },
+  {
+   "tag": "IPO",
+   "t": "Manipal Payment IPO Review, Recommendation by Brokers & Analysts",
+   "s": "IPO Watch",
+   "d": "13 Nov, 4:41 AM",
+   "u": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE05ZXpVUWhXOWNaR3d5VFZpREJfM0FRb3V4QW5LYThYNmgtN1hCb21VSmY5WW16aDVlY2ZBR0tGb2lmd0NwMHJfZEFsRlY5eVVpUzNiaDc0NTFtaERwaUhCSUN0WXRzdw?oc=5"
   },
   {
    "tag": "Results",
@@ -1209,21 +1209,28 @@
    "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONmo2SVlBMXJyRUhpazhKLVk5R1ZZNFItLVNRa2F0Y0hCVXdadURtbWlDaUVRMERsckdtZDNycUQxaWdCdGM1Wm9kMjYxWVltam00WFRIbTVWb1pxUWxZOG91M3pjSENEUUJyRGp5dGpHSWtvNXBjdHk0QjMyV3NWazItN3RTZHhKZkZYQ1BtbnpBeWs1NFdOX2JwQ3pnMGp3VEN3bGp3?oc=5"
   },
   {
+   "tag": "Economy",
+   "t": "Retail inflation at 6.09% in October, breaches RBI's upper band after 2 yrs",
+   "s": "Business Standard",
+   "d": "12 Nov, 4:12 PM",
+   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPM2VVZ1lOei0zSDJpeXozREg2ZklseUhHSVlSeVhzUG52VGVFY0pTdEF4ZkNzbG1RVER0dklsTVhJVVZmbnA3WmhNR28zdElTRzJkYlRyQS14d1BUY0dTaHNtNl9iTEtkbXJPQldKUW9GLXhjM1hwS3FjVDRET0tCSmVDOUZ6cVFHMFBtV3UtS0VzdEpvOFZwS2xKMjRTVnpHdEFpeDFvOTFVSVRvbWdrOW9uZFhFU3kyMktaMjRYMTdJbHpVb0tJVFJJSnpMYXdwQnF4Mmluc9IB3AFBVV95cUxQdTZCM19fTWdoM0lJRmZHWThPV1ozQXhHQ0k4aV9aLVNMUFI4VDk2WDlIZ1RicGdEWUFHRnRzMEJJZFd2cDFBZFdob0RMYWtzSm9TMGlOWC01X1hVZTdmUmN4MmVOdHJmMTB3a3o5bDdCcGlqUXc4S2RrTmFLU0ZrejNmVUR3M2ZTU1U5WEhxYW9BU2wwZnplaXJFOG5iTnAwVVlFN1poanpZUktsOXB3Y2dJZll3ZzREU2dZYzBId2oycF9ZU3oxYlVSNWl3NFo5dklsb0hta1FVSno0?oc=5"
+  },
+  {
    "tag": "Results",
    "t": "Bharat Dynamics BDL Q2 FY27 Results: Revenue and Profit Details",
    "s": "Kalkine India",
    "d": "12 Nov, 1:54 PM",
    "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOclc4Z09iUkZsaFJpY0kzR2preWMzZlA1NzN1QVVieUdDN2wyWkJHZmJJVzZwOURNT2U3VnJVbTBzQmx0N1VidWRvS3pEZFdJNUxNcHBjY2ZaM29SbWZrZ01ETlNncVZDN1doQUhjWmtyWDJscGFIclAwZDhTdkpDRWdNeUdKb1FsV1dxcFRLNnFDNWlIYUFiMnZ3dnpsZjBmUGk2TjMydEgwdw?oc=5"
-  },
-  {
-   "tag": "IPO",
-   "t": "Hindustan Coca Cola IPO GMP Today with Listing Gain Expectation",
-   "s": "IPO Watch",
-   "d": "12 Nov, 12:43 PM",
-   "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5VMWwxMk1kR2pPbWlqTW5yQm1KX1l5UVB6djFSTWExV1hCb1hxeXgtemZlVFRsN2IxY2VXUFBRSDRueUVBZXdURWhjZXAxOTY4ektnMEgtUV9yZWJa?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "city metals: 24 cities",
+  "ipo_calendar crashed: could not convert string to float: '—'",
+  "subscription: 0 IPOs from 1 cards",
+  "bse eod 2026-11-12: 5192 scrips",
+  "outlook: 307 headlines, 25 up, 7 down",
+  "option chains: 60 ok, 0 failed, 220 stored"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-13",
@@ -2242,84 +2249,84 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 10:30 AM",
-  "mid": "13 Nov, 10:30 AM",
-  "small": "13 Nov, 10:30 AM"
+  "n50": "13 Nov, 10:31 AM",
+  "mid": "13 Nov, 10:31 AM",
+  "small": "13 Nov, 10:31 AM"
  },
  "midg": [
   [
    "GE Vernova T&D India",
-   4.75
-  ],
-  [
-   "Multi Commodity Exchange of India",
-   2.68
+   4.62
   ],
   [
    "Billionbrains Garage Ventures",
-   2.67
+   2.76
   ],
   [
    "Indus Towers",
-   2.56
+   2.67
+  ],
+  [
+   "Multi Commodity Exchange of India",
+   2.58
   ],
   [
    "Blue Star",
-   1.9
+   1.99
   ]
  ],
  "midl": [
   [
    "Aditya Birla Capital",
-   -2.94
+   -2.85
   ],
   [
    "Indian Railway Catering And Tourism Corporation",
-   -2.74
+   -2.64
   ],
   [
    "L&T Finance",
-   -2.19
+   -2.23
   ],
   [
    "Phoenix Mills",
-   -1.74
+   -1.72
   ],
   [
    "Havells India",
-   -1.65
+   -1.6
   ]
  ],
  "smallg": [
   [
    "TD Power Systems",
-   7.61
+   7.37
   ],
   [
    "ITI",
-   4.88
+   4.84
   ],
   [
    "Amber Enterprises India",
-   4.7
+   4.58
   ],
   [
    "Welspun Corp",
-   3.6
+   3.68
   ],
   [
-   "Kirloskar Oil Eng",
-   2.85
+   "Acutaas Chemicals",
+   2.87
   ]
  ],
  "smalll": [
   [
    "Manappuram Finance",
-   -3.36
+   -3.27
   ],
   [
    "Cupid",
-   -2.75
+   -2.85
   ],
   [
    "Ola Electric Mobility",
@@ -2327,7 +2334,7 @@
   ],
   [
    "Avanti Feeds",
-   -2.58
+   -2.51
   ],
   [
    "IIFL Finance",
@@ -2417,16 +2424,17 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 1 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 303 headlines, 25 up, 8 down",
+  "outlook: 307 headlines, 25 up, 7 down",
   "option chains: 60 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 10:26 AM"
+  "at": "13 Nov, 10:31 AM"
  },
  "global": [
   [
@@ -2449,9 +2457,9 @@
   ],
   [
    "Nikkei 225",
-   61314.62,
-   0.81,
-   1794545145
+   61369.15,
+   0.9,
+   1794545195
   ],
   [
    "Hang Seng",
@@ -2473,21 +2481,22 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 10:26 AM",
-  "headlines": 303,
-  "screened": 1794,
+  "at": "13 Nov, 10:31 AM",
+  "headlines": 307,
+  "screened": 1793,
   "cues": [
+   "Nikkei 225 +0.9%",
    "Hang Seng -2.2%"
   ],
   "up": [
    {
     "k": "TDPOWERSYS",
     "n": "TD Power Systems",
-    "s": 23.0,
+    "s": 20,
     "conf": "High",
-    "p": 675.05,
-    "pct": 7.85,
-    "mc": 21699.4,
+    "p": 670.35,
+    "pct": 7.1,
+    "mc": 21548.3,
     "sec": "Industrials",
     "why": [
      {
@@ -2510,11 +2519,6 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPYmFYbGd0UGJsUjNVWER0dUZUdE9ONmozQmZHNndLYW1IUzNoUmRLX3dVbDJTR0VBNDBMb2d1NmxhRFV5YlFjdkE4NWxHTHJac20xMzZzYjl3VjJEUFZsUnJqT3RmQlpJeHBaUGUyalk4YmZnbzdZNkFQalNtQ1dfLUNpcFRZRnUzM2oxakd6UEtQVjI0MDNTMjVqMm9IOUNLZ0x1blBzN2VWVGNQTzZTOHBsQkxpUktGaDJUZHlQamFjTFNpOU5URE5kby1JcTJSak5KZXhkMUgxbENM0gHiAUFVX3lxTE5OYk43bU5LeHdscE1kTlViVGNVZHJKcEkxdWNTV2tXdDc1clVUbFlUSlFqckk0Y0JwWWx5cWdMVWwzRUp2UDNNZGtwZmoxNkQ3QktBUllLXzktM0JJcG1WVEN6NHF1QkI4a2lVaGVsbFRTZFNCdzZoeF92NkE1R0xWMVl3amNteFYyQnMtb0tRam1ZMTM3SVE0VVN4N3p0NEdLYmVfUVBFLWo4em9CdVBvUEprWm9ZR1Y3di04eUx6dldKak12NDlfSVNITVJiazEzVnEtdmF3RTREaFV6cEc5N1E?oc=5",
       "src": "CNBC TV18"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +7.8% on 4.5× usual volume, near the day's high",
-      "s": 2.9756489106083786
      }
     ]
    },
@@ -2523,9 +2527,9 @@
     "n": "HFCL",
     "s": 20,
     "conf": "High",
-    "p": 211.1,
-    "pct": 0.51,
-    "mc": 32303.9,
+    "p": 211.07,
+    "pct": 0.5,
+    "mc": 32299.3,
     "sec": "Technology",
     "why": [
      {
@@ -2554,11 +2558,11 @@
    {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
-    "s": 18.5,
+    "s": 18.6,
     "conf": "High",
-    "p": 31695.0,
-    "pct": 11.04,
-    "mc": 141272.1,
+    "p": 31760.0,
+    "pct": 11.26,
+    "mc": 141561.8,
     "sec": "Industrials",
     "why": [
      {
@@ -2584,8 +2588,8 @@
      },
      {
       "k": "price",
-      "t": "Closed strong: +11.0% on 3.6× usual volume, near the day's high",
-      "s": 2.5379922516290874
+      "t": "Closed strong: +11.3% on 3.7× usual volume, near the day's high",
+      "s": 2.5751940803633717
      }
     ]
    },
@@ -2594,9 +2598,9 @@
     "n": "Lemon Tree Hotels",
     "s": 14,
     "conf": "High",
-    "p": 122.69,
-    "pct": 1.89,
-    "mc": 9715.2,
+    "p": 122.76,
+    "pct": 1.95,
+    "mc": 9720.7,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -2627,9 +2631,9 @@
     "n": "Godrej Industries",
     "s": 12,
     "conf": "High",
-    "p": 1089.85,
-    "pct": 0.53,
-    "mc": 36711.7,
+    "p": 1088.0,
+    "pct": 0.36,
+    "mc": 36649.4,
     "sec": "Industrials",
     "why": [
      {
@@ -2660,9 +2664,9 @@
     "n": "Hindustan Aeronautics",
     "s": 12,
     "conf": "High",
-    "p": 4846.0,
-    "pct": 0.05,
-    "mc": 324088.4,
+    "p": 4846.5,
+    "pct": 0.06,
+    "mc": 324121.8,
     "sec": "Industrials",
     "why": [
      {
@@ -2685,30 +2689,6 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWkhEaUxNTzJfNHJfR1hZc1N1SE9PLTQ0WDh2SFVXX2xxWm9QM2RmYlVUamsyekpfN0RsaFFUN3BNbHUydktmY0xWRDZIb3U3VVJjMkNLR3BiVlJmSzdhVXlKalV3djJBbS1GT3dlNk9hdXdLYVVrUXhRaUxvYlNZc25lN2d3dDRI?oc=5",
       "src": "Equitypandit"
-     }
-    ]
-   },
-   {
-    "k": "ORIENTCABL",
-    "n": "Orient Cables (India)",
-    "s": 11.0,
-    "conf": "High",
-    "p": 410.0,
-    "pct": 8.77,
-    "mc": 4665.8,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Orient Cables Posts Strong Q2 Results With Standalone Revenue At ₹528 Crore And Net Profit Up 180 Per Cent",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbjZQYXJGTHVUUk9ISGxBbmttRGp5YjN6eW95Rkx3dzBLbmZXc25rdUhYSzR1cGYxbnFRMFVzSmtJOGQxWWZubmRTelZBTXJVWFZVSHdWTkZDX2stQ1gtSDg3U1l6NFJfZS1SSjlTTzhlandaUXQwS0l3T015M2wwa0lkWGQzWEh6eEp0QUFzRlZHSG84OTVCdjRBYmFxZlA3eEhzcmdiSDhZaVNaNHByUFFjdFRLa2VobnlfXzFnN2FQNHRXVVZlS2FubVQtU01oN2hySmVMcmFBXzQ1blJr0gHkAUFVX3lxTE1QRFgtSUg4ckV5SzFRcGlVLXVjeWgxWmdrbzNmVUM4bHg2d1hLR1YtbGY4emJsZVlnamZsX0N5eTF0bGthY0I0NHp0eXdoY2xhV2dLRlBqZkhsMWJNc1RDcENLNUFmT3VXdWdfeGNHczVJVnhzRlVWUmJhdk56bm85bUVVUEZzblpiOUVjU09Vb2p5WXlyOGdtdzhyZ200NEN3LWxpM04yNFJkNndBM3Uwa1pZYktYc2FwY05fbWVMazJRME44LVdmbnNkQkYzT1lTTnpWLW9rYmpqS1RRdXQ5V09PdQ?oc=5",
-      "src": "Free Press Journal"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +8.8% on 5.8× usual volume, near the day's high",
-      "s": 3.0
      }
     ]
    },
@@ -2748,9 +2728,9 @@
     "n": "Fiem Industries",
     "s": 8,
     "conf": "High",
-    "p": 2075.0,
-    "pct": 6.77,
-    "mc": 5461.3,
+    "p": 2069.1,
+    "pct": 6.47,
+    "mc": 5445.8,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -2767,9 +2747,9 @@
     "n": "Tonbo Imaging India",
     "s": 8,
     "conf": "High",
-    "p": 1525.4,
-    "pct": 0.24,
-    "mc": 8737.8,
+    "p": 1525.1,
+    "pct": 0.22,
+    "mc": 8736.1,
     "sec": "Industrials",
     "why": [
      {
@@ -2782,13 +2762,32 @@
     ]
    },
    {
+    "k": "ORIENTCABL",
+    "n": "Orient Cables (India)",
+    "s": 8,
+    "conf": "High",
+    "p": 402.0,
+    "pct": 6.65,
+    "mc": 4574.7,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Orient Cables Posts Strong Q2 Results With Standalone Revenue At ₹528 Crore And Net Profit Up 180 Per Cent",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbjZQYXJGTHVUUk9ISGxBbmttRGp5YjN6eW95Rkx3dzBLbmZXc25rdUhYSzR1cGYxbnFRMFVzSmtJOGQxWWZubmRTelZBTXJVWFZVSHdWTkZDX2stQ1gtSDg3U1l6NFJfZS1SSjlTTzhlandaUXQwS0l3T015M2wwa0lkWGQzWEh6eEp0QUFzRlZHSG84OTVCdjRBYmFxZlA3eEhzcmdiSDhZaVNaNHByUFFjdFRLa2VobnlfXzFnN2FQNHRXVVZlS2FubVQtU01oN2hySmVMcmFBXzQ1blJr0gHkAUFVX3lxTE1QRFgtSUg4ckV5SzFRcGlVLXVjeWgxWmdrbzNmVUM4bHg2d1hLR1YtbGY4emJsZVlnamZsX0N5eTF0bGthY0I0NHp0eXdoY2xhV2dLRlBqZkhsMWJNc1RDcENLNUFmT3VXdWdfeGNHczVJVnhzRlVWUmJhdk56bm85bUVVUEZzblpiOUVjU09Vb2p5WXlyOGdtdzhyZ200NEN3LWxpM04yNFJkNndBM3Uwa1pZYktYc2FwY05fbWVMazJRME44LVdmbnNkQkYzT1lTTnpWLW9rYmpqS1RRdXQ5V09PdQ?oc=5",
+      "src": "Free Press Journal"
+     }
+    ]
+   },
+   {
     "k": "AMBER",
     "n": "Amber Enterprises India",
     "s": 6.2,
     "conf": "High",
-    "p": 6494.5,
-    "pct": 4.6,
-    "mc": 22904.7,
+    "p": 6491.0,
+    "pct": 4.54,
+    "mc": 22892.3,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -2800,8 +2799,8 @@
      },
      {
       "k": "price",
-      "t": "Closed strong: +4.6% on 2.9× usual volume, near the day's high",
-      "s": 2.195205262467132
+      "t": "Closed strong: +4.5% on 2.9× usual volume, near the day's high",
+      "s": 2.2161388208778927
      }
     ]
    },
@@ -2810,9 +2809,9 @@
     "n": "Bharat Heavy Electricals",
     "s": 6,
     "conf": "High",
-    "p": 435.6,
-    "pct": 1.02,
-    "mc": 151678.7,
+    "p": 436.65,
+    "pct": 1.26,
+    "mc": 152044.3,
     "sec": "Industrials",
     "why": [
      {
@@ -2829,9 +2828,9 @@
     "n": "Data Patterns (India)",
     "s": 4,
     "conf": "Medium",
-    "p": 4293.8,
-    "pct": 1.48,
-    "mc": 24038.4,
+    "p": 4303.2,
+    "pct": 1.71,
+    "mc": 24091.0,
     "sec": "Industrials",
     "why": [
      {
@@ -2848,9 +2847,9 @@
     "n": "Computer Age Management Services",
     "s": 4,
     "conf": "Medium",
-    "p": 751.4,
-    "pct": 1.13,
-    "mc": 18673.5,
+    "p": 751.95,
+    "pct": 1.2,
+    "mc": 18687.1,
     "sec": "Technology",
     "why": [
      {
@@ -2867,9 +2866,9 @@
     "n": "Clean Max Enviro Energy Solutions",
     "s": 4,
     "conf": "Medium",
-    "p": 1324.2,
-    "pct": 1.45,
-    "mc": 15573.3,
+    "p": 1324.8,
+    "pct": 1.5,
+    "mc": 15580.4,
     "sec": "Utilities",
     "why": [
      {
@@ -2886,9 +2885,9 @@
     "n": "Central Depository Services (India)",
     "s": 4,
     "conf": "Medium",
-    "p": 1472.1,
-    "pct": 1.18,
-    "mc": 30766.9,
+    "p": 1471.5,
+    "pct": 1.13,
+    "mc": 30754.4,
     "sec": "Financial Services",
     "why": [
      {
@@ -2905,9 +2904,9 @@
     "n": "Mishra Dhatu Nigam",
     "s": 4,
     "conf": "Medium",
-    "p": 406.15,
-    "pct": 0.07,
-    "mc": 7608.8,
+    "p": 410.15,
+    "pct": 1.06,
+    "mc": 7683.8,
     "sec": "Basic Materials",
     "why": [
      {
@@ -2924,9 +2923,9 @@
     "n": "Automotive Axles",
     "s": 4,
     "conf": "Medium",
-    "p": 1870.0,
-    "pct": 13.33,
-    "mc": 2825.9,
+    "p": 1852.0,
+    "pct": 12.29,
+    "mc": 2798.7,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -2939,13 +2938,32 @@
     ]
    },
    {
+    "k": "ITC",
+    "n": "ITC",
+    "s": 4,
+    "conf": "Medium",
+    "p": 284.45,
+    "pct": 0.14,
+    "mc": 356470.3,
+    "sec": "Consumer Defensive",
+    "why": [
+     {
+      "k": "news",
+      "t": "ITC Share Price Gains on Gold Flake Hike: Brokerage Views",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX0Y4eTZKQmd3QjJEVnFFNE5idlVyemJXMnhQSXlZWmZwbEFHM3IzQlV2WVhlbjI3LTY1cU1GX2V4b1d5U0tDS2d5eW9xcm41Ty1YWTZMOXhEcUhYN01oWnpTTTNtbUtnUXF1Zk5vX2tTTXlDS2xCQ0tRY0FDOU91X1lyN1E?oc=5",
+      "src": "Univest"
+     }
+    ]
+   },
+   {
     "k": "KRN",
     "n": "KRN Heat Exchanger and Refrigeration",
     "s": 4,
     "conf": "Medium",
-    "p": 1041.0,
-    "pct": 0.1,
-    "mc": 6814.2,
+    "p": 1044.3,
+    "pct": 0.41,
+    "mc": 6835.8,
     "sec": "Technology",
     "why": [
      {
@@ -2962,9 +2980,9 @@
     "n": "HEG Advanced Materials",
     "s": 4,
     "conf": "Medium",
-    "p": 281.14,
-    "pct": 0.17,
-    "mc": 9272.0,
+    "p": 281.08,
+    "pct": 0.15,
+    "mc": 9270.0,
     "sec": "Industrials",
     "why": [
      {
@@ -2981,8 +2999,8 @@
     "n": "Reliance Industries",
     "s": 4,
     "conf": "Medium",
-    "p": 1344.1,
-    "pct": 0.33,
+    "p": 1344.9,
+    "pct": 0.39,
     "mc": null,
     "sec": "Energy",
     "why": [
@@ -3000,9 +3018,9 @@
     "n": "Xtranet Technologies",
     "s": 4,
     "conf": "Medium",
-    "p": 273.5,
-    "pct": 1.16,
-    "mc": 1430.0,
+    "p": 273.15,
+    "pct": 1.03,
+    "mc": 1428.2,
     "sec": "Technology",
     "why": [
      {
@@ -3019,48 +3037,31 @@
     "n": "Archean Chemical Industries",
     "s": 3.0,
     "conf": "Low",
-    "p": 459.7,
-    "pct": 7.73,
-    "mc": 5675.7,
+    "p": 459.15,
+    "pct": 7.61,
+    "mc": 5668.9,
     "sec": "Basic Materials",
     "why": [
      {
       "k": "price",
-      "t": "Closed strong: +7.7% on 5.0× usual volume, near the day's high",
+      "t": "Closed strong: +7.6% on 6.1× usual volume, near the day's high",
       "s": 3.0
      }
     ]
    },
    {
-    "k": "JARO",
-    "n": "Jaro Institute of Technology Management and Research",
+    "k": "ITDC",
+    "n": "India Tourism Development Corporation",
     "s": 3.0,
     "conf": "Low",
-    "p": 416.75,
-    "pct": 3.62,
-    "mc": 928.4,
-    "sec": "Consumer Defensive",
+    "p": 698.0,
+    "pct": 7.63,
+    "mc": 5986.7,
+    "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "price",
-      "t": "Closed strong: +3.6% on 30.1× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "KENNAMET",
-    "n": "Kennametal India",
-    "s": 3.0,
-    "conf": "Low",
-    "p": 4165.3,
-    "pct": 20.0,
-    "mc": 9154.6,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +20.0% on 34.6× usual volume, near the day's high",
+      "t": "Closed strong: +7.6% on 24.0× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3072,9 +3073,9 @@
     "n": "Bharat Dynamics",
     "s": -24,
     "conf": "High",
-    "p": 1049.15,
-    "pct": -0.56,
-    "mc": 38457.9,
+    "p": 1050.35,
+    "pct": -0.45,
+    "mc": 38501.9,
     "sec": "Industrials",
     "why": [
      {
@@ -3105,9 +3106,9 @@
     "n": "Alkem Laboratories",
     "s": -12,
     "conf": "High",
-    "p": 5200.0,
-    "pct": -1.92,
-    "mc": 62173.8,
+    "p": 5191.0,
+    "pct": -2.09,
+    "mc": 62066.2,
     "sec": "Healthcare",
     "why": [
      {
@@ -3131,9 +3132,9 @@
     "n": "Page Industries",
     "s": -12,
     "conf": "High",
-    "p": 31735.0,
-    "pct": -0.36,
-    "mc": 35396.8,
+    "p": 31750.0,
+    "pct": -0.31,
+    "mc": 35413.6,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -3164,9 +3165,9 @@
     "n": "Oswal Pumps",
     "s": -8,
     "conf": "High",
-    "p": 223.0,
-    "pct": -6.68,
-    "mc": 2542.3,
+    "p": 224.26,
+    "pct": -6.16,
+    "mc": 2556.7,
     "sec": "Industrials",
     "why": [
      {
@@ -3183,9 +3184,9 @@
     "n": "Indian Railway Catering And Tourism Corporation",
     "s": -8,
     "conf": "High",
-    "p": 457.45,
-    "pct": -2.87,
-    "mc": 36596.0,
+    "p": 458.3,
+    "pct": -2.68,
+    "mc": 36664.0,
     "sec": "Consumer Cyclical",
     "why": [
      {
@@ -3198,36 +3199,19 @@
     ]
    },
    {
-    "k": "PROZONER",
-    "n": "Prozone Realty",
-    "s": -3.0,
-    "conf": "Low",
-    "p": 59.64,
-    "pct": -6.45,
-    "mc": 910.1,
-    "sec": "Real Estate",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -6.5% on 9.2× usual volume, near the day's low",
-      "s": -3.0
-     }
-    ]
-   },
-   {
     "k": "UFLEX",
     "n": "UFLEX",
     "s": -3.0,
     "conf": "Low",
-    "p": 613.75,
-    "pct": -2.01,
-    "mc": 4432.0,
+    "p": 613.6,
+    "pct": -2.03,
+    "mc": 4430.9,
     "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "price",
-      "t": "Closed weak: -2.0% on 4.4× usual volume, near the day's low",
-      "s": -2.9748784513536304
+      "t": "Closed weak: -2.0% on 4.5× usual volume, near the day's low",
+      "s": -2.98686736396419
      }
     ]
    },
@@ -3236,15 +3220,15 @@
     "n": "Texmaco Infrastructure & Holdings",
     "s": -2.5,
     "conf": "Low",
-    "p": 123.38,
-    "pct": -3.66,
-    "mc": 1572.2,
+    "p": 123.46,
+    "pct": -3.6,
+    "mc": 1573.2,
     "sec": "Real Estate",
     "why": [
      {
       "k": "price",
-      "t": "Closed weak: -3.7% on 3.5× usual volume, near the day's low",
-      "s": -2.5228582655006964
+      "t": "Closed weak: -3.6% on 3.6× usual volume, near the day's low",
+      "s": -2.5280994095028357
      }
     ]
    }
@@ -3784,23 +3768,27 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 10:26 AM",
+  "at": "13 Nov, 10:31 AM",
   "hi": [
+   [
+    "NYKAA",
+    0.87
+   ],
    [
     "ANANDRATHI",
     0.18
-   ],
-   [
-    "NAZARA",
-    3.85
    ],
    [
     "BONFIG",
     10.0
    ],
    [
+    "TIPSMUSIC",
+    3.95
+   ],
+   [
     "TANLA",
-    0.33
+    0.57
    ],
    [
     "DRAGARWQ",
@@ -3823,6 +3811,10 @@
     5.0
    ],
    [
+    "BNALTD",
+    2.53
+   ],
+   [
     "DSKULKARNI",
     1.98
    ],
@@ -3840,10 +3832,6 @@
    ]
   ],
   "lo": [
-   [
-    "GSPLTRANS",
-    -3.33
-   ],
    [
     "ELITECON",
     -4.59
@@ -3865,23 +3853,19 @@
     -1.94
    ],
    [
-    "FLFL",
-    -4.17
-   ],
-   [
     "SHIVAM-RE1",
     -9.09
    ]
   ],
-  "nhi": 13,
-  "nlo": 8
+  "nhi": 15,
+  "nlo": 6
  },
  "bse_movers": {
-  "at": "13 Nov, 10:30 AM",
+  "at": "13 Nov, 10:31 AM",
   "g": [
    [
     "505890",
-    "Kennametal India",
+    "Kennametal India Ltd-$",
     4167.75,
     20.0,
     3473.15
@@ -3931,8 +3915,8 @@
    [
     "505010",
     "Automotive Axles",
-    1860.0,
-    13.51,
+    1853.4,
+    13.11,
     1638.6
    ],
    [
@@ -3957,25 +3941,18 @@
     239.05
    ],
    [
+    "543187",
+    "Hitachi Energy India",
+    31759.95,
+    11.24,
+    28550.0
+   ],
+   [
     "531456",
     "Minaxi Textiles",
     1.29,
     11.21,
     1.16
-   ],
-   [
-    "543187",
-    "Hitachi Energy India",
-    31730.65,
-    11.14,
-    28550.0
-   ],
-   [
-    "500370",
-    "Salora International",
-    27.95,
-    11.13,
-    25.15
    ],
    [
     "512531",
@@ -3992,11 +3969,25 @@
     118.0
    ],
    [
+    "500370",
+    "Salora International",
+    27.85,
+    10.74,
+    25.15
+   ],
+   [
     "535602",
     "Sharda Motor Industries",
-    990.9,
-    10.73,
+    990.95,
+    10.74,
     894.85
+   ],
+   [
+    "543954",
+    "Allcargo Terminals",
+    29.85,
+    10.68,
+    26.97
    ],
    [
     "532952",
@@ -4011,13 +4002,6 @@
     29.0,
     10.43,
     26.26
-   ],
-   [
-    "590134",
-    "Madras Fertilizers",
-    64.7,
-    10.32,
-    58.65
    ],
    [
     "544368",
@@ -4060,6 +4044,13 @@
     795.35,
     10.0,
     723.05
+   ],
+   [
+    "590134",
+    "Madras Fertilizers",
+    64.51,
+    9.99,
+    58.65
    ],
    [
     "532359",
@@ -4125,6 +4116,13 @@
     30.66
    ],
    [
+    "544962",
+    "Acevector",
+    21.56,
+    9.33,
+    19.72
+   ],
+   [
     "543099",
     "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
     80.0,
@@ -4188,11 +4186,11 @@
     29.88
    ],
    [
-    "543954",
-    "Allcargo Terminals",
-    29.34,
-    8.79,
-    26.97
+    "544994",
+    "HD Fire Protect",
+    309.05,
+    8.76,
+    284.15
    ],
    [
     "543173",
@@ -4207,13 +4205,6 @@
     93.4,
     8.6,
     86.0
-   ],
-   [
-    "544962",
-    "Acevector",
-    21.41,
-    8.57,
-    19.72
    ],
    [
     "531608",
@@ -4235,6 +4226,13 @@
     23.7,
     8.47,
     21.85
+   ],
+   [
+    "524500",
+    "Kilitch Drugs India",
+    217.85,
+    8.46,
+    200.85
    ],
    [
     "543861",
@@ -4274,23 +4272,9 @@
    [
     "543657",
     "Archean Chemical Industries",
-    460.2,
-    7.85,
+    460.25,
+    7.86,
     426.7
-   ],
-   [
-    "509438",
-    "Benares Hotels",
-    10995.0,
-    7.79,
-    10200.0
-   ],
-   [
-    "543186",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIVIDEND PLANDIVIDEND PAYOUT",
-    4.3,
-    7.77,
-    3.99
    ]
   ],
   "l": [
@@ -4367,9 +4351,16 @@
    [
     "532626",
     "Pondy Oxides & Chemicals",
-    361.95,
-    -9.44,
+    361.9,
+    -9.46,
     399.7
+   ],
+   [
+    "544876",
+    "ENS Enterprises",
+    123.5,
+    -9.19,
+    136.0
    ],
    [
     "532355",
@@ -4429,7 +4420,7 @@
    ],
    [
     "504220",
-    "W. S. Industries (India)",
+    "W. S. Industries (India) Ltd-$",
     64.95,
     -8.26,
     70.8
@@ -4442,11 +4433,11 @@
     120.0
    ],
    [
-    "544876",
-    "ENS Enterprises",
-    125.0,
-    -8.09,
-    136.0
+    "511700",
+    "Standard Capital Markets",
+    0.34,
+    -8.11,
+    0.37
    ],
    [
     "511626",
@@ -4498,18 +4489,18 @@
     33.5
    ],
    [
-    "544418",
-    "Oswal Pumps",
-    223.45,
-    -6.68,
-    239.45
-   ],
-   [
     "890217",
     "Aplab",
     36.5,
     -6.41,
     39.0
+   ],
+   [
+    "544418",
+    "Oswal Pumps",
+    224.2,
+    -6.37,
+    239.45
    ],
    [
     "500458",
@@ -4561,25 +4552,11 @@
     18.18
    ],
    [
-    "534733",
-    "Aerpace Industries",
-    65.58,
-    -5.91,
-    69.7
-   ],
-   [
     "531991",
     "Amraworld Agrico",
     0.48,
     -5.88,
     0.51
-   ],
-   [
-    "540377",
-    "IFL Enterprises",
-    0.32,
-    -5.88,
-    0.34
    ],
    [
     "531255",
@@ -4598,8 +4575,8 @@
    [
     "530305",
     "Piccadily Agro Industries",
-    557.75,
-    -5.73,
+    558.0,
+    -5.69,
     591.65
    ],
    [
@@ -4610,6 +4587,13 @@
     29.89
    ],
    [
+    "534733",
+    "Aerpace Industries",
+    65.8,
+    -5.6,
+    69.7
+   ],
+   [
     "544472",
     "Mehul Colours",
     42.6,
@@ -4617,11 +4601,11 @@
     45.1
    ],
    [
-    "505714",
-    "Gabriel India",
-    1552.0,
+    "524174",
+    "Kesar Petroproducts",
+    10.0,
     -5.48,
-    1641.95
+    10.58
    ],
    [
     "544860",
@@ -4638,11 +4622,11 @@
     41.35
    ],
    [
-    "511700",
-    "Standard Capital Markets",
-    0.35,
-    -5.41,
-    0.37
+    "505714",
+    "Gabriel India Ltd-$",
+    1553.5,
+    -5.39,
+    1641.95
    ],
    [
     "534675",
@@ -4673,23 +4657,23 @@
     13.52
    ],
    [
+    "532455",
+    "Shalimar Wires Industries",
+    18.52,
+    -5.22,
+    19.54
+   ],
+   [
     "507155",
     "Jagatjit Industries",
     128.85,
     -5.12,
     135.8
-   ],
-   [
-    "507981",
-    "Jindal Hotels",
-    60.25,
-    -5.12,
-    63.5
    ]
   ]
  },
  "allmov": {
-  "at": "13 Nov, 10:26 AM",
+  "at": "13 Nov, 10:31 AM",
   "g": [
    [
     "MSTCLTD",
@@ -4702,6 +4686,11 @@
     20.0
    ],
    [
+    "B526727",
+    "Garnet Construction",
+    19.61
+   ],
+   [
     "B538464",
     "Thirani Projects",
     16.0
@@ -4709,17 +4698,12 @@
    [
     "HBESD",
     "HB Estate Developers",
-    15.77
-   ],
-   [
-    "B517170",
-    "Edvenswa Enterprises",
-    14.62
+    15.74
    ],
    [
     "B509024",
     "Golden Legand Leasing & finance",
-    14.24
+    14.54
    ],
    [
     "B538952",
@@ -4729,17 +4713,17 @@
    [
     "MODINATUR",
     "Modi Naturals",
-    13.67
+    13.6
    ],
    [
     "AUTOAXLES",
     "Automotive Axles",
-    13.33
+    12.29
    ],
    [
-    "B532304",
-    "KJMC Corporate Advisors (India)",
-    13.31
+    "B539835",
+    "Superior Finlease",
+    12.14
    ]
   ],
   "l": [
@@ -4751,17 +4735,12 @@
    [
     "B543814",
     "Prospect Consumer Products",
-    -13.36
+    -15.78
    ],
    [
     "B542801",
     "Misquita Engineering",
     -11.58
-   ],
-   [
-    "POCL",
-    "Pondy Oxides & Chemicals",
-    -10.07
    ],
    [
     "B543184",
@@ -4784,13 +4763,18 @@
     -9.52
    ],
    [
-    "SHIVAM-RE1",
-    "Shivam Autotech Ltd-RE",
-    -9.09
+    "POCL",
+    "Pondy Oxides & Chemicals",
+    -9.23
    ],
    [
-    "B532355",
-    "Picturehouse Media",
+    "B544876",
+    "ENS Enterprises",
+    -9.19
+   ],
+   [
+    "SHIVAM-RE1",
+    "Shivam Autotech Ltd-RE",
     -9.09
    ]
   ]
@@ -13802,16 +13786,16 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 10:26 AM",
+  "at": "13 Nov, 10:31 AM",
   "phase": "live",
   "for": "Fri 13 Nov",
   "picks": [
    {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
-    "p": 31695.0,
-    "pct": 11.04,
-    "vx": 3.6,
+    "p": 31760.0,
+    "pct": 11.26,
+    "vx": 3.7,
     "fo": true,
     "why": [
      {
@@ -13821,37 +13805,32 @@
      },
      {
       "t": "momentum",
-      "x": "Up 11.0%, closing near the day's high on 3.6× normal volume"
+      "x": "Up 11.3%, closing near the day's high on 3.7× normal volume"
      }
     ],
-    "s": 45.6
+    "s": 46.6
    },
    {
-    "k": "ORIENTCABL",
-    "n": "Orient Cables (India)",
-    "p": 410.0,
-    "pct": 8.77,
-    "vx": 5.8,
+    "k": "STCINDIA",
+    "n": "The State Trading Corporation of India",
+    "p": 120.9,
+    "pct": 11.52,
+    "vx": 6.1,
     "fo": false,
     "why": [
      {
-      "t": "results",
-      "x": "Orient Cables Posts Strong Q2 Results With Standalone Revenue At ₹528 Crore And Net Profit Up 180 Per Cent",
-      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbjZQYXJGTHVUUk9ISGxBbmttRGp5YjN6eW95Rkx3dzBLbmZXc25rdUhYSzR1cGYxbnFRMFVzSmtJOGQxWWZubmRTelZBTXJVWFZVSHdWTkZDX2stQ1gtSDg3U1l6NFJfZS1SSjlTTzhlandaUXQwS0l3T015M2wwa0lkWGQzWEh6eEp0QUFzRlZHSG84OTVCdjRBYmFxZlA3eEhzcmdiSDhZaVNaNHByUFFjdFRLa2VobnlfXzFnN2FQNHRXVVZlS2FubVQtU01oN2hySmVMcmFBXzQ1blJr0gHkAUFVX3lxTE1QRFgtSUg4ckV5SzFRcGlVLXVjeWgxWmdrbzNmVUM4bHg2d1hLR1YtbGY4emJsZVlnamZsX0N5eTF0bGthY0I0NHp0eXdoY2xhV2dLRlBqZkhsMWJNc1RDcENLNUFmT3VXdWdfeGNHczVJVnhzRlVWUmJhdk56bm85bUVVUEZzblpiOUVjU09Vb2p5WXlyOGdtdzhyZ200NEN3LWxpM04yNFJkNndBM3Uwa1pZYktYc2FwY05fbWVMazJRME44LVdmbnNkQkYzT1lTTnpWLW9rYmpqS1RRdXQ5V09PdQ?oc=5"
-     },
-     {
       "t": "momentum",
-      "x": "Up 8.8%, closing near the day's high on 5.8× normal volume"
+      "x": "Up 11.5%, closing near the day's high on 6.1× normal volume"
      }
     ],
-    "s": 37.3
+    "s": 28.8
    },
    {
     "k": "TDPOWERSYS",
     "n": "TD Power Systems",
-    "p": 675.05,
-    "pct": 7.85,
-    "vx": 4.5,
+    "p": 670.35,
+    "pct": 7.1,
+    "vx": 4.6,
     "fo": false,
     "why": [
      {
@@ -13860,13 +13839,13 @@
       "u": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQRkw4LTNBUkxsS2RDa253TjRIeEdrRFkyR0NzV1gzSmY1UW5lNHFDN2p6QjdDbGJwend6T0NPUHhBbUgzTzRGX2t3Nmhpd1FsMnJlQ2tYaVBuVHhSVUhKRWczZk8wYjNTOUR4N2doSGNvU0kwSVpQM21Yd0VPVU4wSjM5Y2ZtbFgxaEtYOTZHaTk1dkNUTkhSYVJvNjEyN3lHYVpBQlZrX2RfRFdRaVNVcnZpck8wZW1lVnF6X096TGlEVTlPSHQ4Z0cwX3BCTk5jelI1VHFKVEZ4LXgzYnJZdXVKTUloUkFHdmI5N2NR?oc=5"
      }
     ],
-    "s": 32.2
+    "s": 28.0
    },
    {
     "k": "HFCL",
     "n": "HFCL",
-    "p": 211.1,
-    "pct": 0.51,
+    "p": 211.07,
+    "pct": 0.5,
     "vx": 0.3,
     "fo": false,
     "why": [
@@ -13879,26 +13858,11 @@
     "s": 28.0
    },
    {
-    "k": "STCINDIA",
-    "n": "The State Trading Corporation of India",
-    "p": 119.9,
-    "pct": 10.58,
-    "vx": 4.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 10.6%, closing near the day's high on 4.7× normal volume"
-     }
-    ],
-    "s": 25.0
-   },
-   {
     "k": "LEMONTREE",
     "n": "Lemon Tree Hotels",
-    "p": 122.69,
-    "pct": 1.89,
-    "vx": 1.2,
+    "p": 122.76,
+    "pct": 1.95,
+    "vx": 1.3,
     "fo": false,
     "why": [
      {
@@ -13912,23 +13876,23 @@
    {
     "k": "ACI",
     "n": "Archean Chemical Industries",
-    "p": 459.7,
-    "pct": 7.73,
-    "vx": 5.0,
+    "p": 459.15,
+    "pct": 7.61,
+    "vx": 6.1,
     "fo": false,
     "why": [
      {
       "t": "momentum",
-      "x": "Up 7.7%, closing near the day's high on 5.0× normal volume"
+      "x": "Up 7.6%, closing near the day's high on 6.1× normal volume"
      }
     ],
-    "s": 19.1
+    "s": 19.0
    },
    {
     "k": "HAL",
     "n": "Hindustan Aeronautics",
-    "p": 4846.0,
-    "pct": 0.05,
+    "p": 4846.5,
+    "pct": 0.06,
     "vx": 0.5,
     "fo": true,
     "why": [
@@ -13943,8 +13907,8 @@
    {
     "k": "AMBER",
     "n": "Amber Enterprises India",
-    "p": 6494.5,
-    "pct": 4.6,
+    "p": 6491.0,
+    "pct": 4.54,
     "vx": 2.9,
     "fo": true,
     "why": [
@@ -13955,17 +13919,32 @@
      },
      {
       "t": "momentum",
-      "x": "Up 4.6%, closing near the day's high on 2.9× normal volume"
+      "x": "Up 4.5%, closing near the day's high on 2.9× normal volume"
      }
     ],
     "s": 15.3
    },
    {
+    "k": "HDFIRE",
+    "n": "HD Fire Protect",
+    "p": 309.65,
+    "pct": 8.92,
+    "vx": 3.0,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 8.9%, closing near the day's high on 3.0× normal volume"
+     }
+    ],
+    "s": 13.3
+   },
+   {
     "k": "GODREJIND",
     "n": "Godrej Industries",
-    "p": 1089.85,
-    "pct": 0.53,
-    "vx": 8.1,
+    "p": 1088.0,
+    "pct": 0.36,
+    "vx": 8.2,
     "fo": false,
     "why": [
      {
@@ -13977,11 +13956,26 @@
     "s": 12.0
    },
    {
+    "k": "ATL",
+    "n": "Allcargo Terminals",
+    "p": 29.9,
+    "pct": 10.68,
+    "vx": 2.1,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 10.7%, closing near the day's high on 2.1× normal volume"
+     }
+    ],
+    "s": 11.4
+   },
+   {
     "k": "FIEMIND",
     "n": "Fiem Industries",
-    "p": 2075.0,
-    "pct": 6.77,
-    "vx": 11.7,
+    "p": 2069.1,
+    "pct": 6.47,
+    "vx": 11.9,
     "fo": false,
     "why": [
      {
@@ -13995,8 +13989,8 @@
    {
     "k": "TONBO",
     "n": "Tonbo Imaging India",
-    "p": 1525.4,
-    "pct": 0.24,
+    "p": 1525.1,
+    "pct": 0.22,
     "vx": 0.1,
     "fo": false,
     "why": [
@@ -14004,6 +13998,22 @@
       "t": "results",
       "x": "Tonbo Imaging Q2FY27: Net profit ₹235 crore, revenue jumps 1975% YoY",
       "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTWlyVjlIZXFXdFRSZ2FPaUhZbnE3U1BhWTdIclNDNU9RRzBydFRrZzUtemhVcllfZkluM3ZXQ0dwU0lsSnhSbGVZaHhrWl80VmQ2MDNOV1YweVdfcjN2eVV4YmZieHFzY0FrdDdXNTNVdmRFZ183bDM4RUZnVUVZX0JSVWFxdWFqV2JIWEZzSjBGUThlTElZYWhxcUFzNUNDZ3NYTlJUMFJHT1hpTWQxNTBGb2lzaGNENWNZdnp0c0VkM28?oc=5"
+     }
+    ],
+    "s": 11.2
+   },
+   {
+    "k": "ORIENTCABL",
+    "n": "Orient Cables (India)",
+    "p": 402.0,
+    "pct": 6.65,
+    "vx": 6.0,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Orient Cables Posts Strong Q2 Results With Standalone Revenue At ₹528 Crore And Net Profit Up 180 Per Cent",
+      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbjZQYXJGTHVUUk9ISGxBbmttRGp5YjN6eW95Rkx3dzBLbmZXc25rdUhYSzR1cGYxbnFRMFVzSmtJOGQxWWZubmRTelZBTXJVWFZVSHdWTkZDX2stQ1gtSDg3U1l6NFJfZS1SSjlTTzhlandaUXQwS0l3T015M2wwa0lkWGQzWEh6eEp0QUFzRlZHSG84OTVCdjRBYmFxZlA3eEhzcmdiSDhZaVNaNHByUFFjdFRLa2VobnlfXzFnN2FQNHRXVVZlS2FubVQtU01oN2hySmVMcmFBXzQ1blJr0gHkAUFVX3lxTE1QRFgtSUg4ckV5SzFRcGlVLXVjeWgxWmdrbzNmVUM4bHg2d1hLR1YtbGY4emJsZVlnamZsX0N5eTF0bGthY0I0NHp0eXdoY2xhV2dLRlBqZkhsMWJNc1RDcENLNUFmT3VXdWdfeGNHczVJVnhzRlVWUmJhdk56bm85bUVVUEZzblpiOUVjU09Vb2p5WXlyOGdtdzhyZ200NEN3LWxpM04yNFJkNndBM3Uwa1pZYktYc2FwY05fbWVMazJRME44LVdmbnNkQkYzT1lTTnpWLW9rYmpqS1RRdXQ5V09PdQ?oc=5"
      }
     ],
     "s": 11.2
@@ -14027,23 +14037,23 @@
    {
     "k": "AMANTA",
     "n": "Amanta Healthcare",
-    "p": 238.39,
-    "pct": 4.4,
+    "p": 238.6,
+    "pct": 4.49,
     "vx": 2.8,
     "fo": false,
     "why": [
      {
       "t": "momentum",
-      "x": "Up 4.4%, closing near the day's high on 2.8× normal volume"
+      "x": "Up 4.5%, closing near the day's high on 2.8× normal volume"
      }
     ],
-    "s": 6.1
+    "s": 6.4
    },
    {
     "k": "BHEL",
     "n": "Bharat Heavy Electricals",
-    "p": 435.6,
-    "pct": 1.02,
+    "p": 436.65,
+    "pct": 1.26,
     "vx": 0.2,
     "fo": true,
     "why": [
@@ -14058,9 +14068,9 @@
    {
     "k": "MIDHANI",
     "n": "Mishra Dhatu Nigam",
-    "p": 406.15,
-    "pct": 0.07,
-    "vx": 0.6,
+    "p": 410.15,
+    "pct": 1.06,
+    "vx": 0.8,
     "fo": false,
     "why": [
      {
@@ -14072,10 +14082,40 @@
     "s": 5.6
    },
    {
+    "k": "ERIS",
+    "n": "Eris Lifesciences",
+    "p": 1334.0,
+    "pct": 4.4,
+    "vx": 2.4,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 4.4%, closing near the day's high on 2.4× normal volume"
+     }
+    ],
+    "s": 5.2
+   },
+   {
+    "k": "RPEL",
+    "n": "Raghav Productivity Enhancers",
+    "p": 1975.4,
+    "pct": 3.93,
+    "vx": 2.1,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 3.9%, closing near the day's high on 2.1× normal volume"
+     }
+    ],
+    "s": 4.2
+   },
+   {
     "k": "DATAPATTNS",
     "n": "Data Patterns (India)",
-    "p": 4293.8,
-    "pct": 1.48,
+    "p": 4303.2,
+    "pct": 1.71,
     "vx": 0.5,
     "fo": true,
     "why": [
@@ -14090,8 +14130,8 @@
    {
     "k": "CAMS",
     "n": "Computer Age Management Services",
-    "p": 751.4,
-    "pct": 1.13,
+    "p": 751.95,
+    "pct": 1.2,
     "vx": 0.4,
     "fo": true,
     "why": [
@@ -14106,8 +14146,8 @@
    {
     "k": "CLEANMAX",
     "n": "Clean Max Enviro Energy Solutions",
-    "p": 1324.2,
-    "pct": 1.45,
+    "p": 1324.8,
+    "pct": 1.5,
     "vx": 0.3,
     "fo": false,
     "why": [
@@ -14122,8 +14162,8 @@
    {
     "k": "CDSL",
     "n": "Central Depository Services (India)",
-    "p": 1472.1,
-    "pct": 1.18,
+    "p": 1471.5,
+    "pct": 1.13,
     "vx": 0.9,
     "fo": true,
     "why": [
@@ -14138,9 +14178,9 @@
    {
     "k": "AUTOAXLES",
     "n": "Automotive Axles",
-    "p": 1870.0,
-    "pct": 13.33,
-    "vx": 115.8,
+    "p": 1852.0,
+    "pct": 12.29,
+    "vx": 119.8,
     "fo": false,
     "why": [
      {
@@ -14150,79 +14190,15 @@
      }
     ],
     "s": 4.0
-   },
-   {
-    "k": "KRN",
-    "n": "KRN Heat Exchanger and Refrigeration",
-    "p": 1041.0,
-    "pct": 0.1,
-    "vx": 0.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "KRN Heat Exchanger and Refrigeration Locks at Upper Circuit With 4.48% Gain — Buyers Queue, Sellers Absent",
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOZVo4aTBfdzcxaE13c2ZHaUVhQk5hUmYxZTB0WmNTdEMxQ2JoQkhQUnNVcTcwQlhtZFhRWXNXZVBhNno1YW1iczd1SURLaHdpSm9JWnhxTkVXWlNDMXJEZXRXTHdvTC1ob1RiZWxOSUpvc25SbjJDVjZvUjJRSmtOVHgxWlowT2FjMmNtYzJZM0RfTTV3QnJwcmFTbmRyZk5JUURvRS0zTDdHY3hldjczZ1Z3Y1NyRUpTUk43V1luSDJFSElwSkZ6TEFZMWVkc1JudUZCOEkwQkk?oc=5"
-     }
-    ],
-    "s": 4.0
-   },
-   {
-    "k": "HEGAM",
-    "n": "HEG Advanced Materials",
-    "p": 281.14,
-    "pct": 0.17,
-    "vx": 0.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "HEG Advanced Materials Climbs 4% Intraday on Anode MoU",
-      "u": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVmxkSGh4ZmlWUVByTGVSV0pTRUlTdm9DZGg3ckdOeGtmSFhNNEgwM093MzhYcV9HeExSX1Z1Z1FQaEotTlRncXcxaFR3WkpEdkhrVDAxVlVpN3NsZG9LYzJDZVRXaVdTcFZ6NTk4a0dKME96ZmRCN0lDMTltcFN2M2pVYTY3VjAyNmo4?oc=5"
-     }
-    ],
-    "s": 4.0
-   },
-   {
-    "k": "RELIANCE",
-    "n": "Reliance Industries",
-    "p": 1344.1,
-    "pct": 0.33,
-    "vx": 0.1,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Reliance Home Finance Locks at Upper Circuit With 2.8% Gain — Buyers Queue, Sellers Absent",
-      "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMlV2Q0RQZmlvbUdrZmNpSS1MU3E4QjRoLThpNWdFdlExY1hpMEFvdVRiZHplY2lpMDJ5TlFqeWJHc2pKeGxOVmg3dk9ZQXJiMG5KLWVncXYtN1RXOUVLVDZNTzUwN3cyRzQ2aExYRFN6U0hubjhKaC1WaU5CTFktYkxJNEk0QVVrYkpLdnAxOXNtbzBfdFFhak15bk1PSWNrbC04UFFNVjVtZ1pQSlZ5bFVhTk5CYTIyT3RyM09YemRBOHBM?oc=5"
-     }
-    ],
-    "s": 4.0
-   },
-   {
-    "k": "XTRANET",
-    "n": "Xtranet Technologies",
-    "p": 273.5,
-    "pct": 1.16,
-    "vx": 0.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Xtranet Technologies Ltd Locks at Upper Circuit With 3.03% Gain — Buyers Queue, Sellers Absent",
-      "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeVFoX3Y4dTMyTjV6NGhtZ3VTcTJSeU5maXJQUFoyRjB4aGxadW95N3JrZ1BoZXFidXE2TGpKWnlxNE5OZXpqRGZrYW9DYlJNcWc5THRxT1pSSW1PSkFFQlpUZUtZVnNzZGVGQ0FrOTZPQ1J1VE9HWTJ4NjVHcVVtTlBOdUpXMWxITDZwbWxvOXR1MjJTRHUxNXR2bzlMTm9vanhpUzBwNV82UDU1VGJMTjNEMjJDRjQ0R3JfZS1kNU5QOVE2YzJuNg?oc=5"
-     }
-    ],
-    "s": 4.0
    }
   ],
   "fo": [
    {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
-    "p": 31695.0,
-    "pct": 11.04,
-    "vx": 3.6,
+    "p": 31760.0,
+    "pct": 11.26,
+    "vx": 3.7,
     "fo": true,
     "why": [
      {
@@ -14232,16 +14208,16 @@
      },
      {
       "t": "momentum",
-      "x": "Up 11.0%, closing near the day's high on 3.6× normal volume"
+      "x": "Up 11.3%, closing near the day's high on 3.7× normal volume"
      }
     ],
-    "s": 45.6
+    "s": 46.6
    },
    {
     "k": "HAL",
     "n": "Hindustan Aeronautics",
-    "p": 4846.0,
-    "pct": 0.05,
+    "p": 4846.5,
+    "pct": 0.06,
     "vx": 0.5,
     "fo": true,
     "why": [
@@ -14256,8 +14232,8 @@
    {
     "k": "AMBER",
     "n": "Amber Enterprises India",
-    "p": 6494.5,
-    "pct": 4.6,
+    "p": 6491.0,
+    "pct": 4.54,
     "vx": 2.9,
     "fo": true,
     "why": [
@@ -14268,7 +14244,7 @@
      },
      {
       "t": "momentum",
-      "x": "Up 4.6%, closing near the day's high on 2.9× normal volume"
+      "x": "Up 4.5%, closing near the day's high on 2.9× normal volume"
      }
     ],
     "s": 15.3
@@ -14276,8 +14252,8 @@
    {
     "k": "BHEL",
     "n": "Bharat Heavy Electricals",
-    "p": 435.6,
-    "pct": 1.02,
+    "p": 436.65,
+    "pct": 1.26,
     "vx": 0.2,
     "fo": true,
     "why": [
@@ -14292,8 +14268,8 @@
    {
     "k": "DATAPATTNS",
     "n": "Data Patterns (India)",
-    "p": 4293.8,
-    "pct": 1.48,
+    "p": 4303.2,
+    "pct": 1.71,
     "vx": 0.5,
     "fo": true,
     "why": [
@@ -14308,8 +14284,8 @@
    {
     "k": "CAMS",
     "n": "Computer Age Management Services",
-    "p": 751.4,
-    "pct": 1.13,
+    "p": 751.95,
+    "pct": 1.2,
     "vx": 0.4,
     "fo": true,
     "why": [
@@ -14324,8 +14300,8 @@
    {
     "k": "CDSL",
     "n": "Central Depository Services (India)",
-    "p": 1472.1,
-    "pct": 1.18,
+    "p": 1471.5,
+    "pct": 1.13,
     "vx": 0.9,
     "fo": true,
     "why": [
@@ -14338,10 +14314,26 @@
     "s": 4.0
    },
    {
+    "k": "ITC",
+    "n": "ITC",
+    "p": 284.45,
+    "pct": 0.14,
+    "vx": 0.1,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "ITC Share Price Gains on Gold Flake Hike: Brokerage Views",
+      "u": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX0Y4eTZKQmd3QjJEVnFFNE5idlVyemJXMnhQSXlZWmZwbEFHM3IzQlV2WVhlbjI3LTY1cU1GX2V4b1d5U0tDS2d5eW9xcm41Ty1YWTZMOXhEcUhYN01oWnpTTTNtbUtnUXF1Zk5vX2tTTXlDS2xCQ0tRY0FDOU91X1lyN1E?oc=5"
+     }
+    ],
+    "s": 4.0
+   },
+   {
     "k": "RELIANCE",
     "n": "Reliance Industries",
-    "p": 1344.1,
-    "pct": 0.33,
+    "p": 1344.9,
+    "pct": 0.39,
     "vx": 0.1,
     "fo": true,
     "why": [
