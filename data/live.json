@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 8:31 AM IST",
- "updated": "2026-11-13T08:31:41+05:30",
+ "label": "13 Nov 2026, 8:35 AM IST",
+ "updated": "2026-11-13T08:35:57+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 8:31 AM",
+  "date": "13 Nov 2026, 8:35 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 8:31 AM"
+    "t": "13 Nov, 8:35 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 8:31 AM"
+    "t": "13 Nov, 8:35 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 8:31 AM"
+   "t": "13 Nov, 8:35 AM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794538638
  },
  "brent": {
-  "v": 95.59,
+  "v": 95.53,
   "prev": 95.82,
-  "ch": -0.23,
-  "pct": -0.24,
+  "ch": -0.29,
+  "pct": -0.3,
   "high": 96.0,
   "low": 95.07,
   "open": 91.28,
-  "t": 1794538278
+  "t": 1794538553
  },
  "goldSpot": {
-  "v": 3912.3,
+  "v": 3913.9,
   "prev": 3885.3,
-  "ch": 27.0,
-  "pct": 0.69,
+  "ch": 28.6,
+  "pct": 0.74,
   "high": 3920.4,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794538299
+  "t": 1794538549
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 8:31 AM",
+  "fetched": "13 Nov, 8:35 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1126,6 +1126,13 @@
  "news": [
   {
    "tag": "IPO",
+   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "13 Nov, 8:31 AM",
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
+  },
+  {
+   "tag": "IPO",
    "t": "Crystal Crop Protection IPO Details",
    "s": "IPO Watch",
    "d": "13 Nov, 8:19 AM",
@@ -1137,13 +1144,6 @@
    "s": "Equitymaster",
    "d": "13 Nov, 6:00 AM",
    "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQQWo5NWFlamJ2YWpZZ2YwZTBpU1B5SFU1WC1NQ1I3dXIwdmxaSlBSQUNFelpoc1lfRlJ4bVNWOTV3XzdLLTVpQUVNRkNvQ0VBZmJjTVZHSDdwWlY2TWx2cktHRUROaHlvSjdxMzFaVWNMZnU3WTRLdV8zVmNYejNhX3VqRlNqUGJXWDR4N3lZX29ET2U0UnlGeHF5bVNzU1dKRlBZVTlmVFF3eUhRV3RJbXU3MGM3OFJkRGpKVTg3Q2tUZzhBaVJxVFRmdFhMNlJzNEFCX3ZQMFNXNEV1WDczS3Fxa1A?oc=5"
-  },
-  {
-   "tag": "IPO",
-   "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
-   "s": "IPO Watch",
-   "d": "13 Nov, 2:49 AM",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXbWg2RENBd1lnNFJvbDVDb1I2b1dtbzVYTkxncENYSGRJVjdNSDhUUEZzTk1rYzg5V01SYnBuVktUbDBVZUoteThhSzlSYzlzaExYXzVzNXl1cFVEaDQ3dFp3?oc=5"
   },
   {
    "tag": "Results",
@@ -1230,7 +1230,7 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 311 headlines, 25 up, 14 down",
+  "outlook: 313 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2251,9 +2251,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 8:31 AM",
-  "mid": "13 Nov, 8:31 AM",
-  "small": "13 Nov, 8:31 AM"
+  "n50": "13 Nov, 8:35 AM",
+  "mid": "13 Nov, 8:35 AM",
+  "small": "13 Nov, 8:35 AM"
  },
  "midg": [
   [
@@ -2432,13 +2432,13 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 311 headlines, 25 up, 14 down",
+  "outlook: 313 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 8:31 AM"
+  "at": "13 Nov, 8:35 AM"
  },
  "global": [
   [
@@ -2467,9 +2467,9 @@
   ],
   [
    "Hang Seng",
-   23857.81,
-   -0.63,
-   1794537998
+   23865.66,
+   -0.6,
+   1794538254
   ],
   [
    "FTSE 100",
@@ -2485,8 +2485,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 8:31 AM",
-  "headlines": 311,
+  "at": "13 Nov, 8:35 AM",
+  "headlines": 313,
   "screened": 1808,
   "cues": [
    "Nikkei 225 +1.6%"
@@ -2586,6 +2586,39 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSlVUWTRUMmo1Zm5UZ1h1U2hBX0pMdnp3b3pyNlZmVE9PcENldEdtTXdXOWtoeXZKYXcxQmlqUlg1SS1Pb3hpUnlBV2ZOLW1LOUl0Vy1JU2NVMy1oZHpGYTdpdjV5dnk3OHZsX3owT0E3dFVDdzVhU25aWlNSQ1UwUDNpaF85T0o1TjY3bHlTaGVPSk9VNUFKaHM4WXFRZlZKNVUzMHZwcXdta3U5RkZHUU5kbXRVVy1XWXlIc0c2RktEWUxJdlVjc281bGHSAdIBQVVfeXFMUHRoTWc1N0RnVEt4bUt2WkZpdE5mTWJzaXljdjF4MXhzQlBHWGEzMkRsYW9NRzFOM3QwN25ETHc2TEp4NHdaZkstSFNYOFFaOGdCeDZ1LVB6Sm1RQlhrLURXVTc0YTBLZ2MxdEVFNVdDY1NzRS1FdUsyUV9MX1kxcDFCVVFLU0N4eEhPWU9faXFDaDN5ZEJodjlkWTF1LVhvM0hrbjBxTTRsNE05SDNUM2hnX0YyVGVBTGtabFppXzQ3OUdlczJDWl9qZGh5NGhCMG5n?oc=5",
       "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "LEMONTREE",
+    "n": "Lemon Tree Hotels",
+    "s": 14,
+    "conf": "High",
+    "p": 120.41,
+    "pct": 4.61,
+    "mc": 9534.6,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Lemon Tree Hotels shares rise 7% after Q2 results; brokerages bullish on RevPAR growth, margin expansion,...",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNOW40bkhoc0ZCYjJ4Q0FzNHFhQloxRUg0R1BvbVJEcEJ1SndxTDRPakZqOGNwaUZzUU5TVnVqT2VhYkZFNW1KTlBWbE9iZDJ4c19OVEk0WVYtcER6b09kWWdrOFE0a2pKTktFeWJMT0lFN2ZfX2NFZ3ZaYzRWNnhtT0RhcVZ5TWdNamljVUx3cG5DZ3N0M2ZJamoxdXRFdFZ1NV9DQjVZUnpZZllaTnBBYUpEc2R6elgtSXlLak9XVk5ncjRhMW41NnQ5LXdKNUlRcHV5NE1TTG9MSk0zZ0MweGdJbURkOGl3dTFuODM5dEQybjY2M0lKLV9BWlY4OG9OT01HMFMwS2pYYVQ3NlJPMXU1Z9IBmAJBVV95cUxPNlNQc1pvTXhwZkxwLTNlM05PdlhoNk9qTmpUckJZY2tzNkVNazl4ZklNazRzS1RWMTRJREdsY1BvNWpwQ2ZacUhRdFpwOHNRbUN1VHgyeUc5TDN1dVllNi05bi1wV0Z6OG13RVh3bl9odjIxbTJXeXVNYzZhV2VrUzR3aXhla1JqaTBIQWQyUElycXNsUnFoSFkyLUJYZU4tQUlSMU1Ba0cwSFdDX1NqSkxudjNmMFR3ZkVNT0E2aXRza3RoLUo3TXowcERyOU1aZkFYMXh0YXoxLVd2NWhCMXdmdGhucjd5eUZpd1JMcl9CVHc0S0VEMV9xOWtmaEQwVkFrVTBOdEdkUnZzQWVOWWdCeEplY3dE?oc=5",
+      "src": "Moneycontrol.com"
+     },
+     {
+      "k": "news",
+      "t": "Q2 earnings effect: Lemon Tree Hotels shares surge 7%; Axis Capital revises target",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNN3hGaUtrODVMWXI5Qm9DVUQwbGpTMk9hNVVLSG9ZeEtTdmlqMkRlUXNDR0lnbUpNbzRYSU1IcGhqVHRZOG5neE1pR3VOU3pfVDI4WmdNaFZkTVhhWkFrYjVqd3lFVHkzMTJGblRxX1NQTUpjcmJ1aUJxVHBYTGFmU0ZyOGtOeFEyLUZ6VVJReDZKZnZCVG84ODU0YjJKUlZlZEMyUmt4RzloVXhGU0Q0UEM1ZXpTMW9UNDJTVi1xc2l4bFJoX1VFQmFYUkJkalU2Q1F2dUFnQUYySzVzX1liRdIB5gFBVV95cUxOZldUUi1UOXZjQlgySjRzTWV0ZnlyVXBKRTV1MTl2YmVxQWNZQnBmQkZzM3htb05OZ2dlMEh0N0E3Y3BNeXBVSVVzTXU3SzMzR3VhMjJSRElHVDZ2ZjJWR00tVEliVXp0NkVzTVFsWTF0UE12S0MxTWZCOUt3VXlZM0dlcFNUTjNKTWdQbEd1OGllNFhxcVROYTI1YkM2N1BDd3hMWWRFUDM2SkV6S2c5eWRaYzE1dHFNMXZ0bkRsaVBFQ1ZIV2NMaXd1Q0U2SmZsb1d4VGlYMklFSWNLZDBZTnVBY1Jvdw?oc=5",
+      "src": "Business Today"
+     },
+     {
+      "k": "news",
+      "t": "Lemon Tree: IDBI Capital Sees Up To 37% Upside On Strong Q2 Earnings; Check Target Price",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQM01EYzhwQmtpLUlJdnNxNkdtclBaNVZ6UmhGRUU3N0pjRzZoWUNjZlFDYnZtR3UtS3FVa2NKVlY5RkljV0RWWWQ5SDlJejRuYll4NFFqaWdEZ3RjaGtBd18xRjhlMEVxVm1EaTIySmZWRFlpRnZFbnlSM2NKSTNFWE1iZzhlUlotRWxkSzhoa3dWdHZaWVRGZmpqeDFsLV9MV3A3dkF2UklobEh5MFJQVUljd0R4VndGRndxVXRPT0lMT2VkU2dsalpnM1pzZGVUVG9F?oc=5",
+      "src": "NDTV Profit"
      }
     ]
    },
@@ -2738,32 +2771,6 @@
       "k": "price",
       "t": "Closed strong: +16.5% on 55.5× usual volume, near the day's high",
       "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "LEMONTREE",
-    "n": "Lemon Tree Hotels",
-    "s": 10,
-    "conf": "High",
-    "p": 120.41,
-    "pct": 4.61,
-    "mc": 9534.6,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Lemon Tree Hotels shares rise 7% after Q2 results; brokerages bullish on RevPAR growth, margin expansion,...",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNOW40bkhoc0ZCYjJ4Q0FzNHFhQloxRUg0R1BvbVJEcEJ1SndxTDRPakZqOGNwaUZzUU5TVnVqT2VhYkZFNW1KTlBWbE9iZDJ4c19OVEk0WVYtcER6b09kWWdrOFE0a2pKTktFeWJMT0lFN2ZfX2NFZ3ZaYzRWNnhtT0RhcVZ5TWdNamljVUx3cG5DZ3N0M2ZJamoxdXRFdFZ1NV9DQjVZUnpZZllaTnBBYUpEc2R6elgtSXlLak9XVk5ncjRhMW41NnQ5LXdKNUlRcHV5NE1TTG9MSk0zZ0MweGdJbURkOGl3dTFuODM5dEQybjY2M0lKLV9BWlY4OG9OT01HMFMwS2pYYVQ3NlJPMXU1Z9IBmAJBVV95cUxPNlNQc1pvTXhwZkxwLTNlM05PdlhoNk9qTmpUckJZY2tzNkVNazl4ZklNazRzS1RWMTRJREdsY1BvNWpwQ2ZacUhRdFpwOHNRbUN1VHgyeUc5TDN1dVllNi05bi1wV0Z6OG13RVh3bl9odjIxbTJXeXVNYzZhV2VrUzR3aXhla1JqaTBIQWQyUElycXNsUnFoSFkyLUJYZU4tQUlSMU1Ba0cwSFdDX1NqSkxudjNmMFR3ZkVNT0E2aXRza3RoLUo3TXowcERyOU1aZkFYMXh0YXoxLVd2NWhCMXdmdGhucjd5eUZpd1JMcl9CVHc0S0VEMV9xOWtmaEQwVkFrVTBOdEdkUnZzQWVOWWdCeEplY3dE?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "news",
-      "t": "Q2 earnings effect: Lemon Tree Hotels shares surge 7%; Axis Capital revises target",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNN3hGaUtrODVMWXI5Qm9DVUQwbGpTMk9hNVVLSG9ZeEtTdmlqMkRlUXNDR0lnbUpNbzRYSU1IcGhqVHRZOG5neE1pR3VOU3pfVDI4WmdNaFZkTVhhWkFrYjVqd3lFVHkzMTJGblRxX1NQTUpjcmJ1aUJxVHBYTGFmU0ZyOGtOeFEyLUZ6VVJReDZKZnZCVG84ODU0YjJKUlZlZEMyUmt4RzloVXhGU0Q0UEM1ZXpTMW9UNDJTVi1xc2l4bFJoX1VFQmFYUkJkalU2Q1F2dUFnQUYySzVzX1liRdIB5gFBVV95cUxOZldUUi1UOXZjQlgySjRzTWV0ZnlyVXBKRTV1MTl2YmVxQWNZQnBmQkZzM3htb05OZ2dlMEh0N0E3Y3BNeXBVSVVzTXU3SzMzR3VhMjJSRElHVDZ2ZjJWR00tVEliVXp0NkVzTVFsWTF0UE12S0MxTWZCOUt3VXlZM0dlcFNUTjNKTWdQbEd1OGllNFhxcVROYTI1YkM2N1BDd3hMWWRFUDM2SkV6S2c5eWRaYzE1dHFNMXZ0bkRsaVBFQ1ZIV2NMaXd1Q0U2SmZsb1d4VGlYMklFSWNLZDBZTnVBY1Jvdw?oc=5",
-      "src": "Business Today"
      }
     ]
    },
@@ -3070,21 +3077,21 @@
     ]
    },
    {
-    "k": "KRN",
-    "n": "KRN Heat Exchanger and Refrigeration",
+    "k": "IDBI",
+    "n": "IDBI Bank",
     "s": 4,
     "conf": "Medium",
-    "p": 1040.0,
-    "pct": 4.99,
-    "mc": 6807.7,
-    "sec": "Technology",
+    "p": 80.65,
+    "pct": 1.48,
+    "mc": 86718.1,
+    "sec": "Financial Services",
     "why": [
      {
       "k": "news",
-      "t": "KRN Heat Exchanger and Refrigeration Locks at Upper Circuit With 4.48% Gain — Buyers Queue, Sellers Absent",
+      "t": "Lemon Tree: IDBI Capital Sees Up To 37% Upside On Strong Q2 Earnings; Check Target Price",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOZVo4aTBfdzcxaE13c2ZHaUVhQk5hUmYxZTB0WmNTdEMxQ2JoQkhQUnNVcTcwQlhtZFhRWXNXZVBhNno1YW1iczd1SURLaHdpSm9JWnhxTkVXWlNDMXJEZXRXTHdvTC1ob1RiZWxOSUpvc25SbjJDVjZvUjJRSmtOVHgxWlowT2FjMmNtYzJZM0RfTTV3QnJwcmFTbmRyZk5JUURvRS0zTDdHY3hldjczZ1Z3Y1NyRUpTUk43V1luSDJFSElwSkZ6TEFZMWVkc1JudUZCOEkwQkk?oc=5",
-      "src": "MarketsMojo"
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQM01EYzhwQmtpLUlJdnNxNkdtclBaNVZ6UmhGRUU3N0pjRzZoWUNjZlFDYnZtR3UtS3FVa2NKVlY5RkljV0RWWWQ5SDlJejRuYll4NFFqaWdEZ3RjaGtBd18xRjhlMEVxVm1EaTIySmZWRFlpRnZFbnlSM2NKSTNFWE1iZzhlUlotRWxkSzhoa3dWdHZaWVRGZmpqeDFsLV9MV3A3dkF2UklobEh5MFJQVUljd0R4VndGRndxVXRPT0lMT2VkU2dsalpnM1pzZGVUVG9F?oc=5",
+      "src": "NDTV Profit"
      }
     ]
    }
@@ -3926,7 +3933,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 8:31 AM",
+  "at": "13 Nov, 8:35 AM",
   "hi": [
    [
     "PAYTM",
@@ -3995,7 +4002,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 8:31 AM",
+  "at": "13 Nov, 8:35 AM",
   "g": [
    [
     "544535",
@@ -4814,7 +4821,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 8:31 AM",
+  "at": "13 Nov, 8:35 AM",
   "g": [
    [
     "B544535",
@@ -13927,7 +13934,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 8:31 AM",
+  "at": "13 Nov, 8:35 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
@@ -14054,6 +14061,22 @@
     "s": 21.8
    },
    {
+    "k": "LEMONTREE",
+    "n": "Lemon Tree Hotels",
+    "p": 120.41,
+    "pct": 4.61,
+    "vx": 5.1,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Lemon Tree Hotels shares rise 7% after Q2 results; brokerages bullish on RevPAR growth, margin expansion,...",
+      "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNOW40bkhoc0ZCYjJ4Q0FzNHFhQloxRUg0R1BvbVJEcEJ1SndxTDRPakZqOGNwaUZzUU5TVnVqT2VhYkZFNW1KTlBWbE9iZDJ4c19OVEk0WVYtcER6b09kWWdrOFE0a2pKTktFeWJMT0lFN2ZfX2NFZ3ZaYzRWNnhtT0RhcVZ5TWdNamljVUx3cG5DZ3N0M2ZJamoxdXRFdFZ1NV9DQjVZUnpZZllaTnBBYUpEc2R6elgtSXlLak9XVk5ncjRhMW41NnQ5LXdKNUlRcHV5NE1TTG9MSk0zZ0MweGdJbURkOGl3dTFuODM5dEQybjY2M0lKLV9BWlY4OG9OT01HMFMwS2pYYVQ3NlJPMXU1Z9IBmAJBVV95cUxPNlNQc1pvTXhwZkxwLTNlM05PdlhoNk9qTmpUckJZY2tzNkVNazl4ZklNazRzS1RWMTRJREdsY1BvNWpwQ2ZacUhRdFpwOHNRbUN1VHgyeUc5TDN1dVllNi05bi1wV0Z6OG13RVh3bl9odjIxbTJXeXVNYzZhV2VrUzR3aXhla1JqaTBIQWQyUElycXNsUnFoSFkyLUJYZU4tQUlSMU1Ba0cwSFdDX1NqSkxudjNmMFR3ZkVNT0E2aXRza3RoLUo3TXowcERyOU1aZkFYMXh0YXoxLVd2NWhCMXdmdGhucjd5eUZpd1JMcl9CVHc0S0VEMV9xOWtmaEQwVkFrVTBOdEdkUnZzQWVOWWdCeEplY3dE?oc=5"
+     }
+    ],
+    "s": 19.6
+   },
+   {
     "k": "AARTIPHARM",
     "n": "Aarti Pharmalabs",
     "p": 1010.5,
@@ -14163,22 +14186,6 @@
      }
     ],
     "s": 14.4
-   },
-   {
-    "k": "LEMONTREE",
-    "n": "Lemon Tree Hotels",
-    "p": 120.41,
-    "pct": 4.61,
-    "vx": 5.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Lemon Tree Hotels shares rise 7% after Q2 results; brokerages bullish on RevPAR growth, margin expansion,...",
-      "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNOW40bkhoc0ZCYjJ4Q0FzNHFhQloxRUg0R1BvbVJEcEJ1SndxTDRPakZqOGNwaUZzUU5TVnVqT2VhYkZFNW1KTlBWbE9iZDJ4c19OVEk0WVYtcER6b09kWWdrOFE0a2pKTktFeWJMT0lFN2ZfX2NFZ3ZaYzRWNnhtT0RhcVZ5TWdNamljVUx3cG5DZ3N0M2ZJamoxdXRFdFZ1NV9DQjVZUnpZZllaTnBBYUpEc2R6elgtSXlLak9XVk5ncjRhMW41NnQ5LXdKNUlRcHV5NE1TTG9MSk0zZ0MweGdJbURkOGl3dTFuODM5dEQybjY2M0lKLV9BWlY4OG9OT01HMFMwS2pYYVQ3NlJPMXU1Z9IBmAJBVV95cUxPNlNQc1pvTXhwZkxwLTNlM05PdlhoNk9qTmpUckJZY2tzNkVNazl4ZklNazRzS1RWMTRJREdsY1BvNWpwQ2ZacUhRdFpwOHNRbUN1VHgyeUc5TDN1dVllNi05bi1wV0Z6OG13RVh3bl9odjIxbTJXeXVNYzZhV2VrUzR3aXhla1JqaTBIQWQyUElycXNsUnFoSFkyLUJYZU4tQUlSMU1Ba0cwSFdDX1NqSkxudjNmMFR3ZkVNT0E2aXRza3RoLUo3TXowcERyOU1aZkFYMXh0YXoxLVd2NWhCMXdmdGhucjd5eUZpd1JMcl9CVHc0S0VEMV9xOWtmaEQwVkFrVTBOdEdkUnZzQWVOWWdCeEplY3dE?oc=5"
-     }
-    ],
-    "s": 14.0
    },
    {
     "k": "BAJFINANCE",
