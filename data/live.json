@@ -1,13 +1,13 @@
 {
- "label": "14 Nov 2026, 1:11 AM IST",
- "updated": "2026-11-14T01:11:39+05:30",
+ "label": "14 Nov 2026, 1:35 AM IST",
+ "updated": "2026-11-14T01:35:47+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "14 Nov 2026, 1:11 AM",
+  "date": "14 Nov 2026, 1:35 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136750.0,
     "ch": 525.0,
     "pct": 0.39,
-    "t": "14 Nov, 1:11 AM"
+    "t": "14 Nov, 1:35 AM"
    },
    "silver": {
     "v": 176543.0,
     "ch": 234.0,
     "pct": 0.13,
-    "t": "14 Nov, 1:11 AM"
+    "t": "14 Nov, 1:35 AM"
    }
   },
   "retail": {
@@ -345,8 +345,8 @@
      "ag": 195.0
     }
    },
-   "at": "14 Nov, 1:11 AM",
-   "at_ts": 1794598899.378212,
+   "at": "14 Nov, 1:35 AM",
+   "at_ts": 1794600347.927403,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -354,7 +354,7 @@
    "g24_10": 137310.0,
    "ag_kg": 177260.0,
    "ag": 177.26,
-   "t": "14 Nov, 1:11 AM"
+   "t": "14 Nov, 1:35 AM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794597979
  },
  "brent": {
-  "v": 95.87,
+  "v": 95.88,
   "prev": 95.82,
-  "ch": 0.05,
-  "pct": 0.05,
+  "ch": 0.06,
+  "pct": 0.06,
   "high": 97.12,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794598287
+  "t": 1794599736
  },
  "goldSpot": {
-  "v": 3880.4,
+  "v": 3877.0,
   "prev": 3885.3,
-  "ch": -4.9,
-  "pct": -0.13,
+  "ch": -8.3,
+  "pct": -0.21,
   "high": 3927.2,
   "low": 3871.1,
   "open": 3917.1,
-  "t": 1794598289
+  "t": 1794599746
  },
  "sectors": [
   [
@@ -1062,7 +1062,7 @@
   "crystalcropprotection": {
    "gmp": 40.0,
    "gsrc": "IPOMarket",
-   "gat": "14 Nov, 1:11 AM",
+   "gat": "14 Nov, 1:35 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1077,7 +1077,7 @@
   "watranarentals": {
    "gmp": 16.0,
    "gsrc": "IPOMarket",
-   "gat": "14 Nov, 1:11 AM",
+   "gat": "14 Nov, 1:35 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1098,7 +1098,7 @@
   "dii_sell": 13999.53,
   "fii_buy": 18339.57,
   "fii_sell": 12603.02,
-  "fetched": "14 Nov, 1:11 AM",
+  "fetched": "14 Nov, 1:35 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1257,8 +1257,9 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal: 673 upcoming (10 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 290 headlines, 25 up, 18 down",
+  "outlook: 292 headlines, 25 up, 18 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2279,9 +2280,9 @@
   }
  },
  "nse": {
-  "n50": "14 Nov, 1:11 AM",
-  "mid": "14 Nov, 1:11 AM",
-  "small": "14 Nov, 1:11 AM"
+  "n50": "14 Nov, 1:35 AM",
+  "mid": "14 Nov, 1:35 AM",
+  "small": "14 Nov, 1:35 AM"
  },
  "midg": [
   [
@@ -2457,33 +2458,34 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal: 673 upcoming (10 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 290 headlines, 25 up, 18 down",
+  "outlook: 292 headlines, 25 up, 18 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5276,
   "quotes": 4790,
-  "at": "14 Nov, 1:11 AM"
+  "at": "14 Nov, 1:35 AM"
  },
  "global": [
   [
    "Dow Jones",
-   52300.32,
-   0.01,
-   1794598899
+   52333.13,
+   0.07,
+   1794600347
   ],
   [
    "S&P 500",
-   7553.55,
-   -0.51,
-   1794598898
+   7555.81,
+   -0.48,
+   1794600347
   ],
   [
    "Nasdaq",
-   25125.73,
-   -0.95,
-   1794598897
+   25136.44,
+   -0.91,
+   1794600344
   ],
   [
    "Nikkei 225",
@@ -2507,17 +2509,50 @@
    "US 10Y yield",
    5.15,
    0.9,
-   1794597994
+   1794599444
   ]
  ],
  "outlook": {
-  "at": "14 Nov, 1:11 AM",
-  "headlines": 290,
+  "at": "14 Nov, 1:35 AM",
+  "headlines": 292,
   "screened": 1796,
   "cues": [
    "Hang Seng -2.8%"
   ],
   "up": [
+   {
+    "k": "BBOX",
+    "n": "Black Box",
+    "s": 24,
+    "conf": "High",
+    "p": 900.7,
+    "pct": 1.91,
+    "mc": 15996.4,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "Black Box Q2 results: Profit rises 31% to Rs 73 crore, revenue jumps 22%; shares jump 6%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOVnotTkhTanJVQk96NUNNaEU0WjV3ZThYLUwzSWtvRUNMRkhOelBZQkJkeUFNMWlQY09xTkQzQ19YanQ3ME1kMmhSS2FwOTlqYlNyOHJrckF2WWsxVm94VHpfamJuY3RkYzE0d2xQS0k4a3gxeUN3bHd0cUhHRTl0UHZHT2J3SGlVY2syeFVRb0M1WUxUV0stc0pLdUhDUUxBX1M2dGdQc3JUMGlKVFZFM1ZsZThtdFRGVmR4MHlUVmwwUUROeWNETjRBQWduZnNFclhVMTN5Sy1ZQ3hTc0hHZtIB5gFBVV95cUxQVTdHMGxVRnBSNzNENEQ2cXBRdUowLUE1Tl9Mckh2Z2FnSTg1Ylp2bkNMY01MYXg5bTFkMlFaNEtGSnpVU1JzR1F3ZV9Ta01abTZrODlPdk1xMFdtWGV4Q05lUHRrQ1hOdVBQbFNPWTl0dF9QM0dtNDhSb3Y4VlhiTU5rU3pGUUMtTXNlU05VTUl3RU0yT3Rpd2ppUWhzTFlSQVJ6NmpzNjgtNnhRNU0xWGt5VENpZ3hYeng5dG1mOG5TNXlIcFYxZ2R3dDNGcHFjRVNIYV9CdHRVc3hZUmZJellEWEJvUQ?oc=5",
+      "src": "Moneycontrol.com"
+     },
+     {
+      "k": "news",
+      "t": "Black Box Q2 results: Profit rises 30% to Rs 73 crore, revenue jumps 22%; shares gain 2%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOUzloNE1lUnV2WWpBZ3pjdUJLTzhUa3dhMThGRlYzS1lOWDN0TjNnd0pxeHIxVi1leEhfQU1rRC1CTDAzX1E4U25tWXJ5b1gzYUJ1TDhHZi1HWDYyRlNHLWJpRzZqSlB4Slg1V3FtSTJaTkJfczRJbEl3R3FQNlRJY3JRNkFwZlpQc3lWWDI0dVpoVDFqQi1QekI5bS1Jck02TWlpbnpoeU1JdHRidThfNkhBNE9wN3NLVTU0VXZZaHRLa0ljME9MY0xDTzJVcDExMzNMdXA1Nnk3QkQwMnc?oc=5",
+      "src": "TradingView"
+     },
+     {
+      "k": "news",
+      "t": "Black Box Q2 Results: Shares rise after profit jumps 30%, revenue grows 22%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNFpoY1QyTTNzeXJBR29tb2VHbURvVENQcVJwUExEalhKVzZ0eTlKQXRPeEljRmo3LVN2RHhWcTFkN1BzT19WaEswQ3JTWjBoaVk1R0IzbGltOHM4ajRzbEJQWDVQaEFvR1g3THYxcl91OW41NGo2dnFER0REczZXaGlocXpKSEdCYy13ZnN1dlhBWkg0N0gxQW1ndFhSMzA2c3cxNFFDZEJDVzRMNlVGQ2hEYnrSAbQBQVVfeXFMTzRaaGNUMk0zc3lyQUdvbW9lR21Eb1RDUHFScFBMRGpYSlc2dHk5SkF0T3hJY0ZqNy1TdkR4VnExZDdQc09fVmhLMENyU1owaGlZNUdCM2xpbThzOGo0c2xCUFg1UGhBb0dYN0x2MXJfdTluNTRqNnZxREdERHM2V2hpaHF6SkhHQmMtd2ZzdXZYQVpINDdIMUFtZ3RYUjMwNnN3MTRRQ2RCQ1c0TDZVRkNoRGJ6?oc=5",
+      "src": "CNBC TV18"
+     }
+    ]
+   },
    {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
@@ -3202,6 +3237,39 @@
     ]
    },
    {
+    "k": "OLAELEC",
+    "n": "Ola Electric Mobility",
+    "s": -12,
+    "conf": "High",
+    "p": 34.65,
+    "pct": -3.05,
+    "mc": 16593.7,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Ola Electric shares tumble over 6% after Q2 show; Goldman Sachs, Citi cut FY27 estimates on weak volume growth",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOWlJId1U0OTdTVlVXWXp0WFVYSTNTUlRhZ0w4SFdXd3MxUUVuR3lNajNlSXNUenVhQVBOV3VXcG5UVFQ3Qk9NbnAtb3ZkbEZtdzhGT0EwNFgta3pVRF9RVTYzaVpfbmJCZnc4aks3MG5kZHNLdDJmUmZCNHpFdjVBUWtTUU5nVHFPZ19NYTREbGJIU3dwcjFkdkpHaG1mc3djRXhUS3BQMXhpU2FSWl9qaFB2bWoyZ2VMR1AtOEtPM1dBTy0tRDRqYlpmY1ZEYmd2Uml1UWxxZW9PTS1xUUhvQnduSVRIV1FWemZ3cFZORFNISVRZclFRblFGdw?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "news",
+      "t": "Ola Electric Shares Tumble 6% After Q2 Results: Why Goldman Sachs And Kotak See More Pain Ahead",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQeWxQTkxKRlAwR01mREVzNE9ETTVud2Uxd3dROS1rZmV6ejREN3ZLUl9XODBGT0lhRklBa3NCaUdPcXhEWTItUjlOazJZVlR1OTZoUlBYRkNucTNydFY2anBCNThPSlJUMURqMHNwckphOThfTHZxSGNVcFU0eGpJNFB3Y0dWTW96ajd2UUo1M2dUN0poOW92cVQ0REhUclpac1JMWXhBeFh5SUgtNUdNWDRHVU9mbmZpSFQ0b3BxZV9IYXQ2cW9MeEpKOHBPdkZ3NnVNQU5ibXBQbHFZT2M2YU4zaU1Xa0VWSUFwLUtIaHRrZk84Y1ZfZkdmM0tfbW5QOGl5WDFuTHhOVHF4WWs40gGXAkFVX3lxTE9OY0ZGaHJmMTN1d2R2cnVsaWRvRlBPUTlnRGhaNms1YzZ3WUVHbmF0bHRCeDJ2NllEVEJ4R01GUUdDYkVLWlk4NjI5bjNYazNwZ0NYc3RQb0RrclBtSkoyUS1XMVVLZGlzQ0J3UzJIS0l3ZkpUUXdaNkgtVllqMFkyMUlyYWg2aXFiNDBObU40cXVZX0lTczJXUWIweXdWT3ZVYl91Tml4NVliUUlvaDB4THFIbGx2c0U0dU1TZmxXZ0YySnBJcUx1V1dxd2hJdDRSaEJTMEx1R2EzSEhsMklLX3VhcERLVzlCc3FNeEFFOGs1dmd1XzN4Mng2VjlFODhpaEdoaWFxRGtWbE5hTGV5YTctd0Mxdw?oc=5",
+      "src": "NDTV Profit"
+     },
+     {
+      "k": "news",
+      "t": "Ola Electric shares fall 6% after Q2 results",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQTZKRlc0QWtuWUp2VEJJU09rRTdzTGU1Vm9IeFR1dVoxREpKeWVaMEk2NkhYMzhwWDNzV0VMR050ckVwczQ5NWxBaV8wZy1ndUtCUlgyUnI3TlNWaXE5MUhrTTlZdy1sQmJhZGlzMC0ycGtFZHg2UTRBSkw5NTBLZy1QM2QwV3FSMl9odGdCLXBxQQ?oc=5",
+      "src": "News Karnataka"
+     }
+    ]
+   },
+   {
     "k": "MAHSEAMLES",
     "n": "Maharashtra Seamless",
     "s": -11.0,
@@ -3222,32 +3290,6 @@
       "k": "price",
       "t": "Closed weak: -5.2% on 4.8× usual volume, near the day's low",
       "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "OLAELEC",
-    "n": "Ola Electric Mobility",
-    "s": -8,
-    "conf": "High",
-    "p": 34.65,
-    "pct": -3.05,
-    "mc": 16593.7,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Ola Electric Shares Tumble 6% After Q2 Results: Why Goldman Sachs And Kotak See More Pain Ahead",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQeWxQTkxKRlAwR01mREVzNE9ETTVud2Uxd3dROS1rZmV6ejREN3ZLUl9XODBGT0lhRklBa3NCaUdPcXhEWTItUjlOazJZVlR1OTZoUlBYRkNucTNydFY2anBCNThPSlJUMURqMHNwckphOThfTHZxSGNVcFU0eGpJNFB3Y0dWTW96ajd2UUo1M2dUN0poOW92cVQ0REhUclpac1JMWXhBeFh5SUgtNUdNWDRHVU9mbmZpSFQ0b3BxZV9IYXQ2cW9MeEpKOHBPdkZ3NnVNQU5ibXBQbHFZT2M2YU4zaU1Xa0VWSUFwLUtIaHRrZk84Y1ZfZkdmM0tfbW5QOGl5WDFuTHhOVHF4WWs40gGXAkFVX3lxTE9OY0ZGaHJmMTN1d2R2cnVsaWRvRlBPUTlnRGhaNms1YzZ3WUVHbmF0bHRCeDJ2NllEVEJ4R01GUUdDYkVLWlk4NjI5bjNYazNwZ0NYc3RQb0RrclBtSkoyUS1XMVVLZGlzQ0J3UzJIS0l3ZkpUUXdaNkgtVllqMFkyMUlyYWg2aXFiNDBObU40cXVZX0lTczJXUWIweXdWT3ZVYl91Tml4NVliUUlvaDB4THFIbGx2c0U0dU1TZmxXZ0YySnBJcUx1V1dxd2hJdDRSaEJTMEx1R2EzSEhsMklLX3VhcERLVzlCc3FNeEFFOGs1dmd1XzN4Mng2VjlFODhpaEdoaWFxRGtWbE5hTGV5YTctd0Mxdw?oc=5",
-      "src": "NDTV Profit"
-     },
-     {
-      "k": "news",
-      "t": "Ola Electric shares fall 6% after Q2 results",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQTZKRlc0QWtuWUp2VEJJU09rRTdzTGU1Vm9IeFR1dVoxREpKeWVaMEk2NkhYMzhwWDNzV0VMR050ckVwczQ5NWxBaV8wZy1ndUtCUlgyUnI3TlNWaXE5MUhrTTlZdy1sQmJhZGlzMC0ycGtFZHg2UTRBSkw5NTBLZy1QM2QwV3FSMl9odGdCLXBxQQ?oc=5",
-      "src": "News Karnataka"
      }
     ]
    },
@@ -3976,7 +4018,7 @@
   }
  },
  "hilo": {
-  "at": "14 Nov, 1:11 AM",
+  "at": "14 Nov, 1:35 AM",
   "hi": [
    [
     "BONFIG",
@@ -4033,7 +4075,7 @@
   "nlo": 3
  },
  "bse_movers": {
-  "at": "14 Nov, 1:11 AM",
+  "at": "14 Nov, 1:35 AM",
   "g": [
    [
     "542460",
@@ -4845,7 +4887,7 @@
   ]
  },
  "allmov": {
-  "at": "14 Nov, 1:11 AM",
+  "at": "14 Nov, 1:35 AM",
   "g": [
    [
     "MSTCLTD",
@@ -4952,8 +4994,8 @@
   ]
  },
  "rescal": {
-  "ts": 1794597091.9775562,
-  "at": "14 Nov, 12:41 AM",
+  "ts": 1794600362.8568301,
+  "at": "14 Nov, 1:35 AM",
   "items": [
    {
     "k": "B544190",
@@ -8629,7 +8671,7 @@
    },
    {
     "k": "B513397",
-    "n": "Vallabh Steels Ltd",
+    "n": "Vallabh Steels Ltd-$",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -8641,7 +8683,7 @@
    },
    {
     "k": "B530459",
-    "n": "Valson Industries Ltd",
+    "n": "Valson Industries Ltd-$",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -8984,7 +9026,7 @@
   ]
  },
  "tw": {
-  "at": "14 Nov, 1:11 AM",
+  "at": "14 Nov, 1:35 AM",
   "phase": "pre",
   "for": "Sat 14 Nov",
   "picks": [
@@ -9002,6 +9044,22 @@
      }
     ],
     "s": 47.6
+   },
+   {
+    "k": "BBOX",
+    "n": "Black Box",
+    "p": 900.7,
+    "pct": 1.91,
+    "vx": 6.7,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Black Box Q2 results: Profit rises 31% to Rs 73 crore, revenue jumps 22%; shares jump 6%",
+      "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOVnotTkhTanJVQk96NUNNaEU0WjV3ZThYLUwzSWtvRUNMRkhOelBZQkJkeUFNMWlQY09xTkQzQ19YanQ3ME1kMmhSS2FwOTlqYlNyOHJrckF2WWsxVm94VHpfamJuY3RkYzE0d2xQS0k4a3gxeUN3bHd0cUhHRTl0UHZHT2J3SGlVY2syeFVRb0M1WUxUV0stc0pLdUhDUUxBX1M2dGdQc3JUMGlKVFZFM1ZsZThtdFRGVmR4MHlUVmwwUUROeWNETjRBQWduZnNFclhVMTN5Sy1ZQ3hTc0hHZtIB5gFBVV95cUxQVTdHMGxVRnBSNzNENEQ2cXBRdUowLUE1Tl9Mckh2Z2FnSTg1Ylp2bkNMY01MYXg5bTFkMlFaNEtGSnpVU1JzR1F3ZV9Ta01abTZrODlPdk1xMFdtWGV4Q05lUHRrQ1hOdVBQbFNPWTl0dF9QM0dtNDhSb3Y4VlhiTU5rU3pGUUMtTXNlU05VTUl3RU0yT3Rpd2ppUWhzTFlSQVJ6NmpzNjgtNnhRNU0xWGt5VENpZ3hYeng5dG1mOG5TNXlIcFYxZ2R3dDNGcHFjRVNIYV9CdHRVc3hZUmZJellEWEJvUQ?oc=5"
+     }
+    ],
+    "s": 33.6
    },
    {
     "k": "POWERINDIA",
