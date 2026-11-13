@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 9:07 AM IST",
- "updated": "2026-11-13T09:07:57+05:30",
+ "label": "13 Nov 2026, 9:08 AM IST",
+ "updated": "2026-11-13T09:08:45+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 9:07 AM",
+  "date": "13 Nov 2026, 9:08 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 137238.0,
     "ch": 1013.0,
     "pct": 0.74,
-    "t": "13 Nov, 9:07 AM"
+    "t": "13 Nov, 9:08 AM"
    },
    "silver": {
     "v": 179549.0,
     "ch": 825.0,
     "pct": 0.46,
-    "t": "13 Nov, 9:07 AM"
+    "t": "13 Nov, 9:08 AM"
    }
   },
   "retail": {
@@ -354,66 +354,66 @@
    "g24_10": 137790.0,
    "ag_kg": 180270.0,
    "ag": 180.27,
-   "t": "13 Nov, 9:07 AM"
+   "t": "13 Nov, 9:08 AM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 25299.35,
-   "prev": 25255.05,
-   "ch": 44.3,
-   "pct": 0.18,
-   "high": 25384.8,
-   "low": 25142.95,
+   "v": 25209.85,
+   "prev": 25299.35,
+   "ch": -89.5,
+   "pct": -0.35,
+   "high": 25209.85,
+   "low": 25209.85,
    "open": 25213.5,
-   "t": 1794477685
+   "t": 1794541124
   },
   "SENSEX": {
    "v": 81911.01,
-   "prev": 81879.4,
-   "ch": 31.61,
-   "pct": 0.04,
+   "prev": 81911.01,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 82325.61,
    "low": 81576.15,
    "open": 81808.81,
    "t": 1794477754
   },
   "BANKNIFTY": {
-   "v": 61518.5,
-   "prev": 60792.4,
-   "ch": 726.1,
-   "pct": 1.19,
-   "high": 61545.85,
-   "low": 60723.1,
+   "v": 61300.55,
+   "prev": 61518.5,
+   "ch": -217.95,
+   "pct": -0.35,
+   "high": 61300.55,
+   "low": 61300.55,
    "open": 60807.9,
-   "t": 1794477685
+   "t": 1794541124
   },
   "MIDCAP": {
-   "v": 62039.0,
-   "prev": 61519.1,
-   "ch": 519.9,
-   "pct": 0.85,
-   "high": 62197.8,
-   "low": 61379.45,
+   "v": 61844.9,
+   "prev": 62039.0,
+   "ch": -194.1,
+   "pct": -0.31,
+   "high": 61844.9,
+   "low": 61844.9,
    "open": 61586.9,
-   "t": 1794477685
+   "t": 1794541124
   },
   "SMALLCAP": {
-   "v": 19706.75,
-   "prev": 19489.35,
-   "ch": 217.4,
-   "pct": 1.12,
-   "high": 19787.25,
-   "low": 19526.9,
+   "v": 19673.4,
+   "prev": 19706.75,
+   "ch": -33.35,
+   "pct": -0.17,
+   "high": 19673.4,
+   "low": 19673.4,
    "open": 19557.05,
-   "t": 1794477685
+   "t": 1794541124
   },
   "VIX": {
    "v": 16.62,
-   "prev": 17.55,
-   "ch": -0.93,
-   "pct": -5.3,
+   "prev": 16.62,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 17.55,
    "low": 15.25,
    "open": 17.56,
@@ -421,10 +421,6 @@
   }
  },
  "nifty8": [
-  [
-   "2 Nov",
-   23440.8
-  ],
   [
    "3 Nov",
    23810.85
@@ -452,17 +448,21 @@
   [
    "12 Nov",
    25299.35
+  ],
+  [
+   "13 Nov",
+   25209.85
   ]
  ],
  "usdinr": {
   "v": 94.1,
   "prev": 94.04,
   "ch": 0.06,
-  "pct": 0.06,
+  "pct": 0.07,
   "high": 94.11,
   "low": 94.03,
   "open": 94.03,
-  "t": 1794541075
+  "t": 1794541120
  },
  "brent": {
   "v": 95.42,
@@ -475,51 +475,51 @@
   "t": 1794540452
  },
  "goldSpot": {
-  "v": 3918.9,
+  "v": 3919.2,
   "prev": 3885.3,
-  "ch": 33.6,
-  "pct": 0.86,
+  "ch": 33.9,
+  "pct": 0.87,
   "high": 3925.2,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794540470
+  "t": 1794540520
  },
  "sectors": [
   [
    "PSU Bank",
-   4.5
+   4.36
   ],
   [
    "Realty",
-   4.07
+   4.02
   ],
   [
    "Media",
-   2.46
+   2.49
   ],
   [
    "Fin. Services",
-   2.45
-  ],
-  [
-   "Bank",
-   1.19
+   2.03
   ],
   [
    "Auto",
-   1.09
-  ],
-  [
-   "Metal",
-   0.85
+   0.71
   ],
   [
    "Energy",
-   0.6
+   0.55
+  ],
+  [
+   "FMCG",
+   0.32
+  ],
+  [
+   "Metal",
+   0.28
   ],
   [
    "Infra",
-   0.53
+   0.2
   ]
  ],
  "stocks": {
@@ -2242,9 +2242,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 9:07 AM",
-  "mid": "13 Nov, 9:07 AM",
-  "small": "13 Nov, 9:07 AM"
+  "n50": "13 Nov, 9:08 AM",
+  "mid": "13 Nov, 9:08 AM",
+  "small": "13 Nov, 9:08 AM"
  },
  "midg": [
   [
@@ -2458,9 +2458,9 @@
   ],
   [
    "Hang Seng",
-   23806.42,
-   -0.84,
-   1794540176
+   23804.07,
+   -0.85,
+   1794540224
   ],
   [
    "FTSE 100",
@@ -3987,821 +3987,828 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 9:07 AM",
+  "at": "13 Nov, 9:08 AM",
   "g": [
    [
-    "544535",
-    "Bharatrohan Airborne Innovations",
-    108.6,
+    "530037",
+    "Sparkle Gold Rock",
+    78.0,
     20.0,
-    90.5
+    65.0
    ],
    [
-    "534675",
-    "Prozone Realty",
-    63.88,
-    19.98,
-    53.24
+    "539220",
+    "Mishka Exim",
+    48.9,
+    19.12,
+    41.05
    ],
    [
-    "533638",
-    "Flexituff Ventures International",
-    4.27,
-    19.94,
-    3.56
+    "505890",
+    "Kennametal India Ltd-$",
+    4134.0,
+    19.03,
+    3473.15
    ],
    [
-    "544163",
-    "Greenhitech Ventures",
-    45.54,
-    19.81,
-    38.01
+    "540366",
+    "Music Broadcast",
+    6.97,
+    18.54,
+    5.88
    ],
    [
-    "532271",
-    "Orchasp",
-    1.38,
-    18.97,
-    1.16
+    "538714",
+    "Sangam Finserv",
+    36.4,
+    17.84,
+    30.89
    ],
    [
-    "538647",
-    "Purshottam Investofin",
-    43.96,
-    18.81,
-    37.0
+    "541546",
+    "Gayatri Highways",
+    2.18,
+    17.84,
+    1.85
    ],
    [
-    "511509",
-    "Vivo Bio Tech",
-    16.57,
-    17.43,
-    14.11
-   ],
-   [
-    "544502",
-    "Amanta Healthcare",
-    228.55,
-    17.06,
-    195.25
-   ],
-   [
-    "505714",
-    "Gabriel India Ltd-$",
-    1641.95,
-    16.57,
-    1408.55
-   ],
-   [
-    "544534",
-    "Jaro Institute of Technology Management and Research",
-    403.05,
-    16.27,
-    346.65
-   ],
-   [
-    "519494",
-    "NK Industries",
-    66.34,
-    15.57,
-    57.4
-   ],
-   [
-    "890242",
-    "Ola Electric Mobility",
-    24.05,
-    15.35,
-    20.85
-   ],
-   [
-    "540679",
-    "Haleos Labs",
-    1586.65,
-    14.97,
-    1380.0
-   ],
-   [
-    "544906",
-    "Rays of Belief",
-    294.75,
-    14.91,
-    256.5
-   ],
-   [
-    "544625",
-    "Logiciel Solutions",
-    27.44,
-    14.76,
-    23.91
-   ],
-   [
-    "513353",
-    "Cochin Minerals & Rutiles Ltd-$",
-    324.2,
-    13.97,
-    284.45
-   ],
-   [
-    "517500",
-    "Roto Pumps",
-    76.62,
-    13.9,
-    67.27
-   ],
-   [
-    "540647",
-    "Ganges Securities",
-    120.0,
-    13.85,
-    105.4
-   ],
-   [
-    "504380",
-    "Flomic Global Logistics",
-    65.55,
-    13.8,
-    57.6
-   ],
-   [
-    "544950",
-    "Adroit Industries (India)",
-    198.35,
-    13.64,
-    174.55
-   ],
-   [
-    "539273",
-    "Pecos Hotels and Pubs",
-    219.95,
-    13.41,
-    193.95
-   ],
-   [
-    "532402",
-    "USG Tech Solutions",
-    10.86,
-    12.89,
-    9.62
-   ],
-   [
-    "543814",
-    "Prospect Consumer Products",
-    45.0,
-    12.5,
-    40.0
-   ],
-   [
-    "543650",
-    "DCX Systems",
-    164.1,
-    12.36,
-    146.05
-   ],
-   [
-    "500277",
-    "Mid India Industries",
-    6.11,
-    12.32,
-    5.44
-   ],
-   [
-    "500164",
-    "Godrej Industries",
-    1087.2,
-    12.04,
-    970.35
-   ],
-   [
-    "523710",
-    "Sayaji Hotels",
-    321.7,
-    10.91,
-    290.05
-   ],
-   [
-    "538081",
-    "Haria Apparels",
-    5.4,
-    10.88,
-    4.87
-   ],
-   [
-    "500186",
-    "Hindustan Oil Exploration Company",
-    189.2,
-    10.84,
-    170.7
-   ],
-   [
-    "507438",
-    "IFB Agro Industries",
-    943.2,
-    10.72,
-    851.9
-   ],
-   [
-    "524322",
-    "Kabra Drugs",
-    20.46,
-    10.65,
-    18.49
-   ],
-   [
-    "544190",
-    "3C IT Solutions and Telecoms (India)",
-    21.0,
-    10.53,
-    19.0
-   ],
-   [
-    "539410",
-    "Muzali Arts",
-    1.18,
-    10.28,
-    1.07
-   ],
-   [
-    "504810",
-    "Informed Technologies India",
-    89.25,
-    10.19,
-    81.0
-   ],
-   [
-    "500040",
-    "Aditya Birla Real Estate",
-    1197.85,
-    10.1,
-    1087.95
-   ],
-   [
-    "539800",
-    "CHD Chemicals",
-    7.98,
-    10.07,
-    7.25
-   ],
-   [
-    "524542",
-    "Sukhjit Starch & Chemicals Ltd-$",
-    152.1,
-    10.06,
-    138.2
-   ],
-   [
-    "533212",
-    "GKB Ophthalmics",
-    69.11,
-    10.05,
-    62.8
-   ],
-   [
-    "526761",
-    "Howard Hotels",
-    19.25,
-    10.0,
-    17.5
-   ],
-   [
-    "530235",
-    "KJMC Financial Services",
-    63.81,
-    10.0,
-    58.01
-   ],
-   [
-    "532113",
-    "Brijlaxmi Leasing & Finance",
-    9.35,
-    10.0,
-    8.5
-   ],
-   [
-    "532359",
-    "Hit Kit Global Solutions",
-    2.31,
-    10.0,
-    2.1
-   ],
-   [
-    "539875",
-    "RSD Finance",
-    84.15,
-    10.0,
-    76.5
-   ],
-   [
-    "544236",
-    "Resourceful Automobile",
-    52.03,
-    10.0,
-    47.3
-   ],
-   [
-    "544265",
-    "Nexxus Petro Industries",
-    64.35,
-    10.0,
-    58.5
-   ],
-   [
-    "543099",
-    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
-    73.24,
-    9.99,
-    66.59
-   ],
-   [
-    "544967",
-    "Shivchem Agro",
-    36.33,
-    9.99,
-    33.03
-   ],
-   [
-    "539143",
-    "Panth Infinity",
-    13.7,
-    9.95,
-    12.46
-   ],
-   [
-    "500174",
-    "Gujarat Lease Financing",
-    5.77,
-    9.9,
-    5.25
-   ],
-   [
-    "543273",
-    "Knowledge Marine & Engineering Works",
-    713.15,
-    9.89,
-    648.95
-   ],
-   [
-    "539216",
-    "Garment Mantra Lifestyle",
-    1.01,
-    9.78,
-    0.92
-   ],
-   [
-    "543153",
-    "NIPPON INDIA EQUITY SAVINGS FUND -  SEGREGATED PORTFOLIO 2 - DIRECT GROWTH PLAN(Issue Price: 0.01)",
-    27.4,
-    9.78,
-    24.96
-   ],
-   [
-    "543110",
-    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
-    7.54,
-    9.75,
-    6.87
-   ],
-   [
-    "509835",
-    "Premier Synthetics",
-    18.94,
-    9.73,
-    17.26
-   ],
-   [
-    "544233",
-    "Mahalaxmi Fabric Mills",
-    21.61,
-    9.7,
-    19.7
-   ],
-   [
-    "531091",
-    "United Credit",
-    20.95,
-    9.57,
-    19.12
-   ],
-   [
-    "538817",
-    "Captain Pipes",
-    8.04,
-    9.54,
-    7.34
-   ],
-   [
-    "590068",
-    "Khaitan (India)",
-    156.9,
-    9.53,
-    143.25
-   ],
-   [
-    "545005",
-    "Paras Healthcare",
-    882.35,
-    9.43,
-    806.3
-   ]
-  ],
-  "l": [
-   [
-    "523672",
-    "Flex Foods Ltd-$",
-    43.84,
-    -18.78,
-    53.98
-   ],
-   [
-    "543366",
-    "SBL Infratech",
-    42.07,
-    -14.14,
-    49.0
-   ],
-   [
-    "538634",
-    "Vasundhara Rasayans",
-    123.9,
-    -13.33,
-    142.95
-   ],
-   [
-    "532827",
-    "Page Industries",
-    32059.5,
-    -12.19,
-    36510.15
-   ],
-   [
-    "532392",
-    "Creative Eye",
-    5.66,
-    -11.56,
-    6.4
-   ],
-   [
-    "513642",
-    "Axel Polymers",
-    41.03,
-    -11.55,
-    46.39
-   ],
-   [
-    "526859",
-    "ISF",
-    0.79,
-    -11.24,
-    0.89
-   ],
-   [
-    "532070",
-    "Gujjubhai Industries",
-    79.74,
-    -10.0,
-    88.6
-   ],
-   [
-    "543184",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
-    21.6,
-    -10.0,
-    24.0
-   ],
-   [
-    "539174",
-    "Helpage Finlease",
-    21.85,
-    -9.97,
-    24.27
-   ],
-   [
-    "503641",
-    "Zodiac Ventures",
-    1.09,
-    -9.92,
-    1.21
-   ],
-   [
-    "538943",
-    "Sonal Mercantile",
-    81.75,
-    -9.62,
-    90.45
-   ],
-   [
-    "530163",
-    "Kerala Ayurveda",
-    152.1,
-    -9.38,
-    167.85
-   ],
-   [
-    "544383",
-    "Paradeep Parivahan",
-    290.3,
-    -9.3,
-    320.05
-   ],
-   [
-    "523862",
-    "Grand Oak Canyons Distillery",
-    29.88,
-    -9.12,
-    32.88
-   ],
-   [
-    "890228",
-    "Allcargo Terminals",
-    8.82,
-    -9.07,
-    9.7
-   ],
-   [
-    "544662",
-    "Simandhar Impex",
-    143.85,
-    -8.98,
-    158.05
-   ],
-   [
-    "539091",
-    "Consecutive Commodities",
-    1.12,
-    -8.94,
-    1.23
-   ],
-   [
-    "511628",
-    "Fedders Holding",
-    57.06,
-    -8.45,
-    62.33
-   ],
-   [
-    "523832",
-    "Mukat Pipes Ltd-$",
-    15.62,
-    -8.44,
-    17.06
-   ],
-   [
-    "532774",
-    "Inspirisys Solutions",
-    89.21,
-    -8.35,
-    97.34
-   ],
-   [
-    "539938",
-    "Medico Intercontinental",
-    24.94,
-    -8.34,
-    27.21
-   ],
-   [
-    "532740",
-    "Lokesh Machines",
-    369.75,
-    -8.21,
-    402.8
-   ],
-   [
-    "539834",
-    "Balgopal Commercial",
-    146.0,
-    -8.18,
-    159.0
-   ],
-   [
-    "544074",
-    "Shri Balaji Valve Components",
-    118.5,
-    -8.14,
-    129.0
-   ],
-   [
-    "524624",
-    "Gagan Gases",
-    17.0,
-    -8.11,
-    18.5
-   ],
-   [
-    "505302",
-    "Lakshmi Engineering And Warehousing",
-    2312.0,
-    -7.99,
-    2512.75
-   ],
-   [
-    "543186",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIVIDEND PLANDIVIDEND PAYOUT",
-    3.99,
-    -7.85,
-    4.33
-   ],
-   [
-    "518053",
-    "Sri Chakra Cement",
-    32.72,
-    -7.81,
-    35.49
-   ],
-   [
-    "526508",
-    "Shahi Shipping Ltd-$",
-    10.05,
-    -7.63,
-    10.88
-   ],
-   [
-    "519230",
-    "Kisaan Parivar Industries",
-    10.08,
-    -7.61,
-    10.91
-   ],
-   [
-    "530789",
-    "Ceejay Finance",
-    155.2,
-    -7.37,
-    167.55
-   ],
-   [
-    "538569",
-    "Triveni Enterprises",
-    0.88,
-    -7.37,
-    0.95
-   ],
-   [
-    "532845",
-    "TGB Banquets and Hotels",
-    8.99,
-    -7.13,
-    9.68
-   ],
-   [
-    "524174",
-    "Kesar Petroproducts",
-    10.58,
-    -7.11,
-    11.39
-   ],
-   [
-    "544495",
-    "NIS Management",
-    47.61,
-    -7.1,
-    51.25
-   ],
-   [
-    "524522",
-    "Laffans Petrochemicals Ltd-$",
-    27.34,
-    -7.01,
-    29.4
-   ],
-   [
-    "514400",
-    "Garware Synthetics",
-    19.85,
-    -6.94,
-    21.33
-   ],
-   [
-    "523329",
-    "Eldeco Housing & Industries",
-    768.4,
-    -6.92,
-    825.5
-   ],
-   [
-    "530821",
-    "SSPDL Ltd-$",
-    13.57,
-    -6.86,
-    14.57
-   ],
-   [
-    "532812",
-    "Transwarranty Finance",
-    11.01,
-    -6.77,
-    11.81
-   ],
-   [
-    "539287",
-    "Ortin Global",
-    13.52,
-    -6.69,
-    14.49
-   ],
-   [
-    "540597",
-    "Containerway International",
-    16.7,
-    -6.65,
-    17.89
-   ],
-   [
-    "524218",
-    "Resonance Specialties Ltd-$",
-    283.2,
-    -6.63,
-    303.3
-   ],
-   [
-    "532410",
-    "Transcorp International",
-    23.11,
-    -6.63,
-    24.75
-   ],
-   [
-    "532390",
-    "Taj Gvk Hotels & Resorts",
-    320.1,
-    -6.58,
-    342.65
-   ],
-   [
-    "544073",
-    "Manoj Ceramic",
-    90.5,
-    -6.56,
-    96.85
-   ],
-   [
-    "530171",
-    "Daulat Securities",
-    28.98,
-    -6.52,
-    31.0
-   ],
-   [
-    "513548",
-    "Sharda Ispat",
-    143.95,
-    -6.47,
-    153.9
-   ],
-   [
-    "532387",
-    "PNC Media and Entertainment",
-    17.59,
-    -6.44,
-    18.8
+    "535205",
+    "Mystic Electronics",
+    4.6,
+    17.35,
+    3.92
    ],
    [
     "517397",
     "Pan Electronics India",
-    23.49,
-    -6.41,
-    25.1
+    26.99,
+    14.9,
+    23.49
    ],
    [
-    "522207",
-    "Rasandik Engineering Industries India Ltd-$",
-    54.19,
-    -6.41,
-    57.9
+    "539546",
+    "Agribio Spirits",
+    349.95,
+    14.36,
+    306.0
    ],
    [
-    "532945",
-    "SEPC",
-    5.07,
-    -6.28,
-    5.41
+    "511533",
+    "Sahara Housingfina Corporation",
+    41.39,
+    14.34,
+    36.2
    ],
    [
-    "544649",
-    "Titanium Hybrid Long-Short Fund Direct Plan Growth",
-    8.5,
-    -6.28,
-    9.07
+    "530265",
+    "Sainik Finance & Industries",
+    39.89,
+    12.21,
+    35.55
    ],
    [
-    "533217",
-    "Hindustan Media Ventures",
-    89.77,
-    -6.23,
-    95.73
+    "539410",
+    "Muzali Arts",
+    1.32,
+    11.86,
+    1.18
    ],
    [
-    "530421",
-    "Kuwer Industries",
-    9.6,
-    -6.16,
-    10.23
+    "544424",
+    "Globe Civil Projects",
+    44.0,
+    11.59,
+    39.43
    ],
    [
-    "530457",
-    "GTT Data Solutions",
-    34.63,
-    -6.15,
-    36.9
+    "511712",
+    "Relic Technologies",
+    78.6,
+    10.86,
+    70.9
+   ],
+   [
+    "532507",
+    "B.A.G. Films and Media",
+    4.5,
+    10.84,
+    4.06
+   ],
+   [
+    "590134",
+    "Madras Fertilizers",
+    65.0,
+    10.83,
+    58.65
+   ],
+   [
+    "521149",
+    "Prime Urban Development India",
+    7.9,
+    10.49,
+    7.15
+   ],
+   [
+    "519331",
+    "VSF Projects",
+    33.8,
+    10.24,
+    30.66
+   ],
+   [
+    "505010",
+    "Automotive Axles",
+    1805.05,
+    10.16,
+    1638.6
+   ],
+   [
+    "532100",
+    "Indo City Infotech Ltd-$",
+    13.88,
+    9.98,
+    12.62
+   ],
+   [
+    "539398",
+    "Vishal Bearings",
+    55.69,
+    9.84,
+    50.7
+   ],
+   [
+    "543828",
+    "Sudarshan Pharma Industries",
+    35.7,
+    9.71,
+    32.54
+   ],
+   [
+    "543671",
+    "AAA Technologies",
+    98.0,
+    9.68,
+    89.35
+   ],
+   [
+    "533451",
+    "Karma Energy",
+    37.85,
+    9.65,
+    34.52
+   ],
+   [
+    "540210",
+    "Heads UP Ventures",
+    5.95,
+    9.58,
+    5.43
+   ],
+   [
+    "540026",
+    "Ladam Affordable Housing",
+    7.4,
+    9.14,
+    6.78
+   ],
+   [
+    "543669",
+    "Keystone Realtors",
+    389.05,
+    9.1,
+    356.6
+   ],
+   [
+    "540268",
+    "TruCap Finance",
+    4.54,
+    8.87,
+    4.17
+   ],
+   [
+    "533638",
+    "Flexituff Ventures International",
+    4.64,
+    8.67,
+    4.27
+   ],
+   [
+    "524818",
+    "Dynamic Industries Ltd-$",
+    117.95,
+    8.61,
+    108.6
+   ],
+   [
+    "539174",
+    "Helpage Finlease",
+    23.7,
+    8.47,
+    21.85
+   ],
+   [
+    "531583",
+    "Rap Corp",
+    34.99,
+    8.26,
+    32.32
+   ],
+   [
+    "539435",
+    "Richfield Financial Services",
+    22.45,
+    8.19,
+    20.75
+   ],
+   [
+    "533982",
+    "Tera Software",
+    359.95,
+    8.16,
+    332.8
+   ],
+   [
+    "540519",
+    "Meera Industries",
+    32.79,
+    8.11,
+    30.33
+   ],
+   [
+    "539939",
+    "Yash Chemex",
+    79.54,
+    8.0,
+    73.65
+   ],
+   [
+    "514171",
+    "Ceeta Industries",
+    40.0,
+    7.96,
+    37.05
+   ],
+   [
+    "533100",
+    "Premier Energy and Infrastructure",
+    6.25,
+    7.94,
+    5.79
+   ],
+   [
+    "500418",
+    "Tokyo Plast International",
+    80.95,
+    7.92,
+    75.01
+   ],
+   [
+    "532355",
+    "Picturehouse Media",
+    7.95,
+    7.87,
+    7.37
+   ],
+   [
+    "532359",
+    "Hit Kit Global Solutions",
+    2.49,
+    7.79,
+    2.31
+   ],
+   [
+    "543298",
+    "Vineet Laboratories",
+    40.5,
+    7.51,
+    37.67
+   ],
+   [
+    "543993",
+    "ARCL Organics",
+    245.0,
+    7.48,
+    227.95
+   ],
+   [
+    "504908",
+    "Duncan Engineering Ltd-$",
+    273.0,
+    7.25,
+    254.55
+   ],
+   [
+    "532957",
+    "Gokak Textiles",
+    64.0,
+    7.2,
+    59.7
+   ],
+   [
+    "505729",
+    "Singer India",
+    96.95,
+    7.19,
+    90.45
+   ],
+   [
+    "542597",
+    "MSTC",
+    700.0,
+    7.19,
+    653.05
+   ],
+   [
+    "533047",
+    "Indian Metals & Ferro Alloys",
+    1179.95,
+    7.15,
+    1101.25
+   ],
+   [
+    "543420",
+    "Jet Freight Logistics",
+    18.88,
+    7.15,
+    17.62
+   ],
+   [
+    "530217",
+    "Swojas Foods",
+    7.5,
+    7.14,
+    7.0
+   ],
+   [
+    "524322",
+    "Kabra Drugs",
+    21.89,
+    6.99,
+    20.46
+   ],
+   [
+    "540694",
+    "ANG Lifesciences India",
+    40.45,
+    6.93,
+    37.83
+   ],
+   [
+    "532335",
+    "Ambica Agarbathies & Aroma Industries",
+    24.75,
+    6.91,
+    23.15
+   ],
+   [
+    "545001",
+    "Sahajanand Medical Technologies",
+    538.3,
+    6.77,
+    504.15
+   ],
+   [
+    "543268",
+    "DRC Systems India",
+    12.18,
+    6.75,
+    11.41
+   ],
+   [
+    "506520",
+    "Jayshree Chemicals",
+    6.98,
+    6.73,
+    6.54
+   ],
+   [
+    "531845",
+    "Zenith Steel Pipes & Industries Ltd-$",
+    5.25,
+    6.71,
+    4.92
+   ],
+   [
+    "532768",
+    "Fiem Industries",
+    2073.95,
+    6.64,
+    1944.9
+   ],
+   [
+    "537326",
+    "Chemtech Industrial Valves",
+    53.5,
+    6.49,
+    50.24
+   ]
+  ],
+  "l": [
+   [
+    "531416",
+    "Narendra Properties",
+    31.51,
+    -14.81,
+    36.99
+   ],
+   [
+    "541865",
+    "Add-Shop ERetail",
+    4.91,
+    -14.46,
+    5.74
+   ],
+   [
+    "570004",
+    "Jain Irrigation Systems Ltd_DVR",
+    16.5,
+    -13.2,
+    19.01
+   ],
+   [
+    "526530",
+    "IIRM Holdings India",
+    106.6,
+    -9.24,
+    117.45
+   ],
+   [
+    "511626",
+    "RR Financial Consultants",
+    58.4,
+    -9.02,
+    64.19
+   ],
+   [
+    "526241",
+    "Amrapali Industries",
+    31.7,
+    -8.83,
+    34.77
+   ],
+   [
+    "540735",
+    "IRIS RegTech Solutions",
+    201.0,
+    -8.7,
+    220.15
+   ],
+   [
+    "532160",
+    "Gujarat State Financial Corporation",
+    8.26,
+    -8.63,
+    9.04
+   ],
+   [
+    "531255",
+    "Paragon Finance",
+    30.1,
+    -8.57,
+    32.92
+   ],
+   [
+    "530305",
+    "Piccadily Agro Industries",
+    541.0,
+    -8.56,
+    591.65
+   ],
+   [
+    "538597",
+    "TTI Enterprise",
+    6.27,
+    -8.33,
+    6.84
+   ],
+   [
+    "532626",
+    "Pondy Oxides & Chemicals",
+    366.5,
+    -8.31,
+    399.7
+   ],
+   [
+    "544619",
+    "Sudeep Pharma",
+    1106.05,
+    -8.26,
+    1205.7
+   ],
+   [
+    "533161",
+    "Emmbi Industries",
+    75.01,
+    -8.13,
+    81.65
+   ],
+   [
+    "532730",
+    "STL Global",
+    8.82,
+    -8.03,
+    9.59
+   ],
+   [
+    "543747",
+    "Kamdhenu Ventures",
+    4.06,
+    -7.73,
+    4.4
+   ],
+   [
+    "517447",
+    "R.S. Software (India)",
+    28.04,
+    -7.67,
+    30.37
+   ],
+   [
+    "544855",
+    "Prima Innovation",
+    30.0,
+    -7.52,
+    32.44
+   ],
+   [
+    "530723",
+    "Asit C Mehta Financial Services",
+    111.0,
+    -7.35,
+    119.8
+   ],
+   [
+    "511601",
+    "Yash Management & Satellite",
+    9.55,
+    -6.74,
+    10.24
+   ],
+   [
+    "532481",
+    "Noida Toll Bridge Company",
+    3.5,
+    -6.67,
+    3.75
+   ],
+   [
+    "532895",
+    "Nagreeka Capital & Infrastructure",
+    22.13,
+    -6.51,
+    23.67
+   ],
+   [
+    "544022",
+    "ASK Automotive",
+    610.95,
+    -6.49,
+    653.35
+   ],
+   [
+    "511742",
+    "Ugro Capital",
+    64.3,
+    -6.46,
+    68.74
+   ],
+   [
+    "512103",
+    "Nidhi Granites",
+    273.9,
+    -6.33,
+    292.4
+   ],
+   [
+    "535387",
+    "Lakhotia Polyesters (India)",
+    60.0,
+    -6.25,
+    64.0
+   ],
+   [
+    "507315",
+    "Sakthi Sugars",
+    18.4,
+    -5.98,
+    19.57
+   ],
+   [
+    "532334",
+    "HB Estate Developers",
+    75.9,
+    -5.95,
+    80.7
+   ],
+   [
+    "538732",
+    "Vibrant Global Capital",
+    62.2,
+    -5.94,
+    66.13
+   ],
+   [
+    "540048",
+    "S.P. Apparels",
+    861.05,
+    -5.87,
+    914.7
+   ],
+   [
+    "524606",
+    "Beryl Drugs",
+    22.6,
+    -5.83,
+    24.0
+   ],
+   [
+    "542862",
+    "Shahlon Silk Industries",
+    21.61,
+    -5.8,
+    22.94
+   ],
+   [
+    "532732",
+    "Kewal Kiran Clothing",
+    415.95,
+    -5.76,
+    441.35
+   ],
+   [
+    "539252",
+    "Shyam Century Ferrous",
+    4.8,
+    -5.7,
+    5.09
+   ],
+   [
+    "544945",
+    "Elevate Campuses",
+    294.55,
+    -5.68,
+    312.3
+   ],
+   [
+    "542852",
+    "Vishwaraj Sugar Industries",
+    4.69,
+    -5.63,
+    4.97
+   ],
+   [
+    "544418",
+    "Oswal Pumps",
+    226.05,
+    -5.6,
+    239.45
+   ],
+   [
+    "532022",
+    "Filatex Fashions",
+    0.17,
+    -5.56,
+    0.18
+   ],
+   [
+    "544860",
+    "Ardee Industries",
+    42.99,
+    -5.54,
+    45.51
+   ],
+   [
+    "544876",
+    "ENS Enterprises",
+    128.5,
+    -5.51,
+    136.0
+   ],
+   [
+    "544702",
+    "DCM Shriram International",
+    63.55,
+    -5.5,
+    67.25
+   ],
+   [
+    "543992",
+    "Yatra Online",
+    76.6,
+    -5.47,
+    81.03
+   ],
+   [
+    "544512",
+    "Shringar House of Mangalsutra",
+    295.0,
+    -5.46,
+    312.05
+   ],
+   [
+    "532673",
+    "K M Sugar Mills",
+    29.55,
+    -5.32,
+    31.21
+   ],
+   [
+    "532455",
+    "Shalimar Wires Industries",
+    18.51,
+    -5.27,
+    19.54
+   ],
+   [
+    "500193",
+    "HLV",
+    6.35,
+    -5.22,
+    6.7
+   ],
+   [
+    "506852",
+    "Primo Chemicals",
+    20.76,
+    -5.21,
+    21.9
+   ],
+   [
+    "530357",
+    "KBS India",
+    1.3,
+    -5.11,
+    1.37
+   ],
+   [
+    "544584",
+    "SK Minerals & Additives",
+    416.0,
+    -5.11,
+    438.4
+   ],
+   [
+    "532694",
+    "Avio Smart Market Stack",
+    5.5,
+    -5.01,
+    5.79
+   ],
+   [
+    "544254",
+    "Tolins Tyres",
+    83.05,
+    -5.01,
+    87.43
+   ],
+   [
+    "524212",
+    "Wanbury",
+    190.2,
+    -5.0,
+    200.2
+   ],
+   [
+    "538542",
+    "Gold Coin Health Foods",
+    32.52,
+    -5.0,
+    34.23
+   ],
+   [
+    "539770",
+    "Darjeeling Industriies",
+    17.87,
+    -5.0,
+    18.81
+   ],
+   [
+    "524727",
+    "Span Divergent",
+    26.26,
+    -4.99,
+    27.64
+   ],
+   [
+    "526071",
+    "Stellant Securities (India)",
+    640.15,
+    -4.99,
+    673.8
+   ],
+   [
+    "542145",
+    "Roni Households",
+    29.69,
+    -4.99,
+    31.25
+   ],
+   [
+    "544554",
+    "KVS Castings",
+    62.42,
+    -4.99,
+    65.7
    ]
   ]
  },
