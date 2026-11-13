@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 6:21 PM IST",
- "updated": "2026-11-13T18:21:16+05:30",
+ "label": "13 Nov 2026, 6:31 PM IST",
+ "updated": "2026-11-13T18:31:38+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 6:21 PM",
+  "date": "13 Nov 2026, 6:31 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -130,16 +130,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136458.0,
-    "ch": 233.0,
-    "pct": 0.17,
-    "t": "13 Nov, 6:21 PM"
+    "v": 136468.0,
+    "ch": 243.0,
+    "pct": 0.18,
+    "t": "13 Nov, 6:31 PM"
    },
    "silver": {
-    "v": 177900.0,
-    "ch": -824.0,
-    "pct": -0.46,
-    "t": "13 Nov, 6:21 PM"
+    "v": 178071.0,
+    "ch": -653.0,
+    "pct": -0.37,
+    "t": "13 Nov, 6:31 PM"
    }
   },
   "retail": {
@@ -345,16 +345,16 @@
      "ag": 195.0
     }
    },
-   "at": "13 Nov, 6:00 PM",
-   "at_ts": 1794573034.834938,
+   "at": "13 Nov, 6:31 PM",
+   "at_ts": 1794574898.802971,
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13700.0,
-   "g24_10": 137000.0,
-   "ag_kg": 178610.0,
-   "ag": 178.61,
-   "t": "13 Nov, 6:21 PM"
+   "g24": 13701.0,
+   "g24_10": 137010.0,
+   "ag_kg": 178780.0,
+   "ag": 178.78,
+   "t": "13 Nov, 6:31 PM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794572110
  },
  "brent": {
-  "v": 96.33,
+  "v": 96.19,
   "prev": 95.82,
-  "ch": 0.51,
-  "pct": 0.53,
+  "ch": 0.37,
+  "pct": 0.39,
   "high": 96.75,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794573665
+  "t": 1794574286
  },
  "goldSpot": {
-  "v": 3893.9,
+  "v": 3893.8,
   "prev": 3885.3,
-  "ch": 8.6,
+  "ch": 8.5,
   "pct": 0.22,
   "high": 3926.9,
   "low": 3879.1,
   "open": 3917.1,
-  "t": 1794573675
+  "t": 1794574294
  },
  "sectors": [
   [
@@ -1062,7 +1062,7 @@
   "crystalcropprotection": {
    "gmp": 45.0,
    "gsrc": "IPOMarket",
-   "gat": "13 Nov, 6:21 PM",
+   "gat": "13 Nov, 6:31 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1073,7 +1073,7 @@
   "watranarentals": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "13 Nov, 6:21 PM",
+   "gat": "13 Nov, 6:31 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1090,7 +1090,7 @@
   "dii_sell": 13999.53,
   "fii_buy": 18339.57,
   "fii_sell": 12603.02,
-  "fetched": "13 Nov, 6:21 PM",
+  "fetched": "13 Nov, 6:31 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1246,11 +1246,13 @@
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal: 1500 upcoming (197 NSE)",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 280 headlines, 25 up, 17 down",
+  "outlook: 283 headlines, 25 up, 17 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2271,9 +2273,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 6:21 PM",
-  "mid": "13 Nov, 6:21 PM",
-  "small": "13 Nov, 6:21 PM"
+  "n50": "13 Nov, 6:31 PM",
+  "mid": "13 Nov, 6:31 PM",
+  "small": "13 Nov, 6:31 PM"
  },
  "midg": [
   [
@@ -2446,17 +2448,19 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal: 1500 upcoming (197 NSE)",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 280 headlines, 25 up, 17 down",
+  "outlook: 283 headlines, 25 up, 17 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 6:21 PM"
+  "at": "13 Nov, 6:31 PM"
  },
  "global": [
   [
@@ -2491,9 +2495,9 @@
   ],
   [
    "FTSE 100",
-   10867.42,
-   0.04,
-   1794573374
+   10865.7,
+   0.02,
+   1794573997
   ],
   [
    "US 10Y yield",
@@ -2503,8 +2507,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 6:21 PM",
-  "headlines": 280,
+  "at": "13 Nov, 6:31 PM",
+  "headlines": 283,
   "screened": 1802,
   "cues": [
    "Hang Seng -2.8%"
@@ -2644,6 +2648,37 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZGVCdmYzRDMyVzRVc3daX2Y2bUNYUGYtN2g5YnM2ZllFbExIVHIwOUk1Y0hFS210aFF1cTl3RGgzQnRwSWpZb1FhcGh0QUszVjVRclFaRDBEQnpwdlZFV0k4eF8tTmI4cnBwMU1ZQW5wWHRGeEFUUEw0RVFjOGZiQ0l5NElKNDdFaG91VUFaTUJWSU5YOW5LRlNRb3dXT2E1TlJiTm5VVWxjZHhrT3FUSWxqcDNoalM1M19aSjF3?oc=5",
       "src": "scanx.trade"
+     }
+    ]
+   },
+   {
+    "k": "VHLTD",
+    "n": "Viceroy Hotels",
+    "s": 14.3,
+    "conf": "High",
+    "p": 148.71,
+    "pct": 3.83,
+    "mc": 1141.8,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Viceroy Hotels Q2 Results: Consolidated Profit Rises 409%, Revenue Jumps 56%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZnRzRGNNQ2c5LW1zUVhjeVQzc1RwUUlmdDZtY2tMcUFyaklQamNjaFlIRlVQVnl1Ui1WYllfR2xBOEQ4VnY1M3IzRHdVSjJlTnpkWERQTkxWU2xRVDFMbkYyYjhRQnJEWlNrVUJpa3ZlUWtBRzV0eWhWbFY2V1h2VjNYTkNpMklwOGNIWUdncnpjU2x3WnJ6MnhJcVhyX0tKQTBDX0VoVWdQbkRNRFlmN3dNMEQtbVZKeE04aWpB?oc=5",
+      "src": "Dalal Street Investment Journal"
+     },
+     {
+      "k": "news",
+      "t": "Viceroy Hotels Shares Surge 4% Despite Market Downturn: What's Driving the Stock's Momentum?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQemk5aUtRbjRfeHZhYmtCdER2SHR2SDVvOXcwYVBkRVROLU9ncVgyLWU5aE93YThmeEVvZm55Y1Bnbm5sNEZEZW9aU2JqdFhzQ2NfaXh1MElSbGdBT2plSHdKOHlYTTJzVWFEU2xTcHZwbE5BMTlMeDFxT19DMmVBdWhqaVljYkVLUXR6aExpYXV0RjNDb3A2d3ZhejVCalRBNkppTW95M05vaGFSeGNSaHZYeUVGYmJWdDZleS1XMkFjVTVveS1NZ3V6ZFpoUWpSNUZtemVKQlHSAd8BQVVfeXFMT2w3QVUxVDdpSmZ4NTFHUW1hRTYwVlhUaXRzQmV0c1dRUmxCSVl3QUFZQ1ozR2RvdVlSQVgxNTlUbVpMNjJHbzItSVdCcjlnUlNYWGp0RTZiV2JxSnptQnBpSXBpUzd0MVRQQ2JIQnQwaDJoUFh0V09nOUo5YmlLd29MN0VtQXNwTW1qVGpFNDFmYVozMnJySEZNcEtKNmxHek52c2wzODZhS2pWWEZBZEhWV3Q2TlI3NTBnajgyRlFuUjVDWC1XcVM3RWdkR2tIaGpRYzRQSUwtRHE0YkIwTQ?oc=5",
+      "src": "The Daily Jagran"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +3.8% on 3.1× usual volume, near the day's high",
+      "s": 2.2881731116732924
      }
     ]
    },
@@ -2829,30 +2864,6 @@
     ]
    },
    {
-    "k": "VHLTD",
-    "n": "Viceroy Hotels",
-    "s": 6.3,
-    "conf": "High",
-    "p": 148.71,
-    "pct": 3.83,
-    "mc": 1141.8,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Viceroy Hotels Shares Surge 4% Despite Market Downturn: What's Driving the Stock's Momentum?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQemk5aUtRbjRfeHZhYmtCdER2SHR2SDVvOXcwYVBkRVROLU9ncVgyLWU5aE93YThmeEVvZm55Y1Bnbm5sNEZEZW9aU2JqdFhzQ2NfaXh1MElSbGdBT2plSHdKOHlYTTJzVWFEU2xTcHZwbE5BMTlMeDFxT19DMmVBdWhqaVljYkVLUXR6aExpYXV0RjNDb3A2d3ZhejVCalRBNkppTW95M05vaGFSeGNSaHZYeUVGYmJWdDZleS1XMkFjVTVveS1NZ3V6ZFpoUWpSNUZtemVKQlHSAd8BQVVfeXFMT2w3QVUxVDdpSmZ4NTFHUW1hRTYwVlhUaXRzQmV0c1dRUmxCSVl3QUFZQ1ozR2RvdVlSQVgxNTlUbVpMNjJHbzItSVdCcjlnUlNYWGp0RTZiV2JxSnptQnBpSXBpUzd0MVRQQ2JIQnQwaDJoUFh0V09nOUo5YmlLd29MN0VtQXNwTW1qVGpFNDFmYVozMnJySEZNcEtKNmxHek52c2wzODZhS2pWWEZBZEhWV3Q2TlI3NTBnajgyRlFuUjVDWC1XcVM3RWdkR2tIaGpRYzRQSUwtRHE0YkIwTQ?oc=5",
-      "src": "The Daily Jagran"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.8% on 3.1× usual volume, near the day's high",
-      "s": 2.2881731116732924
-     }
-    ]
-   },
-   {
     "k": "APOLLO",
     "n": "Apollo Micro Systems",
     "s": 6.1,
@@ -2890,7 +2901,7 @@
       "k": "news",
       "t": "Bajaj Finance shares rise over 3 pc after launch of Rs 11,700-cr QIP",
       "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbHBRMktqUm1xNjdXMHBpUjZrM3RORFBCQzFvcmdNYnplVnAwUzB3MG1JaVpXQThkZnF4X29RUkFnSDZYU1drSlQwVDI1cTc0UU1QZXloNVI5STMyaFpsTzRZR2otcjYxYjFPaGl5d0JpMHh6YUVZSGtXaHo1WlpzclVKaDhFX0w1RHh1OENiRzZESDZOMm85RURqRXJFYlVMZjJqb1lqaVBuZHl3cjlvbEkwbTUxdjVFb0FpLXBkT19lNHdZRTB6Uk9Mb2_SAcwBQVVfeXFMUGxwUTJLalJtcTY3VzBwaVI2azN0TkRQQkMxb3JnTWJ6ZVZwMFMwdzBtSWlaV0E4ZGZxeF9vUVJBZ0g2WFNXa0pUMFQyNXE3NFFNUGV5aDVSOUkzMmhabE80WUdqLXI2MWIxT2hpeXdCaTB4emFFWUhrV2h6NVpac3JVSmg4RV9MNUR4dThDYkc2REg2TjJvOUVEakVyRWJVTGYyam9ZamlQbmR5d3I5b2xJMG01MXY1RW9BaS1wZE9fZTR3WUUwelJPTG9v?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQOUhtSGRNWHMybnI4b3o5Uk9UN19Sa2Y4VG94ZndQYlNyeVRPbWRWTTZkY2hxX1g2SW1WNzJmQ2NCbXJLNkd4SEo0bnhLZ0FIejdNU1J1dFh3Tk1GOE8zRVRKdC1FOVlwd3B4VU1udXVKT0NHUjV4Q0VMRTJXUk1JOW9BVGZaQlNicEMwelIwNURVenh3Um12ekxxUVFGY0REWGRXcnJZRGpVaHA1MVoxWGdNOEd6ejhpSmJYVzhac2U3RUhReThj0gHMAUFVX3lxTFBscFEyS2pSbXE2N1cwcGlSNmszdE5EUEJDMW9yZ01iemVWcDBTMHcwbUlpWldBOGRmcXhfb1FSQWdINlhTV2tKVDBUMjVxNzRRTVBleWg1UjlJMzJoWmxPNFlHai1yNjFiMU9oaXl3QmkweHphRVlIa1doejVaWnNyVUpoOEVfTDVEeHU4Q2JHNkRINk4ybzlFRGpFckViVUxmMmpvWWppUG5keXdyOW9sSTBtNTF2NUVvQWktcGRPX2U0d1lFMHpST0xvbw?oc=5",
       "src": "bfsi.economictimes.indiatimes.com"
      }
     ]
@@ -3216,21 +3227,21 @@
     ]
    },
    {
-    "k": "PGEL",
-    "n": "PG Electroplast",
-    "s": -6,
-    "conf": "High",
-    "p": 566.8,
-    "pct": -1.13,
-    "mc": 16253.4,
-    "sec": "Technology",
+    "k": "PAGEIND",
+    "n": "Page Industries",
+    "s": -4,
+    "conf": "Medium",
+    "p": 31325.0,
+    "pct": -1.65,
+    "mc": 34939.5,
+    "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "news",
-      "t": "PG Electroplast personnel receive SEBI show cause notice",
-      "s": -6,
-      "u": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB3bHpGREprTTRLZG9nQm9HNG1YWGpvejhETnV6Y3FnM1NwN3hnT2pyc1JBUy1idHprMDE1TkxXWlR6VVdoWjRVTk5qeEQ3SUluQjRuM0dfd3ZVbTZOaFFvQ3BmVDQzYm9XaEVhTVVwQkpYbENaOWRucU8wdw?oc=5",
-      "src": "InvestyWise"
+      "t": "Page Industries share price target cut by Citi, HSBC on Q2 FEMA concerns",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSTdNM1lKYWg5aWFwUklIOWdGZGtOcXBnbWhkenpabUlWWEJWOUtEc3BQb3Y5QUZzUEJCdTMyNDU2VV9VNXZOUWtCZE9wMkhzRFU5UGRDY2ZCVWdXWWt1N1lHTVg5MnNYS1lpV3k5bE0xSzl1WHZpaENhR0RHZXlzOFNDV3QxMW1PQkhacDJ6WmEtbW9UbUl3RWx1UFBVQktxLURZOWhDZEZrUHdiS2xPR2pYWWNXRTVtNldOQVFB0gHDAUFVX3lxTFBGazBXdXdtWGRxRnNsay1ydUR3SDB6eFdjbENpZmFKNmVNeENfN08xemUyNnJ2VXRNdEctUTVScG9hSjNGN0ZWSXVZZHZOUXF3bFhLWlBGQzlKdWlJN08zOFlIeXE2STlGRF9yUTJZaGRZb2ZPZjA1YzBPcFY3aG44Y0hmRmVTeUxYN21QZVBmbTlsUHQwWGlaRFBqa0lwajlYdFZTMTRESnpBNnMwOU9nMjZFSG4xbE50SGxoMkpVYUZRVQ?oc=5",
+      "src": "CNBC TV18"
      }
     ]
    },
@@ -3991,7 +4002,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 6:21 PM",
+  "at": "13 Nov, 6:31 PM",
   "hi": [
    [
     "BONFIG",
@@ -4048,7 +4059,7 @@
   "nlo": 3
  },
  "bse_movers": {
-  "at": "13 Nov, 6:21 PM",
+  "at": "13 Nov, 6:31 PM",
   "g": [
    [
     "542460",
@@ -4860,7 +4871,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 6:21 PM",
+  "at": "13 Nov, 6:31 PM",
   "g": [
    [
     "MSTCLTD",
@@ -4967,8 +4978,8 @@
   ]
  },
  "rescal": {
-  "ts": 1794571176.1117218,
-  "at": "13 Nov, 5:29 PM",
+  "ts": 1794574914.5565946,
+  "at": "13 Nov, 6:31 PM",
   "items": [
    {
     "k": "B511122",
@@ -10095,6 +10106,12 @@
     "src": "NSE"
    },
    {
+    "k": "SELMC",
+    "n": "SEL Manufacturing Company Limited",
+    "d": "2026-11-14",
+    "src": "NSE"
+   },
+   {
     "k": "SGL",
     "n": "STL Global Limited",
     "d": "2026-11-14",
@@ -13963,17 +13980,11 @@
     "n": "TV Vision Ltd",
     "d": "2026-11-14",
     "src": "BSE"
-   },
-   {
-    "k": "B539518",
-    "n": "Uday Jewellery Industries Ltd",
-    "d": "2026-11-14",
-    "src": "BSE"
    }
   ]
  },
  "tw": {
-  "at": "13 Nov, 6:21 PM",
+  "at": "13 Nov, 6:31 PM",
   "phase": "close",
   "for": "Mon 16 Nov",
   "picks": [
@@ -14105,6 +14116,22 @@
      }
     ],
     "s": 21.2
+   },
+   {
+    "k": "VHLTD",
+    "n": "Viceroy Hotels",
+    "p": 148.71,
+    "pct": 3.83,
+    "vx": 3.1,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Viceroy Hotels Q2 Results: Consolidated Profit Rises 409%, Revenue Jumps 56%",
+      "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZnRzRGNNQ2c5LW1zUVhjeVQzc1RwUUlmdDZtY2tMcUFyaklQamNjaFlIRlVQVnl1Ui1WYllfR2xBOEQ4VnY1M3IzRHdVSjJlTnpkWERQTkxWU2xRVDFMbkYyYjhRQnJEWlNrVUJpa3ZlUWtBRzV0eWhWbFY2V1h2VjNYTkNpMklwOGNIWUdncnpjU2x3WnJ6MnhJcVhyX0tKQTBDX0VoVWdQbkRNRFlmN3dNMEQtbVZKeE04aWpB?oc=5"
+     }
+    ],
+    "s": 20.0
    },
    {
     "k": "BNAGROCHEM",
@@ -14366,22 +14393,6 @@
      }
     ],
     "s": 8.6
-   },
-   {
-    "k": "ROHLTD",
-    "n": "Royal Orchid Hotels",
-    "p": 307.05,
-    "pct": 5.01,
-    "vx": 22.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Royal Orchid Hotels Q2 net profit up 236% to ₹144 million",
-      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkNWUFBoNlFmamZrSXg1LU1PcXhaWk92QXBrcUZlWEJfY2hzdUNHSlZaekJRNGhVZHNkT0I3N0JNbll5Q21FdnJlNkpsYVlPM2sxM0g0X0tCWXVRdjNUc0lHbkNDWlVVZ1g1TVQtRnNGcllsZ0VKcUNMcGFITWVGb0ItSjRfZm52NWZKcHZ2Z2dCQjhWd1pVUWF2SndjQm9YM3VNcE1UeEFwbnp2UUE?oc=5"
-     }
-    ],
-    "s": 8.4
    }
   ],
   "fo": [
@@ -14479,7 +14490,7 @@
      {
       "t": "news",
       "x": "Bajaj Finance shares rise over 3 pc after launch of Rs 11,700-cr QIP",
-      "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbHBRMktqUm1xNjdXMHBpUjZrM3RORFBCQzFvcmdNYnplVnAwUzB3MG1JaVpXQThkZnF4X29RUkFnSDZYU1drSlQwVDI1cTc0UU1QZXloNVI5STMyaFpsTzRZR2otcjYxYjFPaGl5d0JpMHh6YUVZSGtXaHo1WlpzclVKaDhFX0w1RHh1OENiRzZESDZOMm85RURqRXJFYlVMZjJqb1lqaVBuZHl3cjlvbEkwbTUxdjVFb0FpLXBkT19lNHdZRTB6Uk9Mb2_SAcwBQVVfeXFMUGxwUTJLalJtcTY3VzBwaVI2azN0TkRQQkMxb3JnTWJ6ZVZwMFMwdzBtSWlaV0E4ZGZxeF9vUVJBZ0g2WFNXa0pUMFQyNXE3NFFNUGV5aDVSOUkzMmhabE80WUdqLXI2MWIxT2hpeXdCaTB4emFFWUhrV2h6NVpac3JVSmg4RV9MNUR4dThDYkc2REg2TjJvOUVEakVyRWJVTGYyam9ZamlQbmR5d3I5b2xJMG01MXY1RW9BaS1wZE9fZTR3WUUwelJPTG9v?oc=5"
+      "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQOUhtSGRNWHMybnI4b3o5Uk9UN19Sa2Y4VG94ZndQYlNyeVRPbWRWTTZkY2hxX1g2SW1WNzJmQ2NCbXJLNkd4SEo0bnhLZ0FIejdNU1J1dFh3Tk1GOE8zRVRKdC1FOVlwd3B4VU1udXVKT0NHUjV4Q0VMRTJXUk1JOW9BVGZaQlNicEMwelIwNURVenh3Um12ekxxUVFGY0REWGRXcnJZRGpVaHA1MVoxWGdNOEd6ejhpSmJYVzhac2U3RUhReThj0gHMAUFVX3lxTFBscFEyS2pSbXE2N1cwcGlSNmszdE5EUEJDMW9yZ01iemVWcDBTMHcwbUlpWldBOGRmcXhfb1FSQWdINlhTV2tKVDBUMjVxNzRRTVBleWg1UjlJMzJoWmxPNFlHai1yNjFiMU9oaXl3QmkweHphRVlIa1doejVaWnNyVUpoOEVfTDVEeHU4Q2JHNkRINk4ybzlFRGpFckViVUxmMmpvWWppUG5keXdyOW9sSTBtNTF2NUVvQWktcGRPX2U0d1lFMHpST0xvbw?oc=5"
      }
     ],
     "s": 6.0
