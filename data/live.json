@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 5:50 PM IST",
- "updated": "2026-11-13T17:50:11+05:30",
+ "label": "13 Nov 2026, 6:00 PM IST",
+ "updated": "2026-11-13T18:00:34+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 5:50 PM",
+  "date": "13 Nov 2026, 6:00 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -130,16 +130,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136653.0,
-    "ch": 428.0,
-    "pct": 0.31,
-    "t": "13 Nov, 5:50 PM"
+    "v": 136699.0,
+    "ch": 474.0,
+    "pct": 0.35,
+    "t": "13 Nov, 6:00 PM"
    },
    "silver": {
-    "v": 178399.0,
-    "ch": -325.0,
-    "pct": -0.18,
-    "t": "13 Nov, 5:50 PM"
+    "v": 178306.0,
+    "ch": -418.0,
+    "pct": -0.23,
+    "t": "13 Nov, 6:00 PM"
    }
   },
   "retail": {
@@ -345,16 +345,16 @@
      "ag": 195.0
     }
    },
-   "at": "13 Nov, 5:29 PM",
-   "at_ts": 1794571163.35521,
+   "at": "13 Nov, 6:00 PM",
+   "at_ts": 1794573034.834938,
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13720.0,
-   "g24_10": 137200.0,
-   "ag_kg": 179110.0,
-   "ag": 179.11,
-   "t": "13 Nov, 5:50 PM"
+   "g24": 13724.0,
+   "g24_10": 137240.0,
+   "ag_kg": 179020.0,
+   "ag": 179.02,
+   "t": "13 Nov, 6:00 PM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794572110
  },
  "brent": {
-  "v": 96.18,
+  "v": 96.15,
   "prev": 95.82,
-  "ch": 0.36,
-  "pct": 0.38,
+  "ch": 0.33,
+  "pct": 0.34,
   "high": 96.75,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794571786
+  "t": 1794572405
  },
  "goldSpot": {
-  "v": 3897.4,
+  "v": 3898.2,
   "prev": 3885.3,
-  "ch": 12.1,
-  "pct": 0.31,
+  "ch": 12.9,
+  "pct": 0.33,
   "high": 3926.9,
   "low": 3879.1,
   "open": 3917.1,
-  "t": 1794571809
+  "t": 1794572424
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 5:50 PM",
+  "fetched": "13 Nov, 6:00 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1224,10 +1224,11 @@
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 280 headlines, 25 up, 18 down",
+  "outlook: 282 headlines, 25 up, 18 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2248,9 +2249,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 5:50 PM",
-  "mid": "13 Nov, 5:50 PM",
-  "small": "13 Nov, 5:50 PM"
+  "n50": "13 Nov, 6:00 PM",
+  "mid": "13 Nov, 6:00 PM",
+  "small": "13 Nov, 6:00 PM"
  },
  "midg": [
   [
@@ -2423,16 +2424,17 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 280 headlines, 25 up, 18 down",
+  "outlook: 282 headlines, 25 up, 18 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 5:50 PM"
+  "at": "13 Nov, 6:00 PM"
  },
  "global": [
   [
@@ -2467,9 +2469,9 @@
   ],
   [
    "FTSE 100",
-   10873.69,
-   0.1,
-   1794571511
+   10873.25,
+   0.09,
+   1794572133
   ],
   [
    "US 10Y yield",
@@ -2479,8 +2481,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 5:50 PM",
-  "headlines": 280,
+  "at": "13 Nov, 6:00 PM",
+  "headlines": 282,
   "screened": 1802,
   "cues": [
    "Hang Seng -2.8%"
@@ -3951,7 +3953,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 5:50 PM",
+  "at": "13 Nov, 6:00 PM",
   "hi": [
    [
     "BONFIG",
@@ -4008,7 +4010,7 @@
   "nlo": 3
  },
  "bse_movers": {
-  "at": "13 Nov, 5:50 PM",
+  "at": "13 Nov, 6:00 PM",
   "g": [
    [
     "542460",
@@ -4581,7 +4583,7 @@
    ],
    [
     "500346",
-    "Punjab Communications",
+    "Punjab Communications Ltd-$",
     54.85,
     -8.83,
     60.16
@@ -4630,7 +4632,7 @@
    ],
    [
     "531847",
-    "Asian Star Company",
+    "Asian Star Company Ltd-$",
     641.1,
     -8.41,
     700.0
@@ -4820,7 +4822,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 5:50 PM",
+  "at": "13 Nov, 6:00 PM",
   "g": [
    [
     "MSTCLTD",
@@ -13933,7 +13935,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 5:50 PM",
+  "at": "13 Nov, 6:00 PM",
   "phase": "close",
   "for": "Mon 16 Nov",
   "picks": [
