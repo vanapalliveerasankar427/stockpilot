@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 6:08 AM IST",
- "updated": "2026-11-13T06:08:34+05:30",
+ "label": "13 Nov 2026, 6:13 AM IST",
+ "updated": "2026-11-13T06:13:09+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 6:08 AM",
+  "date": "13 Nov 2026, 6:13 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 6:08 AM"
+    "t": "13 Nov, 6:13 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 6:08 AM"
+    "t": "13 Nov, 6:13 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 6:08 AM"
+   "t": "13 Nov, 6:13 AM"
   }
  },
  "logos": [],
@@ -455,34 +455,34 @@
   ]
  ],
  "usdinr": {
-  "v": 94.04,
+  "v": 94.03,
   "prev": 94.04,
-  "ch": 0.0,
-  "pct": 0.0,
-  "high": 94.05,
-  "low": 93.6,
+  "ch": -0.01,
+  "pct": -0.01,
+  "high": 94.03,
+  "low": 94.03,
   "open": null,
-  "t": 1794521074
+  "t": 1794530587
  },
  "brent": {
-  "v": 95.48,
+  "v": 95.51,
   "prev": 95.82,
-  "ch": -0.34,
-  "pct": -0.35,
+  "ch": -0.31,
+  "pct": -0.32,
   "high": 95.92,
   "low": 95.48,
   "open": 91.28,
-  "t": 1794529635
+  "t": 1794529986
  },
  "goldSpot": {
-  "v": 3888.0,
+  "v": 3887.0,
   "prev": 3885.3,
-  "ch": 2.7,
-  "pct": 0.07,
+  "ch": 1.7,
+  "pct": 0.04,
   "high": 3892.9,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794529710
+  "t": 1794529987
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 6:08 AM",
+  "fetched": "13 Nov, 6:13 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1227,10 +1227,11 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 312 headlines, 25 up, 14 down",
+  "outlook: 311 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2251,9 +2252,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 6:08 AM",
-  "mid": "13 Nov, 6:08 AM",
-  "small": "13 Nov, 6:08 AM"
+  "n50": "13 Nov, 6:13 AM",
+  "mid": "13 Nov, 6:13 AM",
+  "small": "13 Nov, 6:13 AM"
  },
  "midg": [
   [
@@ -2429,16 +2430,17 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 312 headlines, 25 up, 14 down",
+  "outlook: 311 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 6:08 AM"
+  "at": "13 Nov, 6:13 AM"
  },
  "global": [
   [
@@ -2461,9 +2463,9 @@
   ],
   [
    "Nikkei 225",
-   61655.7,
-   1.38,
-   1794529410
+   61560.82,
+   1.22,
+   1794529685
   ],
   [
    "Hang Seng",
@@ -2485,11 +2487,11 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 6:08 AM",
-  "headlines": 312,
+  "at": "13 Nov, 6:13 AM",
+  "headlines": 311,
   "screened": 1808,
   "cues": [
-   "Nikkei 225 +1.4%",
+   "Nikkei 225 +1.2%",
    "Hang Seng -2.2%"
   ],
   "up": [
@@ -2926,13 +2928,13 @@
     ]
    },
    {
-    "k": "IOB",
-    "n": "Indian Overseas Bank",
+    "k": "PNB",
+    "n": "Punjab National Bank",
     "s": 4,
     "conf": "Medium",
-    "p": 31.61,
-    "pct": 0.44,
-    "mc": 60870.1,
+    "p": 141.79,
+    "pct": 2.39,
+    "mc": 162958.4,
     "sec": "Financial Services",
     "why": [
      {
@@ -2945,13 +2947,13 @@
     ]
    },
    {
-    "k": "PNB",
-    "n": "Punjab National Bank",
+    "k": "IOB",
+    "n": "Indian Overseas Bank",
     "s": 4,
     "conf": "Medium",
-    "p": 141.79,
-    "pct": 2.39,
-    "mc": 162958.4,
+    "p": 31.61,
+    "pct": 0.44,
+    "mc": 60870.1,
     "sec": "Financial Services",
     "why": [
      {
@@ -3934,7 +3936,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 6:08 AM",
+  "at": "13 Nov, 6:13 AM",
   "hi": [
    [
     "PAYTM",
@@ -4003,7 +4005,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 6:08 AM",
+  "at": "13 Nov, 6:13 AM",
   "g": [
    [
     "530405",
@@ -4428,408 +4430,408 @@
   ],
   "l": [
    [
-    "523672",
-    "Flex Foods",
-    43.84,
-    -18.78,
-    53.98
+    "543434",
+    "Supriya Lifescience",
+    695.55,
+    -20.0,
+    869.4
    ],
    [
-    "543366",
-    "SBL Infratech",
-    42.07,
-    -14.14,
-    49.0
+    "544455",
+    "GNG Electronics",
+    583.65,
+    -20.0,
+    729.55
    ],
    [
-    "538634",
-    "Vasundhara Rasayans",
-    123.9,
-    -13.33,
-    142.95
+    "526269",
+    "Crestchem",
+    115.15,
+    -19.98,
+    143.9
    ],
    [
-    "532827",
-    "Page Industries",
-    32059.5,
-    -12.19,
-    36510.15
+    "500411",
+    "Thermax",
+    2748.0,
+    -17.29,
+    3322.5
    ],
    [
-    "532392",
-    "Creative Eye",
-    5.66,
-    -11.56,
-    6.4
+    "543310",
+    "Times Green Energy (India)",
+    54.2,
+    -15.33,
+    64.01
    ],
    [
-    "513642",
-    "Axel Polymers",
-    41.03,
-    -11.55,
-    46.39
+    "544119",
+    "Rashi Peripherals",
+    738.6,
+    -14.61,
+    864.95
    ],
    [
-    "526859",
-    "ISF",
-    0.79,
-    -11.24,
-    0.89
+    "531254",
+    "Optimus Finance",
+    16.98,
+    -14.29,
+    19.81
    ],
    [
-    "532070",
-    "Gujjubhai Industries",
-    79.74,
-    -10.0,
-    88.6
+    "533553",
+    "TD Power Systems",
+    579.2,
+    -13.43,
+    669.05
    ],
    [
-    "543184",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
-    21.6,
-    -10.0,
-    24.0
+    "890242",
+    "Ola Electric Mobility",
+    21.09,
+    -13.25,
+    24.31
    ],
    [
-    "539174",
-    "Helpage Finlease",
-    21.85,
-    -9.97,
-    24.27
+    "524019",
+    "Kingfa Science & Technology (India) Ltd-$",
+    5931.8,
+    -12.58,
+    6785.6
    ],
    [
-    "503641",
-    "Zodiac Ventures",
-    1.09,
-    -9.92,
-    1.21
+    "513536",
+    "Gujarat Natural Resources",
+    10.74,
+    -12.18,
+    12.23
    ],
    [
-    "538943",
-    "Sonal Mercantile",
-    81.75,
-    -9.62,
-    90.45
-   ],
-   [
-    "530163",
-    "Kerala Ayurveda",
-    152.1,
-    -9.38,
-    167.85
-   ],
-   [
-    "544383",
-    "Paradeep Parivahan",
-    290.3,
-    -9.3,
-    320.05
-   ],
-   [
-    "523862",
-    "Grand Oak Canyons Distillery",
-    29.88,
-    -9.12,
-    32.88
-   ],
-   [
-    "890228",
-    "Allcargo Terminals",
-    8.82,
-    -9.07,
-    9.7
-   ],
-   [
-    "544662",
-    "Simandhar Impex",
-    143.85,
-    -8.98,
-    158.05
-   ],
-   [
-    "539091",
-    "Consecutive Commodities",
-    1.12,
-    -8.94,
-    1.23
-   ],
-   [
-    "511628",
-    "Fedders Holding",
-    57.06,
-    -8.45,
-    62.33
-   ],
-   [
-    "523832",
-    "Mukat Pipes",
-    15.62,
-    -8.44,
-    17.06
-   ],
-   [
-    "532774",
-    "Inspirisys Solutions",
-    89.21,
-    -8.35,
-    97.34
-   ],
-   [
-    "539938",
-    "Medico Intercontinental",
-    24.94,
-    -8.34,
-    27.21
-   ],
-   [
-    "532740",
-    "Lokesh Machines",
-    369.75,
-    -8.21,
-    402.8
-   ],
-   [
-    "539834",
-    "Balgopal Commercial",
-    146.0,
-    -8.18,
-    159.0
-   ],
-   [
-    "544074",
-    "Shri Balaji Valve Components",
-    118.5,
-    -8.14,
-    129.0
-   ],
-   [
-    "524624",
-    "Gagan Gases",
-    17.0,
-    -8.11,
-    18.5
-   ],
-   [
-    "505302",
-    "Lakshmi Engineering And Warehousing",
-    2312.0,
-    -7.99,
-    2512.75
-   ],
-   [
-    "543186",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIVIDEND PLANDIVIDEND PAYOUT",
-    3.99,
-    -7.85,
-    4.33
-   ],
-   [
-    "518053",
-    "Sri Chakra Cement",
-    32.72,
-    -7.81,
-    35.49
-   ],
-   [
-    "526508",
-    "Shahi Shipping",
-    10.05,
-    -7.63,
-    10.88
-   ],
-   [
-    "519230",
-    "Kisaan Parivar Industries",
-    10.08,
-    -7.61,
-    10.91
-   ],
-   [
-    "530789",
-    "Ceejay Finance",
-    155.2,
-    -7.37,
-    167.55
-   ],
-   [
-    "538569",
-    "Triveni Enterprises",
-    0.88,
-    -7.37,
-    0.95
-   ],
-   [
-    "532845",
-    "TGB Banquets and Hotels",
-    8.99,
-    -7.13,
-    9.68
+    "500444",
+    "West Coast Paper Mills",
+    732.95,
+    -11.98,
+    832.75
    ],
    [
     "524174",
     "Kesar Petroproducts",
-    10.58,
-    -7.11,
-    11.39
+    11.42,
+    -11.95,
+    12.97
    ],
    [
-    "544495",
-    "NIS Management",
-    47.61,
-    -7.1,
-    51.25
+    "543417",
+    "RateGain Travel Technologies",
+    722.0,
+    -11.9,
+    819.5
    ],
    [
-    "524522",
-    "Laffans Petrochemicals",
-    27.34,
-    -7.01,
-    29.4
+    "543545",
+    "Veerkrupa Jewellers",
+    0.52,
+    -11.86,
+    0.59
    ],
    [
-    "514400",
-    "Garware Synthetics",
-    19.85,
-    -6.94,
-    21.33
+    "524709",
+    "NACL Industries",
+    118.45,
+    -11.57,
+    133.95
    ],
    [
-    "523329",
-    "Eldeco Housing & Industries",
-    768.4,
-    -6.92,
-    825.5
+    "523489",
+    "Chennai Meenakshi Multispeciality Hospital Ltd-$",
+    33.21,
+    -11.44,
+    37.5
    ],
    [
-    "530821",
-    "SSPDL",
-    13.57,
-    -6.86,
-    14.57
+    "542685",
+    "Digicontent",
+    21.71,
+    -11.39,
+    24.5
    ],
    [
-    "532812",
-    "Transwarranty Finance",
-    11.01,
-    -6.77,
-    11.81
+    "543896",
+    "Avalon Technologies",
+    1872.1,
+    -10.9,
+    2101.1
    ],
    [
-    "539287",
-    "Ortin Global",
-    13.52,
-    -6.69,
-    14.49
-   ],
-   [
-    "540597",
-    "Containerway International",
-    16.7,
-    -6.65,
-    17.89
-   ],
-   [
-    "524218",
-    "Resonance Specialties",
-    283.2,
-    -6.63,
-    303.3
-   ],
-   [
-    "532410",
-    "Transcorp International",
-    23.11,
-    -6.63,
-    24.75
-   ],
-   [
-    "532390",
-    "Taj Gvk Hotels & Resorts",
-    320.1,
-    -6.58,
-    342.65
-   ],
-   [
-    "544073",
-    "Manoj Ceramic",
-    90.5,
-    -6.56,
-    96.85
-   ],
-   [
-    "530171",
-    "Daulat Securities",
-    28.98,
-    -6.52,
-    31.0
+    "532651",
+    "SPL Industries",
+    27.46,
+    -10.82,
+    30.79
    ],
    [
     "513548",
     "Sharda Ispat",
-    143.95,
-    -6.47,
-    153.9
+    151.3,
+    -10.74,
+    169.5
    ],
    [
-    "532387",
-    "PNC Media and Entertainment",
-    17.59,
-    -6.44,
+    "543972",
+    "Aeroflex Industries",
+    482.35,
+    -10.72,
+    540.25
+   ],
+   [
+    "512597",
+    "Keynote Financial Services",
+    200.0,
+    -10.51,
+    223.5
+   ],
+   [
+    "520008",
+    "Rico Auto Industries",
+    98.32,
+    -10.41,
+    109.75
+   ],
+   [
+    "539835",
+    "Superior Finlease",
+    1.32,
+    -10.2,
+    1.47
+   ],
+   [
+    "544094",
+    "Euphoria Infotech (India)",
+    26.0,
+    -10.03,
+    28.9
+   ],
+   [
+    "544057",
+    "Happy Forgings",
+    1684.3,
+    -10.0,
+    1871.4
+   ],
+   [
+    "544236",
+    "Resourceful Automobile",
+    46.8,
+    -10.0,
+    52.0
+   ],
+   [
+    "544448",
+    "Pashupati Cotspin",
+    108.5,
+    -10.0,
+    120.55
+   ],
+   [
+    "517370",
+    "Incap",
+    66.96,
+    -9.99,
+    74.39
+   ],
+   [
+    "543176",
+    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2MONTHLY DIVIDEND PLANREINVESTMENT",
+    47.74,
+    -9.98,
+    53.03
+   ],
+   [
+    "543184",
+    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
+    25.17,
+    -9.98,
+    27.96
+   ],
+   [
+    "544198",
+    "Dee Development Engineers",
+    542.3,
+    -9.98,
+    602.45
+   ],
+   [
+    "543814",
+    "Prospect Consumer Products",
+    34.21,
+    -9.97,
+    38.0
+   ],
+   [
+    "509835",
+    "Premier Synthetics",
+    16.48,
+    -9.95,
+    18.3
+   ],
+   [
+    "543110",
+    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
+    7.7,
+    -9.94,
+    8.55
+   ],
+   [
+    "543617",
+    "Reetech International",
+    14.61,
+    -9.93,
+    16.22
+   ],
+   [
+    "530135",
+    "Optiemus Infracom",
+    744.5,
+    -9.9,
+    826.3
+   ],
+   [
+    "532113",
+    "Brijlaxmi Leasing & Finance",
+    7.56,
+    -9.89,
+    8.39
+   ],
+   [
+    "543092",
+    "NIPPON INDIA HYBRID BOND FUND -  SEGREGATED PORTFOLIO 2 - GROWTH PLAN GROWTH OPTION(Issue Price : Rs.0.01)",
+    6.3,
+    -9.87,
+    6.99
+   ],
+   [
+    "544612",
+    "Tenneco Clean Air India",
+    421.75,
+    -9.82,
+    467.65
+   ],
+   [
+    "500277",
+    "Mid India Industries",
+    4.52,
+    -9.78,
+    5.01
+   ],
+   [
+    "532486",
+    "Pokarna",
+    735.0,
+    -9.77,
+    814.6
+   ],
+   [
+    "500078",
+    "Oriental Aromatics Ltd-$",
+    493.0,
+    -9.76,
+    546.3
+   ],
+   [
+    "544944",
+    "Anand Seamless",
+    62.0,
+    -9.75,
+    68.7
+   ],
+   [
+    "532830",
+    "Astral",
+    1251.65,
+    -9.71,
+    1386.25
+   ],
+   [
+    "543799",
+    "S. V. J. ENTERPRISES",
+    142.85,
+    -9.59,
+    158.0
+   ],
+   [
+    "532259",
+    "Apar Industries",
+    14118.95,
+    -9.57,
+    15613.8
+   ],
+   [
+    "543309",
+    "Adeshwar Meditex",
+    17.0,
+    -9.57,
     18.8
    ],
    [
-    "517397",
-    "Pan Electronics India",
-    23.49,
-    -6.41,
-    25.1
+    "540144",
+    "DRA Consultants",
+    19.01,
+    -9.48,
+    21.0
    ],
    [
-    "522207",
-    "Rasandik Engineering Industries India",
-    54.19,
-    -6.41,
-    57.9
+    "522152",
+    "Solitaire Machine Tools",
+    73.0,
+    -9.44,
+    80.61
    ],
    [
-    "532945",
-    "SEPC",
-    5.07,
-    -6.28,
-    5.41
+    "543754",
+    "Transvoy Logistics India",
+    86.5,
+    -9.42,
+    95.5
    ],
    [
-    "544649",
-    "Titanium Hybrid Long-Short Fund Direct Plan Growth",
-    8.5,
-    -6.28,
-    9.07
+    "514300",
+    "Pioneer Embroideries Ltd-$",
+    18.31,
+    -9.36,
+    20.2
    ],
    [
-    "533217",
-    "Hindustan Media Ventures",
-    89.77,
-    -6.23,
-    95.73
+    "543986",
+    "South West Pinnacle Exploration",
+    173.0,
+    -9.21,
+    190.55
    ],
    [
-    "530421",
-    "Kuwer Industries",
-    9.6,
-    -6.16,
-    10.23
+    "524400",
+    "Ishita Drugs & Industries",
+    71.0,
+    -8.96,
+    77.99
    ],
    [
-    "530457",
-    "GTT Data Solutions",
-    34.63,
-    -6.15,
-    36.9
+    "544613",
+    "Fujiyama Power Systems",
+    353.0,
+    -8.9,
+    387.5
+   ],
+   [
+    "519183",
+    "Adf Foods Ltd-$",
+    240.4,
+    -8.8,
+    263.6
    ]
   ]
  },
  "allmov": {
-  "at": "13 Nov, 6:08 AM",
+  "at": "13 Nov, 6:13 AM",
   "g": [
    [
     "B544943",
@@ -4884,19 +4886,19 @@
   ],
   "l": [
    [
-    "B523672",
-    "Flex Foods",
-    -18.78
+    "B526269",
+    "Crestchem",
+    -19.98
    ],
    [
-    "B543366",
-    "SBL Infratech",
-    -14.14
+    "B543310",
+    "Times Green Energy (India)",
+    -15.33
    ],
    [
-    "B538634",
-    "Vasundhara Rasayans",
-    -13.33
+    "B890242",
+    "Ola Electric Mobility",
+    -13.25
    ],
    [
     "PAGEIND",
@@ -4904,40 +4906,40 @@
     -12.91
    ],
    [
-    "B513642",
-    "Axel Polymers",
-    -11.55
+    "B524174",
+    "Kesar Petroproducts",
+    -11.95
    ],
    [
-    "B526859",
-    "ISF",
-    -11.24
+    "B543545",
+    "Veerkrupa Jewellers",
+    -11.86
    ],
    [
-    "B532070",
-    "Gujjubhai Industries",
-    -10.0
+    "B523489",
+    "Chennai Meenakshi Multispeciality Hospital",
+    -11.44
    ],
    [
-    "B543184",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
-    -10.0
+    "B513548",
+    "Sharda Ispat",
+    -10.74
    ],
    [
-    "B539174",
-    "Helpage Finlease",
-    -9.97
+    "B539835",
+    "Superior Finlease",
+    -10.2
    ],
    [
-    "B503641",
-    "Zodiac Ventures",
-    -9.92
+    "B544094",
+    "Euphoria Infotech (India)",
+    -10.03
    ]
   ]
  },
  "rescal": {
-  "ts": 1794526957.7524288,
-  "at": "13 Nov, 5:12 AM",
+  "ts": 1794530639.4256668,
+  "at": "13 Nov, 6:13 AM",
   "items": [
    {
     "k": "B511122",
@@ -5013,7 +5015,7 @@
    },
    {
     "k": "B520123",
-    "n": "ABC India Ltd-$",
+    "n": "ABC India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5289,7 +5291,7 @@
    },
    {
     "k": "B517429",
-    "n": "Athena Global Technologies Ltd-$",
+    "n": "Athena Global Technologies Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5661,7 +5663,7 @@
    },
    {
     "k": "B500147",
-    "n": "John Cockerill India Ltd-$",
+    "n": "John Cockerill India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5673,7 +5675,7 @@
    },
    {
     "k": "B532339",
-    "n": "Compucom Software Ltd-$",
+    "n": "Compucom Software Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5697,7 +5699,7 @@
    },
    {
     "k": "B530545",
-    "n": "Cosco India Ltd-$",
+    "n": "Cosco India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5745,7 +5747,7 @@
    },
    {
     "k": "B532329",
-    "n": "Danlaw Technologies India Ltd-$",
+    "n": "Danlaw Technologies India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5859,7 +5861,7 @@
    },
    {
     "k": "B512519",
-    "n": "Donear Industries Ltd-$",
+    "n": "Donear Industries Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5943,7 +5945,7 @@
    },
    {
     "k": "B532038",
-    "n": "Emmsons International Ltd-$",
+    "n": "Emmsons International Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -5967,7 +5969,7 @@
    },
    {
     "k": "B530407",
-    "n": "EPIC Energy Ltd-$",
+    "n": "EPIC Energy Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6027,7 +6029,7 @@
    },
    {
     "k": "B526227",
-    "n": "Filatex India Ltd-$",
+    "n": "Filatex India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6291,7 +6293,7 @@
    },
    {
     "k": "B532467",
-    "n": "Hazoor Multi Projects Ltd-$",
+    "n": "Hazoor Multi Projects Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6327,7 +6329,7 @@
    },
    {
     "k": "B531979",
-    "n": "Hind Aluminium Industries Ltd-$",
+    "n": "Hind Aluminium Industries Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6339,7 +6341,7 @@
    },
    {
     "k": "B526217",
-    "n": "Hitech Corporation Ltd-$",
+    "n": "Hitech Corporation Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6525,7 +6527,7 @@
    },
    {
     "k": "B532072",
-    "n": "Interworld Digital Ltd-$",
+    "n": "Interworld Digital Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6549,7 +6551,7 @@
    },
    {
     "k": "B523638",
-    "n": "IP Rings Ltd-$",
+    "n": "IP Rings Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6561,7 +6563,7 @@
    },
    {
     "k": "B532341",
-    "n": "IZMO Ltd-$",
+    "n": "IZMO Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6711,7 +6713,7 @@
    },
    {
     "k": "B521242",
-    "n": "Kandagiri Spinning Mills Ltd-$",
+    "n": "Kandagiri Spinning Mills Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6741,7 +6743,7 @@
    },
    {
     "k": "B532054",
-    "n": "KDDL Ltd-$",
+    "n": "KDDL Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6753,7 +6755,7 @@
    },
    {
     "k": "B507180",
-    "n": "Kesar Enterprises Ltd-$",
+    "n": "Kesar Enterprises Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6897,7 +6899,7 @@
    },
    {
     "k": "B526209",
-    "n": "K S Oils Ltd-$",
+    "n": "K S Oils Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -6927,13 +6929,13 @@
    },
    {
     "k": "B524522",
-    "n": "Laffans Petrochemicals Ltd-$",
+    "n": "Laffans Petrochemicals Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
    {
     "k": "B531842",
-    "n": "Lahoti Overseas Ltd-$",
+    "n": "Lahoti Overseas Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7005,7 +7007,7 @@
    },
    {
     "k": "B531497",
-    "n": "Madhucon Projects Ltd-$",
+    "n": "Madhucon Projects Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7023,7 +7025,7 @@
    },
    {
     "k": "B513460",
-    "n": "Mahalaxmi Seamless Ltd-$",
+    "n": "Mahalaxmi Seamless Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7113,7 +7115,7 @@
    },
    {
     "k": "B531146",
-    "n": "Medicamen Biotech Ltd-$",
+    "n": "Medicamen Biotech Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7383,7 +7385,7 @@
    },
    {
     "k": "B526159",
-    "n": "Nikhil Adhesives Ltd-$",
+    "n": "Nikhil Adhesives Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7515,7 +7517,7 @@
    },
    {
     "k": "B530365",
-    "n": "Orient Bell Ltd-$",
+    "n": "Orient Bell Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7587,7 +7589,7 @@
    },
    {
     "k": "B513228",
-    "n": "Pennar Industries Ltd-$",
+    "n": "Pennar Industries Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7701,7 +7703,7 @@
    },
    {
     "k": "B530695",
-    "n": "Prime Property Development Corporation Ltd-$",
+    "n": "Prime Property Development Corporation Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7725,7 +7727,7 @@
    },
    {
     "k": "B500346",
-    "n": "Punjab Communications Ltd-$",
+    "n": "Punjab Communications Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7851,7 +7853,7 @@
    },
    {
     "k": "B502271",
-    "n": "Raasi Refractories Ltd-$",
+    "n": "Raasi Refractories Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7887,7 +7889,7 @@
    },
    {
     "k": "B530517",
-    "n": "Relaxo Footwears Ltd-$",
+    "n": "Relaxo Footwears Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7935,7 +7937,7 @@
    },
    {
     "k": "B531539",
-    "n": "Rishabh Digha Steel & Allied Products Ltd-$",
+    "n": "Rishabh Digha Steel & Allied Products Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -7983,7 +7985,7 @@
    },
    {
     "k": "B526193",
-    "n": "Royal Cushion Vinyl Products Ltd-$",
+    "n": "Royal Cushion Vinyl Products Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8055,19 +8057,19 @@
    },
    {
     "k": "B521240",
-    "n": "Sambandam Spinning Mills Ltd-$",
+    "n": "Sambandam Spinning Mills Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
    {
     "k": "B500371",
-    "n": "Samtel India Ltd-$",
+    "n": "Samtel India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
    {
     "k": "B521206",
-    "n": "Samtex Fashions Ltd-$",
+    "n": "Samtex Fashions Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8145,13 +8147,13 @@
    },
    {
     "k": "B514264",
-    "n": "Seasons Textiles Ltd-$",
+    "n": "Seasons Textiles Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
    {
     "k": "B505368",
-    "n": "Semac Construction Ltd-$",
+    "n": "Semac Construction Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8253,7 +8255,7 @@
    },
    {
     "k": "B516016",
-    "n": "Shreyans Industries Ltd-$",
+    "n": "Shreyans Industries Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8577,13 +8579,13 @@
    },
    {
     "k": "B514138",
-    "n": "Suryalata Spinning Mills Ltd-$",
+    "n": "Suryalata Spinning Mills Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
    {
     "k": "B514140",
-    "n": "Suryavanshi Spinning Mills Ltd-$",
+    "n": "Suryavanshi Spinning Mills Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8637,7 +8639,7 @@
    },
    {
     "k": "B532051",
-    "n": "Swelect Energy Systems Ltd-$",
+    "n": "Swelect Energy Systems Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8655,7 +8657,7 @@
    },
    {
     "k": "B524470",
-    "n": "Syncom Formulations India Ltd-$",
+    "n": "Syncom Formulations India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8805,7 +8807,7 @@
    },
    {
     "k": "B506687",
-    "n": "Transpek Industry Ltd-$",
+    "n": "Transpek Industry Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -8931,7 +8933,7 @@
    },
    {
     "k": "B532389",
-    "n": "Valecha Engineering Ltd-$",
+    "n": "Valecha Engineering Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -9123,7 +9125,7 @@
    },
    {
     "k": "B522108",
-    "n": "Yuken India Ltd-$",
+    "n": "Yuken India Ltd",
     "d": "2026-11-13",
     "src": "BSE"
    },
@@ -10413,7 +10415,7 @@
    },
    {
     "k": "B507852",
-    "n": "Addi Industries Ltd-$",
+    "n": "Addi Industries Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10455,7 +10457,7 @@
    },
    {
     "k": "B516020",
-    "n": "Agio Paper & Industries Ltd-$",
+    "n": "Agio Paper & Industries Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10581,13 +10583,13 @@
    },
    {
     "k": "B523007",
-    "n": "Ansal Buildwell Ltd-$",
+    "n": "Ansal Buildwell Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
    {
     "k": "B507828",
-    "n": "Ansal Housing Ltd-$",
+    "n": "Ansal Housing Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10641,7 +10643,7 @@
    },
    {
     "k": "B531381",
-    "n": "Arihant Foundations & Housing Ltd-$",
+    "n": "Arihant Foundations & Housing Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10689,7 +10691,7 @@
    },
    {
     "k": "B519532",
-    "n": "Asian Tea & Exports Ltd-$",
+    "n": "Asian Tea & Exports Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10977,7 +10979,7 @@
    },
    {
     "k": "B526817",
-    "n": "Cheviot Company Ltd-$",
+    "n": "Cheviot Company Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -10995,7 +10997,7 @@
    },
    {
     "k": "B526373",
-    "n": "Cindrella Hotels Ltd-$",
+    "n": "Cindrella Hotels Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -11511,7 +11513,7 @@
    },
    {
     "k": "B530343",
-    "n": "Genus Power Infrastructures Ltd-$",
+    "n": "Genus Power Infrastructures Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -11685,7 +11687,7 @@
    },
    {
     "k": "B590018",
-    "n": "Hisar Metal Industries Ltd-$",
+    "n": "Hisar Metal Industries Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -11727,7 +11729,7 @@
    },
    {
     "k": "B531524",
-    "n": "ICSA (India) Ltd-$",
+    "n": "ICSA (India) Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -11931,7 +11933,7 @@
    },
    {
     "k": "B590041",
-    "n": "Kavveri Defence & Wireless Technologies Ltd-$",
+    "n": "Kavveri Defence & Wireless Technologies Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12381,7 +12383,7 @@
    },
    {
     "k": "B519136",
-    "n": "Nahar Industrial Enterprises Ltd-$",
+    "n": "Nahar Industrial Enterprises Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12435,7 +12437,7 @@
    },
    {
     "k": "B512565",
-    "n": "Neelkanth Ltd-$",
+    "n": "Neelkanth Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12753,7 +12755,7 @@
    },
    {
     "k": "B514087",
-    "n": "PBM Polytex Ltd-$",
+    "n": "PBM Polytex Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12879,7 +12881,7 @@
    },
    {
     "k": "B511116",
-    "n": "Quadrant Televentures Ltd-$",
+    "n": "Quadrant Televentures Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12945,7 +12947,7 @@
    },
    {
     "k": "B522207",
-    "n": "Rasandik Engineering Industries India Ltd-$",
+    "n": "Rasandik Engineering Industries India Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -12957,7 +12959,7 @@
    },
    {
     "k": "B504903",
-    "n": "Rathi Steel & Power Ltd-$",
+    "n": "Rathi Steel & Power Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13161,7 +13163,7 @@
    },
    {
     "k": "B530125",
-    "n": "Samrat Pharmachem Ltd-$",
+    "n": "Samrat Pharmachem Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13209,7 +13211,7 @@
    },
    {
     "k": "B519260",
-    "n": "Sanwaria Consumer Ltd-$",
+    "n": "Sanwaria Consumer Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13227,7 +13229,7 @@
    },
    {
     "k": "B514412",
-    "n": "Sarup Industries Ltd-$",
+    "n": "Sarup Industries Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13557,7 +13559,7 @@
    },
    {
     "k": "B526827",
-    "n": "Spice Islands Industries Ltd-$",
+    "n": "Spice Islands Industries Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13911,7 +13913,7 @@
    },
    {
     "k": "B509243",
-    "n": "TVS Srichakra Ltd-$",
+    "n": "TVS Srichakra Ltd",
     "d": "2026-11-14",
     "src": "BSE"
    },
@@ -13942,7 +13944,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 6:08 AM",
+  "at": "13 Nov, 6:13 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
