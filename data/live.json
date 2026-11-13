@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 5:49 AM IST",
- "updated": "2026-11-13T05:49:02+05:30",
+ "label": "13 Nov 2026, 5:53 AM IST",
+ "updated": "2026-11-13T05:53:59+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 5:49 AM",
+  "date": "13 Nov 2026, 5:53 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 5:49 AM"
+    "t": "13 Nov, 5:53 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 5:49 AM"
+    "t": "13 Nov, 5:53 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 5:49 AM"
+   "t": "13 Nov, 5:53 AM"
   }
  },
  "logos": [],
@@ -456,9 +456,9 @@
  ],
  "usdinr": {
   "v": 94.04,
-  "prev": 93.68,
-  "ch": 0.36,
-  "pct": 0.38,
+  "prev": 94.04,
+  "ch": 0.0,
+  "pct": 0.0,
   "high": 94.05,
   "low": 93.6,
   "open": null,
@@ -475,14 +475,14 @@
   "t": 1794527831
  },
  "goldSpot": {
-  "v": 3891.3,
+  "v": 3892.0,
   "prev": 3885.3,
-  "ch": 6.0,
-  "pct": 0.15,
-  "high": 3892.1,
+  "ch": 6.7,
+  "pct": 0.17,
+  "high": 3892.9,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794528539
+  "t": 1794528834
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 5:49 AM",
+  "fetched": "13 Nov, 5:53 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1224,6 +1224,7 @@
   }
  ],
  "log": [
+  "quote ^INDIAVIX failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
@@ -2251,9 +2252,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 5:49 AM",
-  "mid": "13 Nov, 5:49 AM",
-  "small": "13 Nov, 5:49 AM"
+  "n50": "13 Nov, 5:53 AM",
+  "mid": "13 Nov, 5:53 AM",
+  "small": "13 Nov, 5:53 AM"
  },
  "midg": [
   [
@@ -2426,6 +2427,7 @@
   }
  },
  "fulllog": [
+  "quote ^INDIAVIX failed: HTTPSConnectionPool(host='query1.finance.yahoo.com', port=443): Read timed out. (read timeout=25)",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
@@ -2438,7 +2440,7 @@
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 5:49 AM"
+  "at": "13 Nov, 5:53 AM"
  },
  "global": [
   [
@@ -2461,9 +2463,9 @@
   ],
   [
    "Nikkei 225",
-   61563.38,
-   1.22,
-   1794528240
+   61540.09,
+   1.19,
+   1794528535
   ],
   [
    "Hang Seng",
@@ -2485,7 +2487,7 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 5:49 AM",
+  "at": "13 Nov, 5:53 AM",
   "headlines": 309,
   "screened": 1808,
   "cues": [
@@ -2514,8 +2516,8 @@
       "k": "news",
       "t": "34% rise in a year! Why Hindustan Copper shares are rising 6% today? Check target, stop loss, returns",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONnRrZFZFZUx2UWh4VHJUenpXRkNLX1QtZXlGYmFUX2c4Q3UtbjkzRW1uWkVxS2F6MTZWQkpKa3ZzcThkeWRCS1czR2V1ckhkbHZfekRULWVtaENsYW96eEQ2MDVIcno5YUNRUm5yMWNiVUttQVREMExoWjlJTVJjRS1KZ2gwQTVtNUsxSGVXN0lVTVZzaDZkUk5FZnYwZE9VaUNHMmdYWmJ6SmpVX0JrdU91S1lkRzc1OE5NZVpVa3FWWk1SSTd1RzVkcndydjViQkNpczA3Uk9MbXEwM1JLZmdlQUs4bDBlTmlNTTNMUEU5WUhQdENWYdIB_gFBVV95cUxNaUVDMnFnM2paOWhraGlQNnVRalc5blljRl95OG9tNFNCOW1PYTFmVEtmMG1vUl9lckZyaExVclA5LTdrMzNTZExtSERKcjBBUE9IMmxSTVpyNGtXUVdsZlJJb3NPTlI5Z29RODNwUnlTWGlhTGo2QUpMeGp1aE9WYVM3REF0QjdkNFNkZGpmNEVhUkZiR01VQ3Y3ZlVMekxfYVZkTDgxWE9GNHdtaTNmZC1nVUVncVpwMGg2OGgxalBUZEZ0bmppX1pFbG04a2ZqWWt4Z0I1Ui1lQ3pTUndlMzNlYi10VTJfMktVRmVUdFFzVXpUM0EzZ3NVbWVVQQ?oc=5",
-      "src": "Livemint"
+      "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNUW9vV0NCSXJiWVF3MC1mc3J2SWlhNEhiWGlLVmM5MGlLS0t0Qm9ieXFOdlB5SDdObU1iMTZudkl4b0Z3eEFWRTJTZGl0TUhkMmxnZHBJNFNOVkRTanV5SmFKQUhINXF5LXE3b29tRkJWM0NCR25tX3NlU0JPVkVZbTFNRVlyZUNjNEppNnBtdHVrZjNzcUFKdGMzOWFfbF84RGtsNGFVd2RGY09LUmU0cXc0Z2twVVFmb2o4eUtvd2V3eldVUWlwQS1xNWtWOWg1VE1jMjZ5cGtyek1nQjJpOXZJcUM0aEk?oc=5",
+      "src": "TradingView"
      },
      {
       "k": "news",
@@ -2964,13 +2966,13 @@
     ]
    },
    {
-    "k": "APEX",
-    "n": "Apex Frozen Foods",
+    "k": "AVANTIFEED",
+    "n": "Avanti Feeds",
     "s": 4,
     "conf": "Medium",
-    "p": 343.0,
-    "pct": 5.26,
-    "mc": 1071.9,
+    "p": 762.9,
+    "pct": 8.35,
+    "mc": 10394.2,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -2983,13 +2985,13 @@
     ]
    },
    {
-    "k": "AVANTIFEED",
-    "n": "Avanti Feeds",
+    "k": "APEX",
+    "n": "Apex Frozen Foods",
     "s": 4,
     "conf": "Medium",
-    "p": 762.9,
-    "pct": 8.35,
-    "mc": 10394.2,
+    "p": 343.0,
+    "pct": 5.26,
+    "mc": 1071.9,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -3934,7 +3936,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 5:49 AM",
+  "at": "13 Nov, 5:53 AM",
   "hi": [
    [
     "PAYTM",
@@ -4003,7 +4005,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 5:49 AM",
+  "at": "13 Nov, 5:53 AM",
   "g": [
    [
     "530405",
@@ -4829,7 +4831,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 5:49 AM",
+  "at": "13 Nov, 5:53 AM",
   "g": [
    [
     "B544943",
@@ -13942,7 +13944,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 5:49 AM",
+  "at": "13 Nov, 5:53 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
