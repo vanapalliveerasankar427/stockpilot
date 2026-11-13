@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 7:09 AM IST",
- "updated": "2026-11-13T07:09:46+05:30",
+ "label": "13 Nov 2026, 7:14 AM IST",
+ "updated": "2026-11-13T07:14:18+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 7:09 AM",
+  "date": "13 Nov 2026, 7:14 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 7:09 AM"
+    "t": "13 Nov, 7:14 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 7:09 AM"
+    "t": "13 Nov, 7:14 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 7:09 AM"
+   "t": "13 Nov, 7:14 AM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794530667
  },
  "brent": {
-  "v": 95.53,
+  "v": 95.38,
   "prev": 95.82,
-  "ch": -0.29,
-  "pct": -0.3,
+  "ch": -0.44,
+  "pct": -0.46,
   "high": 95.92,
-  "low": 95.39,
+  "low": 95.32,
   "open": 91.28,
-  "t": 1794533332
+  "t": 1794533614
  },
  "goldSpot": {
-  "v": 3914.7,
+  "v": 3913.2,
   "prev": 3885.3,
-  "ch": 29.4,
-  "pct": 0.76,
+  "ch": 27.9,
+  "pct": 0.72,
   "high": 3920.4,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794533387
+  "t": 1794533656
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 7:09 AM",
+  "fetched": "13 Nov, 7:14 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1227,10 +1227,11 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 309 headlines, 25 up, 14 down",
+  "outlook: 310 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2251,9 +2252,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 7:09 AM",
-  "mid": "13 Nov, 7:09 AM",
-  "small": "13 Nov, 7:09 AM"
+  "n50": "13 Nov, 7:14 AM",
+  "mid": "13 Nov, 7:14 AM",
+  "small": "13 Nov, 7:14 AM"
  },
  "midg": [
   [
@@ -2429,16 +2430,17 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 22 IPOs",
   "subscription: 0 IPOs from 0 cards",
+  "results cal: 1500 upcoming (192 NSE)",
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 309 headlines, 25 up, 14 down",
+  "outlook: 310 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 7:09 AM"
+  "at": "13 Nov, 7:14 AM"
  },
  "global": [
   [
@@ -2461,15 +2463,15 @@
   ],
   [
    "Nikkei 225",
-   61846.61,
-   1.69,
-   1794533085
+   61730.46,
+   1.5,
+   1794533355
   ],
   [
    "Hang Seng",
    23871.91,
    -0.57,
-   1794533084
+   1794533356
   ],
   [
    "FTSE 100",
@@ -2485,13 +2487,51 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 7:09 AM",
-  "headlines": 309,
+  "at": "13 Nov, 7:14 AM",
+  "headlines": 310,
   "screened": 1808,
   "cues": [
-   "Nikkei 225 +1.7%"
+   "Nikkei 225 +1.5%"
   ],
   "up": [
+   {
+    "k": "KALYANKJIL",
+    "n": "Kalyan Jewellers India",
+    "s": 18.6,
+    "conf": "High",
+    "p": 710.9,
+    "pct": 7.1,
+    "mc": 73418.3,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Kalyan Jewellers Shares Rally After Strong Q2 Results: Motilal Oswal Remains Bullish; Check Target Price",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaGpxc2N5WUdYeVp6THFtTmNVS05RT2RvSGpsTW5sYkhRLW9yRUZRclE2d2ctYzVnQVIyeHpEMU5zenItOG9SN3VOZmF4dUh4MEF3Vnd4d3pldzA3b1NLSjY5MjJEczhocDZOSFZqcU04eUtVOC1aaGdlQ1dXNHVTaGtObkJ1Wmt4cklCRUpEdzk0ekdEajhiaDQ3YV9lN3FMV2xmTGU3Z2RIbFd4a1haX3FtYkFKZE8yM2RQY2c2T3BkRmZIOEZYRk8zamhQNzFuUnhiSG9mV1ozU1ZrMGNF?oc=5",
+      "src": "NDTV Profit"
+     },
+     {
+      "k": "news",
+      "t": "After 810% surge in 5 years, does Kalyan Jewellers still have reason to shine amid rangebound gold price?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUVBrWUxzUXBzNWtha2p6bWRMQlpoRnFIN19wdFFoS0l4N1Mwam5sMXhqRE5XREJURlFLR01WZTZRWEQzemFPa0ZodDdrS2tUYTFuX21VS3NCOUxIazJYbEdoSlppOFFqSnBmamhlcGQ2dDF1UmxwNE9uUE0tUUhmd1lJeG9VTVJ0NVRGMVkxbHdYQ1lDcW5qeGIwcDJFTEZic2UyTF9teW1Ick5HaWVqOWRIa1ZuVXlOdFp0NFoxWUl3Sm5YY2tzanZOUXU2aFRTNnc?oc=5",
+      "src": "ET Now"
+     },
+     {
+      "k": "news",
+      "t": "Kalyan Jewellers shares hit 52-week high, rally 41% in 9 sessions; should you buy after Q2 results 2026? Check target",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPdDBqd1VrNlJub0d5WUVJYjFremJyd2dIakNrZ3RCM1dJQkFDZmhyODNHeV9wbWlXanlCeXItd0p5WkJFNm9ZbUdyS2w3OGI0RkhETUJ2cElIVkRtNkdDVjFNNXBWNmYzeUFzQ2NOQlRVNnc5ZEd6aG8zbzUyUWdCR184b2QzdEZMMjB3QWx6OUc2OU0zWEcxRjk0aG4xb2tTZ0lMaWptc25YbHJzZmxSa1g1OXcxMWstREgwZHN2WjlrZlBvLVMtZDRaUlZscXU4LXdpakZlVmEyWUJucHF4X2ttam52cmZ1OHFyYVViV3ZlNl9QOHA2cWlFdHZyR1dfZDBObk9PLUhBRTA5VzRjbtIBlgJBVV95cUxOQVJoeFk0SHpxSkZLM3FMcXdkSXJROVhVWUlKWEF2WVlveW9XbzBfZmRoRnl6emItNGw3ZUk5ZlFRZ0ZfSG8yNG84VWFRbVA4bWNRWllwUFh6al9Db1dxREtVWk90MkJHVS00dTBQeTMyTzdQRmt4bVFFVmlKSGpOR3FUY0l0SzBHaHREY0JvUXU3VGk3Tm1RR1VLRWctZXdDY2ZCanV5cjNJc0xrRzVVR3d5VEtaX29jNGpCUDdINGVyM2tXa29Vekdva1pXLS1iWUE4MklrbmxiTU1NbVY4eXQyZE11dXJNcWphT0ZxZWlXVjdRM01KNktydHhnbkR1S2gxbkM4Mzg0U2JvUXFoUGRHM1Npdw?oc=5",
+      "src": "Livemint"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +7.1% on 3.6× usual volume, near the day's high",
+      "s": 2.566016008200738
+     }
+    ]
+   },
    {
     "k": "HINDCOPPER",
     "n": "Hindustan Copper",
@@ -2552,40 +2592,40 @@
     ]
    },
    {
-    "k": "KALYANKJIL",
-    "n": "Kalyan Jewellers India",
-    "s": 14.6,
+    "k": "GODREJIND",
+    "n": "Godrej Industries",
+    "s": 15.0,
     "conf": "High",
-    "p": 710.9,
-    "pct": 7.1,
-    "mc": 73418.3,
-    "sec": "Consumer Cyclical",
+    "p": 1084.1,
+    "pct": 11.88,
+    "mc": 36518.0,
+    "sec": "Industrials",
     "why": [
      {
       "k": "news",
-      "t": "After 810% surge in 5 years, does Kalyan Jewellers still have reason to shine amid rangebound gold price?",
+      "t": "Godrej Industries shares surge 12% after Temasek's ₹2,500 crore investment in Godrej Capital",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUVBrWUxzUXBzNWtha2p6bWRMQlpoRnFIN19wdFFoS0l4N1Mwam5sMXhqRE5XREJURlFLR01WZTZRWEQzemFPa0ZodDdrS2tUYTFuX21VS3NCOUxIazJYbEdoSlppOFFqSnBmamhlcGQ2dDF1UmxwNE9uUE0tUUhmd1lJeG9VTVJ0NVRGMVkxbHdYQ1lDcW5qeGIwcDJFTEZic2UyTF9teW1Ick5HaWVqOWRIa1ZuVXlOdFp0NFoxWUl3Sm5YY2tzanZOUXU2aFRTNnc?oc=5",
-      "src": "ET Now"
+      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc19pSkI5ZE1STzhzMTNndlBHOHJacWhoUWtMcEVRSHF6T1pPMWhqQ01OSlFMN2NFU1J5RkZWQlU5UXNBZTNkdEFoNy1MX0l0RFhpSEJvTEhyT2k2dnRXYVNvQzlQWHpCcXJnSWt4Q3FPYldWUlk2VHVPY2lQdDFVUGVLODI5U2RCemJYdlNfQWRhUGFFbkxtbXpLbk12Tk9mSTJ4bXQ0enRlNWRIdmxveS1LSGlOQy1rcFVVRGg3Vm5MbEQ3M0Z5dEFR0gHXAUFVX3lxTE5HNjVBTmpHZnFPaDl2aVBCM3FjeGVYdnowdjlMVUZ0NnJNdHQ0d1B2dmhKZWwxeGk2TTlDb0kyTHI2UlBneEptQU0telZmU3F2VU82eFFzeTY5NnhsYm1KTkx6LUVROXlUNjJoZWJWTnczRFRHN09WRGIxZTVvOHluQWkxcUZWV0VQRXlfQ21BV0VvTmxSenB1QjFIVmdNTEgyNV9tM1BzQS0xY1ozanpqV3RqOGQybmtWdlNtY2dFck02NG9DMmZ6YzF0Sk11V0dqS3ZNQTdN?oc=5",
+      "src": "Fortune India"
      },
      {
       "k": "news",
-      "t": "Kalyan Jewellers stock rallies over 12% to fresh high after Q2 results",
+      "t": "Godrej Industries shares surge 8%, lead midcap gainers as Temasek invests Rs 2,500 crore in Godrej Capital",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPREYtSFFiYnN0NWpNdVF1SVNWaHp4OTlGUHJwd2NmaVViQUFwcldzQk9nVTJsM1FCRU40aEQzOGVsUEZIMUgwR3FUM3B6bjY1eDJwR0RMYWNVWFNXVmMtZldYZVBuZm1sZEg3dkdkYmUxNEE1SzVhaFoxeGwyb1dneS0wX0xSMzJ0eFNZQmNkWnVVd2dWTzVKT3ZUQUVVZGE0T2owVExZeGs4Nm9LSHVjd2hjVUdzbnhMajJEYzJfeExqTEpC?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNTVZ6ME9xWlBXUWtyeTJURGE5b2U4Q3VUaVFHTmdrVGdBVWNrZDRNUkNiaHdHSUJ4OGhOWnA0SEhIZjNYX0N3TVJ6V2cxMFU5S0hva2tBeF9UWHpZOEtuTkE1SG1mZUpTSGpkOEpabXQ5Vk1Mc0k0LTZ3Q1AtLXRyaHQ3cDVOSnc2SUVpN2E5cTVJMVVya2YwYTIwM2tsajBRM2Yyc1VRaWprNTl5dHNhQVRyMUc3Uk5LM1BZTG9saEtlUTBFendnQmxSOUJBcXRpd19VVndBRFZXVEFkcUVDRVRUUHdmRlF4VmFhWHJhb2ZfT2p6cTlueG43TQ?oc=5",
       "src": "TradingView"
      },
      {
       "k": "news",
-      "t": "Kalyan Jewellers shares hit 52-week high, rally 41% in 9 sessions; should you buy after Q2 results 2026? Check target",
+      "t": "Godrej Industries shares rally 10% after Temasek's Rs 2,500 crore investment in Godrej Capital",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPdDBqd1VrNlJub0d5WUVJYjFremJyd2dIakNrZ3RCM1dJQkFDZmhyODNHeV9wbWlXanlCeXItd0p5WkJFNm9ZbUdyS2w3OGI0RkhETUJ2cElIVkRtNkdDVjFNNXBWNmYzeUFzQ2NOQlRVNnc5ZEd6aG8zbzUyUWdCR184b2QzdEZMMjB3QWx6OUc2OU0zWEcxRjk0aG4xb2tTZ0lMaWptc25YbHJzZmxSa1g1OXcxMWstREgwZHN2WjlrZlBvLVMtZDRaUlZscXU4LXdpakZlVmEyWUJucHF4X2ttam52cmZ1OHFyYVViV3ZlNl9QOHA2cWlFdHZyR1dfZDBObk9PLUhBRTA5VzRjbtIBlgJBVV95cUxOQVJoeFk0SHpxSkZLM3FMcXdkSXJROVhVWUlKWEF2WVlveW9XbzBfZmRoRnl6emItNGw3ZUk5ZlFRZ0ZfSG8yNG84VWFRbVA4bWNRWllwUFh6al9Db1dxREtVWk90MkJHVS00dTBQeTMyTzdQRmt4bVFFVmlKSGpOR3FUY0l0SzBHaHREY0JvUXU3VGk3Tm1RR1VLRWctZXdDY2ZCanV5cjNJc0xrRzVVR3d5VEtaX29jNGpCUDdINGVyM2tXa29Vekdva1pXLS1iWUE4MklrbmxiTU1NbVY4eXQyZE11dXJNcWphT0ZxZWlXVjdRM01KNktydHhnbkR1S2gxbkM4Mzg0U2JvUXFoUGRHM1Npdw?oc=5",
-      "src": "Livemint"
+      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOU2lQZ084eHlGWW83d3QtTTBLeEM0dUlLUFFGcVNpc3RvQVpPV09sQUt0LWozLWpzRVY2OFF0VHpEVUlha1p3ZGtPWXNmSUt0dEM3a0dwOWpxNVBQOWJUZEpIM09IUWwwcnRyemFPdTRYUDRIWVRGeV96MGoyb2VmQ1QzWHZ6NnNDb3lEeHJBdWFsRW02VDlxdllkWXJDOGhWUDhkTFUwSl9DLU8xTzdFR2VZOFRxSjhBOElYdXpsTUpmZXRFZUFGVF9teWZHTHNvSm84TVU5d0NDTHA4UDZmTGltbktlN2djSHZrNDFXcEdOekFJVE1QaNIB_gFBVV95cUxOUTZvMnV2akFVTGdXMTFRODdkVmR4NUF5NGJudzNmSHJQZ2lLb1pNbFFKaXZnTEFyeVlUSU1yLUlaQ0VldzdmeUxPcE5hdmp0NVlFcXllZFQxelZ6OTJTOV9acmI4bmlfZTdSdHlvdHI0UkVteHNTejAxNjJ1b2dPbmlYWE5SdHk5UmNsbkpzcmw5aXZsODdIZE14TEt5bnE3bzJVX2J1RzAxWmVCSEd0X3RfZDNISkFWWUlMQzRiMmdjMVg0SlJtQjhUMW5JNm5uTHRBbEZEUkxRdnBmcUxJZk5DR2xxNnZqOTBDVHJTaGtZdW1IZW1SVXhFUlVKQQ?oc=5",
+      "src": "The Economic Times"
      },
      {
       "k": "price",
-      "t": "Closed strong: +7.1% on 3.6× usual volume, near the day's high",
-      "s": 2.566016008200738
+      "t": "Closed strong: +11.9% on 30.5× usual volume, near the day's high",
+      "s": 3.0
      }
     ]
    },
@@ -2638,37 +2678,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUUswTVd3eG1zZjMtVVJ2ckF0ZHgtbUVqbGZlLTBtWHpFR0ZrUmdDOHZaUGpHNjlpS1VMS0NhNWMyRjd5QlFVczFuUTJWOGhwaXpCMUNEcjV2T09aX3dxWk1Td1RuUVFQM2FWcXFGWnpRODBqVWtFaThjUTF1QUFwQkFaZDRrV2VlbGl1QmtsSFZLbDBrMkNnekREQjhqWVN3Nk9iSmUwVUp4d0RhWVBERnZZdUI?oc=5",
       "src": "Univest"
-     }
-    ]
-   },
-   {
-    "k": "GODREJIND",
-    "n": "Godrej Industries",
-    "s": 11.0,
-    "conf": "High",
-    "p": 1084.1,
-    "pct": 11.88,
-    "mc": 36518.0,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Godrej Industries shares surge 12% after Temasek's ₹2,500 crore investment in Godrej Capital",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc19pSkI5ZE1STzhzMTNndlBHOHJacWhoUWtMcEVRSHF6T1pPMWhqQ01OSlFMN2NFU1J5RkZWQlU5UXNBZTNkdEFoNy1MX0l0RFhpSEJvTEhyT2k2dnRXYVNvQzlQWHpCcXJnSWt4Q3FPYldWUlk2VHVPY2lQdDFVUGVLODI5U2RCemJYdlNfQWRhUGFFbkxtbXpLbk12Tk9mSTJ4bXQ0enRlNWRIdmxveS1LSGlOQy1rcFVVRGg3Vm5MbEQ3M0Z5dEFR0gHXAUFVX3lxTE5HNjVBTmpHZnFPaDl2aVBCM3FjeGVYdnowdjlMVUZ0NnJNdHQ0d1B2dmhKZWwxeGk2TTlDb0kyTHI2UlBneEptQU0telZmU3F2VU82eFFzeTY5NnhsYm1KTkx6LUVROXlUNjJoZWJWTnczRFRHN09WRGIxZTVvOHluQWkxcUZWV0VQRXlfQ21BV0VvTmxSenB1QjFIVmdNTEgyNV9tM1BzQS0xY1ozanpqV3RqOGQybmtWdlNtY2dFck02NG9DMmZ6YzF0Sk11V0dqS3ZNQTdN?oc=5",
-      "src": "Fortune India"
-     },
-     {
-      "k": "news",
-      "t": "Godrej Industries shares rally 10% after Temasek's Rs 2,500 crore investment in Godrej Capital",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOU2lQZ084eHlGWW83d3QtTTBLeEM0dUlLUFFGcVNpc3RvQVpPV09sQUt0LWozLWpzRVY2OFF0VHpEVUlha1p3ZGtPWXNmSUt0dEM3a0dwOWpxNVBQOWJUZEpIM09IUWwwcnRyemFPdTRYUDRIWVRGeV96MGoyb2VmQ1QzWHZ6NnNDb3lEeHJBdWFsRW02VDlxdllkWXJDOGhWUDhkTFUwSl9DLU8xTzdFR2VZOFRxSjhBOElYdXpsTUpmZXRFZUFGVF9teWZHTHNvSm84TVU5d0NDTHA4UDZmTGltbktlN2djSHZrNDFXcEdOekFJVE1QaNIB_gFBVV95cUxOUTZvMnV2akFVTGdXMTFRODdkVmR4NUF5NGJudzNmSHJQZ2lLb1pNbFFKaXZnTEFyeVlUSU1yLUlaQ0VldzdmeUxPcE5hdmp0NVlFcXllZFQxelZ6OTJTOV9acmI4bmlfZTdSdHlvdHI0UkVteHNTejAxNjJ1b2dPbmlYWE5SdHk5UmNsbkpzcmw5aXZsODdIZE14TEt5bnE3bzJVX2J1RzAxWmVCSEd0X3RfZDNISkFWWUlMQzRiMmdjMVg0SlJtQjhUMW5JNm5uTHRBbEZEUkxRdnBmcUxJZk5DR2xxNnZqOTBDVHJTaGtZdW1IZW1SVXhFUlVKQQ?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +11.9% on 30.5× usual volume, near the day's high",
-      "s": 3.0
      }
     ]
    },
@@ -2792,6 +2801,32 @@
     ]
    },
    {
+    "k": "ZEEL",
+    "n": "Zee Entertainment Enterprises",
+    "s": 8,
+    "conf": "High",
+    "p": 73.5,
+    "pct": 3.73,
+    "mc": 7059.8,
+    "sec": "Communication Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "Zee Entertainment shares jump 5% as board meets today to consider buyback, interim dividend",
+      "s": 6,
+      "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdGNiaTgwUGZPeUNXMFl0VS04aG0tZDNlcFZ3Uk8wcDlCbFpYTG5BRURPcVRWbmYySHctYTV3ZE52bU5rUmIxQXlsR1d4azctMkRmNkRzaDhNTkdxeW9Gbk4zNWwxR2x3dWwtNUx5M3p6d29EZ002bmgySUdLWGZ5MVR0c3Y1MzZ6LWZ5NzJzZUxjeWYzQTlNdVpFcjVZUWtEMlVhOUxlTEstbncwV2NZOTAzYmt3RUJNWWhiNVJmZjFHVXdTdEdLUXE4RWxvR1Zlb3R6SA?oc=5",
+      "src": "Business Upturn"
+     },
+     {
+      "k": "news",
+      "t": "Zee Entertainment announces ₹600 crore buyback at 24% premium",
+      "s": 2,
+      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbEY0RDA2UW0yUVZaODNPQnpOYWhJeWl4N3Y3bk5qTFlzNVlCVTRhZkxSQ1VaUkxhcWdsN255aHh1STlCeXBjOHc0OXIzZlYycXVsWk0tNkVhZWdmVVp3cVc0bURFTzl4V3VaVzFGMjVzS3haQ1NOQXNjbWZBcHBvekd4bTRZOGJybC1VLUtFOHRfMV8walVENF9UQnpONEFxM0g5TUpNb01yRHQtLTdLa0x2c1BZOThDWTFyZGZHZ0tsVDZLSnVlTll30gHPAUFVX3lxTE9QWFJ0ZF9QZlUweDAzWmR1dzRYR0xybmIwa1c0RU1meUw3WWMzQWt5MUpodFZwSTRnQWZBSkZ3NEx2UGkxcm9FYVJ2TUdJVV9lNVVVRzNyZkhVWjR3S05TQVJsLXFoOWVoUWxuX0lrdXV2MmJEOExETTdZWHFKN2pWa3kwVzUyYU1RZG9XaXhoV1phRWtSZng1cEJNSmotOGJBSzBuQ2FzRllFSHNFYW9kM1RCZW5PX3p0RUJHYThPZ0NKVFVid1RmeFBUUlVjYw?oc=5",
+      "src": "Livemint"
+     }
+    ]
+   },
+   {
     "k": "TMCV",
     "n": "Tata Motors",
     "s": 8,
@@ -2845,25 +2880,6 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOSkdpdjN5blRiRHZMUi1pUDRYT2YtVzllS2g3ZTBPSDBTOTM1dW9MdUZOaTE0Nmgta245RzdNbGdxWTA2M0thLXl3UjFpWVpQeDZ4ZEYweWFFWDF3OEhjZXd2M3QwRXBSX3pUUjdSbmVVVnhnY0FBM2ZGWjR3V0trbjJNdW1pdXhJUW12UGlxNklwR2pmYnlEbEw2WlhaTl9aZE9LT2VhVTZ1bjZhWTl1ZVliUDllYlNza2hIa1FyUDd3Ymh6SG5TWTJLTTczMjBqS2w5Yk5fWnd2emNHb1VQSWpxV19YZmNoaDRpS2FpdGhpQTRiU1VTVEVJNjF1QUtRbzVrN0ZJbDYxbXdWX3JteWEwRWd5eUN1WHUtc9IBpAJBVV95cUxPWXFFZjlmMEdXSl9ueHg2aVVkWGkyRVhhRnBiUWJzSi1ScW93V3pBaW43b3N0MDhxV3JJeUtmSGZRN2hoX1pvOUdYSmMzeDgza2twajRkTnA0TzBDcUF5ZGFnWHZNYUk5V08tTnlCeVRVRDF2dTZoYnlVV1NFay12ekx4RjNzMGhWcGFEeFkzTTIwNUlvQlVlakMybUJZOXV1bndqaFhtTjNJMnNaaVVLZ2ZoeDZveTlBdzNuQlVNbkdpc3F1cktUOF8yWjJFR29ydXVUZkg3N2IzeWY3MU93VEJVLXg3c0ZQVWpzYi1TSXRmZWZtUjJIRUY5WGZvdjdKT21FS2NJOTdEZUVTOFBId1gyQ2pNOGR0NHh3QWtDVnEzYUZM?oc=5",
       "src": "NDTV Profit"
-     }
-    ]
-   },
-   {
-    "k": "ZEEL",
-    "n": "Zee Entertainment Enterprises",
-    "s": 6,
-    "conf": "High",
-    "p": 73.5,
-    "pct": 3.73,
-    "mc": 7059.8,
-    "sec": "Communication Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "Zee Entertainment shares jump 5% as board meets today to consider buyback, interim dividend",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdGNiaTgwUGZPeUNXMFl0VS04aG0tZDNlcFZ3Uk8wcDlCbFpYTG5BRURPcVRWbmYySHctYTV3ZE52bU5rUmIxQXlsR1d4azctMkRmNkRzaDhNTkdxeW9Gbk4zNWwxR2x3dWwtNUx5M3p6d29EZ002bmgySUdLWGZ5MVR0c3Y1MzZ6LWZ5NzJzZUxjeWYzQTlNdVpFcjVZUWtEMlVhOUxlTEstbncwV2NZOTAzYmt3RUJNWWhiNVJmZjFHVXdTdEdLUXE4RWxvR1Zlb3R6SA?oc=5",
-      "src": "Business Upturn"
      }
     ]
    },
@@ -2949,13 +2965,13 @@
     ]
    },
    {
-    "k": "AVANTIFEED",
-    "n": "Avanti Feeds",
+    "k": "APEX",
+    "n": "Apex Frozen Foods",
     "s": 4,
     "conf": "Medium",
-    "p": 762.9,
-    "pct": 8.35,
-    "mc": 10394.2,
+    "p": 343.0,
+    "pct": 5.26,
+    "mc": 1071.9,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -2968,13 +2984,13 @@
     ]
    },
    {
-    "k": "APEX",
-    "n": "Apex Frozen Foods",
+    "k": "AVANTIFEED",
+    "n": "Avanti Feeds",
     "s": 4,
     "conf": "Medium",
-    "p": 343.0,
-    "pct": 5.26,
-    "mc": 1071.9,
+    "p": 762.9,
+    "pct": 8.35,
+    "mc": 10394.2,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -3919,7 +3935,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 7:09 AM",
+  "at": "13 Nov, 7:14 AM",
   "hi": [
    [
     "PAYTM",
@@ -3988,7 +4004,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 7:09 AM",
+  "at": "13 Nov, 7:14 AM",
   "g": [
    [
     "544535",
@@ -4807,7 +4823,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 7:09 AM",
+  "at": "13 Nov, 7:14 AM",
   "g": [
    [
     "B544535",
@@ -4914,8 +4930,8 @@
   ]
  },
  "rescal": {
-  "ts": 1794530639.4256668,
-  "at": "13 Nov, 6:13 AM",
+  "ts": 1794534267.396748,
+  "at": "13 Nov, 7:14 AM",
   "items": [
    {
     "k": "B511122",
@@ -13920,7 +13936,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 7:09 AM",
+  "at": "13 Nov, 7:14 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
@@ -13942,7 +13958,7 @@
       "x": "Up 11.9%, closing near the day's high on 30.5× normal volume"
      }
     ],
-    "s": 40.7
+    "s": 44.7
    },
    {
     "k": "KALYANKJIL",
@@ -13954,15 +13970,15 @@
     "why": [
      {
       "t": "results",
-      "x": "After 810% surge in 5 years, does Kalyan Jewellers still have reason to shine amid rangebound gold price?",
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUVBrWUxzUXBzNWtha2p6bWRMQlpoRnFIN19wdFFoS0l4N1Mwam5sMXhqRE5XREJURlFLR01WZTZRWEQzemFPa0ZodDdrS2tUYTFuX21VS3NCOUxIazJYbEdoSlppOFFqSnBmamhlcGQ2dDF1UmxwNE9uUE0tUUhmd1lJeG9VTVJ0NVRGMVkxbHdYQ1lDcW5qeGIwcDJFTEZic2UyTF9teW1Ick5HaWVqOWRIa1ZuVXlOdFp0NFoxWUl3Sm5YY2tzanZOUXU2aFRTNnc?oc=5"
+      "x": "Kalyan Jewellers Shares Rally After Strong Q2 Results: Motilal Oswal Remains Bullish; Check Target Price",
+      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaGpxc2N5WUdYeVp6THFtTmNVS05RT2RvSGpsTW5sYkhRLW9yRUZRclE2d2ctYzVnQVIyeHpEMU5zenItOG9SN3VOZmF4dUh4MEF3Vnd4d3pldzA3b1NLSjY5MjJEczhocDZOSFZqcU04eUtVOC1aaGdlQ1dXNHVTaGtObkJ1Wmt4cklCRUpEdzk0ekdEajhiaDQ3YV9lN3FMV2xmTGU3Z2RIbFd4a1haX3FtYkFKZE8yM2RQY2c2T3BkRmZIOEZYRk8zamhQNzFuUnhiSG9mV1ozU1ZrMGNF?oc=5"
      },
      {
       "t": "momentum",
       "x": "Up 7.1%, closing near the day's high on 3.6× normal volume"
      }
     ],
-    "s": 33.3
+    "s": 38.9
    },
    {
     "k": "KMEW",
@@ -14344,15 +14360,15 @@
     "why": [
      {
       "t": "results",
-      "x": "After 810% surge in 5 years, does Kalyan Jewellers still have reason to shine amid rangebound gold price?",
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUVBrWUxzUXBzNWtha2p6bWRMQlpoRnFIN19wdFFoS0l4N1Mwam5sMXhqRE5XREJURlFLR01WZTZRWEQzemFPa0ZodDdrS2tUYTFuX21VS3NCOUxIazJYbEdoSlppOFFqSnBmamhlcGQ2dDF1UmxwNE9uUE0tUUhmd1lJeG9VTVJ0NVRGMVkxbHdYQ1lDcW5qeGIwcDJFTEZic2UyTF9teW1Ick5HaWVqOWRIa1ZuVXlOdFp0NFoxWUl3Sm5YY2tzanZOUXU2aFRTNnc?oc=5"
+      "x": "Kalyan Jewellers Shares Rally After Strong Q2 Results: Motilal Oswal Remains Bullish; Check Target Price",
+      "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaGpxc2N5WUdYeVp6THFtTmNVS05RT2RvSGpsTW5sYkhRLW9yRUZRclE2d2ctYzVnQVIyeHpEMU5zenItOG9SN3VOZmF4dUh4MEF3Vnd4d3pldzA3b1NLSjY5MjJEczhocDZOSFZqcU04eUtVOC1aaGdlQ1dXNHVTaGtObkJ1Wmt4cklCRUpEdzk0ekdEajhiaDQ3YV9lN3FMV2xmTGU3Z2RIbFd4a1haX3FtYkFKZE8yM2RQY2c2T3BkRmZIOEZYRk8zamhQNzFuUnhiSG9mV1ozU1ZrMGNF?oc=5"
      },
      {
       "t": "momentum",
       "x": "Up 7.1%, closing near the day's high on 3.6× normal volume"
      }
     ],
-    "s": 33.3
+    "s": 38.9
    },
    {
     "k": "PAYTM",
