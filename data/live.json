@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 6:10 PM IST",
- "updated": "2026-11-13T18:10:55+05:30",
+ "label": "13 Nov 2026, 6:21 PM IST",
+ "updated": "2026-11-13T18:21:16+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 6:10 PM",
+  "date": "13 Nov 2026, 6:21 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -130,16 +130,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136452.0,
-    "ch": 227.0,
+    "v": 136458.0,
+    "ch": 233.0,
     "pct": 0.17,
-    "t": "13 Nov, 6:10 PM"
+    "t": "13 Nov, 6:21 PM"
    },
    "silver": {
-    "v": 178031.0,
-    "ch": -693.0,
-    "pct": -0.39,
-    "t": "13 Nov, 6:10 PM"
+    "v": 177900.0,
+    "ch": -824.0,
+    "pct": -0.46,
+    "t": "13 Nov, 6:21 PM"
    }
   },
   "retail": {
@@ -352,9 +352,9 @@
   "bullion": {
    "g24": 13700.0,
    "g24_10": 137000.0,
-   "ag_kg": 178740.0,
-   "ag": 178.74,
-   "t": "13 Nov, 6:10 PM"
+   "ag_kg": 178610.0,
+   "ag": 178.61,
+   "t": "13 Nov, 6:21 PM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794572110
  },
  "brent": {
-  "v": 96.22,
+  "v": 96.33,
   "prev": 95.82,
-  "ch": 0.4,
-  "pct": 0.42,
+  "ch": 0.51,
+  "pct": 0.53,
   "high": 96.75,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794572998
+  "t": 1794573665
  },
  "goldSpot": {
-  "v": 3897.1,
+  "v": 3893.9,
   "prev": 3885.3,
-  "ch": 11.8,
-  "pct": 0.3,
+  "ch": 8.6,
+  "pct": 0.22,
   "high": 3926.9,
   "low": 3879.1,
   "open": 3917.1,
-  "t": 1794573051
+  "t": 1794573675
  },
  "sectors": [
   [
@@ -1058,24 +1058,41 @@
    "sr": 2.68,
    "ssrc": "IPOMarket",
    "sat": "1 Nov, 5:34 AM"
+  },
+  "crystalcropprotection": {
+   "gmp": 45.0,
+   "gsrc": "IPOMarket",
+   "gat": "13 Nov, 6:21 PM",
+   "ghist": [
+    [
+     "13 Nov",
+     45.0
+    ]
+   ]
+  },
+  "watranarentals": {
+   "gmp": 0.0,
+   "gsrc": "IPOMarket",
+   "gat": "13 Nov, 6:21 PM",
+   "ghist": [
+    [
+     "13 Nov",
+     0.0
+    ]
+   ]
   }
  },
  "flows": {
-  "dii": -6331.17,
-  "date": "12-Nov-2026",
-  "fii": 7830.6,
-  "dii_buy": 15855.13,
-  "dii_sell": 22186.3,
-  "fii_buy": 20273.32,
-  "fii_sell": 12442.72,
-  "fetched": "13 Nov, 6:10 PM",
+  "dii": -2253.58,
+  "date": "13-Nov-2026",
+  "fii": 5736.55,
+  "dii_buy": 11745.95,
+  "dii_sell": 13999.53,
+  "fii_buy": 18339.57,
+  "fii_sell": 12603.02,
+  "fetched": "13 Nov, 6:21 PM",
   "src": "NSE (provisional)",
   "hist": [
-   {
-    "date": "30-Oct-2026",
-    "fii": 3598.54,
-    "dii": -817.51
-   },
    {
     "date": "02-Nov-2026",
     "fii": 3114.68,
@@ -1120,6 +1137,11 @@
     "date": "12-Nov-2026",
     "fii": 7830.6,
     "dii": -6331.17
+   },
+   {
+    "date": "13-Nov-2026",
+    "fii": 5736.55,
+    "dii": -2253.58
    }
   ]
  },
@@ -1195,6 +1217,13 @@
    "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZnlqR2UyQlZXc1h4THBnWVVwMVVQNTN6YnQyT2NFR3BWZkFkNGVVOTN0UEh4Nzdhb0pEMnJ6TEFUZFhqU2t5am5nMFM4Q0VoczdKVnVMcHBaaUt6ZnZUUFdabXM3UWVQZnFfcThSWkRRVmZRRFNBeGxzTC1RUnoxMEwxckdUOGxFUlp3clp0Y2h6VFdUYzZtRVgwOUtOakQwNGM3MklzZl9PRDNwUVF1Yi1sUmlrYlVJNkNuX3JrWWhKMDFsQUdiUGc2YUhqZ0o5?oc=5"
   },
   {
+   "tag": "IPO",
+   "t": "Crystal Crop Protection sets price band for Rs 455.49 crore IPO, issue opens on November 18",
+   "s": "The Economic Times",
+   "d": "13 Nov, 10:53 AM",
+   "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPeUw2T0xuc2tBS3U3Y3pYSlg3djFWQXBpVjFFeWJSY3I3VkVkOUFzWHBJWGVRdlNSM1IyY0tLODRHMXpmbFhuaTB2aE9UYjJZbEJ5dTVsNThic3ZjSm5lcmhDeGRwOXJJY2Z0Zml4QnNkRE9tWkRHcXZ1RTlGS1R6bl8zdEE3UVlTVGxRcTdqLW1CNllhcHk2X2tUb2szUjFzcmVkT3doTVA3a01xUjFWSV9nOXdlZ0M1cnZfUHQ3OWRzeFAzUm13M0d0ZFhDY2ljTzNXR214aHJad1M2SWRRbDJfNjhULW1qcnVaUDJDbmVSWWk1TURpZEh0YUVYcmtB0gH6AUFVX3lxTE91YmFIVWw1NXZmQjQtTVFPZ3ZDTkJuOVcwZ2V5eDZIOXZIa2JqWHJnYzZYNHBMdU9Cd0VYUW01RzAtc2dTZURkS3ZGRGZOSkt5TXlpRmJNVktnZS12Q3N4cFB3RjF6ZzQtTG5QdUFsbC1QOUNBMUtSOWZnYTNvSFBiM2J3TjFOTFlMSmRXbVMzVnBkbjhxU2hwci1HRll5R2hXdWU0eHVSR2lVamFiZDZFOFdzTng0UFJqX0NVUGY2VUdSODQ5MVpsU2tXTFBnTzVGU2tEU3dLbmJMMnFzOHJIUVptdUlScW9BeDlwTkZyR3IwX1ZKR1NvSEE?oc=5"
+  },
+  {
    "tag": "Markets",
    "t": "Stock Market Today: Sensex Falls 289 Points, Nifty Slips",
    "s": "HDFC Sky",
@@ -1214,17 +1243,11 @@
    "s": "The Economic Times",
    "d": "13 Nov, 10:06 AM",
    "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOcXdKYzdpcnhkZlZLNmRyRHRfbmRZQzhoc3NhRUFLakYyOFdLWl9rdVYxelhfdFZIb2xUS0FhNWFPZEZ4NmdGOV9CdkVYeW85Q1RMc1RsZ1R5MGtwTHVSdS1aVDlsWmZpNV9NcHNKS3pHX1paXzY1Z1RPN2VlSHdKTHNuVllMbDNqazZlWE02WkNTTG01aWxCLXh5ZkxETTVYeVBSSFpkVExPZG92aGc2TTRlQU1YUGZtYThjTlhFZXVkazlXY01qRk9yeHE4V1kzMEpKRUhYckF1SzluVk1KeFUySEk1ZFNNWHNRWldHaHRPY0t1bWw1OFZNTdIB9AFBVV95cUxNRjRvbklnQkJsSkg4cmxvdE81czJnSFpfMnBRVEhrdWZzWWxMV3RtLWFhUzRaQlNIWnN1WHpfcU9uV2dwYnpjNW1DRDZKUFlRVjFxempwNTlKdzdJMDNzLVVkY3B0Sy1LM2lwSEt3NVNhSGF6eDVqRkRtcTBMLUlyN1hGYzhJOXpvZmNvU0F3N3JQN2RUTTVMMTFfYUVTTmZ0NEJ4Y29yblpjYndNRDJlX0ktR1NiRXJIYndyMUFocTduYl9ubGNMNi1pWG13S2VkRVNtbWluc2xpQ2JiVTNJWms5R3RsbDR3SF90TDRGVVNzT05z?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "Uneven monsoons, El Nino pose upside risks to inflation; another RBI hike possible: Report",
-   "s": "The Economic Times",
-   "d": "13 Nov, 9:05 AM",
-   "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPXzl6LV9fRlFkOWpwOTVFWDZ6UHlsM1liZnBGWUQ2U19wQ2lROGc1X0UtQ1U4YzBXcFFMTUEzNkRpY0hxUjRyX0loVWtVYVpaM01iZ1k1dE14akhuSEtPNEk1MURLTGVkUkhsNjFFQmJBdGdPLVZIdURIRjJBeTN3WU5WbDJmZ0N4T01mWDE4YmJPQy1EUVJfM1RDSzRBWnFxRk1MWG9sZHV0OVJhT1hxVkx0LWsxMnh3NVRQdUI2dTRqdnRxd240czUtQ0hJOHU5cXV3MGI0UGNIMk1jbGJaY3Y5LVl6eGJxcnZhbkhyUDA2aUlPZjJ5c2NoNFlOTUt6TVAtVw?oc=5"
   }
  ],
  "log": [
-  "ipo_calendar crashed: could not convert string to float: '—'",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
   "outlook: 280 headlines, 25 up, 17 down",
@@ -2248,9 +2271,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 6:10 PM",
-  "mid": "13 Nov, 6:10 PM",
-  "small": "13 Nov, 6:10 PM"
+  "n50": "13 Nov, 6:21 PM",
+  "mid": "13 Nov, 6:21 PM",
+  "small": "13 Nov, 6:21 PM"
  },
  "midg": [
   [
@@ -2423,7 +2446,8 @@
   }
  },
  "fulllog": [
-  "ipo_calendar crashed: could not convert string to float: '—'",
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 24 IPOs",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
   "outlook: 280 headlines, 25 up, 17 down",
@@ -2432,7 +2456,7 @@
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 6:10 PM"
+  "at": "13 Nov, 6:21 PM"
  },
  "global": [
   [
@@ -2467,9 +2491,9 @@
   ],
   [
    "FTSE 100",
-   10869.34,
-   0.06,
-   1794572754
+   10867.42,
+   0.04,
+   1794573374
   ],
   [
    "US 10Y yield",
@@ -2479,7 +2503,7 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 6:10 PM",
+  "at": "13 Nov, 6:21 PM",
   "headlines": 280,
   "screened": 1802,
   "cues": [
@@ -2516,6 +2540,39 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNFpoY1QyTTNzeXJBR29tb2VHbURvVENQcVJwUExEalhKVzZ0eTlKQXRPeEljRmo3LVN2RHhWcTFkN1BzT19WaEswQ3JTWjBoaVk1R0IzbGltOHM4ajRzbEJQWDVQaEFvR1g3THYxcl91OW41NGo2dnFER0REczZXaGlocXpKSEdCYy13ZnN1dlhBWkg0N0gxQW1ndFhSMzA2c3cxNFFDZEJDVzRMNlVGQ2hEYnrSAbQBQVVfeXFMTzRaaGNUMk0zc3lyQUdvbW9lR21Eb1RDUHFScFBMRGpYSlc2dHk5SkF0T3hJY0ZqNy1TdkR4VnExZDdQc09fVmhLMENyU1owaGlZNUdCM2xpbThzOGo0c2xCUFg1UGhBb0dYN0x2MXJfdTluNTRqNnZxREdERHM2V2hpaHF6SkhHQmMtd2ZzdXZYQVpINDdIMUFtZ3RYUjMwNnN3MTRRQ2RCQ1c0TDZVRkNoRGJ6?oc=5",
       "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "EICHERMOT",
+    "n": "Eicher Motors",
+    "s": 24,
+    "conf": "High",
+    "p": 7650.0,
+    "pct": 1.34,
+    "mc": 210009.1,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5",
+      "src": "Business Standard"
+     },
+     {
+      "k": "news",
+      "t": "Eicher Motors Q2 results: Net profit rises 15% to Rs 1,573 crore",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2EtZ1BSa3pZTF94emVyVHFVbGNYRkxpaTJQTENpMGVLckxQLWJ3b0RVT3V6VDg0azRhWWt0LUpxUUxMM3RBWjM3X1kyME90U05iTUdQRVMxTVZLSzM1V1phT2Z2Rk8tcndpa3ZSektfS1QxY29GRlJhMmpfbmhCNmszSzZHTFFUZ2VkNUxNMXA2WlhBQUd1RkI3MkFJcWlWbVE3eUtyV21vbTVsOTZXOWFncldfbi1sampxNFFfRXNEUnNTT1VV0gHMAUFVX3lxTE9kbFNVT09zWWhwd2hoSWVOREViT19kQldNelBDZFZ5c241SmFsV2tfM3NHRmpkd1NvOU8ybHFpNTZUNGlpR3d6WGw5RjhvNDF6UkFrNHBzYjlNa0dfUHVvQ0ZtckE4bnlrelpTLUtRandEbk44UW5BbGg3UkQ3a3N1UG1PeWNIbDlXZzlHVFFzaVJuU1hoQU9TNG9DdzBuY1JvcmYzTUFhNUt5aFMzSEM4RWF2Qm1hNjdVTXltQ3VldHRIcU9xblJRTGpBWQ?oc=5",
+      "src": "Moneycontrol.com"
+     },
+     {
+      "k": "news",
+      "t": "Eicher Motors Q2 Results: Profit rises 15% YoY to Rs 1,573 crore, revenue jumps 20%",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPaWsxX1pEVkhad1NzUVRIOTh1REZ2UXB2N2lILUFzbEZhVnVidXdpd1EzeEdFV2hFMXNPNXc0ZVhsRkRIWDYyTjlnbmVUOHhsNklOZDEtMDJvSXRralJEMmtTOHlGR0RsNFZNbjZYWFlMZTQtSVJOTmpQSDdrQy1UQmRSMGJSd2FpQndvUlE2VmZLVDQ1V2MzYnVZU1IxbVdxMnhHbEFieVVNNDdtU0NQQ1M2QXV1VU8zc2xPTkZpOV9NdV9iTnFWd2NHTGRaemdER3hMTjFmUmgzRERVRHFaZzRvR2ZUY1lxaDlrRtIB8gFBVV95cUxPdTZKelVPakRDUGIzc3RhM2RfbGdpSXo2bDQ4eFBWYW41VEJXYmdSemtYYkQ5ZmEzbGQ0b09BYnBPWWdWTFFGSU5Cd09GRG9hR0hQREM0UGlpbFUxMnU0MXNCSV9LR25JVEtXZ1lNQ001bzlrdVBiYVROOGVac1dweHhwM2lnal9mM3lJcFFkTXhjOFBUNWRWRi1rSmN6VDdsdjhuMnZ3WDZ6U2xZSDdLQVpLci0wWmdNWnJMTFBfNmF6aUp2d3NOc1QyZ054aDJuZ3UwQVNQa2FHYndCN2xaSm53WWdBc0JmRWc2b0djaFdFdw?oc=5",
+      "src": "The Economic Times"
      }
     ]
    },
@@ -2587,32 +2644,6 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZGVCdmYzRDMyVzRVc3daX2Y2bUNYUGYtN2g5YnM2ZllFbExIVHIwOUk1Y0hFS210aFF1cTl3RGgzQnRwSWpZb1FhcGh0QUszVjVRclFaRDBEQnpwdlZFV0k4eF8tTmI4cnBwMU1ZQW5wWHRGeEFUUEw0RVFjOGZiQ0l5NElKNDdFaG91VUFaTUJWSU5YOW5LRlNRb3dXT2E1TlJiTm5VVWxjZHhrT3FUSWxqcDNoalM1M19aSjF3?oc=5",
       "src": "scanx.trade"
-     }
-    ]
-   },
-   {
-    "k": "EICHERMOT",
-    "n": "Eicher Motors",
-    "s": 16,
-    "conf": "High",
-    "p": 7650.0,
-    "pct": 1.34,
-    "mc": 210009.1,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5",
-      "src": "Business Standard"
-     },
-     {
-      "k": "news",
-      "t": "Eicher Motors Q2 results: Net profit rises 15% to Rs 1,573 crore",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2EtZ1BSa3pZTF94emVyVHFVbGNYRkxpaTJQTENpMGVLckxQLWJ3b0RVT3V6VDg0azRhWWt0LUpxUUxMM3RBWjM3X1kyME90U05iTUdQRVMxTVZLSzM1V1phT2Z2Rk8tcndpa3ZSektfS1QxY29GRlJhMmpfbmhCNmszSzZHTFFUZ2VkNUxNMXA2WlhBQUd1RkI3MkFJcWlWbVE3eUtyV21vbTVsOTZXOWFncldfbi1sampxNFFfRXNEUnNTT1VV0gHMAUFVX3lxTE9kbFNVT09zWWhwd2hoSWVOREViT19kQldNelBDZFZ5c241SmFsV2tfM3NHRmpkd1NvOU8ybHFpNTZUNGlpR3d6WGw5RjhvNDF6UkFrNHBzYjlNa0dfUHVvQ0ZtckE4bnlrelpTLUtRandEbk44UW5BbGg3UkQ3a3N1UG1PeWNIbDlXZzlHVFFzaVJuU1hoQU9TNG9DdzBuY1JvcmYzTUFhNUt5aFMzSEM4RWF2Qm1hNjdVTXltQ3VldHRIcU9xblJRTGpBWQ?oc=5",
-      "src": "Moneycontrol.com"
      }
     ]
    },
@@ -2903,30 +2934,6 @@
     ]
    },
    {
-    "k": "POLICYBZR",
-    "n": "PB Fintech",
-    "s": 5.9,
-    "conf": "Medium",
-    "p": 1105.0,
-    "pct": 5.23,
-    "mc": 51330.0,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.2% on 2.3× usual volume, near the day's high",
-      "s": 1.9175372283142085
-     }
-    ]
-   },
-   {
     "k": "BNAGROCHEM",
     "n": "BN Agrochem",
     "s": 5.0,
@@ -3069,6 +3076,28 @@
       "s": 1
      }
     ]
+   },
+   {
+    "k": "TIPSMUSIC",
+    "n": "Tips Music",
+    "s": 3.1,
+    "conf": "Low",
+    "p": 816.45,
+    "pct": 3.93,
+    "mc": 10381.9,
+    "sec": "Communication Services",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +3.9% on 2.7× usual volume, near the day's high",
+      "s": 2.0970043420886926
+     },
+     {
+      "k": "price",
+      "t": "Trading at a 52-week high",
+      "s": 1
+     }
+    ]
    }
   ],
   "down": [
@@ -3168,6 +3197,25 @@
     ]
    },
    {
+    "k": "KPIGREEN",
+    "n": "KPI Green Energy",
+    "s": -8,
+    "conf": "High",
+    "p": 321.0,
+    "pct": -3.17,
+    "mc": 6345.3,
+    "sec": "Utilities",
+    "why": [
+     {
+      "k": "news",
+      "t": "KPI Green Energy Q2 PAT drops 24% YoY to ₹82 crore, EBITDA margin contracts; shares fall 5%",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaUF6QkZPa2p5bFNjcDFVVDExSFFIbkt2SkRGMUNlZEE1dVBNZWkwa2tJcTNzUnhnVnZqMXg0b3hsdDNXWkVmQTRIQk9rLWVzLXlEUkY4Mi1MZXRlT1NNR0syb1g0Y2E3eVFDQ2JuRnkxWnRoUl9Od0ttWWwyQkhTNlZGcklmOVpRc3ZrQlAwSGdpU05iaWhFM05RZkV0M19mRERDclZrcTMxM20zeUx5SkctUnZQWmxabUNTcFhnNUR5YjMyR3F1Qi05Y0JQVTl2UGx0aVNqZw?oc=5",
+      "src": "Upstox"
+     }
+    ]
+   },
+   {
     "k": "PGEL",
     "n": "PG Electroplast",
     "s": -6,
@@ -3240,25 +3288,6 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOajVnajhaVEl1WjdVaERlb3djUVczOVBfSnZGYURjeGgwN3NFVjZFdUpORjhrT1RscFdmWDJWNVVrbmdITXpzek1ibllCdHNGQi1hQlpiOG5MR3dhY190WlZvSkY0QkZObG56NXNkcHJkUnJHb0V5c0h2OGlRSHNyVFk2SmZ0MVVmMEtrcUZMdEpHNkw1OVB3RzlEVUwwdWlMX1ZFXzVpbzNiQnZTaXYzaHFra3ZkUdIBwwFBVV95cUxNVURkRUxKLW9zVDJxMmJTZTB1QnFlNFZDNDBGRXNXb3czRlFGcmhHR2k0SXJOTnc4VzlvSmJ1ZVljYWlORzBjTXB6dHlhMFZCNHJPUWN5N25aQS0zcWtzVE5NMWdMZkItZ3dHUmdYaUpYYTRRdVNvMlhOcnlNS1p0YzRlUkxJSTFMdmN5bjh3QVczRGRuYzFhd2RjZUlyMWhTZVBRYVZ0MkxfMW9JU3FwV01HN1VHb2JEeEtrTjMyMm8zMzA?oc=5",
       "src": "Fortune India"
-     }
-    ]
-   },
-   {
-    "k": "KPIGREEN",
-    "n": "KPI Green Energy",
-    "s": -4,
-    "conf": "Medium",
-    "p": 321.0,
-    "pct": -3.17,
-    "mc": 6345.3,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "KPI Green Energy Q2 PAT drops 24% YoY to ₹82 crore, EBITDA grows 22%; shares fall 5%",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaUF6QkZPa2p5bFNjcDFVVDExSFFIbkt2SkRGMUNlZEE1dVBNZWkwa2tJcTNzUnhnVnZqMXg0b3hsdDNXWkVmQTRIQk9rLWVzLXlEUkY4Mi1MZXRlT1NNR0syb1g0Y2E3eVFDQ2JuRnkxWnRoUl9Od0ttWWwyQkhTNlZGcklmOVpRc3ZrQlAwSGdpU05iaWhFM05RZkV0M19mRERDclZrcTMxM20zeUx5SkctUnZQWmxabUNTcFhnNUR5YjMyR3F1Qi05Y0JQVTl2UGx0aVNqZw?oc=5",
-      "src": "Upstox"
      }
     ]
    },
@@ -3708,6 +3737,34 @@
    "hi": 94.0,
    "lot": 1200,
    "src": "vedant-poly-fabs-sme-ipo"
+  },
+  {
+   "id": "crystalcropprotection",
+   "name": "Crystal Crop Protection",
+   "type": "Mainboard",
+   "open": "2026-11-18",
+   "close": "2026-11-20",
+   "allot": "2026-11-23",
+   "refund": "2026-11-24",
+   "list": "2026-11-26",
+   "lo": 259.0,
+   "hi": 272.0,
+   "lot": 55,
+   "src": "crystal-crop-protection-ipo"
+  },
+  {
+   "id": "watranarentals",
+   "name": "Watrana Rentals",
+   "type": "SME",
+   "open": "2026-11-19",
+   "close": "2026-11-23",
+   "allot": "2026-11-24",
+   "refund": "2026-11-25",
+   "list": "2026-11-27",
+   "lo": 232.0,
+   "hi": 245.0,
+   "lot": 600,
+   "src": "watrana-rentals-sme-ipo"
   }
  ],
  "fno": {
@@ -3934,7 +3991,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 6:10 PM",
+  "at": "13 Nov, 6:21 PM",
   "hi": [
    [
     "BONFIG",
@@ -3991,7 +4048,7 @@
   "nlo": 3
  },
  "bse_movers": {
-  "at": "13 Nov, 6:10 PM",
+  "at": "13 Nov, 6:21 PM",
   "g": [
    [
     "542460",
@@ -4803,7 +4860,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 6:10 PM",
+  "at": "13 Nov, 6:21 PM",
   "g": [
    [
     "MSTCLTD",
@@ -13916,7 +13973,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 6:10 PM",
+  "at": "13 Nov, 6:21 PM",
   "phase": "close",
   "for": "Mon 16 Nov",
   "picks": [
@@ -13972,6 +14029,22 @@
     "s": 33.6
    },
    {
+    "k": "EICHERMOT",
+    "n": "Eicher Motors",
+    "p": 7650.0,
+    "pct": 1.34,
+    "vx": 1.0,
+    "fo": true,
+    "why": [
+     {
+      "t": "results",
+      "x": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
+      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5"
+     }
+    ],
+    "s": 33.6
+   },
+   {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
     "p": 31595.0,
@@ -14002,22 +14075,6 @@
      }
     ],
     "s": 30.8
-   },
-   {
-    "k": "EICHERMOT",
-    "n": "Eicher Motors",
-    "p": 7650.0,
-    "pct": 1.34,
-    "vx": 1.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "results",
-      "x": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
-      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5"
-     }
-    ],
-    "s": 22.4
    },
    {
     "k": "HDFIRE",
@@ -14186,26 +14243,6 @@
     "s": 13.2
    },
    {
-    "k": "POLICYBZR",
-    "n": "PB Fintech",
-    "p": 1105.0,
-    "pct": 5.23,
-    "vx": 2.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
-      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.2%, closing near the day's high on 2.3× normal volume"
-     }
-    ],
-    "s": 12.0
-   },
-   {
     "k": "KCPSUGIND",
     "n": "KCP Sugar and Industries Corporation",
     "p": 27.56,
@@ -14329,9 +14366,41 @@
      }
     ],
     "s": 8.6
+   },
+   {
+    "k": "ROHLTD",
+    "n": "Royal Orchid Hotels",
+    "p": 307.05,
+    "pct": 5.01,
+    "vx": 22.6,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Royal Orchid Hotels Q2 net profit up 236% to ₹144 million",
+      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkNWUFBoNlFmamZrSXg1LU1PcXhaWk92QXBrcUZlWEJfY2hzdUNHSlZaekJRNGhVZHNkT0I3N0JNbll5Q21FdnJlNkpsYVlPM2sxM0g0X0tCWXVRdjNUc0lHbkNDWlVVZ1g1TVQtRnNGcllsZ0VKcUNMcGFITWVGb0ItSjRfZm52NWZKcHZ2Z2dCQjhWd1pVUWF2SndjQm9YM3VNcE1UeEFwbnp2UUE?oc=5"
+     }
+    ],
+    "s": 8.4
    }
   ],
   "fo": [
+   {
+    "k": "EICHERMOT",
+    "n": "Eicher Motors",
+    "p": 7650.0,
+    "pct": 1.34,
+    "vx": 1.0,
+    "fo": true,
+    "why": [
+     {
+      "t": "results",
+      "x": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
+      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5"
+     }
+    ],
+    "s": 33.6
+   },
    {
     "k": "POWERINDIA",
     "n": "Hitachi Energy India",
@@ -14347,22 +14416,6 @@
      }
     ],
     "s": 32.2
-   },
-   {
-    "k": "EICHERMOT",
-    "n": "Eicher Motors",
-    "p": 7650.0,
-    "pct": 1.34,
-    "vx": 1.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "results",
-      "x": "Eicher Motors Q2FY27 results: Net profit rises 15% to ₹1,573 crore",
-      "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNT21CUk1ubEljSVNKNmNielN5WEdsS2xmSkNVZzZzVXRrM2RyeXRQS2Y4MjhGcTVVMkMwbjFiSEhFeEp4NlRPcDdJYkl0VWxsSXY4Wml1X05ydmxfVXJPakVCV2JMc1RVMHRpdERkVmlPb2RqN1ZvRi1ZSDBwYkVfNkxIdGZnSFQ3MExRNGNUZHd0ZW91aDFXUUc2UkdQTEFnNk1CdmViRDd4UFdwLWs4S1RWTWFlUEpjVDVZRzMwV294WnVMa1hVRkxyS091Y2lBdllQWjYxWmZ2ZURKclHSAeMBQVVfeXFMUHNqREQ1a1N3QzB0UzJPLWlmdEgtNU5KTmlLQXhCaEZtN1R1bUxqVTRFS3ZiZHdxbzB3WjJHWGxqZUFZMF85VGVZcTRVR0VTOXo1emtFaVJjMDZIZzNydXRCcEhMdjNrSXZCeU9oUjRPYmZBMENqLVZIX3ZDM25NcU1XS2w5dVk5cDM3aTRBeEpnLS15ZVphX2hhN2daaENtUVIweklDNlhacWxIbTRyU2pseWd5NXV1ajZ4RjZRUXlBVFV5NmRGTjFsT2JLLWM3X0thNkUwempkX2RSZFloaS1Ielk?oc=5"
-     }
-    ],
-    "s": 22.4
    },
    {
     "k": "AMBER",
@@ -14409,16 +14462,11 @@
     "fo": true,
     "why": [
      {
-      "t": "news",
-      "x": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
-      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5"
-     },
-     {
       "t": "momentum",
       "x": "Up 5.2%, closing near the day's high on 2.3× normal volume"
      }
     ],
-    "s": 12.0
+    "s": 6.1
    },
    {
     "k": "BAJFINANCE",
