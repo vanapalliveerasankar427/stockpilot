@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 5:25 AM IST",
- "updated": "2026-11-13T05:25:44+05:30",
+ "label": "13 Nov 2026, 5:30 AM IST",
+ "updated": "2026-11-13T05:30:19+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 5:25 AM",
+  "date": "13 Nov 2026, 5:30 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136279.0,
     "ch": -3437.0,
     "pct": -2.46,
-    "t": "13 Nov, 5:25 AM"
+    "t": "13 Nov, 5:30 AM"
    },
    "silver": {
     "v": 178848.0,
     "ch": -5677.0,
     "pct": -3.08,
-    "t": "13 Nov, 5:25 AM"
+    "t": "13 Nov, 5:30 AM"
    }
   },
   "retail": {
@@ -354,7 +354,7 @@
    "g24_10": 136820.0,
    "ag_kg": 179560.0,
    "ag": 179.56,
-   "t": "13 Nov, 5:25 AM"
+   "t": "13 Nov, 5:30 AM"
   }
  },
  "logos": [],
@@ -461,28 +461,28 @@
   "pct": 0.38,
   "high": 94.05,
   "low": 93.6,
-  "open": 93.68,
+  "open": null,
   "t": 1794521074
  },
  "brent": {
-  "v": 95.79,
+  "v": 95.78,
   "prev": 95.82,
-  "ch": -0.03,
-  "pct": -0.03,
+  "ch": -0.04,
+  "pct": -0.04,
   "high": 95.92,
-  "low": 95.79,
+  "low": 95.76,
   "open": 91.28,
-  "t": 1794527138
+  "t": 1794527199
  },
  "goldSpot": {
-  "v": 3885.9,
+  "v": 3884.6,
   "prev": 3885.3,
-  "ch": 0.6,
-  "pct": 0.02,
-  "high": 3885.9,
+  "ch": -0.7,
+  "pct": -0.02,
+  "high": 3889.9,
   "low": 3879.1,
   "open": 3981.0,
-  "t": 1794527143
+  "t": 1794527411
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 5:25 AM",
+  "fetched": "13 Nov, 5:30 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1230,7 +1230,7 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 310 headlines, 25 up, 14 down",
+  "outlook: 308 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2251,9 +2251,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 5:25 AM",
-  "mid": "13 Nov, 5:25 AM",
-  "small": "13 Nov, 5:25 AM"
+  "n50": "13 Nov, 5:30 AM",
+  "mid": "13 Nov, 5:30 AM",
+  "small": "13 Nov, 5:30 AM"
  },
  "midg": [
   [
@@ -2432,13 +2432,13 @@
   "quotes retry: +0 of 1 missing NSE",
   "per-symbol fallback for 1 NSE stocks",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 310 headlines, 25 up, 14 down",
+  "outlook: 308 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4799,
-  "at": "13 Nov, 5:25 AM"
+  "at": "13 Nov, 5:30 AM"
  },
  "global": [
   [
@@ -2485,8 +2485,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 5:25 AM",
-  "headlines": 310,
+  "at": "13 Nov, 5:30 AM",
+  "headlines": 308,
   "screened": 1808,
   "cues": [
    "Hang Seng -2.2%"
@@ -2548,6 +2548,44 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSlVUWTRUMmo1Zm5UZ1h1U2hBX0pMdnp3b3pyNlZmVE9PcENldEdtTXdXOWtoeXZKYXcxQmlqUlg1SS1Pb3hpUnlBV2ZOLW1LOUl0Vy1JU2NVMy1oZHpGYTdpdjV5dnk3OHZsX3owT0E3dFVDdzVhU25aWlNSQ1UwUDNpaF85T0o1TjY3bHlTaGVPSk9VNUFKaHM4WXFRZlZKNVUzMHZwcXdta3U5RkZHUU5kbXRVVy1XWXlIc0c2RktEWUxJdlVjc281bGHSAdIBQVVfeXFMUHRoTWc1N0RnVEt4bUt2WkZpdE5mTWJzaXljdjF4MXhzQlBHWGEzMkRsYW9NRzFOM3QwN25ETHc2TEp4NHdaZkstSFNYOFFaOGdCeDZ1LVB6Sm1RQlhrLURXVTc0YTBLZ2MxdEVFNVdDY1NzRS1FdUsyUV9MX1kxcDFCVVFLU0N4eEhPWU9faXFDaDN5ZEJodjlkWTF1LVhvM0hrbjBxTTRsNE05SDNUM2hnX0YyVGVBTGtabFppXzQ3OUdlczJDWl9qZGh5NGhCMG5n?oc=5",
       "src": "CNBC TV18"
+     }
+    ]
+   },
+   {
+    "k": "GODREJIND",
+    "n": "Godrej Industries",
+    "s": 15.0,
+    "conf": "High",
+    "p": 1084.1,
+    "pct": 11.88,
+    "mc": 36518.0,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Godrej Industries shares surge 12% after Temasek's ₹2,500 crore investment in Godrej Capital",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc19pSkI5ZE1STzhzMTNndlBHOHJacWhoUWtMcEVRSHF6T1pPMWhqQ01OSlFMN2NFU1J5RkZWQlU5UXNBZTNkdEFoNy1MX0l0RFhpSEJvTEhyT2k2dnRXYVNvQzlQWHpCcXJnSWt4Q3FPYldWUlk2VHVPY2lQdDFVUGVLODI5U2RCemJYdlNfQWRhUGFFbkxtbXpLbk12Tk9mSTJ4bXQ0enRlNWRIdmxveS1LSGlOQy1rcFVVRGg3Vm5MbEQ3M0Z5dEFR0gHXAUFVX3lxTE5HNjVBTmpHZnFPaDl2aVBCM3FjeGVYdnowdjlMVUZ0NnJNdHQ0d1B2dmhKZWwxeGk2TTlDb0kyTHI2UlBneEptQU0telZmU3F2VU82eFFzeTY5NnhsYm1KTkx6LUVROXlUNjJoZWJWTnczRFRHN09WRGIxZTVvOHluQWkxcUZWV0VQRXlfQ21BV0VvTmxSenB1QjFIVmdNTEgyNV9tM1BzQS0xY1ozanpqV3RqOGQybmtWdlNtY2dFck02NG9DMmZ6YzF0Sk11V0dqS3ZNQTdN?oc=5",
+      "src": "Fortune India"
+     },
+     {
+      "k": "news",
+      "t": "Godrej Industries shares surge 8%, lead midcap gainers as Temasek invests Rs 2,500 crore in Godrej Capital",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNTVZ6ME9xWlBXUWtyeTJURGE5b2U4Q3VUaVFHTmdrVGdBVWNrZDRNUkNiaHdHSUJ4OGhOWnA0SEhIZjNYX0N3TVJ6V2cxMFU5S0hva2tBeF9UWHpZOEtuTkE1SG1mZUpTSGpkOEpabXQ5Vk1Mc0k0LTZ3Q1AtLXRyaHQ3cDVOSnc2SUVpN2E5cTVJMVVya2YwYTIwM2tsajBRM2Yyc1VRaWprNTl5dHNhQVRyMUc3Uk5LM1BZTG9saEtlUTBFendnQmxSOUJBcXRpd19VVndBRFZXVEFkcUVDRVRUUHdmRlF4VmFhWHJhb2ZfT2p6cTlueG43TQ?oc=5",
+      "src": "TradingView"
+     },
+     {
+      "k": "news",
+      "t": "Godrej Industries shares rally 10% after Temasek's Rs 2,500 crore investment in Godrej Capital",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOU2lQZ084eHlGWW83d3QtTTBLeEM0dUlLUFFGcVNpc3RvQVpPV09sQUt0LWozLWpzRVY2OFF0VHpEVUlha1p3ZGtPWXNmSUt0dEM3a0dwOWpxNVBQOWJUZEpIM09IUWwwcnRyemFPdTRYUDRIWVRGeV96MGoyb2VmQ1QzWHZ6NnNDb3lEeHJBdWFsRW02VDlxdllkWXJDOGhWUDhkTFUwSl9DLU8xTzdFR2VZOFRxSjhBOElYdXpsTUpmZXRFZUFGVF9teWZHTHNvSm84TVU5d0NDTHA4UDZmTGltbktlN2djSHZrNDFXcEdOekFJVE1QaNIB_gFBVV95cUxOUTZvMnV2akFVTGdXMTFRODdkVmR4NUF5NGJudzNmSHJQZ2lLb1pNbFFKaXZnTEFyeVlUSU1yLUlaQ0VldzdmeUxPcE5hdmp0NVlFcXllZFQxelZ6OTJTOV9acmI4bmlfZTdSdHlvdHI0UkVteHNTejAxNjJ1b2dPbmlYWE5SdHk5UmNsbkpzcmw5aXZsODdIZE14TEt5bnE3bzJVX2J1RzAxWmVCSEd0X3RfZDNISkFWWUlMQzRiMmdjMVg0SlJtQjhUMW5JNm5uTHRBbEZEUkxRdnBmcUxJZk5DR2xxNnZqOTBDVHJTaGtZdW1IZW1SVXhFUlVKQQ?oc=5",
+      "src": "The Economic Times"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +11.9% on 30.5× usual volume, near the day's high",
+      "s": 3.0
      }
     ]
    },
@@ -2616,33 +2654,28 @@
     ]
    },
    {
-    "k": "GODREJIND",
-    "n": "Godrej Industries",
-    "s": 11.0,
+    "k": "MIDHANI",
+    "n": "Mishra Dhatu Nigam",
+    "s": 12,
     "conf": "High",
-    "p": 1084.1,
-    "pct": 11.88,
-    "mc": 36518.0,
-    "sec": "Industrials",
+    "p": 405.85,
+    "pct": 2.46,
+    "mc": 7603.2,
+    "sec": "Basic Materials",
     "why": [
      {
       "k": "news",
-      "t": "Godrej Industries shares surge 12% after Temasek's ₹2,500 crore investment in Godrej Capital",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc19pSkI5ZE1STzhzMTNndlBHOHJacWhoUWtMcEVRSHF6T1pPMWhqQ01OSlFMN2NFU1J5RkZWQlU5UXNBZTNkdEFoNy1MX0l0RFhpSEJvTEhyT2k2dnRXYVNvQzlQWHpCcXJnSWt4Q3FPYldWUlk2VHVPY2lQdDFVUGVLODI5U2RCemJYdlNfQWRhUGFFbkxtbXpLbk12Tk9mSTJ4bXQ0enRlNWRIdmxveS1LSGlOQy1rcFVVRGg3Vm5MbEQ3M0Z5dEFR0gHXAUFVX3lxTE5HNjVBTmpHZnFPaDl2aVBCM3FjeGVYdnowdjlMVUZ0NnJNdHQ0d1B2dmhKZWwxeGk2TTlDb0kyTHI2UlBneEptQU0telZmU3F2VU82eFFzeTY5NnhsYm1KTkx6LUVROXlUNjJoZWJWTnczRFRHN09WRGIxZTVvOHluQWkxcUZWV0VQRXlfQ21BV0VvTmxSenB1QjFIVmdNTEgyNV9tM1BzQS0xY1ozanpqV3RqOGQybmtWdlNtY2dFck02NG9DMmZ6YzF0Sk11V0dqS3ZNQTdN?oc=5",
-      "src": "Fortune India"
+      "t": "Mishra Dhatu Nigam shares surge over 8% after Q2 profit more than doubles; MIDHANI jumps 19% in 2026 | Check key levels",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOYXhDZ0JzMEp3NkFyTmllZjZ4ZGZhVGhoOTRIX0JTQy04MGRKTlQtMjRwZ1B0MXltdk5JckZhYjhIOGQxbVhDdHBqSU5HRlZPbER4NzVhLVkyZFR0dHJOTUJJTFVNX1hjRGI1VXByREYwa2Q5YTRsR0I5YlRFYUR5djVpVHJPeTFKV0pvUHNrVGR6RFZGNzlrMWJCV3NsYkItaThqU25CVFFsTHM0UFBfaFdTbU80bHdEWEdlWEYwSThPWVVLM3UzZFlEMHN0cmhhMzA2WkNQdGhkQktBczNEeGV4c2g5Z1Mtc2F2enVxbzdDbk9lbGlQc1U4andqMHlvcGNqcUZubGJUVHhma2xiRHV30gGXAkFVX3lxTFBfZDRhSHI0cXFMUVo0YU5ZTXpBQnNUcjJ4MC05RHRib0lrcVpNd2MyTm1HMFJINXJmT1p5aTJXajk2Ym5FTGU4eVdmQ2UzN0RRNmp4YUZZYVdHdWxRWFZLSzR2RnMyUzhCWHE3VlBOaF9URjRNUHM5ZUpFVzJwZUhWMTBQdXJYaVhrVGE0Zy1LTjNTMnlsVjJMSEtlMEpNVDZ5ZW5aYVRMb3J2bTBGMmt5RGxOaUoyX0R1OE5tSWtZc2VKLS1LWGpMQlpYclVib2R0WFZCTGRjU09KTGtheFA0VmpXaEduVXVjZEtRczhtc0oteWNlMmFTeFVuNlpqdDRIcFdkRm01QkU4cGVFa2FSdXhpUHljTQ?oc=5",
+      "src": "Livemint"
      },
      {
       "k": "news",
-      "t": "Godrej Industries shares rally 10% after Temasek's Rs 2,500 crore investment in Godrej Capital",
+      "t": "Mishra Dhatu Nigam Share Price Jumps 8% on Q2 Results",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOU2lQZ084eHlGWW83d3QtTTBLeEM0dUlLUFFGcVNpc3RvQVpPV09sQUt0LWozLWpzRVY2OFF0VHpEVUlha1p3ZGtPWXNmSUt0dEM3a0dwOWpxNVBQOWJUZEpIM09IUWwwcnRyemFPdTRYUDRIWVRGeV96MGoyb2VmQ1QzWHZ6NnNDb3lEeHJBdWFsRW02VDlxdllkWXJDOGhWUDhkTFUwSl9DLU8xTzdFR2VZOFRxSjhBOElYdXpsTUpmZXRFZUFGVF9teWZHTHNvSm84TVU5d0NDTHA4UDZmTGltbktlN2djSHZrNDFXcEdOekFJVE1QaNIB_gFBVV95cUxOUTZvMnV2akFVTGdXMTFRODdkVmR4NUF5NGJudzNmSHJQZ2lLb1pNbFFKaXZnTEFyeVlUSU1yLUlaQ0VldzdmeUxPcE5hdmp0NVlFcXllZFQxelZ6OTJTOV9acmI4bmlfZTdSdHlvdHI0UkVteHNTejAxNjJ1b2dPbmlYWE5SdHk5UmNsbkpzcmw5aXZsODdIZE14TEt5bnE3bzJVX2J1RzAxWmVCSEd0X3RfZDNISkFWWUlMQzRiMmdjMVg0SlJtQjhUMW5JNm5uTHRBbEZEUkxRdnBmcUxJZk5DR2xxNnZqOTBDVHJTaGtZdW1IZW1SVXhFUlVKQQ?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +11.9% on 30.5× usual volume, near the day's high",
-      "s": 3.0
+      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUUswTVd3eG1zZjMtVVJ2ckF0ZHgtbUVqbGZlLTBtWHpFR0ZrUmdDOHZaUGpHNjlpS1VMS0NhNWMyRjd5QlFVczFuUTJWOGhwaXpCMUNEcjV2T09aX3dxWk1Td1RuUVFQM2FWcXFGWnpRODBqVWtFaThjUTF1QUFwQkFaZDRrV2VlbGl1QmtsSFZLbDBrMkNnekREQjhqWVN3Nk9iSmUwVUp4d0RhWVBERnZZdUI?oc=5",
+      "src": "Univest"
      }
     ]
    },
@@ -2930,13 +2963,13 @@
     ]
    },
    {
-    "k": "APEX",
-    "n": "Apex Frozen Foods",
+    "k": "AVANTIFEED",
+    "n": "Avanti Feeds",
     "s": 4,
     "conf": "Medium",
-    "p": 343.0,
-    "pct": 5.26,
-    "mc": 1071.9,
+    "p": 762.9,
+    "pct": 8.35,
+    "mc": 10394.2,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -2949,13 +2982,13 @@
     ]
    },
    {
-    "k": "AVANTIFEED",
-    "n": "Avanti Feeds",
+    "k": "APEX",
+    "n": "Apex Frozen Foods",
     "s": 4,
     "conf": "Medium",
-    "p": 762.9,
-    "pct": 8.35,
-    "mc": 10394.2,
+    "p": 343.0,
+    "pct": 5.26,
+    "mc": 1071.9,
     "sec": "Consumer Defensive",
     "why": [
      {
@@ -3058,25 +3091,6 @@
       "t": "Roto Pumps Share Price Jumps 19% on Q2 Results",
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOQnduYXlpQnVQb205cWxSNkR5VXprck9ZS3NYWUEtak5lOWNXaVZEdnRUSkxiS3pyaDdWN3JvUzBjWnpRVTJWUzJDQ3diLWVvRE5FTU54UF9NU1lHbXJGZzhtWU5iQ0tyTV9nMTNJN1pxTGJ4TjlTUE41WnhNejB4U1VCdXFneEhyRWZYNnJVTEhzbE45S1E3eHM5QWFXNHZRX083MDNWTUtRSVd0YWpPT0V0elVrV0R4Ti1iWnhpV1RUWk1EanFiaUdlbXk1cm5H?oc=5",
-      "src": "Univest"
-     }
-    ]
-   },
-   {
-    "k": "MIDHANI",
-    "n": "Mishra Dhatu Nigam",
-    "s": 4,
-    "conf": "Medium",
-    "p": 405.85,
-    "pct": 2.46,
-    "mc": 7603.2,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Mishra Dhatu Nigam Share Price Jumps 8% on Q2 Results",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUUswTVd3eG1zZjMtVVJ2ckF0ZHgtbUVqbGZlLTBtWHpFR0ZrUmdDOHZaUGpHNjlpS1VMS0NhNWMyRjd5QlFVczFuUTJWOGhwaXpCMUNEcjV2T09aX3dxWk1Td1RuUVFQM2FWcXFGWnpRODBqVWtFaThjUTF1QUFwQkFaZDRrV2VlbGl1QmtsSFZLbDBrMkNnekREQjhqWVN3Nk9iSmUwVUp4d0RhWVBERnZZdUI?oc=5",
       "src": "Univest"
      }
     ]
@@ -3919,7 +3933,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 5:25 AM",
+  "at": "13 Nov, 5:30 AM",
   "hi": [
    [
     "PAYTM",
@@ -3988,7 +4002,7 @@
   "nlo": 5
  },
  "bse_movers": {
-  "at": "13 Nov, 5:25 AM",
+  "at": "13 Nov, 5:30 AM",
   "g": [
    [
     "544535",
@@ -4048,7 +4062,7 @@
    ],
    [
     "505714",
-    "Gabriel India Ltd-$",
+    "Gabriel India",
     1641.95,
     16.57,
     1408.55
@@ -4097,7 +4111,7 @@
    ],
    [
     "513353",
-    "Cochin Minerals & Rutiles Ltd-$",
+    "Cochin Minerals & Rutiles",
     324.2,
     13.97,
     284.45
@@ -4244,7 +4258,7 @@
    ],
    [
     "524542",
-    "Sukhjit Starch & Chemicals Ltd-$",
+    "Sukhjit Starch & Chemicals",
     152.1,
     10.06,
     138.2
@@ -4407,7 +4421,7 @@
   "l": [
    [
     "523672",
-    "Flex Foods Ltd-$",
+    "Flex Foods",
     43.84,
     -18.78,
     53.98
@@ -4540,7 +4554,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes Ltd-$",
+    "Mukat Pipes",
     15.62,
     -8.44,
     17.06
@@ -4610,7 +4624,7 @@
    ],
    [
     "526508",
-    "Shahi Shipping Ltd-$",
+    "Shahi Shipping",
     10.05,
     -7.63,
     10.88
@@ -4659,7 +4673,7 @@
    ],
    [
     "524522",
-    "Laffans Petrochemicals Ltd-$",
+    "Laffans Petrochemicals",
     27.34,
     -7.01,
     29.4
@@ -4680,7 +4694,7 @@
    ],
    [
     "530821",
-    "SSPDL Ltd-$",
+    "SSPDL",
     13.57,
     -6.86,
     14.57
@@ -4708,7 +4722,7 @@
    ],
    [
     "524218",
-    "Resonance Specialties Ltd-$",
+    "Resonance Specialties",
     283.2,
     -6.63,
     303.3
@@ -4764,7 +4778,7 @@
    ],
    [
     "522207",
-    "Rasandik Engineering Industries India Ltd-$",
+    "Rasandik Engineering Industries India",
     54.19,
     -6.41,
     57.9
@@ -4807,7 +4821,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 5:25 AM",
+  "at": "13 Nov, 5:30 AM",
   "g": [
    [
     "B544535",
@@ -13920,7 +13934,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 5:25 AM",
+  "at": "13 Nov, 5:30 AM",
   "phase": "pre",
   "for": "Fri 13 Nov",
   "picks": [
@@ -13942,7 +13956,7 @@
       "x": "Up 11.9%, closing near the day's high on 30.5× normal volume"
      }
     ],
-    "s": 40.7
+    "s": 44.7
    },
    {
     "k": "KALYANKJIL",
@@ -14105,6 +14119,22 @@
      }
     ],
     "s": 18.2
+   },
+   {
+    "k": "MIDHANI",
+    "n": "Mishra Dhatu Nigam",
+    "p": 405.85,
+    "pct": 2.46,
+    "vx": 13.4,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Mishra Dhatu Nigam shares surge over 8% after Q2 profit more than doubles; MIDHANI jumps 19% in 2026 | Check key levels",
+      "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOYXhDZ0JzMEp3NkFyTmllZjZ4ZGZhVGhoOTRIX0JTQy04MGRKTlQtMjRwZ1B0MXltdk5JckZhYjhIOGQxbVhDdHBqSU5HRlZPbER4NzVhLVkyZFR0dHJOTUJJTFVNX1hjRGI1VXByREYwa2Q5YTRsR0I5YlRFYUR5djVpVHJPeTFKV0pvUHNrVGR6RFZGNzlrMWJCV3NsYkItaThqU25CVFFsTHM0UFBfaFdTbU80bHdEWEdlWEYwSThPWVVLM3UzZFlEMHN0cmhhMzA2WkNQdGhkQktBczNEeGV4c2g5Z1Mtc2F2enVxbzdDbk9lbGlQc1U4andqMHlvcGNqcUZubGJUVHhma2xiRHV30gGXAkFVX3lxTFBfZDRhSHI0cXFMUVo0YU5ZTXpBQnNUcjJ4MC05RHRib0lrcVpNd2MyTm1HMFJINXJmT1p5aTJXajk2Ym5FTGU4eVdmQ2UzN0RRNmp4YUZZYVdHdWxRWFZLSzR2RnMyUzhCWHE3VlBOaF9URjRNUHM5ZUpFVzJwZUhWMTBQdXJYaVhrVGE0Zy1LTjNTMnlsVjJMSEtlMEpNVDZ5ZW5aYVRMb3J2bTBGMmt5RGxOaUoyX0R1OE5tSWtZc2VKLS1LWGpMQlpYclVib2R0WFZCTGRjU09KTGtheFA0VmpXaEduVXVjZEtRczhtc0oteWNlMmFTeFVuNlpqdDRIcFdkRm01QkU4cGVFa2FSdXhpUHljTQ?oc=5"
+     }
+    ],
+    "s": 16.8
    },
    {
     "k": "PAYTM",
@@ -14315,21 +14345,6 @@
      }
     ],
     "s": 9.4
-   },
-   {
-    "k": "SIMPLEXINF",
-    "n": "Simplex Infrastructures",
-    "p": 302.2,
-    "pct": 3.97,
-    "vx": 4.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.0%, closing near the day's high on 4.7× normal volume"
-     }
-    ],
-    "s": 9.2
    }
   ],
   "fo": [
