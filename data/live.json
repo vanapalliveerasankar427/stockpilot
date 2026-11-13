@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 6:00 PM IST",
- "updated": "2026-11-13T18:00:34+05:30",
+ "label": "13 Nov 2026, 6:10 PM IST",
+ "updated": "2026-11-13T18:10:55+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 6:00 PM",
+  "date": "13 Nov 2026, 6:10 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -130,16 +130,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136699.0,
-    "ch": 474.0,
-    "pct": 0.35,
-    "t": "13 Nov, 6:00 PM"
+    "v": 136452.0,
+    "ch": 227.0,
+    "pct": 0.17,
+    "t": "13 Nov, 6:10 PM"
    },
    "silver": {
-    "v": 178306.0,
-    "ch": -418.0,
-    "pct": -0.23,
-    "t": "13 Nov, 6:00 PM"
+    "v": 178031.0,
+    "ch": -693.0,
+    "pct": -0.39,
+    "t": "13 Nov, 6:10 PM"
    }
   },
   "retail": {
@@ -350,11 +350,11 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13724.0,
-   "g24_10": 137240.0,
-   "ag_kg": 179020.0,
-   "ag": 179.02,
-   "t": "13 Nov, 6:00 PM"
+   "g24": 13700.0,
+   "g24_10": 137000.0,
+   "ag_kg": 178740.0,
+   "ag": 178.74,
+   "t": "13 Nov, 6:10 PM"
   }
  },
  "logos": [],
@@ -465,24 +465,24 @@
   "t": 1794572110
  },
  "brent": {
-  "v": 96.15,
+  "v": 96.22,
   "prev": 95.82,
-  "ch": 0.33,
-  "pct": 0.34,
+  "ch": 0.4,
+  "pct": 0.42,
   "high": 96.75,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794572405
+  "t": 1794572998
  },
  "goldSpot": {
-  "v": 3898.2,
+  "v": 3897.1,
   "prev": 3885.3,
-  "ch": 12.9,
-  "pct": 0.33,
+  "ch": 11.8,
+  "pct": 0.3,
   "high": 3926.9,
   "low": 3879.1,
   "open": 3917.1,
-  "t": 1794572424
+  "t": 1794573051
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 6:00 PM",
+  "fetched": "13 Nov, 6:10 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1124,6 +1124,13 @@
   ]
  },
  "news": [
+  {
+   "tag": "Economy",
+   "t": "Rupee weakens to 94.25/$, 10-year bond yield rises as crude prices surge",
+   "s": "Business Standard",
+   "d": "13 Nov, 6:04 PM",
+   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNNnZrWGgtbVdQNV8yd1IzYTFlemw4WE1kZFNzeHBPNWxWZUtBdFJQWmpqOHpIWGl3eEQ0SnBDaGZ1OW1iUDhpb0kwTnBOTnoxa19zRThxalplVHB0M08tRFRuWnozSkZieVZlSGRvQ3M2M1hNWnNjYkRQSzBHNW80a2Rfenc2THVTUV9ETXdpSGZEUjQ0eDBtRDY0bmNPaVQtMjdqM0FLOHc0cEZrOXNwZ3VIZnl0VHpBX2xadmhmcFVjX2ZfV1dOZ2Y0MFNHM1VSdHfSAdcBQVVfeXFMTldCckNjYTlHdVYxQjJCYnI2aUhKVkE3cGE4MmZnRmpuVDRLZFo2TE9sOGdHX0ZPdGpOQTZURmZCaktSeUc1WHZ2dVRTTmp2ZFpDVFVfSlFlelhIVng0QkpVWVFrVDZBVjBJODVSN3Y4QloxakRQVjJDZWtaWEx0cl9URTVfVnRzNlhkZ3E0OWNNYW80dXNaNXljX2x1aktoQlcwdlY2NmdqN0lhSmVpc0c2d3hMaXBFeWtwWjk5SUJFdkgwQ00tWUdad2o0LWtPc2Z2LXdYSU0?oc=5"
+  },
   {
    "tag": "IPO",
    "t": "Crystal Crop Protection IPO GMP Today with Listing Gain Expectation",
@@ -1214,21 +1221,13 @@
    "s": "The Economic Times",
    "d": "13 Nov, 9:05 AM",
    "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPXzl6LV9fRlFkOWpwOTVFWDZ6UHlsM1liZnBGWUQ2U19wQ2lROGc1X0UtQ1U4YzBXcFFMTUEzNkRpY0hxUjRyX0loVWtVYVpaM01iZ1k1dE14akhuSEtPNEk1MURLTGVkUkhsNjFFQmJBdGdPLVZIdURIRjJBeTN3WU5WbDJmZ0N4T01mWDE4YmJPQy1EUVJfM1RDSzRBWnFxRk1MWG9sZHV0OVJhT1hxVkx0LWsxMnh3NVRQdUI2dTRqdnRxd240czUtQ0hJOHU5cXV3MGI0UGNIMk1jbGJaY3Y5LVl6eGJxcnZhbkhyUDA2aUlPZjJ5c2NoNFlOTUt6TVAtVw?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "India Inc's ECB, FCCB fundraising plans fall to $7.05 billion in September",
-   "s": "Business Standard",
-   "d": "12 Nov, 6:49 PM",
-   "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQQnQzOHFoSUpWV3p2ZXREZ2dUMUlncWtXRG1Ib0NXbHViYTZyb3ZMaE5pREt6T0lXVUJRTjRJTkpqa0w0UzA0R0ExYnk0a1lJSnV0ai1QU054VWcxbzdmcC1SOW8yaFcxR01vSTdkeUN4b1NlU2hWRHNGbkN1ZzVwZzZDUWtmV2M3Y1loWjBpOVhRTmk3bjhDTXNJcmItUkdLRG4zcU40SnhldmJjLXp4bzhBN083RDk2cmN3b3B2TjhibG1nVW9tUzhzLWNaQ1ozS2IwcFZ30gHbAUFVX3lxTFBpZlllUUZqNWx2MVVVUHZBSW1nQjQyalJ2a1YxTmV4OWN1cTAwNk9fWFBBLURrUDlpMDJUM3lGTzVjQU1zdnQ5bHU0RlJ3cXlmNElNNGV5ZXpQcXpDMWNlNEtaWmZ2NjRkZGZzOUdoSm80MTRmbWJuSWVkdDE0WlB1ak0yaGZiRjNHVWFyRnpzR1FqR1hZdktaWW9qc1JZczBpVGhhaWdLVjhmM2xha0RwXzR5aWJGOUdvSE44SlBGOHY3Q0VVS2g3NDM1bWFpY1ZaZmxDaHJkSHFjTQ?oc=5"
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 282 headlines, 25 up, 18 down",
+  "outlook: 280 headlines, 25 up, 17 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2249,9 +2248,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 6:00 PM",
-  "mid": "13 Nov, 6:00 PM",
-  "small": "13 Nov, 6:00 PM"
+  "n50": "13 Nov, 6:10 PM",
+  "mid": "13 Nov, 6:10 PM",
+  "small": "13 Nov, 6:10 PM"
  },
  "midg": [
   [
@@ -2424,17 +2423,16 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 282 headlines, 25 up, 18 down",
+  "outlook: 280 headlines, 25 up, 17 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 6:00 PM"
+  "at": "13 Nov, 6:10 PM"
  },
  "global": [
   [
@@ -2469,9 +2467,9 @@
   ],
   [
    "FTSE 100",
-   10873.25,
-   0.09,
-   1794572133
+   10869.34,
+   0.06,
+   1794572754
   ],
   [
    "US 10Y yield",
@@ -2481,8 +2479,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 6:00 PM",
-  "headlines": 282,
+  "at": "13 Nov, 6:10 PM",
+  "headlines": 280,
   "screened": 1802,
   "cues": [
    "Hang Seng -2.8%"
@@ -2905,6 +2903,30 @@
     ]
    },
    {
+    "k": "POLICYBZR",
+    "n": "PB Fintech",
+    "s": 5.9,
+    "conf": "Medium",
+    "p": 1105.0,
+    "pct": 5.23,
+    "mc": 51330.0,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5",
+      "src": "Moneycontrol.com"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +5.2% on 2.3× usual volume, near the day's high",
+      "s": 1.9175372283142085
+     }
+    ]
+   },
+   {
     "k": "BNAGROCHEM",
     "n": "BN Agrochem",
     "s": 5.0,
@@ -3047,28 +3069,6 @@
       "s": 1
      }
     ]
-   },
-   {
-    "k": "TIPSMUSIC",
-    "n": "Tips Music",
-    "s": 3.1,
-    "conf": "Low",
-    "p": 816.45,
-    "pct": 3.93,
-    "mc": 10381.9,
-    "sec": "Communication Services",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +3.9% on 2.7× usual volume, near the day's high",
-      "s": 2.0970043420886926
-     },
-     {
-      "k": "price",
-      "t": "Trading at a 52-week high",
-      "s": 1
-     }
-    ]
    }
   ],
   "down": [
@@ -3145,25 +3145,6 @@
       "k": "price",
       "t": "Closed weak: -5.2% on 4.8× usual volume, near the day's low",
       "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "IRCTC",
-    "n": "Indian Railway Catering And Tourism Corporation",
-    "s": -8,
-    "conf": "High",
-    "p": 457.7,
-    "pct": -2.81,
-    "mc": 36616.0,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "IRCTC Q2 Results: Net profit falls 23% as Rail Neer swings to loss, catering profit declines",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPUjRwNU93ZGpSN2FueU03aVNpTnJDZ2tHSGJxTWpYalVWdjExd3ZTVWk0TVRDWU9HeXNjNVkyRmljODd1VGN2eWE2bE9hclRzVmxidTFabV83UWY3QktPTkZBdXFCbHRQTDF0cENfbEtHRGJreElkYjZEN0VfMl9CLXBMSzNQMUFJTXBheTI2WXRVckhPV2VVeWRNdEc1WDhIWldpX19jaUQ3MUtFRTJEdUdJMC1wYWE5TndweENHSkRpSWJnS212b3pGXzRzaXgyVFpjeVo1YThqY21XWXZDbDRXdy1fWnBZ0gHuAUFVX3lxTE0zSTNOdGpsZnY0all0dXZudFhWODFMM3Z1cU9Ca05STmdMVkZXQ1VwTDlEYXJVMk1xRW1aNXJLRTNOM0VfNGd0Qmx1V0lkb2ktWVVONE03ODh3Vy11VnRrSmhSVXBqTTRrc0dNNTdZVVpiMjgySGw5cWVZTVN3Z1pZYW1rNjVkYWZldlhhVF9EM0JfcHYtak9RclBzOHFJdFV3Tmw1azRQdnF3SEJhR2ZNN1JUbVNMM2dINEx0V09SNmdTWDFPakg2amxEbjZ3SEhzT19GRlBDMkJNUnlVWVBPd201bnlzQVQtNWxQemc?oc=5",
-      "src": "CNBC TV18"
      }
     ]
    },
@@ -3953,7 +3934,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 6:00 PM",
+  "at": "13 Nov, 6:10 PM",
   "hi": [
    [
     "BONFIG",
@@ -4010,7 +3991,7 @@
   "nlo": 3
  },
  "bse_movers": {
-  "at": "13 Nov, 6:00 PM",
+  "at": "13 Nov, 6:10 PM",
   "g": [
    [
     "542460",
@@ -4133,7 +4114,7 @@
    ],
    [
     "505890",
-    "Kennametal India Ltd-$",
+    "Kennametal India",
     3960.5,
     14.03,
     3473.15
@@ -4154,7 +4135,7 @@
    ],
    [
     "509874",
-    "Shalimar Paints Ltd-$",
+    "Shalimar Paints",
     95.67,
     12.35,
     85.15
@@ -4224,7 +4205,7 @@
    ],
    [
     "532430",
-    "BF Utilities Ltd-$",
+    "BF Utilities",
     497.55,
     10.44,
     450.5
@@ -4350,7 +4331,7 @@
    ],
    [
     "531744",
-    "Gini Silk Mills Ltd-$",
+    "Gini Silk Mills",
     63.24,
     9.03,
     58.0
@@ -4583,7 +4564,7 @@
    ],
    [
     "500346",
-    "Punjab Communications Ltd-$",
+    "Punjab Communications",
     54.85,
     -8.83,
     60.16
@@ -4632,7 +4613,7 @@
    ],
    [
     "531847",
-    "Asian Star Company Ltd-$",
+    "Asian Star Company",
     641.1,
     -8.41,
     700.0
@@ -4822,7 +4803,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 6:00 PM",
+  "at": "13 Nov, 6:10 PM",
   "g": [
    [
     "MSTCLTD",
@@ -13935,7 +13916,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 6:00 PM",
+  "at": "13 Nov, 6:10 PM",
   "phase": "close",
   "for": "Mon 16 Nov",
   "picks": [
@@ -14205,6 +14186,26 @@
     "s": 13.2
    },
    {
+    "k": "POLICYBZR",
+    "n": "PB Fintech",
+    "p": 1105.0,
+    "pct": 5.23,
+    "vx": 2.3,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
+      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 5.2%, closing near the day's high on 2.3× normal volume"
+     }
+    ],
+    "s": 12.0
+   },
+   {
     "k": "KCPSUGIND",
     "n": "KCP Sugar and Industries Corporation",
     "p": 27.56,
@@ -14328,22 +14329,6 @@
      }
     ],
     "s": 8.6
-   },
-   {
-    "k": "ROHLTD",
-    "n": "Royal Orchid Hotels",
-    "p": 307.05,
-    "pct": 5.01,
-    "vx": 22.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Royal Orchid Hotels Q2 net profit up 236% to ₹144 million",
-      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkNWUFBoNlFmamZrSXg1LU1PcXhaWk92QXBrcUZlWEJfY2hzdUNHSlZaekJRNGhVZHNkT0I3N0JNbll5Q21FdnJlNkpsYVlPM2sxM0g0X0tCWXVRdjNUc0lHbkNDWlVVZ1g1TVQtRnNGcllsZ0VKcUNMcGFITWVGb0ItSjRfZm52NWZKcHZ2Z2dCQjhWd1pVUWF2SndjQm9YM3VNcE1UeEFwbnp2UUE?oc=5"
-     }
-    ],
-    "s": 8.4
    }
   ],
   "fo": [
@@ -14424,11 +14409,16 @@
     "fo": true,
     "why": [
      {
+      "t": "news",
+      "x": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
+      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMmhtVU5sVWtfN0lYN2ZmSHBqMjNPYlFTeHQ3ZGVZSXdaQlJrNG1wU2pwMTF2Ym13bXdjaEEyQVpNbUE1OW9GWGdsZjNWMktsZGFyN2NzX3ZrX08xTDNNMlpEUFNnRjJYbE9fQmNxdUgtWXBBbFBYR0E3NC1fanMzMTR4cGZTMzdobXVZVjdRcUhrNmMzbTBmVW9CZW9XdWNSRDB6U1N4MkFpOWlsSFpmTnJSSkJsd2hIY0JXdVJRTFJ1T29waHhkbW1qeGd0NVU2OHFRQV9LcE84QVg0dVJsd1J5MlJxWFMtbmRVSNIB8gFBVV95cUxOZ084NlFsbHhiZjFFZFRNWnlJeVFwVHFzRzVUZ3g4RUtLRG5uRklBRTBjU2RtU3NtdGplbjhTdENYUTZTV0RQLU42UXdmeVU0QThzVVFLUUtHQUlPS0VOS2NCQzhQWk83RmtfYW5aMGdfTlU3TVk2anE0T1lKLVBrUUhZbUd3WUtfRlpqdTNuZGZxUHRud21id0JIdGZJR0dnZjIzQzkzN0RXVmJWSU5hTkt1Zk9vYzJCQno1b19GalBtTEg1SzhIdzFWZWdYMmlnaEdrRjVkellfVndZYUE1cTFQcTQzM0Q2VlpJZGZGckRnUQ?oc=5"
+     },
+     {
       "t": "momentum",
       "x": "Up 5.2%, closing near the day's high on 2.3× normal volume"
      }
     ],
-    "s": 6.1
+    "s": 12.0
    },
    {
     "k": "BAJFINANCE",
