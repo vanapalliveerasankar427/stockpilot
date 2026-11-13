@@ -1,13 +1,13 @@
 {
- "label": "13 Nov 2026, 3:44 PM IST",
- "updated": "2026-11-13T15:44:42+05:30",
+ "label": "13 Nov 2026, 3:45 PM IST",
+ "updated": "2026-11-13T15:45:28+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "13 Nov 2026, 3:44 PM",
+  "date": "13 Nov 2026, 3:45 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -130,16 +130,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 136965.0,
-    "ch": 740.0,
-    "pct": 0.54,
-    "t": "13 Nov, 3:44 PM"
+    "v": 136925.0,
+    "ch": 700.0,
+    "pct": 0.51,
+    "t": "13 Nov, 3:45 PM"
    },
    "silver": {
-    "v": 178449.0,
-    "ch": -275.0,
-    "pct": -0.15,
-    "t": "13 Nov, 3:44 PM"
+    "v": 178497.0,
+    "ch": -227.0,
+    "pct": -0.13,
+    "t": "13 Nov, 3:45 PM"
    }
   },
   "retail": {
@@ -350,11 +350,11 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13751.0,
-   "g24_10": 137510.0,
-   "ag_kg": 179160.0,
-   "ag": 179.16,
-   "t": "13 Nov, 3:44 PM"
+   "g24": 13747.0,
+   "g24_10": 137470.0,
+   "ag_kg": 179210.0,
+   "ag": 179.21,
+   "t": "13 Nov, 3:45 PM"
   }
  },
  "logos": [],
@@ -377,7 +377,7 @@
    "high": 81879.51,
    "low": 81288.75,
    "open": 81813.42,
-   "t": 1794563982
+   "t": 1794564027
   },
   "BANKNIFTY": {
    "v": 61034.1,
@@ -465,24 +465,24 @@
   "t": 1794564131
  },
  "brent": {
-  "v": 95.35,
+  "v": 95.41,
   "prev": 95.82,
-  "ch": -0.47,
-  "pct": -0.49,
+  "ch": -0.41,
+  "pct": -0.43,
   "high": 96.75,
   "low": 95.07,
   "open": 95.55,
-  "t": 1794564279
+  "t": 1794564321
  },
  "goldSpot": {
-  "v": 3907.6,
+  "v": 3908.5,
   "prev": 3885.3,
-  "ch": 22.3,
-  "pct": 0.57,
+  "ch": 23.2,
+  "pct": 0.6,
   "high": 3926.9,
   "low": 3879.1,
   "open": 3917.1,
-  "t": 1794564280
+  "t": 1794564316
  },
  "sectors": [
   [
@@ -1068,7 +1068,7 @@
   "dii_sell": 22186.3,
   "fii_buy": 20273.32,
   "fii_sell": 12442.72,
-  "fetched": "13 Nov, 3:40 PM",
+  "fetched": "13 Nov, 3:45 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1223,7 +1223,13 @@
    "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQQnQzOHFoSUpWV3p2ZXREZ2dUMUlncWtXRG1Ib0NXbHViYTZyb3ZMaE5pREt6T0lXVUJRTjRJTkpqa0w0UzA0R0ExYnk0a1lJSnV0ai1QU054VWcxbzdmcC1SOW8yaFcxR01vSTdkeUN4b1NlU2hWRHNGbkN1ZzVwZzZDUWtmV2M3Y1loWjBpOVhRTmk3bjhDTXNJcmItUkdLRG4zcU40SnhldmJjLXp4bzhBN083RDk2cmN3b3B2TjhibG1nVW9tUzhzLWNaQ1ozS2IwcFZ30gHbAUFVX3lxTFBpZlllUUZqNWx2MVVVUHZBSW1nQjQyalJ2a1YxTmV4OWN1cTAwNk9fWFBBLURrUDlpMDJUM3lGTzVjQU1zdnQ5bHU0RlJ3cXlmNElNNGV5ZXpQcXpDMWNlNEtaWmZ2NjRkZGZzOUdoSm80MTRmbWJuSWVkdDE0WlB1ak0yaGZiRjNHVWFyRnpzR1FqR1hZdktaWW9qc1JZczBpVGhhaWdLVjhmM2xha0RwXzR5aWJGOUdvSE44SlBGOHY3Q0VVS2g3NDM1bWFpY1ZaZmxDaHJkSHFjTQ?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo_calendar crashed: could not convert string to float: '—'",
+  "subscription: 0 IPOs from 2 cards",
+  "bse eod 2026-11-12: 5192 scrips",
+  "outlook: 275 headlines, 25 up, 25 down",
+  "option chains: 46 ok, 0 failed, 220 stored"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-13",
@@ -2242,9 +2248,9 @@
   }
  },
  "nse": {
-  "n50": "13 Nov, 3:44 PM",
-  "mid": "13 Nov, 3:44 PM",
-  "small": "13 Nov, 3:44 PM"
+  "n50": "13 Nov, 3:45 PM",
+  "mid": "13 Nov, 3:45 PM",
+  "small": "13 Nov, 3:45 PM"
  },
  "midg": [
   [
@@ -2420,13 +2426,13 @@
   "ipo_calendar crashed: could not convert string to float: '—'",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-12: 5192 scrips",
-  "outlook: 279 headlines, 25 up, 25 down",
-  "option chains: 60 ok, 0 failed, 220 stored"
+  "outlook: 275 headlines, 25 up, 25 down",
+  "option chains: 46 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5278,
   "quotes": 4800,
-  "at": "13 Nov, 3:40 PM"
+  "at": "13 Nov, 3:45 PM"
  },
  "global": [
   [
@@ -2461,9 +2467,9 @@
   ],
   [
    "FTSE 100",
-   10893.72,
-   0.28,
-   1794563982
+   10894.18,
+   0.29,
+   1794564027
   ],
   [
    "US 10Y yield",
@@ -2473,8 +2479,8 @@
   ]
  ],
  "outlook": {
-  "at": "13 Nov, 3:40 PM",
-  "headlines": 279,
+  "at": "13 Nov, 3:45 PM",
+  "headlines": 275,
   "screened": 1802,
   "cues": [
    "Hang Seng -2.8%"
@@ -2501,7 +2507,7 @@
       "k": "news",
       "t": "Black Box Q2 Results: Shares rise after profit jumps 30%, revenue grows 22%",
       "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZkdjR3ZjU3NkZHdZSXhSTmtlOHBEVTU0MFprYk9WUFhiNWdRdmhYenpHUk12TVZrZXYtcHZ6am9YMjZhT3ZOa1dzQUs3SWlYc3JrYzBoYTNLREVuS1BvYk15b2s1MjRDdVZnbDgxd3dkc0ZqOExxanpvMElLMEVLMll2aGpRakpWeE1DeWNodVVuXy1aai0xcVExc2pzWlVKT1AzVmgzME1HbnJja3U40gG0AUFVX3lxTE80WmhjVDJNM3N5ckFHb21vZUdtRG9UQ1BxUnBQTERqWEpXNnR5OUpBdE94SWNGajctU3ZEeFZxMWQ3UHNPX1ZoSzBDclNaMGhpWTVHQjNsaW04czhqNHNsQlBYNVBoQW9HWDdMdjFyX3U5bjU0ajZ2cURHRERzNldoaWhxekpIR0JjLXdmc3V2WEFaSDQ3SDFBbWd0WFIzMDZzdzE0UUNkQkNXNEw2VUZDaERieg?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNFpoY1QyTTNzeXJBR29tb2VHbURvVENQcVJwUExEalhKVzZ0eTlKQXRPeEljRmo3LVN2RHhWcTFkN1BzT19WaEswQ3JTWjBoaVk1R0IzbGltOHM4ajRzbEJQWDVQaEFvR1g3THYxcl91OW41NGo2dnFER0REczZXaGlocXpKSEdCYy13ZnN1dlhBWkg0N0gxQW1ndFhSMzA2c3cxNFFDZEJDVzRMNlVGQ2hEYnrSAbQBQVVfeXFMTzRaaGNUMk0zc3lyQUdvbW9lR21Eb1RDUHFScFBMRGpYSlc2dHk5SkF0T3hJY0ZqNy1TdkR4VnExZDdQc09fVmhLMENyU1owaGlZNUdCM2xpbThzOGo0c2xCUFg1UGhBb0dYN0x2MXJfdTluNTRqNnZxREdERHM2V2hpaHF6SkhHQmMtd2ZzdXZYQVpINDdIMUFtZ3RYUjMwNnN3MTRRQ2RCQ1c0TDZVRkNoRGJ6?oc=5",
       "src": "CNBC TV18"
      },
      {
@@ -2581,44 +2587,6 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPYmFYbGd0UGJsUjNVWER0dUZUdE9ONmozQmZHNndLYW1IUzNoUmRLX3dVbDJTR0VBNDBMb2d1NmxhRFV5YlFjdkE4NWxHTHJac20xMzZzYjl3VjJEUFZsUnJqT3RmQlpJeHBaUGUyalk4YmZnbzdZNkFQalNtQ1dfLUNpcFRZRnUzM2oxakd6UEtQVjI0MDNTMjVqMm9IOUNLZ0x1blBzN2VWVGNQTzZTOHBsQkxpUktGaDJUZHlQamFjTFNpOU5URE5kby1JcTJSak5KZXhkMUgxbENM0gHiAUFVX3lxTE5OYk43bU5LeHdscE1kTlViVGNVZHJKcEkxdWNTV2tXdDc1clVUbFlUSlFqckk0Y0JwWWx5cWdMVWwzRUp2UDNNZGtwZmoxNkQ3QktBUllLXzktM0JJcG1WVEN6NHF1QkI4a2lVaGVsbFRTZFNCdzZoeF92NkE1R0xWMVl3amNteFYyQnMtb0tRam1ZMTM3SVE0VVN4N3p0NEdLYmVfUVBFLWo4em9CdVBvUEprWm9ZR1Y3di04eUx6dldKak12NDlfSVNITVJiazEzVnEtdmF3RTREaFV6cEc5N1E?oc=5",
       "src": "CNBC TV18"
-     }
-    ]
-   },
-   {
-    "k": "GVT&D",
-    "n": "GE Vernova T&D India",
-    "s": 13.8,
-    "conf": "High",
-    "p": 4420.0,
-    "pct": 5.24,
-    "mc": 113172.6,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "GE Vernova, Siemens Energy, Hitachi: Power equipment makers surge up to 13%; why are stocks rallying despite weak market?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPbjNNTi1Ibm03OUxYcUc2Ql9Bb3FXNGRXSXByMTZLdURaOXo3Ti1GbDU3NXJNMVVFMngxZE9UTjlxSUxTMHpZcGdKUW1XNDVXZjRka2lmeUVMNkQ4X3UyTWZMZDl3N1pzQVl4Qkh2R3JPYzBwWmYyT1NncEVyMk56dXRfNzFNSnFOSTgyXzNnR242cTZMVzl6ekFYR2NIUmZkQVhDaWVDM3c1MGVEZVFGS3JwV21KQy14TXV4Xy1QSWU4U1dwVXdCeXY0cXFLNHVXWGF5dVp0aWxwWXlhWVk1NHVOTzJ0ZW0zMWItNkVGaG5SMWdxa3B0N3ZSZVRuc1lYQUxLTg?oc=5",
-      "src": "Upstox"
-     },
-     {
-      "k": "news",
-      "t": "GE Vernova T&D India Ltd Sees Sharp Open Interest Surge Amid Bullish Market Momentum",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPeGFqZGVoTlpaU0tGd29JbHJNMjEyT2ZuMkw4RnM5UnBBNUlqcHZIYXFaS3ZCcmZkUDhRaUpTYWl0ZTZueXZlMWM2WF9KS3poTUtfekg4SGRpd1Y3aWtNb0NUSmlqc0ZzVWhlejc3SmRoc0pRY3FvOWptSGZGVENxdEdlNmZyOHV5Z3g4NmFNaTE5R1FTQjMtWmNuTmxuamQ1MTdXUWFuNzg5eWU2Q0F4eVB6cWZ0LUcyX1VaeVhiQ0dHdkRfRmNPMnlrQzFKcTRqTzdmTTEzaDE?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "news",
-      "t": "Power index rises 1%: Siemens Energy, GE Vernova rally up to 5%; here's why",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQQ19PN2x2V0VwQk1QZVI5NU9pbnJObDBFMVZsZ0dCM040aEkyRTBKZ2wtaVpkcTRMVzBkdlJpS0VmN1lHOVFENWFPRzcyLW9zTnVGTkdWXzlNMEFLQnZSQUdrMzhNMDdaYjZ3aXFMbHNMRl9zdG5LVHpnMEt3ZG1DZUYta2tNcXJzNE55LUo3Q0NLX2Y2am4xVFh6NlRLanpfQi1wT3BuZm5MVGRKTkkyM1B1eUlxdndPTnFCb2JTSG5Da1V0X082RXhtcTAtVXNvLVdN0gHYAUFVX3lxTE5pRE02UUFBZm9MbExxYzM5QWJNTE5qQmpMRXhEc3NheDltcFc0SlFDdWM1VXQtSEhzeW4yeWNweWZid1pJWTliQi1mRW53NHVnbmpVUXY3eWZWcWs0d0lmOTk2azhYS3I2MjJGRkE2RllTcmk2bWkxNVpoQm5yLS1haUpyckFxTjNLalBib0lydlZNeEVyR0h3X0ZXUWhobUVENjJmbmNvdVQ3RmUwQlJhcXBWemtla3VIWWpoSVlpVUxRWFFvRU9ybncyd25TODdZcGlyRkhkYw?oc=5",
-      "src": "Business Standard"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.2% on 2.0× usual volume, near the day's high",
-      "s": 1.7632341848732644
      }
     ]
    },
@@ -2707,6 +2675,37 @@
     ]
    },
    {
+    "k": "GVT&D",
+    "n": "GE Vernova T&D India",
+    "s": 9.8,
+    "conf": "High",
+    "p": 4420.0,
+    "pct": 5.24,
+    "mc": 113172.6,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "GE Vernova, Siemens Energy, Hitachi: Power equipment makers surge up to 13%; why are stocks rallying despite weak market?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPbjNNTi1Ibm03OUxYcUc2Ql9Bb3FXNGRXSXByMTZLdURaOXo3Ti1GbDU3NXJNMVVFMngxZE9UTjlxSUxTMHpZcGdKUW1XNDVXZjRka2lmeUVMNkQ4X3UyTWZMZDl3N1pzQVl4Qkh2R3JPYzBwWmYyT1NncEVyMk56dXRfNzFNSnFOSTgyXzNnR242cTZMVzl6ekFYR2NIUmZkQVhDaWVDM3c1MGVEZVFGS3JwV21KQy14TXV4Xy1QSWU4U1dwVXdCeXY0cXFLNHVXWGF5dVp0aWxwWXlhWVk1NHVOTzJ0ZW0zMWItNkVGaG5SMWdxa3B0N3ZSZVRuc1lYQUxLTg?oc=5",
+      "src": "Upstox"
+     },
+     {
+      "k": "news",
+      "t": "Power index rises 1%: Siemens Energy, GE Vernova rally up to 5%; here's why",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQQ19PN2x2V0VwQk1QZVI5NU9pbnJObDBFMVZsZ0dCM040aEkyRTBKZ2wtaVpkcTRMVzBkdlJpS0VmN1lHOVFENWFPRzcyLW9zTnVGTkdWXzlNMEFLQnZSQUdrMzhNMDdaYjZ3aXFMbHNMRl9zdG5LVHpnMEt3ZG1DZUYta2tNcXJzNE55LUo3Q0NLX2Y2am4xVFh6NlRLanpfQi1wT3BuZm5MVGRKTkkyM1B1eUlxdndPTnFCb2JTSG5Da1V0X082RXhtcTAtVXNvLVdN0gHYAUFVX3lxTE5pRE02UUFBZm9MbExxYzM5QWJNTE5qQmpMRXhEc3NheDltcFc0SlFDdWM1VXQtSEhzeW4yeWNweWZid1pJWTliQi1mRW53NHVnbmpVUXY3eWZWcWs0d0lmOTk2azhYS3I2MjJGRkE2RllTcmk2bWkxNVpoQm5yLS1haUpyckFxTjNLalBib0lydlZNeEVyR0h3X0ZXUWhobUVENjJmbmNvdVQ3RmUwQlJhcXBWemtla3VIWWpoSVlpVUxRWFFvRU9ybncyd25TODdZcGlyRkhkYw?oc=5",
+      "src": "Business Standard"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +5.2% on 2.0× usual volume, near the day's high",
+      "s": 1.7632341848732644
+     }
+    ]
+   },
+   {
     "k": "ENRIN",
     "n": "Siemens Energy India",
     "s": 8,
@@ -2748,25 +2747,6 @@
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSGFvSnBSRXpMZnVKY2cxbjlENDVvQ05STXBuNm1TVWNRU0tkTnkxZGl3VFJVYV9sa3JmQWRET1luYXB2aTNGbHFnaGdWakpxaVJVRW9aZ05zN0VnaVF6VUQyNEgxWWlLTnNqWGk2SVNneGpRU2VybmVOXzE1MUpPaHZZWHo3WlFvamtxZFdONDZTYkJ0VlZzR0lYcnVtb2prRHRNVzBqdWQxV1dYZDR1RDhMeVhRazZYeHYwUmRVUFRTcC11?oc=5",
       "src": "TradingView"
-     }
-    ]
-   },
-   {
-    "k": "TONBO",
-    "n": "Tonbo Imaging India",
-    "s": 8,
-    "conf": "High",
-    "p": 1538.5,
-    "pct": 1.1,
-    "mc": 8812.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tonbo Imaging Q2FY27: Net profit ₹235 crore, revenue jumps 1975% YoY",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTWlyVjlIZXFXdFRSZ2FPaUhZbnE3U1BhWTdIclNDNU9RRzBydFRrZzUtemhVcllfZkluM3ZXQ0dwU0lsSnhSbGVZaHhrWl80VmQ2MDNOV1YweVdfcjN2eVV4YmZieHFzY0FrdDdXNTNVdmRFZ183bDM4RUZnVUVZX0JSVWFxdWFqV2JIWEZzSjBGUThlTElZYWhxcUFzNUNDZ3NYTlJUMFJHT1hpTWQxNTBGb2lzaGNENWNZdnp0c0VkM28?oc=5",
-      "src": "scanx.trade"
      }
     ]
    },
@@ -3059,6 +3039,23 @@
      {
       "k": "price",
       "t": "Closed strong: +4.7% on 15.3× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "BFUTILITIE",
+    "n": "BF Utilities",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 498.55,
+    "pct": 10.72,
+    "mc": 1877.9,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +10.7% on 226.3× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -4060,7 +4057,7 @@
   }
  },
  "hilo": {
-  "at": "13 Nov, 3:40 PM",
+  "at": "13 Nov, 3:45 PM",
   "hi": [
    [
     "BONFIG",
@@ -4121,7 +4118,7 @@
   "nlo": 4
  },
  "bse_movers": {
-  "at": "13 Nov, 3:44 PM",
+  "at": "13 Nov, 3:45 PM",
   "g": [
    [
     "542460",
@@ -4244,7 +4241,7 @@
    ],
    [
     "505890",
-    "Kennametal India Ltd-$",
+    "Kennametal India",
     3967.2,
     14.22,
     3473.15
@@ -4293,7 +4290,7 @@
    ],
    [
     "509874",
-    "Shalimar Paints Ltd-$",
+    "Shalimar Paints",
     95.0,
     11.57,
     85.15
@@ -4433,7 +4430,7 @@
    ],
    [
     "532430",
-    "BF Utilities Ltd-$",
+    "BF Utilities",
     495.2,
     9.92,
     450.5
@@ -4510,7 +4507,7 @@
    ],
    [
     "531744",
-    "Gini Silk Mills Ltd-$",
+    "Gini Silk Mills",
     63.24,
     9.03,
     58.0
@@ -4933,7 +4930,7 @@
   ]
  },
  "allmov": {
-  "at": "13 Nov, 3:40 PM",
+  "at": "13 Nov, 3:45 PM",
   "g": [
    [
     "MSTCLTD",
@@ -14046,7 +14043,7 @@
   ]
  },
  "tw": {
-  "at": "13 Nov, 3:40 PM",
+  "at": "13 Nov, 3:45 PM",
   "phase": "close",
   "for": "Mon 16 Nov",
   "picks": [
@@ -14184,26 +14181,6 @@
     "s": 21.2
    },
    {
-    "k": "GVT&D",
-    "n": "GE Vernova T&D India",
-    "p": 4420.0,
-    "pct": 5.24,
-    "vx": 2.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "GE Vernova, Siemens Energy, Hitachi: Power equipment makers surge up to 13%; why are stocks rallying despite weak market?",
-      "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPbjNNTi1Ibm03OUxYcUc2Ql9Bb3FXNGRXSXByMTZLdURaOXo3Ti1GbDU3NXJNMVVFMngxZE9UTjlxSUxTMHpZcGdKUW1XNDVXZjRka2lmeUVMNkQ4X3UyTWZMZDl3N1pzQVl4Qkh2R3JPYzBwWmYyT1NncEVyMk56dXRfNzFNSnFOSTgyXzNnR242cTZMVzl6ekFYR2NIUmZkQVhDaWVDM3c1MGVEZVFGS3JwV21KQy14TXV4Xy1QSWU4U1dwVXdCeXY0cXFLNHVXWGF5dVp0aWxwWXlhWVk1NHVOTzJ0ZW0zMWItNkVGaG5SMWdxa3B0N3ZSZVRuc1lYQUxLTg?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.2%, closing near the day's high on 2.0× normal volume"
-     }
-    ],
-    "s": 19.1
-   },
-   {
     "k": "BNAGROCHEM",
     "n": "BN Agrochem",
     "p": 162.66,
@@ -14268,6 +14245,26 @@
      }
     ],
     "s": 15.4
+   },
+   {
+    "k": "GVT&D",
+    "n": "GE Vernova T&D India",
+    "p": 4420.0,
+    "pct": 5.24,
+    "vx": 2.0,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "GE Vernova, Siemens Energy, Hitachi: Power equipment makers surge up to 13%; why are stocks rallying despite weak market?",
+      "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPbjNNTi1Ibm03OUxYcUc2Ql9Bb3FXNGRXSXByMTZLdURaOXo3Ti1GbDU3NXJNMVVFMngxZE9UTjlxSUxTMHpZcGdKUW1XNDVXZjRka2lmeUVMNkQ4X3UyTWZMZDl3N1pzQVl4Qkh2R3JPYzBwWmYyT1NncEVyMk56dXRfNzFNSnFOSTgyXzNnR242cTZMVzl6ekFYR2NIUmZkQVhDaWVDM3c1MGVEZVFGS3JwV21KQy14TXV4Xy1QSWU4U1dwVXdCeXY0cXFLNHVXWGF5dVp0aWxwWXlhWVk1NHVOTzJ0ZW0zMWItNkVGaG5SMWdxa3B0N3ZSZVRuc1lYQUxLTg?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 5.2%, closing near the day's high on 2.0× normal volume"
+     }
+    ],
+    "s": 15.1
    },
    {
     "k": "BPLPHARMA",
@@ -14341,22 +14338,6 @@
       "t": "results",
       "x": "Q2 results impact: FACT shares jump 3% as net profit rises 88% YoY",
       "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSGFvSnBSRXpMZnVKY2cxbjlENDVvQ05STXBuNm1TVWNRU0tkTnkxZGl3VFJVYV9sa3JmQWRET1luYXB2aTNGbHFnaGdWakpxaVJVRW9aZ05zN0VnaVF6VUQyNEgxWWlLTnNqWGk2SVNneGpRU2VybmVOXzE1MUpPaHZZWHo3WlFvamtxZFdONDZTYkJ0VlZzR0lYcnVtb2prRHRNVzBqdWQxV1dYZDR1RDhMeVhRazZYeHYwUmRVUFRTcC11?oc=5"
-     }
-    ],
-    "s": 11.2
-   },
-   {
-    "k": "TONBO",
-    "n": "Tonbo Imaging India",
-    "p": 1538.5,
-    "pct": 1.1,
-    "vx": 0.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Tonbo Imaging Q2FY27: Net profit ₹235 crore, revenue jumps 1975% YoY",
-      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTWlyVjlIZXFXdFRSZ2FPaUhZbnE3U1BhWTdIclNDNU9RRzBydFRrZzUtemhVcllfZkluM3ZXQ0dwU0lsSnhSbGVZaHhrWl80VmQ2MDNOV1YweVdfcjN2eVV4YmZieHFzY0FrdDdXNTNVdmRFZ183bDM4RUZnVUVZX0JSVWFxdWFqV2JIWEZzSjBGUThlTElZYWhxcUFzNUNDZ3NYTlJUMFJHT1hpTWQxNTBGb2lzaGNENWNZdnp0c0VkM28?oc=5"
      }
     ],
     "s": 11.2
@@ -14453,6 +14434,21 @@
      }
     ],
     "s": 7.4
+   },
+   {
+    "k": "POLICYBZR",
+    "n": "PB Fintech",
+    "p": 1105.0,
+    "pct": 5.23,
+    "vx": 2.7,
+    "fo": true,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 5.2%, closing near the day's high on 2.7× normal volume"
+     }
+    ],
+    "s": 6.9
    }
   ],
   "fo": [
@@ -14473,6 +14469,22 @@
     "s": 32.2
    },
    {
+    "k": "AMBER",
+    "n": "Amber Enterprises India",
+    "p": 6772.0,
+    "pct": 9.07,
+    "vx": 12.3,
+    "fo": true,
+    "why": [
+     {
+      "t": "results",
+      "x": "Amber Enterprises shares surge 14% post-Q2 results",
+      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZTk4cllzTThfN2ZpWWhDbENQRmZUbG41WktlYXdTWXdPNWNLTTBRUWNadl9pRm5JanpvZzZzTjJjOFM4Q215RGEtR1cyUnJEdXJRR0x2MVJNWGhaaWc5Nl80bHFNLVJpQk5ZSlZ4bi1tZkhKRmtwTGdWZFpmTXVEc2lPNHpzaGFYT2M3X0pYRmRvdV8yR1JqVnBGLUJTZXMxTHRkR2cwWmhwZkdZWHNQa2FCakTSAboBQVVfeXFMTzlPRTFFdi1oUkhUR3ZNVjl0S0o1Q1dzU3c1d0NSY05LZWlhd0EyUVk0YmlDM0Fnb2ZVdFFxZmJkWkphaHAybjdwTFRrNW9JWHFrcUZFUzFlWGZuYnVDQUNPNzNyUmQxUUc2Yy1qQXRPNlAxUTE5QmVCT1VIdU5ha1BuWU1qemhWWUdGMXJpczZ1LV9LQ0ZIb0tlTlhSQXZZeTdFQkNOVUlfd0ppS2pVQ3hNTFk2ZklGQWR3?oc=5"
+     }
+    ],
+    "s": 15.4
+   },
+   {
     "k": "GVT&D",
     "n": "GE Vernova T&D India",
     "p": 4420.0,
@@ -14490,23 +14502,7 @@
       "x": "Up 5.2%, closing near the day's high on 2.0× normal volume"
      }
     ],
-    "s": 19.1
-   },
-   {
-    "k": "AMBER",
-    "n": "Amber Enterprises India",
-    "p": 6772.0,
-    "pct": 9.07,
-    "vx": 12.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "results",
-      "x": "Amber Enterprises shares surge 14% post-Q2 results",
-      "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZTk4cllzTThfN2ZpWWhDbENQRmZUbG41WktlYXdTWXdPNWNLTTBRUWNadl9pRm5JanpvZzZzTjJjOFM4Q215RGEtR1cyUnJEdXJRR0x2MVJNWGhaaWc5Nl80bHFNLVJpQk5ZSlZ4bi1tZkhKRmtwTGdWZFpmTXVEc2lPNHpzaGFYT2M3X0pYRmRvdV8yR1JqVnBGLUJTZXMxTHRkR2cwWmhwZkdZWHNQa2FCakTSAboBQVVfeXFMTzlPRTFFdi1oUkhUR3ZNVjl0S0o1Q1dzU3c1d0NSY05LZWlhd0EyUVk0YmlDM0Fnb2ZVdFFxZmJkWkphaHAybjdwTFRrNW9JWHFrcUZFUzFlWGZuYnVDQUNPNzNyUmQxUUc2Yy1qQXRPNlAxUTE5QmVCT1VIdU5ha1BuWU1qemhWWUdGMXJpczZ1LV9LQ0ZIb0tlTlhSQXZZeTdFQkNOVUlfd0ppS2pVQ3hNTFk2ZklGQWR3?oc=5"
-     }
-    ],
-    "s": 15.4
+    "s": 15.1
    },
    {
     "k": "ENRIN",
