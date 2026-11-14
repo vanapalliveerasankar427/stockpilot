@@ -279,6 +279,7 @@ def metals(out):
     except Exception as e:
         log(f"ibja failed: {e}")
     mcx_rates(m)
+    dp_rates(m)
     rt = dict(m.get("retail") or {})
     try:
         t = text_of(get("https://www.goodreturns.in/gold-rates/").text)
@@ -300,8 +301,40 @@ def metals(out):
 def mcx(out):
     m = dict(out.get("metals") or {})
     mcx_rates(m)
+    dp_rates(m)
     m["date"] = NOW.strftime("%-d %b %Y, %-I:%M %p")
     out["metals"] = m
+
+
+DP_FEED = "https://statewisebcast.dpgold.in:7768/VOTSBroadcastStreaming/Services/xml/GetLiveRateByTemplateID/dpgold"
+
+
+def dp_rates(m):
+    """Physical bullion dealer rates from dP Gold (dP Bullions, Nellore): silver 1 kg bar,
+    silver 30 kg pan-India, gold 999 per gram, plus international spot and USD/INR.
+    Physical silver can trade well above MCX, so this is the silver rate shown first."""
+    try:
+        t = get(DP_FEED, headers={**UA, "Referer": "https://www.dpgold.com/", "Origin": "https://www.dpgold.com"}).text
+        rows = {}
+        for line in t.splitlines():
+            c = [x.strip() for x in line.split("\t")]
+            if len(c) >= 7 and c[2]:
+                try:
+                    rows[c[2].upper()] = {"b": float(c[3]), "a": float(c[4]), "h": float(c[5]), "l": float(c[6])}
+                except ValueError:
+                    pass
+        pick = lambda pre: next((v for k, v in rows.items() if k.startswith(pre)), None)
+        dp = {"ag1": pick("SILVER 1 KG"), "ag30": pick("SILVER 30 KG"), "g999": pick("GOLD IMP 999") or pick("GOLD 999"),
+              "xau": pick("GOLD SPOT"), "xag": pick("SILVER SPOT"), "fx": pick("USDINR")}
+        dp = {k: v for k, v in dp.items() if v}
+        if dp.get("ag1") or dp.get("ag30"):
+            dp["at"] = int(time.time())
+            dp["t"] = NOW.strftime("%-d %b, %-I:%M %p")
+            m["dp"] = dp
+        else:
+            log("dp gold: no silver rows")
+    except Exception as e:
+        log(f"dp gold: {str(e)[:120]}")
 
 
 def mcx_rates(m):

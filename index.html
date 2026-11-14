@@ -1204,6 +1204,9 @@ body:not(.ready) footer{display:none}
 .faq-i summary{list-style:none;cursor:pointer;padding:14px 44px 14px 16px;font-weight:700;font-size:15px;position:relative;line-height:1.4}.faq-i summary::-webkit-details-marker{display:none}
 .faq-i summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--muted)}.faq-i[open] summary::after{content:"−"}
 .faq-i p{margin:0;padding:0 16px 14px;font-size:14.5px;line-height:1.65;color:var(--ink2,var(--ink))}.faq-more{margin:20px 0;font-size:14px}
+.dp-r{padding:11px 0;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}.dp-r:first-child{border-top:0}
+.dp-a{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.dp-a span{font-weight:700;font-size:14.5px}.dp-a b{font-size:19px;white-space:nowrap}.dp-a b small{font-size:12px;color:var(--muted);font-weight:600}
+.dp-b{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:3px}
 .pn-coin{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#fbbf24,#d97706);flex:none}
 .pn-warn{margin:0 0 14px;padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.45;background:color-mix(in srgb,#f59e0b 13%,transparent);border:1px solid color-mix(in srgb,#f59e0b 32%,transparent)}
 .pn-bands{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
@@ -2057,7 +2060,8 @@ const METALS={date:'30 Oct 2026, 11:15 AM',
 const mchg=(v,p)=>p?`<span class="${v>=p?'up':'down'}" style="font-size:12.5px;font-weight:600">${v>=p?'▲':'▼'} ${Math.abs((v/p-1)*100).toFixed(2)}%</span>`:'';
 // Today's rate shown as the headline everywhere: jeweller retail (what shops quote, updated daily incl. weekends); IBJA is the previous working day's benchmark
 // silver: the 999 bullion rate (same everywhere in India; retail sites often show a stale round number), gold: jeweller rate
-const goldToday=()=>{const R=METALS.retail||{},I=METALS.ibja||{},B=METALS.bullion||{};return {g24:R.g24||B.g24||I.g999,g22:R.g22||I.g916,g18:R.g18||I.g750,ag:B.ag||R.ag||I.ag,src:R.g24?(R.src||'Goodreturns'):'IBJA',agSrc:B.ag?'India Bullions':(R.ag?'Goodreturns':'IBJA')}};
+const dpNow=()=>{const D=(DPL&&DPL.ag1?DPL:null)||METALS.dp||{};return D.ag1&&D.at&&Date.now()/1000-D.at<4*86400?D:null};
+const goldToday=()=>{const R=METALS.retail||{},I=METALS.ibja||{},B=METALS.bullion||{},D=dpNow();return {g24:R.g24||B.g24||I.g999,g22:R.g22||I.g916,g18:R.g18||I.g750,ag:(D?D.ag1.a/1000:null)||B.ag||R.ag||I.ag,src:R.g24?(R.src||'Goodreturns'):'IBJA',agSrc:D?'dP Gold, 1 kg bar':B.ag?'India Bullions':(R.ag?'Goodreturns':'IBJA')}};
 const mcxOpen=()=>{const n=new Date(Date.now()+(330+new Date().getTimezoneOffset())*6e4),h=n.getHours()+n.getMinutes()/60;return n.getDay()>0&&n.getDay()<6&&h>=9&&h<23.5};
 function metalCards(m,full){const I=m.ibja,r=x=>Math.round(x).toLocaleString('en-IN');
   return `<div class="metal-grid num">
@@ -2067,7 +2071,7 @@ function metalCards(m,full){const I=m.ibja,r=x=>Math.round(x).toLocaleString('en
      <div class="metal silver"><span>Silver · 999</span><b>₹${r(I.ag*1000)}</b><small>per kg · ₹${I.ag.toFixed(2)}/g ${mchg(I.ag,I.pag)}</small></div>
      ${full?`<div class="metal gold"><span>Gold · 995</span><b>₹${r(I.g995*10)}</b><small>per 10 g · ₹${r(I.g995)}/g</small></div><div class="metal gold"><span>Gold 14K · 585</span><b>₹${r(I.g585*10)}</b><small>per 10 g · ₹${r(I.g585)}/g</small></div>`:''}
    </div>`}
-function renderMetals(){const m=METALS,el=document.getElementById('metals');if(!el)return;const X=m.mcx||{};
+function renderMetals(){const m=METALS,el=document.getElementById('metals');if(!el)return;if(!DPL&&!dpOnce){dpOnce=1;fetch(DP_FEED,{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{const d=t&&dpParse(t);if(d){DPL=d;renderMetals()}}).catch(()=>{})}const X=m.mcx||{};
   const T=goldToday(),r=x=>Math.round(x).toLocaleString('en-IN'),I=m.ibja||{};
   el.innerHTML=`<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Gold &amp; silver · today's rate</span><h3 style="font-size:20px;margin-top:4px">Precious metals</h3></div><span class="pill plain">${esc(String(m.date||'').split(',')[0])} · ${esc(T.src)}</span></div>
    <div class="metal-grid num">
@@ -2090,6 +2094,19 @@ function lvSpark(id,arr,col){const c=document.getElementById(id);if(!c||arr.leng
   x.clearRect(0,0,W,H);const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,col+'55');g.addColorStop(1,col+'00');x.beginPath();
   arr.forEach((v,i)=>{const px=i/(arr.length-1)*W,py=H-4-(v-mn)/r*(H-8);i?x.lineTo(px,py):x.moveTo(px,py)});x.strokeStyle=col;x.lineWidth=2;x.stroke();x.lineTo(W,H);x.lineTo(0,H);x.closePath();x.fillStyle=g;x.fill()}
 function lvSet(id,txt,dir){const el=document.getElementById(id);if(!el)return;if(el.textContent!==txt){el.textContent=txt;if(dir){el.classList.remove('flup','fldn');void el.offsetWidth;el.classList.add(dir>0?'flup':'fldn')}}}
+// ---- Physical bullion rates from dP Gold (public live feed), polled while the gold page is open
+let DPL=null,dpT=null,dpOnce=0;const DP_FEED='https://statewisebcast.dpgold.in:7768/VOTSBroadcastStreaming/Services/xml/GetLiveRateByTemplateID/dpgold';
+function dpParse(t){const R={};t.split('\n').forEach(l=>{const c=l.split('\t').map(x=>x.trim());if(c.length>=7&&c[2]){const v=c.slice(3,7).map(Number);if(v.every(isFinite))R[c[2].toUpperCase()]={b:v[0],a:v[1],h:v[2],l:v[3]}}});
+  const pk=p=>{const k=Object.keys(R).find(k=>k.startsWith(p));return k?R[k]:null};const d={ag1:pk('SILVER 1 KG'),ag30:pk('SILVER 30 KG'),g999:pk('GOLD IMP 999')||pk('GOLD 999'),xau:pk('GOLD SPOT'),xag:pk('SILVER SPOT'),fx:pk('USDINR')};return d.ag1||d.ag30?{...d,at:Date.now()/1000,live:1}:null}
+function dpCardHTML(){setTimeout(dpStart,0);const D=(DPL&&DPL.ag1?DPL:null)||METALS.dp;if(!D||!(D.ag1||D.ag30))return `<span class="lbl">Physical bullion · dP Gold</span><p class="note">Loading dealer rates…</p>`;
+  const r=x=>Math.round(x).toLocaleString('en-IN'),row=(n,o,unit,per)=>o?`<div class="dp-r"><div class="dp-a"><span>${n}</span><b>₹${r(o.a)}<small> ${unit}</small></b></div><div class="dp-b"><span>${per(o.a)}</span><span>Low ₹${r(o.l)} · High ₹${r(o.h)}</span></div></div>`:'';
+  const at=D.at?new Date(D.at*1000).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'}):'';
+  return `<div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">Physical bullion · dP Gold ${D.live?'· <span class="up">● live</span>':''}</span><h3 style="font-size:19px;margin-top:4px">Dealer rate for bars</h3></div><span class="pill plain">${esc(at)}</span></div>
+   <div class="num" style="margin-top:6px">${row('Silver 1 kg bar',D.ag1,'/kg',v=>'₹'+(v/1000).toFixed(2)+'/g')}${row('Silver 30 kg (pan India)',D.ag30,'/kg',v=>'₹'+(v/1000).toFixed(2)+'/g')}${row('Gold 999',D.g999,'/g',v=>'₹'+r(v*10)+' per 10 g')}</div>
+   <p class="src">Live selling rate of dP Bullions (Nellore), a physical gold and silver dealer, refreshed every few seconds. Physical silver often trades above MCX futures. Taxes as per the dealer; jewellers add making charges.</p>`}
+async function dpTick(){const c=document.getElementById('dpCard');if(!c){clearInterval(dpT);dpT=null;return}if(document.hidden)return;
+  try{const t=await fetch(DP_FEED,{cache:'no-store'}).then(r=>r.ok?r.text():'');const d=t&&dpParse(t);if(d){DPL=d;c.innerHTML=dpCardHTML()}}catch(e){}}
+function dpStart(){if(dpT)return;dpTick();dpT=setInterval(dpTick,8000)}
 async function lvTick(){if(!document.getElementById('lvCard')||document.hidden)return;
   if(!mcxOpen()){const st=document.getElementById('lvState'),dot=document.getElementById('lvDot'),tm=document.getElementById('lvTime');if(st)st.textContent='MCX closed · last price (opens Mon–Fri 9:00 AM)';if(dot)dot.classList.add('off');if(tm)tm.textContent='';return}
   try{const d=await lvFetch();if(!(d.xau>0&&d.xag>0))throw 0;LV.fails=0;const X=(METALS&&METALS.mcx)||{};
@@ -2140,6 +2157,7 @@ function renderMetalsPage(){const m=METALS,el=document.getElementById('metalspag
      <div class="lv-i silver"><span>MCX silver · per kg</span><b class="num" id="lvS">₹${X.silver?Math.round(X.silver.v).toLocaleString('en-IN'):'—'}</b><em class="num" id="lvSc"></em><canvas id="lvSs" width="300" height="46" aria-hidden="true"></canvas></div></div>
     <div class="lv-x num"><span>Gold $<b id="lvXau">—</b>/oz</span><span>Silver $<b id="lvXag">—</b>/oz</span><span>USD/INR <b id="lvFx">—</b></span></div>
     <p class="src">Updates every second from the international spot price, applied to the latest MCX rate. Indian rates include duty and taxes; confirm with your jeweller before buying.</p></div>
+   <div class="glass card" id="dpCard">${dpCardHTML()}</div>
    <div class="glass card"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">IBJA benchmark · ${esc(I.sess)}${I.sess&&!String(m.date||'').startsWith(I.sess)?' (last working day)':''}</span><h3 style="font-size:19px;margin-top:4px">Official wholesale rate</h3></div><a class="link" href="https://ibjarates.com/" target="_blank" rel="noopener" style="font-size:13px">ibjarates.com ↗</a></div>${metalCards(m,true)}
     <p class="src">Used for Sovereign Gold Bonds and gold loans. Excludes 3% GST and making charges. Change shown against the previous day's rate.</p></div>
    <div class="grid2 sec">
@@ -2840,7 +2858,7 @@ function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=n
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
-  if(view==='stocks')renderStocks();if(view==='growth')renderGrowth();if(view==='faq')renderFaq();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
+  if(view==='stocks')renderStocks();if(view==='growth')renderGrowth();if(view==='faq')renderFaq();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50);setTimeout(dpStart,60)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
   scrollTo({top:0});requestAnimationFrame(animateView)}
 addEventListener('hashchange',route);
 
@@ -2926,7 +2944,7 @@ function patchLabels(){if(!LIVED)return;const set=(id,h)=>{const e=document.getE
 function softRefresh(){if(document.querySelector('.overlay.on')||document.querySelector('input:focus,select:focus')||(typeof openSel!=='undefined'&&openSel))return false;
   const v=document.querySelector('.view.on'),id=v?v.id.slice(2):'markets',y=scrollY;
   renderTape();renderMarkets();renderMetals();renderHomeIpo();renderPulse();renderIpos();
-  if(id==='today')loadAllQuotes(true).then(renderToday);if(id==='metals'){renderMetalsPage();renderCityCard();setTimeout(lvStart,50)}if(id==='stocks')renderStocks();if(id==='stock'&&curStock){if(byStock[curStock])renderStockPage(curStock);else loadAllQuotes(true).then(()=>renderAnyStock(curStock))}if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
+  if(id==='today')loadAllQuotes(true).then(renderToday);if(id==='metals'){renderMetalsPage();renderCityCard();setTimeout(lvStart,50);setTimeout(dpStart,60)}if(id==='stocks')renderStocks();if(id==='stock'&&curStock){if(byStock[curStock])renderStockPage(curStock);else loadAllQuotes(true).then(()=>renderAnyStock(curStock))}if(id==='news')renderNews();if(id==='watchlist')renderWLAll();
   if(id==='ipo-gmp')renderGMP();if(id==='ipo-sub')renderSub();if(id==='ipo-screener')renderScreener();
   const h=(location.hash||'').slice(1);if(h.startsWith('gmp-'))renderGmpPage(h.slice(4));
   patchLabels();scrollTo(0,y);return true}

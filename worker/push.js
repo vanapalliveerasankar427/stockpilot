@@ -120,7 +120,8 @@ const inr = v => "₹" + (+v).toLocaleString("en-IN", { maximumFractionDigits: v
 async function metalNow() { // the same headline numbers the website shows (jeweller 24K per gram, silver per kg)
   const m = (await (await fetch(LIVE, { cf: { cacheTtl: 120 } })).json()).metals || {};
   const R = m.retail || {}, B = m.bullion || {}, I = m.ibja || {};
-  const g = R.g24 || B.g24 || I.g999, ag = B.ag || R.ag || I.ag;
+  const D = m.dp || {}, dpOk = D.at && Date.now() / 1000 - D.at < 4 * 86400;
+  const g = R.g24 || B.g24 || I.g999, ag = (dpOk && D.ag1 ? D.ag1.a / 1000 : null) || B.ag || R.ag || I.ag;
   return { g: g ? +g : null, a: ag ? +ag * 1000 : null };
 }
 export async function priceCron(env, quotes) {
@@ -174,7 +175,8 @@ export async function digestCron(env, quotes) {
   if (!n || !n[0] || !n[3] || ymd(new Date(n[3] * 1000 + 330 * 60000)) !== day) return; // market hasn't traded today (yet)
   let L = {}; try { L = await (await fetch(LIVE, { cf: { cacheTtl: 60 } })).json(); } catch {}
   const M = L.metals || {}, R = M.retail || {}, B = M.bullion || {}, X = M.mcx || {};
-  const g24 = R.g24 || B.g24, ag = B.ag_kg || (B.ag ? B.ag * 1000 : null) || (R.ag ? R.ag * 1000 : null);
+  const D = M.dp || {}, dpOk = D.at && Date.now() / 1000 - D.at < 4 * 86400;
+  const g24 = R.g24 || B.g24, ag = (dpOk && D.ag1 ? D.ag1.a : null) || B.ag_kg || (B.ag ? B.ag * 1000 : null) || (R.ag ? R.ag * 1000 : null);
   const mc = v => v && v.pct != null ? ` (MCX ${pc(v.pct)})` : "";
   const metals = [g24 ? `Gold 24K ₹${fx0(g24 * 10)}/10g${mc(X.gold)}` : "", ag ? `Silver ₹${fx0(ag)}/kg${mc(X.silver)}` : ""].filter(Boolean).join(" · ");
   const idx = `Sensex ${fx0(s && s[0] || 0)} (${pc(s && s[1] || 0)}) · Nifty ${fx0(n[0])} (${pc(n[1])})`;
