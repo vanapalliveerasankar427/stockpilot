@@ -1,13 +1,13 @@
 {
- "label": "15 Nov 2026, 5:29 AM IST",
- "updated": "2026-11-15T05:29:50+05:30",
+ "label": "15 Nov 2026, 6:00 AM IST",
+ "updated": "2026-11-15T06:00:07+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "15 Nov 2026, 5:29 AM",
+  "date": "15 Nov 2026, 6:00 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136750.0,
     "ch": 525.0,
     "pct": 0.39,
-    "t": "15 Nov, 5:29 AM"
+    "t": "15 Nov, 6:00 AM"
    },
    "silver": {
     "v": 176543.0,
     "ch": 234.0,
     "pct": 0.13,
-    "t": "15 Nov, 5:29 AM"
+    "t": "15 Nov, 6:00 AM"
    }
   },
   "retail": {
@@ -345,8 +345,8 @@
      "ag": 195.0
     }
    },
-   "at": "15 Nov, 5:29 AM",
-   "at_ts": 1794700753.987602,
+   "at": "15 Nov, 6:00 AM",
+   "at_ts": 1794702607.624652,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -354,26 +354,26 @@
    "g24_10": 137320.0,
    "ag_kg": 177280.0,
    "ag": 177.28,
-   "t": "15 Nov, 5:29 AM"
+   "t": "15 Nov, 6:00 AM"
   },
   "dp": {
    "ag1": {
     "b": 182597.0,
     "a": 182597.0,
-    "h": 184382.0,
-    "l": 181773.0
+    "h": 182597.0,
+    "l": 182597.0
    },
    "ag30": {
     "b": 179597.0,
     "a": 179597.0,
-    "h": 181382.0,
-    "l": 178773.0
+    "h": 179597.0,
+    "l": 179597.0
    },
    "g999": {
     "b": 14016.9,
     "a": 14016.9,
-    "h": 14044.1,
-    "l": 13980.2
+    "h": 14016.9,
+    "l": 14016.9
    },
    "xau": {
     "b": 3884.8,
@@ -391,10 +391,10 @@
     "b": 94.32,
     "a": 94.33,
     "h": 94.33,
-    "l": 94.27
+    "l": 94.33
    },
-   "at": 1794700794,
-   "t": "15 Nov, 5:29 AM"
+   "at": 1794702614,
+   "t": "15 Nov, 6:00 AM"
   }
  },
  "logos": [],
@@ -1102,7 +1102,7 @@
   "crystalcropprotection": {
    "gmp": 27.0,
    "gsrc": "IPOMarket",
-   "gat": "15 Nov, 5:29 AM",
+   "gat": "15 Nov, 6:00 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1121,7 +1121,7 @@
   "watranarentals": {
    "gmp": 22.0,
    "gsrc": "IPOMarket",
-   "gat": "15 Nov, 5:29 AM",
+   "gat": "15 Nov, 6:00 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1146,7 +1146,7 @@
   "dii_sell": 13999.53,
   "fii_buy": 18339.57,
   "fii_sell": 12603.02,
-  "fetched": "15 Nov, 5:29 AM",
+  "fetched": "15 Nov, 6:00 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1206,7 +1206,7 @@
    "tag": "IPO",
    "t": "Crystal Crop Protection IPO Details",
    "s": "IPO Watch",
-   "d": "15 Nov, 2:41 AM",
+   "d": "15 Nov, 5:45 AM",
    "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03N1RIcE9ySVlhZ0c0bzZaSGZ4dDRYQW5FcXJtb3Zwc2NwSkZmX2Y1RmpHMXdnc2tYNnRpajZPQWhobEkxNllPV0hQNjRpdUVzWFBicm1XdkNtOUpWM1VHem9CZHVQWFU?oc=5"
   },
   {
@@ -1305,11 +1305,14 @@
   "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers: empty",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
+  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 221 headlines, 25 up, 7 down",
+  "outlook: 222 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2330,9 +2333,9 @@
   }
  },
  "nse": {
-  "n50": "15 Nov, 5:29 AM",
-  "mid": "15 Nov, 5:29 AM",
-  "small": "15 Nov, 5:29 AM"
+  "n50": "15 Nov, 6:00 AM",
+  "mid": "15 Nov, 6:00 AM",
+  "small": "15 Nov, 6:00 AM"
  },
  "midg": [
   [
@@ -2508,17 +2511,20 @@
   "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers: empty",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
+  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
+  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 221 headlines, 25 up, 7 down",
+  "outlook: 222 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5276,
   "quotes": 4790,
-  "at": "15 Nov, 5:29 AM"
+  "at": "15 Nov, 6:00 AM"
  },
  "global": [
   [
@@ -2565,8 +2571,8 @@
   ]
  ],
  "outlook": {
-  "at": "15 Nov, 5:29 AM",
-  "headlines": 221,
+  "at": "15 Nov, 6:00 AM",
+  "headlines": 222,
   "screened": 1798,
   "cues": [
    "Hang Seng -1.6%"
@@ -3675,7 +3681,7 @@
   }
  },
  "hilo": {
-  "at": "15 Nov, 5:29 AM",
+  "at": "15 Nov, 6:00 AM",
   "hi": [
    [
     "ASAHIINDIA",
@@ -4552,7 +4558,7 @@
   ]
  },
  "allmov": {
-  "at": "15 Nov, 5:29 AM",
+  "at": "15 Nov, 6:00 AM",
   "g": [
    [
     "MSTCLTD",
@@ -4659,21 +4665,9 @@
   ]
  },
  "rescal": {
-  "ts": 1794698945.5081131,
-  "at": "15 Nov, 4:58 AM",
+  "ts": 1794702620.1175752,
+  "at": "15 Nov, 6:00 AM",
   "items": [
-   {
-    "k": "B531458",
-    "n": "Boston Commerce Ltd",
-    "d": "2026-11-15",
-    "src": "BSE"
-   },
-   {
-    "k": "B539229",
-    "n": "Majestic Research Services and Solutions Ltd",
-    "d": "2026-11-15",
-    "src": "BSE"
-   },
    {
     "k": "SANDHAR",
     "n": "Sandhar Technologies Limited",
@@ -4681,40 +4675,10 @@
     "src": "NSE"
    },
    {
-    "k": "B521238",
-    "n": "Bharat Global Developers Ltd",
-    "d": "2026-11-16",
-    "src": "BSE"
-   },
-   {
-    "k": "B523752",
-    "n": "Trans India House Impex Ltd",
-    "d": "2026-11-16",
-    "src": "BSE"
-   },
-   {
     "k": "LIBAS",
     "n": "Libas Consumer Products Limited",
     "d": "2026-11-17",
     "src": "NSE"
-   },
-   {
-    "k": "B530267",
-    "n": "Arigato Universe Ltd",
-    "d": "2026-11-17",
-    "src": "BSE"
-   },
-   {
-    "k": "B545007",
-    "n": "Core4 Engineers Ltd",
-    "d": "2026-11-17",
-    "src": "BSE"
-   },
-   {
-    "k": "B540027",
-    "n": "Prabhat Technologies (India) Ltd",
-    "d": "2026-11-17",
-    "src": "BSE"
    },
    {
     "k": "ANSALAPI",
@@ -4735,24 +4699,6 @@
     "src": "NSE"
    },
    {
-    "k": "B500013",
-    "n": "Ansal Properties & Infrastructure Ltd",
-    "d": "2026-11-18",
-    "src": "BSE"
-   },
-   {
-    "k": "B545011",
-    "n": "BLS Polymers Ltd",
-    "d": "2026-11-18",
-    "src": "BSE"
-   },
-   {
-    "k": "B539175",
-    "n": "Starbeam Ventures Ltd",
-    "d": "2026-11-18",
-    "src": "BSE"
-   },
-   {
     "k": "ANTGRAPHIC",
     "n": "Antarctica Limited",
     "d": "2026-11-19",
@@ -4765,40 +4711,10 @@
     "src": "NSE"
    },
    {
-    "k": "B544055",
-    "n": "Muthoot Microfin Ltd",
-    "d": "2026-11-19",
-    "src": "BSE"
-   },
-   {
-    "k": "B531885",
-    "n": "SVA India Ltd",
-    "d": "2026-11-19",
-    "src": "BSE"
-   },
-   {
     "k": "VALECHAENG",
     "n": "Valecha Engineering Limited",
     "d": "2026-11-20",
     "src": "NSE"
-   },
-   {
-    "k": "B532389",
-    "n": "Valecha Engineering Ltd-$",
-    "d": "2026-11-20",
-    "src": "BSE"
-   },
-   {
-    "k": "B524695",
-    "n": "Asian Fertilizers Ltd",
-    "d": "2026-11-21",
-    "src": "BSE"
-   },
-   {
-    "k": "B545015",
-    "n": "Carver Roboweld Ltd",
-    "d": "2026-11-23",
-    "src": "BSE"
    },
    {
     "k": "BRNL",
@@ -4821,7 +4737,7 @@
   ]
  },
  "tw": {
-  "at": "15 Nov, 5:29 AM",
+  "at": "15 Nov, 6:00 AM",
   "phase": "pre",
   "for": "Sun 15 Nov",
   "picks": [
@@ -5273,23 +5189,7 @@
     "s": 4.0
    }
   ],
-  "due": [
-   {
-    "k": "B531458",
-    "n": "Boston Commerce",
-    "p": 12.12,
-    "pct": 1.59,
-    "vx": null,
-    "fo": false,
-    "why": [
-     {
-      "t": "due",
-      "x": "Results today"
-     }
-    ],
-    "s": 4.0
-   }
-  ],
+  "due": [],
   "snap": {
    "d": "2026-11-13",
    "phase": "evening",
