@@ -1,13 +1,13 @@
 {
- "label": "16 Nov 2026, 1:45 AM IST",
- "updated": "2026-11-16T01:45:07+05:30",
+ "label": "16 Nov 2026, 2:15 AM IST",
+ "updated": "2026-11-16T02:15:34+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "16 Nov 2026, 1:45 AM",
+  "date": "16 Nov 2026, 2:15 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -133,13 +133,13 @@
     "v": 136750.0,
     "ch": 525.0,
     "pct": 0.39,
-    "t": "16 Nov, 1:45 AM"
+    "t": "16 Nov, 2:15 AM"
    },
    "silver": {
     "v": 176543.0,
     "ch": 234.0,
     "pct": 0.13,
-    "t": "16 Nov, 1:45 AM"
+    "t": "16 Nov, 2:15 AM"
    }
   },
   "retail": {
@@ -345,8 +345,8 @@
      "ag": 195.0
     }
    },
-   "at": "16 Nov, 1:45 AM",
-   "at_ts": 1794773707.23819,
+   "at": "16 Nov, 2:15 AM",
+   "at_ts": 1794775534.630896,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -354,25 +354,25 @@
    "g24_10": 137330.0,
    "ag_kg": 177290.0,
    "ag": 177.29,
-   "t": "16 Nov, 1:45 AM"
+   "t": "16 Nov, 2:15 AM"
   },
   "dp": {
    "ag1": {
     "b": 182597.0,
     "a": 182597.0,
-    "h": 183200.0,
+    "h": 182597.0,
     "l": 182597.0
    },
    "ag30": {
     "b": 179597.0,
     "a": 179597.0,
-    "h": 180200.0,
+    "h": 179597.0,
     "l": 179597.0
    },
    "g999": {
     "b": 14016.9,
     "a": 14016.9,
-    "h": 14027.0,
+    "h": 14016.9,
     "l": 14016.9
    },
    "xau": {
@@ -391,10 +391,10 @@
     "b": 94.32,
     "a": 94.33,
     "h": 94.33,
-    "l": 94.27
+    "l": 94.33
    },
-   "at": 1794773716,
-   "t": "16 Nov, 1:45 AM"
+   "at": 1794775543,
+   "t": "16 Nov, 2:15 AM"
   }
  },
  "logos": [],
@@ -506,9 +506,9 @@
  },
  "brent": {
   "v": 95.84,
-  "prev": 95.82,
-  "ch": 0.02,
-  "pct": 0.02,
+  "prev": 95.84,
+  "ch": 0.0,
+  "pct": 0.0,
   "high": 97.12,
   "low": 95.07,
   "open": null,
@@ -516,9 +516,9 @@
  },
  "goldSpot": {
   "v": 3886.3,
-  "prev": 3885.3,
-  "ch": 1.0,
-  "pct": 0.03,
+  "prev": 3886.3,
+  "ch": 0.0,
+  "pct": 0.0,
   "high": 3927.2,
   "low": 3871.1,
   "open": null,
@@ -1102,7 +1102,7 @@
   "crystalcropprotection": {
    "gmp": 15.0,
    "gsrc": "IPOMarket",
-   "gat": "16 Nov, 1:45 AM",
+   "gat": "16 Nov, 2:15 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1125,7 +1125,7 @@
   "watranarentals": {
    "gmp": 22.0,
    "gsrc": "IPOMarket",
-   "gat": "16 Nov, 1:45 AM",
+   "gat": "16 Nov, 2:15 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1154,7 +1154,7 @@
   "dii_sell": 13999.53,
   "fii_buy": 18339.57,
   "fii_sell": 12603.02,
-  "fetched": "16 Nov, 1:45 AM",
+  "fetched": "16 Nov, 2:15 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1211,6 +1211,13 @@
  },
  "news": [
   {
+   "tag": "Markets",
+   "t": "Sensex Gains 308 Points, Nifty Closes Above 23,000 as IT and Pharma Stocks Lead Rally",
+   "s": "INDIA New England News",
+   "d": "16 Nov, 12:48 AM",
+   "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWndrT0xmdkJxeDluWUM1cjJYX2Z2VUZyQXlqMVZzZkMyUzFXQTJsQ2JlMzU2MUJzejJfLU0yZzNlRUFELTN2dWozZGRJcXVlUzlyZ3RwSlctcUJGSkpmcGRxUDhWRGxuRUt1V1cyY1A5SG1GWnBHb0s0VDE5Vk1FcGtDczFsSDNqR29vTENzTjRkemV6M1AtcnY3aXdGdW9qUGZBb2NSd2dZTTh2UW1VcFdn?oc=5"
+  },
+  {
    "tag": "IPO",
    "t": "Mahanadi Coalfields IPO GMP Today with Listing Gain Expectation",
    "s": "IPO Watch",
@@ -1244,13 +1251,6 @@
    "s": "Business Standard",
    "d": "15 Nov, 2:22 PM",
    "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQY0J6b3duejZISmRXam5GaGs3cUhfbEZaSzVZTWF2a1VSb0pSTHdYVDN5bWFsNlE2RkdlREsxSjNCOEYwR2M5OWRjRXdOci1QMTVIbEh0Ty1OSnk5YUtwV2lCN2d3WDlfR0xnUDhHSkhLX1lBRGc4NnpzY0dCUk0tR2tIMzM0ZE1ybHNkOGhGX09fd0N4TWp5QmtNNXp4WGp0R3YwazhtcnJydG9NeGZpeWF1S2ZOcS1veWZxeExwSTlGZUtCTElWVTFtZHl2eWh4UDNxczBR0gHbAUFVX3lxTE03Nkp0OGZzUkE5OGRVU19YbnFiN3N0U0pYRTJOdVhNOU9nd2ZLMjVYd21QbUpCNEI3NUEtR0tUVWJNM0pyZFNoaGUtQm56ak9vLXlBQlNFVC1iYTg4dC1YbGViVVlTWlpaaGR5ZWJnZFF0V2NqNUprWDZZQTJZLXNrbHpJR2FJMlB4R25JNmdaSTJRUEt1bmJlYTNMU1UyaU1CSGw2NXJzc2NIc1g5UmNTRlJ4czRYUXBzcllvN2FNZ1ZubDFOS05LLW5jV25CVjlwNlFhT3ZOOE4zVQ?oc=5"
-  },
-  {
-   "tag": "Markets",
-   "t": "Indian Stock Markets Extend Winning Streak to Seven Sessions as Sensex Surges 1,718 Points",
-   "s": "INDIA New England News",
-   "d": "15 Nov, 9:35 AM",
-   "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNVHJDT0hWamk1V0lZRGpKUzBNZmtlZlpKYnc3MlNyU0FGUk5FWXpYTVBoRjluUGN2dTJQdVhDMnR2enFDZUFCU2lHNnVOREdWV3JaOEdfY19CMG81Qm81SkIyeHVsbktMUDNrSGEzR1g3cXpYV0tEdGNWZmxoMklkYUN0REhQNEQyUFJ0NmV5MF84cUNDa1lGR0ZwSmpVSlo4VUUybjJYMzZSclBSZlltX0hvQ0pEd2NRWWc?oc=5"
   },
   {
    "tag": "Markets",
@@ -1314,8 +1314,9 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 3 cards",
+  "results cal: 23 upcoming (10 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 201 headlines, 25 up, 8 down",
+  "outlook: 195 headlines, 25 up, 9 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2336,9 +2337,9 @@
   }
  },
  "nse": {
-  "n50": "16 Nov, 1:45 AM",
-  "mid": "16 Nov, 1:45 AM",
-  "small": "16 Nov, 1:45 AM"
+  "n50": "16 Nov, 2:15 AM",
+  "mid": "16 Nov, 2:15 AM",
+  "small": "16 Nov, 2:15 AM"
  },
  "midg": [
   [
@@ -2515,14 +2516,15 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 3 cards",
+  "results cal: 23 upcoming (10 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 201 headlines, 25 up, 8 down",
+  "outlook: 195 headlines, 25 up, 9 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5276,
   "quotes": 4790,
-  "at": "16 Nov, 1:45 AM"
+  "at": "16 Nov, 2:15 AM"
  },
  "global": [
   [
@@ -2569,8 +2571,8 @@
   ]
  ],
  "outlook": {
-  "at": "16 Nov, 1:45 AM",
-  "headlines": 201,
+  "at": "16 Nov, 2:15 AM",
+  "headlines": 195,
   "screened": 1798,
   "cues": [
    "Hang Seng -1.6%"
@@ -2668,6 +2670,32 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQUEtpTEU5TVdqUkpkSS1BcmhUSUZwWWZ4RjdJdkN2NGJaT1JTNEhNTTJ4TGtWYm9GQWR2aHphT3h5WHZVWUM3NlFReDVlbkdXVjdLWWM4V054X05nM1pmQlQ0RDFCMERoWk81MHNPS09zcEp6WkplZExMMmxWSHc0cWlCZkxQT0RjNHFVd2tCZ0xFMWhhc2NadzJhbGMzcnlBUEZMSmFTRG9EeDFjeHFNSlpOUjRoUWVJMG9mbVNObTAzZTBZcXVfTzJjeHdrS3RDWXZIYms3TTZhZmFVX01HQnlOLW5WR01DRjlScS1TOWs5RTlsZm9FTzNDMXNCYXR3OVIzSG00MWg1eERlWEExTDhwVdIBmAJBVV95cUxQMVoyVEpFaDE3S2N2Vk1VSE1mdFVTN0FRbVNnbjh5V0VCZ2xEaHhtNnl3UFVyY2I0UXduZ0k4aTAyQW83NEdESG4tRFdVdWRPc3J0VVhzNWZqc1NsWmpWeUF2eFFZVWl5MFF3QXlFa0JCRXFWRndpT3JhZ2ZYSFJfaUZXSlFjUEJMWmxDY0h6UnN1TzB5V1ppSDE1cVIyU0s1ay1Hck9FZFBhRy00Y3BrMVpGZDhMQ3dGMVFTSk1JTGlJMUdXRVdJUFJzMDFxU3JWdGIwQnJoOXlaN25OTmoyekRCQTdfQ2FoS2h5NTRtSmppUlNmTTlIUXdsdllIVEpuMTBiOWROc3A0aWJaRXFkUXE2WmUtbVBC?oc=5",
       "src": "Livemint"
+     }
+    ]
+   },
+   {
+    "k": "NFL",
+    "n": "National Fertilizers",
+    "s": 4,
+    "conf": "Medium",
+    "p": 65.4,
+    "pct": 1.1,
+    "mc": 3208.4,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Polymarket Promo Code AL25BONUS: Claim a $25 bonus for NFL Week 10 early slate",
+      "s": 2,
+      "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQX1JYa2ZoLVpOOHd1MEdmaHo5amNhUXdIUlVfTV9DOVcxa1NHR3lMWjhUWFhBOGxEVlJPaHhqWUNYVWZEWVlEbUJiLTZQUldiZy13VF9DNk1seW4tTGpMZlJOeWtyaU5CdEExaXRXSEIzMnFRUzRtaWRCM09GNkpmTHktZWhoVU5Qb2lSRU1QZHQzcjAyeUg3OVBLU0RTZnQ3aXVzS1M2c0JuNGlBTktmU3hVTkFHUlE?oc=5",
+      "src": "AL.com"
+     },
+     {
+      "k": "news",
+      "t": "Polymarket Promo Code SBWIRE | $25 Bonus for NFL, NBA, Politics & More (Nov. 15)",
+      "s": 2,
+      "u": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbXRGRW0xN19LRHNhWHBUd2Ftb0M3MVN3SlBodWl2OV93aDZlX0dkUGdFRG1tOE9xQmxKaWN4NTdFLXR4MmhvdV83TlFPX1R6RDM2MmlfdE5Ba29VNDQ0cF9TeVNJUG9GSEF6VUZYb05XSmxWWGtFZFRERXo0SGctU0Z6QXVsWDB1YU1aaUE1N0Nxck5RWEhSdXFJVS1CVG1tRVB2bHZzSQ?oc=5",
+      "src": "Chiefs Wire"
      }
     ]
    },
@@ -3008,23 +3036,6 @@
       "s": 1
      }
     ]
-   },
-   {
-    "k": "DWARKESH",
-    "n": "Dwarikesh Sugar Industries",
-    "s": 2.7,
-    "conf": "Low",
-    "p": 45.55,
-    "pct": 6.0,
-    "mc": 844.0,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +6.0% on 4.0× usual volume, near the day's high",
-      "s": 2.736199054418602
-     }
-    ]
    }
   ],
   "down": [
@@ -3077,6 +3088,25 @@
       "s": -6,
       "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNRUd6WmQ0T19Bdmp0eEpjamNiczJMQVlMd3VUX0tHSHkzZmppVlFWZ3J2TmNXMzNOLTJDSDdSU3pTNGM1aElqR01VeHhONDExTHVFaHk5bDIzMmRHNGcydFFCNGFadGw0YTJ6bXViWjlXOThTVGVUeGx1VHBlTF9WU2VlS3FKdUp3RjlXRXRRMVZKNkRWR1cyQWhtaHlHSmxydHAzbmdSNXlhWkMxb3hoRjB0SC1mVlBURURFX0otTQ?oc=5",
       "src": "scanx.trade"
+     }
+    ]
+   },
+   {
+    "k": "RAJESHEXPO",
+    "n": "Rajesh Exports",
+    "s": -4,
+    "conf": "Medium",
+    "p": 50.78,
+    "pct": -2.16,
+    "mc": 1499.3,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Rajesh Exports Q2 Results FY27: Revenue Up 65.28% to Rs 2,89,585.40 Cr, Net Profit Falls to Rs 25.38 Cr",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTE40UGNUNFRCZ1lST0NzYXd4UzZHWjd2a3BITmVTUWNZRUlTb1JNTlRXSS1wVnJQSk9jUnJXMW9zMWlOYm9KcG9EbTVCQjFKRjJ1UWdVU01ETXJ5cW12dzVleW9IZUJaMDdNM2U4cmZTWGZXWGhtMmVr?oc=5",
+      "src": "Univest"
      }
     ]
    },
@@ -3678,7 +3708,7 @@
   }
  },
  "hilo": {
-  "at": "16 Nov, 1:45 AM",
+  "at": "16 Nov, 2:15 AM",
   "hi": [
    [
     "ASAHIINDIA",
@@ -3747,7 +3777,7 @@
   "nlo": 2
  },
  "bse_movers": {
-  "at": "16 Nov, 1:45 AM",
+  "at": "16 Nov, 2:15 AM",
   "g": [
    [
     "542460",
@@ -3870,7 +3900,7 @@
    ],
    [
     "505890",
-    "Kennametal India",
+    "Kennametal India Ltd-$",
     3960.5,
     14.03,
     3473.15
@@ -3891,7 +3921,7 @@
    ],
    [
     "509874",
-    "Shalimar Paints",
+    "Shalimar Paints Ltd-$",
     95.67,
     12.35,
     85.15
@@ -3961,7 +3991,7 @@
    ],
    [
     "532430",
-    "BF Utilities",
+    "BF Utilities Ltd-$",
     497.55,
     10.44,
     450.5
@@ -4087,7 +4117,7 @@
    ],
    [
     "531744",
-    "Gini Silk Mills",
+    "Gini Silk Mills Ltd-$",
     63.24,
     9.03,
     58.0
@@ -4559,7 +4589,7 @@
   ]
  },
  "allmov": {
-  "at": "16 Nov, 1:45 AM",
+  "at": "16 Nov, 2:15 AM",
   "g": [
    [
     "MSTCLTD",
@@ -4666,8 +4696,8 @@
   ]
  },
  "rescal": {
-  "ts": 1794771895.4532738,
-  "at": "16 Nov, 1:14 AM",
+  "ts": 1794775551.143054,
+  "at": "16 Nov, 2:15 AM",
   "items": [
    {
     "k": "B521238",
@@ -4773,7 +4803,7 @@
    },
    {
     "k": "B532389",
-    "n": "Valecha Engineering Ltd-$",
+    "n": "Valecha Engineering Ltd",
     "d": "2026-11-20",
     "src": "BSE"
    },
@@ -4810,7 +4840,7 @@
   ]
  },
  "tw": {
-  "at": "16 Nov, 1:45 AM",
+  "at": "16 Nov, 2:15 AM",
   "phase": "pre",
   "for": "Mon 16 Nov",
   "picks": [
