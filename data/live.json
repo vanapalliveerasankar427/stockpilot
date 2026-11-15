@@ -1,6 +1,6 @@
 {
  "label": "15 Nov 2026, 11:03 AM IST",
- "updated": "2026-11-15T11:03:07+05:30",
+ "updated": "2026-11-15T11:03:49+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -393,7 +393,7 @@
     "h": 94.33,
     "l": 94.27
    },
-   "at": 1794720803,
+   "at": 1794720835,
    "t": "15 Nov, 11:03 AM"
   }
  },
@@ -1302,17 +1302,11 @@
   }
  ],
  "log": [
-  "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers: empty",
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
-  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
-  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 220 headlines, 25 up, 7 down",
+  "outlook: 222 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2508,17 +2502,11 @@
   }
  },
  "fulllog": [
-  "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers: empty",
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
-  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
-  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 220 headlines, 25 up, 7 down",
+  "outlook: 222 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
@@ -2572,7 +2560,7 @@
  ],
  "outlook": {
   "at": "15 Nov, 11:03 AM",
-  "headlines": 220,
+  "headlines": 222,
   "screened": 1798,
   "cues": [
    "Hang Seng -1.6%"
@@ -3760,7 +3748,7 @@
   "nlo": 2
  },
  "bse_movers": {
-  "at": "15 Nov, 5:29 AM",
+  "at": "15 Nov, 11:03 AM",
   "g": [
    [
     "542460",
@@ -3883,7 +3871,7 @@
    ],
    [
     "505890",
-    "Kennametal India",
+    "Kennametal India Ltd-$",
     3960.5,
     14.03,
     3473.15
@@ -3904,7 +3892,7 @@
    ],
    [
     "509874",
-    "Shalimar Paints",
+    "Shalimar Paints Ltd-$",
     95.67,
     12.35,
     85.15
@@ -3974,7 +3962,7 @@
    ],
    [
     "532430",
-    "BF Utilities",
+    "BF Utilities Ltd-$",
     497.55,
     10.44,
     450.5
@@ -4100,7 +4088,7 @@
    ],
    [
     "531744",
-    "Gini Silk Mills",
+    "Gini Silk Mills Ltd-$",
     63.24,
     9.03,
     58.0
@@ -4333,7 +4321,7 @@
    ],
    [
     "500346",
-    "Punjab Communications",
+    "Punjab Communications Ltd-$",
     54.85,
     -8.83,
     60.16
@@ -4382,7 +4370,7 @@
    ],
    [
     "531847",
-    "Asian Star Company",
+    "Asian Star Company Ltd-$",
     641.1,
     -8.41,
     700.0
