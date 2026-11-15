@@ -1,6 +1,6 @@
 {
  "label": "15 Nov 2026, 5:29 AM IST",
- "updated": "2026-11-15T05:29:13+05:30",
+ "updated": "2026-11-15T05:29:50+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -360,20 +360,20 @@
    "ag1": {
     "b": 182597.0,
     "a": 182597.0,
-    "h": 182597.0,
-    "l": 182597.0
+    "h": 184382.0,
+    "l": 181773.0
    },
    "ag30": {
     "b": 179597.0,
     "a": 179597.0,
-    "h": 179597.0,
-    "l": 179597.0
+    "h": 181382.0,
+    "l": 178773.0
    },
    "g999": {
     "b": 14016.9,
     "a": 14016.9,
-    "h": 14016.9,
-    "l": 14016.9
+    "h": 14044.1,
+    "l": 13980.2
    },
    "xau": {
     "b": 3884.8,
@@ -391,9 +391,9 @@
     "b": 94.32,
     "a": 94.33,
     "h": 94.33,
-    "l": 94.33
+    "l": 94.27
    },
-   "at": 1794700760,
+   "at": 1794700794,
    "t": "15 Nov, 5:29 AM"
   }
  },
@@ -1302,12 +1302,14 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
+  "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
+  "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
+  "bse movers: empty",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 220 headlines, 25 up, 7 down",
+  "outlook: 221 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2503,12 +2505,14 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
+  "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
+  "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
+  "bse movers: empty",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 0 IPOs from 2 cards",
   "bse eod 2026-11-13: 5141 scrips",
-  "outlook: 220 headlines, 25 up, 7 down",
+  "outlook: 221 headlines, 25 up, 7 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
@@ -2562,7 +2566,7 @@
  ],
  "outlook": {
   "at": "15 Nov, 5:29 AM",
-  "headlines": 220,
+  "headlines": 221,
   "screened": 1798,
   "cues": [
    "Hang Seng -1.6%"
