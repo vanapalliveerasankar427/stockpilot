@@ -1,13 +1,13 @@
 {
- "label": "17 Nov 2026, 3:13 AM IST",
- "updated": "2026-11-17T03:13:30+05:30",
+ "label": "17 Nov 2026, 3:43 AM IST",
+ "updated": "2026-11-17T03:43:50+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "17 Nov 2026, 3:13 AM",
+  "date": "17 Nov 2026, 3:43 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -143,13 +143,13 @@
     "v": 134550.0,
     "ch": 11.0,
     "pct": 0.01,
-    "t": "17 Nov, 3:13 AM"
+    "t": "17 Nov, 3:43 AM"
    },
    "silver": {
     "v": 168001.0,
     "ch": 138.0,
     "pct": 0.08,
-    "t": "17 Nov, 3:13 AM"
+    "t": "17 Nov, 3:43 AM"
    }
   },
   "retail": {
@@ -355,8 +355,8 @@
      "ag": 190.0
     }
    },
-   "at": "17 Nov, 3:13 AM",
-   "at_ts": 1794865410.486325,
+   "at": "17 Nov, 3:43 AM",
+   "at_ts": 1794867230.460764,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -364,36 +364,36 @@
    "g24_10": 135130.0,
    "ag_kg": 168730.0,
    "ag": 168.73,
-   "t": "17 Nov, 3:13 AM"
+   "t": "17 Nov, 3:43 AM"
   },
   "dp": {
    "ag1": {
-    "b": 177686.0,
-    "a": 177686.0,
+    "b": 177478.0,
+    "a": 177478.0,
     "h": 178191.0,
     "l": 174822.0
    },
    "ag30": {
-    "b": 174686.0,
-    "a": 174686.0,
+    "b": 174478.0,
+    "a": 174478.0,
     "h": 175191.0,
     "l": 171822.0
    },
    "g999": {
-    "b": 13885.9,
-    "a": 13885.9,
+    "b": 13880.9,
+    "a": 13880.9,
     "h": 13941.1,
     "l": 13835.6
    },
    "xau": {
-    "b": 3857.5,
-    "a": 3857.52,
+    "b": 3855.9,
+    "a": 3855.92,
     "h": 3876.32,
     "l": 3841.82
    },
    "xag": {
-    "b": 47.06,
-    "a": 47.06,
+    "b": 46.99,
+    "a": 46.99,
     "h": 47.37,
     "l": 46.56
    },
@@ -403,8 +403,8 @@
     "h": 93.99,
     "l": 93.94
    },
-   "at": 1794865416,
-   "t": "17 Nov, 3:13 AM"
+   "at": 1794867236,
+   "t": "17 Nov, 3:43 AM"
   }
  },
  "logos": [],
@@ -515,24 +515,24 @@
   "t": 1794863135
  },
  "brent": {
-  "v": 91.98,
+  "v": 91.84,
   "prev": 95.84,
-  "ch": -3.86,
-  "pct": -4.03,
+  "ch": -4.0,
+  "pct": -4.17,
   "high": 96.76,
-  "low": 91.96,
+  "low": 91.75,
   "open": 95.35,
-  "t": 1794864803
+  "t": 1794866370
  },
  "goldSpot": {
-  "v": 3858.4,
+  "v": 3859.0,
   "prev": 3886.3,
-  "ch": -27.9,
-  "pct": -0.72,
+  "ch": -27.3,
+  "pct": -0.7,
   "high": 3904.3,
   "low": 3835.2,
   "open": 3870.0,
-  "t": 1794864808
+  "t": 1794866398
  },
  "sectors": [
   [
@@ -1112,7 +1112,7 @@
   "crystalcropprotection": {
    "gmp": 13.0,
    "gsrc": "IPOMarket",
-   "gat": "17 Nov, 3:13 AM",
+   "gat": "17 Nov, 3:43 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1139,7 +1139,7 @@
   "watranarentals": {
    "gmp": 25.0,
    "gsrc": "IPOMarket",
-   "gat": "17 Nov, 3:13 AM",
+   "gat": "17 Nov, 3:43 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1166,7 +1166,7 @@
   "mahanadicoalfields": {
    "gmp": 4.0,
    "gsrc": "IPOMarket",
-   "gat": "17 Nov, 3:13 AM",
+   "gat": "17 Nov, 3:43 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1187,7 +1187,7 @@
   "dii_sell": 15271.08,
   "fii_buy": 15636.88,
   "fii_sell": 10772.2,
-  "fetched": "17 Nov, 3:13 AM",
+  "fetched": "17 Nov, 3:43 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1244,32 +1244,11 @@
  },
  "news": [
   {
-   "tag": "Economy",
-   "t": "India's investments in US treasuries up $38.4 billion in June-August",
-   "s": "Business Standard",
-   "d": "16 Nov, 11:51 PM",
-   "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV3NrbVVHeVEtQ3RUSWdQdEZVdzV6TXRYLTFwdUhQb0ZyaFMtdUZsWHpIblIyUG1hb29pZ20zNW92Zmc3RkN2X25mQUM3clA4Z0o5X1RwYlo1eWtndklKUHJrODVmdWNYYVU4dE1MbHhrTWpuNEoyV016SFhmNjN2T3NwMFBFRDd5ei1vaDRLVzlDS2t2Vzh6VFBfQkx1LXJvN1p5anI3TGpUcFBfUlBGVjJweUIySnJNVVhMQkhNMjZORGE4ZXQ4NEloUEVjYUXSAdQBQVVfeXFMUFdwR3Nydnd0ZDhTYkxabWNfenh1clp3X3NaR3ROTzlyTndTcmhpTEpXUUNIYXBiQUI0UzRxX2lMNHI3d21iZWNONEVoOEVQYzFzWTJ2X0R1eWN0X0k0OW1iRnRXcFk5Nzh2UnRDNVpJSEFnSklSUG5jLWozRlJyU1B3SG95cHFoSmU4cVNxN1NKWDVPUmU1S19fbWFNSTZwSEV0R2YtcHVtQ2NmekFWUGRQV2RkYzh1ZXlYLVlLeUtBR1ZWRmh2ZHpkTTE3TXhfb05yWlY?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "Orchid Pharma pays ₹2,000 fine to NSE and BSE for annual report delay",
-   "s": "scanx.trade",
-   "d": "16 Nov, 9:05 PM",
-   "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQ2hab3dPR0lMajUtS1d2cnlrWHI1bjRrOVVyZWw3VnlNUk1jcGYxeGhBTEdZWTN4d3M2U1lrcUMtanFQQmZmX0NVSFZJN3N6cTZOYlhRa2g0TlZ2WGEyZ3ZTLVBQNVRyaFRHYnhlbU9qTEZYRHhDZTVjNFpNaldsLVZHOENaS2dWSjBtMW56OGNYV1FEbWJ1Wk5TUk03d1dTdk9kX000d203RTNPWmlEd20tajU?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "RBI may raise repo rate by 50-75 basis points amid rising inflation and global uncertainties",
-   "s": "Free Press Kashmir",
-   "d": "16 Nov, 7:18 PM",
-   "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWndnYldoaGxYQzUzWDEyOXNXV1lvaGI1RXQxS1lqa1JOU0tmV1pIcEhYMFgtYlJxa0pOVEVsTzRnZDRHQ2xjMjJMYUJleldoNVBzUktsTGRPOHN6T2xORTdMYlZmMUh2Q2ZJSktMRHNuS2hSeGYxSjJQdERvYnQ0UGMwbGptT1RWZHY0MU9UN1pQaUlnbnF1V29nQXNZSjIyek13eHNSdkNqbi1uWE9IWUhlQWMzTzFTNmwxck16UWVyR2xMMDJWVXhqWVhsWVRHMHhLStIB1AFBVV95cUxPWndnYldoaGxYQzUzWDEyOXNXV1lvaGI1RXQxS1lqa1JOU0tmV1pIcEhYMFgtYlJxa0pOVEVsTzRnZDRHQ2xjMjJMYUJleldoNVBzUktsTGRPOHN6T2xORTdMYlZmMUh2Q2ZJSktMRHNuS2hSeGYxSjJQdERvYnQ0UGMwbGptT1RWZHY0MU9UN1pQaUlnbnF1V29nQXNZSjIyek13eHNSdkNqbi1uWE9IWUhlQWMzTzFTNmwxck16UWVyR2xMMDJWVXhqWVhsWVRHMHhLSg?oc=5"
-  },
-  {
    "tag": "IPO",
-   "t": "Mahanadi Coalfields IPO Opens Nov 19: GMP Slips to Rs 5, H1 Profit Up 6.7%. Should You Apply?",
-   "s": "NiftyTrader",
-   "d": "16 Nov, 5:27 PM",
-   "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZFpOSlB3aDVFbk41eUZaeUJLTFlJY0toZlZKb2VJV1l3d3ZIcTJrd1lUMGYycWdpQ3FMUWpfZEYweFVKQ3NSc0w4MFZ4VkI4N0pxQzlTdTYxUGFFNVM0NU5LNWNlNnpjUkpUZjRKV3RjRUZSb2cxdEVfWXVqM0g5UmRB?oc=5"
+   "t": "Crystal Crop Protection IPO Details",
+   "s": "IPO Watch",
+   "d": "17 Nov, 3:14 AM",
+   "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03N1RIcE9ySVlhZ0c0bzZaSGZ4dDRYQW5FcXJtb3Zwc2NwSkZmX2Y1RmpHMXdnc2tYNnRpajZPQWhobEkxNllPV0hQNjRpdUVzWFBicm1XdkNtOUpWM1VHem9CZHVQWFU?oc=5"
   },
   {
    "tag": "Markets",
@@ -1293,32 +1272,11 @@
    "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQb0N6TGVEZ3ZGS3RMSl92NTlUWmJkMk5XWm9qYkx4OVUya0RTdExmZ2pJcFd4TFdUTF9hbjlneGpNbDFyd0lhQjlPelVLR1F0NmhyOHVuVUpIeWhNLWFDaXJuQjAxLVFWTW9RbnlnVnpiQm03d2NGRVZCZUM3VVphaWVEaUJCZXlDTHJ4UzFrWHdmdlpkRmRIaUplSUl0aUVxXzJZb3B6dWpVUmJZR1pwMVd1X0szYnV4MWc?oc=5"
   },
   {
-   "tag": "Results",
-   "t": "Under Rs 1267 Stocks to Buy in Nov 2026: Top 5 Picks",
-   "s": "Univest",
-   "d": "16 Nov, 2:55 PM",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBjQ1NnaTRzcDhPUl9mNzk3M1ZOUkJxTlpTWVJING4zOXNlOE4wVmNBOENMZ0ZHQ0RLX1ZCNmVXMkV5LURfTV9GTmxQZzBULXBGR18xb1kxYzV4R3l6UldTS1pn?oc=5"
-  },
-  {
    "tag": "IPO",
    "t": "Coal India's Mahanadi Coalfields IPO expected profit calculator on GMP: What retail, HNI investors can gain on listing?",
    "s": "TradingView",
    "d": "16 Nov, 2:35 PM",
    "u": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQaGVvLWF1QVBfbDlPbUgtbzFWUHJUUjQ3YXZpY0FGaVl2TnFILXFXZEQ3NG5RYVNTUUV1TkFDckZiZmZrOU1BejE5bHRyM2JxR1Exd05WRkthOWp5dG9WS3k5dEQyVmtnWmVpUDkyTjdwUXVBY1dkOWxqd3VvVlpxTTRXUjIza3I0RTAyNENHeHBNcV91Y3Z2dHZrenVQTWhvRzJseklYVm9NTHNTbjVxWDBnMFZpeVNiYTNpcm1lT0cyX2ZKR3QxNGZMdkx3LVBDamQzV0YxdEtrT3hmUDVQZWhLYmJBbDRDcWlOLU5oc3pkOXQzTUI0QkNMeFpKUU1MUU80?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "Allcargo Global Reports 270% QoQ Growth in EBITDA in Q2 FY27",
-   "s": "Machine Maker",
-   "d": "16 Nov, 12:16 PM",
-   "u": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNR2lGSll6ckN4djRFTWExcDdiYWExYkU5d0NTUHp0TjBJX3c1d1NTWEN1aU16ZV9nRmhPd3pXdFctMFViQkxlNEVGSFl3Nmg2MG9lYnNlTkJpR3pDbE5pYUo5T2pXZXNQSFdSWE9Qd28wdlNyMU5BZWx0anR2MV9ONjJzNFJYdGJJcHZTSEZhNkpEek5uS2RfNQ?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "Tata Motors PV shares plunge 9% after Q2 results; brokerages cut target",
-   "s": "Business Standard",
-   "d": "16 Nov, 9:33 AM",
-   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQcEhLZFpmQml1REpCWkJXRUoyVUl4V0d5dWt5ZTg1UGhIUHJtdTFxTEJkZ3QzU1ZTQmEyYjVneGljQXBWZzBHbVRLR0t1ckdyMW81bDRpbVBJRWFnUnlRS3RNR0pIcm5Uei03andMd3AzOTZDaC15VGUwdFZISGRMNzBMUXlTdTdTYzcwclpYVThwQkJ6YmZfUFRaelR6QU5YajBJUEJIbUdqU09CUVFEMHp4eE1qV0NleG1FWkp5dW1LV2FYbS1hRFpnTXIzT1JvRlHSAdcBQVVfeXFMT3ZvWjA2TTgxUVpNNEpKbVNHWk1saUJCaE9CSTRUUldaTFhBVVpJd0FwWlhDZFFsNklod1NUdVJkWWlNQmFzQ1UtMTZVSFBYTGRtSjFlSlpMX1hkbW4xbnFkdEJxRW5hNlRGRkVPeDhua2JDV3N2M0loRUJGZlo2bTl4RzAyX2xsZ0pOdW0wV2doT1NTV3JLODFjVXJzYjcyZXJzTFZsME9MWDhzd1dOSjVVRzB5cFU0c0xMSFZvNTV3YzVXXzZSZ3JERTc5R2hzNWFaNnAyeE0?oc=5"
   },
   {
    "tag": "Markets",
@@ -1328,18 +1286,18 @@
    "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOLWcwRTVyZVl3YU9jUnAwVGEtSWhQZUJlUEJYSGZvanhNQ2d4UFV3N2wtaDRLVnM4M01DTGxlSHUtdng1QXpJQXhjS1Rsb1l3dl9XM21tVVdmT0NfdGpWdXN1dmMzeklYMEVBU0R2dVkxVldFOFNuUGN2aWRCR3E4a0JKLVpPYkdhWGpRYXJ2alFKSTFDUmh4eG5QaWxMQktXQ1ZpT29HM3VBVjRWZW9ZZE1xLVVyX1BpQTEyZVozSEkzRkxOQUtZUHAyMjgxenMzM2pB?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "Rupee rises, volatility ebbs as equity inflows blunt global headwinds",
-   "s": "Reuters",
-   "d": "16 Nov, 7:48 AM",
-   "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUnZsV3JvbXpiRElEdnViZ25tOXl2YldqM1VUT3JfSFlYTVBNZGxVZGllZWtORUxWTThHNXhfRU5NUHU0Nm1lcUw3Q0JOOXpwRjlybGFVb3IwbUhpVm9DMGIxLUN4c1VYMGFXLVJPVE9WZDNVazUtZmc0bWYzSDlXekw5QWU1cnA2ZlRRYURYQlBPSFhWcHcwTXU3cDE2ajJ0X2llUzdqb2pxOGRoVXNV?oc=5"
+   "tag": "IPO",
+   "t": "Complete Sports & Management India Ltd. IPO GMP Today with Listing Gain Expectation",
+   "s": "IPO Watch",
+   "d": "16 Nov, 3:18 AM",
+   "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE56WlpLMldJZDZwRWtWbi1FUXhLWWNrU3ppU0V2b3RiSFJ1WkY0WTdlODA5UEtONXFES3BBRy1RTVp0a3pTS0VVcmVrNU9tbU5DNkJsNFNVWHo5MlctZk9Tc3g5eERXdDlUbl9fRVdB?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "Has the RBI really stabilised the rupee?",
-   "s": "Finshots",
-   "d": "16 Nov, 7:03 AM",
-   "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hRjBIZnNwZExMbTR0ZWJORUVrUXZhaEpObjBtQnJlZXZUN3JDUWxuZ3VjNGRQQmdHdUJ5X040R0ZqVEJPeHJESGJTXy1hZkV1ODZhZE83d2JSZk1pMWt6NFVUNA?oc=5"
+   "tag": "IPO",
+   "t": "Gulf Lloyds (India) IPO Review, Recommendation by Brokers & Analysts",
+   "s": "IPO Watch",
+   "d": "15 Nov, 4:12 AM",
+   "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9faXFpUi1hc1BZQWNnSGNPOE5WYnByR1JqYjhISjM2QjJabmRIY19kY1A5Zlo5WldsOWdfeE9MRlBqV0pELXlUQUJrZ1ZxN0pPR1FVcnpkUVBZYWNWaEI0b3FUVDBHQU9S?oc=5"
   }
  ],
  "log": [
@@ -1347,13 +1305,11 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
-  "results cal: 38 upcoming (10 NSE)",
+  "news Results failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=quarterly+results+NSE+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "news Economy failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=RBI+rupee+India+economy+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook news 'stock rallies after' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'SEBI order company shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'brokerage target price shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'stocks to watch today' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook: 152 headlines, 25 up, 25 down",
+  "outlook news 'wins contract shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 211 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2374,9 +2330,9 @@
   }
  },
  "nse": {
-  "n50": "17 Nov, 3:13 AM",
-  "mid": "17 Nov, 3:13 AM",
-  "small": "17 Nov, 3:13 AM"
+  "n50": "17 Nov, 3:43 AM",
+  "mid": "17 Nov, 3:43 AM",
+  "small": "17 Nov, 3:43 AM"
  },
  "midg": [
   [
@@ -2553,19 +2509,17 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
-  "results cal: 38 upcoming (10 NSE)",
+  "news Results failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=quarterly+results+NSE+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "news Economy failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=RBI+rupee+India+economy+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook news 'stock rallies after' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'SEBI order company shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'brokerage target price shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'stocks to watch today' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook: 152 headlines, 25 up, 25 down",
+  "outlook news 'wins contract shares' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 211 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5403,
   "quotes": 4904,
-  "at": "17 Nov, 3:13 AM"
+  "at": "17 Nov, 3:43 AM"
  },
  "global": [
   [
@@ -2584,7 +2538,7 @@
    "Nasdaq",
    24509.76,
    -2.49,
-   1794865408
+   1794867228
   ],
   [
    "Nikkei 225",
@@ -2612,12 +2566,12 @@
   ]
  ],
  "outlook": {
-  "at": "17 Nov, 3:13 AM",
-  "headlines": 152,
+  "at": "17 Nov, 3:43 AM",
+  "headlines": 211,
   "screened": 1802,
   "cues": [
    "US tech (Nasdaq) fell 2.5% in the last session",
-   "Brent crude down 4.0%",
+   "Brent crude down 4.2%",
    "Dow Jones -1.4%",
    "S&P 500 -1.9%",
    "Nikkei 225 -2.4%"
@@ -2853,25 +2807,6 @@
     ]
    },
    {
-    "k": "APLLTD",
-    "n": "Alembic Pharmaceuticals",
-    "s": 8,
-    "conf": "High",
-    "p": 1057.1,
-    "pct": 2.62,
-    "mc": 20778.7,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Alembic Pharmaceuticals shares rise 3% on US FDA approval",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPc1VrN00zZ1Y3NHc1WHpYTFVyeGNIWXl1RWJXX25ZNjVYZEhfNXpqUl92cml0THE0TmhyM2VTX1pmZ0ozNFdFRXRfbTlPNUl0NE9wMFRtaWxWU3kzeXB4TmxNNjUwYk5Wa1BsLS1rZ0ZXd254OWtFSlhSYmJmSmNsSEhkVEVPdXJDZ1oyWkpqaGtZUWJEV1lpdmlDSEdQUjk2c2lRWUdxc0d1LWFta2hOOUFFOTcwWG04?oc=5",
-      "src": "Business Upturn"
-     }
-    ]
-   },
-   {
     "k": "SKYWAYS",
     "n": "Skyways Air Services",
     "s": 7.0,
@@ -2958,20 +2893,20 @@
     ]
    },
    {
-    "k": "AHLUCONT",
-    "n": "Ahluwalia Contracts (India)",
+    "k": "NTPC",
+    "n": "NTPC",
     "s": 6,
     "conf": "High",
-    "p": 555.25,
-    "pct": 5.16,
-    "mc": 3719.5,
-    "sec": "Industrials",
+    "p": 321.25,
+    "pct": 0.67,
+    "mc": 311505.4,
+    "sec": "Utilities",
     "why": [
      {
       "k": "news",
-      "t": "Ahluwalia Contracts wins Rs 310 crore work order from Bennett University",
+      "t": "Sai Urja Indo Ventures wins Rs 8.84 crore work order from NTPC Limited",
       "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOODJ1eHg4dDJWSnB5ekdoY3FpUjYxOGE0M0pGS2JBR0d2WlVuTUtZUE9vbklhMldQWHB5LW1TdHlraWxROFdZSnpMWXhjakZ5NVZrMnllSzRVZ0psTFEzMGJCSHNnVElodU1DNE5UT2Z1UTlsUHQzN1NkS0tfbWJFZGUyS0xpRGh3cm93SEVJLTVwdXYxd0FhR1VzM3RtTEpiMWFEcklQV0RGejRHSEVPcUVMVUxhWUdMcVRscU10d0ZWZw?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRmVSTFNGaTJEOTAyRkxSWVpUT3dSOTQxZ0NhRnNlbFllY19SZnRQMk5qelYyVkQ2Y0lSSHRJUVg4dG4wZ09WZEsybWVRUFNLR2g5WlJOZnBnSTFkYW9ZQWdfT3ZnZnh2VExZaUl1bUN0cEY4UllKSEdfY0RZRmZ3eDdkQjJIQktycUl1UXM1blBMMFZsSlhPMThtN0lra1poUW5xZ2lKNm16N0NTNjZOcWI0RTNSQnRibGY3c2xTOA?oc=5",
       "src": "scanx.trade"
      }
     ]
@@ -3039,6 +2974,25 @@
     ]
    },
    {
+    "k": "KALYANKJIL",
+    "n": "Kalyan Jewellers India",
+    "s": 4,
+    "conf": "Medium",
+    "p": 708.15,
+    "pct": 1.6,
+    "mc": 73134.3,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Kalyan Jewellers Share Price Rally: 42% Gain in 11 Sessions",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWW00eS1sRHA4b1VyV1ZmX0IwdmVsd1RlcXhaTkRzMjhpRFlyc1drZWNNdDJvTFVsSWVlT3ZzMk9ZcVVSWWd6VGI3Y3pEWThRek9ER3NSbTVtaEpnUXBobFRUVnhwZVlOX0drUXM5TVhPR2xVTmRkemZLV1B3SmFmYWRyWEQ0b0FXWWpWRUhuM0lFbXlxM1ZkcWRpMHRob1hVd0c3dDA2QktDSkF1Y0VCRTdJYS1melM4YjVnenlxdS1HTEgwZTdISkQ5bDFUaWFjNjJv?oc=5",
+      "src": "Univest"
+     }
+    ]
+   },
+   {
     "k": "TVSSCS",
     "n": "TVS Supply Chain Solutions",
     "s": 4,
@@ -3054,6 +3008,25 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOSFR2a3JSMXRpOWxvU3BxQnkzWUZMbFNQX2RUOHBaN01xT2Mtc1FraXFycVlfbEZrN1M0Q09PNkNRMW8xWlUwN182SGtMYjZRYlhsY2twcm9MOS0zRjVRdnd2YVdTLU9HY0ZwejdsNXFLcUx3bzZXcGpiQ3cyVmhBWDVfMWEtLU5NYWJxV0ltZ1ZaRlFmSGxQS3dQeHAzR1VJY2FvR1d5cWNGelNaM1lEMkJlOUE0LVFPNVZGT2pRQnI1MDd2d0prbTNVNjBwNWV1VldHeDIwRGJ2SG91WWRtajVXMUFoRVV5Zy13NDY2dWU3YjRHUHpQeTdVMTBKMzVaM2o2RDZLemdYbFJfMTRHQlFR0gGXAkFVX3lxTE9FZ19FcjFFY3l0NF9pdF9CM3A4anduRTl2MndLRmNVc2FWU2lRYWRsUVQ3TUlVMnhKUm15UzdreUhJZWt4U2h3al9RRGFubVRGc2NMblVmSzlNZjFJeHIwWDdra0NCRnk2cGpxSExlVkZNYUtkYURVaHdzVHhhNHBwZ3hla3VtSFdja3lWNV9CQ000dEN3VHZ2Uk5NSXJ4eXNYSE5MRWZ2Ry1jOGZkQ3diclUydUl3a0hBS2tvcGxhdk9kQ1R2dDI0UnJsWmxmTkJacEFkd0tMbWRNZVlaaUdIVndOd19kdnpvangyX01aZHYtQlNsZGQxbjc3a2pNWHZIWFNDSElCTGhsRjBmS1lPbktrWm05NA?oc=5",
       "src": "Livemint"
+     }
+    ]
+   },
+   {
+    "k": "MCX",
+    "n": "Multi Commodity Exchange of India",
+    "s": 4,
+    "conf": "Medium",
+    "p": 3729.6,
+    "pct": 0.26,
+    "mc": 94923.6,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "Jefferies reaffirms 'Buy' on MCX, raises target to Rs 4,300; here's what's driving optimism",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQeGlxaUZleTlrLVlhNndTM016eFFTekdZblJVVFFQbGRZR3NEdldTZTJpWDFGSXhYeGRzQzYtcDR2S3VDaFRSRkNaUDNKeko2dHE3WDFxQVNSNXVNU2xUSGh4c3FvQThORUF4YnptVjF0N013RVRVNU5PYlJUNXNsVm8yZHZndjBaMXc0Ny01QlcwR0R3d0ZabGJ3NlhtcnFzZWRtdjZWMmp2N2Q5Q19LYnFWVmVIeEstc3c1WFdJcUdld3JvTmFyaXFhMjhYSlpLOUloamdBMGpNUFd1QzFGXzAtS3VnSC1SSnppYzdIRdIB9AFBVV95cUxNeV8wb3FOc3pnUWZhelRkVnpKUVFYdi1IZXdqdE1Ecm45eTIzc2U1NUNJQ2NTRnBJRm51bWNGSUVCLTl1QWxab3FrLURrVHVKeUNVLUlnaXhRZWs3alZ1TTRxam5Fcm5SVGx5WDJaNkFDZTl6MzE2eTJYRjhMMVNGSDlGMDJTT3BJMzVERjY5VVJSVEhBNXpiYUNEbm16a2tMWHhtMTVzY2FDcDViVXdVS3hlMGJPMXF3eGJnVG9BdUtFV2twVUpTdW4wZzV3Vml6eXRPS1NpeGdoMDAzOFN0Sjd5UVV2azdEa3o5LVgyc0ptcDFj?oc=5",
+      "src": "The Economic Times"
      }
     ]
    },
@@ -3155,23 +3128,6 @@
      {
       "k": "price",
       "t": "Closed strong: +5.9% on 6.3× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "SGFIN",
-    "n": "SG Finserve",
-    "s": 3.0,
-    "conf": "Low",
-    "p": 740.25,
-    "pct": 6.01,
-    "mc": 4877.9,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed strong: +6.0% on 8.6× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3317,6 +3273,25 @@
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQM2tWSHdRZi1QLXU1OFNQeVRfQkY0WTN6ZmUwZnlZejBYMEl0cUtDckg2RjIyWWlGNnpSbzNhdFYxWHl2Skc1V1lWcjc3YkNOM2xlODhyWFVKdHNVVEFRMVd0blpoMU51bEI2OWhER3Npd0U2a2dMVXFsNm5qRm5DYTRsSzBNQlhOUDFYbXl6UDNIM2t4clY3TVVvQTNaa2lWZV9LSGFFQldSYkFFeXlvWno2aEhucko2WU1RTkRlaTZFYWpERS1NTFNkU1gzSE8zUy1MY2VB0gHbAUFVX3lxTE9jMmV3aDN2MFBQZ3MxcXdJN21odnJHLURSaHJaWkZiNU5Bdk05OHBFcWQxMXQxSVBrRDZVTmpLdU5SWFgzdG9vNk5HRXh2N3gtNlVTaWZCdEdlLWZRdGdhdmliWG9CRDhnSXY3dGNmWlp5YjMycjR1Y3dIdEFHVW1QM2FHMFZiR0gtZ3o3MUNna0UxVHBjTV9TUGIyWTFzS21ySUdTM0R5Vm9ManNzVUx0dDZYX1EwcVNyNi1yZzN3YkVjVnZxdVdHUEprVXZGR29OWVJEQ0NUUXZ6VQ?oc=5",
       "src": "ET EnergyWorld"
+     }
+    ]
+   },
+   {
+    "k": "RAJESHEXPO",
+    "n": "Rajesh Exports",
+    "s": -8,
+    "conf": "High",
+    "p": 49.45,
+    "pct": -2.87,
+    "mc": 1460.1,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Rajesh Exports Q2 net profit falls nearly 44% YoY as sales fall over 98%; shares decline 2%",
+      "s": -8,
+      "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUkpZYnoyU0lSNGZWNXV1VTI3U0dRdkdKM3laTG1jSFgxOHRjbUk1RnlNTk9pX2pITlk1ZjJjN2E5NjloNElUbUl6a3JMODlROUIyRzZPZjlfZXJkZE9YR19jNzlTU1pWbnp0V1F0Y0tZbFUyd1hfRjQtczNoWXp2dkdjN0xPd24xUU9LLW9NZVI2MkZxcDk3aFJiOHE0a2dwbHRQSXcwTHZZU1VCZHh5b3FEb1lnVG1MUF9uMnFYYmtBZzREcDV3VnFXOVE2WnNsZVM2ZkNwdnZORjBuQ3lsMG1lN2pFdzDSAewBQVVfeXFMTnVIdEpiT0ZCU1JJOEJNTFEyRGoyWll1VlU5N21VU2ZUR3hDRWFKbHVUeWl2UFoxdldtZmJMOTFZYkNjZFl5NWY2T0VHWVNNUjYzeEhxd2RFMEhuVEc5a3NaQ3pWdThWYjNLa3pLTkhyYkN0MmstTXFad1lnakh2R1g3bXdsUUtTVEdteUVKc2t5bkE0X09SXzRUNFQ1czBjVHlTYWJiNndmV2JfUEwyOHRWN3cyTmVWeko5SkJuMkd2dUxZOGFadjhzY2FiVlBpcGQ5MTJKLUtpT0lnWncwLUF3TnlfWTNaNlVmd1c?oc=5",
+      "src": "Moneycontrol.com"
      }
     ]
    },
@@ -3753,28 +3728,6 @@
       "k": "price",
       "t": "Closed weak: -6.5% on 4.6× usual volume, near the day's low",
       "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "SILVERTUC",
-    "n": "Silver Touch Technologies",
-    "s": -2.9,
-    "conf": "Low",
-    "p": 127.8,
-    "pct": -7.84,
-    "mc": 1620.6,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -7.8% on 2.4× usual volume, near the day's low",
-      "s": -1.9486036120466048
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
-      "s": -1
      }
     ]
    }
@@ -4286,7 +4239,7 @@
   }
  },
  "hilo": {
-  "at": "17 Nov, 3:13 AM",
+  "at": "17 Nov, 3:43 AM",
   "hi": [
    [
     "PANACHE",
@@ -4359,7 +4312,7 @@
   "nlo": 9
  },
  "bse_movers": {
-  "at": "17 Nov, 3:13 AM",
+  "at": "17 Nov, 3:43 AM",
   "g": [
    [
     "535279",
@@ -4608,7 +4561,7 @@
    ],
    [
     "502281",
-    "Triveni Glass Ltd-$",
+    "Triveni Glass",
     11.85,
     9.93,
     10.78
@@ -5100,7 +5053,7 @@
    ],
    [
     "521206",
-    "Samtex Fashions Ltd-$",
+    "Samtex Fashions",
     1.15,
     -10.16,
     1.28
@@ -5171,7 +5124,7 @@
   ]
  },
  "allmov": {
-  "at": "17 Nov, 3:13 AM",
+  "at": "17 Nov, 3:43 AM",
   "g": [
    [
     "B544168",
@@ -5512,7 +5465,7 @@
   ]
  },
  "tw": {
-  "at": "17 Nov, 3:13 AM",
+  "at": "17 Nov, 3:43 AM",
   "phase": "pre",
   "for": "Tue 17 Nov",
   "picks": [
@@ -5868,22 +5821,6 @@
     "s": 8.4
    },
    {
-    "k": "APLLTD",
-    "n": "Alembic Pharmaceuticals",
-    "p": 1057.1,
-    "pct": 2.62,
-    "vx": 0.4,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Alembic Pharmaceuticals shares rise 3% on US FDA approval",
-      "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPc1VrN00zZ1Y3NHc1WHpYTFVyeGNIWXl1RWJXX25ZNjVYZEhfNXpqUl92cml0THE0TmhyM2VTX1pmZ0ozNFdFRXRfbTlPNUl0NE9wMFRtaWxWU3kzeXB4TmxNNjUwYk5Wa1BsLS1rZ0ZXd254OWtFSlhSYmJmSmNsSEhkVEVPdXJDZ1oyWkpqaGtZUWJEV1lpdmlDSEdQUjk2c2lRWUdxc0d1LWFta2hOOUFFOTcwWG04?oc=5"
-     }
-    ],
-    "s": 8.0
-   },
-   {
     "k": "KIMS",
     "n": "Krishna Institute of Medical Sciences",
     "p": 763.35,
@@ -5924,6 +5861,21 @@
      {
       "t": "momentum",
       "x": "Up 5.1%, closing near the day's high on 2.5× normal volume"
+     }
+    ],
+    "s": 6.4
+   },
+   {
+    "k": "ANUP",
+    "n": "The Anup Engineering",
+    "p": 1811.4,
+    "pct": 5.01,
+    "vx": 2.6,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 5.0%, closing near the day's high on 2.6× normal volume"
      }
     ],
     "s": 6.4
@@ -5984,6 +5936,54 @@
      }
     ],
     "s": 6.4
+   },
+   {
+    "k": "NTPC",
+    "n": "NTPC",
+    "p": 321.25,
+    "pct": 0.67,
+    "vx": 0.7,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Sai Urja Indo Ventures wins Rs 8.84 crore work order from NTPC Limited",
+      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRmVSTFNGaTJEOTAyRkxSWVpUT3dSOTQxZ0NhRnNlbFllY19SZnRQMk5qelYyVkQ2Y0lSSHRJUVg4dG4wZ09WZEsybWVRUFNLR2g5WlJOZnBnSTFkYW9ZQWdfT3ZnZnh2VExZaUl1bUN0cEY4UllKSEdfY0RZRmZ3eDdkQjJIQktycUl1UXM1blBMMFZsSlhPMThtN0lra1poUW5xZ2lKNm16N0NTNjZOcWI0RTNSQnRibGY3c2xTOA?oc=5"
+     }
+    ],
+    "s": 6.0
+   },
+   {
+    "k": "KALYANKJIL",
+    "n": "Kalyan Jewellers India",
+    "p": 708.15,
+    "pct": 1.6,
+    "vx": 1.0,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Kalyan Jewellers Share Price Rally: 42% Gain in 11 Sessions",
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWW00eS1sRHA4b1VyV1ZmX0IwdmVsd1RlcXhaTkRzMjhpRFlyc1drZWNNdDJvTFVsSWVlT3ZzMk9ZcVVSWWd6VGI3Y3pEWThRek9ER3NSbTVtaEpnUXBobFRUVnhwZVlOX0drUXM5TVhPR2xVTmRkemZLV1B3SmFmYWRyWEQ0b0FXWWpWRUhuM0lFbXlxM1ZkcWRpMHRob1hVd0c3dDA2QktDSkF1Y0VCRTdJYS1melM4YjVnenlxdS1HTEgwZTdISkQ5bDFUaWFjNjJv?oc=5"
+     }
+    ],
+    "s": 4.0
+   },
+   {
+    "k": "MCX",
+    "n": "Multi Commodity Exchange of India",
+    "p": 3729.6,
+    "pct": 0.26,
+    "vx": 0.5,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Jefferies reaffirms 'Buy' on MCX, raises target to Rs 4,300; here's what's driving optimism",
+      "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQeGlxaUZleTlrLVlhNndTM016eFFTekdZblJVVFFQbGRZR3NEdldTZTJpWDFGSXhYeGRzQzYtcDR2S3VDaFRSRkNaUDNKeko2dHE3WDFxQVNSNXVNU2xUSGh4c3FvQThORUF4YnptVjF0N013RVRVNU5PYlJUNXNsVm8yZHZndjBaMXc0Ny01QlcwR0R3d0ZabGJ3NlhtcnFzZWRtdjZWMmp2N2Q5Q19LYnFWVmVIeEstc3c1WFdJcUdld3JvTmFyaXFhMjhYSlpLOUloamdBMGpNUFd1QzFGXzAtS3VnSC1SSnppYzdIRdIB9AFBVV95cUxNeV8wb3FOc3pnUWZhelRkVnpKUVFYdi1IZXdqdE1Ecm45eTIzc2U1NUNJQ2NTRnBJRm51bWNGSUVCLTl1QWxab3FrLURrVHVKeUNVLUlnaXhRZWs3alZ1TTRxam5Fcm5SVGx5WDJaNkFDZTl6MzE2eTJYRjhMMVNGSDlGMDJTT3BJMzVERjY5VVJSVEhBNXpiYUNEbm16a2tMWHhtMTVzY2FDcDViVXdVS3hlMGJPMXF3eGJnVG9BdUtFV2twVUpTdW4wZzV3Vml6eXRPS1NpeGdoMDAzOFN0Sjd5UVV2azdEa3o5LVgyc0ptcDFj?oc=5"
+     }
+    ],
+    "s": 4.0
    },
    {
     "k": "LICHSGFIN",
