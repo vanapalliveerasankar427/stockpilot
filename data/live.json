@@ -1,6 +1,6 @@
 {
  "label": "16 Nov 2026, 8:25 PM IST",
- "updated": "2026-11-16T20:25:01+05:30",
+ "updated": "2026-11-16T20:25:38+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -135,15 +135,15 @@
   },
   "mcx": {
    "gold": {
-    "v": 135850.0,
-    "ch": -855.0,
-    "pct": -0.63,
+    "v": 135801.0,
+    "ch": -904.0,
+    "pct": -0.66,
     "t": "16 Nov, 8:25 PM"
    },
    "silver": {
-    "v": 169450.0,
-    "ch": -6859.0,
-    "pct": -3.89,
+    "v": 169386.0,
+    "ch": -6923.0,
+    "pct": -3.93,
     "t": "16 Nov, 8:25 PM"
    }
   },
@@ -355,40 +355,40 @@
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13643.0,
-   "g24_10": 136430.0,
-   "ag_kg": 170170.0,
-   "ag": 170.17,
+   "g24": 13638.0,
+   "g24_10": 136380.0,
+   "ag_kg": 170100.0,
+   "ag": 170.1,
    "t": "16 Nov, 8:25 PM"
   },
   "dp": {
    "ag1": {
-    "b": 177318.0,
-    "a": 177318.0,
+    "b": 177273.0,
+    "a": 177273.0,
     "h": 189121.0,
     "l": 176761.0
    },
    "ag30": {
-    "b": 174318.0,
-    "a": 174318.0,
+    "b": 174273.0,
+    "a": 174273.0,
     "h": 186121.0,
     "l": 173761.0
    },
    "g999": {
-    "b": 13974.1,
-    "a": 13974.1,
+    "b": 13971.5,
+    "a": 13971.5,
     "h": 14419.9,
     "l": 13815.6
    },
    "xau": {
-    "b": 3883.3,
-    "a": 3883.32,
+    "b": 3882.7,
+    "a": 3882.72,
     "h": 3901.72,
     "l": 3833.02
    },
    "xag": {
-    "b": 47.24,
-    "a": 47.24,
+    "b": 47.23,
+    "a": 47.23,
     "h": 49.07,
     "l": 47.09
    },
@@ -398,7 +398,7 @@
     "h": 94.33,
     "l": 93.83
    },
-   "at": 1794840907,
+   "at": 1794840963,
    "t": "16 Nov, 8:25 PM"
   }
  },
@@ -510,24 +510,24 @@
   "t": 1794840221
  },
  "brent": {
-  "v": 93.63,
+  "v": 93.65,
   "prev": 95.84,
-  "ch": -2.21,
-  "pct": -2.31,
+  "ch": -2.19,
+  "pct": -2.29,
   "high": 96.76,
   "low": 93.34,
   "open": 95.35,
-  "t": 1794840297
+  "t": 1794840328
  },
  "goldSpot": {
-  "v": 3881.5,
+  "v": 3885.8,
   "prev": 3886.3,
-  "ch": -4.8,
-  "pct": -0.12,
+  "ch": -0.5,
+  "pct": -0.01,
   "high": 3904.3,
   "low": 3835.2,
   "open": 3870.0,
-  "t": 1794840301
+  "t": 1794840338
  },
  "sectors": [
   [
@@ -1330,7 +1330,7 @@
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook: 242 headlines, 25 up, 25 down",
+  "outlook: 243 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2530,7 +2530,7 @@
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook: 242 headlines, 25 up, 25 down",
+  "outlook: 243 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
@@ -2541,21 +2541,21 @@
  "global": [
   [
    "Dow Jones",
-   52121.88,
-   -0.43,
-   1794840901
+   52149.69,
+   -0.38,
+   1794840937
   ],
   [
    "S&P 500",
-   7489.75,
-   -0.95,
-   1794840901
+   7492.51,
+   -0.91,
+   1794840937
   ],
   [
    "Nasdaq",
-   24768.06,
-   -1.46,
-   1794840898
+   24773.15,
+   -1.44,
+   1794840931
   ],
   [
    "Nikkei 225",
@@ -2571,23 +2571,23 @@
   ],
   [
    "FTSE 100",
-   10952.28,
-   0.46,
-   1794840001
+   10949.21,
+   0.43,
+   1794840034
   ],
   [
    "US 10Y yield",
    5.13,
-   -0.41,
-   1794839993
+   -0.49,
+   1794840033
   ]
  ],
  "outlook": {
   "at": "16 Nov, 8:25 PM",
-  "headlines": 242,
-  "screened": 1802,
+  "headlines": 243,
+  "screened": 1801,
   "cues": [
-   "US tech (Nasdaq) fell 1.5% in the last session",
+   "US tech (Nasdaq) fell 1.4% in the last session",
    "Brent crude down 2.3%",
    "S&P 500 -0.9%",
    "Nikkei 225 -2.4%"
@@ -2662,7 +2662,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -2971,25 +2971,6 @@
     ]
    },
    {
-    "k": "KALYANKJIL",
-    "n": "Kalyan Jewellers India",
-    "s": 4,
-    "conf": "Medium",
-    "p": 708.15,
-    "pct": 1.6,
-    "mc": 73134.3,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Kalyan Jewellers Share Price Rally: 42% Gain in 11 Sessions",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWW00eS1sRHA4b1VyV1ZmX0IwdmVsd1RlcXhaTkRzMjhpRFlyc1drZWNNdDJvTFVsSWVlT3ZzMk9ZcVVSWWd6VGI3Y3pEWThRek9ER3NSbTVtaEpnUXBobFRUVnhwZVlOX0drUXM5TVhPR2xVTmRkemZLV1B3SmFmYWRyWEQ0b0FXWWpWRUhuM0lFbXlxM1ZkcWRpMHRob1hVd0c3dDA2QktDSkF1Y0VCRTdJYS1melM4YjVnenlxdS1HTEgwZTdISkQ5bDFUaWFjNjJv?oc=5",
-      "src": "Univest"
-     }
-    ]
-   },
-   {
     "k": "TVSSCS",
     "n": "TVS Supply Chain Solutions",
     "s": 4,
@@ -3015,7 +2996,7 @@
     "conf": "Medium",
     "p": 3729.6,
     "pct": 0.26,
-    "mc": 94923.6,
+    "mc": null,
     "sec": "Financial Services",
     "why": [
      {
@@ -3145,6 +3126,23 @@
       "s": 3.0
      }
     ]
+   },
+   {
+    "k": "SRM",
+    "n": "SRM Contractors",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 430.9,
+    "pct": 6.45,
+    "mc": 988.9,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +6.5% on 5.6× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
    }
   ],
   "down": [
@@ -3181,7 +3179,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3252,7 +3250,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3317,37 +3315,6 @@
     ]
    },
    {
-    "k": "PRICOLLTD",
-    "n": "Pricol",
-    "s": -11.0,
-    "conf": "High",
-    "p": 615.0,
-    "pct": -17.76,
-    "mc": null,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Pricol shares fall over 10% on Warburg Pincus deal terms",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTW0tZkZXbFhHM1lRRDU3Qk5rYVN6VURWM3p1cG1WM1pJbFlOeWtBR1dhQW8wbmtVZ1Nid05YamFrMjJyQXJsMnJEVUVHZW1nMlR3S04wTWx1dHBfODNLR1RlN0JtMlZPZU1ZQWI5WDNNOTBLTU9pbEtYRHNJa0cwRG1xNWl4SEFzOTdUdUI2aTFoTEpuNktMTkxYTDNiNWlVVzh2Wg?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "news",
-      "t": "Pricol shares slump 20% after promoters announced to sell out stake to Warburg Pincus",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNd3p6a3R4WnBvSHV4dkZGcFpOZ2tyc2UxR3pMZVdkcVY2bDY5b2YxcTVSRkxYTjF4cWtTQVZqa1BVSW5uYnp5WjFvWmdmTG5ZZ1M2cDdGdDM1T01MS2puaXA4NHhjVVd5b2dHTXhuMkZSX0lJTHNRNU1KajNPVTJySDE1TGRWRlp6NWhnd3FOYUUtRk5OcFZQU0NSUzJuSEVjMmxBNC16TUJ2TUhOYjdqZEpnVnlHLU44T1d5b2JPaEUzWm5vMHZsNEtndS1IVFNNa0HSAdcBQVVfeXFMTk1pVUJSWl9SR01RREYxUzlYbG9za0ZVSE91bHpQVnMxOV9HR0NCWUtRR2h2ZHc5dThzQUhhWW5zcGRkVkR3eDRJNS1CRXpjUDBZY3J2amRVamVLTmdZLVZXc2tXaW90bXlmX213MWkyeHZ3c2ViVnRuN0ZaWTEtTlVkVUhUNWp0S3VoTWFxQUxmUldaZVFzQlM2MWotSmxEZGdzNHJpc3RSd0RZaFpYSm9ldnQ2UU5nVmNTSmVjLWUxZGRkeFZBRWZVcXFWOWNpVmliaDBvRGs?oc=5",
-      "src": "ET Now"
-     },
-     {
-      "k": "price",
-      "t": "Closed weak: -17.8% on 16.6× usual volume, near the day's low",
-      "s": -3.0
-     }
-    ]
-   },
-   {
     "k": "INDIAGLYCO",
     "n": "India Glycols",
     "s": -8,
@@ -3363,6 +3330,30 @@
       "s": -8,
       "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOSThWZy02T0pjdngyRjNlV21BaXVoZTVLMmNHUVZfY0JzUEZUWmRBcWc4c3ZzUldBQzQtbUVIeC1sYVBFMDE3VHd0SWY4Z2c3Nk5FeGpsUVJQdnFzZTd3amtCWGppSzRaV2lCQ2lGYjUzQjhLa3VQV2RRR2ZXcXVxWkZLbWR5c1lsMTRwdzg5VkpTdWZGQWhyTnZpVW9tSzIyM1JVMXlDclc2NXhSQjk5U0VpUzg3SmFFRmNMbzZkMTNFVnJEY1prWWJRTXRBVkRMaWtKaGpidHlndlVrdkdZMkVaeElTLUtxYnhJ?oc=5",
       "src": "Business Upturn"
+     }
+    ]
+   },
+   {
+    "k": "PRICOLLTD",
+    "n": "Pricol",
+    "s": -7.0,
+    "conf": "High",
+    "p": 615.0,
+    "pct": -17.76,
+    "mc": null,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "news",
+      "t": "Pricol shares slump 20% after promoters announced to sell out stake to Warburg Pincus",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNd3p6a3R4WnBvSHV4dkZGcFpOZ2tyc2UxR3pMZVdkcVY2bDY5b2YxcTVSRkxYTjF4cWtTQVZqa1BVSW5uYnp5WjFvWmdmTG5ZZ1M2cDdGdDM1T01MS2puaXA4NHhjVVd5b2dHTXhuMkZSX0lJTHNRNU1KajNPVTJySDE1TGRWRlp6NWhnd3FOYUUtRk5OcFZQU0NSUzJuSEVjMmxBNC16TUJ2TUhOYjdqZEpnVnlHLU44T1d5b2JPaEUzWm5vMHZsNEtndS1IVFNNa0HSAdcBQVVfeXFMTk1pVUJSWl9SR01RREYxUzlYbG9za0ZVSE91bHpQVnMxOV9HR0NCWUtRR2h2ZHc5dThzQUhhWW5zcGRkVkR3eDRJNS1CRXpjUDBZY3J2amRVamVLTmdZLVZXc2tXaW90bXlmX213MWkyeHZ3c2ViVnRuN0ZaWTEtTlVkVUhUNWp0S3VoTWFxQUxmUldaZVFzQlM2MWotSmxEZGdzNHJpc3RSd0RZaFpYSm9ldnQ2UU5nVmNTSmVjLWUxZGRkeFZBRWZVcXFWOWNpVmliaDBvRGs?oc=5",
+      "src": "ET Now"
+     },
+     {
+      "k": "price",
+      "t": "Closed weak: -17.8% on 16.6× usual volume, near the day's low",
+      "s": -3.0
      }
     ]
    },
@@ -3507,7 +3498,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3570,14 +3561,14 @@
     ]
    },
    {
-    "k": "MTNL",
-    "n": "Mahanagar Telephone Nigam",
+    "k": "MMTC",
+    "n": "MMTC",
     "s": -4,
     "conf": "Medium",
-    "p": 25.21,
-    "pct": -3.48,
-    "mc": 1588.2,
-    "sec": "Communication Services",
+    "p": 53.91,
+    "pct": -3.44,
+    "mc": 8086.5,
+    "sec": "Industrials",
     "why": [
      {
       "k": "news",
@@ -3589,14 +3580,14 @@
     ]
    },
    {
-    "k": "MMTC",
-    "n": "MMTC",
+    "k": "MTNL",
+    "n": "Mahanagar Telephone Nigam",
     "s": -4,
     "conf": "Medium",
-    "p": 53.91,
-    "pct": -3.44,
-    "mc": 8086.5,
-    "sec": "Industrials",
+    "p": 25.21,
+    "pct": -3.48,
+    "mc": 1588.2,
+    "sec": "Communication Services",
     "why": [
      {
       "k": "news",
@@ -3643,7 +3634,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3687,7 +3678,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3709,7 +3700,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3731,7 +3722,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -1.5% overnight; IT stocks often follow",
+      "t": "Nasdaq -1.4% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3925,6 +3916,20 @@
    "src": "antala-industries-sme-ipo"
   },
   {
+   "id": "vectrasenprocon",
+   "name": "Vectras Enprocon",
+   "type": "SME",
+   "open": "2026-10-30",
+   "close": "2026-11-03",
+   "allot": "2026-11-04",
+   "refund": "2026-11-05",
+   "list": "2026-11-06",
+   "lo": 99.0,
+   "hi": 105.0,
+   "lot": 1200,
+   "src": "vectras-enprocon-sme-ipo"
+  },
+  {
    "id": "hgsindia",
    "name": "HGS (India)",
    "type": "SME",
@@ -3951,20 +3956,6 @@
    "hi": 158.0,
    "lot": 800,
    "src": "maxwell-engineering-solutions-sme-ipo"
-  },
-  {
-   "id": "vectrasenprocon",
-   "name": "Vectras Enprocon",
-   "type": "SME",
-   "open": "2026-10-30",
-   "close": "2026-11-03",
-   "allot": "2026-11-04",
-   "refund": "2026-11-05",
-   "list": "2026-11-06",
-   "lo": 99.0,
-   "hi": 105.0,
-   "lot": 1200,
-   "src": "vectras-enprocon-sme-ipo"
   },
   {
    "id": "johnsoncabelectricals",
@@ -3996,7 +3987,7 @@
   },
   {
    "id": "crystalcropprotection",
-   "name": "Crystal Crop Protection",
+   "name": "Crystal Crop Protection Limited",
    "type": "Mainboard",
    "open": "2026-11-18",
    "close": "2026-11-20",
@@ -4329,417 +4320,417 @@
   "at": "16 Nov, 8:25 PM",
   "g": [
    [
-    "535279",
-    "Bothra Metals & Alloys",
-    6.9,
+    "542460",
+    "The Anup Engineering",
+    1725.1,
     20.0,
-    5.75
+    1437.6
    ],
    [
-    "543992",
-    "Yatra Online",
-    93.79,
+    "542597",
+    "MSTC",
+    783.65,
     20.0,
-    78.16
+    653.05
    ],
    [
-    "544168",
-    "Varyaa Creations",
-    29.4,
-    20.0,
-    24.5
+    "537326",
+    "Chemtech Industrial Valves",
+    60.28,
+    19.98,
+    50.24
    ],
    [
-    "544585",
-    "Sihora Industries",
-    60.05,
-    19.96,
-    50.06
-   ],
-   [
-    "533452",
-    "Delphi World Money",
-    7.35,
-    19.9,
-    6.13
-   ],
-   [
-    "531888",
-    "Rexnord Electronics & Controls",
-    116.16,
-    19.56,
-    97.16
+    "544163",
+    "Greenhitech Ventures",
+    54.64,
+    19.98,
+    45.54
    ],
    [
     "535910",
     "Money Masters Leasing & Finance",
-    1.11,
-    19.35,
-    0.93
+    0.93,
+    19.23,
+    0.78
+   ],
+   [
+    "506248",
+    "Amines & Plasticizers",
+    179.5,
+    19.15,
+    150.65
+   ],
+   [
+    "541601",
+    "Rajnish Wellness",
+    0.46,
+    17.95,
+    0.39
+   ],
+   [
+    "543767",
+    "Bodhi Tree Multimedia",
+    6.7,
+    16.52,
+    5.75
+   ],
+   [
+    "544489",
+    "LGT Global Hospitality",
+    38.0,
+    15.15,
+    33.0
+   ],
+   [
+    "531147",
+    "Alicon Castalloy",
+    951.25,
+    14.45,
+    831.15
+   ],
+   [
+    "544195",
+    "United Cotfab",
+    14.3,
+    14.4,
+    12.5
+   ],
+   [
+    "505302",
+    "Lakshmi Engineering And Warehousing",
+    2626.0,
+    13.58,
+    2312.0
+   ],
+   [
+    "505890",
+    "Kennametal India Ltd-$",
+    3926.95,
+    13.07,
+    3473.15
+   ],
+   [
+    "532180",
+    "Dhanlaxmi Bank",
+    39.56,
+    12.9,
+    35.04
+   ],
+   [
+    "545011",
+    "BLS Polymers",
+    264.8,
+    12.85,
+    234.65
    ],
    [
     "538464",
     "Thirani Projects",
-    3.31,
-    17.79,
-    2.81
+    2.81,
+    12.4,
+    2.5
    ],
    [
-    "526355",
-    "Duro Pack",
-    69.06,
-    17.45,
-    58.8
+    "507498",
+    "Piccadily Sugar & Allied Industries",
+    35.11,
+    12.21,
+    31.29
    ],
    [
-    "524752",
-    "Decipher Labs",
-    6.65,
-    17.28,
-    5.67
+    "509874",
+    "Shalimar Paints Ltd-$",
+    95.5,
+    12.16,
+    85.15
    ],
    [
-    "524506",
-    "Coral Laboratories",
-    622.55,
-    16.09,
-    536.25
+    "524606",
+    "Beryl Drugs",
+    26.89,
+    12.04,
+    24.0
    ],
    [
-    "544677",
-    "Defrail Technologies",
-    81.0,
-    15.73,
-    69.99
+    "532430",
+    "BF Utilities Ltd-$",
+    503.0,
+    11.65,
+    450.5
    ],
    [
-    "544508",
-    "Vashishtha Luxury Fashion",
-    78.38,
-    15.52,
-    67.85
+    "509024",
+    "Golden Legand Leasing & finance",
+    7.6,
+    11.6,
+    6.81
    ],
    [
-    "543461",
-    "Safa Systems & Technologies",
-    20.2,
-    15.43,
-    17.5
+    "531346",
+    "Eastern Treads",
+    31.8,
+    11.27,
+    28.58
    ],
    [
-    "530245",
-    "Aryaman Financial Services",
-    878.0,
-    14.27,
-    768.35
+    "543187",
+    "Hitachi Energy India",
+    31740.0,
+    11.17,
+    28550.0
    ],
    [
-    "524440",
-    "Camex",
-    53.94,
-    13.68,
-    47.45
+    "531025",
+    "Visagar Financial Services",
+    0.3,
+    11.11,
+    0.27
    ],
    [
-    "544890",
-    "Skyways Air Services",
-    131.74,
-    13.31,
-    116.27
-   ],
-   [
-    "539113",
-    "Paul Merchants",
-    508.35,
-    12.47,
-    452.0
-   ],
-   [
-    "543965",
-    "TVS Supply Chain Solutions",
-    137.45,
-    12.43,
-    122.25
+    "590134",
+    "Madras Fertilizers",
+    65.01,
+    10.84,
+    58.65
    ],
    [
     "544546",
     "Chatterbox Technologies",
-    45.9,
-    11.95,
-    41.0
+    41.0,
+    10.81,
+    37.0
    ],
    [
-    "507598",
-    "Kovilpatti Lakshmi Roller Flour Mills",
-    91.91,
-    11.12,
-    82.71
+    "543861",
+    "Udayshivakumar Infra",
+    20.22,
+    10.79,
+    18.25
    ],
    [
-    "517467",
-    "Marsons",
-    163.5,
-    11.11,
-    147.15
+    "505010",
+    "Automotive Axles",
+    1813.5,
+    10.67,
+    1638.6
    ],
    [
-    "500186",
-    "Hindustan Oil Exploration Company",
-    213.0,
-    10.76,
-    192.3
+    "530991",
+    "Roopa Industries",
+    45.95,
+    10.51,
+    41.58
    ],
    [
-    "524500",
-    "Kilitch Drugs India",
-    237.35,
-    10.19,
-    215.4
+    "532952",
+    "Nahar Capital and Financial Services",
+    256.0,
+    10.51,
+    231.65
    ],
    [
-    "531069",
-    "Vijay Solvex",
-    889.65,
+    "543595",
+    "EP Biocomposites",
+    99.32,
+    10.34,
+    90.01
+   ],
+   [
+    "530235",
+    "KJMC Financial Services",
+    70.19,
     10.0,
-    808.8
-   ],
-   [
-    "542503",
-    "Mahip Industries",
-    16.5,
-    10.0,
-    15.0
-   ],
-   [
-    "543108",
-    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
-    185.06,
-    10.0,
-    168.24
-   ],
-   [
-    "544409",
-    "Astonea Labs",
-    385.0,
-    10.0,
-    350.0
-   ],
-   [
-    "544452",
-    "Swastika Castal",
-    92.4,
-    10.0,
-    84.0
-   ],
-   [
-    "544649",
-    "Titanium Hybrid Long-Short Fund Direct Plan Growth",
-    9.35,
-    10.0,
-    8.5
-   ],
-   [
-    "531543",
-    "Jindal Worldwide",
-    39.29,
-    9.99,
-    35.72
-   ],
-   [
-    "543099",
-    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
-    88.61,
-    9.99,
-    80.56
-   ],
-   [
-    "543210",
-    "Aarti Surfactants",
-    581.1,
-    9.99,
-    528.3
-   ],
-   [
-    "544940",
-    "Robokidz Eduventures",
-    173.75,
-    9.97,
-    158.0
+    63.81
    ],
    [
     "539143",
     "Panth Infinity",
-    16.57,
-    9.95,
-    15.07
+    15.07,
+    10.0,
+    13.7
    ],
    [
-    "502281",
-    "Triveni Glass Ltd-$",
-    11.85,
-    9.93,
-    10.78
+    "540961",
+    "Shiva Mills",
+    61.38,
+    10.0,
+    55.8
    ],
    [
-    "526237",
-    "Morgan Ventures",
-    45.12,
-    9.91,
-    41.05
-   ],
-   [
-    "526179",
-    "Ludlow Jute & Specialities",
-    321.65,
-    9.87,
-    292.75
-   ],
-   [
-    "543110",
+    "543106",
     "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
-    7.46,
-    9.87,
-    6.79
+    556.6,
+    10.0,
+    506.0
    ],
    [
-    "523840",
-    "Innovative Tech Pack",
-    18.53,
+    "544073",
+    "Manoj Ceramic",
+    99.55,
+    10.0,
+    90.5
+   ],
+   [
+    "543099",
+    "UTI Credit Risk Fund (Segregated-06032020)-Direct Quarterly Dividend Payout(Issue Price : Rs.0.01)",
+    80.56,
+    9.99,
+    73.24
+   ],
+   [
+    "541005",
+    "Kanco Tea & Industries",
+    65.99,
+    9.98,
+    60.0
+   ],
+   [
+    "544178",
+    "Piotex Industries",
+    18.77,
+    9.96,
+    17.07
+   ],
+   [
+    "541096",
+    "Bharat Parenterals",
+    2098.0,
+    9.89,
+    1909.25
+   ],
+   [
+    "539149",
+    "Integrated Capital Services",
+    4.18,
     9.71,
-    16.89
+    3.81
    ],
    [
-    "543167",
-    "NIPPON INDIA CREDIT RISK FUND -  SEGREGATED PORTFOLIO 2 - GROWTH PLAN GROWTH OPTION(Issue Price: 0.01)",
-    1.81,
-    9.7,
-    1.65
+    "544994",
+    "HD Fire Protect",
+    311.5,
+    9.63,
+    284.15
+   ],
+   [
+    "544236",
+    "Resourceful Automobile",
+    57.0,
+    9.55,
+    52.03
+   ],
+   [
+    "544996",
+    "Bonfiglioli Transmissions",
+    792.0,
+    9.54,
+    723.05
+   ],
+   [
+    "516003",
+    "Duroply Industries",
+    110.0,
+    9.45,
+    100.5
+   ],
+   [
+    "543182",
+    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT MONTHLY DIVIDEND PLANDIVIDEND PAYOUT",
+    25.93,
+    9.36,
+    23.71
+   ],
+   [
+    "504840",
+    "Kaira Can Company",
+    1467.0,
+    9.34,
+    1341.65
+   ],
+   [
+    "509073",
+    "Hathway Bhawani Cabletel & Datacom",
+    11.5,
+    9.32,
+    10.52
+   ],
+   [
+    "535602",
+    "Sharda Motor Industries",
+    978.0,
+    9.29,
+    894.85
+   ],
+   [
+    "532768",
+    "Fiem Industries",
+    2125.3,
+    9.28,
+    1944.9
+   ],
+   [
+    "533316",
+    "STEL Holdings",
+    665.0,
+    9.17,
+    609.15
+   ],
+   [
+    "522294",
+    "T & I Global",
+    205.2,
+    9.0,
+    188.25
    ],
    [
     "533638",
     "Flexituff Ventures International",
-    5.1,
-    9.68,
-    4.65
+    4.65,
+    8.9,
+    4.27
    ],
    [
-    "543212",
-    "Borosil",
-    340.95,
-    9.68,
-    310.85
+    "543092",
+    "NIPPON INDIA HYBRID BOND FUND -  SEGREGATED PORTFOLIO 2 - GROWTH PLAN GROWTH OPTION(Issue Price : Rs.0.01)",
+    6.86,
+    8.89,
+    6.3
    ],
    [
-    "512399",
-    "Sera Investments & Finance India",
-    69.26,
-    9.66,
-    63.16
+    "539492",
+    "Garbi Finvest",
+    7.87,
+    8.85,
+    7.23
    ],
    [
-    "511122",
-    "First Custodian Fund India",
-    67.83,
-    9.62,
-    61.88
-   ],
-   [
-    "531439",
-    "Aion-Tech Solutions",
-    41.02,
-    9.27,
-    37.54
-   ],
-   [
-    "544405",
-    "Belrise Industries",
-    235.15,
-    9.27,
-    215.2
-   ],
-   [
-    "543617",
-    "Reetech International",
-    19.5,
-    9.24,
-    17.85
-   ],
-   [
-    "532365",
-    "Dynacons Systems & Solutions",
-    1149.2,
-    9.16,
-    1052.8
-   ],
-   [
-    "544243",
-    "Baazar Style Retail",
-    511.15,
-    9.09,
-    468.55
-   ],
-   [
-    "523844",
-    "Constronics Infra",
-    44.93,
-    9.05,
-    41.2
-   ],
-   [
-    "542801",
-    "Misquita Engineering",
-    66.5,
-    9.02,
-    61.0
-   ],
-   [
-    "543184",
-    "NIPPON INDIA EQUITY HYBRID FUND -  SEGREGATED PORTFOLIO 2DIRECT QUARTERLY DIVIDEND PLANDIVIDEND PAYOUT",
-    21.47,
-    8.93,
-    19.71
-   ],
-   [
-    "536264",
-    "Tiger Logistics (India)",
-    30.94,
-    8.91,
-    28.41
-   ],
-   [
-    "534532",
-    "Aurus Gem Corporation",
-    4.79,
-    8.86,
-    4.4
-   ],
-   [
-    "521200",
-    "Suryalakshmi Cotton Mills",
-    57.85,
-    8.84,
-    53.15
-   ],
-   [
-    "514183",
-    "Black Rose Industries",
-    109.46,
-    8.82,
-    100.59
-   ],
-   [
-    "544365",
-    "Shanmuga Hospital",
-    46.5,
-    8.77,
-    42.75
-   ],
-   [
-    "532304",
-    "KJMC Corporate Advisors (India)",
-    66.12,
+    "517273",
+    "S&S Power Switchgear",
+    340.0,
     8.75,
-    60.8
+    312.65
+   ],
+   [
+    "530341",
+    "Mukesh Babu Financial Services",
+    125.0,
+    8.7,
+    115.0
+   ],
+   [
+    "545008",
+    "EAAA India Alternatives",
+    1996.2,
+    8.7,
+    1836.45
+   ],
+   [
+    "544960",
+    "Orient Cables (India)",
+    408.55,
+    8.57,
+    376.3
    ]
   ],
   "l": [
@@ -5141,24 +5132,19 @@
   "at": "16 Nov, 8:25 PM",
   "g": [
    [
-    "B544168",
-    "Varyaa Creations",
-    20.0
-   ],
-   [
-    "B535279",
-    "Bothra Metals & Alloys",
-    20.0
-   ],
-   [
     "YATRA",
     "Yatra Online",
     19.99
    ],
    [
-    "B544585",
-    "Sihora Industries",
-    19.96
+    "B544163",
+    "Greenhitech Ventures",
+    19.98
+   ],
+   [
+    "B537326",
+    "Chemtech Industrial Valves",
+    19.98
    ],
    [
     "DELPHIFX",
@@ -5166,29 +5152,34 @@
     19.87
    ],
    [
-    "B531888",
-    "Rexnord Electronics & Controls",
-    19.56
-   ],
-   [
     "B535910",
     "Money Masters Leasing & Finance",
-    19.35
+    19.23
    ],
    [
-    "B538464",
-    "Thirani Projects",
-    17.79
+    "B541601",
+    "Rajnish Wellness",
+    17.95
    ],
    [
-    "B526355",
-    "Duro Pack",
-    17.45
+    "B544489",
+    "LGT Global Hospitality",
+    15.15
    ],
    [
-    "B524752",
-    "Decipher Labs",
-    17.28
+    "B544195",
+    "United Cotfab",
+    14.4
+   ],
+   [
+    "ARYAMAN",
+    "Aryaman Financial Services",
+    13.8
+   ],
+   [
+    "B505302",
+    "Lakshmi Engineering And Warehousing",
+    13.58
    ]
   ],
   "l": [
@@ -5884,22 +5875,6 @@
     "s": 6.0
    },
    {
-    "k": "KALYANKJIL",
-    "n": "Kalyan Jewellers India",
-    "p": 708.15,
-    "pct": 1.6,
-    "vx": 1.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Kalyan Jewellers Share Price Rally: 42% Gain in 11 Sessions",
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWW00eS1sRHA4b1VyV1ZmX0IwdmVsd1RlcXhaTkRzMjhpRFlyc1drZWNNdDJvTFVsSWVlT3ZzMk9ZcVVSWWd6VGI3Y3pEWThRek9ER3NSbTVtaEpnUXBobFRUVnhwZVlOX0drUXM5TVhPR2xVTmRkemZLV1B3SmFmYWRyWEQ0b0FXWWpWRUhuM0lFbXlxM1ZkcWRpMHRob1hVd0c3dDA2QktDSkF1Y0VCRTdJYS1melM4YjVnenlxdS1HTEgwZTdISkQ5bDFUaWFjNjJv?oc=5"
-     }
-    ],
-    "s": 4.0
-   },
-   {
     "k": "MCX",
     "n": "Multi Commodity Exchange of India",
     "p": 3729.6,
@@ -6029,7 +6004,6 @@
     "MANAKSTEEL": 127.33,
     "FORTIS": 803.2,
     "NTPC": 321.25,
-    "KALYANKJIL": 708.15,
     "MCX": 3729.6,
     "LICHSGFIN": 605.5
    }
