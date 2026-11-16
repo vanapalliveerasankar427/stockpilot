@@ -1,13 +1,13 @@
 {
- "label": "16 Nov 2026, 11:40 PM IST",
- "updated": "2026-11-16T23:40:22+05:30",
+ "label": "17 Nov 2026, 12:10 AM IST",
+ "updated": "2026-11-17T00:10:42+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "16 Nov 2026, 11:40 PM",
+  "date": "17 Nov 2026, 12:10 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -119,6 +119,11 @@
     "16 Nov",
     134971,
     170251
+   ],
+   [
+    "17 Nov",
+    134971,
+    170251
    ]
   ],
   "ibja": {
@@ -129,22 +134,22 @@
    "g585": 7896.0,
    "p999": 13581,
    "pag": 178.0,
-   "sess": "16 Nov · PM",
+   "sess": "17 Nov · PM",
    "g999_10": 134971.0,
    "ag": 170.25
   },
   "mcx": {
    "gold": {
-    "v": 134522.0,
-    "ch": -2183.0,
-    "pct": -1.6,
-    "t": "16 Nov, 11:40 PM"
+    "v": 134550.0,
+    "ch": 11.0,
+    "pct": 0.01,
+    "t": "17 Nov, 12:10 AM"
    },
    "silver": {
-    "v": 167779.0,
-    "ch": -8530.0,
-    "pct": -4.84,
-    "t": "16 Nov, 11:40 PM"
+    "v": 168001.0,
+    "ch": 138.0,
+    "pct": 0.08,
+    "t": "17 Nov, 12:10 AM"
    }
   },
   "retail": {
@@ -350,56 +355,56 @@
      "ag": 190.0
     }
    },
-   "at": "16 Nov, 11:40 PM",
-   "at_ts": 1794852622.167783,
+   "at": "17 Nov, 12:10 AM",
+   "at_ts": 1794854442.333027,
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 13509.0,
-   "g24_10": 135090.0,
-   "ag_kg": 168490.0,
-   "ag": 168.49,
-   "t": "16 Nov, 11:40 PM"
+   "g24": 13513.0,
+   "g24_10": 135130.0,
+   "ag_kg": 168730.0,
+   "ag": 168.73,
+   "t": "17 Nov, 12:10 AM"
   },
   "dp": {
    "ag1": {
-    "b": 175962.0,
-    "a": 175962.0,
-    "h": 177161.0,
+    "b": 177048.0,
+    "a": 177048.0,
+    "h": 177381.0,
     "l": 174822.0
    },
    "ag30": {
-    "b": 172962.0,
-    "a": 172962.0,
-    "h": 174161.0,
+    "b": 174048.0,
+    "a": 174048.0,
+    "h": 174381.0,
     "l": 171822.0
    },
    "g999": {
-    "b": 13839.6,
-    "a": 13839.6,
+    "b": 13856.3,
+    "a": 13856.3,
     "h": 13941.1,
     "l": 13835.6
    },
    "xau": {
-    "b": 3842.5,
-    "a": 3842.52,
+    "b": 3848.0,
+    "a": 3848.02,
     "h": 3876.32,
     "l": 3841.82
    },
    "xag": {
-    "b": 46.91,
-    "a": 46.91,
+    "b": 46.86,
+    "a": 46.86,
     "h": 47.37,
     "l": 46.56
    },
    "fx": {
-    "b": 93.97,
-    "a": 93.98,
+    "b": 93.96,
+    "a": 93.97,
     "h": 93.99,
     "l": 93.94
    },
-   "at": 1794852630,
-   "t": "16 Nov, 11:40 PM"
+   "at": 1794854450,
+   "t": "17 Nov, 12:10 AM"
   }
  },
  "logos": [],
@@ -467,6 +472,10 @@
  },
  "nifty8": [
   [
+   "3 Nov",
+   23810.85
+  ],
+  [
    "4 Nov",
    23960.6
   ],
@@ -493,10 +502,6 @@
   [
    "13 Nov",
    25144.3
-  ],
-  [
-   "16 Nov",
-   25291.1
   ]
  ],
  "usdinr": {
@@ -510,24 +515,24 @@
   "t": 1794845132
  },
  "brent": {
-  "v": 93.03,
+  "v": 92.71,
   "prev": 95.84,
-  "ch": -2.81,
-  "pct": -2.93,
+  "ch": -3.13,
+  "pct": -3.27,
   "high": 96.76,
-  "low": 92.88,
+  "low": 92.71,
   "open": 95.35,
-  "t": 1794852021
+  "t": 1794853834
  },
  "goldSpot": {
-  "v": 3858.3,
+  "v": 3852.9,
   "prev": 3886.3,
-  "ch": -28.0,
-  "pct": -0.72,
+  "ch": -33.4,
+  "pct": -0.86,
   "high": 3904.3,
   "low": 3835.2,
   "open": 3870.0,
-  "t": 1794852019
+  "t": 1794853842
  },
  "sectors": [
   [
@@ -1107,7 +1112,7 @@
   "crystalcropprotection": {
    "gmp": 13.0,
    "gsrc": "IPOMarket",
-   "gat": "16 Nov, 11:40 PM",
+   "gat": "17 Nov, 12:10 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1124,13 +1129,17 @@
     [
      "16 Nov",
      13.0
+    ],
+    [
+     "17 Nov",
+     13.0
     ]
    ]
   },
   "watranarentals": {
    "gmp": 25.0,
    "gsrc": "IPOMarket",
-   "gat": "16 Nov, 11:40 PM",
+   "gat": "17 Nov, 12:10 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1147,16 +1156,24 @@
     [
      "16 Nov",
      25.0
+    ],
+    [
+     "17 Nov",
+     25.0
     ]
    ]
   },
   "mahanadicoalfields": {
    "gmp": 4.0,
    "gsrc": "IPOMarket",
-   "gat": "16 Nov, 11:40 PM",
+   "gat": "17 Nov, 12:10 AM",
    "ghist": [
     [
      "16 Nov",
+     4.0
+    ],
+    [
+     "17 Nov",
      4.0
     ]
    ]
@@ -1170,7 +1187,7 @@
   "dii_sell": 15271.08,
   "fii_buy": 15636.88,
   "fii_sell": 10772.2,
-  "fetched": "16 Nov, 11:40 PM",
+  "fetched": "17 Nov, 12:10 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1226,6 +1243,13 @@
   ]
  },
  "news": [
+  {
+   "tag": "Economy",
+   "t": "India's investments in US treasuries up $38.4 billion in June-August",
+   "s": "Business Standard",
+   "d": "16 Nov, 11:51 PM",
+   "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV3NrbVVHeVEtQ3RUSWdQdEZVdzV6TXRYLTFwdUhQb0ZyaFMtdUZsWHpIblIyUG1hb29pZ20zNW92Zmc3RkN2X25mQUM3clA4Z0o5X1RwYlo1eWtndklKUHJrODVmdWNYYVU4dE1MbHhrTWpuNEoyV016SFhmNjN2T3NwMFBFRDd5ei1vaDRLVzlDS2t2Vzh6VFBfQkx1LXJvN1p5anI3TGpUcFBfUlBGVjJweUIySnJNVVhMQkhNMjZORGE4ZXQ4NEloUEVjYUXSAdQBQVVfeXFMUFdwR3Nydnd0ZDhTYkxabWNfenh1clp3X3NaR3ROTzlyTndTcmhpTEpXUUNIYXBiQUI0UzRxX2lMNHI3d21iZWNONEVoOEVQYzFzWTJ2X0R1eWN0X0k0OW1iRnRXcFk5Nzh2UnRDNVpJSEFnSklSUG5jLWozRlJyU1B3SG95cHFoSmU4cVNxN1NKWDVPUmU1S19fbWFNSTZwSEV0R2YtcHVtQ2NmekFWUGRQV2RkYzh1ZXlYLVlLeUtBR1ZWRmh2ZHpkTTE3TXhfb05yWlY?oc=5"
+  },
   {
    "tag": "Results",
    "t": "Orchid Pharma pays ₹2,000 fine to NSE and BSE for annual report delay",
@@ -1297,11 +1321,11 @@
    "u": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNR2lGSll6ckN4djRFTWExcDdiYWExYkU5d0NTUHp0TjBJX3c1d1NTWEN1aU16ZV9nRmhPd3pXdFctMFViQkxlNEVGSFl3Nmg2MG9lYnNlTkJpR3pDbE5pYUo5T2pXZXNQSFdSWE9Qd28wdlNyMU5BZWx0anR2MV9ONjJzNFJYdGJJcHZTSEZhNkpEek5uS2RfNQ?oc=5"
   },
   {
-   "tag": "Economy",
-   "t": "India faces a more painful return to higher interest rates",
+   "tag": "IPO",
+   "t": "Mahanadi Coalfields Rs 8,981 crore IPO to open on November 19; GMP at 5%. Check key details",
    "s": "The Economic Times",
-   "d": "16 Nov, 10:14 AM",
-   "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPaTlKUHlaSTd1R21qZGhZTk5nTHpZMDFrQlBDVno5bHNiaWdMVEliYWt1cXl1YWcySzdBVmdJcmRhUTA3QnhwajNPTkJpSEpqS21taS1TNTQ3LTd3RVJ4d1JGNGI5anhQcTVTR3Q4RXVZb3hzQmNLT0Q0RndnQk1obVJMR1NmUThpbG93QS1yS3l0Q2tFMmJrVE1mYWJwSHhqYXJsMlg0RVprR1BHdldRWDZvLXJtWWpNc3dzbjJaYWg2bnVNNFNGbF9tcFJBY0NjbGZOOVd4dkRCbUc2aTI5NEZISzJqcXZ0WVlldmJmb24xNkZOTzBGMjNVbjc2ZW9xNnfSAfsBQVVfeXFMT1BlcjhvWUE4aWZleHpCdmlDTm1YRk5mdXRIa1ZWcFVlSExZQWFTRFp4UDlVbjFudllRM21qMW9DVU1JZzVmbzZNamN5QVF0eWNYQ3BkZnZIN0FpMVlDbVRCMDA5cG9LZm9EUVNtS091Q09aM3ZyYXVrbWRuUENlalE1N2daMDR2YkV2Rkc2YVFHR2l2NU9MYWpaYjBleTc5SGpYSjNLVC15YWJpQ1lydlZQVGRyTXh3aXQ5OS1kX1l1TzdyQWpBTUZvSHdZUFNFWHFXZFZzQUhfUkNvMi1kQzJqT1c5ZUFCYzNvMHVGY3pJbDhVYUxQRE1UWHc?oc=5"
+   "d": "16 Nov, 11:17 AM",
+   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPUXhqdHlmaU5xd0Vra1RSR25ELWV2TlNNdVBTZXFKY1JLU0JtM3p2dkpEcDJTWU9iMWg1Q2FFT1psMUYzTGVYM0ZlYm9uQUZ0UDNxVVJ6OVRNOXdCQkhmcUFWZDY5TDhqcm8ybmNXeGVxdVdubEk5WVBaTDVmdktCQ2dfcDl2S0N3TGV2Y2JzUGktdGlsUkFvTVo2NkRKYkFySU8wbEtiR3JITUJhTF9FWXJPclFrdXNmV3J5ZFhraDFrRVIxam1xUFdUSXdsa2RRRU5rdlc1RDAtS0tQd3J1SzBiZjd2MXJSYlJmNlpJOGZ2ai1PdjdBdDZPRDXSAfYBQVVfeXFMT2MtYktWYWxYUGRDTng5eGV6dDQyUFp3N09jOV9WRURPclY1eGxwQnctcEFvWVk2ekdFQmlXaWRTeUlGbFQzN3NDUzNKaG9ibzg0aFIxNVBXRXlNWV8xNVBJRG1sZmUtVmZtNmhUMVVBU2NqaTFjUXJZTUxaZ1dIR21XcmJ1YWsxdkRJRFVCQ0F2eE54WnVtbmNSclNlbGFBWk1mTHdMUVoxSWM1VGQ1VmowMUlaOUdLc2ZFNmtiSTJ3VzhSRXZnTkx3V3d0NEctS0ZjNzBFRWVQYnEyUXZhXzJDTFcxWWtxUnBVZlE0bjJFN1NJbUVn?oc=5"
   },
   {
    "tag": "Results",
@@ -1316,13 +1340,6 @@
    "s": "Reuters",
    "d": "16 Nov, 7:48 AM",
    "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUnZsV3JvbXpiRElEdnViZ25tOXl2YldqM1VUT3JfSFlYTVBNZGxVZGllZWtORUxWTThHNXhfRU5NUHU0Nm1lcUw3Q0JOOXpwRjlybGFVb3IwbUhpVm9DMGIxLUN4c1VYMGFXLVJPVE9WZDNVazUtZmc0bWYzSDlXekw5QWU1cnA2ZlRRYURYQlBPSFhWcHcwTXU3cDE2ajJ0X2llUzdqb2pxOGRoVXNV?oc=5"
-  },
-  {
-   "tag": "Economy",
-   "t": "Has the RBI really stabilised the rupee?",
-   "s": "Finshots",
-   "d": "16 Nov, 7:03 AM",
-   "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hRjBIZnNwZExMbTR0ZWJORUVrUXZhaEpObjBtQnJlZXZUN3JDUWxuZ3VjNGRQQmdHdUJ5X040R0ZqVEJPeHJESGJTXy1hZkV1ODZhZE83d2JSZk1pMWt6NFVUNA?oc=5"
   }
  ],
  "log": [
@@ -1330,13 +1347,14 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
+  "results cal: 21 upcoming (10 NSE)",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook: 232 headlines, 25 up, 25 down",
+  "outlook: 237 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
   "n50": {
-   "day": "2026-11-16",
+   "day": "2026-11-17",
    "list": [
     [
      "ADANIENT",
@@ -1541,7 +1559,7 @@
    ]
   },
   "mid": {
-   "day": "2026-11-16",
+   "day": "2026-11-17",
    "list": [
     [
      "360ONE",
@@ -1946,7 +1964,7 @@
    ]
   },
   "small": {
-   "day": "2026-11-16",
+   "day": "2026-11-17",
    "list": [
     [
      "AARTIIND",
@@ -2352,9 +2370,9 @@
   }
  },
  "nse": {
-  "n50": "16 Nov, 11:40 PM",
-  "mid": "16 Nov, 11:40 PM",
-  "small": "16 Nov, 11:40 PM"
+  "n50": "17 Nov, 12:10 AM",
+  "mid": "17 Nov, 12:10 AM",
+  "small": "17 Nov, 12:10 AM"
  },
  "midg": [
   [
@@ -2531,33 +2549,34 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
+  "results cal: 21 upcoming (10 NSE)",
   "bse eod 2026-11-16: 5321 scrips",
-  "outlook: 232 headlines, 25 up, 25 down",
+  "outlook: 237 headlines, 25 up, 25 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
-  "stocks": 5276,
-  "quotes": 4815,
-  "at": "16 Nov, 11:40 PM"
+  "stocks": 5403,
+  "quotes": 4904,
+  "at": "17 Nov, 12:10 AM"
  },
  "global": [
   [
    "Dow Jones",
-   51819.18,
-   -1.01,
-   1794852621
+   51629.75,
+   -1.37,
+   1794854441
   ],
   [
    "S&P 500",
-   7442.14,
-   -1.58,
-   1794852621
+   7413.86,
+   -1.95,
+   1794854441
   ],
   [
    "Nasdaq",
-   24593.75,
-   -2.16,
-   1794852621
+   24494.1,
+   -2.55,
+   1794854437
   ],
   [
    "Nikkei 225",
@@ -2580,19 +2599,19 @@
   [
    "US 10Y yield",
    5.13,
-   -0.37,
-   1794851703
+   -0.49,
+   1794853533
   ]
  ],
  "outlook": {
-  "at": "16 Nov, 11:40 PM",
-  "headlines": 232,
+  "at": "17 Nov, 12:10 AM",
+  "headlines": 237,
   "screened": 1801,
   "cues": [
-   "US tech (Nasdaq) fell 2.2% in the last session",
-   "Brent crude down 2.9%",
-   "Dow Jones -1.0%",
-   "S&P 500 -1.6%",
+   "US tech (Nasdaq) fell 2.5% in the last session",
+   "Brent crude down 3.3%",
+   "Dow Jones -1.4%",
+   "S&P 500 -1.9%",
    "Nikkei 225 -2.4%"
   ],
   "up": [
@@ -2665,7 +2684,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3188,7 +3207,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3226,7 +3245,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3234,7 +3253,7 @@
    {
     "k": "TMCV",
     "n": "Tata Motors",
-    "s": -20,
+    "s": -16,
     "conf": "High",
     "p": 428.25,
     "pct": -1.22,
@@ -3250,10 +3269,10 @@
      },
      {
       "k": "news",
-      "t": "Tata Motors PV shares plunge 9% after Q2 results; brokerages cut target",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQcEhLZFpmQml1REpCWkJXRUoyVUl4V0d5dWt5ZTg1UGhIUHJtdTFxTEJkZ3QzU1ZTQmEyYjVneGljQXBWZzBHbVRLR0t1ckdyMW81bDRpbVBJRWFnUnlRS3RNR0pIcm5Uei03andMd3AzOTZDaC15VGUwdFZISGRMNzBMUXlTdTdTYzcwclpYVThwQkJ6YmZfUFRaelR6QU5YajBJUEJIbUdqU09CUVFEMHp4eE1qV0NleG1FWkp5dW1LV2FYbS1hRFpnTXIzT1JvRlHSAdcBQVVfeXFMT3ZvWjA2TTgxUVpNNEpKbVNHWk1saUJCaE9CSTRUUldaTFhBVVpJd0FwWlhDZFFsNklod1NUdVJkWWlNQmFzQ1UtMTZVSFBYTGRtSjFlSlpMX1hkbW4xbnFkdEJxRW5hNlRGRkVPeDhua2JDV3N2M0loRUJGZlo2bTl4RzAyX2xsZ0pOdW0wV2doT1NTV3JLODFjVXJzYjcyZXJzTFZsME9MWDhzd1dOSjVVRzB5cFU0c0xMSFZvNTV3YzVXXzZSZ3JERTc5R2hzNWFaNnAyeE0?oc=5",
-      "src": "Business Standard"
+      "t": "Tata Motors PV shares crash: What led to auto stock 8% ramming, Nifty laggard; down 27% in 2026 - Buy, sell or hold?",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOS05TLWdveFlxSHVYYTJiZlJSdFBLZ0ZZSmF6aHRzdy1JQVVWdXBsSzNNa29UOHNrdVZwdlozN0pUZWhuZTkzeUcwdVJCckJma2pfbWlKMjVqNWpNVkk1Z1RGZWJadThwT3JNWkdQUFdBY0RnWnFFTjBDMVFyZnFQNFU0Z2pDZ0FFbldsN1hIRHZLZGRneTNibHUzQWVvS3FKWHZhazRKWURSNE5jbDNSZHJ2LS15djZGSy1fVW1taXBMdEZyeEJyeklyU3NIUGw4YWVaaUd1X0hkX2VRNzBuZzl1TzYtRlZ5akw5ZkFwME9pN3pNU1lRUm1Oc3R2VWFVcFFVZmpRRFfSAY4CQVVfeXFMTzJZY0JtNk94Tk9zaUhkRnNqY1dtOHVXNFBMNkdaRVRqd1dCOUs1dlBnVU1jb0JMMFdWcVROWUVzMTdOemRiTUoweUNNV0VxRGc4RlZjTW1QMHlzb1ROTTc0d1RfZ1lLUWwySHdUMFhvR3NqOG94UVJpdDdYZ1hyMGtlbGpGcnc2YVhHOE01Mjd1djItaVNGb0o2UTFua3ZLUnNYdGN3bzEyYnc1bnk3VUhLNjVFN3JzbVVmaElCWFRFOER2SjhkRFlTVHBRblBIWlV2bUxoTzMxaUpuOGUtd1VEbDdNQkNQYzF3NmVhU212TzlkR2Z3RDlzdmU1WkdWb2diN0J2Yl9yeXVLajNn?oc=5",
+      "src": "Livemint"
      },
      {
       "k": "news",
@@ -3300,7 +3319,7 @@
    {
     "k": "RAJESHEXPO",
     "n": "Rajesh Exports",
-    "s": -12,
+    "s": -8,
     "conf": "High",
     "p": 49.45,
     "pct": -2.87,
@@ -3313,13 +3332,6 @@
       "s": -8,
       "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUkpZYnoyU0lSNGZWNXV1VTI3U0dRdkdKM3laTG1jSFgxOHRjbUk1RnlNTk9pX2pITlk1ZjJjN2E5NjloNElUbUl6a3JMODlROUIyRzZPZjlfZXJkZE9YR19jNzlTU1pWbnp0V1F0Y0tZbFUyd1hfRjQtczNoWXp2dkdjN0xPd24xUU9LLW9NZVI2MkZxcDk3aFJiOHE0a2dwbHRQSXcwTHZZU1VCZHh5b3FEb1lnVG1MUF9uMnFYYmtBZzREcDV3VnFXOVE2WnNsZVM2ZkNwdnZORjBuQ3lsMG1lN2pFdzDSAewBQVVfeXFMTnVIdEpiT0ZCU1JJOEJNTFEyRGoyWll1VlU5N21VU2ZUR3hDRWFKbHVUeWl2UFoxdldtZmJMOTFZYkNjZFl5NWY2T0VHWVNNUjYzeEhxd2RFMEhuVEc5a3NaQ3pWdThWYjNLa3pLTkhyYkN0MmstTXFad1lnakh2R1g3bXdsUUtTVEdteUVKc2t5bkE0X09SXzRUNFQ1czBjVHlTYWJiNndmV2JfUEwyOHRWN3cyTmVWeko5SkJuMkd2dUxZOGFadjhzY2FiVlBpcGQ5MTJKLUtpT0lnWncwLUF3TnlfWTNaNlVmd1c?oc=5",
       "src": "Moneycontrol.com"
-     },
-     {
-      "k": "news",
-      "t": "Rajesh Exports shares fall over 3% as Q2 revenue collapses",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNODlGWmFKcHVBYjRmVzhSQWNPSlVjWmp0dVJIX1A5T24weGt3M2JqUWt5ZWFPbC1XeFh3UnRhWVNBUnB6cFg5WkhXSXhlMmxfQ085NWtOVzM3RkJiazFjSjZ6VGZtdlJIRnpyc0R2N2h1c2lXbTlQZW5rbGRQVW8tMmg4bXlmQ1N2elQ1SENzbF9DS1hwdWZXSU4wQ3RVRHJ5LVpaX1liNnVvaVJpSHc?oc=5",
-      "src": "Business Upturn"
      }
     ]
    },
@@ -3458,30 +3470,6 @@
     ]
    },
    {
-    "k": "GUJTHEM",
-    "n": "Gujarat Themis Biosyn",
-    "s": -5.9,
-    "conf": "Medium",
-    "p": 359.25,
-    "pct": -7.56,
-    "mc": 4675.7,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Gujarat Themis Biosyn shares fall over 6% on Q2 loss",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNQW5pSWZzb2VsamgzQ1lxRmtEaVBHTzF3dWdZRjE0MWVhYklIVE9pNGxfSzBxZlhGRVZ2TWRYNFF3Q3R5S2dOaGdSWkNzal9WM0wzSXRLYzgycVZMVHFzRTMyWFRjQ1ZFSTRtNHVvUmZwQnVMRy1DbkdMaE5CNnJVeEVLdU4zMU4zNnE3cmpqZXlIMWoxYWVzTzFIQUx1X0JWYWoyUzZKQTBUUGFGNjlJM2d2a1VIMEU?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "price",
-      "t": "Closed weak: -7.6% on 2.3× usual volume, near the day's low",
-      "s": -1.9038354442464358
-     }
-    ]
-   },
-   {
     "k": "AMBER",
     "n": "Amber Enterprises India",
     "s": -5.8,
@@ -3531,7 +3519,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3641,7 +3629,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3685,7 +3673,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3707,7 +3695,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3729,7 +3717,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
+      "t": "Nasdaq -2.5% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3764,6 +3752,23 @@
      {
       "k": "price",
       "t": "Closed weak: -12.5% on 8.2× usual volume, near the day's low",
+      "s": -3.0
+     }
+    ]
+   },
+   {
+    "k": "DCAL",
+    "n": "Dishman Carbogen Amcis",
+    "s": -3.0,
+    "conf": "Low",
+    "p": 139.23,
+    "pct": -19.48,
+    "mc": 2182.9,
+    "sec": "Healthcare",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed weak: -19.5% on 9.4× usual volume, near the day's low",
       "s": -3.0
      }
     ]
@@ -3884,20 +3889,6 @@
    "src": "mksons-fine-jewels-ipo"
   },
   {
-   "id": "ajwaprojects",
-   "name": "Ajwa Projects",
-   "type": "SME",
-   "open": "2026-10-28",
-   "close": "2026-10-30",
-   "allot": "2026-11-02",
-   "refund": "2026-11-03",
-   "list": "2026-11-04",
-   "lo": 203.0,
-   "hi": 203.0,
-   "lot": 600,
-   "src": "ajwa-projects-sme-ipo"
-  },
-  {
    "id": "carverroboweld",
    "name": "Carver Roboweld",
    "type": "SME",
@@ -3910,6 +3901,20 @@
    "hi": 80.0,
    "lot": 1600,
    "src": "carver-roboweld-sme-ipo"
+  },
+  {
+   "id": "ajwaprojects",
+   "name": "Ajwa Projects",
+   "type": "SME",
+   "open": "2026-10-28",
+   "close": "2026-10-30",
+   "allot": "2026-11-02",
+   "refund": "2026-11-03",
+   "list": "2026-11-04",
+   "lo": 203.0,
+   "hi": 203.0,
+   "lot": 600,
+   "src": "ajwa-projects-sme-ipo"
   },
   {
    "id": "bombaycoatedandspecialst",
@@ -4053,7 +4058,7 @@
   }
  ],
  "fno": {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "syms": {
    "ADANIENSOL": 675,
    "ANANDRATHI": 250,
@@ -4276,7 +4281,7 @@
   }
  },
  "hilo": {
-  "at": "16 Nov, 11:40 PM",
+  "at": "17 Nov, 12:10 AM",
   "hi": [
    [
     "PANACHE",
@@ -4329,7 +4334,15 @@
     -5.23
    ],
    [
-    "SHIVAM-RE1",
+    "CEREBRAINT",
+    -4.67
+   ],
+   [
+    "LASA",
+    -4.98
+   ],
+   [
+    "RAJVIR",
     0.0
    ],
    [
@@ -4338,10 +4351,10 @@
    ]
   ],
   "nhi": 7,
-  "nlo": 7
+  "nlo": 9
  },
  "bse_movers": {
-  "at": "16 Nov, 11:40 PM",
+  "at": "17 Nov, 12:10 AM",
   "g": [
    [
     "535279",
@@ -4590,7 +4603,7 @@
    ],
    [
     "502281",
-    "Triveni Glass",
+    "Triveni Glass Ltd-$",
     11.85,
     9.93,
     10.78
@@ -5153,7 +5166,7 @@
   ]
  },
  "allmov": {
-  "at": "16 Nov, 11:40 PM",
+  "at": "17 Nov, 12:10 AM",
   "g": [
    [
     "B544168",
@@ -5260,21 +5273,9 @@
   ]
  },
  "rescal": {
-  "ts": 1794850814.0134983,
-  "at": "16 Nov, 11:10 PM",
+  "ts": 1794854457.3722239,
+  "at": "17 Nov, 12:10 AM",
   "items": [
-   {
-    "k": "B521238",
-    "n": "Bharat Global Developers Ltd",
-    "d": "2026-11-16",
-    "src": "BSE"
-   },
-   {
-    "k": "LIBAS",
-    "n": "Libas Consumer Products Limited",
-    "d": "2026-11-17",
-    "src": "NSE"
-   },
    {
     "k": "B530267",
     "n": "Arigato Universe Ltd",
@@ -5361,7 +5362,7 @@
    },
    {
     "k": "B532389",
-    "n": "Valecha Engineering Ltd",
+    "n": "Valecha Engineering Ltd-$",
     "d": "2026-11-20",
     "src": "BSE"
    },
@@ -5404,8 +5405,8 @@
   ]
  },
  "tw": {
-  "at": "16 Nov, 11:40 PM",
-  "phase": "evening",
+  "at": "17 Nov, 12:10 AM",
+  "phase": "pre",
   "for": "Tue 17 Nov",
   "picks": [
    {
@@ -5943,36 +5944,6 @@
   ],
   "due": [
    {
-    "k": "B521238",
-    "n": "Bharat Global Developers",
-    "p": 87.12,
-    "pct": 1.17,
-    "vx": null,
-    "fo": false,
-    "why": [
-     {
-      "t": "due",
-      "x": "Results today"
-     }
-    ],
-    "s": 4.0
-   },
-   {
-    "k": "LIBAS",
-    "n": "Libas Consumer Products",
-    "p": 11.04,
-    "pct": 0.36,
-    "vx": 2.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "due",
-      "x": "Results on 17 Nov"
-     }
-    ],
-    "s": 4.0
-   },
-   {
     "k": "B530267",
     "n": "Arigato Universe",
     "p": 27.65,
@@ -5982,7 +5953,7 @@
     "why": [
      {
       "t": "due",
-      "x": "Results on 17 Nov"
+      "x": "Results today"
      }
     ],
     "s": 4.0
@@ -5997,7 +5968,7 @@
     "why": [
      {
       "t": "due",
-      "x": "Results on 17 Nov"
+      "x": "Results today"
      }
     ],
     "s": 4.0
