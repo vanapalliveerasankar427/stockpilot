@@ -1,13 +1,13 @@
 {
- "label": "18 Nov 2026, 2:10 AM IST",
- "updated": "2026-11-18T02:10:40+05:30",
+ "label": "18 Nov 2026, 2:41 AM IST",
+ "updated": "2026-11-18T02:41:02+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "18 Nov 2026, 2:10 AM",
+  "date": "18 Nov 2026, 2:41 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -148,13 +148,13 @@
     "v": 134250.0,
     "ch": 27.0,
     "pct": 0.02,
-    "t": "18 Nov, 2:10 AM"
+    "t": "18 Nov, 2:41 AM"
    },
    "silver": {
     "v": 169597.0,
     "ch": -105.0,
     "pct": -0.06,
-    "t": "18 Nov, 2:10 AM"
+    "t": "18 Nov, 2:41 AM"
    }
   },
   "retail": {
@@ -360,8 +360,8 @@
      "ag": 190.0
     }
    },
-   "at": "18 Nov, 2:10 AM",
-   "at_ts": 1794948040.725022,
+   "at": "18 Nov, 2:41 AM",
+   "at_ts": 1794949862.462604,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -369,36 +369,36 @@
    "g24_10": 134840.0,
    "ag_kg": 170340.0,
    "ag": 170.34,
-   "t": "18 Nov, 2:10 AM"
+   "t": "18 Nov, 2:41 AM"
   },
   "dp": {
    "ag1": {
-    "b": 177618.0,
-    "a": 177618.0,
+    "b": 177791.0,
+    "a": 177791.0,
     "h": 179433.0,
     "l": 176129.0
    },
    "ag30": {
-    "b": 174618.0,
-    "a": 174618.0,
+    "b": 174791.0,
+    "a": 174791.0,
     "h": 176433.0,
     "l": 173129.0
    },
    "g999": {
-    "b": 13807.0,
-    "a": 13807.0,
+    "b": 13809.2,
+    "a": 13809.2,
     "h": 13989.5,
     "l": 13776.5
    },
    "xau": {
-    "b": 3850.5,
-    "a": 3850.52,
+    "b": 3851.2,
+    "a": 3851.22,
     "h": 3891.32,
     "l": 3838.02
    },
    "xag": {
-    "b": 47.27,
-    "a": 47.27,
+    "b": 47.32,
+    "a": 47.32,
     "h": 48.02,
     "l": 46.85
    },
@@ -408,8 +408,8 @@
     "h": 93.97,
     "l": 93.42
    },
-   "at": 1794948048,
-   "t": "18 Nov, 2:10 AM"
+   "at": 1794949868,
+   "t": "18 Nov, 2:41 AM"
   }
  },
  "logos": [],
@@ -510,34 +510,34 @@
   ]
  ],
  "usdinr": {
-  "v": 93.46,
+  "v": 93.47,
   "prev": 93.91,
-  "ch": -0.45,
-  "pct": -0.48,
+  "ch": -0.44,
+  "pct": -0.47,
   "high": 93.92,
   "low": 93.38,
   "open": 93.91,
-  "t": 1794944458
+  "t": 1794948612
  },
  "brent": {
-  "v": 92.83,
+  "v": 92.84,
   "prev": 92.44,
-  "ch": 0.39,
-  "pct": 0.42,
+  "ch": 0.4,
+  "pct": 0.43,
   "high": 94.08,
   "low": 91.25,
   "open": 91.68,
-  "t": 1794947407
+  "t": 1794949153
  },
  "goldSpot": {
-  "v": 3853.1,
+  "v": 3851.3,
   "prev": 3853.0,
-  "ch": 0.1,
-  "pct": 0.0,
+  "ch": -1.7,
+  "pct": -0.04,
   "high": 3894.0,
   "low": 3839.2,
   "open": 3877.6,
-  "t": 1794947436
+  "t": 1794949258
  },
  "sectors": [
   [
@@ -1117,7 +1117,7 @@
   "crystalcropprotection": {
    "gmp": 19.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 2:10 AM",
+   "gat": "18 Nov, 2:41 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1148,7 +1148,7 @@
   "watranarentals": {
    "gmp": 25.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 2:10 AM",
+   "gat": "18 Nov, 2:41 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1179,7 +1179,7 @@
   "mahanadicoalfields": {
    "gmp": 4.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 2:10 AM",
+   "gat": "18 Nov, 2:41 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1204,7 +1204,7 @@
   "dii_sell": 14706.87,
   "fii_buy": 19930.98,
   "fii_sell": 15735.6,
-  "fetched": "18 Nov, 2:10 AM",
+  "fetched": "18 Nov, 2:41 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1264,15 +1264,8 @@
    "tag": "IPO",
    "t": "Crystal Crop Protection IPO Details",
    "s": "IPO Watch",
-   "d": "18 Nov, 1:45 AM",
+   "d": "18 Nov, 12:46 AM",
    "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03N1RIcE9ySVlhZ0c0bzZaSGZ4dDRYQW5FcXJtb3Zwc2NwSkZmX2Y1RmpHMXdnc2tYNnRpajZPQWhobEkxNllPV0hQNjRpdUVzWFBicm1XdkNtOUpWM1VHem9CZHVQWFU?oc=5"
-  },
-  {
-   "tag": "Results",
-   "t": "Groww block deal: Ribbit Capital entities sell shares worth Rs 1,905 crore; Morgan Stanley Asia, BlackRock",
-   "s": "The Economic Times",
-   "d": "17 Nov, 8:41 PM",
-   "u": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxNNkMzc1VQY2JCZ1VDdTNPelkyazBDaTVVc3d0Y0N5cGJZQV9abnR0V2VxVWZmMDZvaFQ5OTJWMjFxcTFjQ1FEWlNReFF0UnE5SlZ4VURxM0FJUExlWVo3ZXhZaWFldXlUeUNhLXpqcW93VnRqUko2Yy1YbFM3alg3YVVtWk1UelptNzBrYzdFUjczQzEwaW9WSS1vTEVtOXl6cDUyQ1JHRi0xUkktM3loMzF6eTJVcXMyTURMX2c5azJkcDg1eERoZXBueDhhMGM2TTl1eGJiZEIzY3hmenFITnZsVHhpRG5acnl3bkNzc29YUzFrUHRBOFBjeERkeWQ3M2dyOXd3RU4wMGtpS1VmeW1YNnVsMHVnd0xIRjN6UGRvWnJQUFB3UNIBrgJBVV95cUxNUFlQTWZhM0hlaXB0UWdCaDBiSWRKZGczdUdRaGFPWXpYZkY3LWNlTzFjdnpaUlIyR21FUEZlVUdmWFZlZWFSbEJLY1Z0Mm04Mm1kYURDSVBITk1FMUdyRjE1d2NybzExZG55TEQ1VEI1SV9NOFVrcnJmV2lCMkhEcnRxUGtRc3NFVFA4U3V1TS11WGNUTmZ1Y0lEcmRvR1h6M3RRdEtCX1J3UUNULXROZF9nYUQtZFdfaFRhVnFtbW9IbExTMDdWb1d1ZzF3amRNT2hxaV9SYVpteW1DSWp2TlUySEZQS3RJbzNVcXU0d2hHVEVWZDFyQkY1Q3hwOHdoT2w0Q25CeEtVN2JfXzVLTHBVVXNEOXRHRnN2cnpVc0tZbFBBX0lFLVN3Vm84Zw?oc=5"
   },
   {
    "tag": "Economy",
@@ -1303,11 +1296,11 @@
    "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcGxKdGFLTExzUWVJZ1RMRlUwWXR3QzVXa1o1WnI4ZUtlV3VvaGFyUW9lNEVZODdSb3V5Qk5wWEVOcU1OYjdSYjAzbWR6cTR4b3NVRHQwV1FJZXlmTk5TYlZnSDRTWXFiQmVUemNkMVA1dzdkM1kzY1h5X0k0dUQ2cUYxNWtnRnBrTF9JTUtpQW1STF9EbVNGa3EzVzVpeXRVUF8yN3Z1M0trdmJHSU9EWnEwRG83Qkt3dkQ2a2p0MkZUX3ZzMl9HeFhVQnQ0Z2tza0tnRW9uQmszNnFB?oc=5"
   },
   {
-   "tag": "Markets",
-   "t": "Market wrap, Nov 17: NIFTY50 ends at 25,387, SENSEX closes 427 pts higher as banking stocks power gains; check factors",
-   "s": "Upstox",
-   "d": "17 Nov, 3:45 PM",
-   "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNd1d6T0hfN0w5d3VsTTVzTV9xZXJHV0VvY184OFU3Y21rS1kwdkZVWjlMUHlVeHdjNEpxZmxmdHo5QnVaRTkxaTBKbzJUdHlzMVF0MGlMNHdfOVRWXy1UME5TSmtZQW1iZV9aelRjUVdoaEtEbjRnamZidDNpS1pxN0NkRnloM1BKRVlRMTZHOGEyb1p4YjV6RmVRMG1PNnlWck02d2U4U1lJbE5UU2pBajNNdmp2NWl6U0puQ09ZOEVKd0pkSlBNM2lxVkRnSkdwVDg1SlByTlRVc3BTdXoxRWwyQm1xWXIzQUh2V0RlbTVKUFhEUTVXUUNucTgyeU1UTlloMg?oc=5"
+   "tag": "Results",
+   "t": "Record foreign inflows fuel Indian stocks' November surge",
+   "s": "Daily Sun",
+   "d": "17 Nov, 3:03 PM",
+   "u": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYnFRazEyYk8tOVZmTXVXQUlvV0NvbVFLRHpNdThHeWxndFI2YWY3Nmk1c0J3LVBjZkVlTXZST3pVNWRESEpHb2JyQ3VueU1kZW8wWWZVRjdzY2RiTk1UcVoyMXBNTXFUMlhKeGEtNldPemU0NEdUZ0FyV2lPRmhocTVOcW5ZMmk2WlpyVlRyRkhTamREN0ZHSVZFQQ?oc=5"
   },
   {
    "tag": "IPO",
@@ -1357,6 +1350,13 @@
    "s": "Business Standard",
    "d": "16 Nov, 9:33 AM",
    "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQcEhLZFpmQml1REpCWkJXRUoyVUl4V0d5dWt5ZTg1UGhIUHJtdTFxTEJkZ3QzU1ZTQmEyYjVneGljQXBWZzBHbVRLR0t1ckdyMW81bDRpbVBJRWFnUnlRS3RNR0pIcm5Uei03andMd3AzOTZDaC15VGUwdFZISGRMNzBMUXlTdTdTYzcwclpYVThwQkJ6YmZfUFRaelR6QU5YajBJUEJIbUdqU09CUVFEMHp4eE1qV0NleG1FWkp5dW1LV2FYbS1hRFpnTXIzT1JvRlHSAdcBQVVfeXFMT3ZvWjA2TTgxUVpNNEpKbVNHWk1saUJCaE9CSTRUUldaTFhBVVpJd0FwWlhDZFFsNklod1NUdVJkWWlNQmFzQ1UtMTZVSFBYTGRtSjFlSlpMX1hkbW4xbnFkdEJxRW5hNlRGRkVPeDhua2JDV3N2M0loRUJGZlo2bTl4RzAyX2xsZ0pOdW0wV2doT1NTV3JLODFjVXJzYjcyZXJzTFZsME9MWDhzd1dOSjVVRzB5cFU0c0xMSFZvNTV3YzVXXzZSZ3JERTc5R2hzNWFaNnAyeE0?oc=5"
+  },
+  {
+   "tag": "Markets",
+   "t": "Indian stock markets fall due to rising tensions in the Middle East",
+   "s": "DD News",
+   "d": "16 Nov, 8:25 AM",
+   "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOLWcwRTVyZVl3YU9jUnAwVGEtSWhQZUJlUEJYSGZvanhNQ2d4UFV3N2wtaDRLVnM4M01DTGxlSHUtdng1QXpJQXhjS1Rsb1l3dl9XM21tVVdmT0NfdGpWdXN1dmMzeklYMEVBU0R2dVkxVldFOFNuUGN2aWRCR3E4a0JKLVpPYkdhWGpRYXJ2alFKSTFDUmh4eG5QaWxMQktXQ1ZpT29HM3VBVjRWZW9ZZE1xLVVyX1BpQTEyZVozSEkzRkxOQUtZUHAyMjgxenMzM2pB?oc=5"
   }
  ],
  "log": [
@@ -1364,9 +1364,8 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
-  "results cal: 38 upcoming (9 NSE)",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 272 headlines, 25 up, 13 down",
+  "outlook: 273 headlines, 25 up, 12 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2387,9 +2386,9 @@
   }
  },
  "nse": {
-  "n50": "18 Nov, 2:10 AM",
-  "mid": "18 Nov, 2:10 AM",
-  "small": "18 Nov, 2:10 AM"
+  "n50": "18 Nov, 2:41 AM",
+  "mid": "18 Nov, 2:41 AM",
+  "small": "18 Nov, 2:41 AM"
  },
  "midg": [
   [
@@ -2566,34 +2565,33 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
-  "results cal: 38 upcoming (9 NSE)",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 272 headlines, 25 up, 13 down",
+  "outlook: 273 headlines, 25 up, 12 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4769,
-  "at": "18 Nov, 2:10 AM"
+  "at": "18 Nov, 2:41 AM"
  },
  "global": [
   [
    "Dow Jones",
-   50719.07,
-   -1.72,
-   1794948039
+   50759.42,
+   -1.64,
+   1794949862
   ],
   [
    "S&P 500",
-   7327.56,
-   -1.2,
-   1794948031
+   7340.53,
+   -1.03,
+   1794949861
   ],
   [
    "Nasdaq",
-   24252.03,
-   -1.05,
-   1794948037
+   24328.38,
+   -0.74,
+   1794949860
   ],
   [
    "Nikkei 225",
@@ -2621,13 +2619,12 @@
   ]
  ],
  "outlook": {
-  "at": "18 Nov, 2:10 AM",
-  "headlines": 272,
+  "at": "18 Nov, 2:41 AM",
+  "headlines": 273,
   "screened": 1800,
   "cues": [
-   "US tech (Nasdaq) fell 1.1% in the last session",
-   "Dow Jones -1.7%",
-   "S&P 500 -1.2%",
+   "Dow Jones -1.6%",
+   "S&P 500 -1.0%",
    "Nikkei 225 -1.3%"
   ],
   "up": [
@@ -2996,6 +2993,25 @@
     ]
    },
    {
+    "k": "TCS",
+    "n": "Tata Consultancy Services",
+    "s": 4,
+    "conf": "Medium",
+    "p": 2406.6,
+    "pct": 0.07,
+    "mc": 870729.0,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "news",
+      "t": "TCS Recognised as Leader in Agentic Application Management by HFS Research; Shares Rise Nearly 1.7%",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbEFyMnBUVExobE5OY2NjNUZpRkJ4UXRkNUlZck1fbFBKN25lTjkzejZTUlo5MWNuTS0xM080X19taGVuRWYyZGg4X21WVnBOcVR5RUhyUUZHRDRDcXQ0b25EOGhZdV9jWS1YVE5hZnNaUmZrZ2JyOEIwLUVDT1M1ZVJhSXNlTjZqT2xJMU5UMEFUZHNhOG5ILVBSVkxZNVNwaW1HY2lMV3lyVUdZU3JyNllxbUZpYXZLZWRWbWs3enFJenByRDBZOUNn?oc=5",
+      "src": "HDFC Sky"
+     }
+    ]
+   },
+   {
     "k": "DLF",
     "n": "DLF",
     "s": 4,
@@ -3110,30 +3126,6 @@
     ]
    },
    {
-    "k": "TCS",
-    "n": "Tata Consultancy Services",
-    "s": 3,
-    "conf": "Low",
-    "p": 2406.6,
-    "pct": 0.07,
-    "mc": 870729.0,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "TCS Recognised as Leader in Agentic Application Management by HFS Research; Shares Rise Nearly 1.7%",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbEFyMnBUVExobE5OY2NjNUZpRkJ4UXRkNUlZck1fbFBKN25lTjkzejZTUlo5MWNuTS0xM080X19taGVuRWYyZGg4X21WVnBOcVR5RUhyUUZHRDRDcXQ0b25EOGhZdV9jWS1YVE5hZnNaUmZrZ2JyOEIwLUVDT1M1ZVJhSXNlTjZqT2xJMU5UMEFUZHNhOG5ILVBSVkxZNVNwaW1HY2lMV3lyVUdZU3JyNllxbUZpYXZLZWRWbWs3enFJenByRDBZOUNn?oc=5",
-      "src": "HDFC Sky"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -1.1% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
     "k": "ARIES",
     "n": "Aries Agro",
     "s": 3.3,
@@ -3211,7 +3203,7 @@
    {
     "k": "KAYNES",
     "n": "Kaynes Technology India",
-    "s": -19.2,
+    "s": -18.2,
     "conf": "High",
     "p": 2858.0,
     "pct": -4.09,
@@ -3282,7 +3274,7 @@
    {
     "k": "ONIXSOLAR",
     "n": "Onix Solar Energy",
-    "s": -7.7,
+    "s": -6.7,
     "conf": "High",
     "p": 249.75,
     "pct": -4.98,
@@ -3305,19 +3297,14 @@
       "k": "price",
       "t": "Trading at a 52-week low",
       "s": -1
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -1.1% overnight; IT stocks often follow",
-      "s": -1
      }
     ]
    },
    {
     "k": "URBANCO",
     "n": "Urban Company",
-    "s": -4.0,
-    "conf": "Medium",
+    "s": -3.0,
+    "conf": "Low",
     "p": 161.63,
     "pct": -5.86,
     "mc": 23966.4,
@@ -3327,33 +3314,6 @@
       "k": "price",
       "t": "Closed weak: -5.9% on 8.8× usual volume, near the day's low",
       "s": -3.0
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -1.1% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "SAKSOFT",
-    "n": "Saksoft",
-    "s": -3.6,
-    "conf": "Medium",
-    "p": 124.96,
-    "pct": -5.41,
-    "mc": 1609.3,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -5.4% on 3.8× usual volume, near the day's low",
-      "s": -2.643939132624375
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -1.1% overnight; IT stocks often follow",
-      "s": -1
      }
     ]
    },
@@ -3426,6 +3386,23 @@
     ]
    },
    {
+    "k": "SAKSOFT",
+    "n": "Saksoft",
+    "s": -2.6,
+    "conf": "Low",
+    "p": 124.96,
+    "pct": -5.41,
+    "mc": 1609.3,
+    "sec": "Technology",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed weak: -5.4% on 3.8× usual volume, near the day's low",
+      "s": -2.643939132624375
+     }
+    ]
+   },
+   {
     "k": "VESUVIUS",
     "n": "Vesuvius India",
     "s": -2.6,
@@ -3473,28 +3450,6 @@
       "k": "price",
       "t": "Closed weak: -4.6% on 3.5× usual volume, near the day's low",
       "s": -2.51685672119799
-     }
-    ]
-   },
-   {
-    "k": "RISHABH",
-    "n": "Rishabh Instruments",
-    "s": -2.5,
-    "conf": "Low",
-    "p": 590.55,
-    "pct": -2.47,
-    "mc": 2292.5,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -2.5% on 1.5× usual volume, near the day's low",
-      "s": -1.516189779232025
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -1.1% overnight; IT stocks often follow",
-      "s": -1
      }
     ]
    }
@@ -4006,7 +3961,7 @@
   }
  },
  "hilo": {
-  "at": "18 Nov, 2:10 AM",
+  "at": "18 Nov, 2:41 AM",
   "hi": [
    [
     "MARICO",
@@ -4079,7 +4034,7 @@
   "nlo": 6
  },
  "bse_movers": {
-  "at": "18 Nov, 2:10 AM",
+  "at": "18 Nov, 2:41 AM",
   "g": [
    [
     "500282",
@@ -4891,7 +4846,7 @@
   ]
  },
  "allmov": {
-  "at": "18 Nov, 2:10 AM",
+  "at": "18 Nov, 2:41 AM",
   "g": [
    [
     "B544168",
@@ -5232,7 +5187,7 @@
   ]
  },
  "tw": {
-  "at": "18 Nov, 2:10 AM",
+  "at": "18 Nov, 2:41 AM",
   "phase": "pre",
   "for": "Wed 18 Nov",
   "picks": [
@@ -5718,6 +5673,22 @@
     "s": 4.0
    },
    {
+    "k": "TCS",
+    "n": "Tata Consultancy Services",
+    "p": 2406.6,
+    "pct": 0.07,
+    "vx": 0.9,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "TCS Recognised as Leader in Agentic Application Management by HFS Research; Shares Rise Nearly 1.7%",
+      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbEFyMnBUVExobE5OY2NjNUZpRkJ4UXRkNUlZck1fbFBKN25lTjkzejZTUlo5MWNuTS0xM080X19taGVuRWYyZGg4X21WVnBOcVR5RUhyUUZHRDRDcXQ0b25EOGhZdV9jWS1YVE5hZnNaUmZrZ2JyOEIwLUVDT1M1ZVJhSXNlTjZqT2xJMU5UMEFUZHNhOG5ILVBSVkxZNVNwaW1HY2lMV3lyVUdZU3JyNllxbUZpYXZLZWRWbWs3enFJenByRDBZOUNn?oc=5"
+     }
+    ],
+    "s": 4.0
+   },
+   {
     "k": "DLF",
     "n": "DLF",
     "p": 765.95,
@@ -5765,22 +5736,6 @@
     "s": 3.3
    },
    {
-    "k": "TCS",
-    "n": "Tata Consultancy Services",
-    "p": 2406.6,
-    "pct": 0.07,
-    "vx": 0.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "TCS Recognised as Leader in Agentic Application Management by HFS Research; Shares Rise Nearly 1.7%",
-      "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbEFyMnBUVExobE5OY2NjNUZpRkJ4UXRkNUlZck1fbFBKN25lTjkzejZTUlo5MWNuTS0xM080X19taGVuRWYyZGg4X21WVnBOcVR5RUhyUUZHRDRDcXQ0b25EOGhZdV9jWS1YVE5hZnNaUmZrZ2JyOEIwLUVDT1M1ZVJhSXNlTjZqT2xJMU5UMEFUZHNhOG5ILVBSVkxZNVNwaW1HY2lMV3lyVUdZU3JyNllxbUZpYXZLZWRWbWs3enFJenByRDBZOUNn?oc=5"
-     }
-    ],
-    "s": 3.0
-   },
-   {
     "k": "MAXHEALTH",
     "n": "Max Healthcare Institute",
     "p": 1030.9,
@@ -5803,7 +5758,7 @@
     "p": 2858.0,
     "pct": -4.09,
     "fo": true,
-    "s": 32.7,
+    "s": 31.3,
     "why": [
      {
       "t": "results",
