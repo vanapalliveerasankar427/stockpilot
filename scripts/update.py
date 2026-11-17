@@ -880,17 +880,20 @@ def tomorrow_watch(out, uni, q):
     hist = tw.get("hist") or []
     snap = tw.get("snap")
     # 1) score yesterday's (or the last) snapshot once the next session has closed
-    if snap and snap.get("d") != today.isoformat() and live_today and hm >= 15 * 60 + 35 and not any(h.get("d") == snap["d"] for h in hist):
+    # (scored at the close, before today's list replaces it; each pick keeps its name, prices and reason)
+    scored = bool(snap) and any(h.get("d") == snap.get("d") for h in hist)
+    if snap and snap.get("d") != today.isoformat() and live_today and hm >= 15 * 60 + 31 and not scored:
         res = []
         for k, p0 in snap.get("px", {}).items():
             r = q.get(k)
             if r and r[0] and p0:
-                res.append([k, round((r[0] / p0 - 1) * 100, 2)])
+                res.append([k, round((r[0] / p0 - 1) * 100, 2), p0, r[0], names.get(k, k), (snap.get("why") or {}).get(k, "")])
         if res:
             res.sort(key=lambda x: -x[1])
-            hist.insert(0, {"d": snap["d"], "on": today.isoformat(), "n": len(res), "up": sum(1 for _, v in res if v > 0),
-                            "avg": round(sum(v for _, v in res) / len(res), 2), "best": res[:3], "worst": res[-2:], "all": res})
+            hist.insert(0, {"d": snap["d"], "on": today.isoformat(), "n": len(res), "up": sum(1 for x in res if x[1] > 0),
+                            "avg": round(sum(x[1] for x in res) / len(res), 2), "best": [x[:2] for x in res[:3]], "worst": [x[:2] for x in res[-2:]], "all": res})
             hist = hist[:30]
+        scored = True
     # 2) build today's lists
     nxt = today + dt.timedelta(days=1)
     while nxt.weekday() >= 5:
@@ -940,9 +943,11 @@ def tomorrow_watch(out, uni, q):
         o["s"] = round(o["s"], 1)
     phase = "pre" if hm < 9 * 60 + 15 else "live" if hm < 15 * 60 + 15 else "close" if hm < 19 * 60 else "evening"
     # 3) freeze the list from 3:15 PM (and refresh it after the evening results), scored next session
-    if live_today and phase in ("close", "evening") and (not snap or snap.get("d") != today.isoformat() or phase == "evening"):
+    # (never replace an unscored list: the previous one is scored from 3:31 PM, then today's is saved)
+    if live_today and phase in ("close", "evening") and (not snap or (snap.get("d") != today.isoformat() and (scored or hm >= 15 * 60 + 31)) or (snap.get("d") == today.isoformat() and phase == "evening")):
         sel = (picks[:15] + [o for o in fo if o not in picks[:15]])[:20]
-        snap = {"d": today.isoformat(), "phase": phase, "px": {o["k"]: o["p"] for o in sel}}
+        snap = {"d": today.isoformat(), "phase": phase, "px": {o["k"]: o["p"] for o in sel},
+                "why": {o["k"]: next((w["t"] for w in o["why"] if w["t"] in ("results", "news", "momentum")), "") for o in sel}}
     tw = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "phase": phase, "for": nxt.strftime("%a %-d %b") if hm >= 15 * 60 + 15 else today.strftime("%a %-d %b"),
           "picks": picks, "fo": fo, "due": due, "snap": snap, "hist": hist}
     out["tw"] = tw
