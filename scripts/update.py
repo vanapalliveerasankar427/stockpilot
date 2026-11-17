@@ -869,6 +869,84 @@ def results_cal(out):
 
 
 # ----------------------------------------------------------------- Tomorrow's watch: stocks with a reason to move next session
+
+# ----------------------------------------------------------------- F&O results scorecard
+def fno_results(out):
+    """Latest quarterly results of every F&O stock (NSE company info: last 5 quarters), compared with
+    the same quarter last year. Companies reporting around today are re-checked every pass; the rest
+    in rotation every few days. Used for the next-day F&O picks."""
+    fno = (out.get("fno") or {}).get("syms") or {}
+    if not fno:
+        return
+    st = dict((out.get("fres") or {}).get("s") or {})
+    today = NOW.date()
+    near = set()
+    for i in (out.get("rescal") or {}).get("items") or []:
+        try:
+            if i.get("k") in fno and abs((dt.date.fromisoformat(i["d"]) - today).days) <= 1:
+                near.add(i["k"])
+        except Exception:
+            pass
+    now = time.time()
+    age = lambda k: now - (st.get(k) or {}).get("at", 0)
+    todo = [k for k in near if age(k) > 20 * 60]
+    todo += sorted((k for k in fno if k not in near and age(k) > 3 * 86400), key=age, reverse=True)
+    if not todo:
+        return
+    num = lambda v: float(v) if v not in (None, "", "-") else None
+    t_end = now + 45
+    H = {**UA, "Accept": "application/json,*/*", "Referer": "https://www.nseindia.com/"}
+    try:
+        nse_session()
+    except Exception:
+        pass
+    ok = 0
+    for k in todo[:60]:
+        if time.time() > t_end:
+            break
+        try:
+            j = S.get("https://www.nseindia.com/api/top-corp-info", params={"symbol": k, "market": "equities"}, headers=H, timeout=15).json()
+            Q = []
+            for r in (j.get("financial_results") or {}).get("data") or []:
+                try:
+                    d = dt.datetime.strptime(r["to_date"], "%d %b %Y").date()
+                except Exception:
+                    continue
+                Q.append({"d": d, "inc": num(r.get("income")), "pat": num(r.get("proLossAftTax")), "eps": num(r.get("reDilEPS")), "ts": r.get("re_broadcast_timestamp") or ""})
+            Q.sort(key=lambda x: x["d"], reverse=True)
+            if not Q:
+                st[k] = {"at": int(time.time())}
+                continue
+            a = Q[0]
+            ly = next((x for x in Q[1:] if 355 <= (a["d"] - x["d"]).days <= 376), None)
+            pq = Q[1] if len(Q) > 1 else None
+            g = lambda x, y: round((x / y - 1) * 100, 1) if x is not None and y is not None and y > 0 else None
+            yi, yp, qp = g(a["inc"], ly and ly["inc"]), g(a["pat"], ly and ly["pat"]), g(a["pat"], pq and pq["pat"])
+            if a["pat"] is not None and a["pat"] < 0:
+                v = "weak"
+            elif yp is None:
+                v = "mixed"
+            elif yp >= 15 and (yi is None or yi >= 5):
+                v = "strong"
+            elif yp <= -10 or (yi is not None and yi <= -5):
+                v = "weak"
+            else:
+                v = "mixed"
+            try:
+                bts = int(dt.datetime.strptime(a["ts"], "%d-%b-%Y %H:%M").replace(tzinfo=IST).timestamp())
+            except Exception:
+                bts = None
+            st[k] = {"at": int(time.time()), "q": a["d"].strftime("%b %Y"), "ts": bts, "inc": a["inc"], "pat": a["pat"],
+                     "yi": yi, "yp": yp, "qp": qp, "v": v, "eps": a["eps"]}
+            ok += 1
+        except Exception as e:
+            if ok == 0:
+                log(f"fno results {k}: {str(e)[:100]}")
+        time.sleep(0.2)
+    out["fres"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "s": st}
+    log(f"fno results: {ok} refreshed, {len(st)} stored")
+
+
 RESULT_WORDS = re.compile(r"\b(q[1-4]|quarter|results?|profit|net income|pat|ebitda|revenue|earnings)\b", re.I)
 def tomorrow_watch(out, uni, q):
     names = {r[0]: r[1] for r in uni.get("s", [])}
@@ -934,6 +1012,22 @@ def tomorrow_watch(out, uni, q):
             o["s"] += pct * min(vol / av, 5) / 2
         except Exception:
             continue
+    # F&O results out since the last close: strong results go to "may rise", weak ones to "may fall"
+    fres = (out.get("fres") or {}).get("s") or {}
+    lc = dt.datetime.combine(today if hm >= 15 * 60 + 30 else today - dt.timedelta(days=1), dt.time(15, 30), IST)
+    while lc.weekday() >= 5:
+        lc -= dt.timedelta(days=1)
+    fresh = {k: v for k, v in fres.items() if v.get("ts") and v["ts"] >= lc.timestamp() - 6 * 3600}
+    def rtxt(v):
+        bits = [f"profit {v['yp']:+.0f}%" if v.get("yp") is not None else None, f"revenue {v['yi']:+.0f}%" if v.get("yi") is not None else None]
+        bits = [b for b in bits if b]
+        return f"{v.get('q', '')} results: " + (", ".join(bits) + " vs last year" if bits else "out")
+    for k, v in fresh.items():
+        if v.get("v") == "strong":
+            o = row(k)
+            if o and not any(w["t"] == "results" for w in o["why"]):
+                o["why"].insert(0, {"t": "results", "x": rtxt(v)})
+                o["s"] += 6 + min(v.get("yp") or 0, 100) / 10
     L = [o for o in rows.values() if o["why"]]
     L.sort(key=lambda o: -o["s"])
     picks = [o for o in L if any(w["t"] in ("results", "news", "momentum") for w in o["why"])][:25]
@@ -962,7 +1056,24 @@ def tomorrow_watch(out, uni, q):
             o["s"] += abs(pct) * min(vol / av, 5) / 2
         except Exception:
             continue
+    for k, v in fresh.items():
+        if v.get("v") == "weak" and k in fno:
+            r = q.get(k)
+            if r and r[0]:
+                o = dn.setdefault(k, {"k": k, "n": names.get(k, k), "p": r[0], "pct": r[1], "fo": True, "s": 0.0, "why": []})
+                o["why"].insert(0, {"t": "results", "x": rtxt(v)})
+                o["s"] += 6 + min(abs(v.get("yp") or 0), 100) / 10
     fodn = sorted(dn.values(), key=lambda o: -o["s"])[:12]
+    # F&O companies reporting today/tomorrow, with how their last quarter went
+    fodue = []
+    for i in cal:
+        if i.get("k") in fno and i.get("d") in due_days and i["k"] not in fresh:
+            r = q.get(i["k"])
+            v = fres.get(i["k"]) or {}
+            if r and r[0]:
+                last = (" · last quarter: " + rtxt(v).split(": ", 1)[1]) if v.get("q") and (v.get("yp") is not None or v.get("yi") is not None) else ""
+                fodue.append({"k": i["k"], "n": names.get(i["k"], i["k"]), "p": r[0], "pct": r[1], "fo": True, "d": i["d"],
+                              "why": [{"t": "due", "x": "Results " + ("today" if i["d"] == today.isoformat() else "on " + dt.date.fromisoformat(i["d"]).strftime("%-d %b")) + last}]})
     for o in fodn:
         o["s"] = round(o["s"], 1)
     for o in L:
@@ -975,7 +1086,7 @@ def tomorrow_watch(out, uni, q):
         snap = {"d": today.isoformat(), "phase": phase, "px": {o["k"]: o["p"] for o in sel},
                 "why": {o["k"]: next((w["t"] for w in o["why"] if w["t"] in ("results", "news", "momentum")), "") for o in sel}}
     tw = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "phase": phase, "for": nxt.strftime("%a %-d %b") if hm >= 15 * 60 + 15 else today.strftime("%a %-d %b"),
-          "picks": picks, "fo": fo, "fodn": fodn, "due": due, "snap": snap, "hist": hist}
+          "picks": picks, "fo": fo, "fodn": fodn, "fodue": fodue[:30], "due": due, "snap": snap, "hist": hist}
     out["tw"] = tw
 
 
@@ -1450,7 +1561,7 @@ def main():
     except Exception:
         out = {}
     fast = "--fast" in sys.argv
-    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, results_cal, everything, option_chains)):
+    for step in ((markets, nse_movers, mcx, bse_movers) if fast else (markets, nse_movers, bse_movers, metals, city_metals, ipo_calendar, ipo, flows, news, fno, results_cal, fno_results, everything, option_chains)):
         try:
             step(out)
         except Exception as e:
