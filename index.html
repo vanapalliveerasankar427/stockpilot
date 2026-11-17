@@ -878,7 +878,7 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
   .links a svg{width:22px;height:22px;padding:5px;box-sizing:content-box;border-radius:12px;transition:transform .35s cubic-bezier(.2,.9,.3,1.5),background .3s,color .3s,box-shadow .3s}
   .links a:active svg{transform:scale(.85)}
   .links a[data-v="today"]{--tc:#f59e0b}.links a[data-v="markets"]{--tc:#3b82f6}.links a[data-v="stocks"]{--tc:#6366f1}.links a[data-v="ipos"]{--tc:#10b981}
-  .links a[data-v="tomorrow"]{--tc:#8b5cf6}.links a[data-v="ipo-allot"]{--tc:#14b8a6}.links a[data-v="metals"]{--tc:#eab308}.links a[data-v="watchlist"]{--tc:#ec4899}
+  .links a[data-v="tomorrow"]{--tc:#8b5cf6}.links a[data-v="fno"]{--tc:#f97316}.links a[data-v="ipo-allot"]{--tc:#14b8a6}.links a[data-v="metals"]{--tc:#eab308}.links a[data-v="watchlist"]{--tc:#ec4899}
   .links a[aria-current="page"]{background:none;color:var(--tc);box-shadow:none;padding:6px 2px 5px}
   .links a[aria-current="page"] svg{color:#fff;stroke:#fff;background:linear-gradient(140deg,color-mix(in srgb,var(--tc) 80%,#fff),var(--tc) 55%,color-mix(in srgb,var(--tc) 75%,#000));box-shadow:0 6px 16px -4px color-mix(in srgb,var(--tc) 70%,transparent),0 0 0 4px color-mix(in srgb,var(--tc) 14%,transparent);animation:tabPop .5s cubic-bezier(.2,.9,.3,1.5)}
   .links a[aria-current="page"] .lt{transform:translateY(-1px)}
@@ -1226,6 +1226,8 @@ html{overscroll-behavior-y:none}
 .dp-r{padding:11px 0;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}.dp-r:first-child{border-top:0}
 .dp-a{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.dp-a span{font-weight:700;font-size:14.5px}.dp-a b{font-size:19px;white-space:nowrap}.dp-a b small{font-size:12px;color:var(--muted);font-weight:600}
 .dp-b{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:3px}
+.fn-ixs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}.fn-ixs .oc-w:has(.oc-box:not(:empty)){position:relative}.fn-ixs:has(.oc-box:not(:empty)){grid-template-columns:1fr}
+.fn-ix{padding:12px 14px;border-radius:18px;background:var(--glass,var(--soft));border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}.fn-ix>div:first-child{display:grid;gap:1px}.fn-ix b{font-size:18px}.fn-ix small{font-size:11.5px;color:var(--muted);line-height:1.4}.fn-ix .oc-btn{font-size:12px;padding:6px 10px}.fn-ix .oc-w{margin-top:8px}
 .pn-coin{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#fbbf24,#d97706);flex:none}
 .pn-warn{margin:0 0 14px;padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.45;background:color-mix(in srgb,#f59e0b 13%,transparent);border:1px solid color-mix(in srgb,#f59e0b 32%,transparent)}
 .pn-bands{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
@@ -1308,6 +1310,7 @@ html{overscroll-behavior-y:none}
   <div class="links" role="navigation" aria-label="Sections">
     <a href="#today" data-v="today"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="lt">Today</span></a>
     <a href="#tomorrow" data-v="tomorrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span class="ls">Next</span><span class="lt">Tomorrow</span></a>
+    <a href="#fno" data-v="fno"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16"/><rect x="3.5" y="7" width="5" height="8" rx="1"/><rect x="15.5" y="9" width="5" height="7" rx="1"/><path d="M12 6v12"/><rect x="9.5" y="10" width="5" height="5" rx="1"/></svg><span class="lt">F&amp;O</span></a>
     <a href="#markets" data-v="markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><span class="lt">Markets</span></a>
     <a href="#stocks" data-v="stocks"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15v-3M12 15V9M16 15v-5"/></svg><span class="lt">Stocks</span></a>
     <a href="#ipos" data-v="ipos"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span class="lt">IPOs</span></a>
@@ -1439,6 +1442,7 @@ html{overscroll-behavior-y:none}
 <section class="view" id="v-alerts"><div id="alertspage"></div></section>
 <section class="view" id="v-penny"><div id="pennypage"></div></section>
 <section class="view" id="v-tomorrow"><div id="tomorrowpage"></div></section>
+<section class="view" id="v-fno"><div id="fnopage"></div></section>
 <section class="view" id="v-growth"><div id="growthpage"></div></section>
 <section class="view" id="v-contact"><div id="contactpage"></div></section>
 <section class="view" id="v-faq"><div id="faqpage"></div></section>
@@ -2768,7 +2772,7 @@ function renderNews(){const tags=['All',...new Set(NEWS.map(n=>n.tag))];
   document.getElementById('newsgrid').innerHTML=`<div class="glass card">${L.slice(0,h).map(newsItem).join('')}</div><div class="glass card">${L.slice(h).map(newsItem).join('')||'<p class="note">No more stories.</p>'}</div>`}
 
 // ===================== search palette =====================
-const PAGES=[['Today: market outlook & movers','today','home likely up down momentum 52 week high low volume'],['F&O signals & calls/puts','fn:fno','fno f&o futures options option chain call put ce pe strike premium lot'],['Nifty 50 option chain','fn:NIFTY','nifty index option chain call put weekly expiry'],['Bank Nifty option chain','fn:BANKNIFTY','bank nifty banknifty index option chain call put'],
+const PAGES=[['Today: market outlook & movers','today','home likely up down momentum 52 week high low volume'],['F&O page: signals, next day, lots','fno','fno f&o futures options lot size next day'],['F&O signals & calls/puts','fn:fno','fno f&o futures options option chain call put ce pe strike premium lot'],['Nifty 50 option chain','fn:NIFTY','nifty index option chain call put weekly expiry'],['Bank Nifty option chain','fn:BANKNIFTY','bank nifty banknifty index option chain call put'],
  ["Tomorrow's watch",'tomorrow','next day results due picks buy before close'],['Growth stocks · 1Y & 2Y potential','growth','multibagger fundamentals long term future growth potential target'],['Penny stocks','penny','cheap under 1 2 5 10 20 rupees low price'],
  ['Top gainers & losers','stocks','gainers losers movers upper lower circuit'],['GMP board','ipo-gmp','grey market premium ipo'],['Subscription status','ipo-sub','ipo subscribed times qib nii retail'],['IPO screener','ipo-screener','ipo filter'],['Allotment desk','ipo-allot','allotment status pan registrar'],['Money planner','ipo-planner','ipo budget'],['Learn: IPO guides','learn','learn guide how to'],
  ['Gold & silver rates','metals','gold silver rate price 22k 24k city ibja'],['Markets','markets','sensex nifty indices fii dii global'],['Stocks','stocks','all shares nse bse'],['IPOs','ipos','upcoming open closed listed sme mainboard'],['Watchlist','watchlist','favourites saved'],['Portfolio','portfolio','holdings profit loss p&l'],['Price alerts','alerts','alert notify target'],['News','news','headlines'],['My applications','applications','ipo applied'],['Charges calculator','tools','brokerage charges tax calculator'],['Contact & feedback','contact','help support report issue'],['Install the app (iPhone & Android)','inst:','install app iphone android home screen add download'],['FAQ · help & questions','faq','faq help questions how what why install notification pan safe free']];
@@ -2869,7 +2873,7 @@ document.addEventListener('submit',e=>{const f=e.target;let first=null;
   if(first){e.preventDefault();e.stopImmediatePropagation();first.focus();if(navigator.vibrate)navigator.vibrate(30)}},true);
 
 // ===================== routing =====================
-const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy','contact','portfolio','alerts','penny','tomorrow','growth','faq'];
+const VIEWS=['today','metals','markets','stocks','ipos','ipo-gmp','ipo-sub','ipo-screener','ipo-allot','ipo-planner','learn','watchlist','news','applications','tools','pans','terms','privacy','contact','portfolio','alerts','penny','tomorrow','growth','faq','fno'];
 function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=null;
   let sub=null;if(h.startsWith('ipos/')){const id=decodeURIComponent(h.slice(5));view='ipos';history.replaceState(null,'','#ipos');setTimeout(()=>{if(byId[id])openIpo(id);else toast('This IPO is no longer in the list')},120)}else if(h.startsWith('stock-')){view='stock';stock=h.slice(6)}else if(h.startsWith('gmp-')){view='gmp';sub=h.slice(4)}else if(h.startsWith('allot-')){view='allot';sub=h.slice(6)}else if(h.startsWith('pans')){view='pans'}else if(!VIEWS.includes(h))view='markets';
   document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+(view==='privacy'?'terms':view)));document.body.classList.add('ready');
@@ -2878,7 +2882,7 @@ function route(){const h=(location.hash||'#markets').slice(1);let view=h,stock=n
   const sn=document.getElementById('sn-'+view);if(sn)sn.innerHTML=subnav(view);
   if(view==='ipo-gmp')renderGMP();if(view==='ipo-sub')renderSub();if(view==='ipo-screener')renderScreener();if(view==='ipo-allot')renderAllot();if(view==='ipo-planner')renderPlanner();if(view==='learn')renderLearn();
   document.querySelectorAll('.links a').forEach(a=>a.dataset.v===navv?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
-  if(view==='stocks')renderStocks();if(view==='growth')renderGrowth();if(view==='faq')renderFaq();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50);setTimeout(dpStart,60)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
+  if(view==='stocks')renderStocks();if(view==='growth')renderGrowth();if(view==='faq')renderFaq();if(view==='fno')renderFnoPage();if(view==='stock')renderStockPage(stock);if(view==='news')renderNews();if(view==='metals'){renderMetalsPage();renderCityCard();LV.hist={g:[],s:[]};LV.last=null;setTimeout(lvStart,50);setTimeout(dpStart,60)}if(view==='today')renderToday();if(view==='ipos')renderIpos();if(view==='watchlist'){renderWLAll();const wt=document.getElementById('wlTabs');if(wt)wt.innerHTML=myTabs('watchlist')}if(view==='portfolio')renderPortfolio();if(view==='penny')renderPenny();if(view==='tomorrow')renderTomorrow();if(view==='alerts')renderAlerts();
   scrollTo({top:0});requestAnimationFrame(animateView)}
 addEventListener('hashchange',route);
 
@@ -3543,17 +3547,19 @@ function fnoData(){const F=FNO(),O=(LIVED&&LIVED.outlook)||{},up={},dn={};(O.up|
   const bull=rows.filter(r=>r.pct>0).sort((a,b)=>b.sc-a.sc).slice(0,12).sort((a,b)=>b.pct-a.pct),bear=rows.filter(r=>r.pct<0).sort((a,b)=>b.sc-a.sc).slice(0,12).sort((a,b)=>a.pct-b.pct); // pick by signal strength, show biggest move first
   return {bull,bear,n:Object.keys(F).length}}
 let fnoSide='bull';
+const fmtINR=v=>v>=1e7?'₹'+(v/1e7).toFixed(2)+' Cr':v>=1e5?'₹'+(v/1e5).toFixed(2)+' L':'₹'+Math.round(v).toLocaleString('en-IN');
+function foRow(r,i){const tag=(t,c)=>`<span class="fo-tag ${c||''}">${t}</span>`;return `<div class="fo-row ${r.pct>=0?'u':'d'}" style="animation-delay:${i*35}ms"><a class="fo-top" href="#stock-${esc(r.k)}"><div class="lg" style="background:${colorOf(r.k)};color:#fff">${esc(r.n.slice(0,2).toUpperCase())}${logoImg(r.k)}</div>
+    <div class="ol-nm"><b>${esc(r.n)}</b><small>${esc(r.k)}</small></div>
+    <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(r.k)}">${fin(r.px)}</i></b><span data-lcw="${esc(r.k)}">${chip(r.pct,r.px)}</span></div></a>
+    <div class="fo-tags">${r.lot?tag(`Lot ${r.lot.toLocaleString('en-IN')} · 1 lot ≈ ${fmtINR(r.lot*r.px)}`):''}${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
+    ${r.o&&r.o.why&&r.o.why[0]?`<p class="fo-why">${esc(r.o.why[0].t)}</p>`:''}
+    ${ocBtn(r.k,r.pct>=0?'c':'p')}</div>`}
 function fnoHTML(){const F=FNO();
   if(!Object.keys(F).length)return `<p class="aw-msg" style="padding:20px">The F&amp;O stock list is loading. It refreshes every morning from NSE; check back shortly.</p>`;
   if(!ALLQ||!UNI){Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(olTab==='fno'){olSig='';olRefresh(true)}});return `<div style="padding:12px">${LOADER('Scanning F&O stocks…')}</div>`}
   const D=fnoData(),L=fnoSide==='bull'?D.bull:D.bear,open=mktOpen();
   const tag=(t,c)=>`<span class="fo-tag ${c||''}">${t}</span>`;
-  const row=(r,i)=>`<div class="fo-row ${r.pct>=0?'u':'d'}" style="animation-delay:${i*35}ms"><a class="fo-top" href="#stock-${esc(r.k)}"><div class="lg" style="background:${colorOf(r.k)};color:#fff">${esc(r.n.slice(0,2).toUpperCase())}${logoImg(r.k)}</div>
-    <div class="ol-nm"><b>${esc(r.n)}</b><small>${esc(r.k)}</small></div>
-    <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(r.k)}">${fin(r.px)}</i></b><span data-lcw="${esc(r.k)}">${chip(r.pct,r.px)}</span></div></a>
-    <div class="fo-tags">${r.lot?tag(`Lot ${r.lot.toLocaleString('en-IN')}`):''}${r.o?tag((r.o.why||[]).some(w=>w.k==='news')?'📰 News / results':'📊 Price signal',r.pct>=0?'u':'d'):''}${r.volx&&r.volx>=1.3?tag(`🔥 Volume ${r.volx.toFixed(1)}× avg`):''}${r.gap!=null&&Math.abs(r.gap)>=1?tag(`${r.gap>0?'⤴️ Gap up':'⤵️ Gap down'} ${Math.abs(r.gap).toFixed(1)}%`):''}${r.nh&&r.pct>0?tag('🔝 Near 52-week high','u'):''}${r.nl&&r.pct<0?tag('⬇️ Near 52-week low','d'):''}</div>
-    ${r.o&&r.o.why&&r.o.why[0]?`<p class="fo-why">${esc(r.o.why[0].t)}</p>`:''}
-    ${ocBtn(r.k,r.pct>=0?'c':'p')}</div>`;
+  const row=foRow;
   return `<div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals from news, price and volume, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
    <div class="oc-idx"><span class="lbl" style="margin:0">Index options</span>${ocBtn('NIFTY','c','Nifty 50')}${ocBtn('BANKNIFTY','c','Bank Nifty')}</div>
    <div class="fo-sw" role="group" aria-label="Direction"><button type="button" data-fs="bull" aria-pressed="${fnoSide==='bull'}">▲ Up signals <b>${D.bull.length}</b></button><button type="button" data-fs="bear" aria-pressed="${fnoSide==='bear'}">▼ Down signals <b>${D.bear.length}</b></button></div>
@@ -3561,6 +3567,41 @@ function fnoHTML(){const F=FNO();
    <div class="ol-list" data-ls="${fnoSide==='bull'?'d':'a'}" data-li=".fo-row">${L.map(row).join('')||`<p class="aw-msg" style="padding:20px">No F&amp;O stocks have strong ${fnoSide==='bull'?'up':'down'} signals right now.</p>`}</div>`}
 
 let olTab='up',olAll=false;
+// ---- F&O page: today's signals, next-day watch, every F&O stock with lot details, calls & puts
+let fnPg='today',fnSide='bull',fnNext='up',fnQ='',fnN=40;
+function renderFnoPage(){const el=document.getElementById('fnopage');if(!el)return;const F=FNO();
+  if(!ALLQ||!UNI){el.innerHTML=`<div class="glass card">${LOADER('Loading F&O stocks…')}</div>`;Promise.all([loadUniverse(),loadAllQuotes()]).then(renderFnoPage).catch(()=>{});return}
+  if(!OC)loadOC().then(()=>{if(document.getElementById('fnopage'))renderFnoPage()});
+  const nm=k=>(UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k,px=k=>LT.last[k]!=null?LT.last[k]:pxOf(k),pc=k=>LT.pct[k]!=null?LT.pct[k]:pctOf(k);
+  const atm=(k,t)=>{const e=OC&&OC.s&&OC.s[k];if(!e||!e.lot)return null;let b=null;for(const r of e.r){const v=t==='c'?r[1]:r[6];if(v&&(b==null||Math.abs(r[0]-e.u)<Math.abs(b[0]-e.u)))b=[r[0],v]}return b?{k:b[0],cost:b[1]*e.lot}:null};
+  const idx=k=>{const e=OC&&OC.s&&OC.s[k];return `<div class="fn-ix"><div><span class="lbl">${k==='NIFTY'?'Nifty 50':'Bank Nifty'}</span><b class="num">${e?n2(e.u):'—'}</b>${e?`<small>Lot ${e.lot||'?'} · PCR ${e.pcr??'—'}<br>Support ${e.sup} · Resist. ${e.res}</small>`:''}</div>${ocBtn(k,'c')}</div>`};
+  const card=(o,i)=>{const k=o.k,p=px(k)||o.p,c=pc(k)??o.pct,lot=F[k],ac=atm(k,'c'),ap=atm(k,'p'),W={results:'📊 Results',news:'📰 News',momentum:'🔥 Strong close',weak:'🧊 Weak close'};
+    return `<div class="fo-row ${c>=0?'u':'d'}"><a class="fo-top" href="#stock-${esc(k)}"><div class="lg" style="background:${colorOf(k)};color:#fff">${esc(nm(k).slice(0,2).toUpperCase())}${logoImg(k)}</div><div class="ol-nm"><b>${esc(nm(k))}</b><small>${esc(k)}</small></div>
+     <div class="ol-px"><b class="num">₹<i class="lp" data-lp="${esc(k)}">${fin(p)}</i></b><span data-lcw="${esc(k)}">${chip(c,p)}</span></div></a>
+     <div class="fo-tags">${(o.why||[]).filter(w=>W[w.t]).map(w=>`<span class="fo-tag ${w.t==='weak'?'d':'u'}">${W[w.t]}</span>`).join('')}${lot?`<span class="fo-tag">Lot ${lot.toLocaleString('en-IN')} · 1 lot ≈ ${fmtINR(lot*p)}</span>`:''}${ac?`<span class="fo-tag">ATM call ${ac.k} ≈ ${fmtINR(ac.cost)}/lot</span>`:''}${ap?`<span class="fo-tag">ATM put ${ap.k} ≈ ${fmtINR(ap.cost)}/lot</span>`:''}</div>
+     ${(o.why||[])[0]&&o.why[0].x?`<p class="fo-why">${esc(o.why[0].x)}</p>`:''}${ocBtn(k,(o.why||[]).some(w=>w.t==='weak')||c<0?'p':'c')}</div>`};
+  const tabs=`<div class="gr-tabs" role="tablist">${[['today','Today'],['next','Next day'],['all','All F&amp;O · lots']].map(([v,l])=>`<button type="button" data-fp="${v}" aria-pressed="${fnPg===v}">${l}</button>`).join('')}</div>`;
+  let body='';
+  if(fnPg==='today'){const D=fnoData(),L=fnSide==='bull'?D.bull:D.bear;
+    body=`<div class="fo-sw" role="group"><button type="button" data-fs2="bull" aria-pressed="${fnSide==='bull'}">▲ Likely up <b>${D.bull.length}</b></button><button type="button" data-fs2="bear" aria-pressed="${fnSide==='bear'}">▼ Likely down <b>${D.bear.length}</b></button></div>
+     <p class="fo-note">${mktOpen()?'Live during market hours':'Based on the last session; refreshes live from 9:15 AM'} · ${D.n} F&amp;O stocks scanned · biggest move first</p>
+     <div class="ol-list" data-ls="${fnSide==='bull'?'d':'a'}" data-li=".fo-row">${L.map(foRow).join('')||'<p class="aw-msg" style="padding:20px">No strong signals right now.</p>'}</div>`}
+  else if(fnPg==='next'){const T=(LIVED&&LIVED.tw)||{},L=(fnNext==='up'?(T.fo||[]):(T.fodn||[])).slice().sort((a,b)=>fnNext==='up'?(pc(b.k)??b.pct)-(pc(a.k)??a.pct):(pc(a.k)??a.pct)-(pc(b.k)??b.pct));
+    body=`<div class="fo-sw" role="group"><button type="button" data-fn2="up" aria-pressed="${fnNext==='up'}">▲ May rise next day <b>${(T.fo||[]).length}</b></button><button type="button" data-fn2="down" aria-pressed="${fnNext==='down'}">▼ May fall next day <b>${(T.fodn||[]).length}</b></button></div>
+     <p class="fo-note">${T.for?'For '+esc(T.for)+' · ':''}from results, news and how each stock closed (strong close near the high, or weak close near the low, on heavy volume). Fixed at 3:15 PM, refreshed at 8 PM.</p>
+     <div class="ol-list" data-ls="${fnNext==='up'?'d':'a'}" data-li=".fo-row">${L.map(card).join('')||`<p class="aw-msg" style="padding:20px">${fnNext==='down'&&!T.fodn?'This list starts with today\'s 3:15 PM update.':'No F&amp;O stocks qualify right now.'}</p>`}</div>`}
+  else{const q=fnQ.trim().toLowerCase();let L=Object.keys(F).map(k=>({k,p:px(k),pct:pc(k)})).filter(o=>o.p&&(!q||o.k.toLowerCase().includes(q)||nm(o.k).toLowerCase().includes(q)));L.sort((a,b)=>Math.abs(b.pct||0)-Math.abs(a.pct||0));
+    body=`<input class="faq-q" id="fnQ" type="search" placeholder="Search ${Object.keys(F).length} F&amp;O stocks…" value="${esc(fnQ)}">
+     <p class="fo-note">Every F&amp;O stock, biggest move first (up or down) · lot size, value of 1 lot and the at-the-money call and put cost per lot.</p>
+     <div class="ol-list">${L.slice(0,fnN).map(card).join('')}</div>${L.length>fnN?`<button class="ghost" type="button" id="fnMore" style="margin:14px auto;display:block">Show more (${L.length-fnN} left)</button>`:''}`}
+  el.innerHTML=`<div class="phead"><div><div class="eyebrow"><span class="dot"></span>${mktOpen()?'Live':'Market closed'} · NSE F&amp;O</div><h1 class="ptitle">F&amp;O</h1><p class="psub">Which F&amp;O stocks may go up or down today and next day, lot sizes, and call and put prices.</p></div></div>
+   <div class="fo-risk">⚠️ <b>9 out of 10 individual F&amp;O traders lose money</b> (SEBI study). These are research signals, not buy/sell calls or option tips. MarketVedaPro is not SEBI-registered.</div>
+   <div class="fn-ixs">${idx('NIFTY')}${idx('BANKNIFTY')}</div>${tabs}<div id="fnBody">${body}</div>`;
+  el.querySelectorAll('[data-fp]').forEach(b=>b.onclick=()=>{fnPg=b.dataset.fp;renderFnoPage()});
+  el.querySelectorAll('[data-fs2]').forEach(b=>b.onclick=()=>{fnSide=b.dataset.fs2;renderFnoPage()});
+  el.querySelectorAll('[data-fn2]').forEach(b=>b.onclick=()=>{fnNext=b.dataset.fn2;renderFnoPage()});
+  const qi=el.querySelector('#fnQ');if(qi){qi.oninput=()=>{fnQ=qi.value;fnN=40;const pos=qi.selectionStart;renderFnoPage();const n=document.getElementById('fnQ');n.focus();n.setSelectionRange(pos,pos)}}
+  const mb=el.querySelector('#fnMore');if(mb)mb.onclick=()=>{const y=scrollY;fnN+=40;renderFnoPage();scrollTo(0,y)}}
 // ---- Tomorrow's watch track record: yesterday's list tracked live today, then every scored list with each stock's move
 let TW_OPEN=null;
 function twRecHTML(T){const H=T.hist||[],S=T.snap,nm=k=>(UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k,f=v=>'₹'+(v>=1000?Math.round(v).toLocaleString('en-IN'):n2(v)),pc=v=>`<span class="${v>=0?'up':'down'} num">${v>=0?'+':''}${(+v).toFixed(2)}%</span>`;

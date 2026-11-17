@@ -939,6 +939,32 @@ def tomorrow_watch(out, uni, q):
     picks = [o for o in L if any(w["t"] in ("results", "news", "momentum") for w in o["why"])][:25]
     fo = [o for o in L if o["fo"] and any(w["t"] in ("results", "news", "momentum") for w in o["why"])][:12]
     due = [o for o in L if any(w["t"] == "due" for w in o["why"]) and not any(w["t"] in ("results", "news") for w in o["why"])][:25]
+    # F&O stocks that may fall next session: negative news/results, or a weak close (down 2%+, near the day's low, heavy volume)
+    dn = {}
+    for x in (out.get("outlook") or {}).get("down", []):
+        if x.get("k") in fno:
+            news = [w for w in x.get("why", []) if w.get("k") == "news"]
+            if news and (x.get("pct") or 0) < 1:
+                r = q.get(x["k"])
+                if r and r[0]:
+                    res = any(RESULT_WORDS.search(w.get("t", "")) for w in news)
+                    dn[x["k"]] = {"k": x["k"], "n": names.get(x["k"], x["k"]), "p": r[0], "pct": r[1], "fo": True, "s": abs(x.get("s", 0)) * (1.4 if res else 1.0),
+                                  "why": [{"t": "results" if res else "news", "x": news[0].get("t", "")[:160], "u": news[0].get("u", "")}]}
+    for k in fno:
+        r = q.get(k)
+        try:
+            p, pct, lo, vol = r[0], r[1], r[5], r[8]
+            av = r[16] if len(r) > 16 else None
+            if not (p and pct and lo and vol and av) or pct > -2 or p > lo * 1.015 or vol < 1.5 * av:
+                continue
+            o = dn.setdefault(k, {"k": k, "n": names.get(k, k), "p": p, "pct": pct, "fo": True, "s": 0.0, "why": []})
+            o["why"].append({"t": "weak", "x": f"Down {abs(pct):.1f}%, closing near the day's low on {vol / av:.1f}× normal volume"})
+            o["s"] += abs(pct) * min(vol / av, 5) / 2
+        except Exception:
+            continue
+    fodn = sorted(dn.values(), key=lambda o: -o["s"])[:12]
+    for o in fodn:
+        o["s"] = round(o["s"], 1)
     for o in L:
         o["s"] = round(o["s"], 1)
     phase = "pre" if hm < 9 * 60 + 15 else "live" if hm < 15 * 60 + 15 else "close" if hm < 19 * 60 else "evening"
@@ -949,7 +975,7 @@ def tomorrow_watch(out, uni, q):
         snap = {"d": today.isoformat(), "phase": phase, "px": {o["k"]: o["p"] for o in sel},
                 "why": {o["k"]: next((w["t"] for w in o["why"] if w["t"] in ("results", "news", "momentum")), "") for o in sel}}
     tw = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "phase": phase, "for": nxt.strftime("%a %-d %b") if hm >= 15 * 60 + 15 else today.strftime("%a %-d %b"),
-          "picks": picks, "fo": fo, "due": due, "snap": snap, "hist": hist}
+          "picks": picks, "fo": fo, "fodn": fodn, "due": due, "snap": snap, "hist": hist}
     out["tw"] = tw
 
 
