@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install requests feedparser -q 2>/dev/null; pip install -r requirements.txt -q 2>/dev/null; python scripts/probe_f.py
+      - run: pip install requests -q && python scripts/probe_f.py
