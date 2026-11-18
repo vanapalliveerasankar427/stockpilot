@@ -1,13 +1,13 @@
 {
- "label": "18 Nov 2026, 6:00 AM IST",
- "updated": "2026-11-18T06:00:15+05:30",
+ "label": "18 Nov 2026, 6:04 AM IST",
+ "updated": "2026-11-18T06:04:32+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "18 Nov 2026, 6:00 AM",
+  "date": "18 Nov 2026, 6:04 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -148,13 +148,13 @@
     "v": 134250.0,
     "ch": 27.0,
     "pct": 0.02,
-    "t": "18 Nov, 5:55 AM"
+    "t": "18 Nov, 6:04 AM"
    },
    "silver": {
     "v": 169597.0,
     "ch": -105.0,
     "pct": -0.06,
-    "t": "18 Nov, 5:55 AM"
+    "t": "18 Nov, 6:04 AM"
    }
   },
   "retail": {
@@ -369,38 +369,38 @@
    "g24_10": 134840.0,
    "ag_kg": 170340.0,
    "ag": 170.34,
-   "t": "18 Nov, 5:55 AM"
+   "t": "18 Nov, 6:04 AM"
   },
   "dp": {
    "ag1": {
-    "b": 177336.0,
-    "a": 177336.0,
+    "b": 176692.0,
+    "a": 176692.0,
     "h": 178374.0,
-    "l": 177187.0
+    "l": 176692.0
    },
    "ag30": {
-    "b": 174336.0,
-    "a": 174336.0,
+    "b": 173692.0,
+    "a": 173692.0,
     "h": 175374.0,
-    "l": 174187.0
+    "l": 173692.0
    },
    "g999": {
-    "b": 13746.3,
-    "a": 13746.3,
+    "b": 13712.3,
+    "a": 13712.3,
     "h": 13803.3,
-    "l": 13745.1
+    "l": 13712.3
    },
    "xau": {
-    "b": 3830.9,
-    "a": 3830.92,
+    "b": 3819.9,
+    "a": 3819.92,
     "h": 3849.32,
-    "l": 3830.52
+    "l": 3819.92
    },
    "xag": {
-    "b": 47.18,
-    "a": 47.18,
+    "b": 46.97,
+    "a": 46.97,
     "h": 47.51,
-    "l": 47.13
+    "l": 46.97
    },
    "fx": {
     "b": 93.51,
@@ -408,8 +408,8 @@
     "h": 93.52,
     "l": 93.52
    },
-   "at": 1794961822,
-   "t": "18 Nov, 6:00 AM"
+   "at": 1794962079,
+   "t": "18 Nov, 6:04 AM"
   }
  },
  "logos": [],
@@ -517,27 +517,27 @@
   "high": 93.46,
   "low": 93.46,
   "open": 93.46,
-  "t": 1794961544
+  "t": 1794961986
  },
  "brent": {
-  "v": 93.14,
+  "v": 93.11,
   "prev": 93.14,
-  "ch": 0.0,
-  "pct": 0.0,
+  "ch": -0.03,
+  "pct": -0.03,
   "high": 93.47,
-  "low": 93.14,
+  "low": 93.11,
   "open": 91.68,
-  "t": 1794961124
+  "t": 1794961414
  },
  "goldSpot": {
-  "v": 3843.8,
+  "v": 3838.1,
   "prev": 3864.2,
-  "ch": -20.4,
-  "pct": -0.53,
+  "ch": -26.1,
+  "pct": -0.68,
   "high": 3859.3,
-  "low": 3840.7,
+  "low": 3831.9,
   "open": 3877.6,
-  "t": 1794961206
+  "t": 1794961469
  },
  "sectors": [
   [
@@ -1117,7 +1117,7 @@
   "crystalcropprotection": {
    "gmp": 19.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:00 AM",
+   "gat": "18 Nov, 6:04 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1148,7 +1148,7 @@
   "watranarentals": {
    "gmp": 25.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:00 AM",
+   "gat": "18 Nov, 6:04 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1179,7 +1179,7 @@
   "mahanadicoalfields": {
    "gmp": 4.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:00 AM",
+   "gat": "18 Nov, 6:04 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1204,7 +1204,7 @@
   "dii_sell": 14706.87,
   "fii_buy": 19930.98,
   "fii_sell": 15735.6,
-  "fetched": "18 Nov, 6:00 AM",
+  "fetched": "18 Nov, 6:04 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1360,7 +1360,6 @@
   }
  ],
  "log": [
-  "mcx failed: Response ended prematurely",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
@@ -2386,9 +2385,9 @@
   }
  },
  "nse": {
-  "n50": "18 Nov, 6:00 AM",
-  "mid": "18 Nov, 6:00 AM",
-  "small": "18 Nov, 6:00 AM"
+  "n50": "18 Nov, 6:04 AM",
+  "mid": "18 Nov, 6:04 AM",
+  "small": "18 Nov, 6:04 AM"
  },
  "midg": [
   [
@@ -2561,7 +2560,6 @@
   }
  },
  "fulllog": [
-  "mcx failed: Response ended prematurely",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
@@ -2572,7 +2570,7 @@
  "universe": {
   "stocks": 5274,
   "quotes": 4769,
-  "at": "18 Nov, 6:00 AM"
+  "at": "18 Nov, 6:04 AM"
  },
  "global": [
   [
@@ -2595,9 +2593,9 @@
   ],
   [
    "Nikkei 225",
-   59286.4,
-   0.72,
-   1794960915
+   59463.59,
+   1.02,
+   1794961170
   ],
   [
    "Hang Seng",
@@ -2619,12 +2617,13 @@
   ]
  ],
  "outlook": {
-  "at": "18 Nov, 6:00 AM",
+  "at": "18 Nov, 6:04 AM",
   "headlines": 272,
   "screened": 1800,
   "cues": [
    "Dow Jones -1.6%",
-   "S&P 500 -1.0%"
+   "S&P 500 -1.0%",
+   "Nikkei 225 +1.0%"
   ],
   "up": [
    {
@@ -3272,17 +3271,17 @@
      },
      {
       "k": "news",
-      "t": "Cummins India shares to hit ₹5,600 or fall to ₹3,320? Analysts split on stock after Q2 results - CNBC TV18",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUHdaQ2Z3UDdTTTZYWFJaZERZWmtCZkZNT01WUTNocTNwbmRTNkpOazVrRko0REd0eUNJQjR1MjBlV3ZXRERIalN0ZDE3ZTNXcW91LTV6aTJEQUs0dERoN3FRZ0hBanVWTUwwZWJrcVlwbm5JdndHTnBpME95S0J4a2Y4WjNENXd4VXJXVzd5OVhOZ2RjTVdrY1ktUFBRZjNSbXFDcTRMUTAxV0JxbGlVR190cnZyUQ?oc=5",
-      "src": "LinkedIn"
-     },
-     {
-      "k": "news",
       "t": "Cummins India shares to hit ₹5,600 or fall to ₹3,320? Analysts split on stock after Q2 results",
       "s": -4,
       "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMGJkcXRua3FsYTF6UWdqTjNJeVFEeHk3Zm5TUE9sUkRpQWw1MkRYUXRDLTBOMmFQUFpyaTgyTGxlX3BjaUZDVE10ZFMtcDdYdTVZdHdPd0dkel9CY0EwdVpZU015ekpQNDFTa2NfUE1kNnRQOE1fMmJpWGhvaTNfLTJHRTlPQWxra2hfcDBIRVZNaWlCR0VGOHkwNDFCUmo2Q2tyYk5UV2RVMW1XZExJRjZaV2FPczJFeUx3VDBXVWFieEJPbVJjOVR1SExOMkR3bmZQSDhR0gHbAUFVX3lxTE90RmpjZkplSEVzckxPQms5akQ3RnNLQzBDNGpPZjR4NUg4aklSaWxkZlBiZ2lZZ2djRGwtcHlWWlF1R0ZtNkJReGthZnh5aVFBUDZzYjVscDNtNnJQWnBrLVY0ZmZWdzdjZzFzWElNemtJb0VZaXh6RzM1VHlqZUo3OVI1ZDc0Nnd2cGFQTzJLb29MeGZiZ05xaGdzRTZ1bWNnQlF3dzE1dlQxeDVCN0dHS3ZmMFc0U0c5WEhMemh0R2RaVXdFeEFSaEc4alNuVkotRVJxWnNBeE9VUQ?oc=5",
       "src": "CNBC TV18"
+     },
+     {
+      "k": "news",
+      "t": "Cummins India shares to hit ₹5,600 or fall to ₹3,320? Analysts split on stock after Q2 results - CNBC TV18",
+      "s": -4,
+      "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUHdaQ2Z3UDdTTTZYWFJaZERZWmtCZkZNT01WUTNocTNwbmRTNkpOazVrRko0REd0eUNJQjR1MjBlV3ZXRERIalN0ZDE3ZTNXcW91LTV6aTJEQUs0dERoN3FRZ0hBanVWTUwwZWJrcVlwbm5JdndHTnBpME95S0J4a2Y4WjNENXd4VXJXVzd5OVhOZ2RjTVdrY1ktUFBRZjNSbXFDcTRMUTAxV0JxbGlVR190cnZyUQ?oc=5",
+      "src": "LinkedIn"
      }
     ]
    },
@@ -4012,7 +4011,7 @@
   }
  },
  "hilo": {
-  "at": "18 Nov, 6:00 AM",
+  "at": "18 Nov, 6:04 AM",
   "hi": [
    [
     "MARICO",
@@ -4085,7 +4084,7 @@
   "nlo": 6
  },
  "bse_movers": {
-  "at": "18 Nov, 6:00 AM",
+  "at": "18 Nov, 6:04 AM",
   "g": [
    [
     "500282",
@@ -4897,7 +4896,7 @@
   ]
  },
  "allmov": {
-  "at": "18 Nov, 6:00 AM",
+  "at": "18 Nov, 6:04 AM",
   "g": [
    [
     "B544168",
@@ -5238,7 +5237,7 @@
   ]
  },
  "tw": {
-  "at": "18 Nov, 6:00 AM",
+  "at": "18 Nov, 6:04 AM",
   "phase": "pre",
   "for": "Wed 18 Nov",
   "picks": [
