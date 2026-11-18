@@ -1,6 +1,6 @@
 {
  "label": "18 Nov 2026, 5:18 PM IST",
- "updated": "2026-11-18T17:18:29+05:30",
+ "updated": "2026-11-18T17:18:59+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -373,42 +373,42 @@
   },
   "dp": {
    "ag1": {
-    "b": 171119.0,
-    "a": 171119.0,
+    "b": 171045.0,
+    "a": 171045.0,
     "h": 180469.0,
-    "l": 171119.0
+    "l": 171045.0
    },
    "ag30": {
-    "b": 168119.0,
-    "a": 168119.0,
+    "b": 168045.0,
+    "a": 168045.0,
     "h": 177469.0,
-    "l": 168119.0
+    "l": 168045.0
    },
    "g999": {
-    "b": 13515.7,
-    "a": 13515.7,
+    "b": 13518.9,
+    "a": 13518.9,
     "h": 13966.8,
     "l": 13512.6
    },
    "xau": {
-    "b": 3762.3,
-    "a": 3762.32,
+    "b": 3762.0,
+    "a": 3762.02,
     "h": 3849.32,
     "l": 3758.12
    },
    "xag": {
-    "b": 45.64,
-    "a": 45.64,
+    "b": 45.63,
+    "a": 45.63,
     "h": 47.51,
     "l": 45.61
    },
    "fx": {
-    "b": 93.47,
-    "a": 93.48,
+    "b": 93.46,
+    "a": 93.47,
     "h": 93.59,
     "l": 93.27
    },
-   "at": 1795002516,
+   "at": 1795002544,
    "t": "18 Nov, 5:18 PM"
   }
  },
@@ -530,14 +530,14 @@
   "t": 1795001905
  },
  "goldSpot": {
-  "v": 3765.9,
+  "v": 3766.5,
   "prev": 3864.2,
-  "ch": -98.3,
-  "pct": -2.54,
+  "ch": -97.7,
+  "pct": -2.53,
   "high": 3859.3,
   "low": 3759.9,
   "open": 3787.9,
-  "t": 1795001906
+  "t": 1795001927
  },
  "sectors": [
   [
@@ -1288,20 +1288,6 @@
    "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORERDcDdPejVjWEFtT2I0UHJ0T0dOME9OV3RvWnczNjRrazN5ZHRhYlhLOXd3eTFJNEczcU1LWDlFNnZwS1VYR1UtTUVqRmwwQ2R1cGNzRHZlYXViTUNnMF9oeWQ2V0ZyaGJ5TlFJRm5Id3ZwYXo1TTdEeDdjUVlJdkxLWTd3ZUwzWjFtcVZicERDZ1NwX2lOMVQ5N1RTb3lfUXhiMlhBU2ZyeXQzZzNpOEROdmkySlN6WVhjOU9sRXVpd0ktWk9PSGR3QlnSAdIBQVVfeXFMTzNUQlhWZEx0Tkt0cGtaUlotXzdxSlFEcG0wTnBlc2lpN2xhU3JSWUxUV0JQalM0TlpQYW1ESzY5elN5dC1pLUxnbTJIZ3h2ZUpSRnFiRlVkOEZVN0xiZURDLXVuT1UzX0NxR20zbGtzNjlHekhTOTNCalFEY29Tekt0c2tSMHp0a0g4Zm5BSGhydlBraWJjcWZTZUJkcW9YZnQ5Ulh6RHliLThjQXRyTGRxWUZsUnJORXVjS0dlTnBYVHpzN3ZxR1hIRUFTbjYzMXJ3?oc=5"
   },
   {
-   "tag": "IPO",
-   "t": "Mahanadi Coalfields IPO Date, Price Band, Issue Size",
-   "s": "IPO Watch",
-   "d": "18 Nov, 2:56 PM",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1jSlk4RWJCNHNVZ0hOM1E0d2VSb3kxbnJjeXVQR2R6Y0UwVDYyU3dCZ29ORzN3M3lrVHZrQ05KX1RXVmE0M0djTjVyTm5nTmYwdzJpTkpWdnJBYkdtemlWWXV3?oc=5"
-  },
-  {
-   "tag": "IPO",
-   "t": "Crystal Crop Protection IPO Date, Price Band, Issue Size",
-   "s": "IPO Watch",
-   "d": "18 Nov, 2:31 PM",
-   "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03N1RIcE9ySVlhZ0c0bzZaSGZ4dDRYQW5FcXJtb3Zwc2NwSkZmX2Y1RmpHMXdnc2tYNnRpajZPQWhobEkxNllPV0hQNjRpdUVzWFBicm1XdkNtOUpWM1VHem9CZHVQWFU?oc=5"
-  },
-  {
    "tag": "Markets",
    "t": "Sensex Today | Stock Market Live: Sensex falls over 400 pts, Nifty near 25,250; consumer durables, metals plunge; Titan, Bajaj Finance drag",
    "s": "LinkedIn",
@@ -1366,12 +1352,12 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "news IPO failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=IPO+GMP+subscription+India+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 240 headlines, 25 up, 12 down",
+  "outlook: 241 headlines, 25 up, 12 down",
   "option chains: 1 ok, 1 failed, 220 stored"
  ],
  "members": {
@@ -2567,12 +2553,12 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "news IPO failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=IPO+GMP+subscription+India+when%3A2d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 240 headlines, 25 up, 12 down",
+  "outlook: 241 headlines, 25 up, 12 down",
   "option chains: 1 ok, 1 failed, 220 stored"
  ],
  "universe": {
@@ -2613,9 +2599,9 @@
   ],
   [
    "FTSE 100",
-   10651.05,
+   10651.14,
    -0.36,
-   1795001609
+   1795001639
   ],
   [
    "US 10Y yield",
@@ -2626,7 +2612,7 @@
  ],
  "outlook": {
   "at": "18 Nov, 5:18 PM",
-  "headlines": 240,
+  "headlines": 241,
   "screened": 1796,
   "cues": [
    "Dow Jones -1.6%",
@@ -2738,17 +2724,17 @@
     "why": [
      {
       "k": "news",
-      "t": "ACME Solar shares climb 3% as arm inks power purchase agreement with NTPC",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZlRQdUV6T1NzbEh0MVI0S3hXdUFlWmpjaUJpX2lHMlJsaTJxU3c5UC1SNVhjNm15QUlPc1g2ZVJzcFg2a3l4Y0RoN3g2NC1INVI0dUJXSmFNR01ySGVhSHpIQi04c3JRczQ3aUZFdi1FMlVWUDBrZ0R1SjJMd2NqY25KbFJ0QWhKZHBSWml5aUR4R3NuU1ZzRzBRcUl5NnJyM2cxcnFCYXAtTFFndUxNMkplTHM3cThfb2x2eWlTNjFGWmRwd0lXcENhN1Q4UVdkM1huU2lLMNIB3AFBVV95cUxQcXh3ay1nSVNOMTNielRSYzBkNU12QU9nMXVqcXRKbmdMb0tab1JDS1JWdEtGb212SFI4Wl9tYVNkS01BU3lKUVRiMWRsdkZsSzF1c3Z5cWx3YXBKbzB4VDJUSGVwNGhUUl9sY2lHVmVORTZKenNsSGRXbG1IY3IzeUVNTEh5WldEWUdOU2xfRFBrMXY2TUExcUJpVlZacU9TdHdZODgzbDJadXNwbWROaEhXOEJyRmhaNHlmWm5vUWVUa25sZHVvYlZQZllZeWdVTnhRY1pEMGgyVWU0?oc=5",
-      "src": "Business Today"
-     },
-     {
-      "k": "news",
       "t": "ACME Solar Holdings shares jump nearly 3% after signing 150 MW hybrid power agreement with NTPC",
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOdlZjdXk0RFFQeExTUFhVN3VmdDRZbVNVcE9hckQ4aC1tUkdyNmJyc2dsWUdaNEhIdUpWemwyQXptaUF5TnR3Uzg3WjNzLWJRNWlvM2MwWFdXN0ozSXBEOGFEV0tJblF5eXg2R21BU0FzbUplZkZkMEJUcUxZWWVydDBiNU9SWXNoX3d2dF9na3FLbWVPOUdGOElla1ZEMDFiY3dKQjktVjVMRDRCSGxFTFlGcVBiLUxfX2JJWnRudnQyNDdQaWRnTWdlQnBpQ21MU0NabVY2SVFwcHM?oc=5",
       "src": "Business Upturn"
+     },
+     {
+      "k": "news",
+      "t": "ACME Solar shares climb 3% as arm inks power purchase agreement with NTPC",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZlRQdUV6T1NzbEh0MVI0S3hXdUFlWmpjaUJpX2lHMlJsaTJxU3c5UC1SNVhjNm15QUlPc1g2ZVJzcFg2a3l4Y0RoN3g2NC1INVI0dUJXSmFNR01ySGVhSHpIQi04c3JRczQ3aUZFdi1FMlVWUDBrZ0R1SjJMd2NqY25KbFJ0QWhKZHBSWml5aUR4R3NuU1ZzRzBRcUl5NnJyM2cxcnFCYXAtTFFndUxNMkplTHM3cThfb2x2eWlTNjFGWmRwd0lXcENhN1Q4UVdkM1huU2lLMNIB3AFBVV95cUxQcXh3ay1nSVNOMTNielRSYzBkNU12QU9nMXVqcXRKbmdMb0tab1JDS1JWdEtGb212SFI4Wl9tYVNkS01BU3lKUVRiMWRsdkZsSzF1c3Z5cWx3YXBKbzB4VDJUSGVwNGhUUl9sY2lHVmVORTZKenNsSGRXbG1IY3IzeUVNTEh5WldEWUdOU2xfRFBrMXY2TUExcUJpVlZacU9TdHdZODgzbDJadXNwbWROaEhXOEJyRmhaNHlmWm5vUWVUa25sZHVvYlZQZllZeWdVTnhRY1pEMGgyVWU0?oc=5",
+      "src": "Business Today"
      },
      {
       "k": "news",
@@ -2789,30 +2775,6 @@
       "s": 2,
       "u": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQRzVWVUI0Z3dMelQtLXp5MHBhWGNBOFQyTTJSbmJONXFEbG1lQ20yNGZpTTIzd3BzM0pDeWhfY3dYSHpPMlRIQy0xWWdEeEU0VmpWc093MzNTNFRsaVpnalJKRjNmNWxhckpMY29LWi13TEVCTHVCd2hlUUlrb3JIZXdqUElaT0ExdTUwM21yVFVjbmROSDM5bEhVaGNxeFMtM01nTXVxbXgtY04wTnJ3aVVIdmNkNW5iR1ZvSGRhd19LV3J1aGlzWWlNeFJnN0V4WldVWnNIMF9SX1JxRlBIcmswWnQ3NnZ3RjFMN1V30gHzAUFVX3lxTE91UjJmb0JYLTUzYzZmaVJ6bDkzUk9PVGVGQmxONlB6eW8wa1g0dHk0dThYLTk2a2h2U0NzbGFUa0FwLVpFdTJzVkZxZjh3dFpfUWFXbnBNVHYxeTNCdmVtdk5WWERZblliWTdtVUx4RjRVZUdKd2VJRWoyVmdsS185XzEybWo3T3F3cUFRR0tlMzV5b1BBRmNLZEctTmowMnA0cU95YWMtd1B4OWxxNS12RHcyemh4Z2RrcVlaOGNiUktSbHZVOGVzRkVpMTQyNjl4YlcwUUNPLWc0YUFSanFwUXhpUDN4V0l6Mzlrb1FiQURWSQ?oc=5",
       "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
-    "k": "INOXINDIA",
-    "n": "INOX India",
-    "s": 7.0,
-    "conf": "High",
-    "p": 2123.2,
-    "pct": 7.81,
-    "mc": 19314.0,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Inox India Ltd. Share Price Rise Streak on Price Action",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOVZMWWdERWVSYWYxUHBsLVRUNXhDUUhEUTVSSGlyVHdMclNORWNEWDIzczd5QkkxUVJNMlNpd3JJQml4dFd4NmdPc1hib1lSaGhpYnlnVWx1dWU0Z2NzS1RSVC16OHBBXy1pOHBQd0Z0VUU2dWFQN3NtWHRTVnpOY2xSTQ?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +7.8% on 23.0× usual volume, near the day's high",
-      "s": 3.0
      }
     ]
    },
@@ -3064,6 +3026,23 @@
      {
       "k": "price",
       "t": "Closed strong: +5.3% on 14.8× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "INOXINDIA",
+    "n": "INOX India",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 2123.2,
+    "pct": 7.81,
+    "mc": 19314.0,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +7.8% on 23.0× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -5176,26 +5155,6 @@
     "s": 48.9
    },
    {
-    "k": "INOXINDIA",
-    "n": "INOX India",
-    "p": 2123.2,
-    "pct": 7.81,
-    "vx": 23.0,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Inox India Ltd. Share Price Rise Streak on Price Action",
-      "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOVZMWWdERWVSYWYxUHBsLVRUNXhDUUhEUTVSSGlyVHdMclNORWNEWDIzczd5QkkxUVJNMlNpd3JJQml4dFd4NmdPc1hib1lSaGhpYnlnVWx1dWU0Z2NzS1RSVC16OHBBXy1pOHBQd0Z0VUU2dWFQN3NtWHRTVnpOY2xSTQ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 7.8%, closing near the day's high on 23.0× normal volume"
-     }
-    ],
-    "s": 26.5
-   },
-   {
     "k": "GREAVESCOT",
     "n": "Greaves Cotton",
     "p": 266.63,
@@ -5209,6 +5168,21 @@
      }
     ],
     "s": 23.8
+   },
+   {
+    "k": "INOXINDIA",
+    "n": "INOX India",
+    "p": 2123.2,
+    "pct": 7.81,
+    "vx": 23.0,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 7.8%, closing near the day's high on 23.0× normal volume"
+     }
+    ],
+    "s": 19.5
    },
    {
     "k": "HIRECT",
@@ -5298,8 +5272,8 @@
     "why": [
      {
       "t": "news",
-      "x": "ACME Solar shares climb 3% as arm inks power purchase agreement with NTPC",
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZlRQdUV6T1NzbEh0MVI0S3hXdUFlWmpjaUJpX2lHMlJsaTJxU3c5UC1SNVhjNm15QUlPc1g2ZVJzcFg2a3l4Y0RoN3g2NC1INVI0dUJXSmFNR01ySGVhSHpIQi04c3JRczQ3aUZFdi1FMlVWUDBrZ0R1SjJMd2NqY25KbFJ0QWhKZHBSWml5aUR4R3NuU1ZzRzBRcUl5NnJyM2cxcnFCYXAtTFFndUxNMkplTHM3cThfb2x2eWlTNjFGWmRwd0lXcENhN1Q4UVdkM1huU2lLMNIB3AFBVV95cUxQcXh3ay1nSVNOMTNielRSYzBkNU12QU9nMXVqcXRKbmdMb0tab1JDS1JWdEtGb212SFI4Wl9tYVNkS01BU3lKUVRiMWRsdkZsSzF1c3Z5cWx3YXBKbzB4VDJUSGVwNGhUUl9sY2lHVmVORTZKenNsSGRXbG1IY3IzeUVNTEh5WldEWUdOU2xfRFBrMXY2TUExcUJpVlZacU9TdHdZODgzbDJadXNwbWROaEhXOEJyRmhaNHlmWm5vUWVUa25sZHVvYlZQZllZeWdVTnhRY1pEMGgyVWU0?oc=5"
+      "x": "ACME Solar Holdings shares jump nearly 3% after signing 150 MW hybrid power agreement with NTPC",
+      "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOdlZjdXk0RFFQeExTUFhVN3VmdDRZbVNVcE9hckQ4aC1tUkdyNmJyc2dsWUdaNEhIdUpWemwyQXptaUF5TnR3Uzg3WjNzLWJRNWlvM2MwWFdXN0ozSXBEOGFEV0tJblF5eXg2R21BU0FzbUplZkZkMEJUcUxZWWVydDBiNU9SWXNoX3d2dF9na3FLbWVPOUdGOElla1ZEMDFiY3dKQjktVjVMRDRCSGxFTFlGcVBiLUxfX2JJWnRudnQyNDdQaWRnTWdlQnBpQ21MU0NabVY2SVFwcHM?oc=5"
      }
     ],
     "s": 12.0
@@ -5487,6 +5461,21 @@
     "s": 5.4
    },
    {
+    "k": "SAGILITY",
+    "n": "SAGILITY",
+    "p": 45.15,
+    "pct": 2.87,
+    "vx": 3.6,
+    "fo": true,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 2.9%, closing near the day's high on 3.6× normal volume"
+     }
+    ],
+    "s": 5.2
+   },
+   {
     "k": "AQYLON",
     "n": "Aqylon Nexus",
     "p": 11.51,
@@ -5530,21 +5519,6 @@
      }
     ],
     "s": 4.6
-   },
-   {
-    "k": "SAGILITY",
-    "n": "SAGILITY",
-    "p": 45.15,
-    "pct": 2.87,
-    "vx": 3.1,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 2.9%, closing near the day's high on 3.1× normal volume"
-     }
-    ],
-    "s": 4.4
    }
   ],
   "fo": [
@@ -5553,15 +5527,15 @@
     "n": "SAGILITY",
     "p": 45.15,
     "pct": 2.87,
-    "vx": 3.1,
+    "vx": 3.6,
     "fo": true,
     "why": [
      {
       "t": "momentum",
-      "x": "Up 2.9%, closing near the day's high on 3.1× normal volume"
+      "x": "Up 2.9%, closing near the day's high on 3.6× normal volume"
      }
     ],
-    "s": 4.4
+    "s": 5.2
    },
    {
     "k": "GLENMARK",
