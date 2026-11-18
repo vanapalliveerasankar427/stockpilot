@@ -2669,7 +2669,7 @@ function renderAthLo(){const el=document.getElementById('athlo');if(!el)return;i
   const row=(o,i)=>`<a class="gl-row" href="#stock-${esc(o.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(o.k)};color:#fff">${esc(nm(o.k).slice(0,2).toUpperCase())}${logoImg(o.k)}</div><div class="gl-nm"><b>${esc(nm(o.k))}</b><small>${o.nw?(alTab==='hi'?'<span class="up">new all-time high</span>':'<span class="down">new all-time low</span>'):(alTab==='hi'?`ATH ₹${n2(o.a[0])} · ${((1-o.px/o.a[0])*100).toFixed(1)}% below`:`ATL ₹${n2(o.a[2])} · ${((o.px/o.a[2]-1)*100).toFixed(1)}% above`)}</small></div><div class="al-p num"><b>₹${n2(o.px)}</b><span class="${(o.pc||0)>=0?'up':'down'}">${o.pc!=null?((o.pc>=0?'+':'')+(+o.pc).toFixed(2)+'%'):''}</span></div></a>`;
   el.innerHTML=`<div class="glass card sec athlo"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">All-time highs &amp; lows · today</span><h3 style="margin-top:4px">Stocks at their highest or lowest ever</h3></div></div>
    <div class="gr-tabs" role="group"><button type="button" data-al="hi" aria-pressed="${alTab==='hi'}">🏔️ All-time high <small class="num">${H.length}</small></button><button type="button" data-al="lo" aria-pressed="${alTab==='lo'}">🕳️ All-time low <small class="num">${Lo.length}</small></button></div>
-   <div class="gl-col">${L.slice(0,alN).map(row).join('')||'<p class="note" style="padding:12px">None today.</p>'}</div>
+   <div class="gl-col">${L.slice(0,alN).map(row).join('')||`<p class="note" style="padding:12px">${Object.keys(ATHI).length?'None today.':'All-time highs and lows are being prepared from each stock\'s full price history. Check back in a few minutes.'}</p>`}</div>
    ${L.length>alN?`<button class="ghost" type="button" id="alMore" style="margin:10px auto 0;display:block">Show all ${L.length}</button>`:''}
    <p class="src">Within 2% of the highest (or lowest) price since listing, using each stock's full price history (NSE and BSE). Biggest move first.</p></div>`;
   el.querySelectorAll('[data-al]').forEach(b=>b.onclick=()=>{alTab=b.dataset.al;alN=10;renderAthLo()});const m=el.querySelector('#alMore');if(m)m.onclick=()=>{alN=1e5;renderAthLo()}}
@@ -3820,8 +3820,8 @@ const HIST_RAW='https://raw.githubusercontent.com/vanapalliveerasankar427/stockp
 let PROF=null;const HC={};let sxRange=1;
 fetch(HIST_RAW+'profiles.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>{if(j){PROF=j;try{softRefresh()}catch{}}}).catch(()=>{});
 // ---- all-time high / low: per-stock index from the history job {k:[high,day,low,day,since,full]}
-let ATHI=null,athP=null;
-function loadATH(){if(ATHI)return Promise.resolve(ATHI);return athP||(athP=fetch(HIST_RAW+'ath.json?d='+new Date().toISOString().slice(0,10)).then(r=>r.ok?r.json():null).then(j=>ATHI=(j&&j.a)||{}).catch(()=>ATHI={}))}
+let ATHI=null,athP=null,athAt=0;
+function loadATH(){if(ATHI&&(Object.keys(ATHI).length||Date.now()-athAt<3e5))return Promise.resolve(ATHI);if(athP)return athP;athAt=Date.now();return athP=fetch(HIST_RAW+'ath.json?t='+Math.floor(Date.now()/3e5)).then(r=>r.ok?r.json():null).then(j=>{ATHI=(j&&j.a)||{};athP=null;return ATHI}).catch(()=>{ATHI={};athP=null;return ATHI})} // empty = not ready yet: retried after 5 min
 const dayStr=d=>new Date(d*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
 function athOf(k,h){let a=null;const x=h&&h.ath;if(x)a={h:x.h,hd:x.hd,l:x.l,ld:x.ld,s:x.s,full:x.full};else if(ATHI&&ATHI[k]){const v=ATHI[k];a={h:v[0],hd:v[1],l:v[2],ld:v[3],s:v[4],full:!!v[5]}}
   else if(h&&(h.w||h.p)){const P=typeof sxLong==='function'?sxLong(h):h.p;if(P&&P.c&&P.c.length){let hi=0,lo=0;P.c.forEach((v,i)=>{if(v>P.c[hi])hi=i;if(v<P.c[lo])lo=i});a={h:P.c[hi],hd:P.d0+P.d[hi],l:P.c[lo],ld:P.d0+P.d[lo],s:P.d0+P.d[0],full:!!h.w}}}
