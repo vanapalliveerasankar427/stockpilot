@@ -934,6 +934,22 @@ nav.top .iconbtn:active,nav.top .searchbtn:active{transform:scale(.92)}
 .pbox input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
 .pqx{position:absolute;right:12px;width:30px;height:30px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;background:color-mix(in srgb,var(--muted) 22%,transparent);color:var(--ink);animation:popIn .25s both}
 .pqx:active{transform:scale(.88)}
+.pqb{display:none}.pqx[hidden]{display:none!important}
+.al-p{display:grid;text-align:right;flex:none;font-size:13px}.al-p span{font-weight:800;font-size:12.5px}.athlo .gl-col{display:grid}
+html.pal-open,html.pal-open body{overflow:hidden}
+.prec{display:flex;justify-content:space-between;align-items:center}.prec button{border:0;background:none;color:var(--info,#3b82f6);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:4px 12px;text-transform:none;letter-spacing:0}
+.pr .ph{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--soft);color:var(--muted)}
+.pchips{display:flex;flex-wrap:wrap;gap:8px;padding:6px 12px 10px}.pchips button{border:1px solid var(--line);background:var(--soft);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:999px;cursor:pointer}
+@media(max-width:700px){
+  .palette{padding:0!important;backdrop-filter:none!important;background:var(--bg,#0b0d12)!important;align-items:stretch!important}
+  .palette .pbox{max-width:none!important;height:100dvh;border-radius:0!important;border:0!important;box-shadow:none!important;display:flex;flex-direction:column;background:var(--bg,#0b0d12)!important;padding-top:env(safe-area-inset-top)}
+  .palette.on .pbox{animation:pslide .22s cubic-bezier(.2,.7,.2,1) both}
+  .pqw{margin:10px 12px 6px;border:1px solid var(--line)!important;border-radius:16px;background:var(--soft)}
+  .pqw .pqi{left:50px}.pbox input{padding:14px 44px 14px 80px!important;font-size:16.5px!important;border-bottom:0!important}
+  .pqb{display:grid;place-items:center;position:absolute;left:4px;width:40px;height:40px;border:0;background:none;color:var(--ink);cursor:pointer;z-index:1}
+  .pres{max-height:none!important;flex:1;overflow:auto;padding:4px 6px calc(16px + env(safe-area-inset-bottom))!important;-webkit-overflow-scrolling:touch}
+}
+@keyframes pslide{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media(max-width:700px){
   nav.top{padding:9px 8px 9px 12px!important;border-radius:24px!important;gap:6px!important}
   nav.top .logo{font-size:19.5px!important;gap:10px!important}nav.top .mark{width:36px!important;height:36px!important;border-radius:11px!important}
@@ -1389,6 +1405,7 @@ html{overscroll-behavior-y:none}
   <a class="pn-entry gr-entry" href="#growth"><span class="pn-coin gr-coin">🚀</span><span><b>Growth stocks · 1-year &amp; 2-year potential</b><small>Companies growing revenue and profit fast at a fair price, checked daily</small></span><span aria-hidden="true">→</span></a>
   <a class="pn-entry" href="#penny"><span class="pn-coin">₹</span><span><b>Penny stocks</b><small>Every NSE &amp; BSE share under ₹20, by price band</small></span><span aria-hidden="true">→</span></a>
   <div id="gainlose"></div>
+  <div id="athlo"></div>
   <div class="glass" style="padding:6px 6px 0"><div class="tw"><table class="stbl num" id="stbl"></table></div></div>
   <p class="src" style="margin-left:4px" id="st-src">Price, P/E, market cap, dividend yield, ROCE and quarterly figures: Screener.in (29 Oct close). Day change: Upstox and Univest, shown where published.</p>
 </section>
@@ -1499,7 +1516,7 @@ html{overscroll-behavior-y:none}
 </div>
 
 <div class="nback" id="nback"></div><div class="npanel" id="npanel" role="dialog" aria-modal="true" aria-label="Notifications"></div>
-<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><div class="pqw"><svg class="pqi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="pq" class="sr">Search</label><input id="pq" type="search" enterkeyhint="search" placeholder="Search stocks, IPOs, F&amp;O, pages…" autocomplete="off"><button type="button" class="pqx" id="pqx" aria-label="Clear search" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="pres" id="pres"></div></div></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search"><div class="pbox"><div class="pqw"><button type="button" class="pqb" id="pqb" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><svg class="pqi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="pq" class="sr">Search</label><input id="pq" type="search" enterkeyhint="search" placeholder="Search stocks, IPOs, F&amp;O, pages…" autocomplete="off"><button type="button" class="pqx" id="pqx" aria-label="Clear search" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="pres" id="pres"></div></div></div>
 <div class="overlay" id="ov" role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="modal" id="modal"></div></div>
 <div class="toast" id="toast" role="status"></div>
 
@@ -2643,7 +2660,20 @@ let sortK='day',sortD=-1,curStock=null;
 
 // ===================== Stocks page: gainers on one side, losers on the other (all NSE stocks, live) =====================
 let glSeg='all',glN=10,glAt=0;
-function renderGainLose(){const el=document.getElementById('gainlose');if(!el)return;
+let alTab='hi',alN=10;
+function renderAthLo(){const el=document.getElementById('athlo');if(!el)return;if(!ATHI||!ALLQ){if(!el.innerHTML)el.innerHTML='';Promise.all([loadATH(),loadAllQuotes(),loadUniverse()]).then(()=>{if(ATHI&&ALLQ)renderAthLo()}).catch(()=>{});return}
+  const H=[],Lo=[],mx=Math.max(0,...Object.values(ALLQ.q||{}).map(r=>typeof r[14]==='number'?r[14]:0));
+  for(const k in ATHI){const a=ATHI[k];if(!a[5])continue;const q=qOf(k);if(!q||!q.price||!q.vol||(q.t&&mx-q.t>20*3600))continue;const px=pxOf(k)||q.price,pc=pctOf(k);
+    if((q.high||px)>=a[0]*.98)H.push({k,px,pc,a,nw:(q.high||px)>a[0]});else if((q.low||px)<=a[2]*1.02)Lo.push({k,px,pc,a,nw:(q.low||px)<a[2]})}
+  H.sort((x,y)=>(y.pc||0)-(x.pc||0));Lo.sort((x,y)=>(x.pc||0)-(y.pc||0));const L=alTab==='hi'?H:Lo,nm=k=>(UNIMAP&&UNIMAP[k]&&UNIMAP[k].n)||k;
+  const row=(o,i)=>`<a class="gl-row" href="#stock-${esc(o.k)}"><span class="gl-i">${i+1}</span><div class="lg" style="background:${colorOf(o.k)};color:#fff">${esc(nm(o.k).slice(0,2).toUpperCase())}${logoImg(o.k)}</div><div class="gl-nm"><b>${esc(nm(o.k))}</b><small>${o.nw?(alTab==='hi'?'<span class="up">new all-time high</span>':'<span class="down">new all-time low</span>'):(alTab==='hi'?`ATH ₹${n2(o.a[0])} · ${((1-o.px/o.a[0])*100).toFixed(1)}% below`:`ATL ₹${n2(o.a[2])} · ${((o.px/o.a[2]-1)*100).toFixed(1)}% above`)}</small></div><div class="al-p num"><b>₹${n2(o.px)}</b><span class="${(o.pc||0)>=0?'up':'down'}">${o.pc!=null?((o.pc>=0?'+':'')+(+o.pc).toFixed(2)+'%'):''}</span></div></a>`;
+  el.innerHTML=`<div class="glass card sec athlo"><div class="row" style="flex-wrap:wrap;gap:8px"><div><span class="lbl">All-time highs &amp; lows · today</span><h3 style="margin-top:4px">Stocks at their highest or lowest ever</h3></div></div>
+   <div class="gr-tabs" role="group"><button type="button" data-al="hi" aria-pressed="${alTab==='hi'}">🏔️ All-time high <small class="num">${H.length}</small></button><button type="button" data-al="lo" aria-pressed="${alTab==='lo'}">🕳️ All-time low <small class="num">${Lo.length}</small></button></div>
+   <div class="gl-col">${L.slice(0,alN).map(row).join('')||'<p class="note" style="padding:12px">None today.</p>'}</div>
+   ${L.length>alN?`<button class="ghost" type="button" id="alMore" style="margin:10px auto 0;display:block">Show all ${L.length}</button>`:''}
+   <p class="src">Within 2% of the highest (or lowest) price since listing, using each stock's full price history (NSE and BSE). Biggest move first.</p></div>`;
+  el.querySelectorAll('[data-al]').forEach(b=>b.onclick=()=>{alTab=b.dataset.al;alN=10;renderAthLo()});const m=el.querySelector('#alMore');if(m)m.onclick=()=>{alN=1e5;renderAthLo()}}
+function renderGainLose(){renderAthLo();const el=document.getElementById('gainlose');if(!el)return;
   if(!ALLQ||!UNI){el.innerHTML=`<div class="gl-wrap">${LOADER('Finding today\'s top gainers and losers…')}</div>`;Promise.all([loadUniverse(),loadAllQuotes()]).then(()=>{if(ALLQ&&UNI)renderGainLose()});return}
   const seg={all:[0,1e15],large:[20000,1e15],mid:[5000,20000],small:[0,5000]}[glSeg];const L=[];
   for(const [k,r] of Object.entries(ALLQ.q)){const u=UNIMAP[k];if(!u||!/^NSE/.test(u.x))continue;const q=qOf(k);if(!q||!q.price)continue;const mc=q.mcapCr;if(glSeg!=='all'&&(mc==null||!(mc>=seg[0]&&mc<seg[1])))continue; // All = every NSE stock, no size filter
@@ -2819,24 +2849,34 @@ function renderAnyStock(key){const el=document.getElementById('stockpage');curSt
      :`<div class="glass card"><p class="note">No live price available for this stock right now (it may be suspended or very thinly traded). <a class="link" href="${exUrl(u)}" target="_blank" rel="noopener">Check the exchange quote ↗</a></p></div>`}`});}
 
 let psel=0,pitems=[];
-function openSearch(){loadUniverse().then(()=>{const q=document.getElementById('pq');if(q&&q.value)runSearch(q.value)});document.getElementById('palette').classList.add('on');const q=document.getElementById('pq');q.value='';runSearch('');setTimeout(()=>q.focus(),10)}
-function closeSearch(){document.getElementById('palette').classList.remove('on')}
+function openSearch(){document.documentElement.classList.add('pal-open');loadUniverse().then(()=>{const q=document.getElementById('pq');if(q&&q.value)runSearch(q.value)});document.getElementById('palette').classList.add('on');const q=document.getElementById('pq');q.value='';runSearch('');setTimeout(()=>q.focus(),10)}
+function closeSearch(){document.getElementById('palette').classList.remove('on');document.documentElement.classList.remove('pal-open')}
+// recent searches: the last items picked, kept on this device
+const SRK='mvp.recent';const recentGet=()=>{try{return JSON.parse(localStorage.getItem(SRK)||'[]')}catch{return []}};
+function recentAdd(t,label,sub,lg){if(!t||!label)return;let L=recentGet().filter(x=>x.t!==t);L.unshift({t,l:label.slice(0,80),s:(sub||'').slice(0,80),g:lg||''});try{localStorage.setItem(SRK,JSON.stringify(L.slice(0,10)))}catch{}}
+function recentQAdd(q){q=(q||'').trim();if(q.length<2)return;let L;try{L=JSON.parse(localStorage.getItem(SRK+'q')||'[]')}catch{L=[]}L=[q,...L.filter(x=>x.toLowerCase()!==q.toLowerCase())].slice(0,8);try{localStorage.setItem(SRK+'q',JSON.stringify(L))}catch{}}
 function runSearch(q){q=q.trim().toLowerCase();
   const st=STOCKS.filter(s=>!q||s.name.toLowerCase().includes(q)||s.sym.toLowerCase().includes(q)||s.sector.toLowerCase().includes(q)).slice(0,q?8:5);
   const ip=IPOS.filter(i=>!q||i.name.toLowerCase().includes(q)||i.sector.toLowerCase().includes(q)).slice(0,q?6:4);
   const pg=PAGES.filter(p=>!q||q.split(/\s+/).every(w=>(p[0]+' '+(p[2]||'')).toLowerCase().includes(w))).slice(0,q?6:5);
   const core=new Set(st.map(s=>s.sym==='MM'?'M&M':s.sym)),al=searchUni(q,12).filter(u=>!core.has(u.k));
   pitems=[];let h='';
+  if(!q){const R=recentGet();let RQ=[];try{RQ=JSON.parse(localStorage.getItem(SRK+'q')||'[]')}catch{}
+    if(R.length||RQ.length){h+=`<div class="pgroup prec"><span>Recent</span><button type="button" id="precClr">Clear</button></div>`;
+      if(RQ.length)h+=`<div class="pchips">${RQ.map(x=>`<button type="button" data-rq="${esc(x)}">🕘 ${esc(x)}</button>`).join('')}</div>`;
+      h+=R.map(x=>{pitems.push(x.t);const k=x.t.startsWith('#stock-')?x.t.slice(7):'';return `<button type="button" class="pr" data-i="${pitems.length-1}">${k?`<div class="lg" style="background:${colorOf(k)};color:#fff">${esc((x.g||k).slice(0,2).toUpperCase())}${logoImg(k==='MM'?'M&M':k)}</div>`:`<div class="ph"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>`}<div><b>${esc(x.l)}</b>${x.s?`<small class="muted" style="display:block;font-size:12px">${esc(x.s)}</small>`:''}</div>${k?(()=>{const kk=k==='MM'?'M&M':k,px=pxOf(kk),pc=pctOf(kk);return px!=null?`<span class="num" style="text-align:right;font-size:13px"><b>₹${n2(px)}</b>${pc!=null?`<small style="display:block" class="${pc>=0?'up':'down'}">${pc>=0?'+':''}${(+pc).toFixed(2)}%</small>`:''}</span>`:'<span></span>'})():'<span></span>'}</button>`}).join('')}}
   if(pg.length&&q){h+='<div class="pgroup">Pages</div>'+pg.map(p=>{pitems.push('#'+p[1]);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg">↗</div><div><b>${p[0]}</b></div><span></span></button>`}).join('')}
-  if(st.length){h+='<div class="pgroup">Stocks</div>'+st.map(s=>{pitems.push('#stock-'+s.sym);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div><span class="num muted">₹${n2(s.price)}</span></button>`}).join('')}
+  if(st.length){h+=`<div class="pgroup">${q?'Stocks':'Popular stocks'}</div>`+st.map(s=>{pitems.push('#stock-'+s.sym);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(s.sym)};color:#fff">${s.sym.replace('-','').slice(0,2)}${logoImg(s.sym)}</div><div><b>${esc(s.name)}</b><small class="muted" style="display:block;font-size:12px">${s.sym==='MM'?'M&M':s.sym} · ${esc(s.sector)}</small></div><span class="num muted">₹${n2(s.price)}</span></button>`}).join('')}
   if(al.length){h+='<div class="pgroup">All listed stocks · NSE &amp; BSE</div>'+al.map(u=>{pitems.push('#stock-'+u.k);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${colorOf(u.k)};color:#fff">${esc(u.n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase())}${logoImg(u.k)}</div><div><b>${esc(u.n)}</b><small class="muted" style="display:block;font-size:12px">${esc(u.x)} · ${esc(u.x==='BSE'?(u.bid||u.k.slice(1)):u.k)}</small></div>${(()=>{const px=pxOf(u.k),pc=pctOf(u.k);return px!=null?`<span class="num" style="text-align:right;font-size:13px"><b>₹${n2(px)}</b>${pc!=null?`<small style="display:block" class="${pc>=0?'up':'down'}">${pc>=0?'+':''}${(+pc).toFixed(2)}%</small>`:''}</span>`:`<span class="pill plain" style="font-size:11px">${esc(u.x)}</span>`})()}</button>`}).join('')}
   if(ip.length){h+='<div class="pgroup">IPOs</div>'+ip.map(i=>{pitems.push('ipo:'+i.id);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg" style="background:${i.color};color:#fff">${initials(i.name)}${logoImg(i.id)}</div><div><b>${esc(i.name)}</b><small class="muted" style="display:block;font-size:12px">${i.type} · ${band(i)}</small></div>${statusPill(i)}</button>`}).join('')}
   if(pg.length&&!q){h+='<div class="pgroup">Pages</div>'+pg.map(p=>{pitems.push('#'+p[1]);return `<button type="button" class="pr" data-i="${pitems.length-1}"><div class="lg">↗</div><div><b>${p[0]}</b></div><span></span></button>`}).join('')}
   document.getElementById('pres').innerHTML=h||(UNI?`<p class="note" style="padding:16px">No match for “${esc(q)}” among ${UNI.length.toLocaleString('en-IN')} NSE and BSE stocks, IPOs or pages.</p>`:`<div style="padding:4px 14px">${LOADER('Loading every NSE and BSE stock…')}${SKROWS(3)}</div>`);
-  psel=0;markSel();document.querySelectorAll('#pres .pr').forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
+  psel=0;markSel();document.querySelectorAll('#pres .pr').forEach(b=>b.onclick=()=>pick(+b.dataset.i));
+  const cl=document.getElementById('precClr');if(cl)cl.onclick=()=>{try{localStorage.removeItem(SRK);localStorage.removeItem(SRK+'q')}catch{}runSearch('')};
+  document.querySelectorAll('#pres [data-rq]').forEach(b=>b.onclick=()=>{const i=document.getElementById('pq');i.value=b.dataset.rq;document.getElementById('pqx').hidden=false;runSearch(i.value)})}
 function markSel(){document.querySelectorAll('#pres .pr').forEach((b,i)=>b.classList.toggle('sel',i===psel))}
-function pick(i){const t=pitems[i];if(!t)return;closeSearch();if(t==='#inst:'){if(isStandalone())return;if(isIOS)showInstall('ios',true);else if(deferredInstall)showInstall('android',true);else location.hash='faq';return}if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else if(t.startsWith('#fn:')){const x=t.slice(4);olTab='fno';if(x!=='fno')OC_OPEN.add(x);if(location.hash==='#today')renderToday();else location.hash='today';setTimeout(()=>{const b=document.querySelector(x==='fno'?'#v-today .ol-list,#v-today [data-ol="fno"]':`.oc-btn[data-oc="${x}"]`);if(b)b.scrollIntoView({block:'center'})},700)}else location.hash=t.slice(1)}
-document.getElementById('openSearch').onclick=openSearch;document.getElementById('gsearch').onclick=openSearch;
+function pick(i){const t=pitems[i];if(!t)return;{const b=document.querySelector(`#pres .pr[data-i="${i}"]`);if(b){const lb=b.querySelector('b'),sm=b.querySelector('div small');recentAdd(t,lb&&lb.textContent,sm&&sm.textContent,(b.querySelector('.lg')||{}).textContent||'')}recentQAdd(document.getElementById('pq').value)}closeSearch();if(t==='#inst:'){if(isStandalone())return;if(isIOS)showInstall('ios',true);else if(deferredInstall)showInstall('android',true);else location.hash='faq';return}if(t.startsWith('ipo:')){location.hash='ipos';setTimeout(()=>openIpo(t.slice(4)),60)}else if(t.startsWith('#fn:')){const x=t.slice(4);olTab='fno';if(x!=='fno')OC_OPEN.add(x);if(location.hash==='#today')renderToday();else location.hash='today';setTimeout(()=>{const b=document.querySelector(x==='fno'?'#v-today .ol-list,#v-today [data-ol="fno"]':`.oc-btn[data-oc="${x}"]`);if(b)b.scrollIntoView({block:'center'})},700)}else location.hash=t.slice(1)}
+document.getElementById('openSearch').onclick=openSearch;document.getElementById('pqb').onclick=closeSearch;document.getElementById('gsearch').onclick=openSearch;
 document.getElementById('pq').oninput=e=>{runSearch(e.target.value);document.getElementById('pqx').hidden=!e.target.value};
 document.getElementById('pqx').onclick=()=>{const q=document.getElementById('pq');q.value='';document.getElementById('pqx').hidden=true;runSearch('');q.focus()};
 document.getElementById('pq').onkeydown=e=>{if(e.key==='ArrowDown'){psel=Math.min(psel+1,pitems.length-1);markSel();e.preventDefault()}else if(e.key==='ArrowUp'){psel=Math.max(psel-1,0);markSel();e.preventDefault()}else if(e.key==='Enter'){pick(psel)}else if(e.key==='Escape')closeSearch()};
@@ -3756,7 +3796,9 @@ function renderToday(){const el=document.getElementById('todaypage');if(!ATHI)lo
      ['📈','At a 52-week high','Trading within 2% of the highest price of the past year.',
        L.filter(([u,q])=>q.h52&&q.price>=q.h52*.98).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>q.price>=q.h52?'new high':((1-q.price/q.h52)*100).toFixed(1)+'% below high'],
      ...(ATHI?[['🏔️','At an all-time high','Within 2% of the highest price since listing, or a new all-time high today.',
-       L.filter(([u,q])=>{const a=ATHI[u.k];return a&&a[5]&&(q.high||q.price)>=a[0]*.98}).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>{const a=ATHI[u.k];return (q.high||q.price)>a[0]?'new all-time high':((1-q.price/a[0])*100).toFixed(1)+'% below ATH'}]]:[]),
+       L.filter(([u,q])=>{const a=ATHI[u.k];return a&&a[5]&&(q.high||q.price)>=a[0]*.98}).sort((a,b)=>b[1].pct-a[1].pct),([u,q])=>{const a=ATHI[u.k];return (q.high||q.price)>a[0]?'new all-time high':((1-q.price/a[0])*100).toFixed(1)+'% below ATH'}],
+      ['🕳️','At an all-time low','Within 2% of the lowest price since listing, or a new all-time low today.',
+       L.filter(([u,q])=>{const a=ATHI[u.k];return a&&a[5]&&(q.low||q.price)<=a[2]*1.02}).sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>{const a=ATHI[u.k];return (q.low||q.price)<a[2]?'new all-time low':((q.price/a[2]-1)*100).toFixed(1)+'% above ATL'}]]:[]),
      ['📉','At a 52-week low','Trading within 2% of the lowest price of the past year.',
        L.filter(([u,q])=>q.l52&&q.price<=q.l52*1.02).sort((a,b)=>a[1].pct-b[1].pct),([u,q])=>q.price<=q.l52?'new low':((q.price/q.l52-1)*100).toFixed(1)+'% above low'],
      ['🔊','Volume shockers','Traded at least 3× their usual volume. Something may be happening; check the news.',
