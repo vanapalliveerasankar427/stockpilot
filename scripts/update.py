@@ -948,6 +948,20 @@ def fno_results(out):
 
 
 RESULT_WORDS = re.compile(r"\b(q[1-4]|quarter|results?|profit|net income|pat|ebitda|revenue|earnings)\b", re.I)
+_ATH = {"t": 0, "a": {}}
+
+
+def ath_index():
+    """All-time high / low per stock from the history job: {key: [high, day, low, day, since_day, full]}."""
+    if time.time() - _ATH["t"] > 6 * 3600 or not _ATH["a"]:
+        try:
+            _ATH["a"] = get("https://raw.githubusercontent.com/vanapalliveerasankar427/stockpilot/hist/ath.json").json().get("a") or {}
+        except Exception as e:
+            log(f"ath index: {str(e)[:80]}")
+        _ATH["t"] = time.time()
+    return _ATH["a"]
+
+
 def tomorrow_watch(out, uni, q):
     names = {r[0]: r[1] for r in uni.get("s", [])}
     fno = (out.get("fno") or {}).get("syms") or {}
@@ -1126,6 +1140,20 @@ def everything(out):
                     lo.append((mc, k, pc))
             hi.sort(key=lambda x: x[0] or 0, reverse=True); lo.sort(key=lambda x: x[0] or 0, reverse=True)
             out["hilo"] = {"at": NOW.strftime("%-d %b, %-I:%M %p"), "hi": [[k, pc] for _, k, pc in hi[:40]], "lo": [[k, pc] for _, k, pc in lo[:40]], "nhi": len(hi), "nlo": len(lo)}
+            # all-time highs / lows (vs the history index built each evening; only stocks with full listed history)
+            A = ath_index()
+            ah, al = [], []
+            for k, r in q.items():
+                a = A.get(k)
+                p, pc, dh, dl = r[0], r[1], r[4], r[5]
+                if not a or not p or not r[8] or not isinstance(r[14], (int, float)) or not a[5]:
+                    continue
+                if (dh or p) >= a[0] * 0.999:
+                    ah.append([k, pc, a[0], 1 if (dh or p) > a[0] else 0])
+                elif (dl or p) <= a[2] * 1.001:
+                    al.append([k, pc, a[2], 1 if (dl or p) < a[2] else 0])
+            ah.sort(key=lambda x: -(x[1] or 0)); al.sort(key=lambda x: x[1] or 0)
+            out["hilo"].update({"ath": ah[:60], "atl": al[:40], "nath": len(ah), "natl": len(al)})
         except Exception as e:
             log(f"hilo: {e}")
     if q:

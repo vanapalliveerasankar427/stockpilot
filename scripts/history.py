@@ -73,16 +73,31 @@ def intraday(ysym):
     return {"t0": t0, "t": [(t - t0) // 60 for t, _ in pts], "c": [round(c, 2) for _, c in pts]}
 
 
+import threading
+ATH, ATH_LOCK = {}, threading.Lock()
+
+
 def weekly(ysym):
     """Weekly closes for the whole listed history (for the 3Y / 5Y / All charts)."""
     j = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{requests.utils.quote(ysym)}", params={"range": "max", "interval": "1wk"}).json()
     r = j["chart"]["result"][0]
-    ts, cl = r.get("timestamp") or [], r["indicators"]["quote"][0].get("close") or []
+    qd = r["indicators"]["quote"][0]
+    ts, cl = r.get("timestamp") or [], qd.get("close") or []
     pts = [(t // 86400, c) for t, c in zip(ts, cl) if c]
     if len(pts) < 5:
         return None
     d0 = pts[0][0]
-    return {"d0": d0, "d": [d - d0 for d, _ in pts], "c": [round(c, 2) for _, c in pts]}
+    w = {"d0": d0, "d": [d - d0 for d, _ in pts], "c": [round(c, 2) for _, c in pts]}
+    # all-time high / low from the weekly highs and lows (not just closes)
+    hs = [(h, t // 86400) for t, h in zip(ts, qd.get("high") or []) if h]
+    ls = [(l, t // 86400) for t, l in zip(ts, qd.get("low") or []) if l]
+    if hs:
+        h = max(hs)
+        w["hi"] = [round(h[0], 2), h[1]]
+    if ls:
+        l = min(ls)
+        w["lo"] = [round(l[0], 2), l[1]]
+    return w
 
 
 # BSE-only scrips: Yahoo has little history for them, so build it from BSE's own daily price files
@@ -210,7 +225,7 @@ def main():
         o = old_file(key)
         ow = o.get("w")
         if "p" in rec:
-            if ow and ow["d0"] + ow["d"][-1] >= rec["p"]["d0"] + 7:
+            if ow and ow["d0"] + ow["d"][-1] >= rec["p"]["d0"] + 7 and "hi" in ow:
                 rec["w"] = ow
             else:
                 try:
@@ -224,6 +239,28 @@ def main():
         if "p" not in rec and key in BSEH:
             rec["p"] = BSEH[key]
             stats["bse_hist"] = stats.get("bse_hist", 0) + 1
+        # all-time high / low: [price, epoch-day]; "s" = first day of the data (listing day when the long history is there)
+        cand_hi, cand_lo, since = [], [], None
+        for src in (rec.get("w"), rec.get("p")):
+            if src and src.get("c"):
+                d0 = src["d0"]
+                i = max(range(len(src["c"])), key=lambda j: src["c"][j]); cand_hi.append([src["c"][i], d0 + src["d"][i]])
+                i = min(range(len(src["c"])), key=lambda j: src["c"][j]); cand_lo.append([src["c"][i], d0 + src["d"][i]])
+                since = min(since, d0) if since is not None else d0
+        w_ = rec.get("w") or {}
+        if w_.get("hi"):
+            cand_hi.append(w_["hi"])
+        if w_.get("lo"):
+            cand_lo.append(w_["lo"])
+        oa = o.get("ath")
+        if oa:
+            cand_hi.append([oa["h"], oa["hd"]]); cand_lo.append([oa["l"], oa["ld"]])
+            since = min(since, oa["s"]) if since is not None else oa["s"]
+        if cand_hi and cand_lo:
+            h, l = max(cand_hi), min(cand_lo)
+            rec["ath"] = {"h": h[0], "hd": h[1], "l": l[0], "ld": l[1], "s": since, "full": bool(w_) or bool(oa and oa.get("full"))}
+            with ATH_LOCK:
+                ATH[key] = [h[0], h[1], l[0], l[1], since, 1 if rec["ath"]["full"] else 0]
         try:
             it = intraday(ysym)
             if it:
@@ -259,6 +296,8 @@ def main():
 
     with ThreadPoolExecutor(max_workers=int(os.environ.get("WORKERS", "32"))) as ex:
         list(ex.map(work, uni))
+    # compact all-time high/low index for the data job (stocks hitting a new all-time high today)
+    json.dump({"updated": NOW.isoformat(timespec="seconds"), "a": ATH}, open(os.path.join(OUT, "ath.json"), "w"), separators=(",", ":"))
     # small index for logos and sector tags across the site
     idx = {k: {"w": v.get("website", "").split("//")[-1].split("/")[0].removeprefix("www."), "s": v.get("sector", ""), "i": v.get("industry", "")}
            for k, v in prof.items() if v}
