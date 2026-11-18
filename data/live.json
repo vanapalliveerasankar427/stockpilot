@@ -1,13 +1,13 @@
 {
- "label": "19 Nov 2026, 12:39 AM IST",
- "updated": "2026-11-19T00:39:57+05:30",
+ "label": "19 Nov 2026, 1:10 AM IST",
+ "updated": "2026-11-19T01:10:18+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "19 Nov 2026, 12:39 AM",
+  "date": "19 Nov 2026, 1:10 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -153,13 +153,13 @@
     "v": 129880.0,
     "ch": -4343.0,
     "pct": -3.24,
-    "t": "19 Nov, 12:39 AM"
+    "t": "19 Nov, 1:10 AM"
    },
    "silver": {
     "v": 160775.0,
     "ch": -8927.0,
     "pct": -5.26,
-    "t": "19 Nov, 12:39 AM"
+    "t": "19 Nov, 1:10 AM"
    }
   },
   "retail": {
@@ -365,8 +365,8 @@
      "ag": 185.0
     }
    },
-   "at": "19 Nov, 12:39 AM",
-   "at_ts": 1795028997.032146,
+   "at": "19 Nov, 1:10 AM",
+   "at_ts": 1795030818.302928,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -374,36 +374,36 @@
    "g24_10": 130460.0,
    "ag_kg": 161490.0,
    "ag": 161.49,
-   "t": "19 Nov, 12:39 AM"
+   "t": "19 Nov, 1:10 AM"
   },
   "dp": {
    "ag1": {
-    "b": 170749.0,
-    "a": 170749.0,
+    "b": 170170.0,
+    "a": 170170.0,
     "h": 180469.0,
     "l": 167988.0
    },
    "ag30": {
-    "b": 167749.0,
-    "a": 167749.0,
+    "b": 167170.0,
+    "a": 167170.0,
     "h": 177469.0,
     "l": 164988.0
    },
    "g999": {
-    "b": 13431.0,
-    "a": 13431.0,
+    "b": 13404.3,
+    "a": 13404.3,
     "h": 13966.8,
-    "l": 13420.1
+    "l": 13400.9
    },
    "xau": {
-    "b": 3730.4,
-    "a": 3730.42,
+    "b": 3721.8,
+    "a": 3721.82,
     "h": 3849.32,
-    "l": 3729.12
+    "l": 3720.72
    },
    "xag": {
-    "b": 45.07,
-    "a": 45.07,
+    "b": 44.88,
+    "a": 44.88,
     "h": 47.51,
     "l": 44.78
    },
@@ -413,8 +413,8 @@
     "h": 93.59,
     "l": 93.27
    },
-   "at": 1795029003,
-   "t": "19 Nov, 12:39 AM"
+   "at": 1795030826,
+   "t": "19 Nov, 1:10 AM"
   }
  },
  "logos": [],
@@ -525,24 +525,24 @@
   "t": 1795026758
  },
  "brent": {
-  "v": 88.66,
+  "v": 89.14,
   "prev": 90.37,
-  "ch": -1.71,
-  "pct": -1.89,
+  "ch": -1.23,
+  "pct": -1.36,
   "high": 90.75,
   "low": 87.6,
   "open": 92.44,
-  "t": 1795028368
+  "t": 1795030215
  },
  "goldSpot": {
-  "v": 3740.6,
+  "v": 3730.6,
   "prev": 3864.2,
-  "ch": -123.6,
-  "pct": -3.2,
+  "ch": -133.6,
+  "pct": -3.46,
   "high": 3859.3,
-  "low": 3731.1,
+  "low": 3728.7,
   "open": 3787.9,
-  "t": 1795028383
+  "t": 1795030212
  },
  "sectors": [
   [
@@ -1122,7 +1122,7 @@
   "crystalcropprotection": {
    "gmp": 18.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 12:39 AM",
+   "gat": "19 Nov, 1:10 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1158,12 +1158,12 @@
    "snii": 0.47,
    "sr": 0.64,
    "ssrc": "IPOMarket",
-   "sat": "19 Nov, 12:39 AM"
+   "sat": "19 Nov, 1:10 AM"
   },
   "watranarentals": {
    "gmp": 62.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 12:39 AM",
+   "gat": "19 Nov, 1:10 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1198,7 +1198,7 @@
   "mahanadicoalfields": {
    "gmp": 3.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 12:39 AM",
+   "gat": "19 Nov, 1:10 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1227,7 +1227,7 @@
   "dii_sell": 17762.15,
   "fii_buy": 17913.16,
   "fii_sell": 12046.38,
-  "fetched": "19 Nov, 12:39 AM",
+  "fetched": "19 Nov, 1:10 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1387,9 +1387,8 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
-  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 241 headlines, 25 up, 13 down",
+  "outlook: 237 headlines, 25 up, 13 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2410,9 +2409,9 @@
   }
  },
  "nse": {
-  "n50": "19 Nov, 12:39 AM",
-  "mid": "19 Nov, 12:39 AM",
-  "small": "19 Nov, 12:39 AM"
+  "n50": "19 Nov, 1:10 AM",
+  "mid": "19 Nov, 1:10 AM",
+  "small": "19 Nov, 1:10 AM"
  },
  "midg": [
   [
@@ -2589,34 +2588,33 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
-  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 241 headlines, 25 up, 13 down",
+  "outlook: 237 headlines, 25 up, 13 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5271,
   "quotes": 4776,
-  "at": "19 Nov, 12:39 AM"
+  "at": "19 Nov, 1:10 AM"
  },
  "global": [
   [
    "Dow Jones",
-   50211.13,
-   -1.08,
-   1795028995
+   50138.86,
+   -1.22,
+   1795030817
   ],
   [
    "S&P 500",
-   7322.88,
-   -0.24,
-   1795028996
+   7317.97,
+   -0.31,
+   1795030817
   ],
   [
    "Nasdaq",
-   24417.41,
-   0.37,
-   1795028996
+   24414.21,
+   0.35,
+   1795030815
   ],
   [
    "Nikkei 225",
@@ -2639,52 +2637,19 @@
   [
    "US 10Y yield",
    5.06,
-   -0.8,
-   1795028095
+   -0.76,
+   1795029915
   ]
  ],
  "outlook": {
-  "at": "19 Nov, 12:39 AM",
-  "headlines": 241,
+  "at": "19 Nov, 1:10 AM",
+  "headlines": 237,
   "screened": 1790,
   "cues": [
-   "Dow Jones -1.1%",
+   "Dow Jones -1.2%",
    "Hang Seng -1.9%"
   ],
   "up": [
-   {
-    "k": "ASHOKA",
-    "n": "Ashoka Buildcon",
-    "s": 20,
-    "conf": "High",
-    "p": 115.2,
-    "pct": 6.58,
-    "mc": 3233.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Ashoka Buildcon shares rise 9% after firm wins contract for NHAI project worth Rs 1465 crore",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQVExTd3JFRUd5YTVyc2pMdld3Y2NGMVlSUW9naV9DendJNzdSbWFnZWxCbWZ0Y2stUklGNVYyTl8wUTNNUm8xalRJc3VjWGQtaG1PTnVIMm1NUmlBQWNqTlloQ2ZVVjZmSXllSzJDZkV5VnEyZ0NFMDhyQ1NLNHRaNHNIeGpvLU9QQzIybTNfVUF3cnVzN0czeXR2aHZHTXRBa19RMlR6YWVpRUNKV0dHUWJWY2V5V3c0bk1pQU9kWjExMmlKY0tIU1A4Q25pLXp2Q3FTQnA3Q1gtMGdMQkxyQm9UZ3ZJa0o2ajNLbmp3SUMyeW90TEM2WtIB_gFBVV95cUxNRzJ4SlY3RWhfajhZZEg3Z1lUNHBzU0RpUTE4bGd4M04xaG5DalVmdEZwUWtjZEt0Nnh0dDF5UEZLSm85dlQtdXdPeU04UGw3WUJuYkFFWDBaUWtYWWc2cTZhVGN4clRGUUlXS3AxUHBXZDR6MGNtQTJWcW1Kd0w4Um0xNUVVdWxhemZrYl9uRHB0LWc3d2pwR04zaFE0UGpBQzk5VkxXWTBORFQ5dXBqVVZ2cTVhSkRJbDVwcUdjWHMyaGYwODZlTTdzVDhMUmpFTXJpS0lZS1lYN01YM3FSRm1GLTh0LUUzazljZUJyUG1yWG5NdGNqampXMWJUUQ?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "news",
-      "t": "Ashoka Buildcon shares gain up to 10% after winning NHAI project worth ₹1,465 crore - CNBC TV18",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT09FS25zQUdQdGV6ZFJqZXpmWkFkMzN3Um9jTl8wY2VBaGQ2WWFTQktoc3BiTWEwWkhxcnY4cDJBU1pLU211S2hSSmVvWjAyY0d1NFdZendnMmFkR3F3WldIT2JMSWlSUXNOdUJsUEJyMkVoeExBUmtWanJYM0phb0xqb1RoTFZKQ1liUDEzOWlNamhpWV9YVktYbS1sWTAzVVlGdXJKQ2NGc1dPeERHeXFsaWVCVmZ4?oc=5",
-      "src": "LinkedIn"
-     },
-     {
-      "k": "news",
-      "t": "Ashoka Buildcon Jumps 10% as It Emerges Lowest NHAI Bidder",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNa2UyQzFFSE9taDY4WXVva1ZNVzRaRFA2OTB6WjR4ZEo0WW9iRGEwanI4djZScXNvVm5TeEdnMDJPak8ydWE3aWRMNVNVY2pSdkRMZjhreTYwNVBRUGZqekJLcktCUFhDNWNUZ1ByckgtXzhyZk1pYkM0QmYzd09CVlRmZXlEYTllbmNRMy16S1I?oc=5",
-      "src": "Equitypandit"
-     }
-    ]
-   },
    {
     "k": "HIRECT",
     "n": "Hirect",
@@ -2715,6 +2680,39 @@
       "s": 6,
       "u": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNV2RlUV9sRDk2bUlYRXpseUZXeTdWUG5wZ29iX1lfRTFWWG1nY0dyY3BQa1FTekE4Q3FmNC1GSUdoVUpWSDY3V29oR3oxNGFocmJHN1RpQW5Ua1JNOUZyYTdLeTBMcFVQenRrMFQzd3pJZmFfWlFiSnN4OUlWcnd2WGstd0RJb0RQSGZFc21wZGx4NWpseHFRbXo4TGItREhxQTFOZExnSFZyVlhiNTRHcHdxNzN0ejQtY1FOOEtXVGdsN2Z3WFdkbldmajlZTWVCTWpiel84T0lBYXlUOVZ5bXl6QkNWbWFwT2FsZF81ZnAtQTA?oc=5",
       "src": "Business Upturn"
+     }
+    ]
+   },
+   {
+    "k": "ASHOKA",
+    "n": "Ashoka Buildcon",
+    "s": 16,
+    "conf": "High",
+    "p": 115.2,
+    "pct": 6.58,
+    "mc": 3233.9,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Ashoka Buildcon shares rise 9% after firm wins contract for NHAI project worth Rs 1465 crore",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQVExTd3JFRUd5YTVyc2pMdld3Y2NGMVlSUW9naV9DendJNzdSbWFnZWxCbWZ0Y2stUklGNVYyTl8wUTNNUm8xalRJc3VjWGQtaG1PTnVIMm1NUmlBQWNqTlloQ2ZVVjZmSXllSzJDZkV5VnEyZ0NFMDhyQ1NLNHRaNHNIeGpvLU9QQzIybTNfVUF3cnVzN0czeXR2aHZHTXRBa19RMlR6YWVpRUNKV0dHUWJWY2V5V3c0bk1pQU9kWjExMmlKY0tIU1A4Q25pLXp2Q3FTQnA3Q1gtMGdMQkxyQm9UZ3ZJa0o2ajNLbmp3SUMyeW90TEM2WtIB_gFBVV95cUxNRzJ4SlY3RWhfajhZZEg3Z1lUNHBzU0RpUTE4bGd4M04xaG5DalVmdEZwUWtjZEt0Nnh0dDF5UEZLSm85dlQtdXdPeU04UGw3WUJuYkFFWDBaUWtYWWc2cTZhVGN4clRGUUlXS3AxUHBXZDR6MGNtQTJWcW1Kd0w4Um0xNUVVdWxhemZrYl9uRHB0LWc3d2pwR04zaFE0UGpBQzk5VkxXWTBORFQ5dXBqVVZ2cTVhSkRJbDVwcUdjWHMyaGYwODZlTTdzVDhMUmpFTXJpS0lZS1lYN01YM3FSRm1GLTh0LUUzazljZUJyUG1yWG5NdGNqampXMWJUUQ?oc=5",
+      "src": "The Economic Times"
+     },
+     {
+      "k": "news",
+      "t": "Ashoka Buildcon Jumps 10% as It Emerges Lowest NHAI Bidder",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNa2UyQzFFSE9taDY4WXVva1ZNVzRaRFA2OTB6WjR4ZEo0WW9iRGEwanI4djZScXNvVm5TeEdnMDJPak8ydWE3aWRMNVNVY2pSdkRMZjhreTYwNVBRUGZqekJLcktCUFhDNWNUZ1ByckgtXzhyZk1pYkM0QmYzd09CVlRmZXlEYTllbmNRMy16S1I?oc=5",
+      "src": "Equitypandit"
+     },
+     {
+      "k": "news",
+      "t": "Ashoka Buildcon shares jump 8% to 11-week high after bagging Rs 1,465 crore NHAI contract",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUTczb29MM25fYnBNN1huLVI5Tk9HRHBuN1ZWZ2JlcjNIWjVUQ0pRcHRWODU0SFc5c3VQYkl2bXRpU2ctUXRHRlV6dDVRQkU0czJkSFJpZmY1M1QyTnNkSEJ4Q3o3VG43aS1XNWtudjF5Z0txME1rS0gxTGlvOW5HTllObzVRTkppUS1udW0tZ0owYk9lQnN4cVVYSGQ3TVpPS2wtdU1lOUw5aHJDT3l6MmQxWWpCbW9DUFJjTVA4Z2Fid0Q4a3JndE96VW1pZHg5VzNB0gHYAUFVX3lxTE9pQ29ka0cySmN6ZkZTQzg4UVZ4OXhGWjRqSDh0Y0xaS2hKb3FGeXNyMHB5eW93aC1oWHBubG1qWFlmT2o5dm4tWHEzaF9jZWFTYTE2OElVMkcyMDZrT0FPbUIwRFppT0VUejRieEJPVmVWai1aME0ydmZSSWJCbGktN0ZiS3kxZ1B6RWtLSlFwTlNZOU9QUkpvcjNVMThNdU43OUxpTk9Qa01RNG42UWNQdGFGakJJekdDeEdwNXhuOHBxUnFxQjRMUm5xYVd2dk1mLVZWWE5yZA?oc=5",
+      "src": "Moneycontrol.com"
      }
     ]
    },
@@ -2851,25 +2849,6 @@
       "t": "Mallcom Q2FY27 Results: Net profit rises 107% YoY to ₹7.9 crore",
       "s": 8,
       "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOT1A0dG5UaTZleDA1VE8ySjJCakpJbUVQNno5bGh2RFpxVDdiY0pnRUhMSmRpQ29aQmFXMFJWM01ld2p1VnRhZ1JZZC1VUjhidDk2OVRERWxGYURwQXRaRHhFZzBDcnUwUFpUaEJONS1mc2pjUmxuTkYzUXZoT3BMSHRHemd0T042SDV1bWItWU9raHJLdFpSb1dmSjZZMk1ab0psa212TjloMTVKcWc?oc=5",
-      "src": "scanx.trade"
-     }
-    ]
-   },
-   {
-    "k": "EDELWEISS",
-    "n": "Edelweiss Financial Services",
-    "s": 6,
-    "conf": "High",
-    "p": 130.94,
-    "pct": 0.61,
-    "mc": 12394.0,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "Edelweiss Financial Services Q2FY27 Results: Net profit up 50% to ₹193 crore",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQ1FURkkxbkpnQVpXZ0FNRHJSVTc2OXFEQnFrVV8zSmhvbTBWOFd0VHkyUkF4ODV0dHpqN2EweDlDQll4Q3pHeFJiNXA3SE9idTBxbW1hLXhZRlQtN0NLR3E4VU1paURYR19pdG8zM3ZyQVFNMUNkaTJtMERuRHdzR1JvdmhXQ1gxcEZGTVBFc0VJcV9OWVZ6Y1JneG82TXhadVJMN1B0cXRoZG1uaWlwVXBfRjA3LVdXSGc?oc=5",
       "src": "scanx.trade"
      }
     ]
@@ -3179,6 +3158,23 @@
      {
       "k": "price",
       "t": "Closed strong: +10.8% on 271.2× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "WSI",
+    "n": "W S Industries (I)",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 78.32,
+    "pct": 8.06,
+    "mc": 594.4,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +8.1% on 6.2× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3929,7 +3925,7 @@
   }
  },
  "hilo": {
-  "at": "19 Nov, 12:39 AM",
+  "at": "19 Nov, 1:10 AM",
   "hi": [
    [
     "NAVINFLUOR",
@@ -3998,7 +3994,7 @@
   "nlo": 7
  },
  "bse_movers": {
-  "at": "19 Nov, 12:39 AM",
+  "at": "19 Nov, 1:10 AM",
   "g": [
    [
     "544378",
@@ -4212,7 +4208,7 @@
    ],
    [
     "502281",
-    "Triveni Glass Ltd-$",
+    "Triveni Glass",
     13.56,
     9.62,
     12.37
@@ -4373,7 +4369,7 @@
    ],
    [
     "530079",
-    "Faze Three Ltd-$",
+    "Faze Three",
     614.1,
     7.76,
     569.9
@@ -4817,7 +4813,7 @@
   ]
  },
  "allmov": {
-  "at": "19 Nov, 12:39 AM",
+  "at": "19 Nov, 1:10 AM",
   "g": [
    [
     "B544378",
@@ -5116,7 +5112,7 @@
   ]
  },
  "tw": {
-  "at": "19 Nov, 12:39 AM",
+  "at": "19 Nov, 1:10 AM",
   "phase": "pre",
   "for": "Thu 19 Nov",
   "picks": [
@@ -5149,22 +5145,6 @@
      }
     ],
     "s": 23.8
-   },
-   {
-    "k": "ASHOKA",
-    "n": "Ashoka Buildcon",
-    "p": 115.2,
-    "pct": 6.58,
-    "vx": 5.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Ashoka Buildcon shares rise 9% after firm wins contract for NHAI project worth Rs 1465 crore",
-      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQVExTd3JFRUd5YTVyc2pMdld3Y2NGMVlSUW9naV9DendJNzdSbWFnZWxCbWZ0Y2stUklGNVYyTl8wUTNNUm8xalRJc3VjWGQtaG1PTnVIMm1NUmlBQWNqTlloQ2ZVVjZmSXllSzJDZkV5VnEyZ0NFMDhyQ1NLNHRaNHNIeGpvLU9QQzIybTNfVUF3cnVzN0czeXR2aHZHTXRBa19RMlR6YWVpRUNKV0dHUWJWY2V5V3c0bk1pQU9kWjExMmlKY0tIU1A4Q25pLXp2Q3FTQnA3Q1gtMGdMQkxyQm9UZ3ZJa0o2ajNLbmp3SUMyeW90TEM2WtIB_gFBVV95cUxNRzJ4SlY3RWhfajhZZEg3Z1lUNHBzU0RpUTE4bGd4M04xaG5DalVmdEZwUWtjZEt0Nnh0dDF5UEZLSm85dlQtdXdPeU04UGw3WUJuYkFFWDBaUWtYWWc2cTZhVGN4clRGUUlXS3AxUHBXZDR6MGNtQTJWcW1Kd0w4Um0xNUVVdWxhemZrYl9uRHB0LWc3d2pwR04zaFE0UGpBQzk5VkxXWTBORFQ5dXBqVVZ2cTVhSkRJbDVwcUdjWHMyaGYwODZlTTdzVDhMUmpFTXJpS0lZS1lYN01YM3FSRm1GLTh0LUUzazljZUJyUG1yWG5NdGNqampXMWJUUQ?oc=5"
-     }
-    ],
-    "s": 20.0
    },
    {
     "k": "INOXINDIA",
@@ -5211,6 +5191,22 @@
      }
     ],
     "s": 17.2
+   },
+   {
+    "k": "ASHOKA",
+    "n": "Ashoka Buildcon",
+    "p": 115.2,
+    "pct": 6.58,
+    "vx": 5.1,
+    "fo": false,
+    "why": [
+     {
+      "t": "news",
+      "x": "Ashoka Buildcon shares rise 9% after firm wins contract for NHAI project worth Rs 1465 crore",
+      "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQVExTd3JFRUd5YTVyc2pMdld3Y2NGMVlSUW9naV9DendJNzdSbWFnZWxCbWZ0Y2stUklGNVYyTl8wUTNNUm8xalRJc3VjWGQtaG1PTnVIMm1NUmlBQWNqTlloQ2ZVVjZmSXllSzJDZkV5VnEyZ0NFMDhyQ1NLNHRaNHNIeGpvLU9QQzIybTNfVUF3cnVzN0czeXR2aHZHTXRBa19RMlR6YWVpRUNKV0dHUWJWY2V5V3c0bk1pQU9kWjExMmlKY0tIU1A4Q25pLXp2Q3FTQnA3Q1gtMGdMQkxyQm9UZ3ZJa0o2ajNLbmp3SUMyeW90TEM2WtIB_gFBVV95cUxNRzJ4SlY3RWhfajhZZEg3Z1lUNHBzU0RpUTE4bGd4M04xaG5DalVmdEZwUWtjZEt0Nnh0dDF5UEZLSm85dlQtdXdPeU04UGw3WUJuYkFFWDBaUWtYWWc2cTZhVGN4clRGUUlXS3AxUHBXZDR6MGNtQTJWcW1Kd0w4Um0xNUVVdWxhemZrYl9uRHB0LWc3d2pwR04zaFE0UGpBQzk5VkxXWTBORFQ5dXBqVVZ2cTVhSkRJbDVwcUdjWHMyaGYwODZlTTdzVDhMUmpFTXJpS0lZS1lYN01YM3FSRm1GLTh0LUUzazljZUJyUG1yWG5NdGNqampXMWJUUQ?oc=5"
+     }
+    ],
+    "s": 16.0
    },
    {
     "k": "ACMESOLAR",
@@ -5320,22 +5316,6 @@
      }
     ],
     "s": 9.8
-   },
-   {
-    "k": "EDELWEISS",
-    "n": "Edelweiss Financial Services",
-    "p": 130.94,
-    "pct": 0.61,
-    "vx": 0.5,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Edelweiss Financial Services Q2FY27 Results: Net profit up 50% to ₹193 crore",
-      "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQ1FURkkxbkpnQVpXZ0FNRHJSVTc2OXFEQnFrVV8zSmhvbTBWOFd0VHkyUkF4ODV0dHpqN2EweDlDQll4Q3pHeFJiNXA3SE9idTBxbW1hLXhZRlQtN0NLR3E4VU1paURYR19pdG8zM3ZyQVFNMUNkaTJtMERuRHdzR1JvdmhXQ1gxcEZGTVBFc0VJcV9OWVZ6Y1JneG82TXhadVJMN1B0cXRoZG1uaWlwVXBfRjA3LVdXSGc?oc=5"
-     }
-    ],
-    "s": 8.4
    },
    {
     "k": "IIFL",
@@ -5502,6 +5482,21 @@
      }
     ],
     "s": 4.7
+   },
+   {
+    "k": "SUBEXLTD",
+    "n": "Subex",
+    "p": 16.21,
+    "pct": 2.47,
+    "vx": 3.8,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 2.5%, closing near the day's high on 3.8× normal volume"
+     }
+    ],
+    "s": 4.6
    }
   ],
   "fo": [
