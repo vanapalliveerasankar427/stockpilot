@@ -1,13 +1,13 @@
 {
- "label": "18 Nov 2026, 6:39 AM IST",
- "updated": "2026-11-18T06:39:28+05:30",
+ "label": "18 Nov 2026, 6:43 AM IST",
+ "updated": "2026-11-18T06:43:45+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "18 Nov 2026, 6:39 AM",
+  "date": "18 Nov 2026, 6:43 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -148,13 +148,13 @@
     "v": 134250.0,
     "ch": 27.0,
     "pct": 0.02,
-    "t": "18 Nov, 6:39 AM"
+    "t": "18 Nov, 6:43 AM"
    },
    "silver": {
     "v": 169597.0,
     "ch": -105.0,
     "pct": -0.06,
-    "t": "18 Nov, 6:39 AM"
+    "t": "18 Nov, 6:43 AM"
    }
   },
   "retail": {
@@ -360,8 +360,8 @@
      "ag": 189.9
     }
    },
-   "at": "18 Nov, 6:13 AM",
-   "at_ts": 1794962588.815656,
+   "at": "18 Nov, 6:43 AM",
+   "at_ts": 1794964425.211458,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -369,36 +369,36 @@
    "g24_10": 134840.0,
    "ag_kg": 170340.0,
    "ag": 170.34,
-   "t": "18 Nov, 6:39 AM"
+   "t": "18 Nov, 6:43 AM"
   },
   "dp": {
    "ag1": {
-    "b": 176524.0,
-    "a": 176524.0,
+    "b": 176208.0,
+    "a": 176208.0,
     "h": 178374.0,
     "l": 175149.0
    },
    "ag30": {
-    "b": 173524.0,
-    "a": 173524.0,
+    "b": 173208.0,
+    "a": 173208.0,
     "h": 175374.0,
     "l": 172149.0
    },
    "g999": {
-    "b": 13727.2,
-    "a": 13727.2,
+    "b": 13724.4,
+    "a": 13724.4,
     "h": 13803.3,
     "l": 13678.6
    },
    "xau": {
-    "b": 3824.7,
-    "a": 3824.72,
+    "b": 3823.8,
+    "a": 3823.82,
     "h": 3849.32,
     "l": 3809.02
    },
    "xag": {
-    "b": 46.91,
-    "a": 46.91,
+    "b": 46.81,
+    "a": 46.81,
     "h": 47.51,
     "l": 46.47
    },
@@ -408,8 +408,8 @@
     "h": 93.52,
     "l": 93.52
    },
-   "at": 1794964174,
-   "t": "18 Nov, 6:39 AM"
+   "at": 1794964431,
+   "t": "18 Nov, 6:43 AM"
   }
  },
  "logos": [],
@@ -520,24 +520,24 @@
   "t": 1794963610
  },
  "brent": {
-  "v": 93.32,
+  "v": 92.96,
   "prev": 93.14,
-  "ch": 0.18,
-  "pct": 0.19,
+  "ch": -0.18,
+  "pct": -0.19,
   "high": 93.47,
-  "low": 93.06,
+  "low": 92.92,
   "open": 91.68,
-  "t": 1794963556
+  "t": 1794963802
  },
  "goldSpot": {
-  "v": 3818.2,
+  "v": 3822.7,
   "prev": 3864.2,
-  "ch": -46.0,
-  "pct": -1.19,
+  "ch": -41.5,
+  "pct": -1.07,
   "high": 3859.3,
-  "low": 3816.4,
+  "low": 3810.3,
   "open": 3877.6,
-  "t": 1794963567
+  "t": 1794963825
  },
  "sectors": [
   [
@@ -1117,7 +1117,7 @@
   "crystalcropprotection": {
    "gmp": 19.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:39 AM",
+   "gat": "18 Nov, 6:43 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1148,7 +1148,7 @@
   "watranarentals": {
    "gmp": 25.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:39 AM",
+   "gat": "18 Nov, 6:43 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1179,7 +1179,7 @@
   "mahanadicoalfields": {
    "gmp": 4.0,
    "gsrc": "IPOMarket",
-   "gat": "18 Nov, 6:39 AM",
+   "gat": "18 Nov, 6:43 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1204,7 +1204,7 @@
   "dii_sell": 14706.87,
   "fii_buy": 19930.98,
   "fii_sell": 15735.6,
-  "fetched": "18 Nov, 6:39 AM",
+  "fetched": "18 Nov, 6:43 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1360,11 +1360,12 @@
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 269 headlines, 25 up, 14 down",
+  "outlook: 268 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2385,9 +2386,9 @@
   }
  },
  "nse": {
-  "n50": "18 Nov, 6:39 AM",
-  "mid": "18 Nov, 6:39 AM",
-  "small": "18 Nov, 6:39 AM"
+  "n50": "18 Nov, 6:43 AM",
+  "mid": "18 Nov, 6:43 AM",
+  "small": "18 Nov, 6:43 AM"
  },
  "midg": [
   [
@@ -2560,17 +2561,18 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 20 IPOs",
   "subscription: 0 IPOs from 3 cards",
   "bse eod 2026-11-17: 5174 scrips",
-  "outlook: 269 headlines, 25 up, 14 down",
+  "outlook: 268 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5274,
   "quotes": 4769,
-  "at": "18 Nov, 6:39 AM"
+  "at": "18 Nov, 6:43 AM"
  },
  "global": [
   [
@@ -2593,9 +2595,9 @@
   ],
   [
    "Nikkei 225",
-   59448.31,
-   1.0,
-   1794963265
+   59491.08,
+   1.07,
+   1794963520
   ],
   [
    "Hang Seng",
@@ -2617,13 +2619,13 @@
   ]
  ],
  "outlook": {
-  "at": "18 Nov, 6:39 AM",
-  "headlines": 269,
+  "at": "18 Nov, 6:43 AM",
+  "headlines": 268,
   "screened": 1800,
   "cues": [
    "Dow Jones -1.6%",
    "S&P 500 -1.0%",
-   "Nikkei 225 +1.0%"
+   "Nikkei 225 +1.1%"
   ],
   "up": [
    {
@@ -2795,30 +2797,6 @@
      {
       "k": "price",
       "t": "Closed strong: +5.7% on 15.1× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "FIRSTCRY",
-    "n": "Brainbees Solutions",
-    "s": 11.0,
-    "conf": "High",
-    "p": 178.97,
-    "pct": 12.85,
-    "mc": 8694.3,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "FirstCry-parent Brainbees Solutions shares rally 13%: Q2 net loss narrows 75%, revenue jumps - Should you buy?",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOQzdwZWVDT3Jub1VwVEFNZnItY2w4TzlxRW40UHM0MWpGUEJMSUhuSG1nRzdKVWtaOFZhOXFPZFRwMmV0LXAyZjlWU2pwQWtkbXAxX0h4LWxMbHBHRTVZcG0tdExYTVFlM3RXSzFnSmFUZ0xTYTFTRzYyekxYU2k5Y1VzTmZNUDljcnMxYTQ2QWpLYjhTbTdOVG44cEdEbU9Va3ExV3lYbjVNUm0zTUlJY0szOG96UTQzdjVWTmNFZmRFYnp0Slh0Yk91Sk9VMm0ySnRaNjc5eUgtWXo5T1pzbTk0VEdqeGlxTF8xR2ZycWtKN1dKNkJ6UG9sRm1UZFNxYkHSAYcCQVVfeXFMTjVza2djTUdFZGtxOW1TUmhvbHNSenRyWXRySExTOFBkb2x0V3hET3ZqNDk2RjlfVnl3Zy1rUVBDTjh4a2p1MlpHMHZHMzZJd3NkeURxdHpIczRNcXNRREoyeGt5NzNselBKMFNfMHN3N0w2dElwMC1UcE5YVFBpNHhSSnBLWGZPSllZMHg1MWVFZDJnTzYtcmxVaE9pUk9oM3JmZWxvdnBzblJ3ODRCSTZDSXZzTmVJZkwzbEN5VGRNVG9ZOUs4S081OEN6OVE1aEdvbF8tRU1mUnBDZ19BNUt5ZmYxOXVXaHNfQ1hVZ1dpSkNrcUtHTDFmakdxblduNDlVd2JZeVU?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +12.8% on 83.6× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3208,6 +3186,23 @@
      {
       "k": "price",
       "t": "Closed strong: +6.4% on 4.5× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "ASALCBR",
+    "n": "Associated Alcohols & Breweries",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 566.95,
+    "pct": 9.5,
+    "mc": 1138.4,
+    "sec": "Consumer Defensive",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +9.5% on 5.0× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -4011,7 +4006,7 @@
   }
  },
  "hilo": {
-  "at": "18 Nov, 6:39 AM",
+  "at": "18 Nov, 6:43 AM",
   "hi": [
    [
     "MARICO",
@@ -4084,7 +4079,7 @@
   "nlo": 6
  },
  "bse_movers": {
-  "at": "18 Nov, 6:39 AM",
+  "at": "18 Nov, 6:43 AM",
   "g": [
    [
     "500282",
@@ -4896,7 +4891,7 @@
   ]
  },
  "allmov": {
-  "at": "18 Nov, 6:39 AM",
+  "at": "18 Nov, 6:43 AM",
   "g": [
    [
     "B544168",
@@ -5237,7 +5232,7 @@
   ]
  },
  "tw": {
-  "at": "18 Nov, 6:39 AM",
+  "at": "18 Nov, 6:43 AM",
   "phase": "pre",
   "for": "Wed 18 Nov",
   "picks": [
@@ -5381,22 +5376,6 @@
      }
     ],
     "s": 15.6
-   },
-   {
-    "k": "FIRSTCRY",
-    "n": "Brainbees Solutions",
-    "p": 178.97,
-    "pct": 12.85,
-    "vx": 83.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "FirstCry-parent Brainbees Solutions shares rally 13%: Q2 net loss narrows 75%, revenue jumps - Should you buy?",
-      "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOQzdwZWVDT3Jub1VwVEFNZnItY2w4TzlxRW40UHM0MWpGUEJMSUhuSG1nRzdKVWtaOFZhOXFPZFRwMmV0LXAyZjlWU2pwQWtkbXAxX0h4LWxMbHBHRTVZcG0tdExYTVFlM3RXSzFnSmFUZ0xTYTFTRzYyekxYU2k5Y1VzTmZNUDljcnMxYTQ2QWpLYjhTbTdOVG44cEdEbU9Va3ExV3lYbjVNUm0zTUlJY0szOG96UTQzdjVWTmNFZmRFYnp0Slh0Yk91Sk9VMm0ySnRaNjc5eUgtWXo5T1pzbTk0VEdqeGlxTF8xR2ZycWtKN1dKNkJ6UG9sRm1UZFNxYkHSAYcCQVVfeXFMTjVza2djTUdFZGtxOW1TUmhvbHNSenRyWXRySExTOFBkb2x0V3hET3ZqNDk2RjlfVnl3Zy1rUVBDTjh4a2p1MlpHMHZHMzZJd3NkeURxdHpIczRNcXNRREoyeGt5NzNselBKMFNfMHN3N0w2dElwMC1UcE5YVFBpNHhSSnBLWGZPSllZMHg1MWVFZDJnTzYtcmxVaE9pUk9oM3JmZWxvdnBzblJ3ODRCSTZDSXZzTmVJZkwzbEN5VGRNVG9ZOUs4S081OEN6OVE1aEdvbF8tRU1mUnBDZ19BNUt5ZmYxOXVXaHNfQ1hVZ1dpSkNrcUtHTDFmakdxblduNDlVd2JZeVU?oc=5"
-     }
-    ],
-    "s": 15.4
    },
    {
     "k": "ARTEMISMED",
@@ -5637,6 +5616,22 @@
      {
       "t": "momentum",
       "x": "Up 4.8%, closing near the day's high on 2.9× normal volume"
+     }
+    ],
+    "s": 7.0
+   },
+   {
+    "k": "GREAVESCOT",
+    "n": "Greaves Cotton",
+    "p": 243.5,
+    "pct": 6.74,
+    "vx": 8.9,
+    "fo": false,
+    "why": [
+     {
+      "t": "news",
+      "x": "Greaves Cotton Share Price Jumps 9% To ₹249.45 As Ampere EV Sales Surge 93%",
+      "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOVFWMzlYajZiUC03ZnE2Zm1MMURMc25BOHZvelU3TnY3S3NCa2pnSlE5MC13bzY3eDdCU1ozYzVFb25TTEc3VXd2VmoyTm92RTdNX21GS2x6ZzhBYi1nRHA4SV92cExvc3R3MFBxdUdaRGloZFNQTW0zQ0NyWUxYOW9LcDh2LVJUZmNxUTdMa1ExRjk3LVB2MlVYc3k4NDhZdzREblIwX24yRUszWVRGWV9B0gG3AUFVX3lxTE5yc3F5elVQaHQ5TzYwTXA4U0FUTkNFd1hadnBBX0Y2N0hJdDEybmU1dGlMN2RZNnNvTEFyd2VGTkZ5Zm9fdHUyWGQteHBoR1VlNU5uRnl0UEpJZklSRk5WdzNQa3N4VXVDNnBlZ00yc2M3ZnExZzJJOFBXaG8zNlE4dFN4V2kzZUNnTV9Yb3FvUndEc2FFcFhrVFE4T1F2YTFmQzY1SEM5dmtiREoyckVvRjYyNEhBbw?oc=5"
      }
     ],
     "s": 7.0
