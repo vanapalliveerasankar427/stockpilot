@@ -1,6 +1,6 @@
 {
  "label": "19 Nov 2026, 9:06 AM IST",
- "updated": "2026-11-19T09:06:01+05:30",
+ "updated": "2026-11-19T09:06:47+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -378,32 +378,32 @@
   },
   "dp": {
    "ag1": {
-    "b": 168872.0,
-    "a": 168872.0,
+    "b": 168564.0,
+    "a": 168564.0,
     "h": 173346.0,
     "l": 167879.0
    },
    "ag30": {
-    "b": 165872.0,
-    "a": 165872.0,
+    "b": 165564.0,
+    "a": 165564.0,
     "h": 170346.0,
     "l": 164879.0
    },
    "g999": {
-    "b": 13366.5,
-    "a": 13366.5,
+    "b": 13356.8,
+    "a": 13356.8,
     "h": 13601.2,
     "l": 13349.2
    },
    "xau": {
-    "b": 3713.9,
-    "a": 3713.92,
+    "b": 3711.8,
+    "a": 3711.82,
     "h": 3758.72,
     "l": 3694.52
    },
    "xag": {
-    "b": 44.97,
-    "a": 44.97,
+    "b": 44.91,
+    "a": 44.91,
     "h": 45.9,
     "l": 44.55
    },
@@ -413,7 +413,7 @@
     "h": 93.55,
     "l": 93.42
    },
-   "at": 1795059364,
+   "at": 1795059414,
    "t": "19 Nov, 9:06 AM"
   }
  },
@@ -518,31 +518,31 @@
   "v": 93.41,
   "prev": 93.46,
   "ch": -0.05,
-  "pct": -0.05,
+  "pct": -0.06,
   "high": 93.45,
-  "low": 93.39,
+  "low": 93.38,
   "open": 93.44,
-  "t": 1795059332
+  "t": 1795059400
  },
  "brent": {
-  "v": 88.92,
+  "v": 88.96,
   "prev": 89.17,
-  "ch": -0.25,
-  "pct": -0.28,
+  "ch": -0.21,
+  "pct": -0.24,
   "high": 90.21,
   "low": 88.51,
   "open": 92.44,
-  "t": 1795058699
+  "t": 1795058807
  },
  "goldSpot": {
-  "v": 3712.3,
+  "v": 3712.8,
   "prev": 3741.9,
-  "ch": -29.6,
-  "pct": -0.79,
+  "ch": -29.1,
+  "pct": -0.78,
   "high": 3759.5,
   "low": 3694.5,
   "open": 3787.9,
-  "t": 1795058758
+  "t": 1795058806
  },
  "sectors": [
   [
@@ -1122,7 +1122,7 @@
   "crystalcropprotection": {
    "gmp": 18.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 9:02 AM",
+   "gat": "19 Nov, 9:06 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1158,12 +1158,12 @@
    "snii": 0.47,
    "sr": 0.64,
    "ssrc": "IPOMarket",
-   "sat": "19 Nov, 9:02 AM"
+   "sat": "19 Nov, 9:06 AM"
   },
   "watranarentals": {
    "gmp": 62.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 9:02 AM",
+   "gat": "19 Nov, 9:06 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1198,7 +1198,7 @@
   "mahanadicoalfields": {
    "gmp": 3.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 9:02 AM",
+   "gat": "19 Nov, 9:06 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1227,7 +1227,7 @@
   "dii_sell": 17762.15,
   "fii_buy": 17913.16,
   "fii_sell": 12046.38,
-  "fetched": "19 Nov, 9:02 AM",
+  "fetched": "19 Nov, 9:06 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1382,7 +1382,15 @@
    "u": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQT1ZPSTdhMXpLQWN1NXVjNkFCYmthbTFrZzBQbjVyM3BzbWlqQWlHQ3cyZGFpNDFZY0tGT0JEWWl3NkZlRGQxMmJjRzFfOTRibE41Um8xdmVqZlAzbXZqRVRDQmRBcE8zZFpFQ0JnblJZQm0waEZUcWlJMmhYQVN2MDZMRFRJOW1ONGV1TzJEXzYwcEQydFoxa0hmMmxSekVES2xaag?oc=5"
   }
  ],
- "log": [],
+ "log": [
+  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
+  "ipo calendar: 18 IPOs",
+  "subscription: 1 IPOs from 4 cards",
+  "bse eod 2026-11-18: 5110 scrips",
+  "outlook news 'upper circuit stock' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 230 headlines, 25 up, 15 down",
+  "option chains: 2 ok, 0 failed, 220 stored"
+ ],
  "members": {
   "n50": {
    "day": "2026-11-19",
@@ -2580,13 +2588,14 @@
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 4 cards",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 269 headlines, 25 up, 14 down",
+  "outlook news 'upper circuit stock' failed: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 230 headlines, 25 up, 15 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5271,
   "quotes": 4776,
-  "at": "19 Nov, 9:02 AM"
+  "at": "19 Nov, 9:06 AM"
  },
  "global": [
   [
@@ -2615,9 +2624,9 @@
   ],
   [
    "Hang Seng",
-   22825.59,
-   -2.01,
-   1795058458
+   22841.5,
+   -1.95,
+   1795058504
   ],
   [
    "FTSE 100",
@@ -2633,12 +2642,12 @@
   ]
  ],
  "outlook": {
-  "at": "19 Nov, 9:02 AM",
-  "headlines": 269,
+  "at": "19 Nov, 9:06 AM",
+  "headlines": 230,
   "screened": 1790,
   "cues": [
    "Dow Jones -1.1%",
-   "Hang Seng -2.0%"
+   "Hang Seng -1.9%"
   ],
   "up": [
    {
@@ -2864,25 +2873,6 @@
     ]
    },
    {
-    "k": "PVRINOX",
-    "n": "PVR INOX",
-    "s": 8,
-    "conf": "High",
-    "p": 1714.4,
-    "pct": 2.21,
-    "mc": 16480.7,
-    "sec": "Communication Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "PVR Inox shares jump 6% in 2 days, hit fresh 52-week high as CRISIL upgrades outlook to positive. What is",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNbHkxUmNjVG12cXJUZ1dpRU9lbm5udWVxUU43YVRMdXBWTXVkV0M1V0dSVFlLOVctR2c3b1FsLWtJd01YQTdXQlJMZXdCM1ZBalMxcGhfUFo4Q2xDbTR6UkREQWhLNU1Jcm45M0hjVkl6U1dVR2FickYwYTJ0dkRaVUo1ak1rTjdKSHVNX0d6ajYzMmFmYTRBUG5CcXpIY0VabldVeklOWDRCYTRrb0dEdE82c1VicUxNWThJbG9yb2FMeUVlcVZNRE9HT3BrNy0zbXhZaFRvYkxuRHRMaVlSOXAyYVBJdDJwOFp0eEZjVE1PWm9wRmZ0Mi03aVYzREZVVzBYbFRjcnFWY3Joc2RzMlNDM3LSAZoCQVVfeXFMT0dfMS1UQldDUWN6dTI0b1dBRVdOTzQ5clB1cWJBWkVkeXcwNXhHVFhFNFlhWi1RelpLdS1CZGNTY1hQTXBWUDFWS2wxUUpIYlR2MkpSR01Tc251dEZTanM3aGpzd3RSSXh3eGIzd3FISXFoQ3h4cVh0aFA1TktLbGNvLWI4bFBRbW5aLUZpZnlNeTRjLVF5VFIzMjFuQnFDSWhPM2VydTFTc1JUV1RzdVJuZDQtcV8wZFlzV2JPMGVyZ3pXM3pNZ2NHS3IyYVFuN1dxcV9zQ0h2OVBUREpaNWNodjZMWEtYcERmYld3SW9aZDA1empUWEpYVVBNdnJUdmNRX0xZaDBjSDk0cEdoNUZTZ3lOa0lIN2N3?oc=5",
-      "src": "The Economic Times"
-     }
-    ]
-   },
-   {
     "k": "INOXINDIA",
     "n": "INOX India",
     "s": 7.0,
@@ -2903,6 +2893,30 @@
       "k": "price",
       "t": "Closed strong: +7.8% on 12.5× usual volume, near the day's high",
       "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "SBIN",
+    "n": "State Bank of India",
+    "s": 5.7,
+    "conf": "Medium",
+    "p": 1135.0,
+    "pct": 2.38,
+    "mc": 1047675.1,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "State Bank Of India Share Price Today: price rise explained",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdWdoR2lpX0Y4NzE3NkJMdjlSbmIyWVl4OGlqX0dZeF9TZ2RwSUNWcHFTRmJReE5WU2MyT0Q1V25OQkF3TlhRWDEyWUQ5UzlxMVM2bTV0WTBCM2F2eDcwdzRGZDU2UWRGRXlCcjRXRTB6ZlJrMG5LeUZZUDBxUkExVk1n?oc=5",
+      "src": "Univest"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +2.4% on 1.9× usual volume, near the day's high",
+      "s": 1.7024727600214489
      }
     ]
    },
@@ -2945,21 +2959,21 @@
     ]
    },
    {
-    "k": "HFCL",
-    "n": "HFCL",
+    "k": "TATACONSUM",
+    "n": "TATA CONSUMER PRODUCTS",
     "s": 4,
     "conf": "Medium",
-    "p": 197.5,
-    "pct": 4.95,
-    "mc": 30222.7,
-    "sec": "Technology",
+    "p": 1130.9,
+    "pct": 1.66,
+    "mc": 111926.5,
+    "sec": "Consumer Defensive",
     "why": [
      {
       "k": "news",
-      "t": "HFCL, Sterlite Tech shares rally 5% each as Nvidia’s strong earnings eclipse AI worries",
+      "t": "Stocks for quick gains: Know target price, stop loss for GAIL, Tata Consumer and Cipla",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNWUZoLVVGTXhzYzZLZDlVaDZGcGVrMEhaTnl1ZV93SnhoSDd4YWVfVjBnLU13N1luTXNBRXlLS1ZzSzVrdEZoRTJ2NHBlc2lJbVJuR1g5RmVlb203N3lDa19tQXhGMFFXbDJwUmw5NVVPUjBqZklCVjJNa1VqVkVuM1R2SGtZTzVseWFUcXpjYzNQV2NWcEh5d1pBclphdWhOSEhRc3FJZjRGUWFabTUtRW5PZ2EwUW9uaDZhMU5nZjYzaVJ1Rnc3cEREMXVmM25zNzlfVVlPOU5paFN1TXFXRzRnLTBpZTNRUHQ1ZnJOWdIB9AFBVV95cUxQUjRqbm1CZmFyLV85U0JySTdlODFLeE04Q1hvODVwSjdENWItc1RsWF9Vd0o4TmNVMFBPOUNtUlZuOTA5UXJ6Vi15VUE4VkF5WXNBME9UNnZEWV9mLVI5TDJTSHhybTRmWXBWbEkzUUl5ajZIellNVFZYSVh2LXNHY0V0YVpfTURJZTBsV0VFaXNBRGhUekdaaHJteEJyZHNHbVB0VDVNR1Y5S09MN3M4VGk5Vm5KREZUZ18xUGMwNDFVQmRQVWpaSHhHcXA3TGdqNFBqZjJrZHJNSUFWRW8yWUh2M19MQVl0a1Y3M21ORXgzZzZf?oc=5",
-      "src": "The Economic Times"
+      "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQVpaMjFlR3k2QmNZdzYxMmFkNGpUUG8zcXRNbm41MVdEVjRsbDlQcWlwWTZScUxVU1ZEUVpSdnZNTnpPMGJpYy1NeWJVT3hoSUhhQTAwQ0xrMmthQnBNLXZRUFVobHlnNExYRGI2eEtFXzQxUkFOWVc0QS1uWF85M3kxeHVJZW51bDVlY0s0NDdBZkdIeVBQWDh1Q2dnVGFXWkpBdzhjdUFRWmhFWWFTSkJNQXE4MmJiVkZwZlJSNnF5Q3pSaElBOTN1WF_SAdIBQVVfeXFMUGJFNF9MYW84UU05WF9vT2xSMTZwNTVHRTNzMG5GUnhQVmVOR1RKRmUyTGNiWnI2V2lTTC0tQ3dOb19hRncwanBUMkJucDVaV0xuTENzbjVfbWc5TXlwNHVLUVRKRXl3UHJYS2xIYVNBM3JWSGQtaVpuTnJiWWZFODRhaFN1QjdHWUU2RmJmOUtXWXJGNkc1TDRCOEYxYThHRERzQ0taN1BEa3l1TzFUM01XVTFPMENySzJkR1ZYS1NoT3VObkdLdG1qRDlRNWVpcE13?oc=5",
+      "src": "News9live"
      }
     ]
    },
@@ -2972,25 +2986,6 @@
     "pct": 1.6,
     "mc": 124926.5,
     "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "Stocks for quick gains: Know target price, stop loss for GAIL, Tata Consumer and Cipla",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQVpaMjFlR3k2QmNZdzYxMmFkNGpUUG8zcXRNbm41MVdEVjRsbDlQcWlwWTZScUxVU1ZEUVpSdnZNTnpPMGJpYy1NeWJVT3hoSUhhQTAwQ0xrMmthQnBNLXZRUFVobHlnNExYRGI2eEtFXzQxUkFOWVc0QS1uWF85M3kxeHVJZW51bDVlY0s0NDdBZkdIeVBQWDh1Q2dnVGFXWkpBdzhjdUFRWmhFWWFTSkJNQXE4MmJiVkZwZlJSNnF5Q3pSaElBOTN1WF_SAdIBQVVfeXFMUGJFNF9MYW84UU05WF9vT2xSMTZwNTVHRTNzMG5GUnhQVmVOR1RKRmUyTGNiWnI2V2lTTC0tQ3dOb19hRncwanBUMkJucDVaV0xuTENzbjVfbWc5TXlwNHVLUVRKRXl3UHJYS2xIYVNBM3JWSGQtaVpuTnJiWWZFODRhaFN1QjdHWUU2RmJmOUtXWXJGNkc1TDRCOEYxYThHRERzQ0taN1BEa3l1TzFUM01XVTFPMENySzJkR1ZYS1NoT3VObkdLdG1qRDlRNWVpcE13?oc=5",
-      "src": "News9live"
-     }
-    ]
-   },
-   {
-    "k": "TATACONSUM",
-    "n": "TATA CONSUMER PRODUCTS",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1130.9,
-    "pct": 1.66,
-    "mc": 111926.5,
-    "sec": "Consumer Defensive",
     "why": [
      {
       "k": "news",
@@ -3017,37 +3012,6 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPdUh1MGV2MnRTUlE0aWNvWURSWVRfQXhqd0F5alUxaERXNWk2cW0tYVZIS1Y1dmNWLXE3S3RSNzNabkhXNkE2SEtSbWdidFhBTmdTdFFPblM4OTUweG82SFhTdmhTdUdnVnJSVTBWbEN6OEY1TmZXMWdURk5DV29tLWljSldkdDM5ZkNHNUF1X202Y3NnWXJWTHVZQU5sYjNlUFdNOG5ESlRjSW5TWlNtUXVFMlhHd0RaT0JGeUZoa0tPOHN6RVgtREJDdHDSAdMBQVVfeXFMTUNya25EVWlBU3UyakwyMnpDY0NhZmRyeTdqOGpUekx2SW91bm5WVWRjbF9GV0kzWHJVN0ZGbkRuRl9SaWVnM0syZGpSS1N4aHBMejk0eDA2VGd5TkdEeERyZ1Vvd3lUal9lajJBd2hwM0wtcllrb2diSklxS2k0VW9kZjBQeVo0TVgyaTZ2eFJxWlllWUlfMnFMU2xJb3psOWFZWmJJTXM4R2pXZFlFdXRBWXltNUZ0ams2SFA1cWdhS21KbjUxZHhXcG9RN2xIY2VJcw?oc=5",
       "src": "The Financial Express"
-     }
-    ]
-   },
-   {
-    "k": "OMPOWER",
-    "n": "Om Power Transmission",
-    "s": 3.0,
-    "conf": "Low",
-    "p": 152.74,
-    "pct": 19.99,
-    "mc": 523.1,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Upper & Lower Circuit Stocks Today, November 18, 2026 at 12:00 PM IST: Om Power Transmission Ltd Leads the List",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNaUkyUDU0LVVMSU5JV19OdWE0QnozQTZfV09Sazh1cktJRmZ1eWl1UWNtMjZTcGhmdkl3aDBvUGQwOElDbXhCUUVwUk1OR0UyU043OGdZVU1UV2dxS2xIQ2t1Mk9wb0M0MWFrR1pIcExEWEdMMDJSNjk5TEFWYTVraERINA?oc=5",
-      "src": "HDFC Sky"
-     },
-     {
-      "k": "news",
-      "t": "Om Power Transmission Ltd Locks at Upper Circuit With 20% Gain — Buyers Queue, Sellers Absent",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZExzYnhVMF9lWFhwMGhLdmhLSm1PY29rb0pZNGs1LUFZMnA5R3RoMmtfUEdzdGowVU15aEtpaXZUYWJPOElha3dfbzE1VnhwMkZQV1V2a3JjTUt1Tm5OYmEzLXo3RDBhdDE0cmtzaGREanNJX2VuSldwT25nbU5yMi1pNW9MaTVjZHpINjZSb01ySEI4SE9zalBFOGZDNmNhRjVzRTE2RTRsaVVrWnRhR2xBcy02Y1VrSkhwSjhlYmZwMkpmWTJhT2l6WUtlQQ?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +20.0% on 26.0× usual volume, near the day's high",
-      "s": 3.0
      }
     ]
    },
@@ -3171,6 +3135,23 @@
     ]
    },
    {
+    "k": "OMPOWER",
+    "n": "Om Power Transmission",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 152.74,
+    "pct": 19.99,
+    "mc": 523.1,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +20.0% on 26.0× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
     "k": "RAMBHAJO",
     "n": "Advit Jewels",
     "s": 3.0,
@@ -3183,6 +3164,23 @@
      {
       "k": "price",
       "t": "Closed strong: +3.9% on 7.8× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "SUBROS",
+    "n": "Subros",
+    "s": 3.0,
+    "conf": "Low",
+    "p": 693.25,
+    "pct": 13.1,
+    "mc": 4522.5,
+    "sec": "Consumer Cyclical",
+    "why": [
+     {
+      "k": "price",
+      "t": "Closed strong: +13.1% on 78.4× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -3248,6 +3246,25 @@
       "k": "price",
       "t": "Closed weak: -5.1% on 2.6× usual volume, near the day's low",
       "s": -2.050768688802977
+     }
+    ]
+   },
+   {
+    "k": "STERTOOLS",
+    "n": "Sterling Tools",
+    "s": -6,
+    "conf": "High",
+    "p": 206.12,
+    "pct": -0.97,
+    "mc": 749.1,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Sterling Tools Q2FY27 Results: Net profit down 31% YoY to ₹13.6 crore",
+      "s": -6,
+      "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRTBWQmtoRjFyVDA0aGZ4b05sTHpfeFdZZGtUZ25MV1pYbzVUSmtab0FlOTBPYU5GRVlEbUVJcGdXZUlabTlHZGM0dklnbENuUGdwRUlrZHc3bklQaWIwQzNQR1Z0VXhYV2N4THZ4MUtyZzlIRF84bUUwZ2FqVThJTTM4RzlCd0tkd2EtNlczb1QzTWxfUWMzQ2RrWGs2cnRqS3J3SlBvNHdfSjBma1A5QktRSlBpMXd3?oc=5",
+      "src": "scanx.trade"
      }
     ]
    },
@@ -3957,7 +3974,7 @@
   }
  },
  "hilo": {
-  "at": "19 Nov, 9:02 AM",
+  "at": "19 Nov, 9:06 AM",
   "hi": [
    [
     "NAVINFLUOR",
@@ -4390,7 +4407,7 @@
    ],
    [
     "502281",
-    "Triveni Glass Ltd-$",
+    "Triveni Glass",
     13.56,
     9.62,
     12.37
@@ -4551,7 +4568,7 @@
    ],
    [
     "530079",
-    "Faze Three Ltd-$",
+    "Faze Three",
     614.1,
     7.76,
     569.9
@@ -4995,7 +5012,7 @@
   ]
  },
  "allmov": {
-  "at": "19 Nov, 9:02 AM",
+  "at": "19 Nov, 9:06 AM",
   "g": [
    [
     "B544378",
@@ -5294,7 +5311,7 @@
   ]
  },
  "tw": {
-  "at": "19 Nov, 9:02 AM",
+  "at": "19 Nov, 9:06 AM",
   "phase": "pre",
   "for": "Thu 19 Nov",
   "picks": [
@@ -5537,22 +5554,6 @@
     "s": 8.0
    },
    {
-    "k": "PVRINOX",
-    "n": "PVR INOX",
-    "p": 1714.4,
-    "pct": 2.21,
-    "vx": 1.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "PVR Inox shares jump 6% in 2 days, hit fresh 52-week high as CRISIL upgrades outlook to positive. What is",
-      "u": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNbHkxUmNjVG12cXJUZ1dpRU9lbm5udWVxUU43YVRMdXBWTXVkV0M1V0dSVFlLOVctR2c3b1FsLWtJd01YQTdXQlJMZXdCM1ZBalMxcGhfUFo4Q2xDbTR6UkREQWhLNU1Jcm45M0hjVkl6U1dVR2FickYwYTJ0dkRaVUo1ak1rTjdKSHVNX0d6ajYzMmFmYTRBUG5CcXpIY0VabldVeklOWDRCYTRrb0dEdE82c1VicUxNWThJbG9yb2FMeUVlcVZNRE9HT3BrNy0zbXhZaFRvYkxuRHRMaVlSOXAyYVBJdDJwOFp0eEZjVE1PWm9wRmZ0Mi03aVYzREZVVzBYbFRjcnFWY3Joc2RzMlNDM3LSAZoCQVVfeXFMT0dfMS1UQldDUWN6dTI0b1dBRVdOTzQ5clB1cWJBWkVkeXcwNXhHVFhFNFlhWi1RelpLdS1CZGNTY1hQTXBWUDFWS2wxUUpIYlR2MkpSR01Tc251dEZTanM3aGpzd3RSSXh3eGIzd3FISXFoQ3h4cVh0aFA1TktLbGNvLWI4bFBRbW5aLUZpZnlNeTRjLVF5VFIzMjFuQnFDSWhPM2VydTFTc1JUV1RzdVJuZDQtcV8wZFlzV2JPMGVyZ3pXM3pNZ2NHS3IyYVFuN1dxcV9zQ0h2OVBUREpaNWNodjZMWEtYcERmYld3SW9aZDA1empUWEpYVVBNdnJUdmNRX0xZaDBjSDk0cEdoNUZTZ3lOa0lIN2N3?oc=5"
-     }
-    ],
-    "s": 8.0
-   },
-   {
     "k": "SUNSHINE",
     "n": "Sunshine Pictures",
     "p": 501.75,
@@ -5628,20 +5629,20 @@
     "s": 6.5
    },
    {
-    "k": "HFCL",
-    "n": "HFCL",
-    "p": 197.5,
-    "pct": 4.95,
-    "vx": 1.1,
-    "fo": false,
+    "k": "SBIN",
+    "n": "State Bank of India",
+    "p": 1135.0,
+    "pct": 2.38,
+    "vx": 1.9,
+    "fo": true,
     "why": [
      {
-      "t": "results",
-      "x": "HFCL, Sterlite Tech shares rally 5% each as Nvidia’s strong earnings eclipse AI worries",
-      "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNWUZoLVVGTXhzYzZLZDlVaDZGcGVrMEhaTnl1ZV93SnhoSDd4YWVfVjBnLU13N1luTXNBRXlLS1ZzSzVrdEZoRTJ2NHBlc2lJbVJuR1g5RmVlb203N3lDa19tQXhGMFFXbDJwUmw5NVVPUjBqZklCVjJNa1VqVkVuM1R2SGtZTzVseWFUcXpjYzNQV2NWcEh5d1pBclphdWhOSEhRc3FJZjRGUWFabTUtRW5PZ2EwUW9uaDZhMU5nZjYzaVJ1Rnc3cEREMXVmM25zNzlfVVlPOU5paFN1TXFXRzRnLTBpZTNRUHQ1ZnJOWdIB9AFBVV95cUxQUjRqbm1CZmFyLV85U0JySTdlODFLeE04Q1hvODVwSjdENWItc1RsWF9Vd0o4TmNVMFBPOUNtUlZuOTA5UXJ6Vi15VUE4VkF5WXNBME9UNnZEWV9mLVI5TDJTSHhybTRmWXBWbEkzUUl5ajZIellNVFZYSVh2LXNHY0V0YVpfTURJZTBsV0VFaXNBRGhUekdaaHJteEJyZHNHbVB0VDVNR1Y5S09MN3M4VGk5Vm5KREZUZ18xUGMwNDFVQmRQVWpaSHhHcXA3TGdqNFBqZjJrZHJNSUFWRW8yWUh2M19MQVl0a1Y3M21ORXgzZzZf?oc=5"
+      "t": "news",
+      "x": "State Bank Of India Share Price Today: price rise explained",
+      "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdWdoR2lpX0Y4NzE3NkJMdjlSbmIyWVl4OGlqX0dZeF9TZ2RwSUNWcHFTRmJReE5WU2MyT0Q1V25OQkF3TlhRWDEyWUQ5UzlxMVM2bTV0WTBCM2F2eDcwdzRGZDU2UWRGRXlCcjRXRTB6ZlJrMG5LeUZZUDBxUkExVk1n?oc=5"
      }
     ],
-    "s": 5.6
+    "s": 5.7
    },
    {
     "k": "WEL",
@@ -5687,9 +5688,40 @@
      }
     ],
     "s": 5.2
+   },
+   {
+    "k": "AQYLON",
+    "n": "Aqylon Nexus",
+    "p": 11.51,
+    "pct": 4.92,
+    "vx": 2.0,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 4.9%, closing near the day's high on 2.0× normal volume"
+     }
+    ],
+    "s": 4.9
    }
   ],
   "fo": [
+   {
+    "k": "SBIN",
+    "n": "State Bank of India",
+    "p": 1135.0,
+    "pct": 2.38,
+    "vx": 1.9,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "State Bank Of India Share Price Today: price rise explained",
+      "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdWdoR2lpX0Y4NzE3NkJMdjlSbmIyWVl4OGlqX0dZeF9TZ2RwSUNWcHFTRmJReE5WU2MyT0Q1V25OQkF3TlhRWDEyWUQ5UzlxMVM2bTV0WTBCM2F2eDcwdzRGZDU2UWRGRXlCcjRXRTB6ZlJrMG5LeUZZUDBxUkExVk1n?oc=5"
+     }
+    ],
+    "s": 5.7
+   },
    {
     "k": "SAGILITY",
     "n": "SAGILITY",
@@ -5738,11 +5770,11 @@
     "s": 4.0
    },
    {
-    "k": "GAIL",
-    "n": "GAIL (India)",
-    "p": 190.0,
-    "pct": 1.6,
-    "vx": 1.7,
+    "k": "TATACONSUM",
+    "n": "TATA CONSUMER PRODUCTS",
+    "p": 1130.9,
+    "pct": 1.66,
+    "vx": 1.2,
     "fo": true,
     "why": [
      {
@@ -5754,11 +5786,11 @@
     "s": 4.0
    },
    {
-    "k": "TATACONSUM",
-    "n": "TATA CONSUMER PRODUCTS",
-    "p": 1130.9,
-    "pct": 1.66,
-    "vx": 1.2,
+    "k": "GAIL",
+    "n": "GAIL (India)",
+    "p": 190.0,
+    "pct": 1.6,
+    "vx": 1.7,
     "fo": true,
     "why": [
      {
