@@ -1,13 +1,13 @@
 {
- "label": "19 Nov 2026, 5:39 AM IST",
- "updated": "2026-11-19T05:39:42+05:30",
+ "label": "19 Nov 2026, 5:44 AM IST",
+ "updated": "2026-11-19T05:44:00+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "19 Nov 2026, 5:39 AM",
+  "date": "19 Nov 2026, 5:44 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -153,13 +153,13 @@
     "v": 129880.0,
     "ch": -4343.0,
     "pct": -3.24,
-    "t": "19 Nov, 5:39 AM"
+    "t": "19 Nov, 5:44 AM"
    },
    "silver": {
     "v": 160775.0,
     "ch": -8927.0,
     "pct": -5.26,
-    "t": "19 Nov, 5:39 AM"
+    "t": "19 Nov, 5:44 AM"
    }
   },
   "retail": {
@@ -365,8 +365,8 @@
      "ag": 184.9
     }
    },
-   "at": "19 Nov, 5:13 AM",
-   "at_ts": 1795045428.49773,
+   "at": "19 Nov, 5:44 AM",
+   "at_ts": 1795047240.115993,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -374,38 +374,38 @@
    "g24_10": 130460.0,
    "ag_kg": 161490.0,
    "ag": 161.49,
-   "t": "19 Nov, 5:39 AM"
+   "t": "19 Nov, 5:44 AM"
   },
   "dp": {
    "ag1": {
-    "b": 172069.0,
-    "a": 172069.0,
+    "b": 172066.0,
+    "a": 172066.0,
     "h": 172150.0,
-    "l": 171902.0
+    "l": 171887.0
    },
    "ag30": {
-    "b": 169069.0,
-    "a": 169069.0,
+    "b": 169066.0,
+    "a": 169066.0,
     "h": 169150.0,
-    "l": 168902.0
+    "l": 168887.0
    },
    "g999": {
-    "b": 13461.7,
-    "a": 13461.7,
+    "b": 13461.4,
+    "a": 13461.4,
     "h": 13469.5,
-    "l": 13452.1
+    "l": 13448.1
    },
    "xau": {
-    "b": 3740.0,
-    "a": 3740.02,
+    "b": 3739.9,
+    "a": 3739.92,
     "h": 3742.52,
-    "l": 3736.92
+    "l": 3735.62
    },
    "xag": {
     "b": 45.49,
     "a": 45.49,
     "h": 45.52,
-    "l": 45.44
+    "l": 45.43
    },
    "fx": {
     "b": 93.48,
@@ -413,8 +413,8 @@
     "h": 93.49,
     "l": 93.49
    },
-   "at": 1795046989,
-   "t": "19 Nov, 5:39 AM"
+   "at": 1795047246,
+   "t": "19 Nov, 5:44 AM"
   }
  },
  "logos": [],
@@ -525,24 +525,24 @@
   "t": 1795037169
  },
  "brent": {
-  "v": 88.73,
+  "v": 88.75,
   "prev": 89.17,
-  "ch": -0.44,
-  "pct": -0.49,
+  "ch": -0.42,
+  "pct": -0.47,
   "high": 88.89,
   "low": 88.64,
   "open": 92.44,
-  "t": 1795046041
+  "t": 1795046601
  },
  "goldSpot": {
-  "v": 3741.7,
+  "v": 3740.3,
   "prev": 3741.9,
-  "ch": -0.2,
-  "pct": -0.01,
+  "ch": -1.6,
+  "pct": -0.04,
   "high": 3746.3,
   "low": 3727.4,
   "open": 3787.9,
-  "t": 1795046380
+  "t": 1795046634
  },
  "sectors": [
   [
@@ -1122,7 +1122,7 @@
   "crystalcropprotection": {
    "gmp": 18.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 5:39 AM",
+   "gat": "19 Nov, 5:44 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1158,12 +1158,12 @@
    "snii": 0.47,
    "sr": 0.64,
    "ssrc": "IPOMarket",
-   "sat": "19 Nov, 5:39 AM"
+   "sat": "19 Nov, 5:44 AM"
   },
   "watranarentals": {
    "gmp": 62.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 5:39 AM",
+   "gat": "19 Nov, 5:44 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1198,7 +1198,7 @@
   "mahanadicoalfields": {
    "gmp": 3.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 5:39 AM",
+   "gat": "19 Nov, 5:44 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1227,7 +1227,7 @@
   "dii_sell": 17762.15,
   "fii_buy": 17913.16,
   "fii_sell": 12046.38,
-  "fetched": "19 Nov, 5:39 AM",
+  "fetched": "19 Nov, 5:44 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1383,11 +1383,13 @@
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 246 headlines, 25 up, 14 down",
+  "outlook: 245 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2408,9 +2410,9 @@
   }
  },
  "nse": {
-  "n50": "19 Nov, 5:39 AM",
-  "mid": "19 Nov, 5:39 AM",
-  "small": "19 Nov, 5:39 AM"
+  "n50": "19 Nov, 5:44 AM",
+  "mid": "19 Nov, 5:44 AM",
+  "small": "19 Nov, 5:44 AM"
  },
  "midg": [
   [
@@ -2583,17 +2585,19 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 246 headlines, 25 up, 14 down",
+  "outlook: 245 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5271,
   "quotes": 4776,
-  "at": "19 Nov, 5:39 AM"
+  "at": "19 Nov, 5:44 AM"
  },
  "global": [
   [
@@ -2640,8 +2644,8 @@
   ]
  ],
  "outlook": {
-  "at": "19 Nov, 5:39 AM",
-  "headlines": 246,
+  "at": "19 Nov, 5:44 AM",
+  "headlines": 245,
   "screened": 1790,
   "cues": [
    "Dow Jones -1.1%",
@@ -3961,7 +3965,7 @@
   }
  },
  "hilo": {
-  "at": "19 Nov, 5:39 AM",
+  "at": "19 Nov, 5:44 AM",
   "hi": [
    [
     "NAVINFLUOR",
@@ -4180,7 +4184,7 @@
   "natl": 6
  },
  "bse_movers": {
-  "at": "19 Nov, 5:39 AM",
+  "at": "19 Nov, 5:44 AM",
   "g": [
    [
     "544378",
@@ -4767,7 +4771,7 @@
    ],
    [
     "521234",
-    "Sri Nachammai Cotton Mills Ltd-$",
+    "Sri Nachammai Cotton Mills",
     25.3,
     -9.84,
     28.06
@@ -4823,7 +4827,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes Ltd-$",
+    "Mukat Pipes",
     15.82,
     -9.13,
     17.41
@@ -4907,7 +4911,7 @@
    ],
    [
     "519183",
-    "Adf Foods Ltd-$",
+    "Adf Foods",
     220.1,
     -8.29,
     240.0
@@ -4999,7 +5003,7 @@
   ]
  },
  "allmov": {
-  "at": "19 Nov, 5:39 AM",
+  "at": "19 Nov, 5:44 AM",
   "g": [
    [
     "B544378",
@@ -5106,8 +5110,8 @@
   ]
  },
  "rescal": {
-  "ts": 1795043584.985356,
-  "at": "19 Nov, 4:42 AM",
+  "ts": 1795047252.2957904,
+  "at": "19 Nov, 5:44 AM",
   "items": [
    {
     "k": "B531458",
@@ -5298,7 +5302,7 @@
   ]
  },
  "tw": {
-  "at": "19 Nov, 5:39 AM",
+  "at": "19 Nov, 5:44 AM",
   "phase": "pre",
   "for": "Thu 19 Nov",
   "picks": [
