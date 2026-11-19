@@ -1,13 +1,13 @@
 {
- "label": "19 Nov 2026, 7:40 AM IST",
- "updated": "2026-11-19T07:40:12+05:30",
+ "label": "19 Nov 2026, 7:44 AM IST",
+ "updated": "2026-11-19T07:44:30+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "19 Nov 2026, 7:40 AM",
+  "date": "19 Nov 2026, 7:44 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -153,13 +153,13 @@
     "v": 129880.0,
     "ch": -4343.0,
     "pct": -3.24,
-    "t": "19 Nov, 7:40 AM"
+    "t": "19 Nov, 7:44 AM"
    },
    "silver": {
     "v": 160775.0,
     "ch": -8927.0,
     "pct": -5.26,
-    "t": "19 Nov, 7:40 AM"
+    "t": "19 Nov, 7:44 AM"
    }
   },
   "retail": {
@@ -365,8 +365,8 @@
      "ag": 184.9
     }
    },
-   "at": "19 Nov, 7:14 AM",
-   "at_ts": 1795052662.761919,
+   "at": "19 Nov, 7:44 AM",
+   "at_ts": 1795054470.590736,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -374,7 +374,7 @@
    "g24_10": 130460.0,
    "ag_kg": 161490.0,
    "ag": 161.49,
-   "t": "19 Nov, 7:40 AM"
+   "t": "19 Nov, 7:44 AM"
   },
   "dp": {
    "ag1": {
@@ -396,25 +396,25 @@
     "l": 13448.1
    },
    "xau": {
-    "b": 3748.0,
-    "a": 3748.02,
+    "b": 3753.1,
+    "a": 3753.12,
     "h": 3758.72,
     "l": 3735.62
    },
    "xag": {
-    "b": 45.38,
-    "a": 45.38,
+    "b": 45.57,
+    "a": 45.57,
     "h": 45.9,
     "l": 45.26
    },
    "fx": {
-    "b": 93.52,
-    "a": 93.53,
+    "b": 93.51,
+    "a": 93.52,
     "h": 93.54,
     "l": 93.49
    },
-   "at": 1795054219,
-   "t": "19 Nov, 7:40 AM"
+   "at": 1795054476,
+   "t": "19 Nov, 7:44 AM"
   }
  },
  "logos": [],
@@ -525,24 +525,24 @@
   "t": 1795053580
  },
  "brent": {
-  "v": 90.03,
+  "v": 89.86,
   "prev": 89.17,
-  "ch": 0.86,
-  "pct": 0.96,
+  "ch": 0.69,
+  "pct": 0.77,
   "high": 90.21,
   "low": 88.51,
   "open": 92.44,
-  "t": 1795053592
+  "t": 1795053813
  },
  "goldSpot": {
-  "v": 3753.5,
+  "v": 3748.9,
   "prev": 3741.9,
-  "ch": 11.6,
-  "pct": 0.31,
+  "ch": 7.0,
+  "pct": 0.19,
   "high": 3759.4,
   "low": 3727.4,
   "open": 3787.9,
-  "t": 1795053611
+  "t": 1795053864
  },
  "sectors": [
   [
@@ -1122,7 +1122,7 @@
   "crystalcropprotection": {
    "gmp": 18.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 7:40 AM",
+   "gat": "19 Nov, 7:44 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1158,12 +1158,12 @@
    "snii": 0.47,
    "sr": 0.64,
    "ssrc": "IPOMarket",
-   "sat": "19 Nov, 7:40 AM"
+   "sat": "19 Nov, 7:44 AM"
   },
   "watranarentals": {
    "gmp": 62.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 7:40 AM",
+   "gat": "19 Nov, 7:44 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1198,7 +1198,7 @@
   "mahanadicoalfields": {
    "gmp": 3.0,
    "gsrc": "IPOMarket",
-   "gat": "19 Nov, 7:40 AM",
+   "gat": "19 Nov, 7:44 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1227,7 +1227,7 @@
   "dii_sell": 17762.15,
   "fii_buy": 17913.16,
   "fii_sell": 12046.38,
-  "fetched": "19 Nov, 7:40 AM",
+  "fetched": "19 Nov, 7:44 AM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1383,11 +1383,13 @@
   }
  ],
  "log": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 245 headlines, 25 up, 14 down",
+  "outlook: 243 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2408,9 +2410,9 @@
   }
  },
  "nse": {
-  "n50": "19 Nov, 7:40 AM",
-  "mid": "19 Nov, 7:40 AM",
-  "small": "19 Nov, 7:40 AM"
+  "n50": "19 Nov, 7:44 AM",
+  "mid": "19 Nov, 7:44 AM",
+  "small": "19 Nov, 7:44 AM"
  },
  "midg": [
   [
@@ -2583,17 +2585,19 @@
   }
  },
  "fulllog": [
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 1 IPOs from 3 cards",
+  "results cal: 31 upcoming (8 NSE)",
   "bse eod 2026-11-18: 5110 scrips",
-  "outlook: 245 headlines, 25 up, 14 down",
+  "outlook: 243 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5271,
   "quotes": 4776,
-  "at": "19 Nov, 7:40 AM"
+  "at": "19 Nov, 7:44 AM"
  },
  "global": [
   [
@@ -2616,15 +2620,15 @@
   ],
   [
    "Nikkei 225",
-   59002.96,
-   -0.04,
-   1795053310
+   59094.68,
+   0.12,
+   1795053570
   ],
   [
    "Hang Seng",
-   22921.02,
-   -1.6,
-   1795053310
+   22935.92,
+   -1.54,
+   1795053568
   ],
   [
    "FTSE 100",
@@ -2640,12 +2644,12 @@
   ]
  ],
  "outlook": {
-  "at": "19 Nov, 7:40 AM",
-  "headlines": 245,
+  "at": "19 Nov, 7:44 AM",
+  "headlines": 243,
   "screened": 1790,
   "cues": [
    "Dow Jones -1.1%",
-   "Hang Seng -1.6%"
+   "Hang Seng -1.5%"
   ],
   "up": [
    {
@@ -2957,14 +2961,14 @@
     ]
    },
    {
-    "k": "TATACONSUM",
-    "n": "TATA CONSUMER PRODUCTS",
+    "k": "GAIL",
+    "n": "GAIL (India)",
     "s": 4,
     "conf": "Medium",
-    "p": 1130.9,
-    "pct": 1.66,
-    "mc": 111926.5,
-    "sec": "Consumer Defensive",
+    "p": 190.0,
+    "pct": 1.6,
+    "mc": 124926.5,
+    "sec": "Utilities",
     "why": [
      {
       "k": "news",
@@ -2976,14 +2980,14 @@
     ]
    },
    {
-    "k": "GAIL",
-    "n": "GAIL (India)",
+    "k": "TATACONSUM",
+    "n": "TATA CONSUMER PRODUCTS",
     "s": 4,
     "conf": "Medium",
-    "p": 190.0,
-    "pct": 1.6,
-    "mc": 124926.5,
-    "sec": "Utilities",
+    "p": 1130.9,
+    "pct": 1.66,
+    "mc": 111926.5,
+    "sec": "Consumer Defensive",
     "why": [
      {
       "k": "news",
@@ -3967,7 +3971,7 @@
   }
  },
  "hilo": {
-  "at": "19 Nov, 7:40 AM",
+  "at": "19 Nov, 7:44 AM",
   "hi": [
    [
     "NAVINFLUOR",
@@ -4186,7 +4190,7 @@
   "natl": 6
  },
  "bse_movers": {
-  "at": "19 Nov, 7:40 AM",
+  "at": "19 Nov, 7:44 AM",
   "g": [
    [
     "544378",
@@ -4400,7 +4404,7 @@
    ],
    [
     "502281",
-    "Triveni Glass",
+    "Triveni Glass Ltd-$",
     13.56,
     9.62,
     12.37
@@ -4561,7 +4565,7 @@
    ],
    [
     "530079",
-    "Faze Three",
+    "Faze Three Ltd-$",
     614.1,
     7.76,
     569.9
@@ -4773,7 +4777,7 @@
    ],
    [
     "521234",
-    "Sri Nachammai Cotton Mills",
+    "Sri Nachammai Cotton Mills Ltd-$",
     25.3,
     -9.84,
     28.06
@@ -4829,7 +4833,7 @@
    ],
    [
     "523832",
-    "Mukat Pipes",
+    "Mukat Pipes Ltd-$",
     15.82,
     -9.13,
     17.41
@@ -4913,7 +4917,7 @@
    ],
    [
     "519183",
-    "Adf Foods",
+    "Adf Foods Ltd-$",
     220.1,
     -8.29,
     240.0
@@ -5005,7 +5009,7 @@
   ]
  },
  "allmov": {
-  "at": "19 Nov, 7:40 AM",
+  "at": "19 Nov, 7:44 AM",
   "g": [
    [
     "B544378",
@@ -5112,8 +5116,8 @@
   ]
  },
  "rescal": {
-  "ts": 1795050865.9050784,
-  "at": "19 Nov, 6:44 AM",
+  "ts": 1795054482.6761394,
+  "at": "19 Nov, 7:44 AM",
   "items": [
    {
     "k": "B531458",
@@ -5304,7 +5308,7 @@
   ]
  },
  "tw": {
-  "at": "19 Nov, 7:40 AM",
+  "at": "19 Nov, 7:44 AM",
   "phase": "pre",
   "for": "Thu 19 Nov",
   "picks": [
@@ -5763,11 +5767,11 @@
     "s": 4.0
    },
    {
-    "k": "TATACONSUM",
-    "n": "TATA CONSUMER PRODUCTS",
-    "p": 1130.9,
-    "pct": 1.66,
-    "vx": 1.2,
+    "k": "GAIL",
+    "n": "GAIL (India)",
+    "p": 190.0,
+    "pct": 1.6,
+    "vx": 1.7,
     "fo": true,
     "why": [
      {
@@ -5779,11 +5783,11 @@
     "s": 4.0
    },
    {
-    "k": "GAIL",
-    "n": "GAIL (India)",
-    "p": 190.0,
-    "pct": 1.6,
-    "vx": 1.7,
+    "k": "TATACONSUM",
+    "n": "TATA CONSUMER PRODUCTS",
+    "p": 1130.9,
+    "pct": 1.66,
+    "vx": 1.2,
     "fo": true,
     "why": [
      {
