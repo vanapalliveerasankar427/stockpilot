@@ -1,6 +1,6 @@
 {
  "label": "20 Nov 2026, 3:10 AM IST",
- "updated": "2026-11-20T03:10:04+05:30",
+ "updated": "2026-11-20T03:10:36+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -383,32 +383,32 @@
   },
   "dp": {
    "ag1": {
-    "b": 161701.0,
-    "a": 161701.0,
+    "b": 161738.0,
+    "a": 161738.0,
     "h": 173346.0,
     "l": 161051.0
    },
    "ag30": {
-    "b": 158701.0,
-    "a": 158701.0,
+    "b": 158738.0,
+    "a": 158738.0,
     "h": 170346.0,
     "l": 158051.0
    },
    "g999": {
-    "b": 13109.1,
-    "a": 13109.1,
+    "b": 13103.5,
+    "a": 13103.5,
     "h": 13601.2,
     "l": 13086.2
    },
    "xau": {
-    "b": 3628.6,
-    "a": 3628.62,
+    "b": 3626.8,
+    "a": 3626.82,
     "h": 3758.72,
     "l": 3621.22
    },
    "xag": {
-    "b": 43.06,
-    "a": 43.06,
+    "b": 43.07,
+    "a": 43.07,
     "h": 45.9,
     "l": 42.85
    },
@@ -418,7 +418,7 @@
     "h": 93.55,
     "l": 93.19
    },
-   "at": 1795124410,
+   "at": 1795124443,
    "t": "20 Nov, 3:10 AM"
   }
  },
@@ -530,24 +530,24 @@
   "t": 1795124254
  },
  "brent": {
-  "v": 90.15,
+  "v": 90.19,
   "prev": 89.17,
-  "ch": 0.98,
-  "pct": 1.1,
+  "ch": 1.02,
+  "pct": 1.14,
   "high": 90.7,
   "low": 88.51,
   "open": 89.39,
-  "t": 1795123713
+  "t": 1795123834
  },
  "goldSpot": {
-  "v": 3634.4,
+  "v": 3635.1,
   "prev": 3741.9,
-  "ch": -107.5,
-  "pct": -2.87,
+  "ch": -106.8,
+  "pct": -2.85,
   "high": 3759.5,
-  "low": 3634.1,
+  "low": 3631.6,
   "open": 3725.5,
-  "t": 1795123803
+  "t": 1795123834
  },
  "sectors": [
   [
@@ -1427,12 +1427,11 @@
   }
  ],
  "log": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 3 IPOs from 5 cards",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 262 headlines, 25 up, 14 down",
+  "outlook: 282 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2628,12 +2627,11 @@
   }
  },
  "fulllog": [
-  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 3 IPOs from 5 cards",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 262 headlines, 25 up, 14 down",
+  "outlook: 282 headlines, 25 up, 14 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
@@ -2658,7 +2656,7 @@
    "Nasdaq",
    23879.2,
    -2.25,
-   1795124403
+   1795124434
   ],
   [
    "Nikkei 225",
@@ -2687,8 +2685,8 @@
  ],
  "outlook": {
   "at": "20 Nov, 3:10 AM",
-  "headlines": 262,
-  "screened": 1790,
+  "headlines": 282,
+  "screened": 1789,
   "cues": [
    "US tech (Nasdaq) fell 2.2% in the last session",
    "Dow Jones -2.2%",
@@ -2908,6 +2906,30 @@
     ]
    },
    {
+    "k": "DECNGOLD",
+    "n": "Deccan Gold Mines",
+    "s": 9.5,
+    "conf": "High",
+    "p": 184.6,
+    "pct": 7.91,
+    "mc": 3710.5,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Deccan Gold Q2 profit rises 5.5-fold on Swarnagiri ramp-up",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNktvY0haam84TWVneTdkUXdmY2hCM2drQ1MzVGR0a3N1cmVucmJXZGFjODJYZFRob3lJbnRJX0IzZURJR2o3SU5RejFUbUVkUnNKSjBZMzlZUmxOWXF4ei1YX0NMdjB1T1FJSlFBcUVnRVBub1NZdmhMc3ZLM2wwNTZKS2pxdGdOcnFfaXlJbHZ0TU9zYmhnVVNVUzBUTTVKMDdZcVB5VWRJTkJmWEE?oc=5",
+      "src": "Multibagg AI"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +7.9% on 1.6× usual volume, near the day's high",
+      "s": 1.544618813533805
+     }
+    ]
+   },
+   {
     "k": "SAMMAANCAP",
     "n": "Sammaan Capital",
     "s": 8,
@@ -3091,30 +3113,6 @@
       "k": "price",
       "t": "Closed strong: +2.0% on 2.1× usual volume, near the day's high",
       "s": 1.8116438356164384
-     }
-    ]
-   },
-   {
-    "k": "GAIL",
-    "n": "GAIL (India)",
-    "s": 5,
-    "conf": "Medium",
-    "p": 192.1,
-    "pct": 1.11,
-    "mc": 126307.3,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "GAIL (India) Ltd Sees Sharp Open Interest Surge Signalling Renewed Market Optimism",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTVFTMXBEY29lMzhORGM2OVpuLXhMZU91eVZCbDNoSzUwR19xTjY2QTVKeG90WVJCV2tRc25SLTJRU1J3eVMzcnEyRVBrNHc5dVRUdTVaczI5U1gxYUNmNUtWY284MnZCTXhoajlVVVlPMWdtb2h3azhEVWxxRWc0YXRZMG9SOHJCOHVWQ1hTU2t5VUFCVDRfQ1BEeUZjWFo5SnBPQUo5QktBSXZwNThreXMyQW5ZQ25VRjlrdXNlSm84aFNmb093Zk5rSllaTF9tbkxQcQ?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Trading at a 52-week high",
-      "s": 1
      }
     ]
    },
@@ -4431,7 +4429,7 @@
    ],
    [
     "521206",
-    "Samtex Fashions",
+    "Samtex Fashions Ltd-$",
     1.19,
     10.19,
     1.08
@@ -4634,7 +4632,7 @@
    ],
    [
     "523489",
-    "Chennai Meenakshi Multispeciality Hospital",
+    "Chennai Meenakshi Multispeciality Hospital Ltd-$",
     38.95,
     8.5,
     35.9
@@ -4683,7 +4681,7 @@
    ],
    [
     "514264",
-    "Seasons Textiles",
+    "Seasons Textiles Ltd-$",
     19.2,
     7.99,
     17.78
@@ -5640,6 +5638,22 @@
     "s": 13.4
    },
    {
+    "k": "DECNGOLD",
+    "n": "Deccan Gold Mines",
+    "p": 184.6,
+    "pct": 7.91,
+    "vx": 1.6,
+    "fo": false,
+    "why": [
+     {
+      "t": "results",
+      "x": "Deccan Gold Q2 profit rises 5.5-fold on Swarnagiri ramp-up",
+      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNktvY0haam84TWVneTdkUXdmY2hCM2drQ1MzVGR0a3N1cmVucmJXZGFjODJYZFRob3lJbnRJX0IzZURJR2o3SU5RejFUbUVkUnNKSjBZMzlZUmxOWXF4ei1YX0NMdjB1T1FJSlFBcUVnRVBub1NZdmhMc3ZLM2wwNTZKS2pxdGdOcnFfaXlJbHZ0TU9zYmhnVVNVUzBUTTVKMDdZcVB5VWRJTkJmWEE?oc=5"
+     }
+    ],
+    "s": 13.3
+   },
+   {
     "k": "ASHIKAG",
     "n": "Ashika Global Securities",
     "p": 371.45,
@@ -5847,21 +5861,6 @@
      }
     ],
     "s": 9.8
-   },
-   {
-    "k": "ARIS",
-    "n": "Arisinfra Solutions",
-    "p": 157.98,
-    "pct": 8.12,
-    "vx": 2.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 8.1%, closing near the day's high on 2.2× normal volume"
-     }
-    ],
-    "s": 8.8
    }
   ],
   "fo": [
