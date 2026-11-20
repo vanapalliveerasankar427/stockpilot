@@ -1,6 +1,6 @@
 {
  "label": "21 Nov 2026, 1:38 AM IST",
- "updated": "2026-11-21T01:38:04+05:30",
+ "updated": "2026-11-21T01:38:38+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -383,32 +383,32 @@
   },
   "dp": {
    "ag1": {
-    "b": 151786.0,
-    "a": 151786.0,
+    "b": 151976.0,
+    "a": 151976.0,
     "h": 168600.0,
     "l": 151623.0
    },
    "ag30": {
-    "b": 151086.0,
-    "a": 151086.0,
+    "b": 151276.0,
+    "a": 151276.0,
     "h": 165600.0,
     "l": 150923.0
    },
    "g999": {
-    "b": 12531.7,
-    "a": 12531.7,
+    "b": 12540.3,
+    "a": 12540.3,
     "h": 13437.4,
     "l": 12490.0
    },
    "xau": {
-    "b": 3514.7,
-    "a": 3514.72,
+    "b": 3517.5,
+    "a": 3517.52,
     "h": 3627.12,
     "l": 3503.42
    },
    "xag": {
-    "b": 40.9,
-    "a": 40.9,
+    "b": 40.96,
+    "a": 40.96,
     "h": 43.11,
     "l": 40.87
    },
@@ -418,7 +418,7 @@
     "h": 93.43,
     "l": 92.55
    },
-   "at": 1795205289,
+   "at": 1795205323,
    "t": "21 Nov, 1:38 AM"
   }
  },
@@ -530,24 +530,24 @@
   "t": 1795202454
  },
  "brent": {
-  "v": 89.61,
+  "v": 89.53,
   "prev": 89.44,
-  "ch": 0.17,
-  "pct": 0.19,
+  "ch": 0.09,
+  "pct": 0.1,
   "high": 90.25,
   "low": 87.7,
   "open": 90.02,
-  "t": 1795204617
+  "t": 1795204717
  },
  "goldSpot": {
-  "v": 3521.7,
+  "v": 3522.0,
   "prev": 3685.5,
-  "ch": -163.8,
+  "ch": -163.5,
   "pct": -4.44,
   "high": 3638.1,
   "low": 3502.9,
   "open": 3533.7,
-  "t": 1795204682
+  "t": 1795204717
  },
  "sectors": [
   [
@@ -1449,10 +1449,8 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 3 IPOs from 6 cards",
-  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
-  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-20: 5098 scrips",
-  "outlook: 294 headlines, 25 up, 24 down",
+  "outlook: 315 headlines, 25 up, 24 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2654,10 +2652,8 @@
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 18 IPOs",
   "subscription: 3 IPOs from 6 cards",
-  "results cal bse: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/Corpforthresults/w",
-  "results cal: 11 upcoming (11 NSE)",
   "bse eod 2026-11-20: 5098 scrips",
-  "outlook: 294 headlines, 25 up, 24 down",
+  "outlook: 315 headlines, 25 up, 24 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
@@ -2668,21 +2664,21 @@
  "global": [
   [
    "Dow Jones",
-   48354.83,
-   -1.51,
-   1795205283
+   48382.14,
+   -1.46,
+   1795205316
   ],
   [
    "S&P 500",
-   6943.18,
-   -3.24,
-   1795205283
+   6949.19,
+   -3.16,
+   1795205316
   ],
   [
    "Nasdaq",
-   22727.01,
-   -4.83,
-   1795205281
+   22749.07,
+   -4.73,
+   1795205316
   ],
   [
    "Nikkei 225",
@@ -2704,17 +2700,17 @@
   ],
   [
    "US 10Y yield",
-   4.91,
-   -2.73,
-   1795204375
+   4.92,
+   -2.69,
+   1795204415
   ]
  ],
  "outlook": {
   "at": "21 Nov, 1:38 AM",
-  "headlines": 294,
-  "screened": 1789,
+  "headlines": 315,
+  "screened": 1788,
   "cues": [
-   "US tech (Nasdaq) fell 4.8% in the last session",
+   "US tech (Nasdaq) fell 4.7% in the last session",
    "Dow Jones -1.5%",
    "S&P 500 -3.2%",
    "Nikkei 225 -5.1%",
@@ -2740,17 +2736,17 @@
      },
      {
       "k": "news",
+      "t": "Max Healthcare, Apollo Hospitals, other healthcare stocks surge over 5% despite volatile market; what's behind the surge?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNNUdxaHJWTWdKcmxPUmExcjYwN1lQa0JCLXpXYVA1b0h1R2cyU2pLZVJYbUxlOVRwOU1YYVR2SlcwRTF5REJyTy1iUlFGWjdGSTEtaGlncS1hYnh3TjF4SnVFS3hFSnNNVkpWYXp2SWZKOHVoYi0wczQzbDhfYXk3XzdscHE2VFZ4RXd0SjROODgwQ2NOU0pvTEgzSFhUd1BNYnhYSkVfTU81UlBRaUpSNlVWbW1zT3VaU0JSRU5aUm45RUs4RWU1al9Gb2pqS2VwYnFReXIzNW1Ub1ZjaXlYMWVPckdfQTctTVFveTdZQmZ1eXR6Wlp3cHZhbzdweHd4YlRSX2dJNm5zMXRBQUk0VV9QWjBpWGQ5Qi15VnYyNGpLdw?oc=5",
+      "src": "Dailyhunt"
+     },
+     {
+      "k": "news",
       "t": "Apollo Hospitals, Aster or Molbio — which is a better bet as healthcare stocks rally up to 4% despite D-Street weakness?",
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPV3FHeFJkS3pCVHZJWkJJMGpUSlJtQkkyMFpyWG5mbFpzbWZRTnRLaVRzVTQ1d2JmbTJLSjR0THQzMlhlTWV1eHNuLU14bkJVSGh6RVk1MFZBUDN1SHByUl9GbUd5X01OR3g0RTZDaE1ZY015QUx3aURsUVZZdkhPeFRwaHFrYlVlb2VUdGR0MGV6aEpQRS1UUjNHYmVpcFVvb1lUai1BZ0JSdV9PY2RrQ3UwakUxUlVlSWhGNklJaGtIMmkxOWVZNHBwVWw1VFZsWEpkcThsX3o1bzdDUVE2NmVzX2l2MjREUTBFNEtfaWZBYXFIbUQ1YVctSS1CWHNlYS1oNzBabkxDU213UGxPLU9KY9IBmAJBVV95cUxQcEswVXFxeGlubGtSRU8yNGs5Y0NRMGR4c1NhbGhpWV80N1pGN2xVNmdsS1VPRlJxVy1vNWljSVZfSzc2dUxLTnFhc0g4cE9xOTk5eEJHRHI5bkt5bk03MWdwdlN2Q1d1X2ZKZHNMUm00endLZmFzS190cHA4b0EzdVpTellfQ3ZQTGtnOEpmMVRfcm5KeWlSUUQ1WE92Q2VZdEZiSVRTRFBxUDQ5QTNKbU90ZXJyOWZERF81UkhLSWdKUUJLUktJX0l6M2N4ajNKUWZUYk4teDZiRDVBZ2FKTGhSbXVyV3hWMGxYVkM3VlFHblJwd0ppMUZVMmhpVDVyQ3EwRWhpQ3dhbDZrRDZMZmUyeVEwYUhM?oc=5",
       "src": "Livemint"
-     },
-     {
-      "k": "news",
-      "t": "Market wrap, Nov 20: NIFTY50 ends at 25,801, SENSEX jumps 898 pts; NIFTY Bank at record high, Apollo Hospitals leads",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOS3Y2Sy1NcHpGRmVIT1AtTGR0bW12SXh1S3hRUWJDSnkwQl9Manh2ODhVMkR1VVk3R3hLOVQ1cEJpWlFDQm9CLUhWWGhhQnhYX2ROWDVFWTl4MnNxb1hhYk80UWpydU41dzRjamRkWWotTllDbEM0b3BKRl9qR2pJU0h5U0VseDhMOXYxSzhDNWZMR194MnJiWHZhLUtVUjJGWlVGNnI2UVd6ZnBKc1VpemNsVWRoa3M1Y0VKV1ZsRmQ5N1dMNUNsQUtrZXZvdlhYQnhqbkNjRVhsT2Q0Z29Hb1hIRk9LNVVyZ25sd0RZZkZlbUNyVWNxRVM4T2hCNTZT?oc=5",
-      "src": "Upstox"
      },
      {
       "k": "price",
@@ -2798,66 +2794,9 @@
     ]
    },
    {
-    "k": "DBL",
-    "n": "Dilip Buildcon",
-    "s": 12,
-    "conf": "High",
-    "p": 402.45,
-    "pct": 4.22,
-    "mc": 6537.6,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Dilip Buildcon shares rise 7% on Gurugram Metro contract win",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNM1c1a1RqQkNrZnlBRXBPVDFMWjVGcWZKakJBaFFqbkdCY0dSYVV2N1dfdUY0YmtaYUNiZThFR1F1WGI3dVU0cFJ6Y2xERkp6eXlpQ2ZVM0VsNHQxLTRxRkpXemdBT3pwYm1ZQkxVS3B0RE9qWnJvSElTeUxUYVhsQ2tFRjhjdUFVVV9xQ0FXWUFIWERNY2dfbVRuYjVSX3ZOWjR3TmFTaERUcXowNWEyZFBoN0VJMlJmczVxbTh1c24yU0g4ZEwzctIByAFBVV95cUxNM1c1a1RqQkNrZnlBRXBPVDFMWjVGcWZKakJBaFFqbkdCY0dSYVV2N1dfdUY0YmtaYUNiZThFR1F1WGI3dVU0cFJ6Y2xERkp6eXlpQ2ZVM0VsNHQxLTRxRkpXemdBT3pwYm1ZQkxVS3B0RE9qWnJvSElTeUxUYVhsQ2tFRjhjdUFVVV9xQ0FXWUFIWERNY2dfbVRuYjVSX3ZOWjR3TmFTaERUcXowNWEyZFBoN0VJMlJmczVxbTh1c24yU0g4ZEwzcg?oc=5",
-      "src": "Business Today"
-     },
-     {
-      "k": "news",
-      "t": "Dilip Buildcon Shares Rise 4% on ₹419 Crore Gurugram Metro Order",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObWJVTURLX1hpSVNHVjF0RkpBdlRuY0hnbU0walpPajE1UlJ5dGJfM0toMXRvVVNibnFfVjBWVW5VM2Q1NjZNNVJLRGRYSi1xZmIwV3RZbFpqbGhPbWJKMlRVWTM2M2VtWEdBUmRUSW9UUHZUWFp1cjlmbnhVVWdfQmFoSi15NG1tc2ZxSnBTMGZVUTY2UklpdVBVVUhwVUN0dng5QXU2a25idw?oc=5",
-      "src": "Kotak Neo"
-     }
-    ]
-   },
-   {
-    "k": "OAL",
-    "n": "Oriental Aromatics",
-    "s": 11.0,
-    "conf": "High",
-    "p": 516.7,
-    "pct": 20.0,
-    "mc": 1738.9,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Oriental Aromatics Upper Circuit Today: Price, Data and Peers",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBLM2hPWnlINlpqaFBQMzI5RDhJbUN5ME80bENHVXNmME1XOXhtQlBZcHltQkRpOFQ5WnVDRE5yS3NQQnVBY0N3WXBYa1Z1M3VNLWp2N0NKVmJRLVpzS1BRVC1HRjJpblZIWkZaV2JEMjM0dl9tWTlyQQ?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "news",
-      "t": "Top Gainers Today 20 Nov 2026: Oriental Aromatics Rises 19.99%",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPOFdiV1dyN3gwWk9lQmN4RXdkLWZQdS03THpJc05fcGFOSjhRcHBqQXdPbFNZTWx5eEZlQlRqRTdNcEctWHhfTmx5SjQxRm16Nm9QVS1qZzlLclRZQ1RWMGV2S3VsekF3TEdLM1RhQ3loRGtkdzdBN1k1TWRVTUkyQVJrWENodlotRDYyWW5fZWZXVnVTYWRxcktNQ2o?oc=5",
-      "src": "Multibagg AI"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +20.0% on 236.4× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
     "k": "MAXHEALTH",
     "n": "Max Healthcare Institute",
-    "s": 10.3,
+    "s": 14.3,
     "conf": "High",
     "p": 1081.0,
     "pct": 3.88,
@@ -2872,9 +2811,42 @@
       "src": "Moneycontrol.com"
      },
      {
+      "k": "news",
+      "t": "Max Healthcare, Apollo Hospitals, other healthcare stocks surge over 5% despite volatile market; what's behind the surge?",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNNUdxaHJWTWdKcmxPUmExcjYwN1lQa0JCLXpXYVA1b0h1R2cyU2pLZVJYbUxlOVRwOU1YYVR2SlcwRTF5REJyTy1iUlFGWjdGSTEtaGlncS1hYnh3TjF4SnVFS3hFSnNNVkpWYXp2SWZKOHVoYi0wczQzbDhfYXk3XzdscHE2VFZ4RXd0SjROODgwQ2NOU0pvTEgzSFhUd1BNYnhYSkVfTU81UlBRaUpSNlVWbW1zT3VaU0JSRU5aUm45RUs4RWU1al9Gb2pqS2VwYnFReXIzNW1Ub1ZjaXlYMWVPckdfQTctTVFveTdZQmZ1eXR6Wlp3cHZhbzdweHd4YlRSX2dJNm5zMXRBQUk0VV9QWjBpWGQ5Qi15VnYyNGpLdw?oc=5",
+      "src": "Dailyhunt"
+     },
+     {
       "k": "price",
       "t": "Closed strong: +3.9% on 3.2× usual volume, near the day's high",
       "s": 2.3462740907964283
+     }
+    ]
+   },
+   {
+    "k": "DBL",
+    "n": "Dilip Buildcon",
+    "s": 12,
+    "conf": "High",
+    "p": 402.45,
+    "pct": 4.22,
+    "mc": 6537.6,
+    "sec": "Industrials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Dilip Buildcon shares rise 7% on Gurugram Metro contract win",
+      "s": 8,
+      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdVZhNzN2RW16bUxqcm5Hc05ORzJPRU9NbWtBVFJGSldnQnFrdG9McUwyWVJ4TTM1QkI1WjBwNEo5REJhd0J4QUwxdmdUQnBIQU0zMDkxeHFCTUdycmVFdmd1blFoOWNZTXM0d25pQmQ1NGJXUlJyREV5MjE5a1BzQmpKeW1lRVBhcC1JT2pKVVlIQkJMM3N1emlOdVVnd0NoY0Q2R29SSV9PaTB4ZnpBUEEzRWxjQ3pjR05BOU9maGlCRVHSAcgBQVVfeXFMTTNXNWtUakJDa2Z5QUVwT1QxTFo1RnFmSmpCQWhRam5HQmNHUmFVdjdXX3VGNGJrWmFDYmU4RUdRdVhiN3VVNHBSemNsREZKenl5aUNmVTNFbDR0MS00cUZKV3pnQU96cGJtWUJMVUtwdERPalpyb0hJU3lMVGFYbENrRUY4Y3VBVVVfcUNBV1lBSFhETWNnX21UbmI1Ul92Tlo0d05hU2hEVHF6MDVhMmRQaDdFSTJSZnM1cW04dXNuMlNIOGRMM3I?oc=5",
+      "src": "Business Today"
+     },
+     {
+      "k": "news",
+      "t": "Dilip Buildcon Shares Rise 4% on ₹419 Crore Gurugram Metro Order",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObWJVTURLX1hpSVNHVjF0RkpBdlRuY0hnbU0walpPajE1UlJ5dGJfM0toMXRvVVNibnFfVjBWVW5VM2Q1NjZNNVJLRGRYSi1xZmIwV3RZbFpqbGhPbWJKMlRVWTM2M2VtWEdBUmRUSW9UUHZUWFp1cjlmbnhVVWdfQmFoSi15NG1tc2ZxSnBTMGZVUTY2UklpdVBVVUhwVUN0dng5QXU2a25idw?oc=5",
+      "src": "Kotak Neo"
      }
     ]
    },
@@ -2890,17 +2862,17 @@
     "why": [
      {
       "k": "news",
-      "t": "SEIL shares rise 3% as BSE clears proposed restructuring agreement with its subsidiary",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQalNNTFVNbUVFb01maHdrSVhUZl96bHVEaS1GRmRzSkNVZ3gyYkY0RE5ab3ZVVkRGWUZOa21wZF85bjBNTzZSMEQtcl9FdnRsb1NtX3lyYWlneE5fbFVKMmZNYUgyR01ISU1hWk53dF9VS1RWNERDMjljRUpQNFcxdmUtbl9KS1BPWGlBemswVWZBRUZtdVdlMWJHV2NSY0xQaWRzYW9GWnEtQTRLNjItQ2JqYnJhLWFPOUUxb0tHak5vUHBWbnBBZHhpRnlySXNmOEYxdjBHRy1WUFRvSHVyT2p6bmMtcFJjOWhOdGc0MknSAfYBQVVfeXFMTnl0SWR3Skg3UlZwWWlhZTg3dUYtNGVsSG5nMl9WUmJhWnFJaTdnNzRwQkN1T0pSei00czc1cG5RREQ2b1NFNFBTMDhIQ3o1X3VXamVqbndpbHIxYlp1Y01mUUVOekRqVHo3a2ZwM2xUVURaZm5ySUJEd1hpclBUWWFEcWQ0WVRyYWk3YWZOTkdlOHRpX091SnlmUUdrY1lTVmVOaTRhWG53TzVQWjlxVjZQb0N3ZlJST2NyT3p5MVpkNFlaeGZubndIcENUTG9zWjVxMl84TmpGWV9hYm9FdjhMRVB2UVpZNm9jS1ZuNDFmMDFkQVh3?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "news",
       "t": "Shanti Educational Initiatives Shares Rise 3% as BSE Clears Restructuring Plan Involving GREW Energy Merger",
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVWVwc0xUVU9CNm5GZGlGMnRCMlZyLUJkX09GVFlKV0ppODBycFgxZDVmc3JIaUplM1VTTGxqbUVZSVhEcThxbWpVai1Gcy1VNlhHYXVNN3hKMUs0S3E4UFF6dkItOFZYb1N1dXFoU1FPX0xKQU5uSFEyWk5fRlNPVTl1dk1kT1djUHpzTW9YeE05dkstcE54QzRJU0ktMmUwTjdQcWNwRDd6Qm4ybTNNRjJxdW9UQ01rMmh3WVBIMkJBYXFKVjkxcVpuZw?oc=5",
       "src": "Kotak Neo"
+     },
+     {
+      "k": "news",
+      "t": "SEIL shares rise 3% as BSE clears proposed restructuring agreement with its subsidiary",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQalNNTFVNbUVFb01maHdrSVhUZl96bHVEaS1GRmRzSkNVZ3gyYkY0RE5ab3ZVVkRGWUZOa21wZF85bjBNTzZSMEQtcl9FdnRsb1NtX3lyYWlneE5fbFVKMmZNYUgyR01ISU1hWk53dF9VS1RWNERDMjljRUpQNFcxdmUtbl9KS1BPWGlBemswVWZBRUZtdVdlMWJHV2NSY0xQaWRzYW9GWnEtQTRLNjItQ2JqYnJhLWFPOUUxb0tHak5vUHBWbnBBZHhpRnlySXNmOEYxdjBHRy1WUFRvSHVyT2p6bmMtcFJjOWhOdGc0MknSAfYBQVVfeXFMTnl0SWR3Skg3UlZwWWlhZTg3dUYtNGVsSG5nMl9WUmJhWnFJaTdnNzRwQkN1T0pSei00czc1cG5RREQ2b1NFNFBTMDhIQ3o1X3VXamVqbndpbHIxYlp1Y01mUUVOekRqVHo3a2ZwM2xUVURaZm5ySUJEd1hpclBUWWFEcWQ0WVRyYWk3YWZOTkdlOHRpX091SnlmUUdrY1lTVmVOaTRhWG53TzVQWjlxVjZQb0N3ZlJST2NyT3p5MVpkNFlaeGZubndIcENUTG9zWjVxMl84TmpGWV9hYm9FdjhMRVB2UVpZNm9jS1ZuNDFmMDFkQVh3?oc=5",
+      "src": "The Economic Times"
      },
      {
       "k": "price",
@@ -2929,6 +2901,54 @@
      {
       "k": "price",
       "t": "Closed strong: +3.8% on 6.5× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "AJMERA",
+    "n": "Ajmera Realty & Infra India",
+    "s": 7.0,
+    "conf": "High",
+    "p": 149.29,
+    "pct": 11.84,
+    "mc": 2938.0,
+    "sec": "Real Estate",
+    "why": [
+     {
+      "k": "news",
+      "t": "Ajmera Realty Share Price Today: 11.27% Rise and Valuation",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVnRmZUt4ZUNVQmdCeUI2NFBHU3RhYWNGWFR1UnhmOWRrWlpWOEQ5b1NJaldFOVRBajNEamh5aXQ1S3FZQTBqWG14dHMtd3BqVlhuY0J5M2tOVzVyVFNWUU5RZDR4VXpyejJTam5qUHQ4Zlljd3IwN18wRHhoZTBTVWkzRTh2b1ZKeklGOWRaUmZQZUM4?oc=5",
+      "src": "Univest"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +11.8% on 16.6× usual volume, near the day's high",
+      "s": 3.0
+     }
+    ]
+   },
+   {
+    "k": "OAL",
+    "n": "Oriental Aromatics",
+    "s": 7.0,
+    "conf": "High",
+    "p": 516.7,
+    "pct": 20.0,
+    "mc": 1738.9,
+    "sec": "Basic Materials",
+    "why": [
+     {
+      "k": "news",
+      "t": "Oriental Aromatics Upper Circuit Today: Price, Data and Peers",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBLM2hPWnlINlpqaFBQMzI5RDhJbUN5ME80bENHVXNmME1XOXhtQlBZcHltQkRpOFQ5WnVDRE5yS3NQQnVBY0N3WXBYa1Z1M3VNLWp2N0NKVmJRLVpzS1BRVC1HRjJpblZIWkZaV2JEMjM0dl9tWTlyQQ?oc=5",
+      "src": "Univest"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +20.0% on 236.4× usual volume, near the day's high",
       "s": 3.0
      }
     ]
@@ -2982,35 +3002,6 @@
     ]
    },
    {
-    "k": "TATATECH",
-    "n": "Tata Technologies",
-    "s": 6.0,
-    "conf": "High",
-    "p": 727.9,
-    "pct": 3.43,
-    "mc": 29556.5,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tata Technologies shares extend gains; will the bounce sustain or is upside limited?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRFZMWlgtTjNjWU9VZzNVMFNGcFZhTmhHaElyMnlGaVNRMnc5d0drUUFFQmk5YkltejJPeXNPNVdlQi1Oa25tSGNQVVBOOGpTNEFEalk2djJnS29meXFnUU54NWhrbEUyT3ZlMm82bWE1MDdpbE1vWFJEM0xRTFNSQkhXNmJhTUJDdVQtUUVlWmczd2ozbURtTXR0b3BLcDRWZkR6SGlhcnZmdGdQc3Q0Z1BoZjAxekowQzloaEtfN2NzN254eUJnSk1yQUw0ZG91aWswQzJ0SmlQalBUdWl5all3cWE?oc=5",
-      "src": "Business Today"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.4% on 4.9× usual volume, near the day's high",
-      "s": 3.0
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -4.6% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
     "k": "EDELWEISS",
     "n": "Edelweiss Financial Services",
     "s": 6,
@@ -3054,21 +3045,21 @@
     ]
    },
    {
-    "k": "ICICIBANK",
-    "n": "ICICI Bank",
+    "k": "INDHOTEL",
+    "n": "The Indian Hotels Company",
     "s": 5,
     "conf": "Medium",
-    "p": 1640.0,
-    "pct": 1.93,
-    "mc": 1178272.1,
-    "sec": "Financial Services",
+    "p": 912.0,
+    "pct": 2.51,
+    "mc": 129817.0,
+    "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "news",
-      "t": "Nifty Bank at new high, tops 64,000; HDFC, ICICI Bank soar up to 21% in Nov",
+      "t": "Indian Hotels Share Price Rise Streak After Two Sessions",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVGpOamhFUktDYk4xTlNQVFRaWko4WFN0RFNQTlA3RFdDdTFTRDYwRy1hRG9hc0FOQ1RHa1FrVjY2YzVZRDNzMjRrQklQMjFKOXAxQVRQMW45dFVNSnhVdktqa3FhRkpmYUdBbW8tR2dGclR0ZlhyY1lva1cwMkZTUGpCOV9HOWEzOXNkNnVZdWQwNWo1Sm1lVkJRd0hzUE9vdTBWc3B4YmtDdmdJOERQYkV4LXl2cEZPWll3WUpJRWlMZmdYRzdncVo1Rmo2VVVPR0xULUJB0gHbAUFVX3lxTFB0OVY5VkJKQWs3VHZPT1NRX0tCYmx1NEpjVjJXUjZyS1QyN19zVU50TXVKb29UQ1p3X01ITGk3dEExa3lUNENlS2lFNmwzcmdYSEQxTTRQUFNYQlkyWDFzUnpvai1QNU1wOHlUOWJSR1VVRDhhZW80Q2lXYTZhb25JQzc2SGk3RDFPS3Z0SzJWS1doeVNBU2ItRGs5cV8xNHo4WENhNmFHT255Ukgtc21ibm1EQzQxMmlsX3ZOOVpkNzV0SEJVSXctbzVWcFRFTE1oeEYycV9abndnSQ?oc=5",
-      "src": "Business Standard"
+      "u": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZFFMbjRoTW1ULU41blhxemk5aDNVVmtrbnB4WVFFNXRVZ01mZEVyeWNRMkJyT09iUTJFcGcyeHFaUC1NVExSMTlvbElkemtObkUtQkpETXhRMUwtLW9GdXdpc3pJWG81cWl6aFcxMkplZ1FkeVR6R21OcjdwN3FUYWh6T2FTV010RE10blBwbm5vZmttVnpZ?oc=5",
+      "src": "Univest"
      },
      {
       "k": "price",
@@ -3102,6 +3093,30 @@
     ]
    },
    {
+    "k": "ICICIBANK",
+    "n": "ICICI Bank",
+    "s": 5,
+    "conf": "Medium",
+    "p": 1640.0,
+    "pct": 1.93,
+    "mc": 1178272.1,
+    "sec": "Financial Services",
+    "why": [
+     {
+      "k": "news",
+      "t": "Nifty Bank at new high, tops 64,000; HDFC, ICICI Bank soar up to 21% in Nov",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVGpOamhFUktDYk4xTlNQVFRaWko4WFN0RFNQTlA3RFdDdTFTRDYwRy1hRG9hc0FOQ1RHa1FrVjY2YzVZRDNzMjRrQklQMjFKOXAxQVRQMW45dFVNSnhVdktqa3FhRkpmYUdBbW8tR2dGclR0ZlhyY1lva1cwMkZTUGpCOV9HOWEzOXNkNnVZdWQwNWo1Sm1lVkJRd0hzUE9vdTBWc3B4YmtDdmdJOERQYkV4LXl2cEZPWll3WUpJRWlMZmdYRzdncVo1Rmo2VVVPR0xULUJB0gHbAUFVX3lxTFB0OVY5VkJKQWs3VHZPT1NRX0tCYmx1NEpjVjJXUjZyS1QyN19zVU50TXVKb29UQ1p3X01ITGk3dEExa3lUNENlS2lFNmwzcmdYSEQxTTRQUFNYQlkyWDFzUnpvai1QNU1wOHlUOWJSR1VVRDhhZW80Q2lXYTZhb25JQzc2SGk3RDFPS3Z0SzJWS1doeVNBU2ItRGs5cV8xNHo4WENhNmFHT255Ukgtc21ibm1EQzQxMmlsX3ZOOVpkNzV0SEJVSXctbzVWcFRFTE1oeEYycV9abndnSQ?oc=5",
+      "src": "Business Standard"
+     },
+     {
+      "k": "price",
+      "t": "Trading at a 52-week high",
+      "s": 1
+     }
+    ]
+   },
+   {
     "k": "INTELLECT",
     "n": "Intellect Design Arena",
     "s": 5,
@@ -3120,7 +3135,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3139,7 +3154,7 @@
       "k": "news",
       "t": "Info Edge (India) Ltd Sees Significant Open Interest Surge Amid Bullish Market Signals",
       "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNkhJV0x4WXJxQmF4N01jSTNUbGoxLVNJUnhKbVR1LTVpUkkwZXlSRTJJQndJLVJvbDMwWVZFQTN0Zmc3SUp2SndvUHVZU1RPZGliVVBBeDNtRVh0c29waGhUQXFqM2xLYUY0VE9LTS0yU1ZmaVlJV1lhTTlSRjFXMXVYOWtFbmZRNjJrajFWMmpiQVRibFVFZDZFcG5aczlfdU1oNDFyZE9Vb0Y3NDMxVktJYVpzWmsza3BmM2VtTjlpYUZxcndRMzFNNm1OM2tyTmg3dXZRTDhNZw?oc=5",
+      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQRjF6SDQyaXNlcUN5dGE4ekxyX0M5TDRmLXB0UV83MWducEdVNTJ5N2dnNlpuWnhiYm0yZjBTekVJVEJBRmI4WEN3cnhlSzB2al9hTnBxR0pRTDhTQlJCcU9iY2pGUFJSbExlUXo5b1NQM3lBT0lraTNFUDc0TEsyTnhqXzZYS0xtRmNWN29rZE9ZZndQR2NNVVhvRlZ2YkpYZk9GRTUxTldmMzhZVXpyejVfRld0TUtkUUZXYTI2cXVYQlk3U190eUxDQTJBNU04TEJ0TDRXRkVTUQ?oc=5",
       "src": "MarketsMojo"
      }
     ]
@@ -3221,25 +3236,6 @@
     ]
    },
    {
-    "k": "PRESTIGE",
-    "n": "Prestige Estates Projects",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1680.0,
-    "pct": 1.51,
-    "mc": 72362.7,
-    "sec": "Real Estate",
-    "why": [
-     {
-      "k": "news",
-      "t": "Prestige Estates gains on launching Prestige Avon in North Bengaluru",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYTVva243WjRvWFl1cGlBbDFCbnUxcFMwVW9pSVdHM2ZNSWpycWNKLWlBVEZ0bHVSTlItOFZYcnFhWlpLSm11WFQ1c083RUVZQXZQSjloMU5zaWpmZEliSzJOdFAtS2V1Mm03a2J1bzFTd2tsTEdkcWJXbmZ0QTFFY2h5WHRseVNmUURwdlU5ZHhWUzhXYUJNMGJR?oc=5",
-      "src": "Udaipur Kiran"
-     }
-    ]
-   },
-   {
     "k": "LGEINDIA",
     "n": "LG Electronics India",
     "s": 3,
@@ -3258,7 +3254,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3282,7 +3278,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3306,7 +3302,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3335,30 +3331,6 @@
    }
   ],
   "down": [
-   {
-    "k": "PIIND",
-    "n": "PI Industries",
-    "s": -9,
-    "conf": "High",
-    "p": 1597.4,
-    "pct": -2.0,
-    "mc": 24233.5,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "PI Industries Q2 Results FY27: Net Profit Falls 70.14% YoY",
-      "s": -8,
-      "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTE80aVY5dk5PSUxZbzJRamMwVWxOYTJZV0hGcGhLLVk3VzV1dTZtVUZwTEZBQnRNQjJ1UDZFNnRsWlVwUUN2OUtyZWFvVHh0M1RvU3duN0tBZU9aRHZfWmprLW1NQ0pqeW5tODlFeG9YcHdrRW1tcmhN?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Trading at a 52-week low",
-      "s": -1
-     }
-    ]
-   },
    {
     "k": "VEDL",
     "n": "Vedanta",
@@ -3473,7 +3445,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3497,7 +3469,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3521,7 +3493,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3638,7 +3610,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3660,7 +3632,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3750,7 +3722,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -3828,7 +3800,7 @@
      },
      {
       "k": "global",
-      "t": "Nasdaq -4.8% overnight; IT stocks often follow",
+      "t": "Nasdaq -4.7% overnight; IT stocks often follow",
       "s": -1
      }
     ]
@@ -5624,6 +5596,26 @@
     "s": 27.3
    },
    {
+    "k": "MAXHEALTH",
+    "n": "Max Healthcare Institute",
+    "p": 1081.0,
+    "pct": 3.88,
+    "vx": 3.2,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Macquarie double upgrade: Max Healthcare, Apollo Hospitals shares rise up to 4.5%, become top Nifty...",
+      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPcHp3RW11T01oaUVma0g1bENPUHBaRlhuQTVETXZJVUNBcU8wcVd6VWlvQ0JJU3JxVjlHRzJfTE1JQkxxXzBvblFRWldndVFrLUJMQUtfekN1ZGk4LU0wOFNTVUd1T05laVF3RlNaSUREMnZpLXUxd1Y0Q1FnRUNLRmFmQWYzUHNBRUJ6dWZLM0JXS0NLazJKaGNOY3FFd0ZsOEc4c0d2M05lSXNKelFWWWhacmVjYktXeDZtczZOOU1kdTRCZ1owM2p3bVh1ci1iUmxfdjFtWGRBcXh2OGNFSFNKeGVOaHJ3TWZQUHhISzFCemVMUjhkdTd5YWvSAYICQVVfeXFMTWJ1ZEhTS3V3d2FlVk1vOXAwN2Ywc2Q4b3BPSkFYYm1lWlpRTHA1bGpoWXFjbExmazdkWk0xbmN3dmFPYzBqVW50UDRwcWZRMVlXRE5rcV9aTVlKT3V6dDZVMWVZOF9RaGFCdlpkNE9ZM3RSQktLQTNNbUZHT0lOckVDZUp1TFR0YTFlLWtWWDVKVWRmakNzYUMwazVUUEhhSUl1TVNTWDFIbHVCR095RU5CY0oyOXh6YVRSUnNpMEJvNEFSYUl1UTVLaWxKUWp0OW4tTlFwWGd4QVIzWG9ubkd3VDBBSnE4Rll5NkFGMkNSX0hERGpfSDFZVE5lUmpzX05R?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 3.9%, closing near the day's high on 3.2× normal volume"
+     }
+    ],
+    "s": 20.5
+   },
+   {
     "k": "EIHOTEL",
     "n": "EIH",
     "p": 334.15,
@@ -5648,8 +5640,8 @@
     "why": [
      {
       "t": "news",
-      "x": "SEIL shares rise 3% as BSE clears proposed restructuring agreement with its subsidiary",
-      "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQalNNTFVNbUVFb01maHdrSVhUZl96bHVEaS1GRmRzSkNVZ3gyYkY0RE5ab3ZVVkRGWUZOa21wZF85bjBNTzZSMEQtcl9FdnRsb1NtX3lyYWlneE5fbFVKMmZNYUgyR01ISU1hWk53dF9VS1RWNERDMjljRUpQNFcxdmUtbl9KS1BPWGlBemswVWZBRUZtdVdlMWJHV2NSY0xQaWRzYW9GWnEtQTRLNjItQ2JqYnJhLWFPOUUxb0tHak5vUHBWbnBBZHhpRnlySXNmOEYxdjBHRy1WUFRvSHVyT2p6bmMtcFJjOWhOdGc0MknSAfYBQVVfeXFMTnl0SWR3Skg3UlZwWWlhZTg3dUYtNGVsSG5nMl9WUmJhWnFJaTdnNzRwQkN1T0pSei00czc1cG5RREQ2b1NFNFBTMDhIQ3o1X3VXamVqbndpbHIxYlp1Y01mUUVOekRqVHo3a2ZwM2xUVURaZm5ySUJEd1hpclBUWWFEcWQ0WVRyYWk3YWZOTkdlOHRpX091SnlmUUdrY1lTVmVOaTRhWG53TzVQWjlxVjZQb0N3ZlJST2NyT3p5MVpkNFlaeGZubndIcENUTG9zWjVxMl84TmpGWV9hYm9FdjhMRVB2UVpZNm9jS1ZuNDFmMDFkQVh3?oc=5"
+      "x": "Shanti Educational Initiatives Shares Rise 3% as BSE Clears Restructuring Plan Involving GREW Energy Merger",
+      "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVWVwc0xUVU9CNm5GZGlGMnRCMlZyLUJkX09GVFlKV0ppODBycFgxZDVmc3JIaUplM1VTTGxqbUVZSVhEcThxbWpVai1Gcy1VNlhHYXVNN3hKMUs0S3E4UFF6dkItOFZYb1N1dXFoU1FPX0xKQU5uSFEyWk5fRlNPVTl1dk1kT1djUHpzTW9YeE05dkstcE54QzRJU0ktMmUwTjdQcWNwRDd6Qm4ybTNNRjJxdW9UQ01rMmh3WVBIMkJBYXFKVjkxcVpuZw?oc=5"
      },
      {
       "t": "momentum",
@@ -5657,26 +5649,6 @@
      }
     ],
     "s": 17.6
-   },
-   {
-    "k": "MAXHEALTH",
-    "n": "Max Healthcare Institute",
-    "p": 1081.0,
-    "pct": 3.88,
-    "vx": 3.2,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Macquarie double upgrade: Max Healthcare, Apollo Hospitals shares rise up to 4.5%, become top Nifty...",
-      "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPcHp3RW11T01oaUVma0g1bENPUHBaRlhuQTVETXZJVUNBcU8wcVd6VWlvQ0JJU3JxVjlHRzJfTE1JQkxxXzBvblFRWldndVFrLUJMQUtfekN1ZGk4LU0wOFNTVUd1T05laVF3RlNaSUREMnZpLXUxd1Y0Q1FnRUNLRmFmQWYzUHNBRUJ6dWZLM0JXS0NLazJKaGNOY3FFd0ZsOEc4c0d2M05lSXNKelFWWWhacmVjYktXeDZtczZOOU1kdTRCZ1owM2p3bVh1ci1iUmxfdjFtWGRBcXh2OGNFSFNKeGVOaHJ3TWZQUHhISzFCemVMUjhkdTd5YWvSAYICQVVfeXFMTWJ1ZEhTS3V3d2FlVk1vOXAwN2Ywc2Q4b3BPSkFYYm1lWlpRTHA1bGpoWXFjbExmazdkWk0xbmN3dmFPYzBqVW50UDRwcWZRMVlXRE5rcV9aTVlKT3V6dDZVMWVZOF9RaGFCdlpkNE9ZM3RSQktLQTNNbUZHT0lOckVDZUp1TFR0YTFlLWtWWDVKVWRmakNzYUMwazVUUEhhSUl1TVNTWDFIbHVCR095RU5CY0oyOXh6YVRSUnNpMEJvNEFSYUl1UTVLaWxKUWp0OW4tTlFwWGd4QVIzWG9ubkd3VDBBSnE4Rll5NkFGMkNSX0hERGpfSDFZVE5lUmpzX05R?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.9%, closing near the day's high on 3.2× normal volume"
-     }
-    ],
-    "s": 16.5
    },
    {
     "k": "NH",
@@ -5729,26 +5701,6 @@
     "s": 15.3
    },
    {
-    "k": "TATATECH",
-    "n": "Tata Technologies",
-    "p": 727.9,
-    "pct": 3.43,
-    "vx": 4.9,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Tata Technologies shares extend gains; will the bounce sustain or is upside limited?",
-      "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRFZMWlgtTjNjWU9VZzNVMFNGcFZhTmhHaElyMnlGaVNRMnc5d0drUUFFQmk5YkltejJPeXNPNVdlQi1Oa25tSGNQVVBOOGpTNEFEalk2djJnS29meXFnUU54NWhrbEUyT3ZlMm82bWE1MDdpbE1vWFJEM0xRTFNSQkhXNmJhTUJDdVQtUUVlWmczd2ozbURtTXR0b3BLcDRWZkR6SGlhcnZmdGdQc3Q0Z1BoZjAxekowQzloaEtfN2NzN254eUJnSk1yQUw0ZG91aWswQzJ0SmlQalBUdWl5all3cWE?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.4%, closing near the day's high on 4.9× normal volume"
-     }
-    ],
-    "s": 14.4
-   },
-   {
     "k": "MSUMI",
     "n": "Motherson Sumi Wiring India",
     "p": 42.71,
@@ -5794,7 +5746,7 @@
      {
       "t": "news",
       "x": "Dilip Buildcon shares rise 7% on Gurugram Metro contract win",
-      "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNM1c1a1RqQkNrZnlBRXBPVDFMWjVGcWZKakJBaFFqbkdCY0dSYVV2N1dfdUY0YmtaYUNiZThFR1F1WGI3dVU0cFJ6Y2xERkp6eXlpQ2ZVM0VsNHQxLTRxRkpXemdBT3pwYm1ZQkxVS3B0RE9qWnJvSElTeUxUYVhsQ2tFRjhjdUFVVV9xQ0FXWUFIWERNY2dfbVRuYjVSX3ZOWjR3TmFTaERUcXowNWEyZFBoN0VJMlJmczVxbTh1c24yU0g4ZEwzctIByAFBVV95cUxNM1c1a1RqQkNrZnlBRXBPVDFMWjVGcWZKakJBaFFqbkdCY0dSYVV2N1dfdUY0YmtaYUNiZThFR1F1WGI3dVU0cFJ6Y2xERkp6eXlpQ2ZVM0VsNHQxLTRxRkpXemdBT3pwYm1ZQkxVS3B0RE9qWnJvSElTeUxUYVhsQ2tFRjhjdUFVVV9xQ0FXWUFIWERNY2dfbVRuYjVSX3ZOWjR3TmFTaERUcXowNWEyZFBoN0VJMlJmczVxbTh1c24yU0g4ZEwzcg?oc=5"
+      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdVZhNzN2RW16bUxqcm5Hc05ORzJPRU9NbWtBVFJGSldnQnFrdG9McUwyWVJ4TTM1QkI1WjBwNEo5REJhd0J4QUwxdmdUQnBIQU0zMDkxeHFCTUdycmVFdmd1blFoOWNZTXM0d25pQmQ1NGJXUlJyREV5MjE5a1BzQmpKeW1lRVBhcC1JT2pKVVlIQkJMM3N1emlOdVVnd0NoY0Q2R29SSV9PaTB4ZnpBUEEzRWxjQ3pjR05BOU9maGlCRVHSAcgBQVVfeXFMTTNXNWtUakJDa2Z5QUVwT1QxTFo1RnFmSmpCQWhRam5HQmNHUmFVdjdXX3VGNGJrWmFDYmU4RUdRdVhiN3VVNHBSemNsREZKenl5aUNmVTNFbDR0MS00cUZKV3pnQU96cGJtWUJMVUtwdERPalpyb0hJU3lMVGFYbENrRUY4Y3VBVVVfcUNBV1lBSFhETWNnX21UbmI1Ul92Tlo0d05hU2hEVHF6MDVhMmRQaDdFSTJSZnM1cW04dXNuMlNIOGRMM3I?oc=5"
      }
     ],
     "s": 12.0
@@ -5828,22 +5780,6 @@
      }
     ],
     "s": 11.3
-   },
-   {
-    "k": "OAL",
-    "n": "Oriental Aromatics",
-    "p": 516.7,
-    "pct": 20.0,
-    "vx": 236.4,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Oriental Aromatics Upper Circuit Today: Price, Data and Peers",
-      "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBLM2hPWnlINlpqaFBQMzI5RDhJbUN5ME80bENHVXNmME1XOXhtQlBZcHltQkRpOFQ5WnVDRE5yS3NQQnVBY0N3WXBYa1Z1M3VNLWp2N0NKVmJRLVpzS1BRVC1HRjJpblZIWkZaV2JEMjM0dl9tWTlyQQ?oc=5"
-     }
-    ],
-    "s": 11.0
    },
    {
     "k": "MAXESTATES",
@@ -5932,6 +5868,21 @@
     "s": 8.4
    },
    {
+    "k": "TATATECH",
+    "n": "Tata Technologies",
+    "p": 727.9,
+    "pct": 3.43,
+    "vx": 4.9,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 3.4%, closing near the day's high on 4.9× normal volume"
+     }
+    ],
+    "s": 8.4
+   },
+   {
     "k": "AXISBANK",
     "n": "Axis Bank",
     "p": 1446.0,
@@ -5977,6 +5928,38 @@
     "s": 7.4
    },
    {
+    "k": "AJMERA",
+    "n": "Ajmera Realty & Infra India",
+    "p": 149.29,
+    "pct": 11.84,
+    "vx": 16.6,
+    "fo": false,
+    "why": [
+     {
+      "t": "news",
+      "x": "Ajmera Realty Share Price Today: 11.27% Rise and Valuation",
+      "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVnRmZUt4ZUNVQmdCeUI2NFBHU3RhYWNGWFR1UnhmOWRrWlpWOEQ5b1NJaldFOVRBajNEamh5aXQ1S3FZQTBqWG14dHMtd3BqVlhuY0J5M2tOVzVyVFNWUU5RZDR4VXpyejJTam5qUHQ4Zlljd3IwN18wRHhoZTBTVWkzRTh2b1ZKeklGOWRaUmZQZUM4?oc=5"
+     }
+    ],
+    "s": 7.0
+   },
+   {
+    "k": "OAL",
+    "n": "Oriental Aromatics",
+    "p": 516.7,
+    "pct": 20.0,
+    "vx": 236.4,
+    "fo": false,
+    "why": [
+     {
+      "t": "news",
+      "x": "Oriental Aromatics Upper Circuit Today: Price, Data and Peers",
+      "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBLM2hPWnlINlpqaFBQMzI5RDhJbUN5ME80bENHVXNmME1XOXhtQlBZcHltQkRpOFQ5WnVDRE5yS3NQQnVBY0N3WXBYa1Z1M3VNLWp2N0NKVmJRLVpzS1BRVC1HRjJpblZIWkZaV2JEMjM0dl9tWTlyQQ?oc=5"
+     }
+    ],
+    "s": 7.0
+   },
+   {
     "k": "NELCAST",
     "n": "Nelcast",
     "p": 146.3,
@@ -5990,21 +5973,6 @@
      }
     ],
     "s": 6.8
-   },
-   {
-    "k": "POONAWALLA",
-    "n": "Poonawalla Fincorp",
-    "p": 518.4,
-    "pct": 2.7,
-    "vx": 4.7,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 2.7%, closing near the day's high on 4.7× normal volume"
-     }
-    ],
-    "s": 6.4
    }
   ],
   "fo": [
@@ -6066,7 +6034,7 @@
       "x": "Up 3.9%, closing near the day's high on 3.2× normal volume"
      }
     ],
-    "s": 16.5
+    "s": 20.5
    },
    {
     "k": "CUB",
@@ -6154,17 +6122,17 @@
     "s": 8.0
    },
    {
-    "k": "ICICIBANK",
-    "n": "ICICI Bank",
-    "p": 1640.0,
-    "pct": 1.93,
-    "vx": 1.2,
+    "k": "INDHOTEL",
+    "n": "The Indian Hotels Company",
+    "p": 912.0,
+    "pct": 2.51,
+    "vx": 1.1,
     "fo": true,
     "why": [
      {
       "t": "news",
-      "x": "Nifty Bank at new high, tops 64,000; HDFC, ICICI Bank soar up to 21% in Nov",
-      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVGpOamhFUktDYk4xTlNQVFRaWko4WFN0RFNQTlA3RFdDdTFTRDYwRy1hRG9hc0FOQ1RHa1FrVjY2YzVZRDNzMjRrQklQMjFKOXAxQVRQMW45dFVNSnhVdktqa3FhRkpmYUdBbW8tR2dGclR0ZlhyY1lva1cwMkZTUGpCOV9HOWEzOXNkNnVZdWQwNWo1Sm1lVkJRd0hzUE9vdTBWc3B4YmtDdmdJOERQYkV4LXl2cEZPWll3WUpJRWlMZmdYRzdncVo1Rmo2VVVPR0xULUJB0gHbAUFVX3lxTFB0OVY5VkJKQWs3VHZPT1NRX0tCYmx1NEpjVjJXUjZyS1QyN19zVU50TXVKb29UQ1p3X01ITGk3dEExa3lUNENlS2lFNmwzcmdYSEQxTTRQUFNYQlkyWDFzUnpvai1QNU1wOHlUOWJSR1VVRDhhZW80Q2lXYTZhb25JQzc2SGk3RDFPS3Z0SzJWS1doeVNBU2ItRGs5cV8xNHo4WENhNmFHT255Ukgtc21ibm1EQzQxMmlsX3ZOOVpkNzV0SEJVSXctbzVWcFRFTE1oeEYycV9abndnSQ?oc=5"
+      "x": "Indian Hotels Share Price Rise Streak After Two Sessions",
+      "u": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZFFMbjRoTW1ULU41blhxemk5aDNVVmtrbnB4WVFFNXRVZ01mZEVyeWNRMkJyT09iUTJFcGcyeHFaUC1NVExSMTlvbElkemtObkUtQkpETXhRMUwtLW9GdXdpc3pJWG81cWl6aFcxMkplZ1FkeVR6R21OcjdwN3FUYWh6T2FTV010RE10blBwbm5vZmttVnpZ?oc=5"
      }
     ],
     "s": 5.0
@@ -6186,6 +6154,22 @@
     "s": 5.0
    },
    {
+    "k": "ICICIBANK",
+    "n": "ICICI Bank",
+    "p": 1640.0,
+    "pct": 1.93,
+    "vx": 1.2,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Nifty Bank at new high, tops 64,000; HDFC, ICICI Bank soar up to 21% in Nov",
+      "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVGpOamhFUktDYk4xTlNQVFRaWko4WFN0RFNQTlA3RFdDdTFTRDYwRy1hRG9hc0FOQ1RHa1FrVjY2YzVZRDNzMjRrQklQMjFKOXAxQVRQMW45dFVNSnhVdktqa3FhRkpmYUdBbW8tR2dGclR0ZlhyY1lva1cwMkZTUGpCOV9HOWEzOXNkNnVZdWQwNWo1Sm1lVkJRd0hzUE9vdTBWc3B4YmtDdmdJOERQYkV4LXl2cEZPWll3WUpJRWlMZmdYRzdncVo1Rmo2VVVPR0xULUJB0gHbAUFVX3lxTFB0OVY5VkJKQWs3VHZPT1NRX0tCYmx1NEpjVjJXUjZyS1QyN19zVU50TXVKb29UQ1p3X01ITGk3dEExa3lUNENlS2lFNmwzcmdYSEQxTTRQUFNYQlkyWDFzUnpvai1QNU1wOHlUOWJSR1VVRDhhZW80Q2lXYTZhb25JQzc2SGk3RDFPS3Z0SzJWS1doeVNBU2ItRGs5cV8xNHo4WENhNmFHT255Ukgtc21ibm1EQzQxMmlsX3ZOOVpkNzV0SEJVSXctbzVWcFRFTE1oeEYycV9abndnSQ?oc=5"
+     }
+    ],
+    "s": 5.0
+   },
+   {
     "k": "ULTRACEMCO",
     "n": "UltraTech Cement",
     "p": 12939.0,
@@ -6199,40 +6183,9 @@
      }
     ],
     "s": 4.1
-   },
-   {
-    "k": "NAUKRI",
-    "n": "Info Edge (India)",
-    "p": 1177.7,
-    "pct": 1.73,
-    "vx": 0.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Info Edge (India) Ltd Sees Significant Open Interest Surge Amid Bullish Market Signals",
-      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNkhJV0x4WXJxQmF4N01jSTNUbGoxLVNJUnhKbVR1LTVpUkkwZXlSRTJJQndJLVJvbDMwWVZFQTN0Zmc3SUp2SndvUHVZU1RPZGliVVBBeDNtRVh0c29waGhUQXFqM2xLYUY0VE9LTS0yU1ZmaVlJV1lhTTlSRjFXMXVYOWtFbmZRNjJrajFWMmpiQVRibFVFZDZFcG5aczlfdU1oNDFyZE9Vb0Y3NDMxVktJYVpzWmsza3BmM2VtTjlpYUZxcndRMzFNNm1OM2tyTmg3dXZRTDhNZw?oc=5"
-     }
-    ],
-    "s": 4.0
    }
   ],
   "fodn": [
-   {
-    "k": "PIIND",
-    "n": "PI Industries",
-    "p": 1597.4,
-    "pct": -2.0,
-    "fo": true,
-    "s": 12.6,
-    "why": [
-     {
-      "t": "results",
-      "x": "PI Industries Q2 Results FY27: Net Profit Falls 70.14% YoY",
-      "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTE80aVY5dk5PSUxZbzJRamMwVWxOYTJZV0hGcGhLLVk3VzV1dTZtVUZwTEZBQnRNQjJ1UDZFNnRsWlVwUUN2OUtyZWFvVHh0M1RvU3duN0tBZU9aRHZfWmprLW1NQ0pqeW5tODlFeG9YcHdrRW1tcmhN?oc=5"
-     }
-    ]
-   },
    {
     "k": "VEDL",
     "n": "Vedanta",
@@ -6279,10 +6232,10 @@
     ]
    },
    {
-    "k": "MUTHOOTFIN",
-    "n": "Muthoot Finance",
-    "p": 2550.5,
-    "pct": -2.58,
+    "k": "KALYANKJIL",
+    "n": "Kalyan Jewellers India",
+    "p": 638.7,
+    "pct": -3.37,
     "fo": true,
     "s": 4.0,
     "why": [
