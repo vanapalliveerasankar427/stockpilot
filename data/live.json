@@ -1,13 +1,13 @@
 {
- "label": "20 Nov 2026, 8:43 AM IST",
- "updated": "2026-11-20T08:43:52+05:30",
+ "label": "20 Nov 2026, 8:49 AM IST",
+ "updated": "2026-11-20T08:49:04+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "20 Nov 2026, 8:43 AM",
+  "date": "20 Nov 2026, 8:49 AM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -158,13 +158,13 @@
     "v": 127548.0,
     "ch": -2266.0,
     "pct": -1.75,
-    "t": "20 Nov, 8:43 AM"
+    "t": "20 Nov, 8:49 AM"
    },
    "silver": {
     "v": 157600.0,
     "ch": -3134.0,
     "pct": -1.95,
-    "t": "20 Nov, 8:43 AM"
+    "t": "20 Nov, 8:49 AM"
    }
   },
   "retail": {
@@ -370,8 +370,8 @@
      "ag": 179.9
     }
    },
-   "at": "20 Nov, 8:17 AM",
-   "at_ts": 1795142843.722678,
+   "at": "20 Nov, 8:49 AM",
+   "at_ts": 1795144744.808484,
    "src": "Goodreturns"
   },
   "bullion": {
@@ -379,7 +379,7 @@
    "g24_10": 128130.0,
    "ag_kg": 158320.0,
    "ag": 158.32,
-   "t": "20 Nov, 8:43 AM"
+   "t": "20 Nov, 8:49 AM"
   },
   "dp": {
    "ag1": {
@@ -401,14 +401,14 @@
     "l": 12941.5
    },
    "xau": {
-    "b": 3523.5,
-    "a": 3523.52,
+    "b": 3529.0,
+    "a": 3529.02,
     "h": 3627.12,
-    "l": 3522.02
+    "l": 3521.82
    },
    "xag": {
-    "b": 41.3,
-    "a": 41.3,
+    "b": 41.46,
+    "a": 41.46,
     "h": 43.11,
     "l": 41.22
    },
@@ -418,8 +418,8 @@
     "h": 93.43,
     "l": 93.3
    },
-   "at": 1795144436,
-   "t": "20 Nov, 8:43 AM"
+   "at": 1795144748,
+   "t": "20 Nov, 8:49 AM"
   }
  },
  "logos": [],
@@ -530,24 +530,24 @@
   "t": 1795134052
  },
  "brent": {
-  "v": 90.07,
+  "v": 89.83,
   "prev": 89.44,
-  "ch": 0.63,
-  "pct": 0.7,
+  "ch": 0.39,
+  "pct": 0.44,
   "high": 90.15,
   "low": 89.33,
   "open": 89.39,
-  "t": 1795143686
+  "t": 1795144135
  },
  "goldSpot": {
-  "v": 3533.4,
+  "v": 3531.5,
   "prev": 3685.5,
-  "ch": -152.1,
-  "pct": -4.13,
+  "ch": -154.0,
+  "pct": -4.18,
   "high": 3638.1,
   "low": 3527.7,
   "open": 3725.5,
-  "t": 1795143829
+  "t": 1795144143
  },
  "sectors": [
   [
@@ -1127,7 +1127,7 @@
   "crystalcropprotection": {
    "gmp": 17.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 8:43 AM",
+   "gat": "20 Nov, 8:49 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1167,12 +1167,12 @@
    "snii": 2.33,
    "sr": 1.57,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 8:43 AM"
+   "sat": "20 Nov, 8:49 AM"
   },
   "watranarentals": {
    "gmp": 67.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 8:43 AM",
+   "gat": "20 Nov, 8:49 AM",
    "ghist": [
     [
      "13 Nov",
@@ -1212,12 +1212,12 @@
    "snii": null,
    "sr": 5.06,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 8:43 AM"
+   "sat": "20 Nov, 8:49 AM"
   },
   "mahanadicoalfields": {
    "gmp": 2.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 8:43 AM",
+   "gat": "20 Nov, 8:49 AM",
    "ghist": [
     [
      "16 Nov",
@@ -1245,12 +1245,12 @@
    "snii": null,
    "sr": 0.13,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 8:43 AM"
+   "sat": "20 Nov, 8:49 AM"
   },
   "shreesiddhivinayakgreent": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 8:43 AM",
+   "gat": "20 Nov, 8:49 AM",
    "ghist": [
     [
      "19 Nov",
@@ -1441,18 +1441,18 @@
   "quotes retry: +0 of 2633 missing NSE",
   "per-symbol fallback for 2633 NSE stocks",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook: 0 headlines, 0 up, 0 down",
   "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
   "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
@@ -2476,9 +2476,9 @@
   }
  },
  "nse": {
-  "n50": "20 Nov, 8:43 AM",
-  "mid": "20 Nov, 8:43 AM",
-  "small": "20 Nov, 8:43 AM"
+  "n50": "20 Nov, 8:49 AM",
+  "mid": "20 Nov, 8:49 AM",
+  "small": "20 Nov, 8:49 AM"
  },
  "midg": [
   [
@@ -2665,18 +2665,18 @@
   "quotes retry: +0 of 2633 missing NSE",
   "per-symbol fallback for 2633 NSE stocks",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook: 0 headlines, 0 up, 0 down",
   "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
   "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
@@ -2684,8 +2684,8 @@
  ],
  "universe": {
   "stocks": 5270,
-  "quotes": 4448,
-  "at": "20 Nov, 8:43 AM"
+  "quotes": 4444,
+  "at": "20 Nov, 8:49 AM"
  },
  "global": [
   [
@@ -2714,9 +2714,9 @@
   ],
   [
    "Hang Seng",
-   22382.4,
-   -2.01,
-   1795143530
+   22352.56,
+   -2.14,
+   1795143842
   ],
   [
    "FTSE 100",
@@ -2732,15 +2732,15 @@
   ]
  ],
  "outlook": {
-  "at": "20 Nov, 8:43 AM",
+  "at": "20 Nov, 8:49 AM",
   "headlines": 0,
-  "screened": 1172,
+  "screened": 1169,
   "cues": [
    "US tech (Nasdaq) fell 2.2% in the last session",
    "Dow Jones -2.2%",
    "S&P 500 -2.0%",
    "Nikkei 225 -4.5%",
-   "Hang Seng -2.0%"
+   "Hang Seng -2.1%"
   ],
   "up": [],
   "down": []
@@ -3237,7 +3237,7 @@
   }
  },
  "hilo": {
-  "at": "20 Nov, 8:43 AM",
+  "at": "20 Nov, 8:49 AM",
   "hi": [
    [
     "DSKULKARNI",
@@ -4236,7 +4236,7 @@
   ]
  },
  "allmov": {
-  "at": "20 Nov, 8:43 AM",
+  "at": "20 Nov, 8:49 AM",
   "g": [
    [
     "B544348",
@@ -4571,7 +4571,7 @@
   ]
  },
  "tw": {
-  "at": "20 Nov, 8:43 AM",
+  "at": "20 Nov, 8:49 AM",
   "phase": "pre",
   "for": "Fri 20 Nov",
   "picks": [],
