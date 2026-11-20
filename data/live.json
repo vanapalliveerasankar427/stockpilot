@@ -1,6 +1,6 @@
 {
  "label": "20 Nov 2026, 12:52 PM IST",
- "updated": "2026-11-20T12:52:06+05:30",
+ "updated": "2026-11-20T12:52:50+05:30",
  "state": "open",
  "metals": {
   "g24": 14394.0,
@@ -383,106 +383,106 @@
   },
   "dp": {
    "ag1": {
-    "b": 155173.0,
-    "a": 155173.0,
+    "b": 155062.0,
+    "a": 155062.0,
     "h": 168600.0,
     "l": 155026.0
    },
    "ag30": {
-    "b": 154473.0,
-    "a": 154473.0,
+    "b": 154362.0,
+    "a": 154362.0,
     "h": 165600.0,
     "l": 152026.0
    },
    "g999": {
-    "b": 12744.1,
-    "a": 12744.1,
+    "b": 12740.2,
+    "a": 12740.2,
     "h": 13437.4,
     "l": 12652.4
    },
    "xau": {
-    "b": 3554.3,
-    "a": 3554.32,
+    "b": 3551.3,
+    "a": 3551.32,
     "h": 3627.12,
     "l": 3515.42
    },
    "xag": {
-    "b": 41.86,
-    "a": 41.86,
+    "b": 41.8,
+    "a": 41.8,
     "h": 43.11,
     "l": 41.12
    },
    "fx": {
-    "b": 92.99,
-    "a": 93.0,
+    "b": 92.98,
+    "a": 92.99,
     "h": 93.43,
     "l": 92.94
    },
-   "at": 1795159328,
+   "at": 1795159374,
    "t": "20 Nov, 12:52 PM"
   }
  },
  "logos": [],
  "idx": {
   "NIFTY": {
-   "v": 25743.45,
+   "v": 25727.1,
    "prev": 25514.3,
-   "ch": 229.15,
-   "pct": 0.9,
-   "high": 25744.95,
+   "ch": 212.8,
+   "pct": 0.83,
+   "high": 25745.75,
    "low": 25345.2,
    "open": 25367.9,
-   "t": 1795159325
+   "t": 1795159369
   },
   "SENSEX": {
-   "v": 83715.71,
+   "v": 83709.86,
    "prev": 83021.75,
-   "ch": 693.96,
-   "pct": 0.84,
-   "high": 83723.53,
+   "ch": 688.11,
+   "pct": 0.83,
+   "high": 83724.79,
    "low": 82403.27,
    "open": 82479.52,
-   "t": 1795158424
+   "t": 1795158468
   },
   "BANKNIFTY": {
-   "v": 64405.1,
+   "v": 64322.45,
    "prev": 63063.0,
-   "ch": 1342.1,
-   "pct": 2.13,
+   "ch": 1259.45,
+   "pct": 2.0,
    "high": 64450.1,
    "low": 62598.55,
    "open": 62648.65,
-   "t": 1795159315
+   "t": 1795159369
   },
   "MIDCAP": {
-   "v": 62018.4,
+   "v": 61987.85,
    "prev": 61624.4,
-   "ch": 394.0,
-   "pct": 0.64,
+   "ch": 363.45,
+   "pct": 0.59,
    "high": 62028.3,
    "low": 61091.2,
    "open": 61216.4,
-   "t": 1795159325
+   "t": 1795159369
   },
   "SMALLCAP": {
-   "v": 19463.7,
+   "v": 19458.35,
    "prev": 19468.4,
-   "ch": -4.7,
-   "pct": -0.02,
+   "ch": -10.05,
+   "pct": -0.05,
    "high": 19478.0,
    "low": 19274.45,
    "open": 19311.0,
-   "t": 1795159325
+   "t": 1795159369
   },
   "VIX": {
-   "v": 17.52,
+   "v": 17.48,
    "prev": 16.11,
-   "ch": 1.41,
-   "pct": 8.75,
-   "high": 17.54,
+   "ch": 1.37,
+   "pct": 8.5,
+   "high": 17.55,
    "low": 15.03,
    "open": 16.11,
-   "t": 1795159325
+   "t": 1795159369
   }
  },
  "nifty8": [
@@ -516,7 +516,7 @@
   ],
   [
    "20 Nov",
-   25743.45
+   25727.1
   ]
  ],
  "usdinr": {
@@ -527,205 +527,210 @@
   "high": 93.29,
   "low": 92.9,
   "open": 93.28,
-  "t": 1795159316
+  "t": 1795159345
  },
  "brent": {
-  "v": 90.05,
+  "v": 90.03,
   "prev": 89.44,
-  "ch": 0.61,
-  "pct": 0.68,
+  "ch": 0.59,
+  "pct": 0.66,
   "high": 90.25,
   "low": 89.33,
   "open": 90.02,
-  "t": 1795158720
+  "t": 1795158745
  },
  "goldSpot": {
-  "v": 3551.6,
+  "v": 3551.7,
   "prev": 3685.5,
-  "ch": -133.9,
+  "ch": -133.8,
   "pct": -3.63,
   "high": 3638.1,
   "low": 3515.0,
   "open": 3533.7,
-  "t": 1795158723
+  "t": 1795158767
  },
  "sectors": [
   [
-   "Bank",
-   2.13
+   "IT",
+   2.03
   ],
   [
-   "IT",
-   2.07
+   "Bank",
+   2.0
   ],
   [
    "Fin. Services",
-   1.72
+   1.61
   ],
   [
    "Realty",
-   1.31
+   1.26
   ],
   [
    "PSU Bank",
-   0.61
+   0.48
   ],
   [
    "Auto",
-   0.39
+   0.37
   ],
   [
    "Infra",
-   0.17
+   0.15
   ],
   [
    "Pharma",
-   -0.03
+   -0.08
   ],
   [
    "FMCG",
-   -0.11
+   -0.16
   ]
  ],
  "stocks": {
   "RELIANCE": {
-   "v": 1361.5,
-   "pct": -1.03
+   "v": 1361.1,
+   "pct": -1.05
   },
   "BHARTIARTL": {
    "v": 2160.5,
    "pct": 0.77
   },
   "HDFCBANK": {
-   "v": 846.45,
-   "pct": 3.0
+   "v": 845.55,
+   "pct": 2.89
   },
   "ICICIBANK": {
-   "v": 1638.5,
-   "pct": 1.84
+   "v": 1635.7,
+   "pct": 1.67
   },
   "TCS": {
-   "v": 2405.0,
-   "pct": 2.66
+   "v": 2404.0,
+   "pct": 2.62
   },
   "SBIN": {
-   "v": 1155.8,
-   "pct": -0.02
+   "v": 1154.4,
+   "pct": -0.14
   },
   "BAJFINANCE": {
-   "v": 1119.65,
-   "pct": 2.45
+   "v": 1118.5,
+   "pct": 2.35
   },
   "LT": {
-   "v": 4199.8,
-   "pct": -0.27
+   "v": 4196.0,
+   "pct": -0.36
   },
   "INFY": {
-   "v": 1108.1,
-   "pct": 1.48
+   "v": 1108.0,
+   "pct": 1.47
   },
   "KOTAKBANK": {
-   "v": 512.6,
-   "pct": 1.91
+   "v": 511.35,
+   "pct": 1.66
   },
   "HINDUNILVR": {
-   "v": 2046.9,
-   "pct": -1.32
+   "v": 2045.5,
+   "pct": -1.38
   },
   "ADANIPORTS": {
-   "v": 1927.2,
-   "pct": 0.53
+   "v": 1926.5,
+   "pct": 0.49
   },
   "SUNPHARMA": {
-   "v": 1885.9,
-   "pct": -0.74
+   "v": 1884.1,
+   "pct": -0.84
   },
   "TITAN": {
-   "v": 4605.0,
-   "pct": -2.02
+   "v": 4609.0,
+   "pct": -1.94
   },
   "AXISBANK": {
-   "v": 1435.4,
-   "pct": 3.95
+   "v": 1435.6,
+   "pct": 3.97
   },
   "HCLTECH": {
-   "v": 1349.4,
-   "pct": 1.24
+   "v": 1349.0,
+   "pct": 1.21
   },
   "MARUTI": {
-   "v": 13913.0,
-   "pct": 2.38
+   "v": 13909.0,
+   "pct": 2.35
   },
   "MM": {
-   "v": 3520.3,
-   "pct": 0.32
+   "v": 3519.0,
+   "pct": 0.28
   },
   "ADANIENT": {
-   "v": 2712.8,
-   "pct": 0.36
+   "v": 2711.3,
+   "pct": 0.3
   },
   "ITC": {
-   "v": 299.6,
-   "pct": -0.47
+   "v": 299.4,
+   "pct": -0.53
   },
   "ULTRACEMCO": {
-   "v": 12736.0,
-   "pct": 1.4
+   "v": 12733.0,
+   "pct": 1.38
   },
   "ETERNAL": {
-   "v": 363.9,
-   "pct": -0.8
+   "v": 364.0,
+   "pct": -0.78
   },
   "JSWSTEEL": {
    "v": 1318.5,
    "pct": -1.37
   },
   "NTPC": {
-   "v": 323.35,
-   "pct": -0.51
+   "v": 323.15,
+   "pct": -0.57
   },
   "BAJAJ-AUTO": {
-   "v": 10825.0,
-   "pct": 0.07
+   "v": 10820.0,
+   "pct": 0.03
   }
  },
  "gainers": [
   [
    "APOLLOHOSP",
    "Apollo Hospitals Enterprise",
-   5.45
+   5.36
   ],
   [
    "MAXHEALTH",
    "Max Healthcare Institute",
-   4.19
+   4.07
   ],
   [
    "AXISBANK",
    "Axis Bank",
-   3.95
+   3.97
   ],
   [
    "HDFCBANK",
    "HDFC Bank",
-   3.0
+   2.89
   ],
   [
    "TCS",
    "Tata Consultancy Services",
-   2.66
+   2.62
   ]
  ],
  "losers": [
   [
    "TITAN",
    "Titan Company",
-   -2.02
+   -1.94
   ],
   [
    "TATASTEEL",
    "Tata Steel",
-   -1.76
+   -1.68
+  ],
+  [
+   "HINDUNILVR",
+   "Hindustan Unilever",
+   -1.38
   ],
   [
    "JSWSTEEL",
@@ -733,18 +738,13 @@
    -1.37
   ],
   [
-   "HINDUNILVR",
-   "Hindustan Unilever",
-   -1.32
-  ],
-  [
    "RELIANCE",
    "Reliance Industries",
-   -1.03
+   -1.05
   ]
  ],
  "breadth": {
-  "up": 31,
+  "up": 32,
   "n": 50,
   "label": "Nifty 50 stocks"
  },
@@ -1127,7 +1127,7 @@
   "crystalcropprotection": {
    "gmp": 16.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 12:47 PM",
+   "gat": "20 Nov, 12:52 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1167,12 +1167,12 @@
    "snii": 7.09,
    "sr": 2.7,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 12:47 PM"
+   "sat": "20 Nov, 12:52 PM"
   },
   "watranarentals": {
    "gmp": 67.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 12:47 PM",
+   "gat": "20 Nov, 12:52 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1212,12 +1212,12 @@
    "snii": null,
    "sr": 9.53,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 12:47 PM"
+   "sat": "20 Nov, 12:52 PM"
   },
   "mahanadicoalfields": {
    "gmp": 2.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 12:47 PM",
+   "gat": "20 Nov, 12:52 PM",
    "ghist": [
     [
      "16 Nov",
@@ -1245,12 +1245,12 @@
    "snii": null,
    "sr": 0.2,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 12:47 PM"
+   "sat": "20 Nov, 12:52 PM"
   },
   "shreesiddhivinayakgreent": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 12:47 PM",
+   "gat": "20 Nov, 12:52 PM",
    "ghist": [
     [
      "19 Nov",
@@ -1427,9 +1427,36 @@
   }
  ],
  "log": [
-  "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
-  "bse movers: empty"
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SSDL.NS%2CSSRETAIL.NS%2CSSWL.NS%2CSTALLION.NS%2CSTANLEY.NS%2CSTAR.NS%2CSTARCEMENT.NS%2CSTARHEALTH.NS%2CSTARPAPER.NS%2CSTARTECK.NS%2CSTCINDIA.NS%2CSTEAMHOUSE.NS%2CSTEELCAS.NS%2CSTEELCITY.NS%2CSTEELXIND.NS%2CSTEL.NS%2CSTERTOOLS.NS%2CSTLNETWORK.NS%2CSTLSTRINF.NS%2CSTLTECH.NS%2CSTOVEKRAFT.NS%2CSTUDDS.NS%2CSTYL.NS%2CSTYLAMIND.NS%2CSTYLEBAAZA.NS%2CSTYRENIX.NS%2CSUBEXLTD.NS%2CSUBROS.NS%2CSUDARCOLOR.NS%2CSUDARSCHEM.NS%2CSUDARSHAN.NS%2CSUDEEPPHRM.NS%2CSUKHJITS.NS%2CSULA.NS%2CSUMEDHA.NS%2CSUMEETINDS.NS%2CSUMICHEM.NS%2CSUMIT.NS%2CSUMMITSEC.NS%2CSUNCLAY.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SUNDARAM.NS%2CSUNDARMFIN.NS%2CSUNDRMBRAK.NS%2CSUNDRMFAST.NS%2CSUNDROP.NS%2CSUNFLAG.NS%2CSUNLOC.NS%2CSUNPHARMA.NS%2CSUNRAKSHAK.NS%2CSUNSHIEL.NS%2CSUNSHINE.NS%2CSUNTECK.NS%2CSUNTV.NS%2CSUPERHOUSE.NS%2CSUPERSPIN.NS%2CSUPRAJIT.NS%2CSUPREME.NS%2CSUPREMEENG.NS%2CSUPREMEIND.NS%2CSUPREMEINF.NS%2CSUPRIYA.NS%2CSUPTANERY.NS%2CSURAJEST.NS%2CSURAJLTD.NS%2CSURAKSHA.NS%2CSURANASOL.NS%2CSURANAT%26P.NS%2CSURYALA.NS%2CSURYALAXMI.NS%2CSURYAROSNI.NS%2CSURYODAY.NS%2CSUTLEJTEX.NS%2CSUVEN.NS%2CSUVIDHAA.NS%2CSUYOG.NS%2CSUZLON.NS%2CSVGLOBAL.NS%2CSVLL.NS%2CSVPGLOB.NS%2CSWANCORP.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SWANDEF.NS%2CSWARAJ.NS%2CSWARAJENG.NS%2CSWARNSAR.NS%2CSWASTIKAIN.NS%2CSWELECTES.NS%2CSWIGGY.NS%2CSWISSMLTRY.NS%2CSWSOLAR.NS%2CSYMBIOTEC.NS%2CSYMPHONY.NS%2CSYNCOMF.NS%2CSYNGENE.NS%2CSYRMA.NS%2CSYSTMTXC.NS%2CTAALTECH.NS%2CTAINWALCHM.NS%2CTAJGVK.NS%2CTAKE.NS%2CTALBROAUTO.NS%2CTAMBOLIIN.NS%2CTANAA.NS%2CTANLA.NS%2CTARACHAND.NS%2CTARAPUR.NS%2CTARC.NS%2CTARIL.NS%2CTARMAT.NS%2CTARSONS.NS%2CTASTYBITE.NS%2CTATACAP.NS%2CTATACHEM.NS%2CTATACOMM.NS%2CTATACONSUM.NS%2CTATAELXSI.NS%2CTATAINVEST.NS%2CTATAPOWER.NS%2CTATASTEEL.NS%2CTATATECH.NS%2CTATVA.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TBOTEK.NS%2CTBZ.NS%2CTCC.NS%2CTCI.NS%2CTCIEXP.NS%2CTCIFINANCE.NS%2CTCPLPACK.NS%2CTCS.NS%2CTDPOWERSYS.NS%2CTEAMGTY.NS%2CTEAMLEASE.NS%2CTECHM.NS%2CTECHNOCRAF.NS%2CTECHNOE.NS%2CTECHNVISN.NS%2CTECILCHEM.NS%2CTEGA.NS%2CTEJASNET.NS%2CTEMBO.NS%2CTEMPSENS.NS%2CTENNIND.NS%2CTERAI.NS%2CTERASOFT.NS%2CTEXINFRA.NS%2CTEXMOPIPES.NS%2CTEXRAIL.NS%2CTFCILTD.NS%2CTFL.NS%2CTGBHOTELS.NS%2CTGVSL.NS%2CTHACKER.NS%2CTHAKDEV.NS%2CTHANGAMAYL.NS%2CTHEINVEST.NS%2CTHEJO.NS%2CTHELEELA.NS%2CTHEMISMED.NS%2CTHERMAX.NS%2CTHOMASCOOK.NS%2CTHOMASCOTT.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=THYROCARE.NS%2CTI.NS%2CTICL.NS%2CTIGERLOGS.NS%2CTIIL.NS%2CTIINDIA.NS%2CTIJARIA.NS%2CTIKONA.NS%2CTIL.NS%2CTIMETECHNO.NS%2CTIMEX.NS%2CTIMKEN.NS%2CTINNARUBR.NS%2CTIPSFILMS.NS%2CTIPSMUSIC.NS%2CTIRUMALCHM.NS%2CTIRUPATIFL.NS%2CTITAGARH.NS%2CTITAN.NS%2CTMB.NS%2CTMCV.NS%2CTMPV.NS%2CTNPETRO.NS%2CTNPL.NS%2CTNTELE.NS%2CTOKYOPLAST.NS%2CTOLINS.NS%2CTONBO.NS%2CTORNTPHARM.NS%2CTORNTPOWER.NS%2CTOTAL.NS%2CTOUCHWOOD.NS%2CTOYAMSL.NS%2CTPHQ.NS%2CTPLPLASTEH.NS%2CTRACXN.NS%2CTRANSCOR.NS%2CTRANSPEK.NS%2CTRANSRAILL.NS%2CTRANSWORLD.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TRAVELFOOD.NS%2CTREEHOUSE.NS%2CTREJHARA.NS%2CTREL.NS%2CTRENT.NS%2CTRF.NS%2CTRIDENT.NS%2CTRIGYN.NS%2CTRITONV.NS%2CTRITURBINE.NS%2CTRIVENI.NS%2CTRIVENIPT.NS%2CTRU.NS%2CTRUALT.NS%2CTSFINV.NS%2CTTKHLTCARE.NS%2CTTKPRESTIG.NS%2CTTL.NS%2CTTML.NS%2CTURTLEMINT.NS%2CTUTIALKA.NS%2CTVSELECT.NS%2CTVSHLTD.NS%2CTVSMOTOR.NS%2CTVSSCS.NS%2CTVSSRICHAK.NS%2CTVTODAY.NS%2CTVVISION.NS%2CUBL.NS%2CUCAL.NS%2CUCOBANK.NS%2CUDAYJEW.NS%2CUDS.NS%2CUEL.NS%2CUFBL.NS%2CUFLEX.NS%2CUFO.NS%2CUGARSUGAR.NS%2CUGROCAP.NS%2CUJJIVANSFB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=ULTRACEMCO.NS%2CULTRAMAR.NS%2CUMAEXPORTS.NS%2CUMESLTD.NS%2CUMIYA-MRO.NS%2CUNICHEMLAB.NS%2CUNIDT.NS%2CUNIECOM.NS%2CUNIENTER.NS%2CUNIINFO.NS%2CUNIMECH.NS%2CUNIONBANK.NS%2CUNIPARTS.NS%2CUNITDSPR.NS%2CUNITECH.NS%2CUNITEDPOLY.NS%2CUNITEDTEA.NS%2CUNIVASTU.NS%2CUNIVCABLES.NS%2CUNIVPHOTO.NS%2CUNOMINDA.NS%2CUPHOT.NS%2CUPL.NS%2CURAVIDEF.NS%2CURBANCO.NS%2CURJA.NS%2CUSHAMART.NS%2CUSK.NS%2CUTIAMC.NS%2CUTKARSHBNK.NS%2CUTLSOLAR.NS%2CUTTAMSUGAR.NS%2CUYFINCORP.NS%2CV2RETAIL.NS%2CVADILALIND.NS%2CVADILENT.NS%2CVAIBHAVGBL.NS%2CVAISHALI.NS%2CVAKRANGEE.NS%2CVALIANTLAB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VALIANTORG.NS%2CVAML.NS%2CVARDHACRLC.NS%2CVARDMNPOLY.NS%2CVARMORA.NS%2CVARROC.NS%2CVASCONEQ.NS%2CVASUPRADA.NS%2CVASWANI.NS%2CVBL.NS%2CVCL.NS%2CVEDAVAAG.NS%2CVEDL.NS%2CVEDPOWER.NS%2CVEEDOL.NS%2CVEEFIN.NS%2CVEEGALAND.NS%2CVELJAN.NS%2CVENKEYS.NS%2CVENTIVE.NS%2CVENUSPIPES.NS%2CVENUSREM.NS%2CVERANDA.NS%2CVERTOZ.NS%2CVESUVIUS.NS%2CVETO.NS%2CVGCL.NS%2CVGL.NS%2CVGUARD.NS%2CVHL.NS%2CVHLTD.NS%2CVIDHIING.NS%2CVIDYAWIRES.NS%2CVIJAYA.NS%2CVIJIFIN.NS%2CVIJSOLX.NS%2CVIKASECO.NS%2CVIKASLIFE.NS%2CVIKRAMSOLR.NS%2CVIKRAN.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VIMTALABS.NS%2CVINATIORGA.NS%2CVINCOFE.NS%2CVINDHYATEL.NS%2CVINEETLAB.NS%2CVINNY.NS%2CVINYLINDIA.NS%2CVIPCLOTHNG.NS%2CVIPIND.NS%2CVIPULLTD.NS%2CVIRINCHI.NS%2CVIRTUALG.NS%2CVISACHROME.NS%2CVISAKAIND.NS%2CVISHAL.NS%2CVISHNU.NS%2CVISHWARAJ.NS%2CVISL.NS%2CVITAL.NS%2CVIVIANA.NS%2CVIVIDHA.NS%2CVIVIMEDLAB.NS%2CVIVOBIOT.NS%2CVIYASH.NS%2CVLEGOV.NS%2CVLSFINANCE.NS%2CVMART.NS%2CVMM.NS%2CVMSTMT.NS%2CVNL.NS%2CVOEPL.NS%2CVOGL.NS%2CVOITHPAPR.NS%2CVOLTAMP.NS%2CVOLTAS.NS%2CVPRPL.NS%2CVRAJ.NS%2CVRLLOG.NS%2CVSSL.NS%2CVSTIND.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VSTL.NS%2CVSTTILLERS.NS%2CVTL.NS%2CVTMLTD.NS%2CWAAREEENER.NS%2CWAAREEINDO.NS%2CWAAREERTL.NS%2CWABAG.NS%2CWAKEFIT.NS%2CWALCHANNAG.NS%2CWANBURY.NS%2CWARDINMOBI.NS%2CWATERBASE.NS%2CWCIL.NS%2CWEALTH.NS%2CWEBELSOLAR.NS%2CWEIZMANIND.NS%2CWEL.NS%2CWELCORP.NS%2CWELENT.NS%2CWELINV.NS%2CWELSPLSOL.NS%2CWELSPUNLIV.NS%2CWENDT.NS%2CWESTLIFE.NS%2CWEWIN.NS%2CWEWORK.NS%2CWHBRADY.NS%2CWHEELS.NS%2CWHIRLPOOL.NS%2CWILLAMAGOR.NS%2CWINDLAS.NS%2CWINDMACHIN.NS%2CWIPL.NS%2CWIPRO.NS%2CWOCKPHARMA.NS%2CWONDERLA.NS%2CWORTHPERI.NS%2CWPIL.NS%2CWSI.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=WSTCSTPAPR.NS%2CXCHANGING.NS%2CXELPMOC.NS%2CXPROINDIA.NS%2CXTGLOBAL.NS%2CXTRANET.NS%2CYASHO.NS%2CYATHARTH.NS%2CYATRA.NS%2CYESBANK.NS%2CYOGI.NS%2CYUKEN.NS%2CZAGGLE.NS%2CZEEL.NS%2CZEELEARN.NS%2CZEEMEDIA.NS%2CZENITHEXPO.NS%2CZENITHSTL.NS%2CZENSARTECH.NS%2CZENTEC.NS%2CZETWERK.NS%2CZFCVINDIA.NS%2CZFSTEERING.NS%2CZIMLAB.NS%2CZODIAC.NS%2CZODIACLOTH.NS%2CZOTA.NS%2CZSARACOM.NS%2CZUARI.NS%2CZUARIIND.NS%2CZYDUSLIFE.NS%2CZYDUSWELL.NS%2CTHEJO.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quotes retry: +0 of 2633 missing NSE",
+  "per-symbol fallback for 2633 NSE stocks",
+  "bse eod 2026-11-19: 5095 scrips",
+  "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 0 headlines, 0 up, 0 down",
+  "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
+  "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
+  "option chains: 0 ok, 60 failed, 220 stored"
  ],
  "members": {
   "n50": {
@@ -2456,73 +2483,73 @@
  "midg": [
   [
    "IndusInd Bank",
-   8.3
+   8.16
   ],
   [
    "Persistent Systems",
-   4.06
+   3.95
   ],
   [
    "Coforge",
-   3.86
-  ],
-  [
-   "MphasiS",
-   2.58
+   3.75
   ],
   [
    "Phoenix Mills",
-   2.56
+   2.53
+  ],
+  [
+   "MphasiS",
+   2.5
   ]
  ],
  "midl": [
   [
    "Kalyan Jewellers India",
-   -5.57
+   -5.67
   ],
   [
    "APL Apollo Tubes",
-   -2.86
+   -2.99
   ],
   [
    "Apar Industries",
-   -2.59
+   -2.65
   ],
   [
    "Multi Commodity Exchange of India",
-   -2.33
+   -2.44
   ],
   [
    "Swiggy",
-   -2.14
+   -2.18
   ]
  ],
  "smallg": [
   [
    "City Union Bank",
-   4.6
+   4.58
   ],
   [
    "Tata Elxsi",
    4.13
   ],
   [
-   "Angel One",
-   3.82
+   "Tata Technologies",
+   3.75
   ],
   [
-   "Tata Technologies",
-   3.77
+   "Angel One",
+   3.63
   ],
   [
    "Dr. Lal Path Labs",
-   3.11
+   3.17
   ]
  ],
  "smalll": [
   [
    "MTAR Technologies",
-   -5.49
+   -5.46
   ],
   [
    "Sterlite Technologies",
@@ -2530,15 +2557,15 @@
   ],
   [
    "HFCL",
-   -4.6
+   -4.7
   ],
   [
    "Urban Company",
-   -4.37
+   -4.54
   ],
   [
    "IIFL Finance",
-   -3.74
+   -3.65
   ]
  ],
  "eod": {
@@ -2638,18 +2665,18 @@
   "quotes retry: +0 of 2633 missing NSE",
   "per-symbol fallback for 2633 NSE stocks",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
-  "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
   "outlook: 0 headlines, 0 up, 0 down",
   "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
   "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
@@ -2657,8 +2684,8 @@
  ],
  "universe": {
   "stocks": 5270,
-  "quotes": 4443,
-  "at": "20 Nov, 12:47 PM"
+  "quotes": 4441,
+  "at": "20 Nov, 12:52 PM"
  },
  "global": [
   [
@@ -2687,9 +2714,9 @@
   ],
   [
    "Hang Seng",
-   22348.87,
-   -4.06,
-   1795158424
+   22344.61,
+   -4.08,
+   1795158468
   ],
   [
    "FTSE 100",
@@ -2705,9 +2732,9 @@
   ]
  ],
  "outlook": {
-  "at": "20 Nov, 12:47 PM",
+  "at": "20 Nov, 12:52 PM",
   "headlines": 0,
-  "screened": 992,
+  "screened": 996,
   "cues": [
    "US tech (Nasdaq) fell 2.2% in the last session",
    "Dow Jones -2.2%",
@@ -3210,11 +3237,15 @@
   }
  },
  "hilo": {
-  "at": "20 Nov, 12:47 PM",
+  "at": "20 Nov, 12:52 PM",
   "hi": [
    [
     "ADROITINFO",
     4.96
+   ],
+   [
+    "AXISBANK",
+    4.16
    ],
    [
     "DSKULKARNI",
@@ -3222,7 +3253,11 @@
    ],
    [
     "ICICIBANK",
-    1.67
+    1.7
+   ],
+   [
+    "INDHOTEL",
+    2.07
    ],
    [
     "KALYANI",
@@ -3234,7 +3269,11 @@
    ],
    [
     "MAHABANK",
-    0.47
+    0.51
+   ],
+   [
+    "MANOMAY",
+    2.46
    ],
    [
     "PANACHE",
@@ -3252,15 +3291,15 @@
   "lo": [
    [
     "BHARATRAS",
-    -1.25
-   ],
-   [
-    "BLEL",
-    -1.91
+    -1.26
    ],
    [
     "EMPOWER",
     -4.95
+   ],
+   [
+    "EUROTEXIND",
+    -4.93
    ],
    [
     "JKSHAH",
@@ -3271,54 +3310,62 @@
     -5.0
    ],
    [
+    "NILE",
+    -0.97
+   ],
+   [
+    "PRAVEG",
+    -2.49
+   ],
+   [
     "RAJESHEXPO",
     -2.51
    ]
   ],
-  "nhi": 9,
-  "nlo": 6,
+  "nhi": 12,
+  "nlo": 8,
   "ath": [
    [
     "APOLLOHOSP",
-    5.34,
+    5.38,
     9070.5,
     1
    ],
    [
-    "COFORGE",
-    3.82,
-    2127.9,
-    1
-   ],
-   [
     "AXISBANK",
-    3.74,
+    4.16,
     1418.3,
     1
    ],
    [
+    "COFORGE",
+    3.71,
+    2127.9,
+    1
+   ],
+   [
     "GHCLTEXTIL",
-    2.73,
+    2.23,
     144.59,
     1
    ],
    [
     "NITINSPIN",
-    2.42,
+    2.19,
     697.15,
     1
    ],
    [
-    "FEDERALBNK",
-    2.03,
-    371.7,
+    "ICIL",
+    2.09,
+    581.0,
     1
    ],
    [
-    "ICIL",
-    2.03,
-    581.0,
-    1
+    "INDHOTEL",
+    2.07,
+    909.65,
+    0
    ],
    [
     "PANACHE",
@@ -3327,45 +3374,51 @@
     1
    ],
    [
-    "INDHOTEL",
-    1.93,
-    909.65,
-    0
-   ],
-   [
     "SUPREMEENG",
     1.9,
     6.19,
     1
    ],
    [
+    "FEDERALBNK",
+    1.82,
+    371.7,
+    1
+   ],
+   [
     "KOTAKBANK",
-    1.71,
+    1.73,
     503.05,
     1
    ],
    [
     "ICICIBANK",
-    1.67,
+    1.7,
     1616.0,
     1
    ],
    [
-    "AAREYDRUGS",
-    1.37,
-    116.8,
-    1
-   ],
-   [
     "NEOGEN",
-    1.14,
+    1.19,
     2875.0,
     1
    ],
    [
+    "AAREYDRUGS",
+    1.16,
+    116.8,
+    1
+   ],
+   [
     "MAHABANK",
-    0.47,
+    0.51,
     97.0,
+    1
+   ],
+   [
+    "NAVINFLUOR",
+    -0.04,
+    10295.0,
     1
    ],
    [
@@ -3375,34 +3428,28 @@
     0
    ],
    [
-    "NAVINFLUOR",
-    -0.34,
-    10295.0,
-    1
-   ],
-   [
     "FLUOROCHEM",
     -0.95,
     4958.9,
     1
    ],
    [
-    "ASAHIINDIA",
-    -1.51,
-    1175.0,
+    "CRAFTSMAN",
+    -1.74,
+    11999.0,
     1
    ],
    [
-    "CRAFTSMAN",
-    -1.67,
-    11999.0,
+    "ASAHIINDIA",
+    -2.1,
+    1175.0,
     1
    ]
   ],
   "atl": [
    [
     "MEDIASSIST",
-    -4.38,
+    -4.52,
     273.1,
     1
    ],
@@ -3420,7 +3467,7 @@
    ],
    [
     "HAPPSTMNDS",
-    -1.0,
+    -1.07,
     295.1,
     1
    ]
@@ -4241,7 +4288,7 @@
   ]
  },
  "allmov": {
-  "at": "20 Nov, 12:47 PM",
+  "at": "20 Nov, 12:52 PM",
   "g": [
    [
     "B544348",
@@ -4279,6 +4326,11 @@
     14.79
    ],
    [
+    "CHEMBONDCH",
+    "Chembond Chemicals",
+    14.66
+   ],
+   [
     "B531359",
     "Shriram Asset Management Company",
     13.21
@@ -4287,11 +4339,6 @@
     "B538928",
     "Karnavati Finance",
     11.54
-   ],
-   [
-    "B532455",
-    "Shalimar Wires Industries",
-    10.73
    ]
   ],
   "l": [
@@ -4341,9 +4388,9 @@
     -12.1
    ],
    [
-    "PRAKASHSTL",
-    "Prakash Steelage",
-    -11.52
+    "B538597",
+    "TTI Enterprise",
+    -10.73
    ]
   ]
  },
@@ -4576,7 +4623,7 @@
   ]
  },
  "tw": {
-  "at": "20 Nov, 12:47 PM",
+  "at": "20 Nov, 12:52 PM",
   "phase": "live",
   "for": "Fri 20 Nov",
   "picks": [],
@@ -4647,8 +4694,8 @@
    {
     "k": "BCSSL",
     "n": "Bombay Coated and Special Steels",
-    "p": 84.13,
-    "pct": 0.54,
+    "p": 83.5,
+    "pct": -0.22,
     "vx": null,
     "fo": false,
     "why": [
@@ -4662,8 +4709,8 @@
    {
     "k": "SFCTECH",
     "n": "SFC Environmental Technologies",
-    "p": 447.55,
-    "pct": 2.64,
+    "p": 449.05,
+    "pct": 2.98,
     "vx": null,
     "fo": false,
     "why": [
@@ -5441,7 +5488,7 @@
   ]
  },
  "fres": {
-  "at": "20 Nov, 12:47 PM",
+  "at": "20 Nov, 12:52 PM",
   "s": {
    "ADANIENSOL": {
     "at": 1794891872,
