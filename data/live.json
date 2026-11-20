@@ -1,13 +1,13 @@
 {
- "label": "20 Nov 2026, 5:38 PM IST",
- "updated": "2026-11-20T17:38:35+05:30",
+ "label": "20 Nov 2026, 5:48 PM IST",
+ "updated": "2026-11-20T17:48:50+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
   "g22": 13194.0,
   "g18": 10795.0,
   "ag": 214.9,
-  "date": "20 Nov 2026, 5:38 PM",
+  "date": "20 Nov 2026, 5:48 PM",
   "src": "Goodreturns",
   "url": "https://www.goodreturns.in/gold-rates/",
   "agMonth": [
@@ -155,16 +155,16 @@
   },
   "mcx": {
    "gold": {
-    "v": 122820.0,
-    "ch": -4632.0,
-    "pct": -3.63,
-    "t": "20 Nov, 5:38 PM"
+    "v": 122869.0,
+    "ch": -4583.0,
+    "pct": -3.6,
+    "t": "20 Nov, 5:48 PM"
    },
    "silver": {
-    "v": 150250.0,
-    "ch": -7232.0,
-    "pct": -4.59,
-    "t": "20 Nov, 5:38 PM"
+    "v": 150355.0,
+    "ch": -7127.0,
+    "pct": -4.53,
+    "t": "20 Nov, 5:48 PM"
    }
   },
   "retail": {
@@ -370,56 +370,56 @@
      "ag": 175.0
     }
    },
-   "at": "20 Nov, 5:18 PM",
-   "at_ts": 1795175284.375725,
+   "at": "20 Nov, 5:48 PM",
+   "at_ts": 1795177130.588625,
    "src": "Goodreturns"
   },
   "bullion": {
-   "g24": 12338.0,
-   "g24_10": 123380.0,
-   "ag_kg": 150930.0,
-   "ag": 150.93,
-   "t": "20 Nov, 5:38 PM"
+   "g24": 12343.0,
+   "g24_10": 123430.0,
+   "ag_kg": 151040.0,
+   "ag": 151.04,
+   "t": "20 Nov, 5:48 PM"
   },
   "dp": {
    "ag1": {
-    "b": 155060.0,
-    "a": 155060.0,
+    "b": 155706.0,
+    "a": 155706.0,
     "h": 168600.0,
     "l": 154608.0
    },
    "ag30": {
-    "b": 154360.0,
-    "a": 154360.0,
+    "b": 155006.0,
+    "a": 155006.0,
     "h": 165600.0,
     "l": 152026.0
    },
    "g999": {
-    "b": 12729.9,
-    "a": 12729.9,
+    "b": 12766.9,
+    "a": 12766.9,
     "h": 13437.4,
     "l": 12652.4
    },
    "xau": {
-    "b": 3567.9,
-    "a": 3567.92,
+    "b": 3575.2,
+    "a": 3575.22,
     "h": 3627.12,
     "l": 3515.42
    },
    "xag": {
-    "b": 42.18,
-    "a": 42.18,
+    "b": 42.31,
+    "a": 42.31,
     "h": 43.11,
     "l": 41.12
    },
    "fx": {
-    "b": 92.64,
-    "a": 92.65,
+    "b": 92.62,
+    "a": 92.63,
     "h": 93.43,
     "l": 92.58
    },
-   "at": 1795176520,
-   "t": "20 Nov, 5:38 PM"
+   "at": 1795177134,
+   "t": "20 Nov, 5:48 PM"
   }
  },
  "logos": [],
@@ -475,14 +475,14 @@
    "t": 1795168875
   },
   "VIX": {
-   "v": 17.32,
+   "v": 16.11,
    "prev": 16.11,
-   "ch": 1.21,
-   "pct": 7.51,
+   "ch": 0.0,
+   "pct": 0.0,
    "high": 17.56,
    "low": 15.03,
    "open": 16.11,
-   "t": 1795169624
+   "t": 1795082400
   }
  },
  "nifty8": [
@@ -530,61 +530,61 @@
   "t": 1795171517
  },
  "brent": {
-  "v": 89.17,
+  "v": 89.44,
   "prev": 89.44,
-  "ch": -0.27,
-  "pct": -0.3,
+  "ch": 0.0,
+  "pct": 0.0,
   "high": 90.25,
   "low": 87.7,
   "open": 90.02,
-  "t": 1795175838
+  "t": 1795176518
  },
  "goldSpot": {
-  "v": 3578.9,
+  "v": 3569.6,
   "prev": 3685.5,
-  "ch": -106.6,
-  "pct": -2.89,
+  "ch": -115.9,
+  "pct": -3.14,
   "high": 3638.1,
   "low": 3515.0,
   "open": 3533.7,
-  "t": 1795175909
+  "t": 1795176529
  },
  "sectors": [
+  [
+   "Auto",
+   4.4
+  ],
   [
    "Bank",
    2.49
   ],
   [
-   "Fin. Services",
-   2.02
-  ],
-  [
-   "Realty",
-   1.71
-  ],
-  [
    "PSU Bank",
-   1.23
-  ],
-  [
-   "Auto",
-   0.65
-  ],
-  [
-   "Infra",
-   0.61
-  ],
-  [
-   "IT",
-   0.19
-  ],
-  [
-   "Pharma",
-   0.05
+   2.29
   ],
   [
    "FMCG",
-   -0.06
+   2.09
+  ],
+  [
+   "Energy",
+   1.15
+  ],
+  [
+   "Infra",
+   1.12
+  ],
+  [
+   "Fin. Services",
+   1.1
+  ],
+  [
+   "Metal",
+   0.63
+  ],
+  [
+   "Pharma",
+   0.61
   ]
  ],
  "stocks": {
@@ -1127,7 +1127,7 @@
   "crystalcropprotection": {
    "gmp": 15.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 5:38 PM",
+   "gat": "20 Nov, 5:48 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1167,12 +1167,12 @@
    "snii": 25.68,
    "sr": 4.91,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 5:38 PM"
+   "sat": "20 Nov, 5:48 PM"
   },
   "watranarentals": {
    "gmp": 67.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 5:38 PM",
+   "gat": "20 Nov, 5:48 PM",
    "ghist": [
     [
      "13 Nov",
@@ -1212,12 +1212,12 @@
    "snii": null,
    "sr": 15.2,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 5:38 PM"
+   "sat": "20 Nov, 5:48 PM"
   },
   "mahanadicoalfields": {
    "gmp": 1.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 5:38 PM",
+   "gat": "20 Nov, 5:48 PM",
    "ghist": [
     [
      "16 Nov",
@@ -1245,12 +1245,12 @@
    "snii": null,
    "sr": 0.24,
    "ssrc": "IPOMarket",
-   "sat": "20 Nov, 5:38 PM"
+   "sat": "20 Nov, 5:48 PM"
   },
   "shreesiddhivinayakgreent": {
    "gmp": 0.0,
    "gsrc": "IPOMarket",
-   "gat": "20 Nov, 5:38 PM",
+   "gat": "20 Nov, 5:48 PM",
    "ghist": [
     [
      "19 Nov",
@@ -1271,7 +1271,7 @@
   "dii_sell": 19008.07,
   "fii_buy": 20706.95,
   "fii_sell": 13295.54,
-  "fetched": "20 Nov, 5:38 PM",
+  "fetched": "20 Nov, 5:48 PM",
   "src": "NSE (provisional)",
   "hist": [
    {
@@ -1333,6 +1333,13 @@
    "s": "The Hindu",
    "d": "20 Nov, 4:32 PM",
    "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPT1NMbmNzWUV2SFlYUE0yWmJhZW1UV2Fxa1pQOGJpdUp0TlgzTzNSZ2Q1clFaQ1RDX0NZYVQtUFdpVGUtTkZWdzJZaGkxR3JidUNrcGU5aGZmcjM5YlJ3UnpnX1dmamdDbTdrODhkc3BiUkpXZlZPX2NFQWd2THdxUkQ2VndNNzE0cE9iV1BRejdfa0tmM2p5dlk4MkRHVXRJSy05bHo2YVFHbnJJVFgySFNSTzdEVHVnbE5hVzEydkQ1WFo0Mk9rQjNxc3RTekw4aXNiT9IB2wFBVV95cUxNZkE5RnVyYXpsSkNRa1NwazRiS3dZa1ptZnY1YWVOZEZQbThDUDBxaEpwMHN3OUdZWk9lRnEtckNEZV9neDFGRzRVRHhmUWFlQ2lRcm5xSERzRHdfZ0ZiUVVIN09fRkFrWnJsQ0VuOTg4SE5TNFBaeGJGQThkVlBxaE1LcGpuZGlVSVhheUFPODk4ZGFkS2lDQXpzN3ZUNUdlbFphcDFKdlJYbVVpb09kVWZheWJibGI3cTI4SlVpWHZMY0F6Wl9YNlpFeVFmcG8xUnNOSTBoekd1QTg?oc=5"
+  },
+  {
+   "tag": "Results",
+   "t": "PGHH Share Price Today - P&G Hygiene and Health Care on NSE/BSE",
+   "s": "scanx.trade",
+   "d": "20 Nov, 3:55 PM",
+   "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1CR1Npbmx2Q0djempIZ0RjM3hGRG5pU19lQUcxM1d1STVuTzFtQUhROGx2Qm44MXFRQ0tZRmd6STIydEd3SUkxTFpiOVhWZ0xCVnhoUEZvOFpLZ1JSUm9XRWV0azVoc0ljS0tpQnRHZW5CVk5N?oc=5"
   },
   {
    "tag": "Results",
@@ -1399,13 +1406,6 @@
   },
   {
    "tag": "Results",
-   "t": "AMBER Share Price Today - Amber Enterprises on NSE/BSE",
-   "s": "scanx.trade",
-   "d": "20 Nov, 8:05 AM",
-   "u": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBaRE5FbU5ZMm1XaFdxVWFfb2M2TzZyZFBlTlFaRWtLcllrQUhjVGp2Y2FrR3NZWnd6RGduazZZSlBZZGp6UUhfeVlEV2ZWXzVkR1djeXc3bDRienhITHI4b1FYdUFGZw?oc=5"
-  },
-  {
-   "tag": "Results",
    "t": "Edelweiss Financial Share Price Today, Edelweiss Financial Stock Price Live NSE/BSE Updates",
    "s": "The Economic Times",
    "d": "19 Nov, 4:22 PM",
@@ -1413,10 +1413,10 @@
   },
   {
    "tag": "Economy",
-   "t": "Shrinkflation: Why the RBI Rate Hike May Fail in 2026",
-   "s": "Frontline Magazine",
-   "d": "19 Nov, 2:16 PM",
-   "u": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPY1pCMHVpalhQdVVJdFZjbnF1RnExMWVZVE9VQmx1a1M1QmJuM243b0xETFR4VnA3cWZPNmo5d3E2dXQtdnBDMFUtaWthRkEwY2R0c3I1TGlYYTlveVQ5YXNZUDB1OWNoXzBqajRMYVJETnIybmc5QUY0WlNZNlpTYW9xdzctMXE4LWZvZzBSS2otNHRTWm0wTDVB0gGaAUFVX3lxTE9jWkIwdWlqWFB1VUl0VmNucXVGcTExZVlUT1VCbHVrUzVCYm4zbjdvTERMVHhWcDdxZk82ajl3cTZ1dC12cEMwVS1pa2FGQTBjZHRzcjVMaVhhOW95VDlhc1lQMHU5Y2hfMGpqNExhUkROcjJuZzlBRjRaU1k2WlNhb3F3Ny0xcTgtZm9nMFJLai00dFNabTBMNUE?oc=5"
+   "t": "Foreigners flocking back to Indian assets allow RBI to pare FX market footprint",
+   "s": "bfsi.economictimes.indiatimes.com",
+   "d": "19 Nov, 2:00 PM",
+   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPekpFS1U2bW1hTVluaG1NcWZrbHZoTWFkeFl3OS13R1pRclJna0xUa0hKU09yT19FTnhIZjYwYmcxNmJJMzhyaWw1WndoTXE3ODRzampZd3EtNjdXRHZleFVtWjBXUENfRW41MWp3QW5aZUZiNll5ZVNSaDhDVE5QdGxxdW94djZRV1B4Q0RBdjI1WUxFRjh5UzY4ZHRYNVlhMzJCWUZ3bngwUjl6VnRmdEZ5bVA5YTdxclgyQUgyX21oQ0RtVUZjRnV6Tms1NGs4ejJ2MVdzOHRidnRW0gHcAUFVX3lxTE96SkVLVTZtbWFNWW5obU1xZmtsdmhNYWR4WXc5LXdHWlFyUmdrTFRrSEpTT3JPX0VOeEhmNjBiZzE2YkkzOHJpbDVad2hNcTc4NHNqall3cS02N1dEdmV4VW1aMFdQQ19FbjUxandBblplRmI2WXllU1JoOENUTlB0bHF1b3h2NlFXUHhDREF2MjVZTEVGOHlTNjhkdFg1WWEzMkJZRndueDBSOXpWdGZ0RnltUDlhN3FyWDJBSDJfbWhDRG1VRmNGdXpOazU0azh6MnYxV3M4dGJ2dFY?oc=5"
   },
   {
    "tag": "IPO",
@@ -1430,11 +1430,12 @@
   "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers: empty",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 3 IPOs from 6 cards",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 296 headlines, 25 up, 23 down",
+  "outlook: 282 headlines, 25 up, 23 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "members": {
@@ -2455,9 +2456,9 @@
   }
  },
  "nse": {
-  "n50": "20 Nov, 5:38 PM",
-  "mid": "20 Nov, 5:38 PM",
-  "small": "20 Nov, 5:38 PM"
+  "n50": "20 Nov, 5:48 PM",
+  "mid": "20 Nov, 5:48 PM",
+  "small": "20 Nov, 5:48 PM"
  },
  "midg": [
   [
@@ -2626,24 +2627,25 @@
    "BANKNIFTY": 64635.2,
    "MIDCAP": 62031.0,
    "SMALLCAP": 19443.6,
-   "VIX": 17.32
+   "VIX": 16.11
   }
  },
  "fulllog": [
   "bse movers gainer: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=gainer&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers loser: 403 Client Error: Forbidden for url: https://api.bseindia.com/BseIndiaAPI/api/MktRGainerLoserData/w?GLtype=loser&IndxGrp=AllMkt&IndxGrpval=AllMkt&orderby=all",
   "bse movers: empty",
+  "city metals: 24 cities",
   "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
   "ipo calendar: 19 IPOs",
   "subscription: 3 IPOs from 6 cards",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 296 headlines, 25 up, 23 down",
+  "outlook: 282 headlines, 25 up, 23 down",
   "option chains: 2 ok, 0 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5270,
   "quotes": 4774,
-  "at": "20 Nov, 5:38 PM"
+  "at": "20 Nov, 5:48 PM"
  },
  "global": [
   [
@@ -2678,9 +2680,9 @@
   ],
   [
    "FTSE 100",
-   10389.46,
-   -0.6,
-   1795175614
+   10386.04,
+   -0.64,
+   1795176230
   ],
   [
    "US 10Y yield",
@@ -2690,8 +2692,8 @@
   ]
  ],
  "outlook": {
-  "at": "20 Nov, 5:38 PM",
-  "headlines": 296,
+  "at": "20 Nov, 5:48 PM",
+  "headlines": 282,
   "screened": 1787,
   "cues": [
    "US tech (Nasdaq) fell 2.2% in the last session",
@@ -2828,21 +2830,33 @@
     ]
    },
    {
-    "k": "ADANIENSOL",
-    "n": "Adani Energy Solutions",
-    "s": 8,
+    "k": "MARUTI",
+    "n": "Maruti Suzuki India",
+    "s": 10.0,
     "conf": "High",
-    "p": 1491.8,
-    "pct": 1.25,
-    "mc": 182440.4,
-    "sec": "Utilities",
+    "p": 14011.0,
+    "pct": 3.11,
+    "mc": 440509.5,
+    "sec": "Consumer Cyclical",
     "why": [
      {
       "k": "news",
-      "t": "Diamond Power Infrastructure Secures ₹707.80 Crore Order From Adani Energy Solutions; Shares Rise 0.94%",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNE9MdkljemotcVZIRTdRWC1Pb1pOMGRNRmE2OV9zVTdEak83MERsajQzWnZNTU9qU1dmTlpONFc3OUVlUHBBWTBwMXVMV001WV8yX0REX1g2Y2g5bTVHU3hWRHBBWll6T0p6b0twUDZUQUdOTVh5ZW9od2FjTEw0Ml9NcDVRcTQtVHByLTdqMkpfaGwxbk8xM1UyMUZmemhyNWxYaUJtZnhBSlkyQUxsTTFYbHRmUTNHNzF0RVlnQ1o?oc=5",
-      "src": "HDFC Sky"
+      "t": "Maruti Suzuki India Ltd. (MARUTI) Share Price Rise Streak: second straight session with 10.04% cumulative gain",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjY4MVItTlBGRVJNeWRwenNuaTRfMjN6WkJZWXJoVTZrU2g4WFUwSG8xZGRWZm1xZEJQQkc3cXpyMW1EYjVTS04yN092YVRwZkxfMmJFb2ZfNkxqajNpWGR4YVdVQ01XaURUNkxPalpmX3dMbm9HOGhUUGRBQ0ltdDJldDYtakZ1anpKTTNfdw?oc=5",
+      "src": "Univest"
+     },
+     {
+      "k": "news",
+      "t": "Market wrap, Nov 19: Indices erase Middle East war losses; NIFTY50, SENSEX hit 9-month highs, Maruti Suzuki leads gain",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMingJBVV95cUxQV2Z4NzZLSGxwaDZBS2VEYzZwck1OaTd1Nm9UUFJwVGhTV0NJWDk2VUlkYXB0TXVUTzlHMHFlZ1hwZkZlcHVXZXhmTVZjVUVJbC04Vjk5SzhyUEZndldua0Mxa21xSFptdFI3QkVtOU1UcXhUWURlQWNzZk02R2ZRa1JXMW96amtQWkNMLTNWZUxRelZfMWo5a2lEdU9IT3k4djA0VzVodlNHeWNGeFFSOUYtMEJfVF8zV29kM21rZUVvSkZjYUQ5ZG56bzMyWDNYaFFvTkJZN0g4N3lJV2x3SWxpenRLZ3JuUGljX2xHQk1Kd1RtS3FjMnpGVXNuNjlubFJJOTl1TVNkUW5uQnNyRzBMWkpGWlF5MFpiUkhn?oc=5",
+      "src": "Dailyhunt"
+     },
+     {
+      "k": "price",
+      "t": "Closed strong: +3.1% on 2.5× usual volume, near the day's high",
+      "s": 2.0197864287728633
      }
     ]
    },
@@ -2891,30 +2905,6 @@
       "k": "price",
       "t": "Closed strong: +4.7% on 3.1× usual volume, near the day's high",
       "s": 2.319215348408247
-     }
-    ]
-   },
-   {
-    "k": "MARUTI",
-    "n": "Maruti Suzuki India",
-    "s": 6.0,
-    "conf": "High",
-    "p": 14011.0,
-    "pct": 3.11,
-    "mc": 440509.5,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Maruti Suzuki India Ltd. (MARUTI) Share Price Rise Streak: second straight session with 10.04% cumulative gain",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjY4MVItTlBGRVJNeWRwenNuaTRfMjN6WkJZWXJoVTZrU2g4WFUwSG8xZGRWZm1xZEJQQkc3cXpyMW1EYjVTS04yN092YVRwZkxfMmJFb2ZfNkxqajNpWGR4YVdVQ01XaURUNkxPalpmX3dMbm9HOGhUUGRBQ0ltdDJldDYtakZ1anpKTTNfdw?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.1% on 2.5× usual volume, near the day's high",
-      "s": 2.0197864287728633
      }
     ]
    },
@@ -3116,6 +3106,25 @@
       "s": 4,
       "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZmFuYTNWSEFBaXpVQVh4eUtacVkwbDVmZnRIZlJYbW5oRjAtMlhMVXp3XzRNWFVpV3RUeXFyUVBjNHBiSkE3LVFraGlNeVZ6dHNnXzFocXM5VlA4VXVvQXg3dnJxZ0xTSy1lN0NsdVZTNWpQZVQyS285MEY0aEFzZXdn?oc=5",
       "src": "Univest"
+     }
+    ]
+   },
+   {
+    "k": "PRESTIGE",
+    "n": "Prestige Estates Projects",
+    "s": 4,
+    "conf": "Medium",
+    "p": 1680.0,
+    "pct": 1.51,
+    "mc": 72362.7,
+    "sec": "Real Estate",
+    "why": [
+     {
+      "k": "news",
+      "t": "Prestige Estates gains on launching Prestige Avon in North Bengaluru",
+      "s": 4,
+      "u": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYTVva243WjRvWFl1cGlBbDFCbnUxcFMwVW9pSVdHM2ZNSWpycWNKLWlBVEZ0bHVSTlItOFZYcnFhWlpLSm11WFQ1c083RUVZQXZQSjloMU5zaWpmZEliSzJOdFAtS2V1Mm03a2J1bzFTd2tsTEdkcWJXbmZ0QTFFY2h5WHRseVNmUURwdlU5ZHhWUzhXYUJNMGJR?oc=5",
+      "src": "Udaipur Kiran"
      }
     ]
    },
@@ -4258,7 +4267,7 @@
   }
  },
  "hilo": {
-  "at": "20 Nov, 5:38 PM",
+  "at": "20 Nov, 5:48 PM",
   "hi": [
    [
     "KOTAKBANK",
@@ -5351,7 +5360,7 @@
   ]
  },
  "allmov": {
-  "at": "20 Nov, 5:38 PM",
+  "at": "20 Nov, 5:48 PM",
   "g": [
    [
     "B544770",
@@ -5530,7 +5539,7 @@
   ]
  },
  "tw": {
-  "at": "20 Nov, 5:38 PM",
+  "at": "20 Nov, 5:48 PM",
   "phase": "close",
   "for": "Mon 23 Nov",
   "picks": [
@@ -5696,6 +5705,26 @@
     "s": 14.4
    },
    {
+    "k": "MARUTI",
+    "n": "Maruti Suzuki India",
+    "p": 14011.0,
+    "pct": 3.11,
+    "vx": 2.5,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Maruti Suzuki India Ltd. (MARUTI) Share Price Rise Streak: second straight session with 10.04% cumulative gain",
+      "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjY4MVItTlBGRVJNeWRwenNuaTRfMjN6WkJZWXJoVTZrU2g4WFUwSG8xZGRWZm1xZEJQQkc3cXpyMW1EYjVTS04yN092YVRwZkxfMmJFb2ZfNkxqajNpWGR4YVdVQ01XaURUNkxPalpmX3dMbm9HOGhUUGRBQ0ltdDJldDYtakZ1anpKTTNfdw?oc=5"
+     },
+     {
+      "t": "momentum",
+      "x": "Up 3.1%, closing near the day's high on 2.5× normal volume"
+     }
+    ],
+    "s": 13.9
+   },
+   {
     "k": "SEIL",
     "n": "Shanti Educational Initiatives",
     "p": 208.05,
@@ -5791,26 +5820,6 @@
     "s": 10.4
    },
    {
-    "k": "MARUTI",
-    "n": "Maruti Suzuki India",
-    "p": 14011.0,
-    "pct": 3.11,
-    "vx": 2.5,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Maruti Suzuki India Ltd. (MARUTI) Share Price Rise Streak: second straight session with 10.04% cumulative gain",
-      "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRjY4MVItTlBGRVJNeWRwenNuaTRfMjN6WkJZWXJoVTZrU2g4WFUwSG8xZGRWZm1xZEJQQkc3cXpyMW1EYjVTS04yN092YVRwZkxfMmJFb2ZfNkxqajNpWGR4YVdVQ01XaURUNkxPalpmX3dMbm9HOGhUUGRBQ0ltdDJldDYtakZ1anpKTTNfdw?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.1%, closing near the day's high on 2.5× normal volume"
-     }
-    ],
-    "s": 9.9
-   },
-   {
     "k": "HDFCBANK",
     "n": "HDFC Bank",
     "p": 846.0,
@@ -5829,22 +5838,6 @@
      }
     ],
     "s": 8.9
-   },
-   {
-    "k": "ADANIENSOL",
-    "n": "Adani Energy Solutions",
-    "p": 1491.8,
-    "pct": 1.25,
-    "vx": 1.2,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Diamond Power Infrastructure Secures ₹707.80 Crore Order From Adani Energy Solutions; Shares Rise 0.94%",
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNE9MdkljemotcVZIRTdRWC1Pb1pOMGRNRmE2OV9zVTdEak83MERsajQzWnZNTU9qU1dmTlpONFc3OUVlUHBBWTBwMXVMV001WV8yX0REX1g2Y2g5bTVHU3hWRHBBWll6T0p6b0twUDZUQUdOTVh5ZW9od2FjTEw0Ml9NcDVRcTQtVHByLTdqMkpfaGwxbk8xM1UyMUZmemhyNWxYaUJtZnhBSlkyQUxsTTFYbHRmUTNHNzF0RVlnQ1o?oc=5"
-     }
-    ],
-    "s": 8.0
    },
    {
     "k": "AXISBANK",
@@ -5950,6 +5943,21 @@
      }
     ],
     "s": 5.8
+   },
+   {
+    "k": "ARIS",
+    "n": "Arisinfra Solutions",
+    "p": 164.97,
+    "pct": 4.42,
+    "vx": 2.4,
+    "fo": false,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 4.4%, closing near the day's high on 2.4× normal volume"
+     }
+    ],
+    "s": 5.3
    }
   ],
   "fo": [
@@ -6029,21 +6037,6 @@
     "s": 15.6
    },
    {
-    "k": "PERSISTENT",
-    "n": "Persistent Systems",
-    "p": 6124.0,
-    "pct": 4.15,
-    "vx": 5.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.2%, closing near the day's high on 5.3× normal volume"
-     }
-    ],
-    "s": 10.4
-   },
-   {
     "k": "MARUTI",
     "n": "Maruti Suzuki India",
     "p": 14011.0,
@@ -6061,7 +6054,22 @@
       "x": "Up 3.1%, closing near the day's high on 2.5× normal volume"
      }
     ],
-    "s": 9.9
+    "s": 13.9
+   },
+   {
+    "k": "PERSISTENT",
+    "n": "Persistent Systems",
+    "p": 6124.0,
+    "pct": 4.15,
+    "vx": 5.3,
+    "fo": true,
+    "why": [
+     {
+      "t": "momentum",
+      "x": "Up 4.2%, closing near the day's high on 5.3× normal volume"
+     }
+    ],
+    "s": 10.4
    },
    {
     "k": "HDFCBANK",
@@ -6082,22 +6090,6 @@
      }
     ],
     "s": 8.9
-   },
-   {
-    "k": "ADANIENSOL",
-    "n": "Adani Energy Solutions",
-    "p": 1491.8,
-    "pct": 1.25,
-    "vx": 1.2,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Diamond Power Infrastructure Secures ₹707.80 Crore Order From Adani Energy Solutions; Shares Rise 0.94%",
-      "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNE9MdkljemotcVZIRTdRWC1Pb1pOMGRNRmE2OV9zVTdEak83MERsajQzWnZNTU9qU1dmTlpONFc3OUVlUHBBWTBwMXVMV001WV8yX0REX1g2Y2g5bTVHU3hWRHBBWll6T0p6b0twUDZUQUdOTVh5ZW9od2FjTEw0Ml9NcDVRcTQtVHByLTdqMkpfaGwxbk8xM1UyMUZmemhyNWxYaUJtZnhBSlkyQUxsTTFYbHRmUTNHNzF0RVlnQ1o?oc=5"
-     }
-    ],
-    "s": 8.0
    },
    {
     "k": "AXISBANK",
@@ -6160,6 +6152,22 @@
      }
     ],
     "s": 4.1
+   },
+   {
+    "k": "NAUKRI",
+    "n": "Info Edge (India)",
+    "p": 1177.7,
+    "pct": 1.73,
+    "vx": 0.9,
+    "fo": true,
+    "why": [
+     {
+      "t": "news",
+      "x": "Info Edge (India) Ltd Sees Significant Open Interest Surge Amid Bullish Market Signals",
+      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQRjF6SDQyaXNlcUN5dGE4ekxyX0M5TDRmLXB0UV83MWducEdVNTJ5N2dnNlpuWnhiYm0yZjBTekVJVEJBRmI4WEN3cnhlSzB2al9hTnBxR0pRTDhTQlJCcU9iY2pGUFJSbExlUXo5b1NQM3lBT0lraTNFUDc0TEsyTnhqXzZYS0xtRmNWN29rZE9ZZndQR2NNVVhvRlZ2YkpYZk9GRTUxTldmMzhZVXpyejVfRld0TUtkUUZXYTI2cXVYQlk3U190eUxDQTJBNU04TEJ0TDRXRkVTUQ?oc=5"
+     }
+    ],
+    "s": 4.0
    }
   ],
   "fodn": [
