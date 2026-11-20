@@ -1,6 +1,6 @@
 {
  "label": "20 Nov 2026, 8:43 AM IST",
- "updated": "2026-11-20T08:43:14+05:30",
+ "updated": "2026-11-20T08:43:52+05:30",
  "state": "closed",
  "metals": {
   "g24": 14394.0,
@@ -401,14 +401,14 @@
     "l": 12941.5
    },
    "xau": {
-    "b": 3527.8,
-    "a": 3527.82,
+    "b": 3523.5,
+    "a": 3523.52,
     "h": 3627.12,
-    "l": 3523.32
+    "l": 3522.02
    },
    "xag": {
-    "b": 41.31,
-    "a": 41.31,
+    "b": 41.3,
+    "a": 41.3,
     "h": 43.11,
     "l": 41.22
    },
@@ -418,7 +418,7 @@
     "h": 93.43,
     "l": 93.3
    },
-   "at": 1795144400,
+   "at": 1795144436,
    "t": "20 Nov, 8:43 AM"
   }
  },
@@ -540,14 +540,14 @@
   "t": 1795143686
  },
  "goldSpot": {
-  "v": 3535.0,
+  "v": 3533.4,
   "prev": 3685.5,
-  "ch": -150.5,
-  "pct": -4.08,
+  "ch": -152.1,
+  "pct": -4.13,
   "high": 3638.1,
   "low": 3527.7,
   "open": 3725.5,
-  "t": 1795143791
+  "t": 1795143829
  },
  "sectors": [
   [
@@ -1427,13 +1427,36 @@
   }
  ],
  "log": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 19 IPOs",
-  "subscription: 3 IPOs from 5 cards",
-  "results cal: 37 upcoming (11 NSE)",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SSDL.NS%2CSSRETAIL.NS%2CSSWL.NS%2CSTALLION.NS%2CSTANLEY.NS%2CSTAR.NS%2CSTARCEMENT.NS%2CSTARHEALTH.NS%2CSTARPAPER.NS%2CSTARTECK.NS%2CSTCINDIA.NS%2CSTEAMHOUSE.NS%2CSTEELCAS.NS%2CSTEELCITY.NS%2CSTEELXIND.NS%2CSTEL.NS%2CSTERTOOLS.NS%2CSTLNETWORK.NS%2CSTLSTRINF.NS%2CSTLTECH.NS%2CSTOVEKRAFT.NS%2CSTUDDS.NS%2CSTYL.NS%2CSTYLAMIND.NS%2CSTYLEBAAZA.NS%2CSTYRENIX.NS%2CSUBEXLTD.NS%2CSUBROS.NS%2CSUDARCOLOR.NS%2CSUDARSCHEM.NS%2CSUDARSHAN.NS%2CSUDEEPPHRM.NS%2CSUKHJITS.NS%2CSULA.NS%2CSUMEDHA.NS%2CSUMEETINDS.NS%2CSUMICHEM.NS%2CSUMIT.NS%2CSUMMITSEC.NS%2CSUNCLAY.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SUNDARAM.NS%2CSUNDARMFIN.NS%2CSUNDRMBRAK.NS%2CSUNDRMFAST.NS%2CSUNDROP.NS%2CSUNFLAG.NS%2CSUNLOC.NS%2CSUNPHARMA.NS%2CSUNRAKSHAK.NS%2CSUNSHIEL.NS%2CSUNSHINE.NS%2CSUNTECK.NS%2CSUNTV.NS%2CSUPERHOUSE.NS%2CSUPERSPIN.NS%2CSUPRAJIT.NS%2CSUPREME.NS%2CSUPREMEENG.NS%2CSUPREMEIND.NS%2CSUPREMEINF.NS%2CSUPRIYA.NS%2CSUPTANERY.NS%2CSURAJEST.NS%2CSURAJLTD.NS%2CSURAKSHA.NS%2CSURANASOL.NS%2CSURANAT%26P.NS%2CSURYALA.NS%2CSURYALAXMI.NS%2CSURYAROSNI.NS%2CSURYODAY.NS%2CSUTLEJTEX.NS%2CSUVEN.NS%2CSUVIDHAA.NS%2CSUYOG.NS%2CSUZLON.NS%2CSVGLOBAL.NS%2CSVLL.NS%2CSVPGLOB.NS%2CSWANCORP.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SWANDEF.NS%2CSWARAJ.NS%2CSWARAJENG.NS%2CSWARNSAR.NS%2CSWASTIKAIN.NS%2CSWELECTES.NS%2CSWIGGY.NS%2CSWISSMLTRY.NS%2CSWSOLAR.NS%2CSYMBIOTEC.NS%2CSYMPHONY.NS%2CSYNCOMF.NS%2CSYNGENE.NS%2CSYRMA.NS%2CSYSTMTXC.NS%2CTAALTECH.NS%2CTAINWALCHM.NS%2CTAJGVK.NS%2CTAKE.NS%2CTALBROAUTO.NS%2CTAMBOLIIN.NS%2CTANAA.NS%2CTANLA.NS%2CTARACHAND.NS%2CTARAPUR.NS%2CTARC.NS%2CTARIL.NS%2CTARMAT.NS%2CTARSONS.NS%2CTASTYBITE.NS%2CTATACAP.NS%2CTATACHEM.NS%2CTATACOMM.NS%2CTATACONSUM.NS%2CTATAELXSI.NS%2CTATAINVEST.NS%2CTATAPOWER.NS%2CTATASTEEL.NS%2CTATATECH.NS%2CTATVA.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TBOTEK.NS%2CTBZ.NS%2CTCC.NS%2CTCI.NS%2CTCIEXP.NS%2CTCIFINANCE.NS%2CTCPLPACK.NS%2CTCS.NS%2CTDPOWERSYS.NS%2CTEAMGTY.NS%2CTEAMLEASE.NS%2CTECHM.NS%2CTECHNOCRAF.NS%2CTECHNOE.NS%2CTECHNVISN.NS%2CTECILCHEM.NS%2CTEGA.NS%2CTEJASNET.NS%2CTEMBO.NS%2CTEMPSENS.NS%2CTENNIND.NS%2CTERAI.NS%2CTERASOFT.NS%2CTEXINFRA.NS%2CTEXMOPIPES.NS%2CTEXRAIL.NS%2CTFCILTD.NS%2CTFL.NS%2CTGBHOTELS.NS%2CTGVSL.NS%2CTHACKER.NS%2CTHAKDEV.NS%2CTHANGAMAYL.NS%2CTHEINVEST.NS%2CTHEJO.NS%2CTHELEELA.NS%2CTHEMISMED.NS%2CTHERMAX.NS%2CTHOMASCOOK.NS%2CTHOMASCOTT.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=THYROCARE.NS%2CTI.NS%2CTICL.NS%2CTIGERLOGS.NS%2CTIIL.NS%2CTIINDIA.NS%2CTIJARIA.NS%2CTIKONA.NS%2CTIL.NS%2CTIMETECHNO.NS%2CTIMEX.NS%2CTIMKEN.NS%2CTINNARUBR.NS%2CTIPSFILMS.NS%2CTIPSMUSIC.NS%2CTIRUMALCHM.NS%2CTIRUPATIFL.NS%2CTITAGARH.NS%2CTITAN.NS%2CTMB.NS%2CTMCV.NS%2CTMPV.NS%2CTNPETRO.NS%2CTNPL.NS%2CTNTELE.NS%2CTOKYOPLAST.NS%2CTOLINS.NS%2CTONBO.NS%2CTORNTPHARM.NS%2CTORNTPOWER.NS%2CTOTAL.NS%2CTOUCHWOOD.NS%2CTOYAMSL.NS%2CTPHQ.NS%2CTPLPLASTEH.NS%2CTRACXN.NS%2CTRANSCOR.NS%2CTRANSPEK.NS%2CTRANSRAILL.NS%2CTRANSWORLD.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TRAVELFOOD.NS%2CTREEHOUSE.NS%2CTREJHARA.NS%2CTREL.NS%2CTRENT.NS%2CTRF.NS%2CTRIDENT.NS%2CTRIGYN.NS%2CTRITONV.NS%2CTRITURBINE.NS%2CTRIVENI.NS%2CTRIVENIPT.NS%2CTRU.NS%2CTRUALT.NS%2CTSFINV.NS%2CTTKHLTCARE.NS%2CTTKPRESTIG.NS%2CTTL.NS%2CTTML.NS%2CTURTLEMINT.NS%2CTUTIALKA.NS%2CTVSELECT.NS%2CTVSHLTD.NS%2CTVSMOTOR.NS%2CTVSSCS.NS%2CTVSSRICHAK.NS%2CTVTODAY.NS%2CTVVISION.NS%2CUBL.NS%2CUCAL.NS%2CUCOBANK.NS%2CUDAYJEW.NS%2CUDS.NS%2CUEL.NS%2CUFBL.NS%2CUFLEX.NS%2CUFO.NS%2CUGARSUGAR.NS%2CUGROCAP.NS%2CUJJIVANSFB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=ULTRACEMCO.NS%2CULTRAMAR.NS%2CUMAEXPORTS.NS%2CUMESLTD.NS%2CUMIYA-MRO.NS%2CUNICHEMLAB.NS%2CUNIDT.NS%2CUNIECOM.NS%2CUNIENTER.NS%2CUNIINFO.NS%2CUNIMECH.NS%2CUNIONBANK.NS%2CUNIPARTS.NS%2CUNITDSPR.NS%2CUNITECH.NS%2CUNITEDPOLY.NS%2CUNITEDTEA.NS%2CUNIVASTU.NS%2CUNIVCABLES.NS%2CUNIVPHOTO.NS%2CUNOMINDA.NS%2CUPHOT.NS%2CUPL.NS%2CURAVIDEF.NS%2CURBANCO.NS%2CURJA.NS%2CUSHAMART.NS%2CUSK.NS%2CUTIAMC.NS%2CUTKARSHBNK.NS%2CUTLSOLAR.NS%2CUTTAMSUGAR.NS%2CUYFINCORP.NS%2CV2RETAIL.NS%2CVADILALIND.NS%2CVADILENT.NS%2CVAIBHAVGBL.NS%2CVAISHALI.NS%2CVAKRANGEE.NS%2CVALIANTLAB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VALIANTORG.NS%2CVAML.NS%2CVARDHACRLC.NS%2CVARDMNPOLY.NS%2CVARMORA.NS%2CVARROC.NS%2CVASCONEQ.NS%2CVASUPRADA.NS%2CVASWANI.NS%2CVBL.NS%2CVCL.NS%2CVEDAVAAG.NS%2CVEDL.NS%2CVEDPOWER.NS%2CVEEDOL.NS%2CVEEFIN.NS%2CVEEGALAND.NS%2CVELJAN.NS%2CVENKEYS.NS%2CVENTIVE.NS%2CVENUSPIPES.NS%2CVENUSREM.NS%2CVERANDA.NS%2CVERTOZ.NS%2CVESUVIUS.NS%2CVETO.NS%2CVGCL.NS%2CVGL.NS%2CVGUARD.NS%2CVHL.NS%2CVHLTD.NS%2CVIDHIING.NS%2CVIDYAWIRES.NS%2CVIJAYA.NS%2CVIJIFIN.NS%2CVIJSOLX.NS%2CVIKASECO.NS%2CVIKASLIFE.NS%2CVIKRAMSOLR.NS%2CVIKRAN.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VIMTALABS.NS%2CVINATIORGA.NS%2CVINCOFE.NS%2CVINDHYATEL.NS%2CVINEETLAB.NS%2CVINNY.NS%2CVINYLINDIA.NS%2CVIPCLOTHNG.NS%2CVIPIND.NS%2CVIPULLTD.NS%2CVIRINCHI.NS%2CVIRTUALG.NS%2CVISACHROME.NS%2CVISAKAIND.NS%2CVISHAL.NS%2CVISHNU.NS%2CVISHWARAJ.NS%2CVISL.NS%2CVITAL.NS%2CVIVIANA.NS%2CVIVIDHA.NS%2CVIVIMEDLAB.NS%2CVIVOBIOT.NS%2CVIYASH.NS%2CVLEGOV.NS%2CVLSFINANCE.NS%2CVMART.NS%2CVMM.NS%2CVMSTMT.NS%2CVNL.NS%2CVOEPL.NS%2CVOGL.NS%2CVOITHPAPR.NS%2CVOLTAMP.NS%2CVOLTAS.NS%2CVPRPL.NS%2CVRAJ.NS%2CVRLLOG.NS%2CVSSL.NS%2CVSTIND.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VSTL.NS%2CVSTTILLERS.NS%2CVTL.NS%2CVTMLTD.NS%2CWAAREEENER.NS%2CWAAREEINDO.NS%2CWAAREERTL.NS%2CWABAG.NS%2CWAKEFIT.NS%2CWALCHANNAG.NS%2CWANBURY.NS%2CWARDINMOBI.NS%2CWATERBASE.NS%2CWCIL.NS%2CWEALTH.NS%2CWEBELSOLAR.NS%2CWEIZMANIND.NS%2CWEL.NS%2CWELCORP.NS%2CWELENT.NS%2CWELINV.NS%2CWELSPLSOL.NS%2CWELSPUNLIV.NS%2CWENDT.NS%2CWESTLIFE.NS%2CWEWIN.NS%2CWEWORK.NS%2CWHBRADY.NS%2CWHEELS.NS%2CWHIRLPOOL.NS%2CWILLAMAGOR.NS%2CWINDLAS.NS%2CWINDMACHIN.NS%2CWIPL.NS%2CWIPRO.NS%2CWOCKPHARMA.NS%2CWONDERLA.NS%2CWORTHPERI.NS%2CWPIL.NS%2CWSI.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=WSTCSTPAPR.NS%2CXCHANGING.NS%2CXELPMOC.NS%2CXPROINDIA.NS%2CXTGLOBAL.NS%2CXTRANET.NS%2CYASHO.NS%2CYATHARTH.NS%2CYATRA.NS%2CYESBANK.NS%2CYOGI.NS%2CYUKEN.NS%2CZAGGLE.NS%2CZEEL.NS%2CZEELEARN.NS%2CZEEMEDIA.NS%2CZENITHEXPO.NS%2CZENITHSTL.NS%2CZENSARTECH.NS%2CZENTEC.NS%2CZETWERK.NS%2CZFCVINDIA.NS%2CZFSTEERING.NS%2CZIMLAB.NS%2CZODIAC.NS%2CZODIACLOTH.NS%2CZOTA.NS%2CZSARACOM.NS%2CZUARI.NS%2CZUARIIND.NS%2CZYDUSLIFE.NS%2CZYDUSWELL.NS%2CTHEJO.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quotes retry: +0 of 2633 missing NSE",
+  "per-symbol fallback for 2633 NSE stocks",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 320 headlines, 25 up, 13 down",
-  "option chains: 2 ok, 0 failed, 220 stored"
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 0 headlines, 0 up, 0 down",
+  "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
+  "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
+  "option chains: 0 ok, 2 failed, 220 stored"
  ],
  "members": {
   "n50": {
@@ -2628,17 +2651,40 @@
   }
  },
  "fulllog": [
-  "ipo calendar Dec 2026 failed: 404 Client Error: Not Found for url: https://www.ipomarket.in/ipo-calendar/december-2026",
-  "ipo calendar: 19 IPOs",
-  "subscription: 3 IPOs from 5 cards",
-  "results cal: 37 upcoming (11 NSE)",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SSDL.NS%2CSSRETAIL.NS%2CSSWL.NS%2CSTALLION.NS%2CSTANLEY.NS%2CSTAR.NS%2CSTARCEMENT.NS%2CSTARHEALTH.NS%2CSTARPAPER.NS%2CSTARTECK.NS%2CSTCINDIA.NS%2CSTEAMHOUSE.NS%2CSTEELCAS.NS%2CSTEELCITY.NS%2CSTEELXIND.NS%2CSTEL.NS%2CSTERTOOLS.NS%2CSTLNETWORK.NS%2CSTLSTRINF.NS%2CSTLTECH.NS%2CSTOVEKRAFT.NS%2CSTUDDS.NS%2CSTYL.NS%2CSTYLAMIND.NS%2CSTYLEBAAZA.NS%2CSTYRENIX.NS%2CSUBEXLTD.NS%2CSUBROS.NS%2CSUDARCOLOR.NS%2CSUDARSCHEM.NS%2CSUDARSHAN.NS%2CSUDEEPPHRM.NS%2CSUKHJITS.NS%2CSULA.NS%2CSUMEDHA.NS%2CSUMEETINDS.NS%2CSUMICHEM.NS%2CSUMIT.NS%2CSUMMITSEC.NS%2CSUNCLAY.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SUNDARAM.NS%2CSUNDARMFIN.NS%2CSUNDRMBRAK.NS%2CSUNDRMFAST.NS%2CSUNDROP.NS%2CSUNFLAG.NS%2CSUNLOC.NS%2CSUNPHARMA.NS%2CSUNRAKSHAK.NS%2CSUNSHIEL.NS%2CSUNSHINE.NS%2CSUNTECK.NS%2CSUNTV.NS%2CSUPERHOUSE.NS%2CSUPERSPIN.NS%2CSUPRAJIT.NS%2CSUPREME.NS%2CSUPREMEENG.NS%2CSUPREMEIND.NS%2CSUPREMEINF.NS%2CSUPRIYA.NS%2CSUPTANERY.NS%2CSURAJEST.NS%2CSURAJLTD.NS%2CSURAKSHA.NS%2CSURANASOL.NS%2CSURANAT%26P.NS%2CSURYALA.NS%2CSURYALAXMI.NS%2CSURYAROSNI.NS%2CSURYODAY.NS%2CSUTLEJTEX.NS%2CSUVEN.NS%2CSUVIDHAA.NS%2CSUYOG.NS%2CSUZLON.NS%2CSVGLOBAL.NS%2CSVLL.NS%2CSVPGLOB.NS%2CSWANCORP.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=SWANDEF.NS%2CSWARAJ.NS%2CSWARAJENG.NS%2CSWARNSAR.NS%2CSWASTIKAIN.NS%2CSWELECTES.NS%2CSWIGGY.NS%2CSWISSMLTRY.NS%2CSWSOLAR.NS%2CSYMBIOTEC.NS%2CSYMPHONY.NS%2CSYNCOMF.NS%2CSYNGENE.NS%2CSYRMA.NS%2CSYSTMTXC.NS%2CTAALTECH.NS%2CTAINWALCHM.NS%2CTAJGVK.NS%2CTAKE.NS%2CTALBROAUTO.NS%2CTAMBOLIIN.NS%2CTANAA.NS%2CTANLA.NS%2CTARACHAND.NS%2CTARAPUR.NS%2CTARC.NS%2CTARIL.NS%2CTARMAT.NS%2CTARSONS.NS%2CTASTYBITE.NS%2CTATACAP.NS%2CTATACHEM.NS%2CTATACOMM.NS%2CTATACONSUM.NS%2CTATAELXSI.NS%2CTATAINVEST.NS%2CTATAPOWER.NS%2CTATASTEEL.NS%2CTATATECH.NS%2CTATVA.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TBOTEK.NS%2CTBZ.NS%2CTCC.NS%2CTCI.NS%2CTCIEXP.NS%2CTCIFINANCE.NS%2CTCPLPACK.NS%2CTCS.NS%2CTDPOWERSYS.NS%2CTEAMGTY.NS%2CTEAMLEASE.NS%2CTECHM.NS%2CTECHNOCRAF.NS%2CTECHNOE.NS%2CTECHNVISN.NS%2CTECILCHEM.NS%2CTEGA.NS%2CTEJASNET.NS%2CTEMBO.NS%2CTEMPSENS.NS%2CTENNIND.NS%2CTERAI.NS%2CTERASOFT.NS%2CTEXINFRA.NS%2CTEXMOPIPES.NS%2CTEXRAIL.NS%2CTFCILTD.NS%2CTFL.NS%2CTGBHOTELS.NS%2CTGVSL.NS%2CTHACKER.NS%2CTHAKDEV.NS%2CTHANGAMAYL.NS%2CTHEINVEST.NS%2CTHEJO.NS%2CTHELEELA.NS%2CTHEMISMED.NS%2CTHERMAX.NS%2CTHOMASCOOK.NS%2CTHOMASCOTT.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=THYROCARE.NS%2CTI.NS%2CTICL.NS%2CTIGERLOGS.NS%2CTIIL.NS%2CTIINDIA.NS%2CTIJARIA.NS%2CTIKONA.NS%2CTIL.NS%2CTIMETECHNO.NS%2CTIMEX.NS%2CTIMKEN.NS%2CTINNARUBR.NS%2CTIPSFILMS.NS%2CTIPSMUSIC.NS%2CTIRUMALCHM.NS%2CTIRUPATIFL.NS%2CTITAGARH.NS%2CTITAN.NS%2CTMB.NS%2CTMCV.NS%2CTMPV.NS%2CTNPETRO.NS%2CTNPL.NS%2CTNTELE.NS%2CTOKYOPLAST.NS%2CTOLINS.NS%2CTONBO.NS%2CTORNTPHARM.NS%2CTORNTPOWER.NS%2CTOTAL.NS%2CTOUCHWOOD.NS%2CTOYAMSL.NS%2CTPHQ.NS%2CTPLPLASTEH.NS%2CTRACXN.NS%2CTRANSCOR.NS%2CTRANSPEK.NS%2CTRANSRAILL.NS%2CTRANSWORLD.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=TRAVELFOOD.NS%2CTREEHOUSE.NS%2CTREJHARA.NS%2CTREL.NS%2CTRENT.NS%2CTRF.NS%2CTRIDENT.NS%2CTRIGYN.NS%2CTRITONV.NS%2CTRITURBINE.NS%2CTRIVENI.NS%2CTRIVENIPT.NS%2CTRU.NS%2CTRUALT.NS%2CTSFINV.NS%2CTTKHLTCARE.NS%2CTTKPRESTIG.NS%2CTTL.NS%2CTTML.NS%2CTURTLEMINT.NS%2CTUTIALKA.NS%2CTVSELECT.NS%2CTVSHLTD.NS%2CTVSMOTOR.NS%2CTVSSCS.NS%2CTVSSRICHAK.NS%2CTVTODAY.NS%2CTVVISION.NS%2CUBL.NS%2CUCAL.NS%2CUCOBANK.NS%2CUDAYJEW.NS%2CUDS.NS%2CUEL.NS%2CUFBL.NS%2CUFLEX.NS%2CUFO.NS%2CUGARSUGAR.NS%2CUGROCAP.NS%2CUJJIVANSFB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=ULTRACEMCO.NS%2CULTRAMAR.NS%2CUMAEXPORTS.NS%2CUMESLTD.NS%2CUMIYA-MRO.NS%2CUNICHEMLAB.NS%2CUNIDT.NS%2CUNIECOM.NS%2CUNIENTER.NS%2CUNIINFO.NS%2CUNIMECH.NS%2CUNIONBANK.NS%2CUNIPARTS.NS%2CUNITDSPR.NS%2CUNITECH.NS%2CUNITEDPOLY.NS%2CUNITEDTEA.NS%2CUNIVASTU.NS%2CUNIVCABLES.NS%2CUNIVPHOTO.NS%2CUNOMINDA.NS%2CUPHOT.NS%2CUPL.NS%2CURAVIDEF.NS%2CURBANCO.NS%2CURJA.NS%2CUSHAMART.NS%2CUSK.NS%2CUTIAMC.NS%2CUTKARSHBNK.NS%2CUTLSOLAR.NS%2CUTTAMSUGAR.NS%2CUYFINCORP.NS%2CV2RETAIL.NS%2CVADILALIND.NS%2CVADILENT.NS%2CVAIBHAVGBL.NS%2CVAISHALI.NS%2CVAKRANGEE.NS%2CVALIANTLAB.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VALIANTORG.NS%2CVAML.NS%2CVARDHACRLC.NS%2CVARDMNPOLY.NS%2CVARMORA.NS%2CVARROC.NS%2CVASCONEQ.NS%2CVASUPRADA.NS%2CVASWANI.NS%2CVBL.NS%2CVCL.NS%2CVEDAVAAG.NS%2CVEDL.NS%2CVEDPOWER.NS%2CVEEDOL.NS%2CVEEFIN.NS%2CVEEGALAND.NS%2CVELJAN.NS%2CVENKEYS.NS%2CVENTIVE.NS%2CVENUSPIPES.NS%2CVENUSREM.NS%2CVERANDA.NS%2CVERTOZ.NS%2CVESUVIUS.NS%2CVETO.NS%2CVGCL.NS%2CVGL.NS%2CVGUARD.NS%2CVHL.NS%2CVHLTD.NS%2CVIDHIING.NS%2CVIDYAWIRES.NS%2CVIJAYA.NS%2CVIJIFIN.NS%2CVIJSOLX.NS%2CVIKASECO.NS%2CVIKASLIFE.NS%2CVIKRAMSOLR.NS%2CVIKRAN.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VIMTALABS.NS%2CVINATIORGA.NS%2CVINCOFE.NS%2CVINDHYATEL.NS%2CVINEETLAB.NS%2CVINNY.NS%2CVINYLINDIA.NS%2CVIPCLOTHNG.NS%2CVIPIND.NS%2CVIPULLTD.NS%2CVIRINCHI.NS%2CVIRTUALG.NS%2CVISACHROME.NS%2CVISAKAIND.NS%2CVISHAL.NS%2CVISHNU.NS%2CVISHWARAJ.NS%2CVISL.NS%2CVITAL.NS%2CVIVIANA.NS%2CVIVIDHA.NS%2CVIVIMEDLAB.NS%2CVIVOBIOT.NS%2CVIYASH.NS%2CVLEGOV.NS%2CVLSFINANCE.NS%2CVMART.NS%2CVMM.NS%2CVMSTMT.NS%2CVNL.NS%2CVOEPL.NS%2CVOGL.NS%2CVOITHPAPR.NS%2CVOLTAMP.NS%2CVOLTAS.NS%2CVPRPL.NS%2CVRAJ.NS%2CVRLLOG.NS%2CVSSL.NS%2CVSTIND.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=VSTL.NS%2CVSTTILLERS.NS%2CVTL.NS%2CVTMLTD.NS%2CWAAREEENER.NS%2CWAAREEINDO.NS%2CWAAREERTL.NS%2CWABAG.NS%2CWAKEFIT.NS%2CWALCHANNAG.NS%2CWANBURY.NS%2CWARDINMOBI.NS%2CWATERBASE.NS%2CWCIL.NS%2CWEALTH.NS%2CWEBELSOLAR.NS%2CWEIZMANIND.NS%2CWEL.NS%2CWELCORP.NS%2CWELENT.NS%2CWELINV.NS%2CWELSPLSOL.NS%2CWELSPUNLIV.NS%2CWENDT.NS%2CWESTLIFE.NS%2CWEWIN.NS%2CWEWORK.NS%2CWHBRADY.NS%2CWHEELS.NS%2CWHIRLPOOL.NS%2CWILLAMAGOR.NS%2CWINDLAS.NS%2CWINDMACHIN.NS%2CWIPL.NS%2CWIPRO.NS%2CWOCKPHARMA.NS%2CWONDERLA.NS%2CWORTHPERI.NS%2CWPIL.NS%2CWSI.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quote batch failed: 401 Client Error: Unauthorized for url: https://query1.finance.yahoo.com/v7/finance/quote?symbols=WSTCSTPAPR.NS%2CXCHANGING.NS%2CXELPMOC.NS%2CXPROINDIA.NS%2CXTGLOBAL.NS%2CXTRANET.NS%2CYASHO.NS%2CYATHARTH.NS%2CYATRA.NS%2CYESBANK.NS%2CYOGI.NS%2CYUKEN.NS%2CZAGGLE.NS%2CZEEL.NS%2CZEELEARN.NS%2CZEEMEDIA.NS%2CZENITHEXPO.NS%2CZENITHSTL.NS%2CZENSARTECH.NS%2CZENTEC.NS%2CZETWERK.NS%2CZFCVINDIA.NS%2CZFSTEERING.NS%2CZIMLAB.NS%2CZODIAC.NS%2CZODIACLOTH.NS%2CZOTA.NS%2CZSARACOM.NS%2CZUARI.NS%2CZUARIIND.NS%2CZYDUSLIFE.NS%2CZYDUSWELL.NS%2CTHEJO.NS&crumb=Too+Many+Requests&fields=regularMarketPrice%2CregularMarketChangePercent%2CregularMarketPreviousClose%2CregularMarketOpen%2CregularMarketDayHigh%2CregularMarketDayLow%2CfiftyTwoWeekHigh%2CfiftyTwoWeekLow%2CregularMarketVolume%2CmarketCap%2CtrailingPE%2CepsTrailingTwelveMonths%2CpriceToBook%2CtrailingAnnualDividendYield%2CregularMarketTime%2CaverageDailyVolume3Month%2CaverageDailyVolume10Day",
+  "quotes retry: +0 of 2633 missing NSE",
+  "per-symbol fallback for 2633 NSE stocks",
   "bse eod 2026-11-19: 5095 scrips",
-  "outlook: 320 headlines, 25 up, 13 down",
-  "option chains: 2 ok, 0 failed, 220 stored"
+  "outlook news 'shares jump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+jump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares surge India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+surge+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares slump NSE' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+slump+NSE+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'shares fall India' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=shares+fall+India+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stock rallies after' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stock+rallies+after+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'Q2 results net profit shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Q2+results+net+profit+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'wins contract shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=wins+contract+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'upper circuit stock' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=upper+circuit+stock+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'stocks to watch today' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=stocks+to+watch+today+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'SEBI order company shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=SEBI+order+company+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'bags order shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=bags+order+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook news 'brokerage target price shares' failed: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=brokerage+target+price+shares+when%3A1d&hl=en-IN&gl=IN&ceid=IN%3Aen",
+  "outlook: 0 headlines, 0 up, 0 down",
+  "oc NIFTY: Expecting value: line 1 column 1 (char 0)",
+  "oc BANKNIFTY: Expecting value: line 1 column 1 (char 0)",
+  "option chains: 0 ok, 2 failed, 220 stored"
  ],
  "universe": {
   "stocks": 5270,
-  "quotes": 4774,
+  "quotes": 4448,
   "at": "20 Nov, 8:43 AM"
  },
  "global": [
@@ -2668,9 +2714,9 @@
   ],
   [
    "Hang Seng",
-   22385.1,
-   -2.0,
-   1795143492
+   22382.4,
+   -2.01,
+   1795143530
   ],
   [
    "FTSE 100",
@@ -2687,8 +2733,8 @@
  ],
  "outlook": {
   "at": "20 Nov, 8:43 AM",
-  "headlines": 320,
-  "screened": 1789,
+  "headlines": 0,
+  "screened": 1172,
   "cues": [
    "US tech (Nasdaq) fell 2.2% in the last session",
    "Dow Jones -2.2%",
@@ -2696,940 +2742,8 @@
    "Nikkei 225 -4.5%",
    "Hang Seng -2.0%"
   ],
-  "up": [
-   {
-    "k": "BLSPOLY",
-    "n": "BLS Polymers",
-    "s": 16,
-    "conf": "High",
-    "p": 282.56,
-    "pct": 0.92,
-    "mc": 1752.8,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "BLS Polymers shares surge over 8% after Q2 profit more than doubles, revenue rises 30%",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNV2hsWnFyZFZuU0RzbkJuSExqREE4V1U2VjRqcHdnSEVUam9NZTJjYTVyUjIxem5IcUdEQjQzMDF2dVdBaFZCamQwZm1LSTAwX3M1NGtMTkRCdVE1MlVGRndFRW1Zdjk2QjdfX2VNUURXcXpQdmh4Q3RNVUgwX0NGRnFNM2ZOYThDdG9DWjVHSDZITy16T212X0hzd0pPUDRPb2xxSDNCTXlZak1fSE85eWdObDZQbDRQb1pqRUNkZExIYm85VXZtWEotMnc4TjZlZEE?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "news",
-      "t": "Buzzing Stocks: Physicswallah jumps 3% as HSBC maintains 'Buy'; BLS Polymers rallies 6% after Q2 net...",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxONFRRcnJ3bm1ySkxyWWlxU1VZdHYwd1ZyVjV5b0VTcHpmZnpXT2VTM0tYTnQ5SzNyTzJNckgzeWRnQS1wQzFHZ2p4ZjNuZmQtWTl1UXkxQndtVTNEdVdGOVNvUjF2SWh4SjBpWDd0eWFReHZ0X2V1UlB2emNZbHpHYTF6U080VGtNbWRDbjhvbkdqYlZIRmo4SGxhdi1IMTNLREg0dG5HOHpHNkRiQnpUT3BsRDZWbENCai0xWGJ3R3U4Rms3SFJCQy1BMjZadDhpS0VOb0hwYnVXMHowaDBiSy1aVU5YQzZGTFhxNzBzNUVxQi1wenRpNVBINnFnUDg2Zk9IRGo0QdIBjAJBVV95cUxNRXVESmFqbmtPdno2c2tzaWc1TnVUT19TZ2htdkk2WWxyQktIV0hCbGJSYW5Ndks3c0pyTGhFa0hCSzdnQjc3clFnbzEwT0ZDVnJTbC1zZUZNWEt1eW1vR3Y0aUNaSzJScVJBVnlwYjFKNHJJbEoyUVhDMUdoMEQ1eFJEaVlvMnNINVlLVzN4ZjVpZEZ3Vm9IWVVNOTlRLU5EX0Yyb2FyT1plMWFBNkdVSmlKb2FXZlhfMDJLUWRJY1F0bzB4eVVBZVNTeVR1N1FoRl9pSGJFY0l2WVpSLWltNGFRVTdVcU9OLTJhRVlQYXRjUVI4aXBrVlJraGtxUFhXWkpGeXBYRTl0NnRq?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "news",
-      "t": "BLS Polymers shares hit record high! Up 106% from IPO price, recently-listed multibagger stock soars 8% today | Buy?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNV0dZcVVMRDVFZkpfbHRLZ011SmkwbEQ5ZjQ0bkVSOU92UDRPNGZnQ01RZm9VamQ5WW1ISXpYSl9IYnRmZGUwcGxJSkVRLW5KVGVucDdKNXRXU2ZocFdiZmVsMklrS0xrY183bWlPc2RyaElFSFZzZmtudlRWeU5FVG1LaGFDZURRN2pJdXh1UEo2b1JrbmE0bDJlUmtWald3NHRoTm1DTXFORkExVUloWGk0d1hxcUFNMi11aDluOHpuQ1ppWkRjUzBqbVpqa0p4QW5VX19xLV9YLWppaTBzWTd0UmlOc1pKWklsMGx4N1pBWDVJRlc5VjM2anZqU3laRlI0bnlaWmxWdHY0SjUycNIBkAJBVV95cUxNV0dZcVVMRDVFZkpfbHRLZ011SmkwbEQ5ZjQ0bkVSOU92UDRPNGZnQ01RZm9VamQ5WW1ISXpYSl9IYnRmZGUwcGxJSkVRLW5KVGVucDdKNXRXU2ZocFdiZmVsMklrS0xrY183bWlPc2RyaElFSFZzZmtudlRWeU5FVG1LaGFDZURRN2pJdXh1UEo2b1JrbmE0bDJlUmtWald3NHRoTm1DTXFORkExVUloWGk0d1hxcUFNMi11aDluOHpuQ1ppWkRjUzBqbVpqa0p4QW5VX19xLV9YLWppaTBzWTd0UmlOc1pKWklsMGx4N1pBWDVJRlc5VjM2anZqU3laRlI0bnlaWmxWdHY0SjUycA?oc=5",
-      "src": "Livemint"
-     }
-    ]
-   },
-   {
-    "k": "PWL",
-    "n": "Physicswallah",
-    "s": 16,
-    "conf": "High",
-    "p": 136.21,
-    "pct": 6.31,
-    "mc": 39639.1,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "news",
-      "t": "Physicswallah shares jump 3% as firm targets 3x revenue surge to Rs 10,000 cr by FY30. How has stock perfo",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOY05lR3hJR0FqOHdrWHd2SWljSkowV096R3ZoODMyd3Y3X1A5WmJuMXNvOUZGTk1nalYyOVpVa3hNQXd5dlphN3d4QnFEZzl0VHJnS0hUTDRPb1ZHZFJqTERCMnp2aFRVWHZrU3FRZ0VUSjc2ZFRPS0lGUWRnMUdBRWlSYk5MVVpwVDlaY3JRLVR1RnZFdW15MGVic2xFTVlLR01QZFctSC15Q21UZG9DX2plaHB6Y3hKYkNRV3J3NGo2QkF6OWlXSGF5bzNXbko0UWU3QVZ5cEV0SlNLcjVoWTRodFBSbkpFSldNa0tfb1U3MFlCUVF6TTNfbmVYNkJTX0ZmX014enE3WFEweWJvOTlDX0VEOHpkNGp5RnUtdzjSAaYCQVVfeXFMUFNFT0xocFUtWnVoMnZyYjJ3ei03UHJna0NsTm1yQjRqN2lQQ2gxa3lwUTZpZVJuSFlaaGVTNmhZMUFvbFBtc3hUUnNWd1Z5UkwwRkpYS1FhRFc0MG5BSU4tN0taVHltM2VDTmlVbFdxZGhLMng5cUFvWFVfeXNBR0pPbkwzN29aai02ZEZHSmxfSUV2dl9xSnVhWkQ2dGlWYTNXOHpRRmt0dU9KWklkei14OGZYcUNhSTMyTUs1MkZQT0dPYXA1STFLcG5ncFdGdG5PLTRUNlBKNHB3dklWeVctVXlxblNRR1ZWWWR2MWVOeWhsQUdQT0xHcWtkS2JyVWxNTng5ekZkVzBmUm5aMXhGckNzRlhnaEZhVG5WclpFVl8wWGlR?oc=5",
-      "src": "The Economic Times"
-     },
-     {
-      "k": "news",
-      "t": "Physicswallah shares rise 8% as company guides for 25% CAGR by FY30; brokerages say 'Buy – check target...",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPSWJNQmp2YnVXMGs2LVl5NjJ2anMycHBURUNTWWYyRjFzNnlxbUdCV2lROXZDeFZGYzNjUUgwNHdQX1VjU1NJaURzbDJwc3l4amFmdzZqaWdDaUdhYnpHRmJUUzBiQkZWSGw0VHBhVlNhclpwQmxzRmRFLXU1WkIyWHRMWWxlQ1pwdFhCQnN4dzVPaHpRdkZNdFIwQVFEVEJtSkF2TS15MEFLZGRLb25aV3pXVG1nMzNZbm8zYmpxdmpyb0VBY05kTTlyZmx0VW9jM3F6azVwb2NiMjktY3VDXzhOeElVMEhldzE2Wkp4TVlTYXUyTTlHUG5TTFc2d9IBgwJBVV95cUxNaDM0N0U5ZW1RdUIyQ29hNFBYN3hud25KYTl3bjkxdWZXVUYxaDRQS3lmNlZGdW5rclJTbDNwckZBcmpnTXlzZG9odm01cktUZ2tLaDY4eU9za2RfUy1KQWlRREttVUVYMGg2dkwtLU96WU44S1AyVXFvY0hpV0EyVWt3ZHdlenp6eHJrVFlsd0VVNG1JX1hiUkhzelFLMmxyMjJtRUxrclp4Wndwd0JqOFlLUmVXOHBvbjJlSWs1VlZRNW1saDZ6bXUtNTRHUVlTbDFJdF9aSWFpeWxUVzZrSVpWNmM4c0NNREQ3QzlQSVhNUXNPNmJXcE9vbjBNLXczcFhV?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "news",
-      "t": "Buzzing Stocks: Physicswallah jumps 3% as HSBC maintains 'Buy'; BLS Polymers rallies 6% after Q2 net...",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxONFRRcnJ3bm1ySkxyWWlxU1VZdHYwd1ZyVjV5b0VTcHpmZnpXT2VTM0tYTnQ5SzNyTzJNckgzeWRnQS1wQzFHZ2p4ZjNuZmQtWTl1UXkxQndtVTNEdVdGOVNvUjF2SWh4SjBpWDd0eWFReHZ0X2V1UlB2emNZbHpHYTF6U080VGtNbWRDbjhvbkdqYlZIRmo4SGxhdi1IMTNLREg0dG5HOHpHNkRiQnpUT3BsRDZWbENCai0xWGJ3R3U4Rms3SFJCQy1BMjZadDhpS0VOb0hwYnVXMHowaDBiSy1aVU5YQzZGTFhxNzBzNUVxQi1wenRpNVBINnFnUDg2Zk9IRGo0QdIBjAJBVV95cUxNRXVESmFqbmtPdno2c2tzaWc1TnVUT19TZ2htdkk2WWxyQktIV0hCbGJSYW5Ndks3c0pyTGhFa0hCSzdnQjc3clFnbzEwT0ZDVnJTbC1zZUZNWEt1eW1vR3Y0aUNaSzJScVJBVnlwYjFKNHJJbEoyUVhDMUdoMEQ1eFJEaVlvMnNINVlLVzN4ZjVpZEZ3Vm9IWVVNOTlRLU5EX0Yyb2FyT1plMWFBNkdVSmlKb2FXZlhfMDJLUWRJY1F0bzB4eVVBZVNTeVR1N1FoRl9pSGJFY0l2WVpSLWltNGFRVTdVcU9OLTJhRVlQYXRjUVI4aXBrVlJraGtxUFhXWkpGeXBYRTl0NnRq?oc=5",
-      "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
-    "k": "TINNARUBR",
-    "n": "Tinna Rubber and Infrastructure",
-    "s": 15.0,
-    "conf": "High",
-    "p": 990.2,
-    "pct": 19.63,
-    "mc": 1783.9,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tinna Rubber & Infrastructure Ltd Locks at Upper Circuit With 20% Gain — Buyers Queue, Sellers Absent",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdmpvUmlpMXpTNFJfQm1zaF85akZ5djdWN2tzdldMS2hoQmxtWmZNVnFqYVNSWDQ0RUNUaElEWkxiSXNXNTBxZEZJOEFJNWxqaURla1JkWDBHYXZJajdMWDlyaVdMcGZGMGsybGpISWRqemlYeGdYdHpVRDhPaVRlQ01uUk41Rm5PQ2FxaGFZZHJYQ2t4UFYzdy1haWc2Tm9CeGxKU2djZDV2WE1VajRIR2Y5WnkzRGdFenNma3R6LUNmaWRvYUd3WWJYbnhrWGN3TEE?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "news",
-      "t": "Tinna Rubber And Infrastructure Upper Circuit Today",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZUlNRVRGSG44NzVUbTFMbGVNNnFxZ3R2QjQ5SmMyWHlLc3hIN1p2X1BnNFJidDgtOTJZeU5WY1Fkcm9TVHpxT24yTDBYbWZNaDRjRGEwVHFpV1lJV3JKN0VqWm95ZjNyOThYWGlpeTRJQmJCV0dISHNJc0hKSVRleA?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "news",
-      "t": "Tinna Rubber, Liberty Shoes and 5 Other Stocks that Hit 20% Upper Circuit Today",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNX2dkaVR3RC1HNHVCZ2VsQm5YenM1aWE3dE9iS1htWFcyeElOTXVCRWE3eTF0U3I5SzFsVkFkSzdkVkI3cHlhSTQxQTFDMW11S1Z4NGtDU2JudHJ2WDJzQ0dlMTJhdEhmaENob193bDZPSlBTQWZndFpMLTd3UHYtNkRpUTJvYUhYYlFlZnZ5M0xNWHFFbEdXU3FnR1NxUWZCcmlNVzJuOUQ5b2swMnk2TU5tN2ppMUt5NTZoQWJ2bUx3QQ?oc=5",
-      "src": "Trade Brains"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +19.6% on 169.0× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "MARUTI",
-    "n": "Maruti Suzuki India",
-    "s": 13.9,
-    "conf": "High",
-    "p": 13589.0,
-    "pct": 7.58,
-    "mc": 427241.6,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Maruti Suzuki Shares Surge 6% As Nifty Auto Jumps 2.6% Amid Falling Crude Oil Prices",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQm51SzhubHl1RmNjUkltWExZVGZNcEVyUVMySEhuTVloVHdKV3A0OTVyNWgzLThZcHYyZ1pQRGwzTDA1QlNqZVJ0Nk9pNi0wdm5qY1lKLW1lS3pFQmtybk0wZVpuMjJ4bi1zSUYwV0c5bEZHOVJ2dktnYk5NZTc1M2xsbWtiVjAwc1RYVGpDLUpNSEdnVzJEZXZkRno4a3VOenV4dEd5ellaakR5eHotUlllTTdUSkdaaHUxVERna2tIWGxHVHc?oc=5",
-      "src": "Kotak Neo"
-     },
-     {
-      "k": "news",
-      "t": "Maruti Suzuki India shares gain nearly 7% for best day in 15 months - Here's what is aiding the rally",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQWmhQT1ZUOTVkMUN2ZlRmY2V5bl9zdm5RR2hVc1UwakpYWlZhWlJheEpuVlNaZGcwOThYZzZTM1Q1SHREVE9UblpSS1E3b2hlRGZoVWZVWndhRzdVVURhVHl6bVNMb0dET3lqekVVQkdZNC1SV2Zvd0pNN3BQMUptempyU2VCaWNqWlRXVl9MWGdrUWRNMkhiZy1GWExDcUlKblVaNVVhUGlKREJ2bDdPWWl0eko2N29QdE5EVTNvRkEwOVJLQktLeFg0RHBfd2Vwa3VfWjJYSjhYTm9XSnFvOVBYWXN0UXU1aDg0M9IB8gFBVV95cUxPQjllQW5oODdqN2s1QmgtR0FvZGJyME15bVNWVlhjMG52RWJUemVFS0NtQ0RDY3c4MC1WWXZwQ0FVRnAxc2pQTVZHR3hkaEEyUXZVVmZtTWFjUTdBbGlCNGlFM2dUTVdQcnhmR0swQXR2ZXduWjN0dXVVTHVtdUg1WTNlMTFlN0xjUXBHYzdLOExsTzFwTTRDbWJubHdsblNyRjVSMzh1Mk8xcEYwLWJ1bFI0eTBTVVRPTTJkMmpNTnRzdmxxd1hLWlphYklzbkZieTZabkxwV2kyMGF2SWxXY2VrdVJZTW5fbXdyRGc4Z0pqQQ?oc=5",
-      "src": "CNBC TV18"
-     },
-     {
-      "k": "news",
-      "t": "Market wrap, Nov 19: Indices erase Middle East war losses; NIFTY50, SENSEX hit 9-month highs, Maruti Suzuki leads gain",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQMXg0dzEzQVRvcVBGbUpQU1BueVJlMDNqMTIwTVJGLXdhZ3JkTExMYVhqcE9JZTlScnFGVi05al9nVnB1SFgzVmFyb3A0T3BtSDBqLVdHSUpsaTJYc0otMk9PQVpzdWZBOHpFTzQ2RUY0RnZ2eWlQZmdRaG1pUHNmY3lqWlU3UmxhQWQ2eGVpVkxRUjNmLUJWbXk2anRYMTBnQ1JnbFpEWk9fNEVYYnJfcE56QjZJRVNfUHowVktiRTJDUXc5UFFPcTdrQ25lZUNRQ3lsb3k5dFgwZWZiS0pkMWRrWEZtRlkwUzRyQU53UnNfQTd2OGhmQ3hNR1U4dnVPdjh3?oc=5",
-      "src": "Upstox"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +7.6% on 2.3× usual volume, near the day's high",
-      "s": 1.8947270032447157
-     }
-    ]
-   },
-   {
-    "k": "TONBO",
-    "n": "Tonbo Imaging India",
-    "s": 12,
-    "conf": "High",
-    "p": 1505.0,
-    "pct": 2.05,
-    "mc": 8621.0,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tonbo Imaging shares surge over 3% after securing Rs 35.62 crore defence order from Ministry of Defence",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQU21fdWx1bFd3aGwyYmtZb0h0UExXUTd0QzVPbWNLTWV5RDNFVHlia3RLa0s1bldweFRUdWo2LThWOG82a2FxZGFsM2RFZGZpdTlSVzNvZlJVRkFZT0wyTERlMEl6UDBQZGQ4Y2tDS0NRWjlOVFpoMVFuejRoS2lqdU9zdnBnZnJHYUJXdDByc0M3QUUzOGt4WS1zWTBfSjY0T2VnczNZMlB3aGl1NnFmUG1SNHJQZ3hwczVkNmYtVmV2VjNMMnRENXJGazMzNFVBc3Y4dWM2eHFXc05FeTRueVR3YWJOQQ?oc=5",
-      "src": "Business Upturn"
-     },
-     {
-      "k": "news",
-      "t": "Tonbo Imaging shares rise 4% on defence ministry's order",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcXJjWjJfUnlZWTZqQkR5S1EyU1NiajFkUm9iT01BTXdVSHAya2NoU1pLS0UzQjh0UVZoVzh3Tk9COTlwbkl5RmhqSzJBWE8yVzEtVUw3RHcxNTI2TXotMFZhMjFocjZHMEI3MXhnWlUyZEV0VzNQUExfb29DaEpncGtrSFhtcUZwN3JFQncxTWlpb1RzSzh6N2o1ZDhqc3ZXb3pxcEQzQUR3dzBuRjlxbEFGUVYxb3MyTDlWZDFqYw?oc=5",
-      "src": "Business Today"
-     }
-    ]
-   },
-   {
-    "k": "LTFOODS",
-    "n": "LT Foods",
-    "s": 12,
-    "conf": "High",
-    "p": 438.75,
-    "pct": 4.65,
-    "mc": 15235.7,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "news",
-      "t": "LT Foods snaps 4-day losing streak, jumps 8% on plan to acquire MK Foods",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPa3lSbTFRTW9FcnZXaXR0OTJNTmpTYnRjQUdxYVRKdXhkRkNfLWJiYjNONFFtLUN0REdJaEU1RHU1R2YtbzRZNVlGR3B1bDNzakxMSVkzZ3BOUlhPZXJFTk1mdU5yRGV2cUkyS0FkMkNFa2k5dElOcXRTZnMtVkt1RWZ4YVFhOTNqS1g3N2FFYnNOdGdVT1Y1ZUlBcHRTVWd0M3V4VXd4eDR4cUNXREdwWExybjlzOWVhOFNPX3JWemNSNXFZZzFYb0c2T19vQXhOcnMw0gHYAUFVX3lxTE9CZUh2cFh6aHlWZ2x6MnpEdkN3V1RaTTFZSDRmeHdQUi1uTlBTUjdNTzlmMldwMmFqYlcyZjhOU0xnekFvVjRYWlpJMEpxTkdWME9tZHpndjNfR1kzWHpjZ0xsRGtDeGRBUGcwUjRMQzYyT1BYemt1ZTR6eWZBMnVEdnRJSDRTS2MwSkJYNm1mV2ZFY0UtRkdVMGMtM0tLSVBPcmdBYUlkbVVGS1Azc0Y5cl9ERzQ4aVBWc0U2N2NCa3ZjMGM0ZHV0c0ItREdFX3hJNFFvWTBZdA?oc=5",
-      "src": "Business Standard"
-     },
-     {
-      "k": "news",
-      "t": "LT Foods shares rise 9% as company to acquire 100% stake in US-based Maya Kaimal parent for $5.8 mn",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQQld0OWRCWm45LVNWQTFFWFVNT19VRjJ3eEprVmdVdFVZekZQQVAtNktnTTA0YkZpdHRndmVTZ3pVSWR0bFc3cXdDaGg3ME9nLW9mQ1JiN3pfVTgyUG0xMmJma2tBZ0JnTExHcjhqZHMzMzg4S0xrQzh3R0pFeW5Xa0xNbF9sb3pJdURxVWZwTjBrTzI0bUE1RXRXbTdSdWNpLU1pd0lHd0UwSEYzcjlSSkpIN0t5VDVmQUg3NjBOYVE2R3ZzRGhtOGhaY3Fzbzl1bG8zVllmUk4tT2VGQjFiUmkzc05OSnZyV3IyZHgybl9yc3PSAfgBQVVfeXFMTzlnN1QxemFfRmVaZmQ5bHdLZlh0Mk94MWpoOU4yOXVPTy1yMnMxOE1KRU5zVHZHQlFGV0ktUGNQTjdTc3BsNzBRcW0xYXNvZ0JONU5IN2h2bkpyQVBvYXc4WS1PblZqZnV4NWpCbmd5RG5UNXVxZGgwOVdSRElPZ2xjVHMwd0tPMnd1LWNJX1QzUGUzc0ROU05OLVN0bkhqTDdseEhoZ0ZjTXpYaEFVM0s3WmIyRWpzQm1icjlzb2xtYmRlS3hfY0FUZkJkbG5ZREZSbnJQUE5FYkhTM3k5Zm9ENkNsdTF0VkFONm5sMlRQUDA5WmtkZlg?oc=5",
-      "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
-    "k": "IREDA",
-    "n": "Indian Renewable Energy Development Agency",
-    "s": 11.0,
-    "conf": "High",
-    "p": 129.8,
-    "pct": 8.35,
-    "mc": 36463.8,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "IREDA shares jump 11% to 4-month high: Is the renewable energy stock finally turning around after 6 months of losses?",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQQkFGS2tzVXcxMVJxY1RhbXROM2VqZmxmY3pCSXZ5eVJhbmNUSlU0WlNqMnBNMzJYTHJ4WDdXR0w3Z1BqRC0tR041T2czT2JmRFVyWEFEX3UzT1lLT3JUTXd6TUlqd0tZNzJWYi03WmNDamU2dkdsS0g2d2lKY0o5YW9aS2pWY1VCb3FabGlxS3NhbWxPeXo2RlpsYW16MGtOTmZqQ0VkNHIzbUJINzVVZl8wTkQtSTBYR3RSUVB3SnZKZzVyV0RCaU9hdzF1N1V3b09Qd09pQ1hINFZLOFNwU2tORjVEZWZqY3ExemhUQjNpRV9wSXYzY1JadFBhU1BXUG11eUFn0gGLAkFVX3lxTE5ZZ3ExSzRjall6cDBjS192b3d6S0RJSzdRYUx1RUFDZGNXWWhmNTdSeUxreVh6YjJ3STFmS1FMZmFBUm5ldm9aYVUweDl1VE5GQjZoX0w2Z1dnOTZicmpBV2tjTlZWa1ZnUFBoUVVrLWlodnlkaHhUaUNjUUVhSG5MT2p0ZUx0OXIyX0Y2MThBR3F6OExNc0NSenljR240enBJN2NFVkd6OTlKZlJoR280VV9rM3d4NFpHZjdJejFqMmgxLWJHZnAybExWbEw5U2ZvRV9Kclhjd1U1WEJkTnY2eW14WDdHcG8wQXd6WlBPZ19wYUdmeEs5b3lXalNGTW9ENEkwOXctcnowNA?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "news",
-      "t": "IREDA shares rally 7%, head for best month since July 2024 after six-month losing streak",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTmcyaEFBYlVGQ19BWnBQTXpRdlF3MEdQbF9kRkhkeXlLTC10MGUzeDRpTDBBWGU4eHlqWGJOc3V2X0pQVDVwZkJjbGJYUVRwdVJJYXozcl9MNjBDZkVUMjE2RVZ0MGo2U2RjR09PbmNxcVlpclllUmZvRXM2bVRXUGJGM09qWVJycmZXRlR4T1VqTi1paVlEQUlOV0dTUWNiakNLWnNuTUNfSWY2cFNFeTFudUNrUkpRaFZFWjFJU050WWN5c01vWdIBzgFBVV95cUxOeWdFdVFRRGxQU0huRzBpVVlESUxkTGhnOUY1ck5YSUN5Q3FXeEV1bzZLb2xhRGxNaGVuTmVLeTh0Rm5RX083QVVSYVN0aWdsMGhuYTZ3UXMtd0NiWjVadC1IRnFBemdiaFZsZ0tSRkVYT3FNUHAxN3QzclZtWFVDX1lhSmo4RnNtMWJEYmFiaTJMRjhEaThPOGxoYlNQZ2VSTlVzNkVDemtIYUdiNGxkNUNYVHdFWkdYR1FMMS1jUWttR3NSOGE5UnRLN3hCUQ?oc=5",
-      "src": "CNBC TV18"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +8.3% on 8.1× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "DECNGOLD",
-    "n": "Deccan Gold Mines",
-    "s": 9.5,
-    "conf": "High",
-    "p": 184.6,
-    "pct": 7.91,
-    "mc": 3710.5,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Deccan Gold Q2 profit rises 5.5-fold on Swarnagiri ramp-up",
-      "s": 8,
-      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNktvY0haam84TWVneTdkUXdmY2hCM2drQ1MzVGR0a3N1cmVucmJXZGFjODJYZFRob3lJbnRJX0IzZURJR2o3SU5RejFUbUVkUnNKSjBZMzlZUmxOWXF4ei1YX0NMdjB1T1FJSlFBcUVnRVBub1NZdmhMc3ZLM2wwNTZKS2pxdGdOcnFfaXlJbHZ0TU9zYmhnVVNVUzBUTTVKMDdZcVB5VWRJTkJmWEE?oc=5",
-      "src": "Multibagg AI"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +7.9% on 1.6× usual volume, near the day's high",
-      "s": 1.544618813533805
-     }
-    ]
-   },
-   {
-    "k": "ARVINDFASN",
-    "n": "Arvind Fashions",
-    "s": 7.0,
-    "conf": "High",
-    "p": 364.8,
-    "pct": 5.02,
-    "mc": 4878.5,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Arvind Fashions Shares Rise 3.93% As U.S. Polo Assn. Targets ₹4,000 Crore India Sales in FY27",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUVlFZjZPdy1WazlaQ01hN3Z1SERMaXg4RGZfUUhacFM3bnZBVkVNdmU1ZkltOUZLaEMwbnJiendNZk5idG0xQk1LTkMzSVo5Mm1LTE95QUFaQmZEazY2d0NucUVtVHlLMmVaaHNiRGNQNEh6MUN1TzcwSUdJSDBNZi1WQkx0S2dUa1RWYkx1cFpEc2s3eXlxY1VQNmRRRzFycG96V0Z5WjUyWmgxQ21sRk1ZcEJYZmlSelNqSFhhZ040UQ?oc=5",
-      "src": "HDFC Sky"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.0% on 4.6× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "s": 7.0,
-    "conf": "High",
-    "p": 1237.0,
-    "pct": 9.03,
-    "mc": 40930.4,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Voltas Shares Jump 7% as Copper Hits Seven-Month Low",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMEcxT3hDSFhvaEp6UVBETk9OSTNRWWdEWm5xYnlILVJvV2hZNTZyUWVfVXdyaWI3OUt0TWJuV05fRVVYOGhfODBQOUhOSnF4YkdKSnM0b0lkaDdiZ3h4aC15TXFGcW9fMENFcWlXbjFrR3VnOUExR1E4QmZfS3pzZ2JPUTltRWFJ?oc=5",
-      "src": "Equitypandit"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +9.0% on 5.9× usual volume, near the day's high",
-      "s": 3.0
-     }
-    ]
-   },
-   {
-    "k": "GAIL",
-    "n": "GAIL (India)",
-    "s": 7,
-    "conf": "High",
-    "p": 192.1,
-    "pct": 1.11,
-    "mc": 126307.3,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "Intellect Design Arena Expands Cloud Banking Footprint | Vectras Enprocon Bags Pipeline Construction Order from GAIL | Top Buzzing Stocks Today",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOSGk0MG9zLXA0SUtCQmdpTE5jT2xFcWo4SmRUZHRMM0ZFaTFPZkNQVXZtOVhPNURFVGNiRE8xaUsxUFFua09EbTZOQ2lKVFdsTEdyOUR2ZmhhWUo3MkFXMGZIV2pmamtRQU0yaUFhYnFRWnQ3OTkzbHJiSGZ1UkZ3M3lHWFNYajBleGNXVFZlejFvTnRvSUkzdWhETjloMHhXQzVMdTJRaVdrNUh1YkNRaTNUYldaMWEtYlowampzbmwwVEFlYWUyakJGSm53N3J3aVhtTlhxcmlBMUF2aHYxU3BMYkR4VmNHTjJITEtYaG5TYjFoZl9XUGlXdi1Bb2JfQldaZ05VUnM1em9rcjZCTWtpb0o4Y3JuMlB4X1FfY2hUbnBIcl9kZllB?oc=5",
-      "src": "Equitymaster"
-     },
-     {
-      "k": "price",
-      "t": "Trading at a 52-week high",
-      "s": 1
-     }
-    ]
-   },
-   {
-    "k": "HYUNDAI",
-    "n": "Hyundai Motor India",
-    "s": 6.2,
-    "conf": "High",
-    "p": 2219.2,
-    "pct": 5.8,
-    "mc": 180319.1,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "news",
-      "t": "Hyundai Motor India Sees Sharp Open Interest Surge Amid Bullish Derivatives Activity",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNWUtWb0cxS3ljWElDaEFiRjZ6WFVOMURyOE5KMU9aNWhlSFBDaUJHSWlvdF90WUNtaFJiQV96Mlcza1R2NFlLQnlwVTJuZnpfRlhseXVuLUxSMHN4NTgzTThBbHlVR1ZqS2FwNjZJb1dMb1dBTVhHcW1kbnp0bWpWOXEwdzZpWHdDU2VoWG9CWTMzYlJUc21wYmZvbDF3WVp3SVU0SjZGRk9UbGdOTFJCalR0c2JwbWhseHBhMnNUaV9XZHQ3MHJ0M1FBNmRiWE1maElOcnpHdTNtQQ?oc=5",
-      "src": "MarketsMojo"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +5.8% on 2.9× usual volume, near the day's high",
-      "s": 2.1933137450458906
-     }
-    ]
-   },
-   {
-    "k": "TATATECH",
-    "n": "Tata Technologies",
-    "s": 6.0,
-    "conf": "High",
-    "p": 703.75,
-    "pct": 7.16,
-    "mc": 28575.9,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tata Technologies Share Price Jumps 7% on FY30 Revenue Plan",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcFMxS1JlUlhid190ajdDS0xIOXU0QWhqQ2s5NGJ2WTludnNoekJlSWl5a2Y1dUhUSnhGSXRZNzZoSzNtUndqOHdSSks1ZVJneXNseW42ejFRVzA5TG8wazREZ1luQWZ1MWplVk9kQjJLajZJOXVrR3E5SEZqaVZWMlJBQ0VQck1WUUloMlVDN0hmUUtqSnVhNmloSW9KenBvTVVFc0YyOA?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +7.2% on 22.8× usual volume, near the day's high",
-      "s": 3.0
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "DBL",
-    "n": "Dilip Buildcon",
-    "s": 6,
-    "conf": "High",
-    "p": 386.15,
-    "pct": 0.22,
-    "mc": 6272.8,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Dilip Buildcon bags order worth over ₹419 crore from Gurugram metro rail; stock down 19% YTD",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNbTZXWEViYzZZX09GbG84X1RJQU94R242dFEwME5tdFR4NVZvdG15bGZFWU1QUElESjU1dGdmM21GWFIxTU9nOEZITVVlZTlpM1ZTbWJwdENwWHA4enI3OTg0eEZ6QWlUcE9RaTJPS0JHWXpzWVNUbGV3dGRfT1NrUTJISHNkam1sSDlTbFg4Z1FwWnJqR0ZQTkZ0b1VQa21oTC1xSTZOV213cmVXcnkxR3VxUW9wWDNwQXVNbGRaQ0o2YzI4R1N3SXFNdzlhX1h6UzBObUExXzlEaUtFRm9KRGZDa0JLbW0ya2hVb1U2aGdhN21EX01yZGtydkY0bnM?oc=5",
-      "src": "Dailyhunt"
-     }
-    ]
-   },
-   {
-    "k": "NLCINDIA",
-    "n": "NLC India",
-    "s": 6.0,
-    "conf": "High",
-    "p": 234.92,
-    "pct": 3.54,
-    "mc": 32574.9,
-    "sec": "Utilities",
-    "why": [
-     {
-      "k": "news",
-      "t": "NLC India shares rise 2% as renewables unit files for IPO",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcnlpcy1oeE16WTNNLVpvekUtbnhwRy1ZRjJCOUdibzRQYVFBdFU5aXdSMHJkM2h4c1VZR2M3N3ZHQTg0bTdNQVFoTllYNWxlWmJnMVg1S0RsRDRJRUdLZk1IaDVnUUdaUWJmVEs3Tnh2ZkRuSnFYbWV5SGNaOHQzOTR3Nk9FRkVQQTRvVHAzVHloekNFd0ZLWEhHVHhBcGlrQ1l4V0JuRUlZWmdIZWk0RGxfWnBGVTVmRWk4VS1fYWNxWjDSAcMBQVVfeXFMTnJ5aXMtaHhNelkzTS1ab3pFLW54cEctWUYyQjlHYm80UGFRQXRVOWl3UjByZDNoeHNVWUdjNzd2R0E4NG03TUFRaE5ZWDVsZVpiZzFYNUtEbEQ0SUVHS2ZNSGg1Z1FHWlFiZlRLN054dmZEbkpxWG1leUhjWjh0Mzk0dzZPRUZFUEE0b1RwM1R5aHpDRXdGS1hIR1R4QXBpa0NZeFdCbkVJWVpnSGVpNERsX1pwRlU1ZkVpOFUtX2FjcVow?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.5% on 2.5× usual volume, near the day's high",
-      "s": 1.9839743833898817
-     }
-    ]
-   },
-   {
-    "k": "DABUR",
-    "n": "Dabur India",
-    "s": 6.0,
-    "conf": "High",
-    "p": 390.65,
-    "pct": 3.01,
-    "mc": 69303.9,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "news",
-      "t": "Dabur India Share Price Today: price rise and valuation",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9hRGs1NURZSlNjeGdrX1N0SmlpSTZfUEtpSnpCejY2NDRiSnhfTExCdzViOTVLVU92OFNnWVdlcnJ2TXI5VXRiU3FjYXpTZE8zNWZULXpCdnNyUGVyVUdxcjRXYnZmX09Wam9Zbl9uUnB1a0k2b3pQVmtUWmw?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.0% on 2.4× usual volume, near the day's high",
-      "s": 1.9715455313796646
-     }
-    ]
-   },
-   {
-    "k": "UNIVPHOTO",
-    "n": "Universus Photo Imagings",
-    "s": 5.8,
-    "conf": "Medium",
-    "p": 459.0,
-    "pct": 2.0,
-    "mc": 502.4,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Universus Photo Imagings Upper Circuit Streak: Day 2 Price and Data",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRTI2V2djUW16MGthcTV2QmxvQUxKMkZYNUpscVFzTlk5YzRUMnFpSTk5OS1sRHVPMXJlMlN1dExlNVhWTTNpXzg0QkVkUnBsV2E1UjF5aVpmbDlUNG5YS3h0UngyZWd5R01ublFDaml3cE9FU3VUbzd1SklablpCTw?oc=5",
-      "src": "Univest"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +2.0% on 2.1× usual volume, near the day's high",
-      "s": 1.8116438356164384
-     }
-    ]
-   },
-   {
-    "k": "PNB",
-    "n": "Punjab National Bank",
-    "s": 5.5,
-    "conf": "Medium",
-    "p": 154.85,
-    "pct": 3.53,
-    "mc": 177968.2,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "PNB, BoB, Canara Bank, BoM, BoI, other PSU bank stocks rise; here's what is driving the gains",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONWR4VktielZSRm1hQXlwYUlzaFJMeU1CZGhTdmJaZTA2SVM1QmlIcDFxdGhnSlMyZklQcEZyeWhnUi1tSE9kazJrNWhzVTZ6T3k3QVZtS0N2STIxMlk5NVQxWHZycXFqWGFtWWM3SzZmYmlSdXlYdFBra2tCTlJKdkcxNWdNSXRvZVVfU1N4bEYyTFlTaTFMUnRJS3R3Uk5SUG5ybzRDUXVmaUcwOHE2MnM2LW1aM3FfRzdwZ0FqVTVlUFBJOXNBY3FFdnd6M2JwZ05hUkFqZHdyNUJVMjR2MGVoS0hqclQxVlHSAe8BQVVfeXFMTXY4X3J3dzZZUUZlQ0NfdHR1M3JJdHA2RkNnX19ZUFZWUGFfR0VZLV9Kejg4cmRGeW1UN09KSDd3eFVFQWIweExJNEp5V3ZVaGhYeFMwcEFhaWpNRXZNZHJrbE5YU0RRbEdqWTBUZ2dMV1k4bk9pSHJjYTFDamFRUUkyY3ZSSndKRk1sUGNVSGRDZUdFQ0dMTEg3T25TQTRXRV9GUzhRSGlRRy0yc244RkROZ1BfVlBHdDJxQlI0VTUyYlUwbEYtaVc3NkRGNTRKLURUQ2tsRmxTdUFOTEt2Q2NXNlQ4ampiUFdXZmhRZ2s?oc=5",
-      "src": "Business Today"
-     },
-     {
-      "k": "price",
-      "t": "Closed strong: +3.5% on 1.6× usual volume, near the day's high",
-      "s": 1.531413491640821
-     }
-    ]
-   },
-   {
-    "k": "INTELLECT",
-    "n": "Intellect Design Arena",
-    "s": 5,
-    "conf": "Medium",
-    "p": 539.2,
-    "pct": 1.87,
-    "mc": 7583.1,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Intellect Design Arena Expands Cloud Banking Footprint | Vectras Enprocon Bags Pipeline Construction Order from GAIL | Top Buzzing Stocks Today",
-      "s": 6,
-      "u": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOSGk0MG9zLXA0SUtCQmdpTE5jT2xFcWo4SmRUZHRMM0ZFaTFPZkNQVXZtOVhPNURFVGNiRE8xaUsxUFFua09EbTZOQ2lKVFdsTEdyOUR2ZmhhWUo3MkFXMGZIV2pmamtRQU0yaUFhYnFRWnQ3OTkzbHJiSGZ1UkZ3M3lHWFNYajBleGNXVFZlejFvTnRvSUkzdWhETjloMHhXQzVMdTJRaVdrNUh1YkNRaTNUYldaMWEtYlowampzbmwwVEFlYWUyakJGSm53N3J3aVhtTlhxcmlBMUF2aHYxU3BMYkR4VmNHTjJITEtYaG5TYjFoZl9XUGlXdi1Bb2JfQldaZ05VUnM1em9rcjZCTWtpb0o4Y3JuMlB4X1FfY2hUbnBIcl9kZllB?oc=5",
-      "src": "Equitymaster"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "LICI",
-    "n": "Life Insurance Corporation Of India",
-    "s": 4,
-    "conf": "Medium",
-    "p": 404.1,
-    "pct": 1.03,
-    "mc": 511186.3,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "Life Insurance Corporation of India Sees Notable Surge in Derivatives Open Interest Amid Mixed Market Signals",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPdnFfUDNKUTFPNlJmakNtQlJQNnUyUEdxcU1nd3FObTJOYlIwRzhKTS1JMVZIcHVrLVVXUWRfcnFYdktPZUt4MHZwMDJlNkR5RlhxTXdfdUE5ZnU2Yy10aXZQU0RFNzNMMzFjNDFLUzlBOHJXZFg1ckJJYlRNRUhPRVRZQXoteksteFBMZndFdGJVTEs3ZzRoQWdvX21OQ2IwS09qdUtxVXNubERDSDNLZ0dmREdDZDhuOFJEekNUQW1IVThpbUhqY3o4TzVndFB6dm93RHg0Nmp6cUFLNGQ5dnpBTEg1aHRXM0pBekYzbzhrQ01pWDUxRERzbw?oc=5",
-      "src": "MarketsMojo"
-     }
-    ]
-   },
-   {
-    "k": "TIINDIA",
-    "n": "Tube Investments of India",
-    "s": 4,
-    "conf": "Medium",
-    "p": 2248.0,
-    "pct": 1.83,
-    "mc": 43515.1,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tube Investments of India Sees Sharp Open Interest Surge Amid Mixed Market Signals",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOaW5fWUZlWDBIVWk3OWFqY1BFNnRldm9WX3dXS3JQMmM4eTUxdVBaQ2VqSHppdlN0RHBjVEhiRklKbzU0V1Y2SVcwUGpsdmJRaUZMR0d6UTRqMFRqaGlfbzRSQk1pLXVscDBtT29sLU52NFY5ZlVRUWpIaXNMZHpqUXVscXdwbWFVVVA5UTk1bEtmandIOWd1ay1kalVQTV9fXzFSM2hiMVZhNUY2bDhMTzNvY3lDZVEybWg0ckpJdkVyT3RFeXYxaGdxLWhpaGcwalI4RmoyMA?oc=5",
-      "src": "MarketsMojo"
-     }
-    ]
-   },
-   {
-    "k": "HAL",
-    "n": "Hindustan Aeronautics",
-    "s": 4,
-    "conf": "Medium",
-    "p": 4760.0,
-    "pct": 1.82,
-    "mc": 318336.9,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "HAL, Bharat Dynamics, other defence stocks rise up to 3% as production hits fresh record high; ministry se",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMingJBVV95cUxPWFluUkJkTWpITHh5eWVsU2VwYnV5ZEdKM25LQnNyaUZjY1l5cW84NTZuYlNXWkxrRGNlVkZvaWpzekNpbS11YUZveV9FeW9XQk43RDZiUXAwbDZBWkFuakduWXowZjdRT190ODBQMTVaRzZqWDJzMlM5cHhYZ2k3R0trQVdiR3BjY0JVWEo2RmhiWHQ4VElzZUY3em5VVmdkZE5taGI2U29yaElMS0FQM18yQ1ZXNzVyd0pjTVl0TV81aXl5UjNCZE1yWWstZXFJRGxrbUUxUlNvaWxMS0gzRGRaMll4RmFGakc0MjVWaENwdGIzbTQ1d0lVU0taV241MVNNQXhVRzlOeFpkR1FaaEg2aEtzNkRwdDkweUJ30gGjAkFVX3lxTFBjeTZSRDNoc0E5OVdTZkVTX0EwTVBpN3BpckVnVFZUclRDM2NNRzF3RnRyTEhZZ2hSbUpzZkZCMUEyT0ZtV3N0Q3F1R2pOMXZPZWRoTXBzSExPTjZZWG93TWZnSG1ORWN3WHdlX21JNXgzeDhOY1hZQ21ZZ3JNRUxOalpkY2lJb0Q0ZkJqclF3WXgtVTh5dGZlYUE1ckkzWjFvN21SRTdSVVpwRlEzN0VTTld3cFZVaVZXdm45TVdQRzZkdGhlNlZiaVBfMEs1UXpEZ1VubTNaNFBoQVd0UldjX3I2Z2ljN1NVeGQxc1hpa2d4d2pINnN5dWRtZTN3YTRLekkzVzZrRkJoQVBmeVFlX1R5UmJqSDRyWklZYjBkNXJnVQ?oc=5",
-      "src": "The Economic Times"
-     }
-    ]
-   },
-   {
-    "k": "BDL",
-    "n": "Bharat Dynamics",
-    "s": 4,
-    "conf": "Medium",
-    "p": 1032.45,
-    "pct": 1.88,
-    "mc": 37845.7,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "news",
-      "t": "HAL, Bharat Dynamics, other defence stocks rise up to 3% as production hits fresh record high; ministry se",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMingJBVV95cUxPWFluUkJkTWpITHh5eWVsU2VwYnV5ZEdKM25LQnNyaUZjY1l5cW84NTZuYlNXWkxrRGNlVkZvaWpzekNpbS11YUZveV9FeW9XQk43RDZiUXAwbDZBWkFuakduWXowZjdRT190ODBQMTVaRzZqWDJzMlM5cHhYZ2k3R0trQVdiR3BjY0JVWEo2RmhiWHQ4VElzZUY3em5VVmdkZE5taGI2U29yaElMS0FQM18yQ1ZXNzVyd0pjTVl0TV81aXl5UjNCZE1yWWstZXFJRGxrbUUxUlNvaWxMS0gzRGRaMll4RmFGakc0MjVWaENwdGIzbTQ1d0lVU0taV241MVNNQXhVRzlOeFpkR1FaaEg2aEtzNkRwdDkweUJ30gGjAkFVX3lxTFBjeTZSRDNoc0E5OVdTZkVTX0EwTVBpN3BpckVnVFZUclRDM2NNRzF3RnRyTEhZZ2hSbUpzZkZCMUEyT0ZtV3N0Q3F1R2pOMXZPZWRoTXBzSExPTjZZWG93TWZnSG1ORWN3WHdlX21JNXgzeDhOY1hZQ21ZZ3JNRUxOalpkY2lJb0Q0ZkJqclF3WXgtVTh5dGZlYUE1ckkzWjFvN21SRTdSVVpwRlEzN0VTTld3cFZVaVZXdm45TVdQRzZkdGhlNlZiaVBfMEs1UXpEZ1VubTNaNFBoQVd0UldjX3I2Z2ljN1NVeGQxc1hpa2d4d2pINnN5dWRtZTN3YTRLekkzVzZrRkJoQVBmeVFlX1R5UmJqSDRyWklZYjBkNXJnVQ?oc=5",
-      "src": "The Economic Times"
-     }
-    ]
-   },
-   {
-    "k": "CANBK",
-    "n": "Canara Bank",
-    "s": 4,
-    "conf": "Medium",
-    "p": 136.03,
-    "pct": 1.97,
-    "mc": 123388.1,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "PNB, BoB, Canara Bank, BoM, BoI, other PSU bank stocks rise; here's what is driving the gains",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONWR4VktielZSRm1hQXlwYUlzaFJMeU1CZGhTdmJaZTA2SVM1QmlIcDFxdGhnSlMyZklQcEZyeWhnUi1tSE9kazJrNWhzVTZ6T3k3QVZtS0N2STIxMlk5NVQxWHZycXFqWGFtWWM3SzZmYmlSdXlYdFBra2tCTlJKdkcxNWdNSXRvZVVfU1N4bEYyTFlTaTFMUnRJS3R3Uk5SUG5ybzRDUXVmaUcwOHE2MnM2LW1aM3FfRzdwZ0FqVTVlUFBJOXNBY3FFdnd6M2JwZ05hUkFqZHdyNUJVMjR2MGVoS0hqclQxVlHSAe8BQVVfeXFMTXY4X3J3dzZZUUZlQ0NfdHR1M3JJdHA2RkNnX19ZUFZWUGFfR0VZLV9Kejg4cmRGeW1UN09KSDd3eFVFQWIweExJNEp5V3ZVaGhYeFMwcEFhaWpNRXZNZHJrbE5YU0RRbEdqWTBUZ2dMV1k4bk9pSHJjYTFDamFRUUkyY3ZSSndKRk1sUGNVSGRDZUdFQ0dMTEg3T25TQTRXRV9GUzhRSGlRRy0yc244RkROZ1BfVlBHdDJxQlI0VTUyYlUwbEYtaVc3NkRGNTRKLURUQ2tsRmxTdUFOTEt2Q2NXNlQ4ampiUFdXZmhRZ2s?oc=5",
-      "src": "Business Today"
-     }
-    ]
-   },
-   {
-    "k": "TATACHEM",
-    "n": "Tata Chemicals",
-    "s": 4,
-    "conf": "Medium",
-    "p": 650.05,
-    "pct": 2.43,
-    "mc": 16560.4,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tata Chemicals shares jump 3%, up 10% in November so far as Tata Sons IPO buzz builds",
-      "s": 4,
-      "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxORUFseXJMUnMwLV9GdFhON0Y5bjllWDV3djJvZ3FubXpPZFptdzRKT2RBQ0ExVkRhaG1wMThBaXFzdjlCeDZ2QVhJdDRDTDBBVkJ0d283TU9UVjdBazAyaGRiczNXUlFpUVNvMGlhOUpkbV9PN0p6VWFuQ0RyXzFja2hTMjVEWkJ0UzJaV09fWkdZOW01YWU0blNtSWVKb010dVkwdXRiVGcxUE1QMmVBbG56Qm56V3d5OEdEZnlrVDllclRJUDlncnh1bEVHM1RNdmxlazg2NGJYdGtxMkFkUXBvNDc4SmZZcUlxT9IB8gFBVV95cUxQWXZZXzdaaXhCN1BrY3ZYSk13RnA2bEE4RTdWOHNkaU9udC1KcXFkNFNJR0hFM2dJSlFsRnk2Vzh0dEJUdXBackFVc2VBVWRsTkhPMUhFekt2d3pCMkt0N3F1d3U3eTVoS0M2Wmg3c01PNHZPVE9jZExqNTVoV3BuamV1V2ZTQWVlSGxGTGRBNEFYU2ZWQ0wyM0dFVEF3UUdxNmRvVi1leFpXS1U4bTVlTjlWdHhzMUc1NTlkM2JzUldnX1c1bGlOXzVVVWpCdTluQ1pyUGJJTXE1Z2tOemZiMkdPRFI2WkFBQnd4dnpjaUItQQ?oc=5",
-      "src": "The Economic Times"
-     }
-    ]
-   }
-  ],
-  "down": [
-   {
-    "k": "IIFL",
-    "n": "IIFL Finance",
-    "s": -14,
-    "conf": "High",
-    "p": 644.45,
-    "pct": -2.64,
-    "mc": 27518.6,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "news",
-      "t": "IIFL Finance Falls Despite ₹3,488 Cr Fairfax Stake Sale",
-      "s": -6,
-      "u": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSlNaWGpURFJ2QUZmUXdDVXYxak5lUldJV0dlemRDQ2tUb0lwQkw4SlhFU0RucHY5U01PcEhQZnNRam9FNy1OMXAwYTM0cENHOF9Ed1IzQUsyMl9MbmkxcXc0Q2ltQmQ2Y0RqT1VKWWY0aXA3WEdhSHd1c0dOWUxZWXdfWDI3R1NqLXVCajZqSF9keXphR0NaOGFoMGc?oc=5",
-      "src": "HDFC Sky"
-     },
-     {
-      "k": "news",
-      "t": "IIFL Finance shares drop over 3 pc after Fairfax pared over 13 pc stake",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbFhFS0RCa0ZVSjlrQWM5QzhzVHJWdVNqdHVBYTJHcmx5VERLNVJVRHFsRE1yckJkOXh2ckJoeHdFcG1FV1ZuWTh4d0NsTG83WjdOeER5Qjl6OEtzS2FVeldKVDMxZDNNbjJfWTlQQWtVeS03WnF2MHFMYTRRbUtESDZ4UXBCWkhLanAxeG1BZVFocmRlTXl5eUM4RGx0OWFJS3RwZl930gGqAUFVX3lxTE52S0x1bG80ajhCemNUQnEwVHE2dmJlMEJsYWFPME1UY250dG5hT3ZLSVVZR1JUZzlOWXhRQllicHgybkt0ZEIwYkYyVHk5RUJHVkhDQXZOcXVmZHNKX2I1allMWUFxQ1JWMHVMRVZwdUxwcEVPOVdrZlI3cDFTYV9fa0MtVjZRTm1aNGpfbXYwNFV4bmM1YklpMjdZYk1rVUVnYW9TNmRpa2R3?oc=5",
-      "src": "Daily Excelsior"
-     },
-     {
-      "k": "news",
-      "t": "IIFL Finance shares drop over 3% after Fairfax pared over 13% stake",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcEE0VlI2b1dnZVVoNWtrSTZ5c0ZpakU0V0RpeG1RV2l1VExZcWhPNE8yYnk4QVhCN2hTdWl4bGNuN0pIMUkxYjFaX2FsWWw5dG1ibzhqV2JvWjcwOWtudmhycUZWeGZlWGRyQmt5cnAtdlBlR0NzY2Y1OW1DTXNiTFBJRGtyRS1tazk1ZWs1ZjFEbFRHRC02b1EwaDJUZk5HUEloNjlMc3RYS1dZdTRpcnlZVmhzNGpsdlpJZWdhUQ?oc=5",
-      "src": "TradingView"
-     }
-    ]
-   },
-   {
-    "k": "PINELABS",
-    "n": "Pine Labs",
-    "s": -13,
-    "conf": "High",
-    "p": 161.24,
-    "pct": -4.79,
-    "mc": 18619.2,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Paytm shares plunge nearly 11%, Pine Labs down 5% as UPI transaction charges face delay, steep cut",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOV0wxVkhzVWpjUi1QSDA1bDBqTXdlVFNHLS1HUVhLTTczYVd4Q3kta0k3dlp6MGFFWF9JVDhhd0dUakgwY2lsZlJqYThsR1doQUpFd2pSSmR0OWdqSEFDYTlrcWxBamJ4T0RCM0ZseXQyUFlrSGdBUXJBSy1JbkthdmowWnFnaHF4STdEVS1FY2FPS2Z5MTVWdFQ1U3R5MWlDTFh5RnhUd0MyRjRaSklhWEhGYmo5Q1hLQTJ0MzVUaFFVYWk1OXRuQ1VkZ01SaXlWRG8zWU54bFhfQ001RnBNWDZVcW9XcTjSAewBQVVfeXFMT0FWMDV2Y2l4NV8wSXMzZFlLOFhWZ01mNFI0WUtZUTZhdDdSM0ZmQWpDYmlkWDYyMUVvRGhRcFllX1R3N0hrMS13eUIxd2xsMmZhbVlGS01ILWRFSG9lOGRWREpmRzhHLU9QaGhCRlBQUXJQVU1lU3RpcmJ5VXV6OGJqSkNOZzhaNXdtMkc5QlJHR0NNQXprQ0VZWlZ5OEpjVktMTU0xejRtTnZiU2dYTlpHa3JkVlQ5MVIyQ2tuTEM3LU1hZm5MRl9QREFVRk9oTG1VQks4cWJKLVZJR0RXVXdPMmxnVjNEN0VTX1g?oc=5",
-      "src": "Moneycontrol.com"
-     },
-     {
-      "k": "news",
-      "t": "Paytm, Pine Labs, MobiKwik Fall Up To 9% As UPI MDR Rollout Faces Fresh Delay. What Changes?",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPNkZ3SVEyc1h2OXkyZGg2ZUo4cWVLbk96QzRMTmdqQXBFUFVUTFI1cWtUX0ZUZy03QTBFaTlta3FPTFYxSUw5NlFVdE1BTTExLUp5blVYLTBVQ2pjbEozZ3M1cU5zZWVoRk84NVJEOUVGZkxYdnlXcUI5ekczbmRrb1ZfdXNYM0R5TjlSWmR4NjdacWlaOWRadmU0cUVobi1DbU1KR2doQ1RNNmkwM2Y1NGhQcnBCYlVYUHd2WTlsOG4yY2RwT0FKNGpVN3A5WHVXMDN3Ykg1YnBKN2pOUnBuMkxXN2lkRWdQZ0E0SWtReFdwRTFFYXBlRTY4Sm9RZTBuQzFMQXFVeDdlSVnSAZMCQVVfeXFMTVA4c2JKVjVEc052dVd3ZkM4c2JqX00taVFzYUpwbFN6WFRHY2ZKTDdJMXppRzROTGVobnNtRGt1djJkTGtaazRpX2dCaW9pQWdqejd1VjRYUS1wSmZuNEtGUll4VVJBMkp3S1I0NHpKSEFOck9FTFVaNkdWOU1uV0dTUG82WmhMWTlaNmVYcjNHVmNyWWRZM2ZUMFRsYUwySEN5UlpxdGNRQlhTX0F1U1FDUmloaVdvMDA3X1h1VEtTNk51aDVZQ2RIOWFMS3ZDTUpoaGstVDJqdF9RM3JodmM1TzF4TE5TU0pNdUR2OWxqTE94SC1Lal85VW1qOUtJdTFFdjJKTnRQN29UWWdacFNFMTg?oc=5",
-      "src": "NDTV Profit"
-     },
-     {
-      "k": "news",
-      "t": "Paytm share price crash: Payment stock slides 7% on UPI MDR rollout delay; Pine Labs, One Mobikwik Systems also tumble",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPV1FzT21KVEFranpya1NjT0NDcjlYUkp2UXFRc0N5OG9LVVlGRHVJZ0FGYlVkbG5tYjN0QlVmVkpCQ2h6WTJhVm5GY1hWWXd2MnRfUjhVOXE0d0gwS0Ntd1A2TVFhQlBwVXZ6dHQyY2J6TEZWLWpFMks4OHI1Mm1pVGpOdERXZTFGMG80M2h4LXlpTjB1VmRmY3VhRjV4Mkt5T2V4ZUc2NHVuS3ZyMGduTllqZk1oaUNyOHg5R1hUemtzRXMzc05TUmIyLTRUdE5PMnQyMGdjenBiaFVPaFo3b1diUFRodWJ1Y1ZTcGdkOTJObDVnV2pDa1dFWVhpb2ZsOHp5YjhWbm9HYWpuWGdLSDNB0gGXAkFVX3lxTE1wMzc5a0tzY2wyaklZWmtRWVNIa0tSTk9FOHgxdzFrclI4NnhmZlBldTZ2cDRFNGxGMG5fTk9jcXJ1X29xV1lTUmxVN1pHZ3Z2RDJhY2FZX19TWDI2YllZUDFscmE4dzZvb2daQ0dnNW9SYjlzYkQ2SDFiemRoaURuUG5wMU5Jc0M5SFZMVVpmNXZuY2VEUmd3R0hOS09ISmdwSjIxbWJnZmZaaEpwZHJBYnFXdlpBLXNOc1FoNW1TZkVEVVdZbWkzbUJvUFFBeFhsVXpPNlN5RGc0R0E2RzYzUmNwUVZCVE4xcFhkdDFOWlprLW12YmhKTkJBSlc1UFFtTllaWTBvYTNuY1JLd2liUGZTY1p3MA?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "MOBIKWIK",
-    "n": "One Mobikwik Systems",
-    "s": -6.9,
-    "conf": "High",
-    "p": 208.74,
-    "pct": -7.93,
-    "mc": 1650.3,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Paytm share price crash: Payment stock slides 7% on UPI MDR rollout delay; Pine Labs, One Mobikwik Systems also tumble",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPV1FzT21KVEFranpya1NjT0NDcjlYUkp2UXFRc0N5OG9LVVlGRHVJZ0FGYlVkbG5tYjN0QlVmVkpCQ2h6WTJhVm5GY1hWWXd2MnRfUjhVOXE0d0gwS0Ntd1A2TVFhQlBwVXZ6dHQyY2J6TEZWLWpFMks4OHI1Mm1pVGpOdERXZTFGMG80M2h4LXlpTjB1VmRmY3VhRjV4Mkt5T2V4ZUc2NHVuS3ZyMGduTllqZk1oaUNyOHg5R1hUemtzRXMzc05TUmIyLTRUdE5PMnQyMGdjenBiaFVPaFo3b1diUFRodWJ1Y1ZTcGdkOTJObDVnV2pDa1dFWVhpb2ZsOHp5YjhWbm9HYWpuWGdLSDNB0gGXAkFVX3lxTE1wMzc5a0tzY2wyaklZWmtRWVNIa0tSTk9FOHgxdzFrclI4NnhmZlBldTZ2cDRFNGxGMG5fTk9jcXJ1X29xV1lTUmxVN1pHZ3Z2RDJhY2FZX19TWDI2YllZUDFscmE4dzZvb2daQ0dnNW9SYjlzYkQ2SDFiemRoaURuUG5wMU5Jc0M5SFZMVVpmNXZuY2VEUmd3R0hOS09ISmdwSjIxbWJnZmZaaEpwZHJBYnFXdlpBLXNOc1FoNW1TZkVEVVdZbWkzbUJvUFFBeFhsVXpPNlN5RGc0R0E2RzYzUmNwUVZCVE4xcFhkdDFOWlprLW12YmhKTkJBSlc1UFFtTllaWTBvYTNuY1JLd2liUGZTY1p3MA?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "price",
-      "t": "Closed weak: -7.9% on 2.4× usual volume, near the day's low",
-      "s": -1.9378599949902542
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "TANLA",
-    "n": "Tanla Platforms",
-    "s": -5,
-    "conf": "Medium",
-    "p": 670.0,
-    "pct": -4.02,
-    "mc": 8847.4,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "news",
-      "t": "Tanla Platforms share price falls 5%: Stock up 30% in 2026; should investors buy the dip? Key levels to watch",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOMEtQWnpiUE1TNU9mY2Voel9uTnYzZTY2azZ5SHl2OS12N2ctbXZUZHJiVW9pMWRqQUpfUEFPU1Q1TFR2ZTB6Y3hfOVFGclFqdXJibG9ZdnRadExaTVd1V1k2WjNSQTktOWFOd0RvMGVPRm5OUjRoZTBCelZ1TkRoclI1bldDWjFLSndzOWplaE9Vc0hiYnVLS3NoV0g1c1lCaFl2QUkxVDh4ellRcUpvckpIc0poRXJPa2x6Q0RmZXQ5OEVQcVlhbldBRkdLV3FSdTUyTExvUlc0M3owMUFlaGVmNTQybTdnS3RuVC1xV2RBSDZIM2pCU0lWcVRYSHdqUHZ0RNIBigJBVV95cUxOVVl4UkdpNmZrc2NVcHAxc2UtbkhmMDBUZUFMSUI0bVpuaW1iby1UbERCUEd1c19xUDNDNlBsVndQZUtnMTF0bE5XS3ZuLTVFeXR5SXR1MmZBaEVpem1hSGlYbDlKa2swb2xLNE55U3JRczU4d2lVdWg1RE5xWEhONXBtWWpldC1xS3Q4cThKT2k4cU5rNEpZaTBRLXE5SFhHZDNBbnhtcHJJZmYyVHhXVlBwVEo3ZkVnNWQzeVdtenF2ejFrRk5iczhYRDNhRDktZkcwOXY0cjM4SnlBTFFGYks0X290S3RfTXF0MDI3R05ySmtKd0xSQ0FkVE9JbHZUSzlXUDc4bGphdw?oc=5",
-      "src": "Livemint"
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "RADICO",
-    "n": "Radico Khaitan",
-    "s": -4,
-    "conf": "Medium",
-    "p": 4660.0,
-    "pct": -0.11,
-    "mc": 62438.9,
-    "sec": "Consumer Defensive",
-    "why": [
-     {
-      "k": "news",
-      "t": "Radico Khaitan, Tilaknagar Industries, other liquor stocks fall up to 3% on report govt to levy 162.5%...",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNc2RHMFhfZS1QbTFMVngxbmtZU1NlLTFwRGY1SDJuZ3lydDVqM2tUcnVuS2hYSWVyTDEtN01Qd2g5UnRBRkVXT2tydUJ4c2ZmMDgyTkt1ME01Xy12OWhfTnQ5bHM2SWZ2eUN0YVF6TlVEejd6Ukd1UTF0dktuNG55RVNDUnlWS1ZFMms0M0Y1MGZyUTJPOXpWd0JuaUZPdmRPajFDcG5QeU9KN3BLOExKeThvcmZLZTFMaFBjNjhjSUZzUW1rejhVU21pdGdFdlF3UmtuZnlNcU5vQnVlTk1IdkNSUEM4M0E1aTJ4OS1ZQjdwRXFrTi1uT0xqcmpfdVFWa2pZcGZQZEdiS0tXLUxVV01rTVPSAZoCQVVfeXFMUEkybzQ2d3p5a3BWSnhvWFJoUEExYzd3bl93d1ZqeF9DQk1hUGlKb3FEV2RsUUdTR3RaRktYbldrajVNdDNva1F6ZFh1TzM2TnlnUm9zTmlhenVxczk0aGFsd2l3eUk0UUpUNndLZWhyLVB5ancwTExiVXI4VHozTlRDSGZZME5ZVklPbUNpT21ULXVINVJLd19TOVhja0lXM3BPeWQzNjJ0SzhQWnYwUGF4OEVVQnF6dXR5SnhMVllKRUdtcy1qVUJzejBhY05HcjVLMUlMWVA4ekliUER2ZFNxZ3cxNUFULW5lRnM0ZWFPNm16a1F6OXE5aWlwRUhGQVlBQUVQVF82SGVlQnZwX0hxSTNwV3RZeEZn?oc=5",
-      "src": "Moneycontrol.com"
-     }
-    ]
-   },
-   {
-    "k": "INDGN",
-    "n": "Indegene",
-    "s": -4,
-    "conf": "Medium",
-    "p": 645.4,
-    "pct": -1.46,
-    "mc": 15542.8,
-    "sec": "Healthcare",
-    "why": [
-     {
-      "k": "news",
-      "t": "Indegene Becomes First Industry Partner of Indo-UK Life Science Corridor; Shares Fall 0.76%",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxOd1duYXZoUVV3YUhwTkpDVGNNalY5MDE5Q0tkTllQc0JLS3NBSDlCUEZXcS04VFZwLTJjNUY5LTRkUEM5dnhWUmJ1ME5KU2VOV01NNm0ybWIxbmZYNG9FOGhJYzREbEZNTksxMGVUQ1l1MmpnYTVKenVLc180YU9iaDJLV1JJMENqUUdlMHhNdkN5QVptQVMxNzh2ZWItZw?oc=5",
-      "src": "HDFC Sky"
-     }
-    ]
-   },
-   {
-    "k": "GOODLUCK",
-    "n": "Goodluck India",
-    "s": -4,
-    "conf": "Medium",
-    "p": 544.7,
-    "pct": -0.78,
-    "mc": 5431.5,
-    "sec": "Basic Materials",
-    "why": [
-     {
-      "k": "news",
-      "t": "Goodluck India Wins EEPC Golden Trophy for Export Excellence; Shares Fall 0.91%",
-      "s": -4,
-      "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNEc1VEV2MnJsV250bG9nZTRTYV94N0NHMm1pQWxVb1R3VEpxMjJKejBLaFlHdE92dUF6R2RrZnpmUUVsZFBzWUNSRE9Mbmh1Q2Z2NThYNXZkMEJyNDBmQjA5SlpkdWNpcEtYRDlrNUtrQWNNbi1YOHJ1Y0ZuQUthXzdDMVlPb29zZlBULXVGWGloeFVHOHRhUWo5bWtHZw?oc=5",
-      "src": "HDFC Sky"
-     }
-    ]
-   },
-   {
-    "k": "TECHNVISN",
-    "n": "TechNVision Ventures",
-    "s": -3.3,
-    "conf": "Low",
-    "p": 3766.2,
-    "pct": -5.0,
-    "mc": 2363.3,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -5.0% on 3.1× usual volume, near the day's low",
-      "s": -2.3022388059701493
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "WPIL",
-    "n": "WPIL",
-    "s": -3.0,
-    "conf": "Low",
-    "p": 353.55,
-    "pct": -3.93,
-    "mc": 3453.2,
-    "sec": "Industrials",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -3.9% on 2.5× usual volume, near the day's low",
-      "s": -2.0052337752965803
-     },
-     {
-      "k": "price",
-      "t": "Trading at a 52-week low",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "SHANKESH",
-    "n": "Shankesh Jewellers",
-    "s": -3.0,
-    "conf": "Low",
-    "p": 79.72,
-    "pct": -5.32,
-    "mc": 1172.1,
-    "sec": "Consumer Cyclical",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -5.3% on 5.9× usual volume, near the day's low",
-      "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "CREDITACC",
-    "n": "CREDITACCESS GRAMEEN",
-    "s": -3.0,
-    "conf": "Low",
-    "p": 970.6,
-    "pct": -7.23,
-    "mc": 15556.7,
-    "sec": "Financial Services",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -7.2% on 5.4× usual volume, near the day's low",
-      "s": -3.0
-     }
-    ]
-   },
-   {
-    "k": "SHIPROCKET",
-    "n": "Shiprocket",
-    "s": -2.8,
-    "conf": "Low",
-    "p": 113.37,
-    "pct": -6.51,
-    "mc": 8248.5,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -6.5% on 2.1× usual volume, near the day's low",
-      "s": -1.7982265612088688
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   },
-   {
-    "k": "STYL",
-    "n": "Seshaasai Technologies",
-    "s": -2.8,
-    "conf": "Low",
-    "p": 304.5,
-    "pct": -3.24,
-    "mc": 4927.0,
-    "sec": "Technology",
-    "why": [
-     {
-      "k": "price",
-      "t": "Closed weak: -3.2% on 2.0× usual volume, near the day's low",
-      "s": -1.7531166940893559
-     },
-     {
-      "k": "global",
-      "t": "Nasdaq -2.2% overnight; IT stocks often follow",
-      "s": -1
-     }
-    ]
-   }
-  ]
+  "up": [],
+  "down": []
  },
  "ipocal": [
   {
@@ -4126,20 +3240,32 @@
   "at": "20 Nov, 8:43 AM",
   "hi": [
    [
-    "KOTAKBANK",
-    1.65
+    "DSKULKARNI",
+    2.0
    ],
    [
     "GAIL",
     1.11
    ],
    [
-    "PANACHE",
-    2.0
+    "KALYANI",
+    0.0
+   ],
+   [
+    "KOTAKBANK",
+    1.65
    ],
    [
     "LYKALABS",
     1.99
+   ],
+   [
+    "PANACHE",
+    2.0
+   ],
+   [
+    "QUINTEGRA",
+    2.0
    ],
    [
     "SAB",
@@ -4148,22 +3274,6 @@
    [
     "SUPREMEENG",
     1.94
-   ],
-   [
-    "DSKULKARNI",
-    2.0
-   ],
-   [
-    "KALYANI",
-    0.0
-   ],
-   [
-    "QUINTEGRA",
-    2.0
-   ],
-   [
-    "VEEFIN",
-    20.0
    ]
   ],
   "lo": [
@@ -4184,19 +3294,13 @@
     -5.0
    ]
   ],
-  "nhi": 10,
+  "nhi": 9,
   "nlo": 4,
   "ath": [
    [
     "STEELCAS",
     8.74,
     390.9,
-    1
-   ],
-   [
-    "UNITEDPOLY",
-    5.87,
-    58.0,
     1
    ],
    [
@@ -4260,12 +3364,6 @@
     0
    ],
    [
-    "UNOMINDA",
-    1.09,
-    1406.5,
-    1
-   ],
-   [
     "HITECHCORP",
     0.0,
     424.5,
@@ -4322,7 +3420,7 @@
     1
    ]
   ],
-  "nath": 18,
+  "nath": 16,
   "natl": 4
  },
  "bse_movers": {
@@ -5151,16 +4249,6 @@
     20.0
    ],
    [
-    "VEEFIN",
-    "Veefin Solutions",
-    20.0
-   ],
-   [
-    "TINNARUBR",
-    "Tinna Rubber and Infrastructure",
-    19.63
-   ],
-   [
     "BALAXI",
     "BALAXI PHARMACEUTICALS",
     17.85
@@ -5189,6 +4277,16 @@
     "B505650",
     "Skyline Millars",
     14.79
+   ],
+   [
+    "GLOBUSSPR",
+    "Globus Spirits",
+    14.15
+   ],
+   [
+    "B531359",
+    "Shriram Asset Management Company",
+    13.21
    ]
   ],
   "l": [
@@ -5476,646 +4574,9 @@
   "at": "20 Nov, 8:43 AM",
   "phase": "pre",
   "for": "Fri 20 Nov",
-  "picks": [
-   {
-    "k": "TINNARUBR",
-    "n": "Tinna Rubber and Infrastructure",
-    "p": 990.2,
-    "pct": 19.63,
-    "vx": 169.0,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Tinna Rubber & Infrastructure Ltd Locks at Upper Circuit With 20% Gain — Buyers Queue, Sellers Absent",
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdmpvUmlpMXpTNFJfQm1zaF85akZ5djdWN2tzdldMS2hoQmxtWmZNVnFqYVNSWDQ0RUNUaElEWkxiSXNXNTBxZEZJOEFJNWxqaURla1JkWDBHYXZJajdMWDlyaVdMcGZGMGsybGpISWRqemlYeGdYdHpVRDhPaVRlQ01uUk41Rm5PQ2FxaGFZZHJYQ2t4UFYzdy1haWc2Tm9CeGxKU2djZDV2WE1VajRIR2Y5WnkzRGdFenNma3R6LUNmaWRvYUd3WWJYbnhrWGN3TEE?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 19.6%, closing near the day's high on 169.0× normal volume"
-     }
-    ],
-    "s": 64.1
-   },
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "p": 1237.0,
-    "pct": 9.03,
-    "vx": 5.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Voltas Shares Jump 7% as Copper Hits Seven-Month Low",
-      "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMEcxT3hDSFhvaEp6UVBETk9OSTNRWWdEWm5xYnlILVJvV2hZNTZyUWVfVXdyaWI3OUt0TWJuV05fRVVYOGhfODBQOUhOSnF4YkdKSnM0b0lkaDdiZ3h4aC15TXFGcW9fMENFcWlXbjFrR3VnOUExR1E4QmZfS3pzZ2JPUTltRWFJ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 9.0%, closing near the day's high on 5.9× normal volume"
-     }
-    ],
-    "s": 29.6
-   },
-   {
-    "k": "MARUTI",
-    "n": "Maruti Suzuki India",
-    "p": 13589.0,
-    "pct": 7.58,
-    "vx": 2.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Maruti Suzuki Shares Surge 6% As Nifty Auto Jumps 2.6% Amid Falling Crude Oil Prices",
-      "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQm51SzhubHl1RmNjUkltWExZVGZNcEVyUVMySEhuTVloVHdKV3A0OTVyNWgzLThZcHYyZ1pQRGwzTDA1QlNqZVJ0Nk9pNi0wdm5qY1lKLW1lS3pFQmtybk0wZVpuMjJ4bi1zSUYwV0c5bEZHOVJ2dktnYk5NZTc1M2xsbWtiVjAwc1RYVGpDLUpNSEdnVzJEZXZkRno4a3VOenV4dEd5ellaakR5eHotUlllTTdUSkdaaHUxVERna2tIWGxHVHc?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 7.6%, closing near the day's high on 2.3× normal volume"
-     }
-    ],
-    "s": 22.6
-   },
-   {
-    "k": "BLSPOLY",
-    "n": "BLS Polymers",
-    "p": 282.56,
-    "pct": 0.92,
-    "vx": 3.1,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "BLS Polymers shares surge over 8% after Q2 profit more than doubles, revenue rises 30%",
-      "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNV2hsWnFyZFZuU0RzbkJuSExqREE4V1U2VjRqcHdnSEVUam9NZTJjYTVyUjIxem5IcUdEQjQzMDF2dVdBaFZCamQwZm1LSTAwX3M1NGtMTkRCdVE1MlVGRndFRW1Zdjk2QjdfX2VNUURXcXpQdmh4Q3RNVUgwX0NGRnFNM2ZOYThDdG9DWjVHSDZITy16T212X0hzd0pPUDRPb2xxSDNCTXlZak1fSE85eWdObDZQbDRQb1pqRUNkZExIYm85VXZtWEotMnc4TjZlZEE?oc=5"
-     }
-    ],
-    "s": 22.4
-   },
-   {
-    "k": "PWL",
-    "n": "Physicswallah",
-    "p": 136.21,
-    "pct": 6.31,
-    "vx": 10.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Physicswallah shares jump 3% as firm targets 3x revenue surge to Rs 10,000 cr by FY30. How has stock perfo",
-      "u": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOY05lR3hJR0FqOHdrWHd2SWljSkowV096R3ZoODMyd3Y3X1A5WmJuMXNvOUZGTk1nalYyOVpVa3hNQXd5dlphN3d4QnFEZzl0VHJnS0hUTDRPb1ZHZFJqTERCMnp2aFRVWHZrU3FRZ0VUSjc2ZFRPS0lGUWRnMUdBRWlSYk5MVVpwVDlaY3JRLVR1RnZFdW15MGVic2xFTVlLR01QZFctSC15Q21UZG9DX2plaHB6Y3hKYkNRV3J3NGo2QkF6OWlXSGF5bzNXbko0UWU3QVZ5cEV0SlNLcjVoWTRodFBSbkpFSldNa0tfb1U3MFlCUVF6TTNfbmVYNkJTX0ZmX014enE3WFEweWJvOTlDX0VEOHpkNGp5RnUtdzjSAaYCQVVfeXFMUFNFT0xocFUtWnVoMnZyYjJ3ei03UHJna0NsTm1yQjRqN2lQQ2gxa3lwUTZpZVJuSFlaaGVTNmhZMUFvbFBtc3hUUnNWd1Z5UkwwRkpYS1FhRFc0MG5BSU4tN0taVHltM2VDTmlVbFdxZGhLMng5cUFvWFVfeXNBR0pPbkwzN29aai02ZEZHSmxfSUV2dl9xSnVhWkQ2dGlWYTNXOHpRRmt0dU9KWklkei14OGZYcUNhSTMyTUs1MkZQT0dPYXA1STFLcG5ncFdGdG5PLTRUNlBKNHB3dklWeVctVXlxblNRR1ZWWWR2MWVOeWhsQUdQT0xHcWtkS2JyVWxNTng5ekZkVzBmUm5aMXhGckNzRlhnaEZhVG5WclpFVl8wWGlR?oc=5"
-     }
-    ],
-    "s": 22.4
-   },
-   {
-    "k": "TIRUPATIFL",
-    "n": "Tirupati Forge",
-    "p": 73.63,
-    "pct": 8.81,
-    "vx": 6.0,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 8.8%, closing near the day's high on 6.0× normal volume"
-     }
-    ],
-    "s": 22.0
-   },
-   {
-    "k": "BLUESTARCO",
-    "n": "Blue Star",
-    "p": 1764.0,
-    "pct": 8.77,
-    "vx": 8.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 8.8%, closing near the day's high on 8.0× normal volume"
-     }
-    ],
-    "s": 21.9
-   },
-   {
-    "k": "WOCKPHARMA",
-    "n": "Wockhardt",
-    "p": 2187.0,
-    "pct": 7.91,
-    "vx": 4.8,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 7.9%, closing near the day's high on 4.8× normal volume"
-     }
-    ],
-    "s": 19.0
-   },
-   {
-    "k": "ARVINDFASN",
-    "n": "Arvind Fashions",
-    "p": 364.8,
-    "pct": 5.02,
-    "vx": 4.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Arvind Fashions Shares Rise 3.93% As U.S. Polo Assn. Targets ₹4,000 Crore India Sales in FY27",
-      "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUVlFZjZPdy1WazlaQ01hN3Z1SERMaXg4RGZfUUhacFM3bnZBVkVNdmU1ZkltOUZLaEMwbnJiendNZk5idG0xQk1LTkMzSVo5Mm1LTE95QUFaQmZEazY2d0NucUVtVHlLMmVaaHNiRGNQNEh6MUN1TzcwSUdJSDBNZi1WQkx0S2dUa1RWYkx1cFpEc2s3eXlxY1VQNmRRRzFycG96V0Z5WjUyWmgxQ21sRk1ZcEJYZmlSelNqSFhhZ040UQ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.0%, closing near the day's high on 4.6× normal volume"
-     }
-    ],
-    "s": 18.5
-   },
-   {
-    "k": "PGEL",
-    "n": "PG Electroplast",
-    "p": 578.25,
-    "pct": 7.24,
-    "vx": 7.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 7.2%, closing near the day's high on 7.3× normal volume"
-     }
-    ],
-    "s": 18.1
-   },
-   {
-    "k": "HYUNDAI",
-    "n": "Hyundai Motor India",
-    "p": 2219.2,
-    "pct": 5.8,
-    "vx": 2.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Hyundai Motor India Sees Sharp Open Interest Surge Amid Bullish Derivatives Activity",
-      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNWUtWb0cxS3ljWElDaEFiRjZ6WFVOMURyOE5KMU9aNWhlSFBDaUJHSWlvdF90WUNtaFJiQV96Mlcza1R2NFlLQnlwVTJuZnpfRlhseXVuLUxSMHN4NTgzTThBbHlVR1ZqS2FwNjZJb1dMb1dBTVhHcW1kbnp0bWpWOXEwdzZpWHdDU2VoWG9CWTMzYlJUc21wYmZvbDF3WVp3SVU0SjZGRk9UbGdOTFJCalR0c2JwbWhseHBhMnNUaV9XZHQ3MHJ0M1FBNmRiWE1maElOcnpHdTNtQQ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.8%, closing near the day's high on 2.9× normal volume"
-     }
-    ],
-    "s": 14.6
-   },
-   {
-    "k": "SJS",
-    "n": "S.J.S. Enterprises",
-    "p": 2246.8,
-    "pct": 9.48,
-    "vx": 2.8,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 9.5%, closing near the day's high on 2.8× normal volume"
-     }
-    ],
-    "s": 13.4
-   },
-   {
-    "k": "DECNGOLD",
-    "n": "Deccan Gold Mines",
-    "p": 184.6,
-    "pct": 7.91,
-    "vx": 1.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "results",
-      "x": "Deccan Gold Q2 profit rises 5.5-fold on Swarnagiri ramp-up",
-      "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPNktvY0haam84TWVneTdkUXdmY2hCM2drQ1MzVGR0a3N1cmVucmJXZGFjODJYZFRob3lJbnRJX0IzZURJR2o3SU5RejFUbUVkUnNKSjBZMzlZUmxOWXF4ei1YX0NMdjB1T1FJSlFBcUVnRVBub1NZdmhMc3ZLM2wwNTZKS2pxdGdOcnFfaXlJbHZ0TU9zYmhnVVNVUzBUTTVKMDdZcVB5VWRJTkJmWEE?oc=5"
-     }
-    ],
-    "s": 13.3
-   },
-   {
-    "k": "ASHIKAG",
-    "n": "Ashika Global Securities",
-    "p": 371.45,
-    "pct": 4.99,
-    "vx": 5.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.0%, closing near the day's high on 5.2× normal volume"
-     }
-    ],
-    "s": 12.5
-   },
-   {
-    "k": "TONBO",
-    "n": "Tonbo Imaging India",
-    "p": 1505.0,
-    "pct": 2.05,
-    "vx": 0.3,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "Tonbo Imaging shares surge over 3% after securing Rs 35.62 crore defence order from Ministry of Defence",
-      "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQU21fdWx1bFd3aGwyYmtZb0h0UExXUTd0QzVPbWNLTWV5RDNFVHlia3RLa0s1bldweFRUdWo2LThWOG82a2FxZGFsM2RFZGZpdTlSVzNvZlJVRkFZT0wyTERlMEl6UDBQZGQ4Y2tDS0NRWjlOVFpoMVFuejRoS2lqdU9zdnBnZnJHYUJXdDByc0M3QUUzOGt4WS1zWTBfSjY0T2VnczNZMlB3aGl1NnFmUG1SNHJQZ3hwczVkNmYtVmV2VjNMMnRENXJGazMzNFVBc3Y4dWM2eHFXc05FeTRueVR3YWJOQQ?oc=5"
-     }
-    ],
-    "s": 12.0
-   },
-   {
-    "k": "LTFOODS",
-    "n": "LT Foods",
-    "p": 438.75,
-    "pct": 4.65,
-    "vx": 100.4,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "LT Foods snaps 4-day losing streak, jumps 8% on plan to acquire MK Foods",
-      "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPa3lSbTFRTW9FcnZXaXR0OTJNTmpTYnRjQUdxYVRKdXhkRkNfLWJiYjNONFFtLUN0REdJaEU1RHU1R2YtbzRZNVlGR3B1bDNzakxMSVkzZ3BOUlhPZXJFTk1mdU5yRGV2cUkyS0FkMkNFa2k5dElOcXRTZnMtVkt1RWZ4YVFhOTNqS1g3N2FFYnNOdGdVT1Y1ZUlBcHRTVWd0M3V4VXd4eDR4cUNXREdwWExybjlzOWVhOFNPX3JWemNSNXFZZzFYb0c2T19vQXhOcnMw0gHYAUFVX3lxTE9CZUh2cFh6aHlWZ2x6MnpEdkN3V1RaTTFZSDRmeHdQUi1uTlBTUjdNTzlmMldwMmFqYlcyZjhOU0xnekFvVjRYWlpJMEpxTkdWME9tZHpndjNfR1kzWHpjZ0xsRGtDeGRBUGcwUjRMQzYyT1BYemt1ZTR6eWZBMnVEdnRJSDRTS2MwSkJYNm1mV2ZFY0UtRkdVMGMtM0tLSVBPcmdBYUlkbVVGS1Azc0Y5cl9ERzQ4aVBWc0U2N2NCa3ZjMGM0ZHV0c0ItREdFX3hJNFFvWTBZdA?oc=5"
-     }
-    ],
-    "s": 12.0
-   },
-   {
-    "k": "ENDURANCE",
-    "n": "Endurance Technologies",
-    "p": 2593.8,
-    "pct": 4.93,
-    "vx": 4.8,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.9%, closing near the day's high on 4.8× normal volume"
-     }
-    ],
-    "s": 11.9
-   },
-   {
-    "k": "IREDA",
-    "n": "Indian Renewable Energy Development Agency",
-    "p": 129.8,
-    "pct": 8.35,
-    "vx": 8.1,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "IREDA shares jump 11% to 4-month high: Is the renewable energy stock finally turning around after 6 months of losses?",
-      "u": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQQkFGS2tzVXcxMVJxY1RhbXROM2VqZmxmY3pCSXZ5eVJhbmNUSlU0WlNqMnBNMzJYTHJ4WDdXR0w3Z1BqRC0tR041T2czT2JmRFVyWEFEX3UzT1lLT3JUTXd6TUlqd0tZNzJWYi03WmNDamU2dkdsS0g2d2lKY0o5YW9aS2pWY1VCb3FabGlxS3NhbWxPeXo2RlpsYW16MGtOTmZqQ0VkNHIzbUJINzVVZl8wTkQtSTBYR3RSUVB3SnZKZzVyV0RCaU9hdzF1N1V3b09Qd09pQ1hINFZLOFNwU2tORjVEZWZqY3ExemhUQjNpRV9wSXYzY1JadFBhU1BXUG11eUFn0gGLAkFVX3lxTE5ZZ3ExSzRjall6cDBjS192b3d6S0RJSzdRYUx1RUFDZGNXWWhmNTdSeUxreVh6YjJ3STFmS1FMZmFBUm5ldm9aYVUweDl1VE5GQjZoX0w2Z1dnOTZicmpBV2tjTlZWa1ZnUFBoUVVrLWlodnlkaHhUaUNjUUVhSG5MT2p0ZUx0OXIyX0Y2MThBR3F6OExNc0NSenljR240enBJN2NFVkd6OTlKZlJoR280VV9rM3d4NFpHZjdJejFqMmgxLWJHZnAybExWbEw5U2ZvRV9Kclhjd1U1WEJkTnY2eW14WDdHcG8wQXd6WlBPZ19wYUdmeEs5b3lXalNGTW9ENEkwOXctcnowNA?oc=5"
-     }
-    ],
-    "s": 11.0
-   },
-   {
-    "k": "MSUMI",
-    "n": "Motherson Sumi Wiring India",
-    "p": 41.25,
-    "pct": 4.38,
-    "vx": 7.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.4%, closing near the day's high on 7.2× normal volume"
-     }
-    ],
-    "s": 10.9
-   },
-   {
-    "k": "ADVENZYMES",
-    "n": "Advanced Enzyme Technologies",
-    "p": 296.25,
-    "pct": 5.43,
-    "vx": 3.8,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.4%, closing near the day's high on 3.8× normal volume"
-     }
-    ],
-    "s": 10.4
-   },
-   {
-    "k": "NLCINDIA",
-    "n": "NLC India",
-    "p": 234.92,
-    "pct": 3.54,
-    "vx": 2.5,
-    "fo": false,
-    "why": [
-     {
-      "t": "news",
-      "x": "NLC India shares rise 2% as renewables unit files for IPO",
-      "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcnlpcy1oeE16WTNNLVpvekUtbnhwRy1ZRjJCOUdibzRQYVFBdFU5aXdSMHJkM2h4c1VZR2M3N3ZHQTg0bTdNQVFoTllYNWxlWmJnMVg1S0RsRDRJRUdLZk1IaDVnUUdaUWJmVEs3Tnh2ZkRuSnFYbWV5SGNaOHQzOTR3Nk9FRkVQQTRvVHAzVHloekNFd0ZLWEhHVHhBcGlrQ1l4V0JuRUlZWmdIZWk0RGxfWnBGVTVmRWk4VS1fYWNxWjDSAcMBQVVfeXFMTnJ5aXMtaHhNelkzTS1ab3pFLW54cEctWUYyQjlHYm80UGFRQXRVOWl3UjByZDNoeHNVWUdjNzd2R0E4NG03TUFRaE5ZWDVsZVpiZzFYNUtEbEQ0SUVHS2ZNSGg1Z1FHWlFiZlRLN054dmZEbkpxWG1leUhjWjh0Mzk0dzZPRUZFUEE0b1RwM1R5aHpDRXdGS1hIR1R4QXBpa0NZeFdCbkVJWVpnSGVpNERsX1pwRlU1ZkVpOFUtX2FjcVow?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.5%, closing near the day's high on 2.5× normal volume"
-     }
-    ],
-    "s": 10.4
-   },
-   {
-    "k": "A2ZINFRA",
-    "n": "A2Z Infra Engineering",
-    "p": 12.57,
-    "pct": 4.84,
-    "vx": 4.3,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 4.8%, closing near the day's high on 4.3× normal volume"
-     }
-    ],
-    "s": 10.3
-   },
-   {
-    "k": "MINDACORP",
-    "n": "Minda Corporation",
-    "p": 753.2,
-    "pct": 5.46,
-    "vx": 3.6,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.5%, closing near the day's high on 3.6× normal volume"
-     }
-    ],
-    "s": 9.8
-   },
-   {
-    "k": "DABUR",
-    "n": "Dabur India",
-    "p": 390.65,
-    "pct": 3.01,
-    "vx": 2.4,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Dabur India Share Price Today: price rise and valuation",
-      "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9hRGs1NURZSlNjeGdrX1N0SmlpSTZfUEtpSnpCejY2NDRiSnhfTExCdzViOTVLVU92OFNnWVdlcnJ2TXI5VXRiU3FjYXpTZE8zNWZULXpCdnNyUGVyVUdxcjRXYnZmX09Wam9Zbl9uUnB1a0k2b3pQVmtUWmw?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.0%, closing near the day's high on 2.4× normal volume"
-     }
-    ],
-    "s": 9.7
-   },
-   {
-    "k": "ARIS",
-    "n": "Arisinfra Solutions",
-    "p": 157.98,
-    "pct": 8.12,
-    "vx": 2.2,
-    "fo": false,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 8.1%, closing near the day's high on 2.2× normal volume"
-     }
-    ],
-    "s": 8.8
-   }
-  ],
-  "fo": [
-   {
-    "k": "VOLTAS",
-    "n": "Voltas",
-    "p": 1237.0,
-    "pct": 9.03,
-    "vx": 5.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Voltas Shares Jump 7% as Copper Hits Seven-Month Low",
-      "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMEcxT3hDSFhvaEp6UVBETk9OSTNRWWdEWm5xYnlILVJvV2hZNTZyUWVfVXdyaWI3OUt0TWJuV05fRVVYOGhfODBQOUhOSnF4YkdKSnM0b0lkaDdiZ3h4aC15TXFGcW9fMENFcWlXbjFrR3VnOUExR1E4QmZfS3pzZ2JPUTltRWFJ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 9.0%, closing near the day's high on 5.9× normal volume"
-     }
-    ],
-    "s": 29.6
-   },
-   {
-    "k": "MARUTI",
-    "n": "Maruti Suzuki India",
-    "p": 13589.0,
-    "pct": 7.58,
-    "vx": 2.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Maruti Suzuki Shares Surge 6% As Nifty Auto Jumps 2.6% Amid Falling Crude Oil Prices",
-      "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQm51SzhubHl1RmNjUkltWExZVGZNcEVyUVMySEhuTVloVHdKV3A0OTVyNWgzLThZcHYyZ1pQRGwzTDA1QlNqZVJ0Nk9pNi0wdm5qY1lKLW1lS3pFQmtybk0wZVpuMjJ4bi1zSUYwV0c5bEZHOVJ2dktnYk5NZTc1M2xsbWtiVjAwc1RYVGpDLUpNSEdnVzJEZXZkRno4a3VOenV4dEd5ellaakR5eHotUlllTTdUSkdaaHUxVERna2tIWGxHVHc?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 7.6%, closing near the day's high on 2.3× normal volume"
-     }
-    ],
-    "s": 22.6
-   },
-   {
-    "k": "BLUESTARCO",
-    "n": "Blue Star",
-    "p": 1764.0,
-    "pct": 8.77,
-    "vx": 8.0,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 8.8%, closing near the day's high on 8.0× normal volume"
-     }
-    ],
-    "s": 21.9
-   },
-   {
-    "k": "PGEL",
-    "n": "PG Electroplast",
-    "p": 578.25,
-    "pct": 7.24,
-    "vx": 7.3,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 7.2%, closing near the day's high on 7.3× normal volume"
-     }
-    ],
-    "s": 18.1
-   },
-   {
-    "k": "HYUNDAI",
-    "n": "Hyundai Motor India",
-    "p": 2219.2,
-    "pct": 5.8,
-    "vx": 2.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Hyundai Motor India Sees Sharp Open Interest Surge Amid Bullish Derivatives Activity",
-      "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNWUtWb0cxS3ljWElDaEFiRjZ6WFVOMURyOE5KMU9aNWhlSFBDaUJHSWlvdF90WUNtaFJiQV96Mlcza1R2NFlLQnlwVTJuZnpfRlhseXVuLUxSMHN4NTgzTThBbHlVR1ZqS2FwNjZJb1dMb1dBTVhHcW1kbnp0bWpWOXEwdzZpWHdDU2VoWG9CWTMzYlJUc21wYmZvbDF3WVp3SVU0SjZGRk9UbGdOTFJCalR0c2JwbWhseHBhMnNUaV9XZHQ3MHJ0M1FBNmRiWE1maElOcnpHdTNtQQ?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 5.8%, closing near the day's high on 2.9× normal volume"
-     }
-    ],
-    "s": 14.6
-   },
-   {
-    "k": "IREDA",
-    "n": "Indian Renewable Energy Development Agency",
-    "p": 129.8,
-    "pct": 8.35,
-    "vx": 8.1,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "IREDA shares jump 11% to 4-month high: Is the renewable energy stock finally turning around after 6 months of losses?",
-      "u": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQQkFGS2tzVXcxMVJxY1RhbXROM2VqZmxmY3pCSXZ5eVJhbmNUSlU0WlNqMnBNMzJYTHJ4WDdXR0w3Z1BqRC0tR041T2czT2JmRFVyWEFEX3UzT1lLT3JUTXd6TUlqd0tZNzJWYi03WmNDamU2dkdsS0g2d2lKY0o5YW9aS2pWY1VCb3FabGlxS3NhbWxPeXo2RlpsYW16MGtOTmZqQ0VkNHIzbUJINzVVZl8wTkQtSTBYR3RSUVB3SnZKZzVyV0RCaU9hdzF1N1V3b09Qd09pQ1hINFZLOFNwU2tORjVEZWZqY3ExemhUQjNpRV9wSXYzY1JadFBhU1BXUG11eUFn0gGLAkFVX3lxTE5ZZ3ExSzRjall6cDBjS192b3d6S0RJSzdRYUx1RUFDZGNXWWhmNTdSeUxreVh6YjJ3STFmS1FMZmFBUm5ldm9aYVUweDl1VE5GQjZoX0w2Z1dnOTZicmpBV2tjTlZWa1ZnUFBoUVVrLWlodnlkaHhUaUNjUUVhSG5MT2p0ZUx0OXIyX0Y2MThBR3F6OExNc0NSenljR240enBJN2NFVkd6OTlKZlJoR280VV9rM3d4NFpHZjdJejFqMmgxLWJHZnAybExWbEw5U2ZvRV9Kclhjd1U1WEJkTnY2eW14WDdHcG8wQXd6WlBPZ19wYUdmeEs5b3lXalNGTW9ENEkwOXctcnowNA?oc=5"
-     }
-    ],
-    "s": 11.0
-   },
-   {
-    "k": "DABUR",
-    "n": "Dabur India",
-    "p": 390.65,
-    "pct": 3.01,
-    "vx": 2.4,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Dabur India Share Price Today: price rise and valuation",
-      "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9hRGs1NURZSlNjeGdrX1N0SmlpSTZfUEtpSnpCejY2NDRiSnhfTExCdzViOTVLVU92OFNnWVdlcnJ2TXI5VXRiU3FjYXpTZE8zNWZULXpCdnNyUGVyVUdxcjRXYnZmX09Wam9Zbl9uUnB1a0k2b3pQVmtUWmw?oc=5"
-     },
-     {
-      "t": "momentum",
-      "x": "Up 3.0%, closing near the day's high on 2.4× normal volume"
-     }
-    ],
-    "s": 9.7
-   },
-   {
-    "k": "HEROMOTOCO",
-    "n": "Hero MotoCorp",
-    "p": 5556.0,
-    "pct": 5.77,
-    "vx": 2.8,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.8%, closing near the day's high on 2.8× normal volume"
-     }
-    ],
-    "s": 8.2
-   },
-   {
-    "k": "COLPAL",
-    "n": "Colgate Palmolive (India)",
-    "p": 1776.6,
-    "pct": 5.22,
-    "vx": 2.9,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.2%, closing near the day's high on 2.9× normal volume"
-     }
-    ],
-    "s": 7.5
-   },
-   {
-    "k": "GAIL",
-    "n": "GAIL (India)",
-    "p": 192.1,
-    "pct": 1.11,
-    "vx": 1.5,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "Intellect Design Arena Expands Cloud Banking Footprint | Vectras Enprocon Bags Pipeline Construction Order from GAIL | Top Buzzing Stocks Today",
-      "u": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOSGk0MG9zLXA0SUtCQmdpTE5jT2xFcWo4SmRUZHRMM0ZFaTFPZkNQVXZtOVhPNURFVGNiRE8xaUsxUFFua09EbTZOQ2lKVFdsTEdyOUR2ZmhhWUo3MkFXMGZIV2pmamtRQU0yaUFhYnFRWnQ3OTkzbHJiSGZ1UkZ3M3lHWFNYajBleGNXVFZlejFvTnRvSUkzdWhETjloMHhXQzVMdTJRaVdrNUh1YkNRaTNUYldaMWEtYlowampzbmwwVEFlYWUyakJGSm53N3J3aVhtTlhxcmlBMUF2aHYxU3BMYkR4VmNHTjJITEtYaG5TYjFoZl9XUGlXdi1Bb2JfQldaZ05VUnM1em9rcjZCTWtpb0o4Y3JuMlB4X1FfY2hUbnBIcl9kZllB?oc=5"
-     }
-    ],
-    "s": 7.0
-   },
-   {
-    "k": "TVSMOTOR",
-    "n": "TVS Motor Company",
-    "p": 4601.4,
-    "pct": 5.32,
-    "vx": 2.1,
-    "fo": true,
-    "why": [
-     {
-      "t": "momentum",
-      "x": "Up 5.3%, closing near the day's high on 2.1× normal volume"
-     }
-    ],
-    "s": 5.7
-   },
-   {
-    "k": "PNB",
-    "n": "Punjab National Bank",
-    "p": 154.85,
-    "pct": 3.53,
-    "vx": 1.6,
-    "fo": true,
-    "why": [
-     {
-      "t": "news",
-      "x": "PNB, BoB, Canara Bank, BoM, BoI, other PSU bank stocks rise; here's what is driving the gains",
-      "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONWR4VktielZSRm1hQXlwYUlzaFJMeU1CZGhTdmJaZTA2SVM1QmlIcDFxdGhnSlMyZklQcEZyeWhnUi1tSE9kazJrNWhzVTZ6T3k3QVZtS0N2STIxMlk5NVQxWHZycXFqWGFtWWM3SzZmYmlSdXlYdFBra2tCTlJKdkcxNWdNSXRvZVVfU1N4bEYyTFlTaTFMUnRJS3R3Uk5SUG5ybzRDUXVmaUcwOHE2MnM2LW1aM3FfRzdwZ0FqVTVlUFBJOXNBY3FFdnd6M2JwZ05hUkFqZHdyNUJVMjR2MGVoS0hqclQxVlHSAe8BQVVfeXFMTXY4X3J3dzZZUUZlQ0NfdHR1M3JJdHA2RkNnX19ZUFZWUGFfR0VZLV9Kejg4cmRGeW1UN09KSDd3eFVFQWIweExJNEp5V3ZVaGhYeFMwcEFhaWpNRXZNZHJrbE5YU0RRbEdqWTBUZ2dMV1k4bk9pSHJjYTFDamFRUUkyY3ZSSndKRk1sUGNVSGRDZUdFQ0dMTEg3T25TQTRXRV9GUzhRSGlRRy0yc244RkROZ1BfVlBHdDJxQlI0VTUyYlUwbEYtaVc3NkRGNTRKLURUQ2tsRmxTdUFOTEt2Q2NXNlQ4ampiUFdXZmhRZ2s?oc=5"
-     }
-    ],
-    "s": 5.5
-   }
-  ],
-  "fodn": [
-   {
-    "k": "RADICO",
-    "n": "Radico Khaitan",
-    "p": 4660.0,
-    "pct": -0.11,
-    "fo": true,
-    "s": 4.0,
-    "why": [
-     {
-      "t": "news",
-      "x": "Radico Khaitan, Tilaknagar Industries, other liquor stocks fall up to 3% on report govt to levy 162.5%...",
-      "u": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNc2RHMFhfZS1QbTFMVngxbmtZU1NlLTFwRGY1SDJuZ3lydDVqM2tUcnVuS2hYSWVyTDEtN01Qd2g5UnRBRkVXT2tydUJ4c2ZmMDgyTkt1ME01Xy12OWhfTnQ5bHM2SWZ2eUN0YVF6TlVEejd6Ukd1UTF0dktuNG55RVNDUnlWS1ZFMms0M0Y1MGZyUTJPOXpWd0JuaUZPdmRPajFDcG5QeU9KN3BLOExKeThvcmZLZTFMaFBjNjhjSUZzUW1rejhVU21pdGdFdlF3UmtuZnlNcU5vQnVlTk1IdkNSUEM4M0E1aTJ4OS1ZQjdwRXFrTi1uT0xqcmpfdVFWa2pZcGZQZEdiS0tXLUxVV01rTVPSAZoCQVVfeXFMUEkybzQ2d3p5a3BWSnhvWFJoUEExYzd3bl93d1ZqeF9DQk1hUGlKb3FEV2RsUUdTR3RaRktYbldrajVNdDNva1F6ZFh1TzM2TnlnUm9zTmlhenVxczk0aGFsd2l3eUk0UUpUNndLZWhyLVB5ancwTExiVXI4VHozTlRDSGZZME5ZVklPbUNpT21ULXVINVJLd19TOVhja0lXM3BPeWQzNjJ0SzhQWnYwUGF4OEVVQnF6dXR5SnhMVllKRUdtcy1qVUJzejBhY05HcjVLMUlMWVA4ekliUER2ZFNxZ3cxNUFULW5lRnM0ZWFPNm16a1F6OXE5aWlwRUhGQVlBQUVQVF82SGVlQnZwX0hxSTNwV3RZeEZn?oc=5"
-     }
-    ]
-   }
-  ],
+  "picks": [],
+  "fo": [],
+  "fodn": [],
   "fodue": [],
   "due": [
    {
